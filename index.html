@@ -1,0 +1,3194 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HUDU (huduvn.com) — Enterprise Tender Intelligence &amp; Biometric Queue/CFMS Platform</title>
+  <meta name="description" content="HUDU (huduvn.com) provides AI-powered Public & Private Tender Matching (Floor/Ceiling Capability Bounds) and Edge-AI Biometric Queue & Order Management (CFMS/QMS) for Hospitals, Clinics, and Education Centers." />
+  <link rel="canonical" href="https://huduvn.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://huduvn.com/" />
+  <meta property="og:title" content="HUDU — Hệ Sinh Thái Đấu Thầu Thông Minh &amp; Quản Trị CSMS/QMS" />
+  <meta property="og:description" content="Nền tảng AI sàng lọc gói thầu công &amp; tư nhân (Hạn mức Sàn–Trần) và Hệ thống CSMS/QMS nhận diện khuôn mặt Edge-AI lấy đơn bệnh nhân cho Bệnh viện, Phòng khám, Trung tâm đào tạo." />
+  <meta property="og:image" content="https://huduvn.com/images/hudu-logo-dark.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/svg+xml" href="svg/hudu-favicon.svg" />
+  <link rel="apple-touch-icon" href="images/hudu-icon-app.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ==========================================================================
+       PLATINUM SILVER & SAPPHIRE BLUE ENTERPRISE THEME
+       ========================================================================== */
+    :root {
+      --bg-page: #E6ECF4;
+      --bg-page-grad: linear-gradient(180deg, #EEF2F7 0%, #E2E8F0 50%, #EAEFF6 100%);
+      --bg-surface: linear-gradient(145deg, #FFFFFF 0%, #F1F5F9 100%);
+      --bg-surface-solid: #F8FAFC;
+      --bg-surface-glass: rgba(241, 245, 249, 0.85);
+      --bg-subtle: #DCE4EE;
+      --bg-ice: #E8F2FC;
+      --bg-ice-strong: #D6E9FA;
+      --bg-navy: #0F2942;
+      --bg-navy-deep: #0B1829;
+
+      --text-main: #0F233A;
+      --text-body: #334155;
+      --text-muted: #5A6B82;
+
+      --blue-primary: #0066CC;
+      --blue-hover: #0052A3;
+      --blue-sky: #0284C7;
+      --blue-ice: #38BDF8;
+      --silver-accent: #94A3B8;
+
+      --border-light: #CBD5E1;
+      --border-subtle: #B6C4D6;
+      --border-ice: #93C5FD;
+      --inset-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.95);
+
+      --shadow-sm: 0 2px 10px rgba(15, 35, 58, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      --shadow-md: 0 12px 32px rgba(15, 35, 58, 0.09), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+      --shadow-lg: 0 24px 56px rgba(15, 35, 58, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+      --shadow-hover: 0 20px 44px rgba(0, 102, 204, 0.18), inset 0 1px 0 #FFFFFF;
+
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-xl: 24px;
+    }
+
+    body.dark-mode {
+      --bg-page: #0B1524;
+      --bg-page-grad: linear-gradient(180deg, #0B1524 0%, #102036 50%, #0B1524 100%);
+      --bg-surface: linear-gradient(145deg, #152944 0%, #0F2036 100%);
+      --bg-surface-solid: #132640;
+      --bg-surface-glass: rgba(15, 32, 54, 0.86);
+      --bg-subtle: #162B47;
+      --bg-ice: #183456;
+      --bg-ice-strong: #1E416B;
+
+      --text-main: #F1F5F9;
+      --text-body: #CBD5E1;
+      --text-muted: #94A3B8;
+
+      --blue-primary: #38BDF8;
+      --blue-hover: #7DD3FC;
+      --blue-sky: #7DD3FC;
+
+      --border-light: #264264;
+      --border-subtle: #355882;
+      --border-ice: #0284C7;
+      --inset-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+      --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      --shadow-md: 0 14px 36px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      --shadow-hover: 0 22px 48px rgba(56, 189, 248, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg-page-grad);
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ==========================================================================
+       KEYFRAME ANIMATIONS
+       ========================================================================== */
+    @keyframes pulseDot {
+      0%, 100% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(0, 102, 204, 0.45); }
+      50% { transform: scale(1.15); opacity: 0.85; box-shadow: 0 0 0 6px rgba(0, 102, 204, 0); }
+    }
+
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+
+    @keyframes waveSlide {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(-25px); }
+      100% { transform: translateX(0); }
+    }
+
+    @keyframes scanSweep {
+      0% { top: 10%; opacity: 0.25; }
+      50% { top: 86%; opacity: 0.95; }
+      100% { top: 10%; opacity: 0.25; }
+    }
+
+    @keyframes dataPulse {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(220%); }
+    }
+
+    @keyframes orbDrift {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(24px, -18px) scale(1.06); }
+    }
+
+    @keyframes partnerMarquee {
+      0% { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(-50%, 0, 0); }
+    }
+
+    /* ==========================================================================
+       NAVBAR — METALLIC SILVER GLASS, SINGLE LINE
+       ========================================================================== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 72px;
+      background: var(--bg-surface-glass);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border-light);
+      box-shadow: 0 4px 20px rgba(15, 35, 58, 0.04);
+      transition: background 0.25s ease, border-color 0.25s ease;
+    }
+
+    .nav-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: nowrap;
+    }
+
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .brand-logo svg {
+      height: 40px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      list-style: none;
+      flex-wrap: nowrap;
+    }
+
+    .nav-links li {
+      flex-shrink: 0;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-body);
+      white-space: nowrap;
+      padding: 6px 2px;
+      position: relative;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, #0066CC, #94A3B8);
+      transform: scaleX(0);
+      transition: transform 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue-primary);
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .lang-select-wrap {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .lang-select {
+      appearance: none;
+      -webkit-appearance: none;
+      background: var(--bg-surface);
+      color: var(--text-main);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--inset-highlight);
+      border-radius: 99px;
+      height: 38px;
+      padding: 0 30px 0 14px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      outline: none;
+      white-space: nowrap;
+      transition: border-color 0.15s ease;
+    }
+
+    .lang-select:hover,
+    .lang-select:focus {
+      border-color: var(--blue-primary);
+    }
+
+    .lang-chevron {
+      position: absolute;
+      right: 11px;
+      pointer-events: none;
+      color: var(--text-muted);
+    }
+
+    .icon-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid var(--border-light);
+      background: var(--bg-surface);
+      box-shadow: var(--inset-highlight);
+      color: var(--text-main);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.18s ease;
+    }
+
+    .icon-btn:hover {
+      border-color: var(--blue-primary);
+      color: var(--blue-primary);
+      transform: rotate(12deg);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      height: 38px;
+      padding: 0 18px;
+      border-radius: 99px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+      font-family: inherit;
+      flex-shrink: 0;
+    }
+
+    .btn-outline {
+      background: var(--bg-surface);
+      color: var(--text-main);
+      border-color: var(--border-subtle);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--blue-primary);
+      color: var(--blue-primary);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #0052A3 0%, #0066CC 55%, #0284C7 100%);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 6px 16px rgba(0, 102, 204, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #004488 0%, #0052A3 60%, #0066CC 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(0, 102, 204, 0.36), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    }
+
+    .btn-lg {
+      height: 48px;
+      padding: 0 26px;
+      font-size: 0.95rem;
+    }
+
+    /* ==========================================================================
+       HERO SECTION (BRUSHED SILVER + ANIMATED NETWORK + WAVES)
+       ========================================================================== */
+    .hero {
+      position: relative;
+      padding: 72px 0 84px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 18% 15%, rgba(255, 255, 255, 0.85) 0%, transparent 45%),
+        radial-gradient(circle at 84% 22%, rgba(56, 189, 248, 0.16) 0%, transparent 48%);
+    }
+
+    body.dark-mode .hero {
+      background:
+        radial-gradient(circle at 18% 15%, rgba(56, 189, 248, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 84% 22%, rgba(0, 102, 204, 0.16) 0%, transparent 48%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(100, 116, 139, 0.09) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(100, 116, 139, 0.09) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 50%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 50%, transparent 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    #heroCanvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-ambient-orb {
+      position: absolute;
+      width: 440px;
+      height: 440px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, rgba(148, 163, 184, 0) 70%);
+      top: -100px;
+      right: 6%;
+      pointer-events: none;
+      z-index: 0;
+      animation: orbDrift 11s ease-in-out infinite;
+    }
+
+    .hero-bg-wave {
+      position: absolute;
+      left: -4%;
+      right: -4%;
+      bottom: -2px;
+      width: 108%;
+      height: 140px;
+      pointer-events: none;
+      z-index: 1;
+      animation: waveSlide 14s ease-in-out infinite;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.06fr 0.94fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .pill-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 99px;
+      background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 100%);
+      color: #0052A3;
+      font-size: 0.79rem;
+      font-weight: 700;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 20px;
+    }
+
+    body.dark-mode .pill-tag {
+      background: linear-gradient(135deg, #162F4E 0%, #0F233A 100%);
+      color: #7DD3FC;
+      border-color: #2A4B72;
+    }
+
+    .pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #0066CC;
+      flex-shrink: 0;
+      animation: pulseDot 2.4s infinite;
+    }
+
+    body.dark-mode .pill-dot {
+      background: #38BDF8;
+    }
+
+    .hero h1 {
+      font-size: 2.85rem;
+      line-height: 1.18;
+      font-weight: 800;
+      letter-spacing: -0.028em;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 .highlight {
+      background: linear-gradient(90deg, #0052A3 0%, #0284C7 52%, #64748B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    body.dark-mode .hero h1 .highlight {
+      background: linear-gradient(90deg, #38BDF8 0%, #BAE6FD 55%, #CBD5E1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.03rem;
+      color: var(--text-body);
+      margin-bottom: 30px;
+      max-width: 590px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 34px;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .metric-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      border-radius: var(--radius-md);
+      padding: 13px 15px;
+    }
+
+    .metric-item strong {
+      display: block;
+      font-size: 1.36rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #0052A3, #475569);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.02em;
+    }
+
+    body.dark-mode .metric-item strong {
+      background: linear-gradient(90deg, #38BDF8, #E2E8F0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .metric-item span {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+      display: block;
+      margin-top: 3px;
+    }
+
+    /* Hero Right Command Center */
+    .hero-showcase {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 22px;
+      box-shadow: var(--shadow-lg);
+      animation: floatSlow 7s ease-in-out infinite;
+      position: relative;
+    }
+
+    .showcase-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 14px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .window-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .window-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--border-subtle);
+    }
+
+    .window-dots span:first-child {
+      background: #0066CC;
+    }
+
+    .window-dots span:nth-child(2) {
+      background: #64748B;
+    }
+
+    .showcase-url {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--bg-subtle);
+      padding: 4px 12px;
+      border-radius: 99px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    .live-indicator {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #0066CC;
+      animation: pulseDot 2s infinite;
+    }
+
+    .mini-product-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .mini-card {
+      background: var(--bg-surface-solid);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      transition: all 0.22s ease;
+    }
+
+    .mini-card:hover {
+      border-color: var(--blue-primary);
+    }
+
+    .stream-bar {
+      height: 3px;
+      width: 100%;
+      background: var(--bg-subtle);
+      border-radius: 99px;
+      overflow: hidden;
+      margin: 12px 0 10px;
+      position: relative;
+    }
+
+    .stream-bar::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 42%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, #0066CC, #94A3B8, transparent);
+      animation: dataPulse 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    .mini-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .mini-card-title {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .icon-badge {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #0066CC, #475569);
+      color: #FFFFFF;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(0, 102, 204, 0.2);
+    }
+
+    .icon-badge.navy {
+      background: linear-gradient(135deg, #0F2942, #475569);
+    }
+
+    .status-pill {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 99px;
+      background: var(--bg-ice);
+      color: var(--blue-primary);
+      border: 1px solid var(--border-light);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .mini-stats-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .mini-stat-chip {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      color: var(--text-body);
+    }
+
+    .biometric-live-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 12px 0 10px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: var(--bg-ice);
+      border: 1px solid var(--border-light);
+    }
+
+    .face-scan-box {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      border: 1.5px dashed var(--blue-primary);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: var(--bg-surface-solid);
+    }
+
+    .scan-laser {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #0066CC;
+      box-shadow: 0 0 6px #38BDF8;
+      animation: scanSweep 2.4s ease-in-out infinite;
+    }
+
+    /* ==========================================================================
+       INFINITE CIRCULAR PARTNER LOGO MARQUEE (DARK NAVY + SILVER-WHITE/BLUE)
+       ========================================================================== */
+    .partner-marquee-section {
+      background: linear-gradient(90deg, #091322 0%, #0F233C 50%, #091322 100%);
+      border-top: 1px solid #1E3A5F;
+      border-bottom: 1px solid #1E3A5F;
+      padding: 26px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .partner-marquee-label {
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #94A3B8;
+      margin-bottom: 18px;
+    }
+
+    .marquee-viewport {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: partnerMarquee 30s linear infinite;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .marquee-group {
+      display: flex;
+      align-items: center;
+      gap: 76px;
+      padding-right: 76px;
+    }
+
+    .partner-logo-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      opacity: 0.86;
+      flex-shrink: 0;
+    }
+
+    .partner-logo-item svg {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
+
+    /* ==========================================================================
+       SECTIONS & PRODUCT CARDS (METALLIC SILVER FINISH)
+       ========================================================================== */
+    .section {
+      padding: 84px 0;
+      position: relative;
+    }
+
+    .section-alt {
+      background: linear-gradient(180deg, #DCE4EE 0%, #E6ECF4 100%);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    body.dark-mode .section-alt {
+      background: linear-gradient(180deg, #0E1D31 0%, #132742 100%);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 54px;
+    }
+
+    .section-header h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.022em;
+      margin-bottom: 12px;
+    }
+
+    .section-header p {
+      color: var(--text-body);
+      font-size: 1.02rem;
+    }
+
+    .product-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .solution-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .solution-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--blue-primary);
+    }
+
+    .solution-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #0052A3, #0284C7, #94A3B8);
+    }
+
+    .solution-card.csms::before {
+      background: linear-gradient(90deg, #475569, #0066CC, #CBD5E1);
+    }
+
+    .solution-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--blue-primary);
+      margin-bottom: 10px;
+    }
+
+    .solution-card h3 {
+      font-size: 1.52rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      line-height: 1.28;
+    }
+
+    .solution-card > div > p {
+      color: var(--text-body);
+      margin-bottom: 20px;
+      font-size: 0.94rem;
+    }
+
+    .pipeline-flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 22px;
+      padding: 12px;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+    }
+
+    .pipe-step {
+      text-align: center;
+      padding: 7px 4px;
+      border-radius: 8px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .pipe-step strong {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--blue-primary);
+      font-weight: 800;
+    }
+
+    .pipe-step span {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .vertical-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+
+    .v-badge {
+      padding: 5px 11px;
+      border-radius: 6px;
+      background: var(--bg-ice);
+      border: 1px solid var(--border-light);
+      color: var(--text-main);
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      margin-bottom: 28px;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      font-size: 0.91rem;
+      color: var(--text-body);
+    }
+
+    .check-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--bg-ice-strong);
+      color: var(--blue-primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 3px;
+      font-weight: 800;
+      font-size: 0.72rem;
+    }
+
+    /* ==========================================================================
+       INTERACTIVE LIVE SANDBOX
+       ========================================================================== */
+    .sandbox-wrapper {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+
+    .sandbox-tabs {
+      display: flex;
+      background: var(--bg-subtle);
+      border-bottom: 1px solid var(--border-light);
+      padding: 8px;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .sandbox-tab-btn {
+      flex: 1;
+      min-width: 260px;
+      padding: 14px 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.18s ease;
+      font-family: inherit;
+    }
+
+    .sandbox-tab-btn.active {
+      background: var(--bg-surface);
+      color: var(--blue-primary);
+      border-color: var(--border-light);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .sandbox-body {
+      padding: 28px;
+    }
+
+    .sandbox-panel {
+      display: none;
+    }
+
+    .sandbox-panel.active {
+      display: block;
+    }
+
+    .filter-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 240px;
+    }
+
+    .search-box input {
+      width: 100%;
+      height: 40px;
+      padding: 0 16px;
+      border-radius: 99px;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-surface-solid);
+      color: var(--text-main);
+      font-size: 0.88rem;
+      font-family: inherit;
+      outline: none;
+    }
+
+    .search-box input:focus {
+      border-color: var(--blue-primary);
+    }
+
+    .filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-pill {
+      height: 36px;
+      padding: 0 14px;
+      border-radius: 99px;
+      border: 1px solid var(--border-light);
+      background: var(--bg-surface-solid);
+      color: var(--text-body);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+
+    .filter-pill.active,
+    .filter-pill:hover {
+      background: linear-gradient(135deg, #0052A3, #0066CC);
+      color: #FFFFFF;
+      border-color: #0052A3;
+    }
+
+    .data-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      background: var(--bg-surface-solid);
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.88rem;
+    }
+
+    .data-table th {
+      padding: 13px 16px;
+      background: var(--bg-subtle);
+      color: var(--text-muted);
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid var(--border-light);
+      white-space: nowrap;
+    }
+
+    .data-table td {
+      padding: 15px 16px;
+      border-bottom: 1px solid var(--border-light);
+      color: var(--text-body);
+      vertical-align: middle;
+    }
+
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .data-table tr:hover td {
+      background: var(--bg-ice);
+    }
+
+    .match-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 99px;
+      background: var(--bg-ice-strong);
+      color: var(--blue-primary);
+      border: 1px solid var(--border-light);
+      font-weight: 700;
+      font-size: 0.78rem;
+      white-space: nowrap;
+    }
+
+    .csms-top-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .csms-kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .kpi-box {
+      background: var(--bg-surface-solid);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+    }
+
+    .kpi-box span {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .kpi-box strong {
+      font-size: 1.32rem;
+      font-weight: 800;
+      color: var(--blue-primary);
+    }
+
+    .quick-add-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 14px;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      margin-bottom: 18px;
+      align-items: center;
+    }
+
+    .quick-add-bar input,
+    .quick-add-bar select {
+      height: 38px;
+      padding: 0 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-surface-solid);
+      color: var(--text-main);
+      font-size: 0.86rem;
+      font-family: inherit;
+      flex: 1;
+      min-width: 170px;
+    }
+
+    /* ==========================================================================
+       TECH STACK & ARCHITECTURE HIGHLIGHTS
+       ========================================================================== */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .benefit-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--blue-primary);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .benefit-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #FFFFFF, #DCE4EE);
+      color: var(--blue-primary);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    body.dark-mode .benefit-icon {
+      background: linear-gradient(135deg, #1A3658, #11243C);
+    }
+
+    .benefit-card h3 {
+      font-size: 1.12rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .benefit-card p {
+      font-size: 0.9rem;
+      color: var(--text-body);
+    }
+
+    /* ==========================================================================
+       CTA & CONTACT FORM
+       ========================================================================== */
+    .cta-box {
+      background: linear-gradient(135deg, #0B1829 0%, #112844 55%, #1E3E66 100%);
+      color: #FFFFFF;
+      border: 1px solid #335680;
+      border-radius: var(--radius-xl);
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 36px;
+      align-items: center;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-box h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+
+    .cta-box p {
+      color: #CBD5E1;
+      margin-bottom: 22px;
+      font-size: 0.96rem;
+    }
+
+    .contact-form {
+      background: linear-gradient(145deg, #FFFFFF 0%, #F1F5F9 100%);
+      color: #0F233A;
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      border: 1px solid #CBD5E1;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .contact-form h3 {
+      font-size: 1.12rem;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #475569;
+      margin-bottom: 4px;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      height: 40px;
+      padding: 0 12px;
+      border-radius: 8px;
+      border: 1px solid #CBD5E1;
+      background: #FFFFFF;
+      font-size: 0.88rem;
+      font-family: inherit;
+      color: #0F233A;
+    }
+
+    .form-toast {
+      display: none;
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: #E0F2FE;
+      color: #0052A3;
+      font-size: 0.84rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .footer {
+      background: var(--bg-navy-deep);
+      color: #94A3B8;
+      padding: 56px 0 32px;
+      border-top: 1px solid #1E3A5F;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 32px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid #1E3A5F;
+    }
+
+    .footer-brand svg {
+      height: 38px;
+      width: auto;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .footer-col h4 {
+      color: #F1F5F9;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      font-size: 0.86rem;
+    }
+
+    .footer-col a:hover {
+      color: #7DD3FC;
+    }
+
+    .footer-bottom {
+      padding-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.82rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .product-split,
+      .cta-box,
+      .grid-3,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .csms-kpi-grid,
+      .pipeline-flow {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .nav-links {
+        display: none;
+      }
+      .hero h1 {
+        font-size: 2.15rem;
+      }
+      .cta-box {
+        padding: 32px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <!-- Inline Compact Circle HĐ + Blue-to-Silver Gradient HUDU Wordmark -->
+      <a href="#" class="brand-logo" aria-label="HUDU Home">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 246 84">
+          <defs>
+            <linearGradient id="navHuduGrad" gradientUnits="userSpaceOnUse" x1="94" y1="22" x2="241" y2="62">
+              <stop id="navGradStop1" offset="0%" stop-color="#0052A3" />
+              <stop id="navGradStop2" offset="38%" stop-color="#0284C7" />
+              <stop id="navGradStop3" offset="74%" stop-color="#64748B" />
+              <stop id="navGradStop4" offset="100%" stop-color="#94A3B8" />
+            </linearGradient>
+          </defs>
+          <circle cx="42" cy="42" r="37" fill="#0066CC" />
+          <g transform="translate(42, 42) scale(0.80) translate(-55.75, -60)">
+            <path fill-rule="evenodd" d="M 54 36.5 H 64 A 23.5 23.5 0 0 1 87.5 60 A 23.5 23.5 0 0 1 64 83.5 H 54 Z M 59 46 V 74 H 64 A 14 14 0 0 0 78 60 A 14 14 0 0 0 64 46 Z" fill="#7DD3FC" />
+            <rect x="24" y="33.5" width="10" height="53" rx="5" fill="#FFFFFF" />
+            <rect x="49" y="33.5" width="10" height="53" rx="5" fill="#FFFFFF" />
+            <path d="M 27.5 56.2 C 38 48.5, 54 64.5, 70.5 55.2 A 4.5 4.5 0 0 1 71.5 64.0 C 54 73.5, 38 57.5, 29.5 64.2 A 4.5 4.5 0 0 1 27.5 56.2 Z" fill="#FFFFFF" />
+          </g>
+          <!-- Sleek Compact HUDU Wordmark in Blue -> Silver Gradient -->
+          <g fill="url(#navHuduGrad)" fill-rule="evenodd">
+            <rect x="94" y="24" width="7.6" height="36" rx="3.8" />
+            <rect x="97.8" y="38.5" width="22.4" height="7" rx="3.5" />
+            <rect x="116.4" y="24" width="7.6" height="36" rx="3.8" />
+            <path d="M 133 27.8 A 3.8 3.8 0 0 1 140.6 27.8 V 45 A 7.4 7.4 0 0 0 155.4 45 V 27.8 A 3.8 3.8 0 0 1 163 27.8 V 45 A 15 15 0 0 1 133 45 Z" />
+            <path d="M 172 27.8 A 3.8 3.8 0 0 1 175.8 24 H 184 A 18 18 0 0 1 202 42 A 18 18 0 0 1 184 60 H 175.8 A 3.8 3.8 0 0 1 172 56.2 Z M 179.6 31.4 V 52.6 H 184 A 10.6 10.6 0 0 0 194.6 42 A 10.6 10.6 0 0 0 184 31.4 Z" />
+            <path d="M 211 27.8 A 3.8 3.8 0 0 1 218.6 27.8 V 45 A 7.4 7.4 0 0 0 233.4 45 V 27.8 A 3.8 3.8 0 0 1 241 27.8 V 45 A 15 15 0 0 1 211 45 Z" />
+          </g>
+        </svg>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#solutions" data-i18n="nav_solutions">Giải pháp</a></li>
+        <li><a href="#dauthau" data-i18n="nav_tender">Đấu thầu Công &amp; Tư</a></li>
+        <li><a href="#cfms" data-i18n="nav_cfms">Quản trị CFMS / QMS</a></li>
+        <li><a href="#live-demo" data-i18n="nav_demo">Trải nghiệm Demo</a></li>
+        <li><a href="#architecture" data-i18n="nav_arch">Kiến trúc</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <div class="lang-select-wrap">
+          <select id="langSelect" class="lang-select" onchange="setLanguage(this.value)" aria-label="Language">
+            <option value="vi">🇻🇳 Tiếng Việt</option>
+            <option value="en">🇺🇸 English</option>
+            <option value="es">🇪🇸 Español</option>
+            <option value="zh">🇨🇳 中文</option>
+            <option value="ja">🇯🇵 日本語</option>
+            <option value="ko">🇰🇷 한국어</option>
+          </select>
+          <svg class="lang-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+
+        <button id="themeToggleBtn" class="icon-btn" onclick="toggleTheme()" title="Switch Light / Dark Theme" aria-label="Toggle Theme">
+          <svg id="themeIconMoon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="themeIconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+
+        <a href="#contact" class="btn btn-primary" data-i18n="nav_cta">Đăng ký Dùng thử</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-ambient-orb"></div>
+    <canvas id="heroCanvas"></canvas>
+
+    <svg class="hero-bg-wave" viewBox="0 0 1440 160" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 64 C 320 10, 640 130, 960 64 C 1180 20, 1340 50, 1440 80 L 1440 160 L 0 160 Z" fill="#CBD5E1" fill-opacity="0.45"/>
+      <path d="M0 98 C 400 145, 820 35, 1240 105 C 1340 120, 1400 110, 1440 96 L 1440 160 L 0 160 Z" fill="#93C5FD" fill-opacity="0.28"/>
+    </svg>
+
+    <div class="container hero-grid">
+      <div>
+        <div class="pill-tag">
+          <span class="pill-dot"></span>
+          <span data-i18n="hero_badge">HUDU Enterprise Technology · huduvn.com</span>
+        </div>
+        <h1 data-i18n="hero_title">
+          Nền tảng Phần mềm <span class="highlight">Săn Thầu AI</span> &amp; Quản Trị Tiếp Nhận Thông Minh
+        </h1>
+        <p class="hero-desc" data-i18n="hero_desc">
+          Xây dựng trên kiến trúc Rust hiệu năng cao và Edge/Cloud AI: Tự động thu thập, phân loại đa lớp và so khớp <strong>Đấu thầu Công &amp; Tư</strong> theo biên độ năng lực Sàn/Trần; đồng thời chuẩn hóa <strong>Hệ thống Nhận diện Sinh trắc học &amp; Lấy đơn CFMS/QMS</strong> cho Bệnh viện, Phòng khám và Cơ sở Đào tạo.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#live-demo" class="btn btn-primary btn-lg" data-i18n="hero_btn_demo">
+            Trải nghiệm Demo Trực tiếp &darr;
+          </a>
+          <a href="#solutions" class="btn btn-outline btn-lg" data-i18n="hero_btn_explore">
+            Khám phá 2 Hệ thống
+          </a>
+        </div>
+
+        <div class="hero-metrics">
+          <div class="metric-item">
+            <strong>&lt; 2 ms</strong>
+            <span data-i18n="metric_1">Lọc từ khóa Aho-Corasick &amp; đối soát sinh trắc 512 chiều</span>
+          </div>
+          <div class="metric-item">
+            <strong>3-Tier</strong>
+            <span data-i18n="metric_2">Chống trùng lặp gói thầu &amp; so khớp biên độ Sàn/Trần</span>
+          </div>
+          <div class="metric-item">
+            <strong>100%</strong>
+            <span data-i18n="metric_3">Vận hành ổn định trên Rust Cloud &amp; Offline LAN Edge</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Animated Command Center Card -->
+      <div class="hero-showcase">
+        <div class="showcase-header">
+          <div class="window-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="showcase-url">
+            <span class="live-indicator"></span>
+            <span>huduvn.com · Rust + AI Engine</span>
+          </div>
+          <img src="svg/hudu-favicon.svg" alt="HUDU" style="width: 24px; height: 24px;" />
+        </div>
+
+        <div class="mini-product-stack">
+          <div class="mini-card">
+            <div class="mini-card-head">
+              <div class="mini-card-title">
+                <span class="icon-badge">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </span>
+                <div>
+                  <div data-i18n="card1_title">HUDU DauThau — Săn Thầu Công, Tư &amp; ODA</div>
+                  <div style="font-size: 0.78rem; font-weight: 500; color: var(--text-muted);" data-i18n="card1_sub">Dual-Mode AI (Local Qwen3 / Cloud) &amp; Matching Sàn/Trần Năng lực</div>
+                </div>
+              </div>
+              <span class="status-pill" data-i18n="card1_pill">Multi-Tenant</span>
+            </div>
+            <div class="stream-bar"></div>
+            <div class="mini-stats-row">
+              <span class="mini-stat-chip" data-i18n="card1_chip1">Mua sắm công &amp; Tập đoàn</span>
+              <span class="mini-stat-chip" data-i18n="card1_chip2">Label ltree &amp; Chương V</span>
+              <span class="mini-stat-chip" data-i18n="card1_chip3">App Push / SMS / Read-Receipt</span>
+            </div>
+          </div>
+
+          <div class="mini-card">
+            <div class="mini-card-head">
+              <div class="mini-card-title">
+                <span class="icon-badge navy">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </span>
+                <div>
+                  <div data-i18n="card2_title">HUDU CFMS / QMS — Nhận Diện &amp; Lấy Đơn Tiếp Nhận</div>
+                  <div style="font-size: 0.78rem; font-weight: 500; color: var(--text-muted);" data-i18n="card2_sub">Nhận diện khuôn mặt 1:N, quét CCCD gắn chip &amp; điều phối hàng đợi</div>
+                </div>
+              </div>
+              <span class="status-pill" data-i18n="card2_pill">Edge AI &lt; 2ms</span>
+            </div>
+
+            <div class="biometric-live-row">
+              <div class="face-scan-box">
+                <div class="scan-laser"></div>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue-primary)" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <div style="font-size: 0.76rem; line-height: 1.35;">
+                <strong style="color: var(--text-main); display: block;">SIMD 512-D Vector Match · Anti-Duplicate</strong>
+                <span style="color: var(--text-muted);">Kiosk Face ID + QR CCCD &rarr; Loa gọi số TTS &amp; TV Display</span>
+              </div>
+            </div>
+
+            <div class="mini-stats-row">
+              <span class="mini-stat-chip" data-i18n="card2_chip1">Bệnh viện &amp; Phòng khám</span>
+              <span class="mini-stat-chip" data-i18n="card2_chip2">Phòng học &amp; Trung tâm</span>
+              <span class="mini-stat-chip" data-i18n="card2_chip3">Loa gọi số TTS &amp; TV Display</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFINITE CIRCULAR PARTNER LOGO MARQUEE (FPT SOFTWARE, BVTW HUẾ, MICROSOFT, AMAZON) -->
+  <div class="partner-marquee-section">
+    <div class="partner-marquee-label" data-i18n="partner_label">STRATEGIC TECHNOLOGY &amp; HEALTHCARE ECOSYSTEM PARTNERS</div>
+    <div class="marquee-viewport">
+      <div class="marquee-track">
+        <!-- Group 1 (2 cycles of the 4 logos for wide screens) -->
+        <div class="marquee-group">
+          <!-- 1. FPT Software -->
+          <div class="partner-logo-item">
+            <svg viewBox="0 0 215 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 34L14 10H26L18 34H6Z" fill="#38BDF8"/>
+              <path d="M20 34L28 10H40L32 34H20Z" fill="#94A3B8"/>
+              <path d="M34 34L42 10H54L46 34H34Z" fill="#E2E8F0"/>
+              <text x="64" y="29" fill="#E2E8F0" font-family="Inter, sans-serif" font-weight="800" font-size="19" letter-spacing="-0.02em">FPT</text>
+              <text x="105" y="29" fill="#94A3B8" font-family="Inter, sans-serif" font-weight="500" font-size="18" letter-spacing="-0.01em">Software</text>
+            </svg>
+          </div>
+
+          <!-- 2. Bệnh viện Trung Ương Huế (Hue Central Hospital - 1894) -->
+          <div class="partner-logo-item">
+            <svg viewBox="0 0 295 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="22" cy="22" r="17" stroke="#7DD3FC" stroke-width="2" fill="rgba(56,189,248,0.1)"/>
+              <circle cx="22" cy="22" r="13" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2 2"/>
+              <path d="M19.5 14H24.5V19.5H30V24.5H24.5V30H19.5V24.5H14V19.5H19.5V14Z" fill="#E2E8F0"/>
+              <text x="48" y="21" fill="#F1F5F9" font-family="Inter, sans-serif" font-weight="800" font-size="13.5" letter-spacing="0.02em">BỆNH VIỆN TRUNG ƯƠNG HUẾ</text>
+              <text x="48" y="34" fill="#94A3B8" font-family="Inter, sans-serif" font-weight="600" font-size="10" letter-spacing="0.08em">HUE CENTRAL HOSPITAL · EST. 1894</text>
+            </svg>
+          </div>
+
+          <!-- 3. Microsoft -->
+          <div class="partner-logo-item">
+            <svg viewBox="0 0 185 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="10" width="11" height="11" fill="#7DD3FC"/>
+              <rect x="19" y="10" width="11" height="11" fill="#CBD5E1"/>
+              <rect x="6" y="23" width="11" height="11" fill="#38BDF8"/>
+              <rect x="19" y="23" width="11" height="11" fill="#E2E8F0"/>
+              <text x="40" y="29" fill="#E2E8F0" font-family="Inter, sans-serif" font-weight="700" font-size="20" letter-spacing="-0.02em">Microsoft</text>
+            </svg>
+          </div>
+
+          <!-- 4. Amazon -->
+          <div class="partner-logo-item">
+            <svg viewBox="0 0 175 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <text x="8" y="26" fill="#E2E8F0" font-family="Inter, sans-serif" font-weight="800" font-size="22" letter-spacing="-0.03em">amazon</text>
+              <path d="M14 32 C 36 40, 68 40, 92 31" stroke="#38BDF8" stroke-width="2.6" stroke-linecap="round"/>
+              <path d="M87 28 L 94 30.5 L 89.5 36.5" stroke="#38BDF8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="106" y="26" fill="#94A3B8" font-family="Inter, sans-serif" font-weight="600" font-size="13" letter-spacing="0.06em">AWS</text>
+            </svg>
+          </div>
+
+          <!-- Repeat cycle inside Group 1 -->
+          <div class="partner-logo-item">
+            <svg viewBox="0 0 215 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 34L14 10H26L18 34H6Z" fill="#38BDF8"/>
+              <path d="M20 34L28 10H40L32 34H20Z" fill="#94A3B8"/>
+              <path d="M34 34L42 10H54L46 34H34Z" fill="#E2E8F0"/>
+              <text x="64" y="29" fill="#E2E8F0" font-family="Inter, sans-serif" font-weight="800" font-size="19" letter-spacing="-0.02em">FPT</text>
+              <text x="105" y="29" fill="#94A3B8" font-family="Inter, sans-serif" font-weight="500" font-size="18" letter-spacing="-0.01em">Software</text>
+            </svg>
+          </div>
+
+          <div class="partner-logo-item">
+            <svg viewBox="0 0 295 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="22" cy="22" r="17" stroke="#7DD3FC" stroke-width="2" fill="rgba(56,189,248,0.1)"/>
+              <circle cx="22" cy="22" r="13" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2 2"/>
+              <path d="M19.5 14H24.5V19.5H30V24.5H24.5V30H19.5V24.5H14V19.5H19.5V14Z" fill="#E2E8F0"/>
+              <text x="48" y="21" fill="#F1F5F9" font-family="Inter, sans-serif" font-weight="800" font-size="13.5" letter-spacing="0.02em">BỆNH VIỆN TRUNG ƯƠNG HUẾ</text>
+              <text x="48" y="34" fill="#94A3B8" font-family="Inter, sans-serif" font-weight="600" font-size="10" letter-spacing="0.08em">HUE CENTRAL HOSPITAL · EST. 1894</text>
+            </svg>
+          </div>
+
+          <div class="partner-logo-item">
+            <svg viewBox="0 0 185 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="10" width="11" height="11" fill="#7DD3FC"/>
+              <rect x="19" y="10" width="11" height="11" fill="#CBD5E1"/>
+              <rect x="6" y="23" width="11" height="11" fill="#38BDF8"/>
+              <rect x="19" y="23" width="11" height="11" fill="#E2E8F0"/>
+              <text x="40" y="29" fill="#E2E8F0" font-family="Inter, sans-serif" font-weight="700" font-size="20" letter-spacing="-0.02em">Microsoft</text>
+            </svg>
+          </div>
+
+          <div class="partner-logo-item">
+            <svg viewBox="0 0 175 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <text x="8" y="26" fill="#E2E8F0" font-family="Inter, sans-serif" font-weight="800" font-size="22" letter-spacing="-0.03em">amazon</text>
+              <path d="M14 32 C 36 40, 68 40, 92 31" stroke="#38BDF8" stroke-width="2.6" stroke-linecap="round"/>
+              <path d="M87 28 L 94 30.5 L 89.5 36.5" stroke="#38BDF8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="106" y="26" fill="#94A3B8" font-family="Inter, sans-serif" font-weight="600" font-size="13" letter-spacing="0.06em">AWS</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Group 2 (Identical clone for seamless 0% -> -50% circular loop) -->
+        <div class="marquee-group" aria-hidden="true">
+          <div class="partner-logo-item">
+            <svg viewBox="0 0 215 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 34L14 10H26L18 34H6Z" fill="#38BDF8"/>
+              <path d="M20 34L28 10H40L32 34H20Z" fill="#94A3B8"/>
+              <path d="M34 34L42 10H54L46 34H34Z" fill="#E2E8F0"/>
+              <text x="64" y="29" fill="#E2E8F0" font-family="Inter, sans-serif" font-weight="800" font-size="19" letter-spacing="-0.02em">FPT</text>
+              <text x="105" y="29" fill="#94A3B8" font-family="Inter, sans-serif" font-weight="500" font-size="18" letter-spacing="-0.01em">Software</text>
+            </svg>
+          </div>
+
+          <div class="partner-logo-item">
+            <svg viewBox="0 0 295 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="22" cy="22" r="17" stroke="#7DD3FC" stroke-width="2" fill="rgba(56,189,248,0.1)"/>
+              <circle cx="22" cy="22" r="13" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2 2"/>
+              <path d="M19.5 14H24.5V19.5H30V24.5H24.5V30H19.5V24.5H14V19.5H19.5V14Z" fill="#E2E8F0"/>
+              <text x="48" y="21" fill="#F1F5F9" font-family="Inter, sans-serif" font-weight="800" font-size="13.5" letter-spacing="0.02em">BỆNH VIỆN TRUNG ƯƠNG HUẾ</text>
+              <text x="48" y="34" fill="#94A3B8" font-family="Inter, sans-serif" font-weight="600" font-size="10" letter-spacing="0.08em">HUE CENTRAL HOSPITAL · EST. 1894</text>
+            </svg>
+          </div>
+
+          <div class="partner-logo-item">
+            <svg viewBox="0 0 185 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="10" width="11" height="11" fill="#7DD3FC"/>
+              <rect x="19" y="10" width="11" height="11" fill="#CBD5E1"/>
+              <rect x="6" y="23" width="11" height="11" fill="#38BDF8"/>
+              <rect x="19" y="23" width="11" height="11" fill="#E2E8F0"/>
+              <text x="40" y="29" fill="#E2E8F0" font-family="Inter, sans-serif" font-weight="700" font-size="20" letter-spacing="-0.02em">Microsoft</text>
+            </svg>
+          </div>
+
+          <div class="partner-logo-item">
+            <svg viewBox="0 0 175 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <text x="8" y="26" fill="#E2E8F0" font-family="Inter, sans-serif" font-weight="800" font-size="22" letter-spacing="-0.03em">amazon</text>
+              <path d="M14 32 C 36 40, 68 40, 92 31" stroke="#38BDF8" stroke-width="2.6" stroke-linecap="round"/>
+              <path d="M87 28 L 94 30.5 L 89.5 36.5" stroke="#38BDF8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="106" y="26" fill="#94A3B8" font-family="Inter, sans-serif" font-weight="600" font-size="13" letter-spacing="0.06em">AWS</text>
+            </svg>
+          </div>
+
+          <div class="partner-logo-item">
+            <svg viewBox="0 0 215 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 34L14 10H26L18 34H6Z" fill="#38BDF8"/>
+              <path d="M20 34L28 10H40L32 34H20Z" fill="#94A3B8"/>
+              <path d="M34 34L42 10H54L46 34H34Z" fill="#E2E8F0"/>
+              <text x="64" y="29" fill="#E2E8F0" font-family="Inter, sans-serif" font-weight="800" font-size="19" letter-spacing="-0.02em">FPT</text>
+              <text x="105" y="29" fill="#94A3B8" font-family="Inter, sans-serif" font-weight="500" font-size="18" letter-spacing="-0.01em">Software</text>
+            </svg>
+          </div>
+
+          <div class="partner-logo-item">
+            <svg viewBox="0 0 295 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="22" cy="22" r="17" stroke="#7DD3FC" stroke-width="2" fill="rgba(56,189,248,0.1)"/>
+              <circle cx="22" cy="22" r="13" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2 2"/>
+              <path d="M19.5 14H24.5V19.5H30V24.5H24.5V30H19.5V24.5H14V19.5H19.5V14Z" fill="#E2E8F0"/>
+              <text x="48" y="21" fill="#F1F5F9" font-family="Inter, sans-serif" font-weight="800" font-size="13.5" letter-spacing="0.02em">BỆNH VIỆN TRUNG ƯƠNG HUẾ</text>
+              <text x="48" y="34" fill="#94A3B8" font-family="Inter, sans-serif" font-weight="600" font-size="10" letter-spacing="0.08em">HUE CENTRAL HOSPITAL · EST. 1894</text>
+            </svg>
+          </div>
+
+          <div class="partner-logo-item">
+            <svg viewBox="0 0 185 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="10" width="11" height="11" fill="#7DD3FC"/>
+              <rect x="19" y="10" width="11" height="11" fill="#CBD5E1"/>
+              <rect x="6" y="23" width="11" height="11" fill="#38BDF8"/>
+              <rect x="19" y="23" width="11" height="11" fill="#E2E8F0"/>
+              <text x="40" y="29" fill="#E2E8F0" font-family="Inter, sans-serif" font-weight="700" font-size="20" letter-spacing="-0.02em">Microsoft</text>
+            </svg>
+          </div>
+
+          <div class="partner-logo-item">
+            <svg viewBox="0 0 175 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <text x="8" y="26" fill="#E2E8F0" font-family="Inter, sans-serif" font-weight="800" font-size="22" letter-spacing="-0.03em">amazon</text>
+              <path d="M14 32 C 36 40, 68 40, 92 31" stroke="#38BDF8" stroke-width="2.6" stroke-linecap="round"/>
+              <path d="M87 28 L 94 30.5 L 89.5 36.5" stroke="#38BDF8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="106" y="26" fill="#94A3B8" font-family="Inter, sans-serif" font-weight="600" font-size="13" letter-spacing="0.06em">AWS</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 1: TWO CORE PLATFORMS -->
+  <section id="solutions" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <div class="pill-tag" data-i18n="sec1_tag">Hệ sinh thái Sản phẩm</div>
+        <h2 data-i18n="sec1_title">Hai Nền Tảng Cốt Lõi Của HUDU</h2>
+        <p data-i18n="sec1_desc">
+          Giải quyết bài toán tự động hóa săn dự án thầu cho doanh nghiệp và số hóa toàn diện quy trình tiếp nhận bệnh nhân, học viên tại cơ sở.
+        </p>
+      </div>
+
+      <div class="product-split">
+        <!-- Product 1: dauthau -->
+        <div id="dauthau" class="solution-card">
+          <div>
+            <div class="solution-tag" data-i18n="p1_tag">SẢN PHẨM 01 · DAUTHAU CLOUD SERVER</div>
+            <h3 data-i18n="p1_title">Hệ Thống Săn &amp; Lọc Đấu Thầu Công - Tư Thông Minh</h3>
+            <p data-i18n="p1_desc">
+              Thu thập tự động, chưng cất chống trùng 3 lớp, bóc tách thông số bằng Keyword + AI và phân phối gói thầu khớp chính xác với biên độ năng lực (Sàn/Trần) của từng doanh nghiệp.
+            </p>
+
+            <div class="pipeline-flow">
+              <div class="pipe-step"><strong>01. Ingest</strong><span>Công + Tư + ODA</span></div>
+              <div class="pipe-step"><strong>02. Dedup</strong><span>3-Tier SHA/Trgm</span></div>
+              <div class="pipe-step"><strong>03. AI Label</strong><span>ltree + Chương V</span></div>
+              <div class="pipe-step"><strong>04. Match</strong><span>Sàn / Trần Bounds</span></div>
+            </div>
+
+            <div class="vertical-badges">
+              <span class="v-badge" data-i18n="p1_b1">Mạng Đấu Thầu Quốc Gia (muasamcong)</span>
+              <span class="v-badge" data-i18n="p1_b2">Tập đoàn Nhà nước (EVN, PVN, ACV)</span>
+              <span class="v-badge" data-i18n="p1_b3">Đấu thầu Tư nhân &amp; Ngân hàng</span>
+              <span class="v-badge" data-i18n="p1_b4">Vốn ODA (WB, ADB)</span>
+            </div>
+
+            <ul class="feature-list">
+              <li>
+                <span class="check-icon">&#10003;</span>
+                <div data-i18n="p1_f1"><strong>Thu thập đa nguồn &amp; Chống trùng 3 lớp:</strong> Tự động gộp các bản sửa đổi (-00 &rarr; -01), chống trùng SHA-256 &amp; Trigram pg_trgm, luôn bảo toàn link thầu gốc (canonical_source_url).</div>
+              </li>
+              <li>
+                <span class="check-icon">&#10003;</span>
+                <div data-i18n="p1_f2"><strong>Phân loại 2 tầng (Aho-Corasick + Dual-Mode AI):</strong> Đánh nhãn cây chuyên ngành (ltree), cấp công trình (Cấp I–IV), tổng mức đầu tư, giá gói thầu và bóc tách thông số kỹ thuật Chương V.</div>
+              </li>
+              <li>
+                <span class="check-icon">&#10003;</span>
+                <div data-i18n="p1_f3"><strong>Matching 2 chiều theo Ngưỡng Sàn / Trần (Floor &amp; Ceiling):</strong> Loại bỏ gói thầu vượt quá năng lực trần hoặc nhỏ hơn mức sàn tối thiểu; tự động quét Backfill các gói thầu đang mở ngay khi thêm công ty mới.</div>
+              </li>
+              <li>
+                <span class="check-icon">&#10003;</span>
+                <div data-i18n="p1_f4"><strong>Đa kênh Thông báo &amp; Sổ cái Read-Receipt:</strong> Đẩy tin qua Mobile App (iOS/Android FCM/APNs), SMS/Zalo ZNS, Email và theo dõi chi tiết ai đã xem, thời gian đọc, lượt bấm link gốc.</div>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <a href="#live-demo" onclick="switchSandbox('tender')" class="btn btn-primary btn-lg" style="width: 100%;" data-i18n="p1_cta">
+              Mở Bộ Lọc Đấu Thầu Công &amp; Tư &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Product 2: cfms_qms -->
+        <div id="cfms" class="solution-card csms">
+          <div>
+            <div class="solution-tag" data-i18n="p2_tag">SẢN PHẨM 02 · CFMS / QMS / CSMS</div>
+            <h3 data-i18n="p2_title">Hệ Thống Nhận Diện Khuôn Mặt, Lấy Đơn &amp; Điều Phối Hàng Đợi</h3>
+            <p data-i18n="p2_desc">
+              Giải pháp tiếp nhận đơn bệnh nhân, cấp số thứ tự thông minh bằng nhận diện sinh trắc học cục bộ (Edge AI) kết hợp quét CCCD gắn chip cho Bệnh viện, Phòng khám và Phòng học dạy thêm.
+            </p>
+
+            <div class="pipeline-flow">
+              <div class="pipe-step"><strong>01. Intake</strong><span>Face ID / CCCD QR</span></div>
+              <div class="pipe-step"><strong>02. 1:N SIMD</strong><span>Đối soát &lt; 2 ms</span></div>
+              <div class="pipe-step"><strong>03. Queue</strong><span>Anti-Duplicate</span></div>
+              <div class="pipe-step"><strong>04. Dispatch</strong><span>TTS Loa &amp; TV</span></div>
+            </div>
+
+            <div class="vertical-badges">
+              <span class="v-badge" data-i18n="p2_b1">Bệnh viện &amp; Khoa Thận Nhân Tạo</span>
+              <span class="v-badge" data-i18n="p2_b2">Phòng khám Đa khoa / Chuyên khoa</span>
+              <span class="v-badge" data-i18n="p2_b3">Phòng học Dạy thêm &amp; Trung tâm</span>
+            </div>
+
+            <ul class="feature-list">
+              <li>
+                <span class="check-icon">&#10003;</span>
+                <div data-i18n="p2_f1"><strong>Nhận diện khuôn mặt siêu tốc (&lt; 2 ms) &amp; Ánh xạ 1:N:</strong> Đối soát 10.000 hồ sơ bằng SIMD 512 chiều; hỗ trợ người nhà lấy phiếu khám giùm bệnh nhân hoặc phụ huynh điểm danh cho học viên, chống cấp trùng phiếu tuyệt đối.</div>
+              </li>
+              <li>
+                <span class="check-icon">&#10003;</span>
+                <div data-i18n="p2_f2"><strong>Đa phương thức tiếp nhận &amp; Quét CCCD gắn chip:</strong> Hỗ trợ Camera Kiosk/Laptop, tải ảnh thẻ hoặc súng quét mã vạch 2D USB; tự động bóc tách 7 trường thông tin CCCD và đồng bộ mã hồ sơ chính thức.</div>
+              </li>
+              <li>
+                <span class="check-icon">&#10003;</span>
+                <div data-i18n="p2_f3"><strong>Bàn điều phối Real-time, Loa gọi số TTS &amp; TV Phòng chờ:</strong> Tìm kiếm không dấu tức thì, tích hợp chuông Ding-Dong, tự động đọc tên bệnh nhân, số thứ tự, phòng khám/máy lọc và hỗ trợ nút Gọi lại (Re-call).</div>
+              </li>
+              <li>
+                <span class="check-icon">&#10003;</span>
+                <div data-i18n="p2_f4"><strong>Kiến trúc Offline Edge Bảo mật:</strong> Vận hành độc lập 24/7 trong mạng LAN với bộ nhớ RAM &lt; 50 MB, tuân thủ Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân.</div>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <a href="#live-demo" onclick="switchSandbox('csms')" class="btn btn-outline btn-lg" style="width: 100%; border-color: var(--blue-primary); color: var(--blue-primary);" data-i18n="p2_cta">
+              Mở Bàn Điều Phối CFMS / CSMS &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: INTERACTIVE LIVE SANDBOX -->
+  <section id="live-demo" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="pill-tag" data-i18n="demo_tag">Mô phỏng Tương tác</div>
+        <h2 data-i18n="demo_title">Trải Nghiệm Trực Tiếp Hai Phân Hệ</h2>
+        <p data-i18n="demo_desc">
+          Thử nghiệm lọc gói thầu theo biên độ năng lực Sàn/Trần hoặc tiếp nhận đơn bệnh nhân / học viên ngay trên giao diện mẫu.
+        </p>
+      </div>
+
+      <div class="sandbox-wrapper">
+        <div class="sandbox-tabs">
+          <button id="tabBtnTender" class="sandbox-tab-btn active" onclick="switchSandbox('tender')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <span data-i18n="tab_tender">1. Sàn Lọc Đấu Thầu Công &amp; Tư (DauThau Matcher)</span>
+          </button>
+          <button id="tabBtnCsms" class="sandbox-tab-btn" onclick="switchSandbox('csms')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+            <span data-i18n="tab_csms">2. Bàn Điều Phối Tiếp Nhận Đơn (CFMS / CSMS)</span>
+          </button>
+        </div>
+
+        <div class="sandbox-body">
+          <!-- PANEL 1: TENDER FILTERING -->
+          <div id="panelTender" class="sandbox-panel active">
+            <div class="filter-toolbar">
+              <div class="search-box">
+                <input type="text" id="tenderSearch" data-i18n-placeholder="tender_search_ph" placeholder="Tìm theo mã TBMT, tên gói thầu, chủ đầu tư, thông số kỹ thuật..." oninput="renderTenders()" />
+              </div>
+              <div class="filter-pills" id="tenderCategoryPills">
+                <button class="filter-pill active" onclick="setTenderCat('ALL', this)" data-i18n="cat_all">Tất cả</button>
+                <button class="filter-pill" onclick="setTenderCat('CAUDUONG', this)" data-i18n="cat_infra">Giao thông &amp; Xây lắp</button>
+                <button class="filter-pill" onclick="setTenderCat('CNTT', this)" data-i18n="cat_it">CNTT &amp; Phần mềm</button>
+                <button class="filter-pill" onclick="setTenderCat('YTE', this)" data-i18n="cat_med">Thiết bị Y tế</button>
+                <button class="filter-pill" onclick="setTenderCat('PRIVATE', this)" data-i18n="cat_priv">Khối Tư nhân &amp; Ngân hàng</button>
+              </div>
+            </div>
+
+            <div class="data-table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th data-i18n="th_code">Mã Gói / Nguồn</th>
+                    <th data-i18n="th_taxonomy">Label Chuyên Ngành &amp; Kỹ Thuật</th>
+                    <th data-i18n="th_investor">Chủ Đầu Tư</th>
+                    <th data-i18n="th_budget">Giá Gói / Tổng Mức ĐT</th>
+                    <th data-i18n="th_deadline">Trạng Thái</th>
+                    <th data-i18n="th_match">So Khớp Sàn/Trần</th>
+                  </tr>
+                </thead>
+                <tbody id="tenderTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- PANEL 2: CFMS / CSMS -->
+          <div id="panelCsms" class="sandbox-panel">
+            <div class="csms-top-bar">
+              <div>
+                <strong style="font-size: 1rem;" data-i18n="csms_mode_label">Chế độ vận hành:</strong>
+              </div>
+              <div class="filter-pills">
+                <button id="btnModeClinic" class="filter-pill active" onclick="setCsmsMode('CLINIC')" data-i18n="mode_clinic">
+                  Bệnh Viện &amp; Phòng Khám (Lấy đơn &amp; Cấp số)
+                </button>
+                <button id="btnModeClass" class="filter-pill" onclick="setCsmsMode('CLASS')" data-i18n="mode_class">
+                  Phòng Học Dạy Thêm (Ghi danh &amp; Ca học)
+                </button>
+              </div>
+            </div>
+
+            <div class="csms-kpi-grid" id="csmsKpiGrid"></div>
+
+            <div class="quick-add-bar">
+              <input type="text" id="csmsInputName" placeholder="Họ tên bệnh nhân / học viên..." />
+              <input type="text" id="csmsInputPhone" placeholder="CCCD / SĐT người nhà..." />
+              <select id="csmsInputService"></select>
+              <button class="btn btn-primary" onclick="addCsmsRecord()" data-i18n="btn_add_order">+ Tiếp nhận &amp; Cấp số</button>
+            </div>
+
+            <div class="data-table-wrap">
+              <table class="data-table">
+                <thead id="csmsTableHead"></thead>
+                <tbody id="csmsTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: ARCHITECTURE & ENGINEERING -->
+  <section id="architecture" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <div class="pill-tag" data-i18n="arch_tag">Nền tảng Kỹ thuật</div>
+        <h2 data-i18n="arch_title">Kiến Trúc Hệ Thống Cấp Doanh Nghiệp</h2>
+        <p data-i18n="arch_desc">
+          Được phát triển bằng ngôn ngữ hệ thống Rust kết hợp cơ sở dữ liệu phân tích và mô hình AI linh hoạt.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3 data-i18n="arch_1_title">Hiệu Năng Rust &amp; Edge SIMD</h3>
+          <p data-i18n="arch_1_desc">
+            Backend xây dựng trên Rust (Axum, Tokio, SQLx) xử lý hàng chục ngàn bản tin thầu và đối soát vector khuôn mặt 512 chiều dưới 2 mili-giây với mức tiêu thụ bộ nhớ cực thấp.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3 data-i18n="arch_2_title">Chuyển Đổi Nóng Local / Cloud AI</h3>
+          <p data-i18n="arch_2_desc">
+            Hỗ trợ chạy mô hình AI cục bộ (Ollama / vLLM Qwen3) giúp tối ưu chi phí API bằng $0, hoặc tự động Failover sang Cloud AI trong chế độ Hybrid Auto.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 data-i18n="arch_3_title">Keycloak IAM &amp; Bảo Mật Dữ Liệu</h3>
+          <p data-i18n="arch_3_desc">
+            Quản lý định danh đa tổ chức (Multi-tenant RBAC) qua Keycloak OIDC, cô lập dữ liệu khách hàng tuyệt đối và hỗ trợ triển khai Offline LAN tuân thủ Nghị định 13/2023/NĐ-CP.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: CONTACT / DEMO REQUEST -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="cta-box">
+        <div>
+          <div class="pill-tag" style="background: rgba(226,232,240,0.14); color: #E2E8F0; border-color: rgba(203,213,225,0.3);">
+            <span>HUDUVN.COM</span>
+          </div>
+          <h2 data-i18n="cta_title">Triển Khai Giải Pháp HUDU Cho Đơn Vị Của Bạn</h2>
+          <p data-i18n="cta_desc">
+            Đăng ký nhận tài khoản trải nghiệm hệ thống Săn thầu thông minh hoặc triển khai thử nghiệm hệ thống tiếp nhận đơn CFMS/QMS tại cơ sở.
+          </p>
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.9rem; color: #E2E8F0;">
+            <div data-i18n="cta_b1">&#10003; Cấu hình sẵn biên độ năng lực Sàn/Trần và tự động quét các gói thầu đang mở</div>
+            <div data-i18n="cta_b2">&#10003; Tùy biến luồng lấy đơn bệnh nhân, quét CCCD, loa gọi số và màn hình TV phòng chờ</div>
+            <div data-i18n="cta_b3">&#10003; Hỗ trợ triển khai Cloud (Docker Compose) hoặc Edge Server nội bộ</div>
+          </div>
+        </div>
+
+        <form class="contact-form" onsubmit="submitConsultation(event)">
+          <h3 data-i18n="form_title">Yêu Cầu Tư Vấn &amp; Demo</h3>
+          <div class="form-group">
+            <label data-i18n="form_name_label">Họ tên / Tên doanh nghiệp, cơ sở *</label>
+            <input type="text" required id="formNameInput" placeholder="Công ty / Bệnh viện / Phòng khám..." />
+          </div>
+          <div class="form-group">
+            <label data-i18n="form_phone_label">Số điện thoại / Email liên hệ *</label>
+            <input type="text" required id="formPhoneInput" placeholder="0909 xxx xxx / contact@company.com" />
+          </div>
+          <div class="form-group">
+            <label data-i18n="form_prod_label">Giải pháp quan tâm *</label>
+            <select required id="formProdSelect">
+              <option value="dauthau" data-i18n="form_opt_1">HUDU DauThau — Săn &amp; Lọc Đấu Thầu Công &amp; Tư</option>
+              <option value="cfms-med" data-i18n="form_opt_2">HUDU CFMS/QMS — Tiếp nhận đơn Bệnh viện &amp; Phòng khám</option>
+              <option value="cfms-edu" data-i18n="form_opt_3">HUDU CSMS — Quản trị Phòng học dạy thêm &amp; Trung tâm</option>
+              <option value="all" data-i18n="form_opt_4">Tư vấn toàn bộ hệ sinh thái HUDU</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; border-radius: 10px;" data-i18n="form_submit">
+            Gửi Yêu Cầu Đăng Ký
+          </button>
+          <div id="formToast" class="form-toast" data-i18n="form_success">
+            &#10003; Đã ghi nhận thông tin! Đội ngũ kỹ thuật HUDU sẽ liên hệ với bạn sớm nhất.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 246 84">
+            <defs>
+              <linearGradient id="footerHuduGrad" gradientUnits="userSpaceOnUse" x1="94" y1="22" x2="241" y2="62">
+                <stop offset="0%" stop-color="#38BDF8" />
+                <stop offset="40%" stop-color="#7DD3FC" />
+                <stop offset="75%" stop-color="#CBD5E1" />
+                <stop offset="100%" stop-color="#F8FAFC" />
+              </linearGradient>
+            </defs>
+            <circle cx="42" cy="42" r="37" fill="#0066CC" />
+            <g transform="translate(42, 42) scale(0.80) translate(-55.75, -60)">
+              <path fill-rule="evenodd" d="M 54 36.5 H 64 A 23.5 23.5 0 0 1 87.5 60 A 23.5 23.5 0 0 1 64 83.5 H 54 Z M 59 46 V 74 H 64 A 14 14 0 0 0 78 60 A 14 14 0 0 0 64 46 Z" fill="#7DD3FC" />
+              <rect x="24" y="33.5" width="10" height="53" rx="5" fill="#FFFFFF" />
+              <rect x="49" y="33.5" width="10" height="53" rx="5" fill="#FFFFFF" />
+              <path d="M 27.5 56.2 C 38 48.5, 54 64.5, 70.5 55.2 A 4.5 4.5 0 0 1 71.5 64.0 C 54 73.5, 38 57.5, 29.5 64.2 A 4.5 4.5 0 0 1 27.5 56.2 Z" fill="#FFFFFF" />
+            </g>
+            <g fill="url(#footerHuduGrad)" fill-rule="evenodd">
+              <rect x="94" y="24" width="7.6" height="36" rx="3.8" />
+              <rect x="97.8" y="38.5" width="22.4" height="7" rx="3.5" />
+              <rect x="116.4" y="24" width="7.6" height="36" rx="3.8" />
+              <path d="M 133 27.8 A 3.8 3.8 0 0 1 140.6 27.8 V 45 A 7.4 7.4 0 0 0 155.4 45 V 27.8 A 3.8 3.8 0 0 1 163 27.8 V 45 A 15 15 0 0 1 133 45 Z" />
+              <path d="M 172 27.8 A 3.8 3.8 0 0 1 175.8 24 H 184 A 18 18 0 0 1 202 42 A 18 18 0 0 1 184 60 H 175.8 A 3.8 3.8 0 0 1 172 56.2 Z M 179.6 31.4 V 52.6 H 184 A 10.6 10.6 0 0 0 194.6 42 A 10.6 10.6 0 0 0 184 31.4 Z" />
+              <path d="M 211 27.8 A 3.8 3.8 0 0 1 218.6 27.8 V 45 A 7.4 7.4 0 0 0 233.4 45 V 27.8 A 3.8 3.8 0 0 1 241 27.8 V 45 A 15 15 0 0 1 211 45 Z" />
+            </g>
+          </svg>
+          <p style="font-size: 0.86rem; max-width: 340px;" data-i18n="footer_desc">
+            HUDU (huduvn.com) — Công ty phát triển phần mềm phân tích dữ liệu đấu thầu thông minh và hệ thống tự động hóa tiếp nhận, quản trị hàng đợi sinh trắc học.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer_col1">Sản phẩm</h4>
+          <ul>
+            <li><a href="#dauthau">HUDU DauThau</a></li>
+            <li><a href="#cfms">HUDU CFMS / QMS</a></li>
+            <li><a href="#cfms">HUDU Education CSMS</a></li>
+            <li><a href="#live-demo" data-i18n="nav_demo">Trải nghiệm Demo</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer_col2">Công nghệ</h4>
+          <ul>
+            <li><a href="#architecture">Rust Cloud &amp; Edge</a></li>
+            <li><a href="#architecture">Dual-Mode AI Router</a></li>
+            <li><a href="#architecture">Keycloak Multi-Tenant IAM</a></li>
+            <li><a href="#architecture">512-D SIMD Biometrics</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer_col3">Liên hệ</h4>
+          <ul>
+            <li>Website: <a href="https://huduvn.com">huduvn.com</a></li>
+            <li>Email: contact@huduvn.com</li>
+            <li>Support: 24/7 Enterprise SLA</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 HUDU Technology (huduvn.com). All rights reserved.</span>
+        <span>Enterprise AI &amp; High-Performance Systems</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ANIMATED TECH CONSTELLATION CANVAS + MULTI-LANGUAGE LOGIC -->
+  <script>
+    (function initHeroCanvas() {
+      const canvas = document.getElementById('heroCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let width = 0;
+      let height = 0;
+      let nodes = [];
+      const mouse = { x: -9999, y: -9999 };
+
+      function resize() {
+        const rect = canvas.parentElement.getBoundingClientRect();
+        width = canvas.width = rect.width;
+        height = canvas.height = rect.height;
+        const count = Math.min(42, Math.max(18, Math.floor(width / 34)));
+        nodes = [];
+        for (let i = 0; i < count; i++) {
+          nodes.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: (Math.random() - 0.5) * 0.45,
+            vy: (Math.random() - 0.5) * 0.45,
+            r: Math.random() * 2 + 1.4
+          });
+        }
+      }
+
+      window.addEventListener('resize', resize);
+      canvas.parentElement.addEventListener('mousemove', e => {
+        const rect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+      });
+      canvas.parentElement.addEventListener('mouseleave', () => {
+        mouse.x = -9999;
+        mouse.y = -9999;
+      });
+
+      resize();
+
+      function draw() {
+        ctx.clearRect(0, 0, width, height);
+        const isDark = document.body.classList.contains('dark-mode');
+        const dotColor = isDark ? 'rgba(125, 211, 252, 0.55)' : 'rgba(0, 102, 204, 0.38)';
+        const lineBase = isDark ? [56, 189, 248] : [0, 102, 204];
+
+        for (let i = 0; i < nodes.length; i++) {
+          const n = nodes[i];
+          n.x += n.vx;
+          n.y += n.vy;
+
+          if (n.x < 0 || n.x > width) n.vx *= -1;
+          if (n.y < 0 || n.y > height) n.vy *= -1;
+
+          const dxm = mouse.x - n.x;
+          const dym = mouse.y - n.y;
+          const distMouse = Math.hypot(dxm, dym);
+          if (distMouse < 180 && distMouse > 0) {
+            n.x += (dxm / distMouse) * 0.25;
+            n.y += (dym / distMouse) * 0.25;
+          }
+
+          ctx.beginPath();
+          ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+          ctx.fillStyle = dotColor;
+          ctx.fill();
+
+          for (let j = i + 1; j < nodes.length; j++) {
+            const m = nodes[j];
+            const dx = n.x - m.x;
+            const dy = n.y - m.y;
+            const dist = Math.hypot(dx, dy);
+            if (dist < 145) {
+              const alpha = (1 - dist / 145) * (isDark ? 0.22 : 0.16);
+              ctx.beginPath();
+              ctx.moveTo(n.x, n.y);
+              ctx.lineTo(m.x, m.y);
+              ctx.strokeStyle = `rgba(${lineBase[0]}, ${lineBase[1]}, ${lineBase[2]}, ${alpha.toFixed(3)})`;
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(draw);
+      }
+      requestAnimationFrame(draw);
+    })();
+
+    const I18N = {
+      vi: {
+        nav_solutions: "Giải pháp",
+        nav_tender: "Đấu thầu Công & Tư",
+        nav_cfms: "Quản trị CFMS / QMS",
+        nav_demo: "Trải nghiệm Demo",
+        nav_arch: "Kiến trúc",
+        nav_cta: "Đăng ký Dùng thử",
+        hero_badge: "HUDU Enterprise Technology · huduvn.com",
+        hero_title: 'Nền tảng Phần mềm <span class="highlight">Săn Thầu AI</span> &amp; Quản Trị Tiếp Nhận Thông Minh',
+        hero_desc: "Xây dựng trên kiến trúc Rust hiệu năng cao và Edge/Cloud AI: Tự động thu thập, phân loại đa lớp và so khớp <strong>Đấu thầu Công &amp; Tư</strong> theo biên độ năng lực Sàn/Trần; đồng thời chuẩn hóa <strong>Hệ thống Nhận diện Sinh trắc học &amp; Lấy đơn CFMS/QMS</strong> cho Bệnh viện, Phòng khám và Cơ sở Đào tạo.",
+        hero_btn_demo: "Trải nghiệm Demo Trực tiếp ↓",
+        hero_btn_explore: "Khám phá 2 Hệ thống",
+        metric_1: "Lọc từ khóa Aho-Corasick & đối soát sinh trắc 512 chiều",
+        metric_2: "Chống trùng lặp gói thầu & so khớp biên độ Sàn/Trần",
+        metric_3: "Vận hành ổn định trên Rust Cloud & Offline LAN Edge",
+        partner_label: "ĐỐI TÁC CÔNG NGHỆ, HẠ TẦNG ĐÁM MÂY & ĐƠN VỊ Y TẾ TIÊU BIỂU",
+        card1_title: "HUDU DauThau — Săn Thầu Công, Tư & ODA",
+        card1_sub: "Dual-Mode AI (Local Qwen3 / Cloud) & Matching Sàn/Trần Năng lực",
+        card1_pill: "Multi-Tenant",
+        card1_chip1: "Mua sắm công & Tập đoàn",
+        card1_chip2: "Label ltree & Chương V",
+        card1_chip3: "App Push / SMS / Read-Receipt",
+        card2_title: "HUDU CFMS / QMS — Nhận Diện & Lấy Đơn Tiếp Nhận",
+        card2_sub: "Nhận diện khuôn mặt 1:N, quét CCCD gắn chip & điều phối hàng đợi",
+        card2_pill: "Edge AI < 2ms",
+        card2_chip1: "Bệnh viện & Phòng khám",
+        card2_chip2: "Phòng học & Trung tâm",
+        card2_chip3: "Loa gọi số TTS & TV Display",
+        sec1_tag: "Hệ sinh thái Sản phẩm",
+        sec1_title: "Hai Nền Tảng Cốt Lõi Của HUDU",
+        sec1_desc: "Giải quyết bài toán tự động hóa săn dự án thầu cho doanh nghiệp và số hóa toàn diện quy trình tiếp nhận bệnh nhân, học viên tại cơ sở.",
+        p1_tag: "SẢN PHẨM 01 · DAUTHAU CLOUD SERVER",
+        p1_title: "Hệ Thống Săn & Lọc Đấu Thầu Công - Tư Thông Minh",
+        p1_desc: "Thu thập tự động, chưng cất chống trùng 3 lớp, bóc tách thông số bằng Keyword + AI và phân phối gói thầu khớp chính xác với biên độ năng lực (Sàn/Trần) của từng doanh nghiệp.",
+        p1_b1: "Mạng Đấu Thầu Quốc Gia (muasamcong)",
+        p1_b2: "Tập đoàn Nhà nước (EVN, PVN, ACV)",
+        p1_b3: "Đấu thầu Tư nhân & Ngân hàng",
+        p1_b4: "Vốn ODA (WB, ADB)",
+        p1_f1: "<strong>Thu thập đa nguồn & Chống trùng 3 lớp:</strong> Tự động gộp các bản sửa đổi (-00 → -01), chống trùng SHA-256 & Trigram pg_trgm, luôn bảo toàn link thầu gốc (canonical_source_url).",
+        p1_f2: "<strong>Phân loại 2 tầng (Aho-Corasick + Dual-Mode AI):</strong> Đánh nhãn cây chuyên ngành (ltree), cấp công trình (Cấp I–IV), tổng mức đầu tư, giá gói thầu và bóc tách thông số kỹ thuật Chương V.",
+        p1_f3: "<strong>Matching 2 chiều theo Ngưỡng Sàn / Trần (Floor & Ceiling):</strong> Loại bỏ gói thầu vượt quá năng lực trần hoặc nhỏ hơn mức sàn tối thiểu; tự động quét Backfill các gói thầu đang mở ngay khi thêm công ty mới.",
+        p1_f4: "<strong>Đa kênh Thông báo & Sổ cái Read-Receipt:</strong> Đẩy tin qua Mobile App (iOS/Android FCM/APNs), SMS/Zalo ZNS, Email và theo dõi chi tiết ai đã xem, thời gian đọc, lượt bấm link gốc.",
+        p1_cta: "Mở Bộ Lọc Đấu Thầu Công & Tư →",
+        p2_tag: "SẢN PHẨM 02 · CFMS / QMS / CSMS",
+        p2_title: "Hệ Thống Nhận Diện Khuôn Mặt, Lấy Đơn & Điều Phối Hàng Đợi",
+        p2_desc: "Giải pháp tiếp nhận đơn bệnh nhân, cấp số thứ tự thông minh bằng nhận diện sinh trắc học cục bộ (Edge AI) kết hợp quét CCCD gắn chip cho Bệnh viện, Phòng khám và Phòng học dạy thêm.",
+        p2_b1: "Bệnh viện & Khoa Thận Nhân Tạo",
+        p2_b2: "Phòng khám Đa khoa / Chuyên khoa",
+        p2_b3: "Phòng học Dạy thêm & Trung tâm",
+        p2_f1: "<strong>Nhận diện khuôn mặt siêu tốc (< 2 ms) & Ánh xạ 1:N:</strong> Đối soát 10.000 hồ sơ bằng SIMD 512 chiều; hỗ trợ người nhà lấy phiếu khám giùm bệnh nhân hoặc phụ huynh điểm danh cho học viên, chống cấp trùng phiếu tuyệt đối.",
+        p2_f2: "<strong>Đa phương thức tiếp nhận & Quét CCCD gắn chip:</strong> Hỗ trợ Camera Kiosk/Laptop, tải ảnh thẻ hoặc súng quét mã vạch 2D USB; tự động bóc tách 7 trường thông tin CCCD và đồng bộ mã hồ sơ chính thức.",
+        p2_f3: "<strong>Bàn điều phối Real-time, Loa gọi số TTS & TV Phòng chờ:</strong> Tìm kiếm không dấu tức thì, tích hợp chuông Ding-Dong, tự động đọc tên bệnh nhân, số thứ tự, phòng khám/máy lọc và hỗ trợ nút Gọi lại (Re-call).",
+        p2_f4: "<strong>Kiến trúc Offline Edge Bảo mật:</strong> Vận hành độc lập 24/7 trong mạng LAN với bộ nhớ RAM < 50 MB, tuân thủ Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân.",
+        p2_cta: "Mở Bàn Điều Phối CFMS / CSMS →",
+        demo_tag: "Mô phỏng Tương tác",
+        demo_title: "Trải Nghiệm Trực Tiếp Hai Phân Hệ",
+        demo_desc: "Thử nghiệm lọc gói thầu theo biên độ năng lực Sàn/Trần hoặc tiếp nhận đơn bệnh nhân / học viên ngay trên giao diện mẫu.",
+        tab_tender: "1. Sàn Lọc Đấu Thầu Công & Tư (DauThau Matcher)",
+        tab_csms: "2. Bàn Điều Phối Tiếp Nhận Đơn (CFMS / CSMS)",
+        tender_search_ph: "Tìm theo mã TBMT, tên gói thầu, chủ đầu tư, thông số kỹ thuật...",
+        cat_all: "Tất cả",
+        cat_infra: "Giao thông & Xây lắp",
+        cat_it: "CNTT & Phần mềm",
+        cat_med: "Thiết bị Y tế",
+        cat_priv: "Khối Tư nhân & Ngân hàng",
+        th_code: "Mã Gói / Nguồn",
+        th_taxonomy: "Label Chuyên Ngành & Kỹ Thuật",
+        th_investor: "Chủ Đầu Tư",
+        th_budget: "Giá Gói / Tổng Mức ĐT",
+        th_deadline: "Trạng Thái",
+        th_match: "So Khớp Sàn/Trần",
+        csms_mode_label: "Chế độ vận hành:",
+        mode_clinic: "Bệnh Viện & Phòng Khám (Lấy đơn & Cấp số)",
+        mode_class: "Phòng Học Dạy Thêm (Ghi danh & Ca học)",
+        btn_add_order: "+ Tiếp nhận & Cấp số",
+        arch_tag: "Nền tảng Kỹ thuật",
+        arch_title: "Kiến Trúc Hệ Thống Cấp Doanh Nghiệp",
+        arch_desc: "Được phát triển bằng ngôn ngữ hệ thống Rust kết hợp cơ sở dữ liệu phân tích và mô hình AI linh hoạt.",
+        arch_1_title: "Hiệu Năng Rust & Edge SIMD",
+        arch_1_desc: "Backend xây dựng trên Rust (Axum, Tokio, SQLx) xử lý hàng chục ngàn bản tin thầu và đối soát vector khuôn mặt 512 chiều dưới 2 mili-giây với mức tiêu thụ bộ nhớ cực thấp.",
+        arch_2_title: "Chuyển Đổi Nóng Local / Cloud AI",
+        arch_2_desc: "Hỗ trợ chạy mô hình AI cục bộ (Ollama / vLLM Qwen3) giúp tối ưu chi phí API bằng $0, hoặc tự động Failover sang Cloud AI trong chế độ Hybrid Auto.",
+        arch_3_title: "Keycloak IAM & Bảo Mật Dữ Liệu",
+        arch_3_desc: "Quản lý định danh đa tổ chức (Multi-tenant RBAC) qua Keycloak OIDC, cô lập dữ liệu khách hàng tuyệt đối và hỗ trợ triển khai Offline LAN tuân thủ Nghị định 13/2023/NĐ-CP.",
+        cta_title: "Triển Khai Giải Pháp HUDU Cho Đơn Vị Của Bạn",
+        cta_desc: "Đăng ký nhận tài khoản trải nghiệm hệ thống Săn thầu thông minh hoặc triển khai thử nghiệm hệ thống tiếp nhận đơn CFMS/QMS tại cơ sở.",
+        cta_b1: "✓ Cấu hình sẵn biên độ năng lực Sàn/Trần và tự động quét các gói thầu đang mở",
+        cta_b2: "✓ Tùy biến luồng lấy đơn bệnh nhân, quét CCCD, loa gọi số và màn hình TV phòng chờ",
+        cta_b3: "✓ Hỗ trợ triển khai Cloud (Docker Compose) hoặc Edge Server nội bộ",
+        form_title: "Yêu Cầu Tư Vấn & Demo",
+        form_name_label: "Họ tên / Tên doanh nghiệp, cơ sở *",
+        form_phone_label: "Số điện thoại / Email liên hệ *",
+        form_prod_label: "Giải pháp quan tâm *",
+        form_opt_1: "HUDU DauThau — Săn & Lọc Đấu Thầu Công & Tư",
+        form_opt_2: "HUDU CFMS/QMS — Tiếp nhận đơn Bệnh viện & Phòng khám",
+        form_opt_3: "HUDU CSMS — Quản trị Phòng học dạy thêm & Trung tâm",
+        form_opt_4: "Tư vấn toàn bộ hệ sinh thái HUDU",
+        form_submit: "Gửi Yêu Cầu Đăng Ký",
+        form_success: "✓ Đã ghi nhận thông tin! Đội ngũ kỹ thuật HUDU sẽ liên hệ với bạn sớm nhất.",
+        footer_desc: "HUDU (huduvn.com) — Công ty phát triển phần mềm phân tích dữ liệu đấu thầu thông minh và hệ thống tự động hóa tiếp nhận, quản trị hàng đợi sinh trắc học.",
+        footer_col1: "Sản phẩm",
+        footer_col2: "Công nghệ",
+        footer_col3: "Liên hệ"
+      },
+      en: {
+        nav_solutions: "Solutions",
+        nav_tender: "Public & Private Tenders",
+        nav_cfms: "CFMS / QMS Platform",
+        nav_demo: "Interactive Demo",
+        nav_arch: "Architecture",
+        nav_cta: "Request Demo",
+        hero_badge: "HUDU Enterprise Technology · huduvn.com",
+        hero_title: 'AI-Powered <span class="highlight">Tender Intelligence</span> &amp; Biometric Queue Management',
+        hero_desc: "Engineered with high-performance Rust and Edge/Cloud AI: Automated ingestion, 3-tier deduplication, and <strong>Public &amp; Private Tender Matching</strong> based on Floor/Ceiling capability bounds; alongside <strong>Edge-AI Face Recognition &amp; Order Intake (CFMS/QMS)</strong> for Hospitals, Clinics, and Education Centers.",
+        hero_btn_demo: "Try Interactive Demo ↓",
+        hero_btn_explore: "Explore 2 Platforms",
+        metric_1: "Aho-Corasick keyword filtering & 512-D SIMD face matching",
+        metric_2: "Deduplication pipeline & Floor/Ceiling capability matching",
+        metric_3: "High-reliability Rust Cloud & 100% Offline LAN Edge",
+        partner_label: "STRATEGIC TECHNOLOGY, CLOUD & HEALTHCARE ECOSYSTEM PARTNERS",
+        card1_title: "HUDU DauThau — Public, Private & ODA Tenders",
+        card1_sub: "Dual-Mode AI (Local Qwen3 / Cloud) & Floor/Ceiling Capability Matcher",
+        card1_pill: "Multi-Tenant",
+        card1_chip1: "National Portal & SOEs",
+        card1_chip2: "ltree Taxonomy & Technical Specs",
+        card1_chip3: "App Push / SMS / Read-Receipt",
+        card2_title: "HUDU CFMS / QMS — Biometric Intake & Queueing",
+        card2_sub: "1:N Face Recognition, Chip ID QR Scanning & Real-time Dispatch",
+        card2_pill: "Edge AI < 2ms",
+        card2_chip1: "Hospitals & Clinics",
+        card2_chip2: "Tutoring & Training Centers",
+        card2_chip3: "Voice TTS Recall & TV Display",
+        sec1_tag: "Product Ecosystem",
+        sec1_title: "Two Core Enterprise Platforms by HUDU",
+        sec1_desc: "Automating high-precision B2B tender discovery and digitizing end-to-end patient & student intake workflows.",
+        p1_tag: "PRODUCT 01 · DAUTHAU CLOUD SERVER",
+        p1_title: "Intelligent Public & Private Tender Matching Platform",
+        p1_desc: "Automated multi-source scraping, 3-tier deduplication, Keyword + AI multi-layer labeling, and bidirectional tender distribution tailored to each tenant's Floor/Ceiling capability profile.",
+        p1_b1: "National e-Procurement (muasamcong)",
+        p1_b2: "State Enterprises (EVN, PVN, ACV)",
+        p1_b3: "Private Corporations & Commercial Banks",
+        p1_b4: "ODA Projects (WB, ADB)",
+        p1_f1: "<strong>Multi-Source Ingestion & 3-Tier Deduplication:</strong> Merges tender revisions (-00 → -01), SHA-256 fingerprint & pg_trgm trigram dedup, preserving canonical source URLs.",
+        p1_f2: "<strong>2-Stage Classification (Aho-Corasick + Dual-Mode AI):</strong> Extracts ltree industry taxonomy, construction grades (I–IV), total investment, package budget, and technical specs.",
+        p1_f3: "<strong>Bidirectional Floor/Ceiling Matching:</strong> Filters out tenders exceeding maximum capacity or below minimum floor; auto-backfills open tenders upon tenant onboarding.",
+        p1_f4: "<strong>Multi-Channel Alerts & Read-Receipt Ledger:</strong> Delivers via Mobile App (FCM/APNs), SMS/Zalo ZNS, and Email with full view & source-click tracking.",
+        p1_cta: "Launch Tender Matcher Demo →",
+        p2_tag: "PRODUCT 02 · CFMS / QMS / CSMS",
+        p2_title: "Biometric Face Recognition, Order Intake & Queue Management",
+        p2_desc: "Smart patient ticket issuance, order intake, and class enrollment powered by local Edge-AI face recognition (< 2ms) and chip-ID QR scanning for Hospitals, Clinics, and Education Centers.",
+        p2_b1: "Hospitals & Hemodialysis Wards",
+        p2_b2: "Multi-Specialty Clinics",
+        p2_b3: "Tutoring & Education Centers",
+        p2_f1: "<strong>Ultra-Fast Face Recognition (< 2ms) & 1:N Mapping:</strong> Matches 10,000 profiles via 512-D SIMD; supports family/caregiver proxy check-in and strict anti-duplicate ticket protection.",
+        p2_f2: "<strong>Multi-Modal Intake & Chip ID QR Scanning:</strong> Supports Kiosk/Laptop webcam, ID photo upload, or 2D USB barcode scanners with automatic profile binding.",
+        p2_f3: "<strong>Real-time Nurse/Staff Console, TTS Voice & TV Display:</strong> Instant accent-insensitive search, Ding-Dong chime, automated TTS voice calling, and Re-call sync to waiting room TVs.",
+        p2_f4: "<strong>100% Offline Edge Security:</strong> Operates independently on local LAN with < 50 MB RAM footprint, ensuring strict biometric and personal data privacy.",
+        p2_cta: "Launch CFMS / CSMS Console →",
+        demo_tag: "Interactive Sandbox",
+        demo_title: "Live Product Experience",
+        demo_desc: "Test the Floor/Ceiling Tender Matcher or add new patient/student intake tickets directly in the browser.",
+        tab_tender: "1. Public & Private Tender Matcher (DauThau)",
+        tab_csms: "2. Patient & Student Intake Console (CFMS / CSMS)",
+        tender_search_ph: "Search by tender code, package title, investor, technical specs...",
+        cat_all: "All Sectors",
+        cat_infra: "Infrastructure & Civil",
+        cat_it: "IT & Software",
+        cat_med: "Medical Equipment",
+        cat_priv: "Private & Banking",
+        th_code: "Code / Source",
+        th_taxonomy: "Taxonomy & Tech Specs",
+        th_investor: "Investor / Entity",
+        th_budget: "Package Budget",
+        th_deadline: "Status",
+        th_match: "Floor/Ceiling Match",
+        csms_mode_label: "Operating Mode:",
+        mode_clinic: "Hospital & Clinic (Patient Intake & Queue)",
+        mode_class: "Education & Tutoring (Enrollment & Shifts)",
+        btn_add_order: "+ Create Intake Ticket",
+        arch_tag: "Engineering Foundation",
+        arch_title: "Enterprise-Grade System Architecture",
+        arch_desc: "Built from the ground up in Rust with analytical storage and hot-swappable Local/Cloud AI.",
+        arch_1_title: "Rust Core & Edge SIMD Speed",
+        arch_1_desc: "Powered by Rust (Axum, Tokio, SQLx) to process thousands of tenders and match 512-dimension biometric vectors in under 2 milliseconds with minimal memory usage.",
+        arch_2_title: "Hot-Swappable Local / Cloud AI",
+        arch_2_desc: "Run local LLMs (Ollama / vLLM Qwen3) with $0 API cost, or automatically failover to Cloud AI models in Hybrid Auto mode.",
+        arch_3_title: "Keycloak IAM & Data Privacy",
+        arch_3_desc: "Multi-tenant RBAC via Keycloak OIDC with strict cross-tenant isolation and 100% offline LAN deployment support for healthcare data compliance.",
+        cta_title: "Deploy HUDU Solutions for Your Organization",
+        cta_desc: "Request a trial account for our AI Tender Intelligence platform or schedule an on-site pilot for CFMS/QMS.",
+        cta_b1: "✓ Pre-configured Floor/Ceiling capability profiles with instant open-tender backfill",
+        cta_b2: "✓ Customizable patient/student intake forms, QR scanning, TTS voice & TV display",
+        cta_b3: "✓ Flexible deployment via Cloud Docker Compose or on-premise Edge Server",
+        form_title: "Request Consultation & Demo",
+        form_name_label: "Full Name / Organization *",
+        form_phone_label: "Phone Number / Work Email *",
+        form_prod_label: "Solution of Interest *",
+        form_opt_1: "HUDU DauThau — Public & Private Tender Intelligence",
+        form_opt_2: "HUDU CFMS/QMS — Hospital & Clinic Patient Intake",
+        form_opt_3: "HUDU CSMS — Education & Tutoring Center Management",
+        form_opt_4: "Full HUDU Enterprise Suite",
+        form_submit: "Submit Demo Request",
+        form_success: "✓ Request received! Our engineering team at HUDU will contact you shortly.",
+        footer_desc: "HUDU (huduvn.com) — Enterprise software provider specializing in AI tender intelligence and biometric queue & intake automation.",
+        footer_col1: "Products",
+        footer_col2: "Technology",
+        footer_col3: "Contact"
+      },
+      es: {
+        nav_solutions: "Soluciones",
+        nav_tender: "Licitaciones IA",
+        nav_cfms: "Gestión CFMS / QMS",
+        nav_demo: "Demo en Vivo",
+        nav_arch: "Arquitectura",
+        nav_cta: "Solicitar Demo",
+        hero_badge: "HUDU Enterprise Technology · huduvn.com",
+        hero_title: 'Plataforma de <span class="highlight">Licitaciones con IA</span> y Gestión Biométrica de Turnos',
+        hero_desc: "Desarrollado con Rust de alto rendimiento e IA Edge/Cloud: Recolección automatizada, deduplicación de 3 niveles y filtrado de <strong>Licitaciones Públicas y Privadas</strong> según rangos de capacidad (Suelo/Techo); junto con el sistema <strong>CFMS/QMS de Reconocimiento Facial y Admisión</strong> para Hospitales, Clínicas y Centros Educativos.",
+        hero_btn_demo: "Probar Demo Interactiva ↓",
+        hero_btn_explore: "Explorar 2 Plataformas",
+        metric_1: "Filtro Aho-Corasick y biometría SIMD de 512 dimensiones",
+        metric_2: "Deduplicación de 3 capas y ajuste de capacidad Suelo/Techo",
+        metric_3: "Operación estable en Rust Cloud y LAN Edge 100% Offline",
+        partner_label: "SOCIOS TECNOLÓGICOS, CLOUD Y ECOSISTEMA DE SALUD",
+        card1_title: "HUDU DauThau — Licitaciones Públicas, Privadas y ODA",
+        card1_sub: "IA Dual (Qwen3 Local / Cloud) y Ajuste de Capacidad Empresarial",
+        card1_pill: "Multi-Tenant",
+        card1_chip1: "Compras Públicas y Bancos",
+        card1_chip2: "Taxonomía ltree y Especificaciones",
+        card1_chip3: "App Push / SMS / Confirmación",
+        card2_title: "HUDU CFMS / QMS — Admisión Biométrica y Colas",
+        card2_sub: "Reconocimiento facial 1:N, escaneo QR de ID y despacho en tiempo real",
+        card2_pill: "Edge AI < 2ms",
+        card2_chip1: "Hospitales y Clínicas",
+        card2_chip2: "Academias y Centros Educativos",
+        card2_chip3: "Llamado por Voz TTS y Pantalla TV",
+        sec1_tag: "Ecosistema de Productos",
+        sec1_title: "Dos Plataformas Principales de HUDU",
+        sec1_desc: "Automatización en la búsqueda de licitaciones B2B y digitalización integral en la admisión de pacientes y estudiantes.",
+        p1_tag: "PRODUCTO 01 · SERVIDOR CLOUD DAUTHAU",
+        p1_title: "Sistema Inteligente de Filtrado de Licitaciones Públicas y Privadas",
+        p1_desc: "Recolección automatizada, deduplicación en 3 capas, etiquetado multicapa con IA y distribución de licitaciones ajustada al rango financiero y técnico de cada empresa.",
+        p1_b1: "Portal Nacional de Contratación",
+        p1_b2: "Empresas Estatales (EVN, PVN, ACV)",
+        p1_b3: "Corporaciones Privadas y Bancos",
+        p1_b4: "Proyectos ODA (BM, BAD)",
+        p1_f1: "<strong>Ingesta Multifuente y Deduplicación en 3 Capas:</strong> Unifica revisiones (-00 → -01), huella SHA-256 y trigramas pg_trgm conservando el enlace oficial de origen.",
+        p1_f2: "<strong>Clasificación de 2 Etapas (Aho-Corasick + IA Dual):</strong> Extrae taxonomía ltree, grado de obra, inversión total, presupuesto y especificaciones técnicas.",
+        p1_f3: "<strong>Emparejamiento Bidireccional Suelo/Techo:</strong> Descarta proyectos fuera del rango de capacidad de la empresa y ejecuta backfill automático de licitaciones abiertas.",
+        p1_f4: "<strong>Alertas Multicanal y Registro de Lectura:</strong> Notificaciones por App Móvil (FCM/APNs), SMS y Correo con seguimiento completo de lectura.",
+        p1_cta: "Abrir Demo de Licitaciones →",
+        p2_tag: "PRODUCTO 02 · CFMS / QMS / CSMS",
+        p2_title: "Reconocimiento Facial, Admisión de Órdenes y Gestión de Turnos",
+        p2_desc: "Emisión inteligente de turnos y admisión de pacientes/estudiantes mediante biometría facial Edge-AI (< 2ms) y lectura QR de documento de identidad.",
+        p2_b1: "Hospitales y Unidades de Hemodiálisis",
+        p2_b2: "Clínicas Multiespecialidad",
+        p2_b3: "Centros Educativos y Tutorías",
+        p2_f1: "<strong>Reconocimiento Facial Ultrarrápido (< 2ms) y Mapeo 1:N:</strong> Compara 10.000 perfiles con SIMD; permite registro por familiares/tutores y evita tickets duplicados.",
+        p2_f2: "<strong>Admisión Multimodal y Escaneo QR de ID:</strong> Compatible con cámara web, carga de fotos o lector láser 2D USB con extracción automática de datos.",
+        p2_f3: "<strong>Consola en Tiempo Real, Voz TTS y Pantalla TV:</strong> Búsqueda instantánea, timbre Ding-Dong, llamado por voz automatizado y botón de Rellamada.",
+        p2_f4: "<strong>Arquitectura Edge 100% Offline y Segura:</strong> Funciona en red local LAN con menos de 50 MB de RAM garantizando la privacidad de datos biométricos.",
+        p2_cta: "Abrir Consola CFMS / CSMS →",
+        demo_tag: "Simulación Interactiva",
+        demo_title: "Experiencia en Vivo de Ambos Sistemas",
+        demo_desc: "Pruebe el filtro de licitaciones o registre una nueva orden de paciente/estudiante directamente en pantalla.",
+        tab_tender: "1. Filtro de Licitaciones Públicas y Privadas",
+        tab_csms: "2. Consola de Admisión y Turnos (CFMS / CSMS)",
+        tender_search_ph: "Buscar por código, título de licitación, entidad, especificación...",
+        cat_all: "Todos",
+        cat_infra: "Infraestructura y Obras",
+        cat_it: "TI y Software",
+        cat_med: "Equipos Médicos",
+        cat_priv: "Sector Privado y Banca",
+        th_code: "Código / Fuente",
+        th_taxonomy: "Taxonomía y Especificaciones",
+        th_investor: "Entidad Convocante",
+        th_budget: "Presupuesto",
+        th_deadline: "Estado",
+        th_match: "Ajuste Suelo/Techo",
+        csms_mode_label: "Modo de operación:",
+        mode_clinic: "Hospital y Clínica (Admisión de Pacientes)",
+        mode_class: "Centro Educativo (Matrícula y Clases)",
+        btn_add_order: "+ Registrar Orden / Turno",
+        arch_tag: "Ingeniería de Software",
+        arch_title: "Arquitectura Empresarial de Alto Rendimiento",
+        arch_desc: "Construido en Rust con bases de datos analíticas y conmutación en caliente entre IA Local y Cloud.",
+        arch_1_title: "Núcleo Rust y Velocidad SIMD",
+        arch_1_desc: "Backend en Rust (Axum, Tokio, SQLx) capaz de procesar miles de licitaciones y vectores faciales de 512 dimensiones en menos de 2 milisegundos.",
+        arch_2_title: "Conmutación IA Local / Cloud",
+        arch_2_desc: "Ejecute modelos locales (Ollama / vLLM Qwen3) sin costo de API ($0) o cambie automáticamente a Cloud AI en modo híbrido.",
+        arch_3_title: "Keycloak IAM y Privacidad",
+        arch_3_desc: "Control de acceso multiempresa (RBAC) con Keycloak OIDC, aislamiento estricto de datos y soporte completo para redes LAN sin internet.",
+        cta_title: "Implemente HUDU en su Organización",
+        cta_desc: "Solicite una cuenta de prueba para la plataforma de Licitaciones o agende una demostración técnica de CFMS/QMS.",
+        cta_b1: "✓ Perfiles de capacidad Suelo/Techo preconfigurados con búsqueda retroactiva inmediata",
+        cta_b2: "✓ Flujos de admisión, escaneo QR, voz TTS y pantallas de sala de espera personalizables",
+        cta_b3: "✓ Despliegue flexible en Cloud (Docker Compose) o servidor Edge local",
+        form_title: "Solicitar Asesoría y Demo",
+        form_name_label: "Nombre Completo / Organización *",
+        form_phone_label: "Teléfono / Correo Corporativo *",
+        form_prod_label: "Solución de Interés *",
+        form_opt_1: "HUDU DauThau — Inteligencia de Licitaciones",
+        form_opt_2: "HUDU CFMS/QMS — Admisión para Hospitales y Clínicas",
+        form_opt_3: "HUDU CSMS — Gestión de Centros Educativos",
+        form_opt_4: "Suite Empresarial Completa HUDU",
+        form_submit: "Enviar Solicitud",
+        form_success: "✓ ¡Solicitud recibida! El equipo de HUDU se pondrá en contacto con usted pronto.",
+        footer_desc: "HUDU (huduvn.com) — Desarrollo de software empresarial para análisis inteligente de licitaciones y gestión biométrica de colas.",
+        footer_col1: "Productos",
+        footer_col2: "Tecnología",
+        footer_col3: "Contacto"
+      },
+      zh: {
+        nav_solutions: "解决方案",
+        nav_tender: "公私招投标系统",
+        nav_cfms: "CFMS / QMS 队列管理",
+        nav_demo: "在线交互演示",
+        nav_arch: "系统架构",
+        nav_cta: "申请试用",
+        hero_badge: "HUDU Enterprise Technology · huduvn.com",
+        hero_title: 'AI 驱动的<span class="highlight">智能招投标检索</span>与生物识别接单管理平台',
+        hero_desc: "基于高性能 Rust 与边缘/云端 AI 构建：自动采集、三层去重并按企业资质上下限（Floor/Ceiling）精准匹配<strong>政府与企业招投标项目</strong>；同时为医院、诊所及教育培训机构提供<strong>毫秒级人脸识别取号与接单管理系统 (CFMS/QMS)</strong>。",
+        hero_btn_demo: "立即体验交互式演示 ↓",
+        hero_btn_explore: "了解两大核心系统",
+        metric_1: "Aho-Corasick 极速分词与 512 维 SIMD 人脸比对",
+        metric_2: "三层标讯去重与企业承接能力上下限双向匹配",
+        metric_3: "Rust 云端高可用架构与 100% 局域网离线边缘运行",
+        partner_label: "战略技术合作与医疗云生态伙伴",
+        card1_title: "HUDU DauThau — 政府、国企、私企与 ODA 招标",
+        card1_sub: "双模 AI 路由 (本地 Qwen3 / 云端) 与企业能力上下限匹配",
+        card1_pill: "多租户架构",
+        card1_chip1: "国家招投标网与大型银行",
+        card1_chip2: "ltree 行业标签与第五章技术参数",
+        card1_chip3: "App 推送 / 短信 / 已读回执追踪",
+        card2_title: "HUDU CFMS / QMS — 生物识别取号与接单调度",
+        card2_sub: "1:N 家属代取号识别、芯片身份证扫码与实时分诊台",
+        card2_pill: "边缘 AI < 2ms",
+        card2_chip1: "医院科室与专科诊所",
+        card2_chip2: "教培机构与辅导班",
+        card2_chip3: "TTS 语音叫号与候诊大屏",
+        sec1_tag: "核心产品矩阵",
+        sec1_title: "HUDU 两大企业级核心平台",
+        sec1_desc: "赋能 B2B 企业自动化精准获客投标，全面数字化医疗及教培机构的现场接单与排队流程。",
+        p1_tag: "产品 01 · DAUTHAU CLOUD SERVER",
+        p1_title: "智能公共与商业招投标采集及精准匹配系统",
+        p1_desc: "自动化多源采集、三层去重、关键词 + AI 多维标签提取，并严格按照每家企业的资质底线（Floor）与上限（Ceiling）双向推送高匹配标讯。",
+        p1_b1: "国家公共采购网 (muasamcong)",
+        p1_b2: "大型国有集团 (EVN, PVN, ACV)",
+        p1_b3: "商业银行与知名私企招标",
+        p1_b4: "国际组织与 ODA 项目 (WB, ADB)",
+        p1_f1: "<strong>多源采集与三层去重管道：</strong>自动合并变更公告 (-00 → -01)，支持 SHA-256 指纹与 pg_trgm 模糊去重，完整保留官方原始链接。",
+        p1_f2: "<strong>两级智能分类 (Aho-Corasick + 双模 AI)：</strong>提取 ltree 专业树、工程等级、总投资额、标段预算及招标文件第五章关键技术指标。",
+        p1_f3: "<strong>企业能力上下限双向匹配：</strong>自动过滤超出企业承载上限或低于最小营收底线的项目；新企业入驻即刻回溯扫描所有在招项目。",
+        p1_f4: "<strong>全渠道推送与已读回执账本：</strong>支持 iOS/Android App 推送、短信/Zalo 及邮件通知，精准记录客户查看时长与原链接点击状态。",
+        p1_cta: "体验招投标智能筛选演示 →",
+        p2_tag: "产品 02 · CFMS / QMS / CSMS",
+        p2_title: "边缘人脸识别、患者/学员接单与智能排队管理系统",
+        p2_desc: "结合本地边缘 AI 人脸识别 (< 2ms) 与芯片身份证二维码扫描，为医院血液透析科、门诊中心及课外培训机构提供零纸化取号、登记与叫号调度。",
+        p2_b1: "公立/私立医院及血液透析中心",
+        p2_b2: "综合与专科医疗诊所",
+        p2_b3: "培训中心与教培课堂",
+        p2_f1: "<strong>超高速人脸识别 (< 2ms) 与 1:N 亲属映射：</strong>512 维向量 SIMD 比对万级档案；支持家属代患者取号或家长代签到，严防同班次重复取号。",
+        p2_f2: "<strong>多模态接单与身份证扫码：</strong>支持终端摄像头、上传证件照或 2D USB 扫码枪，自动解析身份信息并升级正式档案编号。",
+        p2_f3: "<strong>实时护士/教务工作台、TTS 语音叫号与候诊 TV：</strong>支持无音调极速检索、医院叮咚提示音、自然语音播报及一键重呼同步至大屏。",
+        p2_f4: "<strong>100% 局域网离线安全架构：</strong>内存占用低于 50 MB，完全在内部 LAN 独立运行，严格保障医疗与个人生物特征数据合规。",
+        p2_cta: "体验 CFMS / CSMS 调度工作台 →",
+        demo_tag: "在线交互沙盒",
+        demo_title: "两大系统实时交互体验",
+        demo_desc: "在下方切换标签页，立即测试招投标行业筛选或模拟新增患者接单与学员签到。",
+        tab_tender: "1. 公私招投标智能筛选器 (DauThau Matcher)",
+        tab_csms: "2. 医疗接单与教培签到工作台 (CFMS / CSMS)",
+        tender_search_ph: "按招标编号、项目名称、业主单位或技术参数搜索...",
+        cat_all: "全部领域",
+        cat_infra: "交通基建与建筑",
+        cat_it: "IT 与软件系统",
+        cat_med: "医疗器械与设备",
+        cat_priv: "商业银行与名企采购",
+        th_code: "招标编号 / 来源",
+        th_taxonomy: "专业分类与技术指标",
+        th_investor: "招标人 / 业主单位",
+        th_budget: "标段预算 / 总投资",
+        th_deadline: "状态",
+        th_match: "能力上下限匹配",
+        csms_mode_label: "当前运行场景：",
+        mode_clinic: "医院与门诊模式 (患者取号与接单)",
+        mode_class: "教育与培训班模式 (学员报名与排课)",
+        btn_add_order: "+ 立即接单并派号",
+        arch_tag: "核心工程技术",
+        arch_title: "企业级高可靠系统架构",
+        arch_desc: "全栈采用 Rust 系统级语言编写，融合高性能向量检索与本地/云端双模大模型路由。",
+        arch_1_title: "Rust 极速内核与 SIMD 向量加速",
+        arch_1_desc: "基于 Rust (Axum, Tokio, SQLx) 构建，在极低内存占用下实现毫秒级海量标讯过滤与 512 维生物特征比对。",
+        arch_2_title: "本地与云端 AI 热切换",
+        arch_2_desc: "支持本地部署 Ollama / vLLM (Qwen3) 实现 $0 API 成本运行，或在 Hybrid 模式下自动故障转移至云端大模型。",
+        arch_3_title: "Keycloak 多租户认证与数据合规",
+        arch_3_desc: "内置 Keycloak OIDC 多组织权限隔离 (RBAC)，支持纯内网离线部署，满足医疗与政企最高级别数据隐私规范。",
+        cta_title: "为您的机构部署 HUDU 智能软件方案",
+        cta_desc: "立即登记获取招投标智能匹配系统试用账号，或预约医院/诊所/教培机构 CFMS 系统的现场演示。",
+        cta_b1: "✓ 预置企业资质上下限模型，开户即刻回溯匹配所有在招项目",
+        cta_b2: "✓ 按需定制患者接单表单、扫码枪接入、语音叫号及候诊大厅电视界面",
+        cta_b3: "✓ 支持云端 Docker Compose 一键部署或本地边缘服务器交付",
+        form_title: "预约产品演示与技术咨询",
+        form_name_label: "您的姓名 / 企业或机构名称 *",
+        form_phone_label: "联系电话 / 企业邮箱 *",
+        form_prod_label: "意向解决方案 *",
+        form_opt_1: "HUDU DauThau — 公私招投标智能检索与匹配",
+        form_opt_2: "HUDU CFMS/QMS — 医院与诊所智能接单叫号系统",
+        form_opt_3: "HUDU CSMS — 教培机构排课与学员管理系统",
+        form_opt_4: "HUDU 全套企业级解决方案",
+        form_submit: "提交预约申请",
+        form_success: "✓ 提交成功！HUDU 技术团队将尽快与您联系。",
+        footer_desc: "HUDU (huduvn.com) — 专注于企业招投标大数据智能分析与医疗、教培生物识别接单调度系统的科技公司。",
+        footer_col1: "核心产品",
+        footer_col2: "技术底座",
+        footer_col3: "联系我们"
+      },
+      ja: {
+        nav_solutions: "ソリューション",
+        nav_tender: "官民入札 AI",
+        nav_cfms: "CFMS / QMS 受付管理",
+        nav_demo: "ライブデモ",
+        nav_arch: "アーキテクチャ",
+        nav_cta: "デモを申し込む",
+        hero_badge: "HUDU Enterprise Technology · huduvn.com",
+        hero_title: 'AI <span class="highlight">入札インテリジェンス</span>＆生体認証スマート受付・順番管理基盤',
+        hero_desc: "高効率な Rust と Edge/Cloud AI で構築：<strong>官公庁・民間入札案件</strong>を自動収集・3段階重複排除し、企業の施工・財務能力（下限/上限）に合わせて高精度マッチング。さらに病院・クリニック・教育機関向けの<strong>高速顔認証＆受付システム (CFMS/QMS)</strong> を提供します。",
+        hero_btn_demo: "インタラクティブデモを試す ↓",
+        hero_btn_explore: "2つの製品を見る",
+        metric_1: "Aho-Corasick 高速検索＆512次元 SIMD 顔認証",
+        metric_2: "3段階の重複排除＆企業能力（下限/上限）マッチング",
+        metric_3: "Rust クラウド基盤＆100% オフライン LAN エッジ稼働",
+        partner_label: "戦略的テクノロジー・クラウド・医療機関パートナー",
+        card1_title: "HUDU DauThau — 官公庁・民間・ODA 入札情報",
+        card1_sub: "デュアル AI (ローカル Qwen3 / クラウド)＆能力レンジ照合",
+        card1_pill: "マルチテナント",
+        card1_chip1: "調達ポータル＆大手銀行",
+        card1_chip2: "ltree 分類＆仕様書第V章解析",
+        card1_chip3: "App 通知 / SMS / 既読トラッキング",
+        card2_title: "HUDU CFMS / QMS — 生体認証受付・順番待ち管理",
+        card2_sub: "1:N 顔認証、IC カード QR 読取＆リアルタイム配車・案内",
+        card2_pill: "Edge AI < 2ms",
+        card2_chip1: "病院・人工透析科・クリニック",
+        card2_chip2: "学習塾・スクール管理",
+        card2_chip3: "TTS 音声呼出＆待合室 TV 表示",
+        sec1_tag: "プロダクト体系",
+        sec1_title: "HUDU の2大コアプラットフォーム",
+        sec1_desc: "B2B 企業の入札案件発掘の自動化と、医療機関・教育施設の受付オペレーションの完全ペーパーレス化を実現します。",
+        p1_tag: "PRODUCT 01 · DAUTHAU CLOUD SERVER",
+        p1_title: "スマート官民入札収集・多層ラベリング・マッチングシステム",
+        p1_desc: "マルチソース自動収集、3段階重複排除、キーワード＋AI による仕様抽出を行い、各企業の受注能力（下限〜上限）に合致する案件のみをリアルタイム配信します。",
+        p1_b1: "国家電子調達システム (muasamcong)",
+        p1_b2: "国営企業 (EVN, PVN, ACV)",
+        p1_b3: "民間大手・商業銀行の調達",
+        p1_b4: "ODA 案件 (世界銀行, ADB)",
+        p1_f1: "<strong>マルチソース収集＆3段階重複排除：</strong>訂正公告 (-00 → -01) の自動統合、SHA-256 と pg_trgm による重複排除、元リンク (canonical_source_url) の完全保持。",
+        p1_f2: "<strong>2段階分類パイプライン (Aho-Corasick + Dual AI)：</strong>専門ツリー (ltree)、工事等級、総投資額、予算、技術仕様（橋梁長やスパン等）を自動構造化。",
+        p1_f3: "<strong>下限・上限 (Floor/Ceiling) 双方向マッチング：</strong>能力超過や小規模すぎる案件を除外し、新規テナント登録時には公開中の全案件を即時バックフィル照合。",
+        p1_f4: "<strong>マルチチャネル通知＆既読台帳 (Read-Receipt)：</strong>モバイルアプリ (FCM/APNs)、SMS、メールで通知し、閲覧時間や元リンクのクリック状況を可視化。",
+        p1_cta: "入札フィルタリングデモを開く →",
+        p2_tag: "PRODUCT 02 · CFMS / QMS / CSMS",
+        p2_title: "エッジ顔認証・患者受付・スマート順番管理システム",
+        p2_desc: "ローカル Edge-AI 顔認証 (< 2ms) と QR コード読取を組み合わせ、病院（人工透析科・外来）、クリニック、学習塾の受付・発券・呼出を自動化します。",
+        p2_b1: "病院・人工透析センター",
+        p2_b2: "総合・専門クリニック",
+        p2_b3: "学習塾・教育トレーニング施設",
+        p2_f1: "<strong>超高速顔認証 (< 2ms) ＆ 1:N 家族マッピング：</strong>1万件のデータを512次元 SIMD で即座に照合。家族による代理発券や保護者の送迎に対応し、重複発券を防止。",
+        p2_f2: "<strong>マルチモーダル受付＆ QR スキャン：</strong>キオスク/PC カメラ、画像アップロード、2D USB バーコードリーダーに対応し、患者・生徒 ID を自動紐付け。",
+        p2_f3: "<strong>リアルタイム運用コンソール・TTS 音声呼出＆待合 TV：</strong>高速検索、チャイム音、自動音声アナウンス、再呼出 (Re-call) ボタンを待合室モニターと同期。",
+        p2_f4: "<strong>100% オフラインエッジ保護：</strong>メモリ消費 50 MB 未満で院内 LAN 内で完全自立稼働し、生体情報と個人データの厳格な保護基準に準拠。",
+        p2_cta: "CFMS / CSMS コンソールを開く →",
+        demo_tag: "インタラクティブ体験",
+        demo_title: "2つのシステムをブラウザ上で体験",
+        demo_desc: "入札案件のフィルタリングや、患者・生徒の新規受付発券をリアルタイムにお試しいただけます。",
+        tab_tender: "1. 官民入札インテリジェントフィルタ (DauThau)",
+        tab_csms: "2. 病院受付・スクール管理コンソール (CFMS / CSMS)",
+        tender_search_ph: "案件コード、件名、発注機関、技術仕様で検索...",
+        cat_all: "すべて",
+        cat_infra: "インフラ・建設",
+        cat_it: "IT・ソフトウェア",
+        cat_med: "医療機器",
+        cat_priv: "民間・銀行調達",
+        th_code: "案件番号 / ソース",
+        th_taxonomy: "専門ラベル＆技術仕様",
+        th_investor: "発注機関",
+        th_budget: "予算 / 総投資額",
+        th_deadline: "ステータス",
+        th_match: "能力レンジ適合度",
+        csms_mode_label: "運用モード切替：",
+        mode_clinic: "病院・クリニック (患者受付・順番発券)",
+        mode_class: "学習塾・スクール (受講登録・クラス管理)",
+        btn_add_order: "+ 新規受付・発券",
+        arch_tag: "エンジニアリング基盤",
+        arch_title: "エンタープライズ級のシステム設計",
+        arch_desc: "システムプログラミング言語 Rust と柔軟な AI ルーティングによる高信頼アーキテクチャ。",
+        arch_1_title: "Rust コア＆ Edge SIMD 高速処理",
+        arch_1_desc: "Rust (Axum, Tokio, SQLx) により、最小限のメモリで大量の入札データ処理と2ミリ秒未満の512次元顔ベクトル照合を実現。",
+        arch_2_title: "ローカル / クラウド AI ホットスイッチ",
+        arch_2_desc: "ローカル LLM (Ollama / vLLM Qwen3) による API コスト $0 運用と、ハイブリッドモードでのクラウド AI 自動フェイルオーバーに対応。",
+        arch_3_title: "Keycloak IAM ＆データガバナンス",
+        arch_3_desc: "Keycloak OIDC によるマルチテナント権限管理 (RBAC) とテナント間データ分離、医療向け完全オフライン LAN 展開をサポート。",
+        cta_title: "貴社・貴院への HUDU 導入ご相談",
+        cta_desc: "入札インテリジェンスのトライアルアカウント発行、または CFMS/QMS のデモンストレーションをお申し込みください。",
+        cta_b1: "✓ 企業能力の下限・上限プロファイル設定と公開中案件の即時バックフィル",
+        cta_b2: "✓ 受付フォーム、バーコード読取、TTS 音声呼出、待合室 TV 表示のカスタマイズ",
+        cta_b3: "✓ クラウド (Docker Compose) またはオンプレミス Edge サーバーへの柔軟な導入",
+        form_title: "お問い合わせ・デモ予約",
+        form_name_label: "お名前 / 貴社・貴院名 *",
+        form_phone_label: "電話番号 / メールアドレス *",
+        form_prod_label: "ご希望のソリューション *",
+        form_opt_1: "HUDU DauThau — 官民入札インテリジェンス",
+        form_opt_2: "HUDU CFMS/QMS — 病院・クリニック受付＆順番管理",
+        form_opt_3: "HUDU CSMS — 学習塾・教育機関向け管理システム",
+        form_opt_4: "HUDU エンタープライズ統合スイート",
+        form_submit: "デモを申し込む",
+        form_success: "✓ 受付いたしました。HUDU エンジニアリングチームより速やかにご連絡いたします。",
+        footer_desc: "HUDU (huduvn.com) — AI 入札データ解析および生体認証スマート受付・順番管理システムを開発するテクノロジー企業。",
+        footer_col1: "製品一覧",
+        footer_col2: "テクノロジー",
+        footer_col3: "連絡先"
+      },
+      ko: {
+        nav_solutions: "솔루션",
+        nav_tender: "공공·민간 입찰 AI",
+        nav_cfms: "CFMS / QMS 접수·대기",
+        nav_demo: "실시간 데모",
+        nav_arch: "아키텍처",
+        nav_cta: "데모 신청",
+        hero_badge: "HUDU Enterprise Technology · huduvn.com",
+        hero_title: 'AI 기반 <span class="highlight">입찰 인텔리전스</span> 및 생체인식 스마트 접수·대기열 플랫폼',
+        hero_desc: "고성능 Rust 및 Edge/Cloud AI 기반 설계: <strong>공공·민간 입찰 공고</strong>를 자동 수집·3단계 중복 제거 후 기업 수행 능력(하한/상한)에 맞춰 정밀 매칭하며, 병원·의원·교육기관을 위한 <strong>초고속 안면인식 접수 및 순번 대기 시스템 (CFMS/QMS)</strong>을 제공합니다.",
+        hero_btn_demo: "실시간 인터랙티브 데모 체험 ↓",
+        hero_btn_explore: "2대 핵심 플랫폼 보기",
+        metric_1: "Aho-Corasick 초고속 필터링 및 512차원 SIMD 안면 매칭",
+        metric_2: "3단계 중복 제거 및 기업 수행 능력(Floor/Ceiling) 매칭",
+        metric_3: "Rust 클라우드 서버 및 100% 오프라인 LAN 엣지 구동",
+        partner_label: "전략적 기술 · 클라우드 · 의료 생태계 파트너십",
+        card1_title: "HUDU DauThau — 공공·민간·ODA 입찰 매칭",
+        card1_sub: "듀얼 모드 AI (로컬 Qwen3 / 클라우드) 및 기업 역량 하한/상한 매칭",
+        card1_pill: "멀티테넌트",
+        card1_chip1: "국가종합전자조달 및 금융권",
+        card1_chip2: "ltree 분류 및 기술 규격 추출",
+        card1_chip3: "앱 푸시 / SMS / 열람 확인 추적",
+        card2_title: "HUDU CFMS / QMS — 생체인식 접수 및 순번 관리",
+        card2_sub: "1:N 가족 대리 접수 안면인식, 신분증 QR 스캔 및 실시간 호출",
+        card2_pill: "Edge AI < 2ms",
+        card2_chip1: "병원·인공신장실·클리닉",
+        card2_chip2: "보습학원 및 교육센터",
+        card2_chip3: "TTS 음성 호출 및 대기실 TV 연동",
+        sec1_tag: "제품 에코시스템",
+        sec1_title: "HUDU의 2대 핵심 엔터프라이즈 플랫폼",
+        sec1_desc: "B2B 기업의 입찰 발굴 자동화와 의료·교육 현장의 환자/수강생 접수 프로세스 디지털 전환을 실현합니다.",
+        p1_tag: "PRODUCT 01 · DAUTHAU CLOUD SERVER",
+        p1_title: "지능형 공공·민간 입찰 수집 및 역량 맞춤 매칭 시스템",
+        p1_desc: "다중 출처 자동 수집, 3단계 중복 제거, 키워드 + AI 다층 라벨링을 통해 각 기업의 최소(Floor)·최대(Ceiling) 수행 역량에 부합하는 입찰만을 정확히 배포합니다.",
+        p1_b1: "국가조달포털 (muasamcong)",
+        p1_b2: "공기업 (EVN, PVN, ACV)",
+        p1_b3: "민간 대기업 및 시중은행 입찰",
+        p1_b4: "ODA 차관 사업 (WB, ADB)",
+        p1_f1: "<strong>다중 소스 수집 및 3단계 중복 제거:</strong> 정정 공고(-00 → -01) 자동 병합, SHA-256 및 pg_trgm 유사도 중복 제거, 원본 입찰 링크 완벽 보존.",
+        p1_f2: "<strong>2단계 분류 파이프라인 (Aho-Corasick + 듀얼 AI):</strong> ltree 업종 트리, 공종 등급(I~IV등급), 총투자비, 패키지 예산 및 핵심 기술 스펙 자동 추출.",
+        p1_f3: "<strong>하한/상한 (Floor/Ceiling) 양방향 매칭:</strong> 기업 역량을 초과하거나 최소 기준 미달인 공고를 자동 제외하며, 신규 고객사 등록 시 진행 중인 입찰을 즉시 백필 스캔.",
+        p1_f4: "<strong>멀티채널 알림 및 열람 원장 (Read-Receipt):</strong> 모바일 앱(FCM/APNs), SMS, 이메일 발송 및 고객 열람 시각·원본 링크 클릭 여부 실시간 추적.",
+        p1_cta: "입찰 매칭 데모 실행 →",
+        p2_tag: "PRODUCT 02 · CFMS / QMS / CSMS",
+        p2_title: "엣지 안면인식·환자 접수 및 스마트 대기열 관리 시스템",
+        p2_desc: "로컬 Edge-AI 안면인식(< 2ms)과 신분증 QR 스캔을 결합하여 병원(인공신장실, 외래), 의원, 학원의 접수·순번 발권·호출을 자동화합니다.",
+        p2_b1: "병원 및 혈액투석센터",
+        p2_b2: "종합·전문 클리닉",
+        p2_b3: "입시·보습학원 및 교육센터",
+        p2_f1: "<strong>초고속 안면인식 (< 2ms) 및 1:N 가족 매핑:</strong> 512차원 SIMD로 1만 명 프로필 즉시 대조; 보호자 대리 발권 및 학부모 출석 체크 지원, 중복 발권 원천 차단.",
+        p2_f2: "<strong>다중 접수 모드 및 신분증 QR 스캔:</strong> 키오스크/노트북 웹캠, 신분증 이미지 업로드, 2D USB 바코드 스캐너 지원 및 정식 환자 번호 자동 전환.",
+        p2_f3: "<strong>실시간 간호/교무 콘솔, TTS 음성 호출 및 대기실 TV:</strong> 초성/무성조 실시간 검색, 딩동 알림음, 자연스러운 TTS 음성 안내 및 재호출(Re-call) 기능.",
+        p2_f4: "<strong>100% 오프라인 엣지 보안 아키텍처:</strong> 50 MB 미만의 메모리로 내부 LAN에서 독립 구동되어 의료 및 생체정보 보호 규정을 완벽히 준수.",
+        p2_cta: "CFMS / CSMS 콘솔 실행 →",
+        demo_tag: "인터랙티브 샌드박스",
+        demo_title: "두 가지 핵심 시스템 실시간 체험",
+        demo_desc: "입찰 공고 필터링을 테스트하거나 신규 환자 접수 / 수강생 등록을 화면에서 직접 실행해 보세요.",
+        tab_tender: "1. 공공·민간 입찰 스마트 매칭 (DauThau)",
+        tab_csms: "2. 환자 접수 및 학원 수강 관리 콘솔 (CFMS / CSMS)",
+        tender_search_ph: "공고번호, 입찰명, 발주처, 기술 규격 검색...",
+        cat_all: "전체 분야",
+        cat_infra: "교통·인프라·건설",
+        cat_it: "IT·소프트웨어",
+        cat_med: "의료기기·장비",
+        cat_priv: "민간·금융권 입찰",
+        th_code: "공고번호 / 출처",
+        th_taxonomy: "전문 라벨 및 기술 스펙",
+        th_investor: "발주기관 / 고객사",
+        th_budget: "패키지 예산 / 총투자",
+        th_deadline: "상태",
+        th_match: "하한/상한 적합도",
+        csms_mode_label: "운영 모드 선택:",
+        mode_clinic: "병원·의원 모드 (환자 접수 및 순번 발권)",
+        mode_class: "학원·교육센터 모드 (수강 등록 및 출결)",
+        btn_add_order: "+ 즉시 접수 및 번호 발권",
+        arch_tag: "엔지니어링 아키텍처",
+        arch_title: "엔터프라이즈급 고신뢰 시스템 설계",
+        arch_desc: "시스템 언어 Rust와 인메모리 벡터 스토어, 로컬/클라우드 하이브리드 AI 라우터로 구축되었습니다.",
+        arch_1_title: "Rust 코어 및 Edge SIMD 가속",
+        arch_1_desc: "Rust (Axum, Tokio, SQLx) 기반으로 최소한의 메모리로 대규모 입찰 피드 처리와 2밀리초 미만의 512차원 안면 벡터 연산을 수행합니다.",
+        arch_2_title: "로컬 / 클라우드 AI 핫스위치",
+        arch_2_desc: "로컬 LLM (Ollama / vLLM Qwen3)을 통해 API 비용 $0 운영이 가능하며, 하이브리드 모드에서 클라우드 AI로 자동 페일오버됩니다.",
+        arch_3_title: "Keycloak IAM 및 데이터 보안",
+        arch_3_desc: "Keycloak OIDC 기반 멀티테넌트 권한 제어(RBAC)와 완벽한 테넌트 격리, 병원 내부망 100% 오프라인 배포를 지원합니다.",
+        cta_title: "귀사의 비즈니스에 HUDU 솔루션을 도입하세요",
+        cta_desc: "지능형 입찰 매칭 플랫폼 트라이얼 계정을 신청하거나 병원/학원용 CFMS/QMS 현장 데모를 예약하세요.",
+        cta_b1: "✓ 기업 역량 하한/상한 프로필 사전 설정 및 진행 중인 입찰 공고 즉시 백필",
+        cta_b2: "✓ 환자 접수 양식, 신분증 QR 스캔, TTS 음성 호출 및 대기실 TV 화면 맞춤 구성",
+        cta_b3: "✓ 클라우드(Docker Compose) 또는 온프레미스 엣지 서버 유연 배포",
+        form_title: "도입 상담 및 데모 신청",
+        form_name_label: "성함 / 기업·기관명 *",
+        form_phone_label: "연락처 / 이메일 *",
+        form_prod_label: "관심 솔루션 *",
+        form_opt_1: "HUDU DauThau — 공공·민간 입찰 인텔리전스",
+        form_opt_2: "HUDU CFMS/QMS — 병원·의원 스마트 접수 및 순번 시스템",
+        form_opt_3: "HUDU CSMS — 학원·교육기관 수강 및 출결 관리",
+        form_opt_4: "HUDU 엔터프라이즈 통합 솔루션",
+        form_submit: "상담 및 데모 신청하기",
+        form_success: "✓ 신청이 접수되었습니다! HUDU 기술팀에서 빠르게 연락드리겠습니다.",
+        footer_desc: "HUDU (huduvn.com) — AI 입찰 데이터 분석 및 생체인식 스마트 접수·대기열 자동화 솔루션을 개발하는 엔터프라이즈 기술 기업.",
+        footer_col1: "제품",
+        footer_col2: "핵심 기술",
+        footer_col3: "문의처"
+      }
+    };
+
+    let currentLang = 'vi';
+    let activeTenderCat = 'ALL';
+    let csmsMode = 'CLINIC';
+
+    const TENDERS = [
+      {
+        code: 'IB2600881201-01',
+        source: 'PUBLIC · muasamcong',
+        cat: 'CAUDUONG',
+        taxonomy: 'xay_dung.giao_thong.cau_duong · Cấp III · Cầu dài 90m (3 nhịp 30m)',
+        title: {
+          vi: 'Thi công xây dựng Cầu Sông Nhạn chiều dài 90m và đường hai đầu cầu (Đã gộp bản sửa đổi -01)',
+          en: 'Construction of Song Nhan Bridge (length 90m, 3x30m spans) & approach roads (Merged Rev -01)',
+          es: 'Construcción del Puente Song Nhan (longitud 90m, 3 tramos) y accesos (Rev -01)',
+          zh: '同奈省雁河大桥（桥长90m，3x30m跨径）及引道施工标段（已合并-01修正版）',
+          ja: 'ソンニャン橋（橋長90m・3径間）および取付道路建設工事（改訂-01統合済）',
+          ko: '동나이성 송냔 교량(길이 90m, 3경간) 및 접속도로 시공 (정정공고 -01 병합)'
+        },
+        investor: 'Ban QLDA ĐTXD Tỉnh Đồng Nai (VN-39)',
+        budget: '35,5 tỷ / TMĐT 120 tỷ',
+        status: { vi: 'Đang mở · Đã đẩy App/SMS', en: 'Open · Pushed App/SMS', es: 'Abierto · Notificado', zh: '招标中 · 已推送', ja: '公開中 · 通知済', ko: '진행중 · 푸시 완료' },
+        match: 'Sàn 10 tỷ ≤ 35,5 tỷ ≤ Trần 80 tỷ (99%)'
+      },
+      {
+        code: 'IB2600910452-00',
+        source: 'PUBLIC · muasamcong',
+        cat: 'CNTT',
+        taxonomy: 'cntt.phan_mem.y_te_so · HIS/LIS & Kiosk Sinh trắc học',
+        title: {
+          vi: 'Triển khai hệ thống phần mềm quản trị bệnh viện thông minh, Kiosk nhận diện khuôn mặt & quét CCCD',
+          en: 'Smart Hospital Management Software (HIS), Face Recognition Kiosk & Chip-ID Queue System',
+          es: 'Sistema de Gestión Hospitalaria (HIS), Kiosco de Reconocimiento Facial y Turnos QR',
+          zh: '智慧医院管理系统 (HIS)、人脸识别自助取号终端及芯片身份证核验系统采购',
+          ja: 'スマート病院管理システム (HIS)・顔認証キオスク＆ICカード受付システム導入',
+          ko: '스마트 병원 관리 시스템(HIS), 안면인식 키오스크 및 신분증 QR 접수 시스템 구축'
+        },
+        investor: 'Bệnh viện Đa khoa Khu vực — TP.HCM (VN-79)',
+        budget: '14,8 tỷ / TMĐT 45 tỷ',
+        status: { vi: 'Đang mở · Read-Receipt ✓', en: 'Open · Read-Receipt ✓', es: 'Abierto · Leído ✓', zh: '招标中 · 已读回执 ✓', ja: '公開中 · 既読 ✓', ko: '진행중 · 열람완료 ✓' },
+        match: 'Sàn 5 tỷ ≤ 14,8 tỷ ≤ Trần 50 tỷ (98%)'
+      },
+      {
+        code: 'TCB-PROC-2026-88',
+        source: 'PRIVATE · YAML Scraper',
+        cat: 'PRIVATE',
+        taxonomy: 'tai_chinh_ngan_hang.ha_tang_cntt · Cloud & Security',
+        title: {
+          vi: 'Cung cấp bản quyền phần mềm bảo mật định danh đa tổ chức và nâng cấp hạ tầng máy chủ cụm dữ liệu',
+          en: 'Enterprise Multi-Tenant IAM Security Licensing & Data Center Cluster Upgrade',
+          es: 'Licenciamiento de Seguridad IAM Multiempresa y Actualización de Clúster de Datos',
+          zh: '商业银行多租户身份安全认证平台授权及核心数据中心服务器集群升级采购',
+          ja: '民間銀行向けマルチテナント IAM セキュリティライセンスおよびサーバークラスタ増強',
+          ko: '시중은행 멀티테넌트 IAM 보안 라이선스 공급 및 데이터센터 클러스터 고도화'
+        },
+        investor: 'Khối Mua Sắm Ngân Hàng TMCP (VN-HN)',
+        budget: '22,0 tỷ / Nguồn vốn Tư nhân',
+        status: { vi: 'Đang mở · Backfill tự động', en: 'Open · Auto-Backfilled', es: 'Abierto · Backfill', zh: '招标中 · 自动回溯', ja: '公開中 · 自動照合', ko: '진행중 · 자동 백필' },
+        match: 'Sàn 10 tỷ ≤ 22,0 tỷ ≤ Trần 60 tỷ (96%)'
+      },
+      {
+        code: 'IB2600945110-00',
+        source: 'ODA · World Bank',
+        cat: 'YTE',
+        taxonomy: 'y_te.thiet_bi.than_nhan_tao · Hemodialysis Systems',
+        title: {
+          vi: 'Cung cấp và lắp đặt hệ thống 30 máy thận nhân tạo công nghệ cao và hệ thống xử lý nước RO y tế',
+          en: 'Supply and installation of 30 Hemodialysis Machines & Medical RO Water Treatment System',
+          es: 'Suministro e instalación de 30 máquinas de hemodiálisis y planta de agua RO médica',
+          zh: '供应并安装 30 台血液透析机及医用反渗透 (RO) 水处理系统 (ODA 贷款项目)',
+          ja: '人工透析装置30台および医療用RO水処理システムの納入・設置（ODA案件）',
+          ko: '인공신장기(혈액투석기) 30대 및 의료용 RO 수처리 시스템 공급·설치 (ODA 사업)'
+        },
+        investor: 'Ban QLDA Y tế Trọng điểm — Đà Nẵng',
+        budget: '28,4 tỷ / Vốn ODA',
+        status: { vi: 'Đang mở · Đã đẩy Zalo ZNS', en: 'Open · Sent Zalo/SMS', es: 'Abierto · SMS enviado', zh: '招标中 · 已发短信', ja: '公開中 · SMS送信済', ko: '진행중 · SMS 발송' },
+        match: 'Sàn 15 tỷ ≤ 28,4 tỷ ≤ Trần 70 tỷ (95%)'
+      }
+    ];
+
+    const CLINIC_DATA = [
+      { id: 'BN-1001', name: 'Nguyễn Văn Hòa (1962)', cccd: 'CCCD Chip · Đã ánh xạ người nhà (Con trai lấy số)', dept: 'Khoa Thận Nhân Tạo — Ca 1 (Máy số 08)', mode: 'Face ID 1.4ms', status: 'Đang lọc máu · Đã phát loa TTS' },
+      { id: 'BN-1002', name: 'Trần Thị Mai (1975)', cccd: 'CCCD QR · Súng quét 2D USB (Chống trùng phiếu)', dept: 'Phòng Khám Nội Tổng Quát — P.102', mode: 'QR CCCD', status: 'Chuẩn bị vào khám (Số TT: 012)' },
+      { id: 'BN-1003', name: 'Lê Minh Tuấn (1988)', cccd: 'Camera Kiosk · Cân bằng sáng tự động', dept: 'Chẩn đoán Hình ảnh & Siêu âm — P.205', mode: 'Face ID 1.6ms', status: 'Mới cấp phiếu (Số TT: 015)' }
+    ];
+
+    const CLASS_DATA = [
+      { id: 'HV-2001', name: 'Phạm Gia Huy — Lớp 10A', cccd: 'PH đón/điểm danh: Phụ huynh Phạm Văn Long (1:N)', dept: 'Toán Chuyên Sâu — Ca Tối 18:00 (Phòng P.201)', mode: 'Face ID 1.5ms', status: 'Đã điểm danh · Đã báo Zalo PH' },
+      { id: 'HV-2002', name: 'Võ Ngọc Khuê — Lớp 12B', cccd: 'Thẻ học viên QR · Chống điểm danh trùng', dept: 'Luyện thi IELTS & Học thuật — Ca 19:30 (P.104)', mode: 'QR Code', status: 'Đang học · Hoàn tất học phí' },
+      { id: 'HV-2003', name: 'Đặng Hoàng Nam — Lớp 9C', cccd: 'Đăng ký mới tại quầy Giáo vụ', dept: 'Khoa học Máy tính & STEM — Ca Sáng CN (P.302)', mode: 'Web Intake', status: 'Mới ghi danh · Đã xếp lớp' }
+    ];
+
+    function toggleTheme() {
+      const body = document.body;
+      const moon = document.getElementById('themeIconMoon');
+      const sun = document.getElementById('themeIconSun');
+
+      body.classList.toggle('dark-mode');
+      const isDark = body.classList.contains('dark-mode');
+
+      // Update inline navbar HUDU gradient stops for Dark vs Silver-Light mode
+      document.getElementById('navGradStop1').setAttribute('stop-color', isDark ? '#38BDF8' : '#0052A3');
+      document.getElementById('navGradStop2').setAttribute('stop-color', isDark ? '#7DD3FC' : '#0284C7');
+      document.getElementById('navGradStop3').setAttribute('stop-color', isDark ? '#CBD5E1' : '#64748B');
+      document.getElementById('navGradStop4').setAttribute('stop-color', isDark ? '#F8FAFC' : '#94A3B8');
+
+      moon.style.display = isDark ? 'none' : 'block';
+      sun.style.display = isDark ? 'block' : 'none';
+    }
+
+    function setLanguage(lang) {
+      currentLang = I18N[lang] ? lang : 'vi';
+      document.documentElement.lang = currentLang;
+      const dict = I18N[currentLang];
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) {
+          el.innerHTML = dict[key];
+        }
+      });
+
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (dict[key]) {
+          el.placeholder = dict[key];
+        }
+      });
+
+      renderTenders();
+      populateCsmsSelect();
+      renderCsms();
+    }
+
+    function switchSandbox(tab) {
+      document.getElementById('tabBtnTender').classList.toggle('active', tab === 'tender');
+      document.getElementById('tabBtnCsms').classList.toggle('active', tab === 'csms');
+      document.getElementById('panelTender').classList.toggle('active', tab === 'tender');
+      document.getElementById('panelCsms').classList.toggle('active', tab === 'csms');
+    }
+
+    function setTenderCat(cat, btnEl) {
+      activeTenderCat = cat;
+      document.querySelectorAll('#tenderCategoryPills .filter-pill').forEach(b => b.classList.remove('active'));
+      btnEl.classList.add('active');
+      renderTenders();
+    }
+
+    function renderTenders() {
+      const q = (document.getElementById('tenderSearch').value || '').toLowerCase().trim();
+      const tbody = document.getElementById('tenderTableBody');
+
+      const filtered = TENDERS.filter(item => {
+        const matchCat = activeTenderCat === 'ALL' || item.cat === activeTenderCat;
+        const localizedTitle = (item.title[currentLang] || item.title.vi).toLowerCase();
+        const matchText = !q ||
+          localizedTitle.includes(q) ||
+          item.code.toLowerCase().includes(q) ||
+          item.investor.toLowerCase().includes(q) ||
+          item.taxonomy.toLowerCase().includes(q);
+        return matchCat && matchText;
+      });
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; padding: 26px; color: var(--text-muted);">No matching tenders found.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = filtered.map(item => `
+        <tr>
+          <td>
+            <div style="font-weight: 700; color: var(--blue-primary); font-family: ui-monospace, monospace;">${item.code}</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted);">${item.source}</div>
+          </td>
+          <td>
+            <div style="font-weight: 600; color: var(--text-main); max-width: 370px; margin-bottom: 4px;">${item.title[currentLang] || item.title.vi}</div>
+            <span class="status-pill" style="font-family: ui-monospace, monospace; font-size: 0.71rem;">${item.taxonomy}</span>
+          </td>
+          <td>${item.investor}</td>
+          <td style="font-weight: 700; color: var(--text-main); white-space: nowrap;">${item.budget}</td>
+          <td><span class="status-pill">${item.status[currentLang] || item.status.vi}</span></td>
+          <td><span class="match-badge">&#10003; ${item.match}</span></td>
+        </tr>
+      `).join('');
+    }
+
+    function populateCsmsSelect() {
+      const serviceSelect = document.getElementById('csmsInputService');
+      if (csmsMode === 'CLINIC') {
+        serviceSelect.innerHTML = `
+          <option value="Khoa Thận Nhân Tạo — Ca 1 (Máy lọc tự động)">Khoa Thận Nhân Tạo — Ca 1</option>
+          <option value="Phòng Khám Nội Tổng Quát — P.102">Phòng Khám Nội Tổng Quát — P.102</option>
+          <option value="Chẩn đoán Hình ảnh & Siêu âm — P.205">Chẩn đoán Hình ảnh & Siêu âm — P.205</option>
+          <option value="Khám Chuyên Khoa Tim Mạch — P.108">Khám Chuyên Khoa Tim Mạch — P.108</option>
+        `;
+      } else {
+        serviceSelect.innerHTML = `
+          <option value="Toán Chuyên Sâu — Ca 18:00 (P.201)">Toán Chuyên Sâu — Ca 18:00 (P.201)</option>
+          <option value="Luyện thi IELTS — Ca 19:30 (P.104)">Luyện thi IELTS — Ca 19:30 (P.104)</option>
+          <option value="Khoa học Máy tính & STEM — Ca Sáng (P.302)">Khoa học Máy tính & STEM (P.302)</option>
+        `;
+      }
+    }
+
+    function setCsmsMode(mode) {
+      csmsMode = mode;
+      document.getElementById('btnModeClinic').classList.toggle('active', mode === 'CLINIC');
+      document.getElementById('btnModeClass').classList.toggle('active', mode === 'CLASS');
+      populateCsmsSelect();
+      renderCsms();
+    }
+
+    function renderCsms() {
+      const kpiGrid = document.getElementById('csmsKpiGrid');
+      const thead = document.getElementById('csmsTableHead');
+      const tbody = document.getElementById('csmsTableBody');
+      const list = csmsMode === 'CLINIC' ? CLINIC_DATA : CLASS_DATA;
+
+      if (csmsMode === 'CLINIC') {
+        kpiGrid.innerHTML = `
+          <div class="kpi-box"><span>Tốc độ đối soát Face SIMD</span><strong>1.4 ms / 10k hồ sơ</strong></div>
+          <div class="kpi-box"><span>Đơn bệnh nhân trong ca</span><strong>${142 + list.length}</strong></div>
+          <div class="kpi-box"><span>Chống cấp trùng phiếu</span><strong>100% Anti-Spam</strong></div>
+          <div class="kpi-box"><span>Dung lượng RAM Edge Server</span><strong>38 MB (Offline LAN)</strong></div>
+        `;
+        thead.innerHTML = `
+          <tr>
+            <th>Mã Hồ Sơ</th>
+            <th>Họ Tên Bệnh Nhân</th>
+            <th>Xác Thực Sinh Trắc / CCCD (1:N)</th>
+            <th>Khoa / Phòng Khám / Máy Lọc</th>
+            <th>Phương Thức</th>
+            <th>Trạng Thái &amp; Loa Gọi Số</th>
+          </tr>
+        `;
+      } else {
+        kpiGrid.innerHTML = `
+          <div class="kpi-box"><span>Học viên điểm danh hôm nay</span><strong>${240 + list.length}</strong></div>
+          <div class="kpi-box"><span>Ánh xạ Phụ huynh đưa đón</span><strong>1:N Face Mapping</strong></div>
+          <div class="kpi-box"><span>Số ca học đang vận hành</span><strong>16 ca</strong></div>
+          <div class="kpi-box"><span>Đồng bộ thông báo Phụ huynh</span><strong>Real-time</strong></div>
+        `;
+        thead.innerHTML = `
+          <tr>
+            <th>Mã HV</th>
+            <th>Họ Tên Học Viên</th>
+            <th>Thông Tin Phụ Huynh / Thẻ QR</th>
+            <th>Lớp / Ca Học / Phòng</th>
+            <th>Phương Thức</th>
+            <th>Trạng Thái</th>
+          </tr>
+        `;
+      }
+
+      tbody.innerHTML = list.map(item => `
+        <tr>
+          <td style="font-weight: 700; color: var(--blue-primary); font-family: ui-monospace, monospace;">${item.id}</td>
+          <td style="font-weight: 600; color: var(--text-main);">${item.name}</td>
+          <td>${item.cccd}</td>
+          <td>${item.dept}</td>
+          <td><span class="status-pill">${item.mode}</span></td>
+          <td><span class="match-badge">&#10003; ${item.status}</span></td>
+        </tr>
+      `).join('');
+    }
+
+    function addCsmsRecord() {
+      const nameEl = document.getElementById('csmsInputName');
+      const phoneEl = document.getElementById('csmsInputPhone');
+      const serviceEl = document.getElementById('csmsInputService');
+
+      const name = nameEl.value.trim() || (csmsMode === 'CLINIC' ? 'Bệnh nhân mới (Tiếp nhận nhanh)' : 'Học viên mới (Ghi danh ca học)');
+      const cccd = phoneEl.value.trim() || (csmsMode === 'CLINIC' ? 'CCCD gắn chip · Đã xác thực chống trùng' : 'PH đăng ký · Đã liên kết hồ sơ');
+      const dept = serviceEl.value;
+
+      if (csmsMode === 'CLINIC') {
+        const nextNum = 1001 + CLINIC_DATA.length;
+        CLINIC_DATA.unshift({
+          id: 'BN-' + nextNum,
+          name: name,
+          cccd: cccd,
+          dept: dept,
+          mode: 'Face ID / QR',
+          status: 'Vừa cấp số · Đang gọi loa TTS'
+        });
+      } else {
+        const nextNum = 2001 + CLASS_DATA.length;
+        CLASS_DATA.unshift({
+          id: 'HV-' + nextNum,
+          name: name,
+          cccd: cccd,
+          dept: dept,
+          mode: 'QR / Face ID',
+          status: 'Vừa ghi danh · Đã xếp lớp'
+        });
+      }
+
+      nameEl.value = '';
+      phoneEl.value = '';
+      renderCsms();
+    }
+
+    function submitConsultation(e) {
+      e.preventDefault();
+      const toast = document.getElementById('formToast');
+      toast.style.display = 'block';
+      e.target.reset();
+    }
+
+    // Initialize
+    populateCsmsSelect();
+    renderTenders();
+    renderCsms();
+  </script>
+</body>
+</html>
