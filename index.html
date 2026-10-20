@@ -1268,6 +1268,268 @@
     }
 
     /* ==========================================================================
+       PRICING SECTION (CFMS / QMS)
+       ========================================================================== */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .pricing-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-md);
+      border-radius: var(--radius-xl);
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--blue-sky);
+    }
+
+    .pricing-card.featured {
+      background: linear-gradient(155deg, #0B192C 0%, #102A49 55%, #163860 100%);
+      color: #F8FAFC;
+      border: 2px solid #38BDF8;
+      box-shadow: 0 24px 60px rgba(0, 82, 163, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+      transform: translateY(-6px);
+    }
+
+    .pricing-card.featured:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 28px 68px rgba(0, 82, 163, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+
+    .pricing-popular-ribbon {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, #0284C7 0%, #38BDF8 50%, #E2E8F0 100%);
+      color: #071324;
+      font-size: 0.73rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 99px;
+      white-space: nowrap;
+      box-shadow: 0 6px 18px rgba(2, 132, 199, 0.35);
+    }
+
+    .pricing-tier-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue-primary);
+      margin-bottom: 8px;
+    }
+
+    .pricing-card.featured .pricing-tier-label {
+      color: #7DD3FC;
+    }
+
+    .pricing-card h3 {
+      font-size: 1.38rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .pricing-card.featured h3 {
+      color: #FFFFFF;
+    }
+
+    .pricing-subtitle {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      min-height: 40px;
+      line-height: 1.45;
+    }
+
+    .pricing-card.featured .pricing-subtitle {
+      color: #CBD5E1;
+    }
+
+    .pricing-price-box {
+      padding: 18px;
+      border-radius: var(--radius-md);
+      background: var(--bg-surface-solid);
+      border: 1px solid var(--border-light);
+      margin-bottom: 16px;
+    }
+
+    .pricing-card.featured .pricing-price-box {
+      background: rgba(15, 35, 62, 0.78);
+      border-color: rgba(125, 211, 252, 0.32);
+    }
+
+    .price-main-line {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .price-amount {
+      font-size: 2.05rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text-main);
+      line-height: 1.1;
+    }
+
+    .pricing-card.featured .price-amount {
+      background: linear-gradient(90deg, #FFFFFF 0%, #7DD3FC 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .price-period {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .pricing-card.featured .price-period {
+      color: #94A3B8;
+    }
+
+    .setup-fee-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--border-light);
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .pricing-card.featured .setup-fee-row {
+      border-top-color: rgba(148, 163, 184, 0.28);
+    }
+
+    .setup-free-badge {
+      display: inline-block;
+      padding: 2px 9px;
+      border-radius: 99px;
+      background: rgba(56, 189, 248, 0.18);
+      color: #7DD3FC;
+      border: 1px solid rgba(125, 211, 252, 0.45);
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .role-quota-banner {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 14px;
+      border-radius: 10px;
+      background: var(--bg-ice);
+      border: 1px solid var(--border-ice);
+      color: var(--blue-hover);
+      font-size: 0.83rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    body.dark-mode .role-quota-banner {
+      background: rgba(2, 132, 199, 0.16);
+      color: #7DD3FC;
+      border-color: rgba(56, 189, 248, 0.35);
+    }
+
+    .pricing-card.featured .role-quota-banner {
+      background: linear-gradient(90deg, rgba(2, 132, 199, 0.32), rgba(56, 189, 248, 0.18));
+      border-color: rgba(125, 211, 252, 0.45);
+      color: #F0F9FF;
+    }
+
+    .pricing-feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      margin-bottom: 24px;
+      font-size: 0.87rem;
+      line-height: 1.48;
+      color: var(--text-body);
+    }
+
+    .pricing-card.featured .pricing-feature-list {
+      color: #E2E8F0;
+    }
+
+    .pricing-feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .pricing-check {
+      width: 19px;
+      height: 19px;
+      border-radius: 50%;
+      background: rgba(0, 102, 204, 0.12);
+      color: var(--blue-primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .pricing-card.featured .pricing-check {
+      background: rgba(56, 189, 248, 0.22);
+      color: #7DD3FC;
+    }
+
+    .pricing-hw-banner {
+      margin-top: 28px;
+      padding: 22px 26px;
+      border-radius: var(--radius-lg);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .hw-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.84rem;
+      color: var(--text-body);
+    }
+
+    .hw-item strong {
+      display: block;
+      color: var(--text-main);
+      font-size: 0.9rem;
+      margin-bottom: 3px;
+    }
+
+    /* ==========================================================================
        CTA & CONTACT FORM
        ========================================================================== */
     .cta-box {
@@ -1409,8 +1671,13 @@
       .product-split,
       .cta-box,
       .grid-3,
+      .pricing-grid,
+      .pricing-hw-banner,
       .footer-grid {
         grid-template-columns: 1fr;
+      }
+      .pricing-card.featured {
+        transform: none;
       }
       .csms-kpi-grid,
       .pipeline-flow {
@@ -1467,6 +1734,7 @@
         <li><a href="#solutions" data-i18n="nav_solutions">Giải pháp</a></li>
         <li><a href="#dauthau" data-i18n="nav_tender">Đấu thầu Công &amp; Tư</a></li>
         <li><a href="#cfms" data-i18n="nav_cfms">Quản trị CFMS / QMS</a></li>
+        <li><a href="#pricing" data-i18n="nav_pricing">Bảng giá</a></li>
         <li><a href="#live-demo" data-i18n="nav_demo">Trải nghiệm Demo</a></li>
         <li><a href="#architecture" data-i18n="nav_arch">Kiến trúc</a></li>
       </ul>
@@ -1887,14 +2155,21 @@
               </li>
               <li>
                 <span class="check-icon">&#10003;</span>
-                <div data-i18n="p2_f4"><strong>Kiến trúc Offline Edge Bảo mật:</strong> Vận hành độc lập 24/7 trong mạng LAN với bộ nhớ RAM &lt; 50 MB, tuân thủ Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân.</div>
+                <div data-i18n="p2_f4"><strong>Phân quyền 3 Role (Admin · Bác sĩ · Điều dưỡng) &amp; Ưu tiên Cấp cứu (CC-xx):</strong> Bác sĩ/Admin cấp số thủ công, bật cờ cấp cứu nhảy đầu hàng đợi; cổng quản trị ẩn (<code>/admin-portal</code>) theo dõi sơ đồ Topology thiết bị và nhật ký Audit Log.</div>
+              </li>
+              <li>
+                <span class="check-icon">&#10003;</span>
+                <div data-i18n="p2_f5"><strong>App Desktop Tauri v2 &amp; Offline LAN Edge (&lt; 50 MB RAM):</strong> Tích hợp chứng chỉ bảo mật nội bộ (Local Root CA cổng 9697), Watchdog tự phục hồi 24/7 và vận hành mượt ngay trên Mini-PC Intel N100 hoặc máy tính cũ, tuân thủ Nghị định 13/2023/NĐ-CP.</div>
               </li>
             </ul>
           </div>
 
-          <div>
-            <a href="#live-demo" onclick="switchSandbox('csms')" class="btn btn-outline btn-lg" style="width: 100%; border-color: var(--blue-primary); color: var(--blue-primary);" data-i18n="p2_cta">
-              Mở Bàn Điều Phối CFMS / CSMS &rarr;
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <a href="#live-demo" onclick="switchSandbox('csms')" class="btn btn-outline btn-lg" style="width: 100%; border-color: var(--blue-primary); color: var(--blue-primary); padding: 0 14px;" data-i18n="p2_cta">
+              Mở Bàn Điều Phối &rarr;
+            </a>
+            <a href="#pricing" class="btn btn-primary btn-lg" style="width: 100%; padding: 0 14px;" data-i18n="p2_price_btn">
+              Xem Bảng Giá &darr;
             </a>
           </div>
         </div>
@@ -1995,8 +2270,229 @@
     </div>
   </section>
 
+  <!-- SECTION 2.5: CFMS / QMS PRICING PLANS -->
+  <section id="pricing" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <div class="pill-tag" data-i18n="price_tag">Bảng Giá Quản Lý Phòng Khám &amp; Bệnh Viện (CFMS / QMS)</div>
+        <h2 data-i18n="price_title">Gói Dịch Vụ Minh Bạch · Miễn Phí Bảo Trì Trọn Đời Thuê Bao</h2>
+        <p data-i18n="price_desc">
+          Thiết kế tối ưu chi phí cho Phòng khám chuyên khoa, Khoa Thận Nhân Tạo, Bệnh viện và Cơ sở đào tạo. Tặng kèm dịch vụ Custom thương hiệu riêng (Logo, Tên đơn vị) trên toàn bộ màn hình Kiosk, Dashboard &amp; TV Phòng chờ.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- PLAN 1: BASIC -->
+        <div class="pricing-card">
+          <div>
+            <div class="pricing-tier-label" data-i18n="plan1_badge">GÓI CƠ BẢN · BASIC</div>
+            <h3 data-i18n="plan1_name">Phòng Khám &amp; Cơ Sở Tiêu Chuẩn</h3>
+            <p class="pricing-subtitle" data-i18n="plan1_sub">
+              Phù hợp cho Phòng khám chuyên khoa, Phòng mạch tư nhân hoặc Trung tâm đào tạo quy mô gọn (1 quầy tiếp nhận).
+            </p>
+
+            <div class="pricing-price-box">
+              <div class="price-main-line">
+                <span class="price-amount" data-i18n="plan1_price">499.000đ</span>
+                <span class="price-period" data-i18n="plan_per_month">/ tháng (Subscribe)</span>
+              </div>
+              <div class="setup-fee-row">
+                <span style="color: var(--text-muted);" data-i18n="plan1_setup_label">Phí lắp đặt &amp; khởi tạo (1 lần):</span>
+                <strong style="color: var(--text-main);" data-i18n="plan1_setup_val">1.799.000đ</strong>
+              </div>
+            </div>
+
+            <div class="role-quota-banner">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              <span data-i18n="plan1_quota">01 Tài khoản mỗi Role (01 Admin · 01 Bác sĩ · 01 Điều dưỡng)</span>
+            </div>
+
+            <ul class="pricing-feature-list">
+              <li>
+                <span class="pricing-check">&#10003;</span>
+                <div data-i18n="plan1_f1"><strong>Dịch vụ Custom thương hiệu riêng:</strong> Cài đặt Tên Phòng khám, Tên Khoa &amp; Logo riêng đồng bộ trên Kiosk lấy số, Bàn điều phối và TV Phòng chờ.</div>
+              </li>
+              <li>
+                <span class="pricing-check">&#10003;</span>
+                <div data-i18n="plan1_f2"><strong>Miễn phí 100% bảo trì &amp; cập nhật:</strong> Bảo hành phần mềm, nâng cấp tính năng mới và giám sát Watchdog 24/7 trong suốt thời gian còn Subscribe.</div>
+              </li>
+              <li>
+                <span class="pricing-check">&#10003;</span>
+                <div data-i18n="plan1_f3"><strong>Nhận diện khuôn mặt Edge AI (&lt; 2ms):</strong> Khung 1:1 đếm ngược 3 giây, tự động cân bằng sáng (Histogram Equalization) &amp; chống lấy trùng số tuyệt đối.</div>
+              </li>
+              <li>
+                <span class="pricing-check">&#10003;</span>
+                <div data-i18n="plan1_f4"><strong>Quét QR CCCD gắn chip (3 chế độ):</strong> Hỗ trợ Webcam, tải ảnh thẻ hoặc súng bắn mã vạch 2D USB (tự động bóc tách 7 trường chuẩn Bộ Công An).</div>
+              </li>
+              <li>
+                <span class="pricing-check">&#10003;</span>
+                <div data-i18n="plan1_f5"><strong>Chuông Ding-Dong &amp; Loa gọi số / Gọi lại:</strong> Đọc tên bệnh nhân, số thứ tự, phòng khám/máy lọc bằng giọng đọc TTS tiếng Việt tự nhiên.</div>
+              </li>
+              <li>
+                <span class="pricing-check">&#10003;</span>
+                <div data-i18n="plan1_f6"><strong>Ánh xạ người nhà lấy số giùm (1:N):</strong> Liên kết tối đa <strong>02 khuôn mặt / bệnh nhân</strong>, lưu vết lịch sử khám <strong>30 ngày</strong> &amp; khôi phục mật khẩu Master Key.</div>
+              </li>
+            </ul>
+          </div>
+
+          <a href="#contact" onclick="selectPricingPlan('cfms-basic')" class="btn btn-outline btn-lg" style="width: 100%; border-color: var(--blue-primary); color: var(--blue-primary);" data-i18n="plan1_cta">
+            Đăng Ký Gói Basic &rarr;
+          </a>
+        </div>
+
+        <!-- PLAN 2: PREMIUM (FEATURED) -->
+        <div class="pricing-card featured">
+          <div class="pricing-popular-ribbon" data-i18n="plan2_ribbon">PHỔ BIẾN NHẤT · MIỄN PHÍ LẮP ĐẶT 1.799K</div>
+          <div>
+            <div class="pricing-tier-label" data-i18n="plan2_badge">GÓI NÂNG CAO · PREMIUM</div>
+            <h3 data-i18n="plan2_name">Phòng Khám Đa Khoa &amp; Khoa Bệnh Viện</h3>
+            <p class="pricing-subtitle" data-i18n="plan2_sub">
+              Tối ưu cho Phòng khám Đa khoa, Khoa Thận Nhân Tạo / Khoa Khám bệnh nhiều ca trực và Trung tâm quy mô lớn.
+            </p>
+
+            <div class="pricing-price-box">
+              <div class="price-main-line">
+                <span class="price-amount" data-i18n="plan2_price">999.000đ</span>
+                <span class="price-period" data-i18n="plan_per_month">/ tháng (Subscribe)</span>
+              </div>
+              <div class="setup-fee-row">
+                <span style="color: #CBD5E1;" data-i18n="plan2_setup_label">Phí lắp đặt &amp; khởi tạo:</span>
+                <span class="setup-free-badge" data-i18n="plan2_setup_val">MIỄN PHÍ 0đ (Tiết kiệm 1.799k)</span>
+              </div>
+            </div>
+
+            <div class="role-quota-banner">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <span data-i18n="plan2_quota">Tối đa 10 Tài khoản mỗi Role (10 Admin · 10 Bác sĩ · 10 Điều dưỡng)</span>
+            </div>
+
+            <ul class="pricing-feature-list">
+              <li>
+                <span class="pricing-check">&#10003;</span>
+                <div data-i18n="plan2_f1"><strong>Toàn bộ quyền lợi Gói Basic:</strong> Bao gồm dịch vụ Custom thương hiệu riêng &amp; <strong>Miễn phí bảo trì, cập nhật phần mềm trọn đời</strong> khi còn Subscribe.</div>
+              </li>
+              <li>
+                <span class="pricing-check">&#10003;</span>
+                <div data-i18n="plan2_f2"><strong>Miễn phí 100% chi phí lắp đặt ban đầu:</strong> Đội ngũ kỹ sư HUDU thiết lập trọn gói hệ thống, phân quyền ca trực và bàn giao tận nơi (Tiết kiệm 1.799.000đ).</div>
+              </li>
+              <li>
+                <span class="pricing-check">&#10003;</span>
+                <div data-i18n="plan2_f3"><strong>Đa tài khoản nhân sự (Tối đa 10 Account / Role):</strong> Lên tới <strong>30 tài khoản</strong> cho đội ngũ Bác sĩ, Điều dưỡng, Giáo vụ làm việc đồng thời trên nhiều máy trạm.</div>
+              </li>
+              <li>
+                <span class="pricing-check">&#10003;</span>
+                <div data-i18n="plan2_f4"><strong>Đặc quyền Bác sĩ &amp; Ưu tiên Cấp cứu (CC-xx):</strong> Cấp phiếu thủ công không qua camera (<code>[➕ Cấp Số Mới]</code>), tạo mã cấp cứu đẩy đầu hàng đợi &amp; quản lý nhân sự.</div>
+              </li>
+              <li>
+                <span class="pricing-check">&#10003;</span>
+                <div data-i18n="plan2_f5"><strong>Ánh xạ 1:N Mở rộng (05 người nhà / bệnh nhân):</strong> Tự động học khuôn mặt người nhà mới (Dynamic Face Learning) trực tiếp vào bộ nhớ RAM 10.000 hồ sơ.</div>
+              </li>
+              <li>
+                <span class="pricing-check">&#10003;</span>
+                <div data-i18n="plan2_f6"><strong>App Desktop Tauri v2 &amp; Chứng chỉ HTTPS Nội bộ (Root CA):</strong> Cài đặt trên Windows/macOS/Linux (<code>chaythan.local:9697</code>), cấp quyền Camera &amp; Loa vĩnh viễn không bị chặn.</div>
+              </li>
+              <li>
+                <span class="pricing-check">&#10003;</span>
+                <div data-i18n="plan2_f7"><strong>Cổng Admin Ẩn, Sơ đồ Topology &amp; Lưu lịch sử 365 ngày:</strong> Giám sát trực quan Camera FPS, Loa, TV, nhật ký Audit Log và tự động sao lưu CSDL ra USB.</div>
+              </li>
+            </ul>
+          </div>
+
+          <a href="#contact" onclick="selectPricingPlan('cfms-premium')" class="btn btn-primary btn-lg" style="width: 100%; background: linear-gradient(135deg, #38BDF8 0%, #0284C7 100%); color: #061325; font-weight: 800;" data-i18n="plan2_cta">
+            Đăng Ký Gói Premium (Miễn Phí Lắp Đặt) &rarr;
+          </a>
+        </div>
+
+        <!-- PLAN 3: ENTERPRISE / HOSPITAL -->
+        <div class="pricing-card">
+          <div>
+            <div class="pricing-tier-label" data-i18n="plan3_badge">GÓI BỆNH VIỆN &amp; CHUỖI · ENTERPRISE</div>
+            <h3 data-i18n="plan3_name">Bệnh Viện Đa Khoa &amp; Chuỗi Cơ Sở</h3>
+            <p class="pricing-subtitle" data-i18n="plan3_sub">
+              Giải pháp may đo toàn diện cho Bệnh viện tuyến Tỉnh/Trung ương hoặc Chuỗi phòng khám đa chi nhánh cần tích hợp HIS/LIS.
+            </p>
+
+            <div class="pricing-price-box">
+              <div class="price-main-line">
+                <span class="price-amount" data-i18n="plan3_price">Báo giá riêng</span>
+                <span class="price-period" data-i18n="plan3_period">/ theo quy mô khoa phòng</span>
+              </div>
+              <div class="setup-fee-row">
+                <span style="color: var(--text-muted);" data-i18n="plan3_setup_label">Triển khai &amp; Tích hợp:</span>
+                <strong style="color: var(--blue-primary);" data-i18n="plan3_setup_val">Khảo sát &amp; Bàn giao tận nơi</strong>
+              </div>
+            </div>
+
+            <div class="role-quota-banner">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              <span data-i18n="plan3_quota">Không giới hạn Tài khoản mỗi Role · Đa Kiosk &amp; Đa Khoa Phòng</span>
+            </div>
+
+            <ul class="pricing-feature-list">
+              <li>
+                <span class="pricing-check">&#10003;</span>
+                <div data-i18n="plan3_f1"><strong>Toàn bộ tính năng Gói Premium:</strong> Không giới hạn tài khoản Admin, Bác sĩ, Điều dưỡng và không giới hạn số lượng Kiosk tiếp nhận / màn hình TV.</div>
+              </li>
+              <li>
+                <span class="pricing-check">&#10003;</span>
+                <div data-i18n="plan3_f2"><strong>Mở rộng bộ nhớ SIMD Vector Store:</strong> Dung lượng trên <strong>50.000+ khuôn mặt</strong> trong RAM với tốc độ đối soát dưới 2 mili-giây.</div>
+              </li>
+              <li>
+                <span class="pricing-check">&#10003;</span>
+                <div data-i18n="plan3_f3"><strong>Tích hợp API 2 chiều chuyên sâu:</strong> Đồng bộ dữ liệu trực tiếp với hệ thống <strong>HIS / LIS / PACS / Cổng Bảo hiểm Y tế</strong> hiện hữu của Bệnh viện.</div>
+              </li>
+              <li>
+                <span class="pricing-check">&#10003;</span>
+                <div data-i18n="plan3_f4"><strong>Cung cấp &amp; Lắp đặt Phần cứng Trọn gói:</strong> Trang bị Mini-PC Intel N100 Fanless chạy êm 24/7, màn hình cảm ứng Kiosk, súng quét QR 2D USB &amp; hệ thống âm thanh.</div>
+              </li>
+              <li>
+                <span class="pricing-check">&#10003;</span>
+                <div data-i18n="plan3_f5"><strong>Cam kết SLA 99.99% &amp; Kỹ sư chuyên trách:</strong> Hỗ trợ kỹ thuật ưu tiên 24/7/365 và đào tạo vận hành trực tiếp tại từng khoa phòng.</div>
+              </li>
+            </ul>
+          </div>
+
+          <a href="#contact" onclick="selectPricingPlan('cfms-enterprise')" class="btn btn-outline btn-lg" style="width: 100%; border-color: var(--blue-primary); color: var(--blue-primary);" data-i18n="plan3_cta">
+            Nhận Tư Vấn &amp; Báo Giá Bệnh Viện &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Hardware & System Efficiency Strip from cfms_qms/requirement.txt -->
+      <div class="pricing-hw-banner">
+        <div class="hw-item">
+          <span class="icon-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/></svg>
+          </span>
+          <div>
+            <strong data-i18n="hw_1_title">Tương Thích Phần Cứng Giá Rẻ (Mini-PC / Máy Cũ)</strong>
+            <span data-i18n="hw_1_desc">Chỉ tốn &lt; 50 MB RAM &amp; &lt; 0.05% CPU khi nhàn rỗi nhờ Motion Filter. Chạy mượt 24/7 trên Mini-PC Intel N100 (~3 triệu) hoặc PC văn phòng Core i3 / RAM 4GB / SSD 120GB sẵn có.</span>
+          </div>
+        </div>
+        <div class="hw-item">
+          <span class="icon-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </span>
+          <div>
+            <strong data-i18n="hw_2_title">100% Offline LAN · Tuân Thủ Nghị Định 13/2023/NĐ-CP</strong>
+            <span data-i18n="hw_2_desc">Toàn bộ ảnh sinh trắc và dữ liệu CCCD lưu cục bộ trong SQLite WAL nội bộ bệnh viện/phòng khám; vẫn hoạt động bình thường ngay cả khi đứt cáp Internet.</span>
+          </div>
+        </div>
+        <div class="hw-item">
+          <span class="icon-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </span>
+          <div>
+            <strong data-i18n="hw_3_title">Cam Kết Bảo Trì Miễn Phí Khi Còn Subscribe</strong>
+            <span data-i18n="hw_3_desc">Bao gồm cập nhật thuật toán nhận diện mới, hỗ trợ cài lại máy trạm, điều chỉnh giao diện thương hiệu riêng và xử lý sự cố từ xa hoàn toàn miễn phí.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SECTION 3: ARCHITECTURE & ENGINEERING -->
-  <section id="architecture" class="section section-alt">
+  <section id="architecture" class="section">
     <div class="container">
       <div class="section-header">
         <div class="pill-tag" data-i18n="arch_tag">Nền tảng Kỹ thuật</div>
@@ -2041,7 +2537,7 @@
   </section>
 
   <!-- SECTION 4: CONTACT / DEMO REQUEST -->
-  <section id="contact" class="section">
+  <section id="contact" class="section section-alt">
     <div class="container">
       <div class="cta-box">
         <div>
@@ -2060,9 +2556,9 @@
         </div>
 
         <form class="contact-form" onsubmit="submitConsultation(event)">
-          <h3 data-i18n="form_title">Yêu Cầu Tư Vấn &amp; Demo</h3>
+          <h3 data-i18n="form_title">Yêu Cầu Tư Vấn &amp; Đăng Ký Gói</h3>
           <div class="form-group">
-            <label data-i18n="form_name_label">Họ tên / Tên doanh nghiệp, cơ sở *</label>
+            <label data-i18n="form_name_label">Họ tên / Tên doanh nghiệp, phòng khám *</label>
             <input type="text" required id="formNameInput" placeholder="Công ty / Bệnh viện / Phòng khám..." />
           </div>
           <div class="form-group">
@@ -2070,10 +2566,12 @@
             <input type="text" required id="formPhoneInput" placeholder="0909 xxx xxx / contact@company.com" />
           </div>
           <div class="form-group">
-            <label data-i18n="form_prod_label">Giải pháp quan tâm *</label>
+            <label data-i18n="form_prod_label">Giải pháp &amp; Gói dịch vụ quan tâm *</label>
             <select required id="formProdSelect">
+              <option value="cfms-premium" data-i18n="form_opt_cfms_prem">CFMS/QMS Gói Premium — 999k/tháng (Miễn phí lắp đặt · 10 Acc/Role)</option>
+              <option value="cfms-basic" data-i18n="form_opt_cfms_basic">CFMS/QMS Gói Basic — 499k/tháng (Lắp đặt 1tr799 · 1 Acc/Role)</option>
+              <option value="cfms-enterprise" data-i18n="form_opt_cfms_ent">CFMS/QMS Gói Enterprise — Bệnh viện Đa khoa &amp; Chuỗi cơ sở</option>
               <option value="dauthau" data-i18n="form_opt_1">HUDU DauThau — Săn &amp; Lọc Đấu Thầu Công &amp; Tư</option>
-              <option value="cfms-med" data-i18n="form_opt_2">HUDU CFMS/QMS — Tiếp nhận đơn Bệnh viện &amp; Phòng khám</option>
               <option value="cfms-edu" data-i18n="form_opt_3">HUDU CSMS — Quản trị Phòng học dạy thêm &amp; Trung tâm</option>
               <option value="all" data-i18n="form_opt_4">Tư vấn toàn bộ hệ sinh thái HUDU</option>
             </select>
@@ -2255,6 +2753,7 @@
         nav_solutions: "Giải pháp",
         nav_tender: "Đấu thầu Công & Tư",
         nav_cfms: "Quản trị CFMS / QMS",
+        nav_pricing: "Bảng giá",
         nav_demo: "Trải nghiệm Demo",
         nav_arch: "Kiến trúc",
         nav_cta: "Đăng ký Dùng thử",
@@ -2303,8 +2802,64 @@
         p2_f1: "<strong>Nhận diện khuôn mặt siêu tốc (< 2 ms) & Ánh xạ 1:N:</strong> Đối soát 10.000 hồ sơ bằng SIMD 512 chiều; hỗ trợ người nhà lấy phiếu khám giùm bệnh nhân hoặc phụ huynh điểm danh cho học viên, chống cấp trùng phiếu tuyệt đối.",
         p2_f2: "<strong>Đa phương thức tiếp nhận & Quét CCCD gắn chip:</strong> Hỗ trợ Camera Kiosk/Laptop, tải ảnh thẻ hoặc súng quét mã vạch 2D USB; tự động bóc tách 7 trường thông tin CCCD và đồng bộ mã hồ sơ chính thức.",
         p2_f3: "<strong>Bàn điều phối Real-time, Loa gọi số TTS & TV Phòng chờ:</strong> Tìm kiếm không dấu tức thì, tích hợp chuông Ding-Dong, tự động đọc tên bệnh nhân, số thứ tự, phòng khám/máy lọc và hỗ trợ nút Gọi lại (Re-call).",
-        p2_f4: "<strong>Kiến trúc Offline Edge Bảo mật:</strong> Vận hành độc lập 24/7 trong mạng LAN với bộ nhớ RAM < 50 MB, tuân thủ Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân.",
-        p2_cta: "Mở Bàn Điều Phối CFMS / CSMS →",
+        p2_f4: "<strong>Phân quyền 3 Role (Admin · Bác sĩ · Điều dưỡng) & Ưu tiên Cấp cứu (CC-xx):</strong> Bác sĩ/Admin cấp số thủ công, bật cờ cấp cứu nhảy đầu hàng đợi; cổng quản trị ẩn (<code>/admin-portal</code>) theo dõi sơ đồ Topology thiết bị và nhật ký Audit Log.",
+        p2_f5: "<strong>App Desktop Tauri v2 & Offline LAN Edge (< 50 MB RAM):</strong> Tích hợp chứng chỉ bảo mật nội bộ (Local Root CA cổng 9697), Watchdog tự phục hồi 24/7 và vận hành mượt ngay trên Mini-PC Intel N100 hoặc máy tính cũ, tuân thủ Nghị định 13/2023/NĐ-CP.",
+        p2_cta: "Mở Bàn Điều Phối →",
+        p2_price_btn: "Xem Bảng Giá ↓",
+        price_tag: "Bảng Giá Quản Lý Phòng Khám & Bệnh Viện (CFMS / QMS)",
+        price_title: "Gói Dịch Vụ Minh Bạch · Miễn Phí Bảo Trì Trọn Đời Thuê Bao",
+        price_desc: "Thiết kế tối ưu chi phí cho Phòng khám chuyên khoa, Khoa Thận Nhân Tạo, Bệnh viện và Cơ sở đào tạo. Tặng kèm dịch vụ Custom thương hiệu riêng (Logo, Tên đơn vị) trên toàn bộ màn hình Kiosk, Dashboard & TV Phòng chờ.",
+        plan_per_month: "/ tháng (Subscribe)",
+        plan1_badge: "GÓI CƠ BẢN · BASIC",
+        plan1_name: "Phòng Khám & Cơ Sở Tiêu Chuẩn",
+        plan1_sub: "Phù hợp cho Phòng khám chuyên khoa, Phòng mạch tư nhân hoặc Trung tâm đào tạo quy mô gọn (1 quầy tiếp nhận).",
+        plan1_price: "499.000đ",
+        plan1_setup_label: "Phí lắp đặt & khởi tạo (1 lần):",
+        plan1_setup_val: "1.799.000đ",
+        plan1_quota: "01 Tài khoản mỗi Role (01 Admin · 01 Bác sĩ · 01 Điều dưỡng)",
+        plan1_f1: "<strong>Dịch vụ Custom thương hiệu riêng:</strong> Cài đặt Tên Phòng khám, Tên Khoa & Logo riêng đồng bộ trên Kiosk lấy số, Bàn điều phối và TV Phòng chờ.",
+        plan1_f2: "<strong>Miễn phí 100% bảo trì & cập nhật:</strong> Bảo hành phần mềm, nâng cấp tính năng mới và giám sát Watchdog 24/7 trong suốt thời gian còn Subscribe.",
+        plan1_f3: "<strong>Nhận diện khuôn mặt Edge AI (< 2ms):</strong> Khung 1:1 đếm ngược 3 giây, tự động cân bằng sáng (Histogram Equalization) & chống lấy trùng số tuyệt đối.",
+        plan1_f4: "<strong>Quét QR CCCD gắn chip (3 chế độ):</strong> Hỗ trợ Webcam, tải ảnh thẻ hoặc súng bắn mã vạch 2D USB (tự động bóc tách 7 trường chuẩn Bộ Công An).",
+        plan1_f5: "<strong>Chuông Ding-Dong & Loa gọi số / Gọi lại:</strong> Đọc tên bệnh nhân, số thứ tự, phòng khám/máy lọc bằng giọng đọc TTS tiếng Việt tự nhiên.",
+        plan1_f6: "<strong>Ánh xạ người nhà lấy số giùm (1:N):</strong> Liên kết tối đa <strong>02 khuôn mặt / bệnh nhân</strong>, lưu vết lịch sử khám <strong>30 ngày</strong> & khôi phục mật khẩu Master Key.",
+        plan1_cta: "Đăng Ký Gói Basic →",
+        plan2_ribbon: "PHỔ BIẾN NHẤT · MIỄN PHÍ LẮP ĐẶT 1.799K",
+        plan2_badge: "GÓI NÂNG CAO · PREMIUM",
+        plan2_name: "Phòng Khám Đa Khoa & Khoa Bệnh Viện",
+        plan2_sub: "Tối ưu cho Phòng khám Đa khoa, Khoa Thận Nhân Tạo / Khoa Khám bệnh nhiều ca trực và Trung tâm quy mô lớn.",
+        plan2_price: "999.000đ",
+        plan2_setup_label: "Phí lắp đặt & khởi tạo:",
+        plan2_setup_val: "MIỄN PHÍ 0đ (Tiết kiệm 1.799k)",
+        plan2_quota: "Tối đa 10 Tài khoản mỗi Role (10 Admin · 10 Bác sĩ · 10 Điều dưỡng)",
+        plan2_f1: "<strong>Toàn bộ quyền lợi Gói Basic:</strong> Bao gồm dịch vụ Custom thương hiệu riêng & <strong>Miễn phí bảo trì, cập nhật phần mềm trọn đời</strong> khi còn Subscribe.",
+        plan2_f2: "<strong>Miễn phí 100% chi phí lắp đặt ban đầu:</strong> Đội ngũ kỹ sư HUDU thiết lập trọn gói hệ thống, phân quyền ca trực và bàn giao tận nơi (Tiết kiệm 1.799.000đ).",
+        plan2_f3: "<strong>Đa tài khoản nhân sự (Tối đa 10 Account / Role):</strong> Lên tới <strong>30 tài khoản</strong> cho đội ngũ Bác sĩ, Điều dưỡng, Giáo vụ làm việc đồng thời trên nhiều máy trạm.",
+        plan2_f4: "<strong>Đặc quyền Bác sĩ & Ưu tiên Cấp cứu (CC-xx):</strong> Cấp phiếu thủ công không qua camera (<code>[➕ Cấp Số Mới]</code>), tạo mã cấp cứu đẩy đầu hàng đợi & quản lý nhân sự.",
+        plan2_f5: "<strong>Ánh xạ 1:N Mở rộng (05 người nhà / bệnh nhân):</strong> Tự động học khuôn mặt người nhà mới (Dynamic Face Learning) trực tiếp vào bộ nhớ RAM 10.000 hồ sơ.",
+        plan2_f6: "<strong>App Desktop Tauri v2 & Chứng chỉ HTTPS Nội bộ (Root CA):</strong> Cài đặt trên Windows/macOS/Linux (<code>chaythan.local:9697</code>), cấp quyền Camera & Loa vĩnh viễn không bị chặn.",
+        plan2_f7: "<strong>Cổng Admin Ẩn, Sơ đồ Topology & Lưu lịch sử 365 ngày:</strong> Giám sát trực quan Camera FPS, Loa, TV, nhật ký Audit Log và tự động sao lưu CSDL ra USB.",
+        plan2_cta: "Đăng Ký Gói Premium (Miễn Phí Lắp Đặt) →",
+        plan3_badge: "GÓI BỆNH VIỆN & CHUỖI · ENTERPRISE",
+        plan3_name: "Bệnh Viện Đa Khoa & Chuỗi Cơ Sở",
+        plan3_sub: "Giải pháp may đo toàn diện cho Bệnh viện tuyến Tỉnh/Trung ương hoặc Chuỗi phòng khám đa chi nhánh cần tích hợp HIS/LIS.",
+        plan3_price: "Báo giá riêng",
+        plan3_period: "/ theo quy mô khoa phòng",
+        plan3_setup_label: "Triển khai & Tích hợp:",
+        plan3_setup_val: "Khảo sát & Bàn giao tận nơi",
+        plan3_quota: "Không giới hạn Tài khoản mỗi Role · Đa Kiosk & Đa Khoa Phòng",
+        plan3_f1: "<strong>Toàn bộ tính năng Gói Premium:</strong> Không giới hạn tài khoản Admin, Bác sĩ, Điều dưỡng và không giới hạn số lượng Kiosk tiếp nhận / màn hình TV.",
+        plan3_f2: "<strong>Mở rộng bộ nhớ SIMD Vector Store:</strong> Dung lượng trên <strong>50.000+ khuôn mặt</strong> trong RAM với tốc độ đối soát dưới 2 mili-giây.",
+        plan3_f3: "<strong>Tích hợp API 2 chiều chuyên sâu:</strong> Đồng bộ dữ liệu trực tiếp với hệ thống <strong>HIS / LIS / PACS / Cổng Bảo hiểm Y tế</strong> hiện hữu của Bệnh viện.",
+        plan3_f4: "<strong>Cung cấp & Lắp đặt Phần cứng Trọn gói:</strong> Trang bị Mini-PC Intel N100 Fanless chạy êm 24/7, màn hình cảm ứng Kiosk, súng quét QR 2D USB & hệ thống âm thanh.",
+        plan3_f5: "<strong>Cam kết SLA 99.99% & Kỹ sư chuyên trách:</strong> Hỗ trợ kỹ thuật ưu tiên 24/7/365 và đào tạo vận hành trực tiếp tại từng khoa phòng.",
+        plan3_cta: "Nhận Tư Vấn & Báo Giá Bệnh Viện →",
+        hw_1_title: "Tương Thích Phần Cứng Giá Rẻ (Mini-PC / Máy Cũ)",
+        hw_1_desc: "Chỉ tốn < 50 MB RAM & < 0.05% CPU khi nhàn rỗi nhờ Motion Filter. Chạy mượt 24/7 trên Mini-PC Intel N100 (~3 triệu) hoặc PC văn phòng Core i3 / RAM 4GB / SSD 120GB sẵn có.",
+        hw_2_title: "100% Offline LAN · Tuân Thủ Nghị Định 13/2023/NĐ-CP",
+        hw_2_desc: "Toàn bộ ảnh sinh trắc và dữ liệu CCCD lưu cục bộ trong SQLite WAL nội bộ bệnh viện/phòng khám; vẫn hoạt động bình thường ngay cả khi đứt cáp Internet.",
+        hw_3_title: "Cam Kết Bảo Trì Miễn Phí Khi Còn Subscribe",
+        hw_3_desc: "Bao gồm cập nhật thuật toán nhận diện mới, hỗ trợ cài lại máy trạm, điều chỉnh giao diện thương hiệu riêng và xử lý sự cố từ xa hoàn toàn miễn phí.",
         demo_tag: "Mô phỏng Tương tác",
         demo_title: "Trải Nghiệm Trực Tiếp Hai Phân Hệ",
         demo_desc: "Thử nghiệm lọc gói thầu theo biên độ năng lực Sàn/Trần hoặc tiếp nhận đơn bệnh nhân / học viên ngay trên giao diện mẫu.",
@@ -2340,12 +2895,14 @@
         cta_b1: "✓ Cấu hình sẵn biên độ năng lực Sàn/Trần và tự động quét các gói thầu đang mở",
         cta_b2: "✓ Tùy biến luồng lấy đơn bệnh nhân, quét CCCD, loa gọi số và màn hình TV phòng chờ",
         cta_b3: "✓ Hỗ trợ triển khai Cloud (Docker Compose) hoặc Edge Server nội bộ",
-        form_title: "Yêu Cầu Tư Vấn & Demo",
-        form_name_label: "Họ tên / Tên doanh nghiệp, cơ sở *",
+        form_title: "Yêu Cầu Tư Vấn & Đăng Ký Gói",
+        form_name_label: "Họ tên / Tên doanh nghiệp, phòng khám *",
         form_phone_label: "Số điện thoại / Email liên hệ *",
-        form_prod_label: "Giải pháp quan tâm *",
+        form_prod_label: "Giải pháp & Gói dịch vụ quan tâm *",
+        form_opt_cfms_prem: "CFMS/QMS Gói Premium — 999k/tháng (Miễn phí lắp đặt · 10 Acc/Role)",
+        form_opt_cfms_basic: "CFMS/QMS Gói Basic — 499k/tháng (Lắp đặt 1tr799 · 1 Acc/Role)",
+        form_opt_cfms_ent: "CFMS/QMS Gói Enterprise — Bệnh viện Đa khoa & Chuỗi cơ sở",
         form_opt_1: "HUDU DauThau — Săn & Lọc Đấu Thầu Công & Tư",
-        form_opt_2: "HUDU CFMS/QMS — Tiếp nhận đơn Bệnh viện & Phòng khám",
         form_opt_3: "HUDU CSMS — Quản trị Phòng học dạy thêm & Trung tâm",
         form_opt_4: "Tư vấn toàn bộ hệ sinh thái HUDU",
         form_submit: "Gửi Yêu Cầu Đăng Ký",
@@ -2359,6 +2916,7 @@
         nav_solutions: "Solutions",
         nav_tender: "Public & Private Tenders",
         nav_cfms: "CFMS / QMS Platform",
+        nav_pricing: "Pricing",
         nav_demo: "Interactive Demo",
         nav_arch: "Architecture",
         nav_cta: "Request Demo",
@@ -2407,8 +2965,64 @@
         p2_f1: "<strong>Ultra-Fast Face Recognition (< 2ms) & 1:N Mapping:</strong> Matches 10,000 profiles via 512-D SIMD; supports family/caregiver proxy check-in and strict anti-duplicate ticket protection.",
         p2_f2: "<strong>Multi-Modal Intake & Chip ID QR Scanning:</strong> Supports Kiosk/Laptop webcam, ID photo upload, or 2D USB barcode scanners with automatic profile binding.",
         p2_f3: "<strong>Real-time Nurse/Staff Console, TTS Voice & TV Display:</strong> Instant accent-insensitive search, Ding-Dong chime, automated TTS voice calling, and Re-call sync to waiting room TVs.",
-        p2_f4: "<strong>100% Offline Edge Security:</strong> Operates independently on local LAN with < 50 MB RAM footprint, ensuring strict biometric and personal data privacy.",
-        p2_cta: "Launch CFMS / CSMS Console →",
+        p2_f4: "<strong>3-Role Clinical RBAC (Admin · Doctor · Nurse) & Emergency Override (CC-xx):</strong> Doctors/Admins issue manual tickets & emergency priority codes; hidden <code>/admin-portal</code> tracks live device Topology & Audit Logs.",
+        p2_f5: "<strong>Native Tauri v2 Desktop App & 100% Offline LAN Edge (< 50 MB RAM):</strong> Built-in Local Root CA HTTPS (port 9697), 24/7 Watchdog self-healing, running smoothly on budget Intel N100 Mini-PCs.",
+        p2_cta: "Open Console →",
+        p2_price_btn: "View Pricing ↓",
+        price_tag: "Clinic & Hospital Queue Management Pricing (CFMS / QMS)",
+        price_title: "Transparent Plans · Free Lifetime Maintenance While Subscribed",
+        price_desc: "Engineered for Specialty Clinics, Hemodialysis Wards, Hospitals, and Education Centers. Includes full White-Label Custom Branding (your Logo & Facility Name) across Kiosk, Dashboard, and Waiting Hall TVs.",
+        plan_per_month: "/ month (Subscription)",
+        plan1_badge: "BASIC PLAN · STANDARD",
+        plan1_name: "Standard Clinic & Center",
+        plan1_sub: "Ideal for private clinics, specialty practices, or tutoring centers with a single reception desk.",
+        plan1_price: "499,000 VND",
+        plan1_setup_label: "One-time setup & installation:",
+        plan1_setup_val: "1,799,000 VND",
+        plan1_quota: "01 Account per Role (01 Admin · 01 Doctor · 01 Nurse)",
+        plan1_f1: "<strong>Custom White-Label Branding:</strong> Your Clinic/Hospital Name, Department & Logo displayed across Kiosk, Nurse Dashboard, and TV Display.",
+        plan1_f2: "<strong>100% Free Maintenance & Updates:</strong> Full software warranty, feature upgrades, and 24/7 Watchdog monitoring throughout your active subscription.",
+        plan1_f3: "<strong>Edge-AI Face Recognition (< 2ms):</strong> 1:1 anthropometric crop with 3s countdown, auto histogram equalization, and strict anti-duplicate protection.",
+        plan1_f4: "<strong>3-Mode Chip ID QR Scanning:</strong> Supports Webcam, ID photo drag-and-drop, or 2D USB barcode scanners (auto-extracts 7 citizen fields).",
+        plan1_f5: "<strong>Ding-Dong Chime & TTS Voice Calling / Re-call:</strong> Natural voice announcements for patient name, ticket number, and room/machine synced to TV.",
+        plan1_f6: "<strong>1:N Caregiver Face Mapping:</strong> Links up to <strong>02 faces / patient</strong>, <strong>30-day</strong> treatment history & offline Master Key password recovery.",
+        plan1_cta: "Subscribe to Basic →",
+        plan2_ribbon: "MOST POPULAR · FREE 1,799K INSTALLATION",
+        plan2_badge: "PREMIUM PLAN · ADVANCED",
+        plan2_name: "Multi-Specialty Clinic & Hospital Ward",
+        plan2_sub: "Best for multi-shift clinics, Hemodialysis/Outpatient hospital wards, and larger training centers.",
+        plan2_price: "999,000 VND",
+        plan2_setup_label: "Setup & installation fee:",
+        plan2_setup_val: "FREE 0 VND (Save 1,799k)",
+        plan2_quota: "Up to 10 Accounts per Role (10 Admin · 10 Doctor · 10 Nurse)",
+        plan2_f1: "<strong>Everything in Basic Plan:</strong> Includes Custom White-Label Branding & <strong>100% Free Maintenance and Updates</strong> while subscribed.",
+        plan2_f2: "<strong>FREE Initial Setup & Deployment:</strong> Complete system setup, role configuration, and handover with $0 installation fee (Save 1,799,000 VND).",
+        plan2_f3: "<strong>Multi-Shift Staff Quota (Up to 10 Accounts / Role):</strong> Up to <strong>30 staff accounts</strong> for Doctors, Nurses, and Admins working across multiple stations.",
+        plan2_f4: "<strong>Doctor Privileges & Emergency Override (CC-xx):</strong> Manual ticket issuance without camera scan and instant emergency priority queue placement.",
+        plan2_f5: "<strong>Extended 1:N Family Mapping (05 faces / patient):</strong> Dynamic live face learning directly into the 10,000-vector RAM cache without restart.",
+        plan2_f6: "<strong>Native Tauri v2 Desktop App & Local Root CA HTTPS:</strong> Runs on Windows/macOS/Linux (<code>chaythan.local:9697</code>) with permanent camera/audio permissions.",
+        plan2_f7: "<strong>Hidden Admin Portal, Topology Graph & 365-Day History:</strong> Live monitoring of Camera FPS, Speaker, TV, Audit Logs, plus automated USB backup.",
+        plan2_cta: "Get Premium (Free Setup) →",
+        plan3_badge: "ENTERPRISE · HOSPITAL & CHAINS",
+        plan3_name: "General Hospital & Multi-Branch",
+        plan3_sub: "Tailored deployment for Provincial/Central Hospitals or multi-branch clinic chains requiring HIS/LIS integration.",
+        plan3_price: "Custom Quote",
+        plan3_period: "/ tailored to ward scale",
+        plan3_setup_label: "Deployment & Integration:",
+        plan3_setup_val: "On-site Survey & Turnkey Setup",
+        plan3_quota: "Unlimited Accounts per Role · Multi-Kiosk & Multi-Ward",
+        plan3_f1: "<strong>All Premium Capabilities:</strong> Unlimited Admin, Doctor, and Nurse accounts plus unlimited Kiosk intake terminals and waiting hall TVs.",
+        plan3_f2: "<strong>Expanded SIMD Vector Store Capacity:</strong> Supports <strong>50,000+ face vectors</strong> in RAM with sub-2ms cosine similarity matching.",
+        plan3_f3: "<strong>Deep Bidirectional API Integration:</strong> Seamless synchronization with existing hospital <strong>HIS / LIS / PACS / Social Insurance</strong> systems.",
+        plan3_f4: "<strong>Turnkey Hardware Provisioning:</strong> Optional supply of fanless Intel N100 Mini-PCs, touchscreen kiosks, 2D USB QR guns & ward audio.",
+        plan3_f5: "<strong>99.99% Enterprise SLA & Dedicated Engineers:</strong> Priority 24/7/365 support and on-site clinical staff training.",
+        plan3_cta: "Request Enterprise Quote →",
+        hw_1_title: "Runs on Ultra-Low-Cost Hardware (Mini-PC / Refurbished PC)",
+        hw_1_desc: "Uses < 50 MB RAM & < 0.05% idle CPU via Motion Filter. Runs 24/7 on a ~3M VND Intel N100 Mini-PC or existing Core i3 / 4GB RAM / 120GB SSD office PCs.",
+        hw_2_title: "100% Offline LAN · Decree 13/2023/NĐ-CP Compliant",
+        hw_2_desc: "All biometric vectors and citizen ID data stay inside your local SQLite WAL database; operates uninterrupted even without internet.",
+        hw_3_title: "Guaranteed Free Maintenance During Subscription",
+        hw_3_desc: "Includes recognition engine upgrades, workstation re-installation support, custom branding adjustments, and remote troubleshooting at no extra cost.",
         demo_tag: "Interactive Sandbox",
         demo_title: "Live Product Experience",
         demo_desc: "Test the Floor/Ceiling Tender Matcher or add new patient/student intake tickets directly in the browser.",
@@ -2444,12 +3058,14 @@
         cta_b1: "✓ Pre-configured Floor/Ceiling capability profiles with instant open-tender backfill",
         cta_b2: "✓ Customizable patient/student intake forms, QR scanning, TTS voice & TV display",
         cta_b3: "✓ Flexible deployment via Cloud Docker Compose or on-premise Edge Server",
-        form_title: "Request Consultation & Demo",
+        form_title: "Request Consultation & Plan Subscription",
         form_name_label: "Full Name / Organization *",
         form_phone_label: "Phone Number / Work Email *",
-        form_prod_label: "Solution of Interest *",
+        form_prod_label: "Solution & Plan of Interest *",
+        form_opt_cfms_prem: "CFMS/QMS Premium Plan — 999k/mo (Free Setup · 10 Acc/Role)",
+        form_opt_cfms_basic: "CFMS/QMS Basic Plan — 499k/mo (1,799k Setup · 1 Acc/Role)",
+        form_opt_cfms_ent: "CFMS/QMS Enterprise Plan — Hospitals & Multi-Branch Chains",
         form_opt_1: "HUDU DauThau — Public & Private Tender Intelligence",
-        form_opt_2: "HUDU CFMS/QMS — Hospital & Clinic Patient Intake",
         form_opt_3: "HUDU CSMS — Education & Tutoring Center Management",
         form_opt_4: "Full HUDU Enterprise Suite",
         form_submit: "Submit Demo Request",
@@ -2463,6 +3079,7 @@
         nav_solutions: "Soluciones",
         nav_tender: "Licitaciones IA",
         nav_cfms: "Gestión CFMS / QMS",
+        nav_pricing: "Precios",
         nav_demo: "Demo en Vivo",
         nav_arch: "Arquitectura",
         nav_cta: "Solicitar Demo",
@@ -2511,8 +3128,64 @@
         p2_f1: "<strong>Reconocimiento Facial Ultrarrápido (< 2ms) y Mapeo 1:N:</strong> Compara 10.000 perfiles con SIMD; permite registro por familiares/tutores y evita tickets duplicados.",
         p2_f2: "<strong>Admisión Multimodal y Escaneo QR de ID:</strong> Compatible con cámara web, carga de fotos o lector láser 2D USB con extracción automática de datos.",
         p2_f3: "<strong>Consola en Tiempo Real, Voz TTS y Pantalla TV:</strong> Búsqueda instantánea, timbre Ding-Dong, llamado por voz automatizado y botón de Rellamada.",
-        p2_f4: "<strong>Arquitectura Edge 100% Offline y Segura:</strong> Funciona en red local LAN con menos de 50 MB de RAM garantizando la privacidad de datos biométricos.",
-        p2_cta: "Abrir Consola CFMS / CSMS →",
+        p2_f4: "<strong>RBAC Clínico de 3 Roles (Admin · Médico · Enfermería) y Prioridad de Emergencia (CC-xx):</strong> Emisión manual de turnos, códigos de urgencia y portal oculto <code>/admin-portal</code> con topología en vivo.",
+        p2_f5: "<strong>App de Escritorio Tauri v2 y Edge LAN 100% Offline (< 50 MB RAM):</strong> Certificados HTTPS internos (Root CA puerto 9697), Watchdog 24/7 y operación fluida en Mini-PCs económicos.",
+        p2_cta: "Abrir Consola →",
+        p2_price_btn: "Ver Precios ↓",
+        price_tag: "Planes y Precios para Clínicas y Hospitales (CFMS / QMS)",
+        price_title: "Precios Transparentes · Mantenimiento Gratuito durante la Suscripción",
+        price_desc: "Diseñado para Clínicas, Unidades de Hemodiálisis, Hospitales y Centros Educativos. Incluye personalización de marca propia (Logo y Nombre) en Kiosco, Consola y TV.",
+        plan_per_month: "/ mes (Suscripción)",
+        plan1_badge: "PLAN BÁSICO · BASIC",
+        plan1_name: "Clínica y Centro Estándar",
+        plan1_sub: "Ideal para consultorios privados, clínicas especializadas o centros educativos con 1 punto de admisión.",
+        plan1_price: "499.000 VND",
+        plan1_setup_label: "Instalación inicial (pago único):",
+        plan1_setup_val: "1.799.000 VND",
+        plan1_quota: "01 Cuenta por Rol (01 Admin · 01 Médico · 01 Enfermería)",
+        plan1_f1: "<strong>Personalización de Marca Propia:</strong> Nombre de su clínica y logotipo configurados en Kiosco, Consola y TV de sala de espera.",
+        plan1_f2: "<strong>Mantenimiento y Actualizaciones 100% Gratis:</strong> Garantía continua, mejoras de software y monitoreo Watchdog 24/7 mientras esté suscrito.",
+        plan1_f3: "<strong>Reconocimiento Facial Edge AI (< 2ms):</strong> Encuadre 1:1 con cuenta regresiva de 3s, ecualización de luz y bloqueo de duplicados.",
+        plan1_f4: "<strong>Escaneo QR de Documento de Identidad (3 modos):</strong> Cámara web, carga de imagen o lector láser 2D USB.",
+        plan1_f5: "<strong>Timbre Ding-Dong y Llamado por Voz TTS:</strong> Anuncio automático de paciente, turno y consultorio con botón de Rellamada.",
+        plan1_f6: "<strong>Mapeo Familiar 1:N:</strong> Hasta <strong>02 rostros / paciente</strong>, historial de <strong>30 días</strong> y recuperación offline con Master Key.",
+        plan1_cta: "Suscribir Plan Básico →",
+        plan2_ribbon: "MÁS POPULAR · INSTALACIÓN GRATIS (AHORRE 1.799K)",
+        plan2_badge: "PLAN AVANZADO · PREMIUM",
+        plan2_name: "Clínica Policlínica y Servicio Hospitalario",
+        plan2_sub: "Óptimo para policlínicas, servicios de hemodiálisis/consulta externa con múltiples turnos y centros grandes.",
+        plan2_price: "999.000 VND",
+        plan2_setup_label: "Costo de instalación inicial:",
+        plan2_setup_val: "GRATIS 0 VND (Ahorra 1.799k)",
+        plan2_quota: "Hasta 10 Cuentas por Rol (10 Admin · 10 Médico · 10 Enfermería)",
+        plan2_f1: "<strong>Todo lo incluido en el Plan Básico:</strong> Marca personalizada y <strong>mantenimiento gratuito ilimitado</strong> durante la suscripción.",
+        plan2_f2: "<strong>100% GRATIS Instalación Inicial:</strong> Configuración completa, permisos por turno y puesta en marcha sin costo inicial.",
+        plan2_f3: "<strong>Multicuenta por Turnos (Hasta 10 Cuentas / Rol):</strong> Hasta <strong>30 cuentas de personal</strong> operando simultáneamente en múltiples estaciones.",
+        plan2_f4: "<strong>Privilegios Médicos y Prioridad de Emergencia (CC-xx):</strong> Emisión manual de tickets sin cámara y prioridad inmediata en fila.",
+        plan2_f5: "<strong>Mapeo Familiar 1:N Extendido (05 rostros / paciente):</strong> Aprendizaje facial dinámico en vivo en memoria RAM de 10.000 perfiles.",
+        plan2_f6: "<strong>App Nativa Tauri v2 y HTTPS Interno (Root CA):</strong> Compatible con Windows/macOS/Linux (<code>chaythan.local:9697</code>) con permisos permanentes.",
+        plan2_f7: "<strong>Portal Admin Oculto, Topología en Vivo e Historial de 365 Días:</strong> Monitoreo de cámaras, altavoces, TV, Audit Log y respaldo USB.",
+        plan2_cta: "Elegir Plan Premium (Instalación Gratis) →",
+        plan3_badge: "EMPRESARIAL · HOSPITALES Y CADENAS",
+        plan3_name: "Hospital General y Multicentro",
+        plan3_sub: "Solución a medida para hospitales provinciales/centrales o redes de clínicas con integración HIS/LIS.",
+        plan3_price: "A Medida",
+        plan3_period: "/ según escala hospitalaria",
+        plan3_setup_label: "Despliegue e Integración:",
+        plan3_setup_val: "Implementación Llave en Mano",
+        plan3_quota: "Cuentas Ilimitadas por Rol · Múltiples Kioscos y Servicios",
+        plan3_f1: "<strong>Todas las funciones Premium:</strong> Cuentas ilimitadas de Admin, Médico y Enfermería, y múltiples kioscos/pantallas TV.",
+        plan3_f2: "<strong>Capacidad Extendida SIMD Vector Store:</strong> Más de <strong>50.000+ rostros</strong> en RAM con respuesta menor a 2 ms.",
+        plan3_f3: "<strong>Integración API Bidireccional:</strong> Conexión directa con sistemas <strong>HIS / LIS / PACS / Seguros</strong> del hospital.",
+        plan3_f4: "<strong>Suministro de Hardware Llave en Mano:</strong> Mini-PC Intel N100 silencioso 24/7, pantallas táctiles, lectores QR 2D y audio.",
+        plan3_f5: "<strong>SLA 99.99% e Ingenieros Dedicados:</strong> Soporte prioritario 24/7/365 y capacitación presencial.",
+        plan3_cta: "Solicitar Cotización Hospitalaria →",
+        hw_1_title: "Compatible con Hardware Económico (Mini-PC / PC Existente)",
+        hw_1_desc: "Consume < 50 MB de RAM y < 0.05% de CPU en reposo. Funciona 24/7 en Mini-PC Intel N100 o PCs de oficina Core i3 / 4GB RAM / SSD.",
+        hw_2_title: "100% LAN Offline · Privacidad Biométrica Total",
+        hw_2_desc: "Todos los datos biométricos y de identidad permanecen en la base SQLite WAL local sin depender de internet.",
+        hw_3_title: "Mantenimiento Gratuito Garantizado",
+        hw_3_desc: "Incluye actualizaciones del motor IA, soporte de reinstalación, ajustes de marca y asistencia remota sin costo adicional.",
         demo_tag: "Simulación Interactiva",
         demo_title: "Experiencia en Vivo de Ambos Sistemas",
         demo_desc: "Pruebe el filtro de licitaciones o registre una nueva orden de paciente/estudiante directamente en pantalla.",
@@ -2548,12 +3221,14 @@
         cta_b1: "✓ Perfiles de capacidad Suelo/Techo preconfigurados con búsqueda retroactiva inmediata",
         cta_b2: "✓ Flujos de admisión, escaneo QR, voz TTS y pantallas de sala de espera personalizables",
         cta_b3: "✓ Despliegue flexible en Cloud (Docker Compose) o servidor Edge local",
-        form_title: "Solicitar Asesoría y Demo",
+        form_title: "Solicitar Asesoría y Suscripción",
         form_name_label: "Nombre Completo / Organización *",
         form_phone_label: "Teléfono / Correo Corporativo *",
-        form_prod_label: "Solución de Interés *",
+        form_prod_label: "Solución y Plan de Interés *",
+        form_opt_cfms_prem: "CFMS/QMS Plan Premium — 999k/mes (Instalación Gratis · 10 Cuentas/Rol)",
+        form_opt_cfms_basic: "CFMS/QMS Plan Básico — 499k/mes (Instalación 1tr799 · 1 Cuenta/Rol)",
+        form_opt_cfms_ent: "CFMS/QMS Plan Enterprise — Hospitales y Cadenas de Clínicas",
         form_opt_1: "HUDU DauThau — Inteligencia de Licitaciones",
-        form_opt_2: "HUDU CFMS/QMS — Admisión para Hospitales y Clínicas",
         form_opt_3: "HUDU CSMS — Gestión de Centros Educativos",
         form_opt_4: "Suite Empresarial Completa HUDU",
         form_submit: "Enviar Solicitud",
@@ -2567,6 +3242,7 @@
         nav_solutions: "解决方案",
         nav_tender: "公私招投标系统",
         nav_cfms: "CFMS / QMS 队列管理",
+        nav_pricing: "诊所价格方案",
         nav_demo: "在线交互演示",
         nav_arch: "系统架构",
         nav_cta: "申请试用",
@@ -2612,11 +3288,69 @@
         p2_b1: "公立/私立医院及血液透析中心",
         p2_b2: "综合与专科医疗诊所",
         p2_b3: "培训中心与教培课堂",
-        p2_f1: "<strong>超高速人脸识别 (< 2ms) 与 1:N 亲属映射：</strong>512 维向量 SIMD 比对万级档案；支持家属代患者取号或家长代签到，严防同班次重复取号。",
-        p2_f2: "<strong>多模态接单与身份证扫码：</strong>支持终端摄像头、上传证件照或 2D USB 扫码枪，自动解析身份信息并升级正式档案编号。",
-        p2_f3: "<strong>实时护士/教务工作台、TTS 语音叫号与候诊 TV：</strong>支持无音调极速检索、医院叮咚提示音、自然语音播报及一键重呼同步至大屏。",
-        p2_f4: "<strong>100% 局域网离线安全架构：</strong>内存占用低于 50 MB，完全在内部 LAN 独立运行，严格保障医疗与个人生物特征数据合规。",
+        p2_f1: "<strong>超高速人脸识别 (< 2ms) 与 1:N 亲属映射：</strong>512 维向量 SIMD 比对万级档案；1:1 正方形取景与 3 秒倒计时自动抓拍，支持家属代取号，严防同班次重复取号。",
+        p2_f2: "<strong>多模态接单与芯片身份证扫码：</strong>支持终端摄像头、上传证件照或 2D USB 扫码枪，自动解析身份信息并从临时号升级为正式档案编号。",
+        p2_f3: "<strong>实时护士工作台、TTS 语音叫号与候诊 TV：</strong>支持无音调极速检索、医院叮咚提示音、自然语音播报及一键重呼 (`[🔊 Gọi Lại]`) 同步至大屏。",
+        p2_f4: "<strong>3 级角色权限 (Admin · 医生 · 护士) 与急诊插队优先：</strong>医生与护士支持手动派号及开启<strong>急诊优先票 (`CC-xx`)</strong>；管理员拥有隐藏后台 (`/admin-portal`)、硬件拓扑监控与操作审计日志。",
+        p2_f5: "<strong>100% 离线边缘架构、Tauri 桌面端与自愈守护：</strong>内存低于 50 MB，空载 CPU < 0.05%；提供跨平台客户端并内置本地根证书 (`chaythan.local:9697`)。",
         p2_cta: "体验 CFMS / CSMS 调度工作台 →",
+        p2_price_btn: "查看诊所价格方案 ↓",
+        price_tag: "透明订阅价格 · CFMS / QMS 医疗版",
+        price_title: "诊所与医院智能接单排队系统价格表",
+        price_desc: "全面包含<strong>诊所专属品牌定制 (Logo、诊所名称、科室配置)</strong>，并在<strong>订阅期内享受 100% 免费维护、技术支持与版本升级</strong>。",
+        plan1_tier: "基础版 · BASIC",
+        plan1_name: "专科诊所标准套餐",
+        plan1_sub: "适合单班次运营的专科诊所、门诊室及中小型医疗机构。",
+        plan1_period: "越南盾 / 月",
+        plan1_setup: "首次安装部署费：<strong>1.799.000đ</strong> (一次性)",
+        plan1_maint_badge: "✓ 订阅期内享 100% 免费维护与升级",
+        plan1_quota_label: "每个角色 (Role) 账号配额",
+        plan1_quota_val: "每个角色 01 个账号",
+        plan1_f1: "<strong>专属品牌定制：</strong>在取号屏 (`/`)、工作台 (`/dashboard`) 与候诊电视 (`/display`) 定制诊所名称与 Logo。",
+        plan1_f2: "<strong>订阅期免费维护：</strong>包含系统监控、远程故障排查、数据库备份支持与核心功能免费更新。",
+        plan1_f3: "<strong>3 大独立角色账号：</strong>包含 <code>01 管理员</code> + <code>01 医生</code> + <code>01 护士</code> 独立权限账号。",
+        plan1_f4: "<strong>边缘 AI 人脸识别 (< 2ms) 与身份证扫码：</strong>1:1 居中框 3 秒自动拍照、自动光线均衡、支持摄像头/照片/2D 扫码枪，严防重复取号。",
+        plan1_f5: "<strong>TTS 语音叫号与候诊大屏：</strong>叮咚提示音、越南语自然播报、一键重呼 (`[🔊 Gọi Lại]`) 与 1:N 亲属代取号 (最多 2 张人脸/患者)。",
+        plan1_f6: "<strong>30 天历史记录与离线恢复：</strong>保存最近 30 天就诊记录，支持离线 Master Key 管理员密码找回。",
+        plan1_cta: "立即订购基础版 →",
+        plan2_ribbon: "最受欢迎 · 免安装费",
+        plan2_tier: "高级版 · PREMIUM",
+        plan2_name: "多科室诊所与多班次医疗中心",
+        plan2_sub: "免除首次安装费，支持多科室、多班次医护团队协同与急诊优先调度。",
+        plan2_period: "越南盾 / 月",
+        plan2_setup: "首次安装部署费：",
+        plan2_setup_free: "免费 0đ",
+        plan2_maint_badge: "✓ 终身免费维护、Watchdog 24/7 监控与升级",
+        plan2_quota_label: "每个角色 (Role) 账号配额",
+        plan2_quota_val: "每个角色多达 10 个账号",
+        plan2_f1: "<strong>包含基础版全部功能：</strong>含全套<strong>专属品牌定制</strong>与<strong>订阅期内 100% 免费维护</strong>。",
+        plan2_f2: "<strong>立省 1.799.000đ 安装费：</strong>免费配置局域网服务器、开机自启服务、本地根证书与语音包。",
+        plan2_f3: "<strong>多班次多科室团队权限：</strong>最高支持 <code>10 管理员</code> · <code>10 医生</code> · <code>10 护士</code> (共 30 个医护账号)。",
+        plan2_f4: "<strong>医生手动派号与急诊插队优先 (`CC-xx`)：</strong>支持医生/护士工作台直接建档派号，并可将危急重症患者置顶优先叫号。",
+        plan2_f5: "<strong>扩展 1:N 亲属人脸映射 (5 张人脸/患者)：</strong>支持动态人脸增补学习 (`Dynamic Face Learning`) 实时写入万级内存向量库。",
+        plan2_f6: "<strong>原生桌面客户端 (Tauri v2) 与内网 HTTPS：</strong>提供 Windows/macOS/Linux 客户端，内置根证书 (`chaythan.local:9697`) 永久授权摄像头与语音。",
+        plan2_f7: "<strong>隐藏管理后台 (`/admin-portal`)、硬件拓扑与 365 天记录：</strong>实时监控数据库/AI/摄像头状态、操作审计日志、1 年历史记录与 U 盘自动加密备份。",
+        plan2_cta: "订购高级版 (免安装费) →",
+        plan3_tier: "医院与连锁机构 · ENTERPRISE",
+        plan3_name: "大型医院、血液透析中心与连锁诊所",
+        plan3_sub: "无限账号配额，深度对接医院 HIS / LIS / 医保系统，支持多院区集中管理。",
+        plan3_price: "定制报价",
+        plan3_period: "/ 按规模定制",
+        plan3_setup: "专属驻场工程师部署与定制开发",
+        plan3_maint_badge: "✓ 24/7 SLA 99.99% 保障与专属架构师支持",
+        plan3_quota_label: "账号与终端配额",
+        plan3_quota_val: "无限账号 & 无限终端",
+        plan3_f1: "<strong>高级版全部特权 + 无限账号：</strong>不限管理员、医生、护士账号数量，不限取号终端与候诊大屏数量。",
+        plan3_f2: "<strong>超大规模向量库 (50,000+ 档案)：</strong>针对日均千人接诊的血液透析中心与三甲医院门诊大厅深度优化。",
+        plan3_f3: "<strong>双向对接 HIS / LIS / PACS / 医保系统：</strong>通过标准 HL7/FHIR 或 REST API 自动同步患者医嘱、检验单与叫号状态。",
+        plan3_f4: "<strong>软硬件一体化交钥匙交付：</strong>可选配工业级无风扇静音主机 (Intel N100)、触摸取号机与 2D 扫码枪。",
+        plan3_cta: "联系获取医院定制方案 →",
+        hw_1_title: "超轻量硬件需求 (Intel N100 / 办公旧电脑)",
+        hw_1_desc: "无需昂贵 GPU 服务器。仅需 300 万越南盾左右的迷你主机 (Intel N100, 8GB RAM) 或普通 i3 办公电脑即可 24/7 流畅运行，内存占用 < 50 MB。",
+        hw_2_title: "100% 局域网离线运行 — 断网照常接诊",
+        hw_2_desc: "全部人脸向量与身份证数据均加密保存在院内 SQLite WAL 数据库中，外网中断不影响毫秒级取号与语音叫号。",
+        hw_3_title: "灵活按月订阅 — 零隐形维护成本",
+        hw_3_desc: "只需保持活跃订阅，HUDU 团队将全程免费负责软件升级、专属品牌界面微调与远程技术保障。",
         demo_tag: "在线交互沙盒",
         demo_title: "两大系统实时交互体验",
         demo_desc: "在下方切换标签页，立即测试招投标行业筛选或模拟新增患者接单与学员签到。",
@@ -2656,8 +3390,10 @@
         form_name_label: "您的姓名 / 企业或机构名称 *",
         form_phone_label: "联系电话 / 企业邮箱 *",
         form_prod_label: "意向解决方案 *",
+        form_opt_cfms_pro: "HUDU CFMS 高级版 (999k/月 · 免安装费 · 10 账号/角色)",
+        form_opt_cfms_basic: "HUDU CFMS 基础版 (499k/月 · 安装费 1tr799 · 01 账号/角色)",
+        form_opt_cfms_ent: "HUDU CFMS 医院与连锁定制版 (对接 HIS/LIS · 无限账号)",
         form_opt_1: "HUDU DauThau — 公私招投标智能检索与匹配",
-        form_opt_2: "HUDU CFMS/QMS — 医院与诊所智能接单叫号系统",
         form_opt_3: "HUDU CSMS — 教培机构排课与学员管理系统",
         form_opt_4: "HUDU 全套企业级解决方案",
         form_submit: "提交预约申请",
@@ -2671,6 +3407,7 @@
         nav_solutions: "ソリューション",
         nav_tender: "官民入札 AI",
         nav_cfms: "CFMS / QMS 受付管理",
+        nav_pricing: "料金プラン",
         nav_demo: "ライブデモ",
         nav_arch: "アーキテクチャ",
         nav_cta: "デモを申し込む",
@@ -2716,11 +3453,69 @@
         p2_b1: "病院・人工透析センター",
         p2_b2: "総合・専門クリニック",
         p2_b3: "学習塾・教育トレーニング施設",
-        p2_f1: "<strong>超高速顔認証 (< 2ms) ＆ 1:N 家族マッピング：</strong>1万件のデータを512次元 SIMD で即座に照合。家族による代理発券や保護者の送迎に対応し、重複発券を防止。",
-        p2_f2: "<strong>マルチモーダル受付＆ QR スキャン：</strong>キオスク/PC カメラ、画像アップロード、2D USB バーコードリーダーに対応し、患者・生徒 ID を自動紐付け。",
-        p2_f3: "<strong>リアルタイム運用コンソール・TTS 音声呼出＆待合 TV：</strong>高速検索、チャイム音、自動音声アナウンス、再呼出 (Re-call) ボタンを待合室モニターと同期。",
-        p2_f4: "<strong>100% オフラインエッジ保護：</strong>メモリ消費 50 MB 未満で院内 LAN 内で完全自立稼働し、生体情報と個人データの厳格な保護基準に準拠。",
+        p2_f1: "<strong>超高速顔認証 (< 2ms) ＆ 1:N 家族マッピング：</strong>1万件のデータを512次元 SIMD で即座に照合。1:1 カメラ枠と3秒カウントダウン自動撮影、家族の代理発券に対応し重複発券を防止。",
+        p2_f2: "<strong>マルチモーダル受付＆ QR スキャン：</strong>キオスク/PC カメラ、画像アップロード、2D USB バーコードリーダーに対応し、仮番号から正式カルテ ID へ自動昇格。",
+        p2_f3: "<strong>リアルタイム運用コンソール・TTS 音声呼出＆待合 TV：</strong>高速検索、チャイム音、自動音声アナウンス、再呼出 (`[🔊 Gọi Lại]`) ボタンを待合室モニターと同期。",
+        p2_f4: "<strong>3ロール権限管理 (管理者・医師・看護師) ＆緊急優先発券：</strong>医師・看護師による手動発券や<strong>緊急優先番号 (`CC-xx`)</strong> の即時割込、管理ポータル (`/admin-portal`) の死活監視と監査ログを搭載。",
+        p2_f5: "<strong>100% オフラインエッジ・Tauri v2 デスクトップ＆自己修復：</strong>メモリ 50 MB 未満・アイドル CPU 0.05% 未満で稼働し、ローカル証明書 (`chaythan.local:9697`) によりカメラと音声を常時許可。",
         p2_cta: "CFMS / CSMS コンソールを開く →",
+        p2_price_btn: "クリニック料金プランを見る ↓",
+        price_tag: "透明性の高い料金体系 · CFMS / QMS MEDICAL",
+        price_title: "クリニック・病院向け受付＆順番管理システム料金表",
+        price_desc: "すべてのプランに<strong>クリニック独自ブランド設定（ロゴ・医院名・診療科）</strong>が含まれ、<strong>ご契約中は保守・メンテナンス・アップデートが 100% 無料</strong>です。",
+        plan1_tier: "ベーシック · BASIC",
+        plan1_name: "専門クリニック標準プラン",
+        plan1_sub: "単一シフトで運営する専門クリニック・外来診療所に最適なスタータープラン。",
+        plan1_period: "VND / 月",
+        plan1_setup: "初期導入・セットアップ費用：<strong>1.799.000đ</strong> (初回のみ)",
+        plan1_maint_badge: "✓ 契約期間中は保守・アップデート 100% 無料",
+        plan1_quota_label: "ロール (役割) ごとのアカウント数",
+        plan1_quota_val: "各ロール 01 アカウント",
+        plan1_f1: "<strong>独自ブランドカスタマイズ：</strong>キオスク (`/`)、管理画面 (`/dashboard`)、待合室 TV (`/display`) に医院名とロゴを表示。",
+        plan1_f2: "<strong>契約中の保守完全無料：</strong>システム監視、リモートトラブル対応、バックアップ支援、新機能アップデートを無償提供。",
+        plan1_f3: "<strong>3ロール専用アカウント：</strong><code>管理者 1名</code> + <code>医師 1名</code> + <code>看護師 1名</code> の権限分離アカウント。",
+        plan1_f4: "<strong>Edge-AI 顔認証 (< 2ms) ＆ ICカード QR 読取：</strong>1:1 ガイド枠・3秒自動撮影・自動露出補正・2D バーコードリーダー対応、同一シフトの重複発券を防止。",
+        plan1_f5: "<strong>TTS 音声呼出＆待合 TV 連携：</strong>チャイム音、音声アナウンス、再呼出ボタン (`[🔊 Gọi Lại]`)、1:N 家族顔登録 (患者あたり最大2名)。",
+        plan1_f6: "<strong>30日間の履歴保存＆オフライン復旧：</strong>直近30日間の受付履歴保存と Master Key によるオフラインパスワード復旧。",
+        plan1_cta: "ベーシックプランを申し込む →",
+        plan2_ribbon: "人気 No.1 · 初期費用無料",
+        plan2_tier: "プレミアム · PREMIUM",
+        plan2_name: "総合クリニック・人工透析・複数シフト",
+        plan2_sub: "初期導入費用 0đ。複数シフトの医療スタッフ連携や緊急患者の優先呼出に完全対応。",
+        plan2_period: "VND / 月",
+        plan2_setup: "初期導入・セットアップ費用：",
+        plan2_setup_free: "無料 0đ",
+        plan2_maint_badge: "✓ 保守永久無料・Watchdog 24/7 監視＆自動更新",
+        plan2_quota_label: "ロール (役割) ごとのアカウント数",
+        plan2_quota_val: "各ロール最大 10 アカウント",
+        plan2_f1: "<strong>ベーシックの全機能を含む：</strong><strong>独自ブランド設定</strong>および<strong>契約中の 100% 無料保守サポート</strong>を完備。",
+        plan2_f2: "<strong>初期導入費 1.799.000đ が無料：</strong>LAN サーバー構築、自動起動設定、ローカル証明書、音声エンジンの導入を無償実施。",
+        plan2_f3: "<strong>複数シフト・複数診療科アカウント：</strong>最大 <code>管理者 10</code> · <code>医師 10</code> · <code>看護師 10</code> (計30アカウント) まで発行可能。",
+        plan2_f4: "<strong>医師の手動発券＆緊急優先割込 (`CC-xx`)：</strong>診察室からの直接発券や、重症・緊急患者を待機列の最優先に割り込ませる機能を搭載。",
+        plan2_f5: "<strong>拡張 1:N 家族マッピング (患者あたり最大5名)：</strong>動的顔学習 (`Dynamic Face Learning`) により 10,000 件の RAM キャッシュへ即時反映。",
+        plan2_f6: "<strong>ネイティブアプリ (Tauri v2) ＆院内 HTTPS：</strong>Windows/macOS/Linux 用アプリとローカルルート証明書 (`chaythan.local:9697`) でカメラ・音声権限を恒久化。",
+        plan2_f7: "<strong>管理ポータル (`/admin-portal`)・トポロジー監視・365日履歴：</strong>DB/AI/カメラの死活監視グラフ、監査ログ、1年間の履歴保存、USB 自動バックアップ。",
+        plan2_cta: "プレミアムを申し込む (初期費用 0đ) →",
+        plan3_tier: "病院・医療法人 · ENTERPRISE",
+        plan3_name: "総合病院・大規模透析センター・複数拠点",
+        plan3_sub: "アカウント数無制限、電子カルテ (HIS / LIS / 保険) との双方向 API 連携に対応。",
+        plan3_price: "個別見積",
+        plan3_period: "/ 施設規模に応じる",
+        plan3_setup: "専任エンジニアによるオンサイト構築・連携開発",
+        plan3_maint_badge: "✓ 24/7 SLA 99.99% 保証＆専任ソリューションアーキテクト",
+        plan3_quota_label: "アカウント＆端末ライセンス",
+        plan3_quota_val: "無制限 (アカウント＆キオスク)",
+        plan3_f1: "<strong>プレミアム全機能＋無制限アカウント：</strong>管理者・医師・看護師アカウント数、キオスク端末、待合室 TV の台数制限なし。",
+        plan3_f2: "<strong>超大規模ベクトルストア (50,000+ 患者)：</strong>1日1,000名以上が来院する大規模外来や人工透析センター向けに最適化。",
+        plan3_f3: "<strong>HIS / LIS / PACS / 医療保険 API 連携：</strong>HL7/FHIR または REST API で電子カルテの受付・検査・呼出ステータスを自動同期。",
+        plan3_f4: "<strong>ハードウェア一括納品に対応：</strong>ファンレス産業用 Mini-PC (Intel N100)、タッチパネルキオスク、2D スキャナのセット導入が可能。",
+        plan3_cta: "病院向け見積を依頼する →",
+        hw_1_title: "省電力・低コスト端末で稼働 (Intel N100 / 既存 PC)",
+        hw_1_desc: "高価な GPU サーバーは不要です。約 300万 VND のファンレス Mini-PC (Intel N100) や既存の事務用 Core i3 PC でメモリ 50 MB 未満で 24時間安定稼働します。",
+        hw_2_title: "100% 院内 LAN オフライン稼働 — ネット障害時も停止ゼロ",
+        hw_2_desc: "顔特徴ベクトルや患者情報はすべて院内の SQLite WAL データベースに暗号化保存され、外部インターネット切断時もミリ秒単位で受付・呼出を継続します。",
+        hw_3_title: "柔軟な月額サブスクリプション — 追加保守費用ゼロ",
+        hw_3_desc: "サブスクリプションご契約中は、ソフトウェア更新、ロゴ・画面調整、リモート障害対応まですべて追加費用なしで提供いたします。",
         demo_tag: "インタラクティブ体験",
         demo_title: "2つのシステムをブラウザ上で体験",
         demo_desc: "入札案件のフィルタリングや、患者・生徒の新規受付発券をリアルタイムにお試しいただけます。",
@@ -2760,8 +3555,10 @@
         form_name_label: "お名前 / 貴社・貴院名 *",
         form_phone_label: "電話番号 / メールアドレス *",
         form_prod_label: "ご希望のソリューション *",
+        form_opt_cfms_pro: "HUDU CFMS プレミアム (999k/月 · 初期費用0đ · 各ロール10アカウント)",
+        form_opt_cfms_basic: "HUDU CFMS ベーシック (499k/月 · 初期費用1tr799 · 各ロール1アカウント)",
+        form_opt_cfms_ent: "HUDU CFMS 病院・エンタープライズ (HIS/LIS連携 · 無制限)",
         form_opt_1: "HUDU DauThau — 官民入札インテリジェンス",
-        form_opt_2: "HUDU CFMS/QMS — 病院・クリニック受付＆順番管理",
         form_opt_3: "HUDU CSMS — 学習塾・教育機関向け管理システム",
         form_opt_4: "HUDU エンタープライズ統合スイート",
         form_submit: "デモを申し込む",
@@ -2775,6 +3572,7 @@
         nav_solutions: "솔루션",
         nav_tender: "공공·민간 입찰 AI",
         nav_cfms: "CFMS / QMS 접수·대기",
+        nav_pricing: "클리닉 요금제",
         nav_demo: "실시간 데모",
         nav_arch: "아키텍처",
         nav_cta: "데모 신청",
@@ -2820,11 +3618,69 @@
         p2_b1: "병원 및 혈액투석센터",
         p2_b2: "종합·전문 클리닉",
         p2_b3: "입시·보습학원 및 교육센터",
-        p2_f1: "<strong>초고속 안면인식 (< 2ms) 및 1:N 가족 매핑:</strong> 512차원 SIMD로 1만 명 프로필 즉시 대조; 보호자 대리 발권 및 학부모 출석 체크 지원, 중복 발권 원천 차단.",
-        p2_f2: "<strong>다중 접수 모드 및 신분증 QR 스캔:</strong> 키오스크/노트북 웹캠, 신분증 이미지 업로드, 2D USB 바코드 스캐너 지원 및 정식 환자 번호 자동 전환.",
-        p2_f3: "<strong>실시간 간호/교무 콘솔, TTS 음성 호출 및 대기실 TV:</strong> 초성/무성조 실시간 검색, 딩동 알림음, 자연스러운 TTS 음성 안내 및 재호출(Re-call) 기능.",
-        p2_f4: "<strong>100% 오프라인 엣지 보안 아키텍처:</strong> 50 MB 미만의 메모리로 내부 LAN에서 독립 구동되어 의료 및 생체정보 보호 규정을 완벽히 준수.",
+        p2_f1: "<strong>초고속 안면인식 (< 2ms) 및 1:N 가족 매핑:</strong> 512차원 SIMD로 1만 명 프로필 즉시 대조; 1:1 가이드 프레임 및 3초 자동 촬영, 보호자 대리 발권 지원 및 중복 발권 원천 차단.",
+        p2_f2: "<strong>다중 접수 모드 및 신분증 QR 스캔:</strong> 키오스크/노트북 웹캠, 신분증 이미지 업로드, 2D USB 바코드 스캐너 지원 및 임시 번호에서 정식 환자 번호로 자동 전환.",
+        p2_f3: "<strong>실시간 간호/교무 콘솔, TTS 음성 호출 및 대기실 TV:</strong> 무성조 실시간 검색, 딩동 알림음, 자연스러운 TTS 음성 안내 및 재호출(`[🔊 Gọi Lại]`) 기능.",
+        p2_f4: "<strong>3단계 권한 제어 (관리자·의사·간호사) 및 응급 우선 발권:</strong> 의사·간호사 수동 발권 및 <strong>응급 우선 번호(`CC-xx`)</strong> 즉시 호출, 관리자 포털(`/admin-portal`) 토폴로지 감시 및 감사 로그 제공.",
+        p2_f5: "<strong>100% 오프라인 엣지·Tauri v2 데스크톱 앱 및 자가 복구:</strong> 50 MB 미만 메모리 및 유휴 CPU < 0.05% 구동, 로컬 루트 인증서(`chaythan.local:9697`)로 카메라·오디오 권한 영구 부여.",
         p2_cta: "CFMS / CSMS 콘솔 실행 →",
+        p2_price_btn: "클리닉 요금제 보기 ↓",
+        price_tag: "투명한 구독형 요금제 · CFMS / QMS MEDICAL",
+        price_title: "의원·병원 스마트 접수 및 대기열 관리 시스템 요금표",
+        price_desc: "모든 요금제에 <strong>병원/클리닉 전용 브랜드 커스텀(로고, 병원명, 진료과)</strong>이 포함되며, <strong>구독 유지 시 유지보수 및 버전 업데이트가 100% 무료</strong>입니다.",
+        plan1_tier: "베이직 · BASIC",
+        plan1_name: "전문 클리닉 & 단일 진료실",
+        plan1_sub: "단일 교대 근무로 운영되는 전문 의원 및 외래 클리닉에 최적화된 기본 플랜.",
+        plan1_period: "VND / 월",
+        plan1_setup: "초기 설치 및 세팅비: <strong>1.799.000đ</strong> (최초 1회)",
+        plan1_maint_badge: "✓ 구독 기간 내 유지보수 및 업데이트 100% 무료",
+        plan1_quota_label: "역할(Role)별 계정 한도",
+        plan1_quota_val: "역할당 01개 계정",
+        plan1_f1: "<strong>병원 전용 브랜드 커스텀:</strong> 키오스크(`/`), 대시보드(`/dashboard`), 대기실 TV(`/display`)에 병원 로고 및 명칭 적용.",
+        plan1_f2: "<strong>구독 중 무상 유지보수:</strong> 기술 지원, 원격 장애 처리, 데이터베이스 백업 및 소프트웨어 업데이트 평생 무료.",
+        plan1_f3: "<strong>3대 역할별 전용 계정:</strong> <code>관리자 01명</code> + <code>의사 01명</code> + <code>간호사 01명</code> 권한 분리 계정 제공.",
+        plan1_f4: "<strong>Edge-AI 안면인식 (< 2ms) 및 신분증 QR 스캔:</strong> 1:1 프레임 3초 자동 촬영, 자동 노출 보정, 웹캠/사진/2D 바코드 스캐너 지원 및 중복 발권 방지.",
+        plan1_f5: "<strong>TTS 음성 호출 및 대기실 TV 연동:</strong> 딩동 알림음, 베트남어 음성 호출, 재호출(`[🔊 Gọi Lại]`) 및 1:N 보호자 대리 접수(환자당 최대 2명).",
+        plan1_f6: "<strong>30일 진료 이력 보관 및 오프라인 복구:</strong> 최근 30일 접수 기록 보관 및 Master Key 오프라인 비밀번호 복구 지원.",
+        plan1_cta: "베이직 플랜 신청하기 →",
+        plan2_ribbon: "가장 인기 · 설치비 무료",
+        plan2_tier: "프리미엄 · PREMIUM",
+        plan2_name: "다과목 클리닉 · 인공신장실 · 다교대 근무",
+        plan2_sub: "초기 설치비 0đ 혜택과 함께 다교대 의료진 계정 및 응급 환자 우선 호출을 완벽 지원합니다.",
+        plan2_period: "VND / 월",
+        plan2_setup: "초기 설치 및 세팅비:",
+        plan2_setup_free: "무료 0đ",
+        plan2_maint_badge: "✓ 평생 무료 유지보수 · Watchdog 24/7 감시 및 업데이트",
+        plan2_quota_label: "역할(Role)별 계정 한도",
+        plan2_quota_val: "역할당 최대 10개 계정",
+        plan2_f1: "<strong>베이직 플랜의 모든 기능 포함:</strong> <strong>병원 브랜드 커스텀</strong> 및 <strong>구독 중 100% 무료 유지보수</strong> 포함.",
+        plan2_f2: "<strong>초기 설치비 1.799.000đ 면제:</strong> 내부 LAN 서버 구축, 자동 실행 데몬, 로컬 보안 인증서 및 음성 엔진 무료 세팅.",
+        plan2_f3: "<strong>다교대·다부서 계정 확장:</strong> 최대 <code>관리자 10</code> · <code>의사 10</code> · <code>간호사 10</code> (총 30개 의료진 계정) 생성 가능.",
+        plan2_f4: "<strong>의사 수동 발권 및 응급 우선 호출 (`CC-xx`):</strong> 진료실에서 직접 번호를 발권하거나 위급 환자를 대기열 최상단으로 즉시 호출.",
+        plan2_f5: "<strong>확장형 1:N 가족 안면 매핑 (환자당 최대 5명):</strong> 실시간 안면 추가 학습(`Dynamic Face Learning`)으로 10,000명 인메모리 캐시에 즉시 반영.",
+        plan2_f6: "<strong>네이티브 데스크톱 앱 (Tauri v2) 및 내부 HTTPS:</strong> Windows/macOS/Linux 전용 앱과 내장 루트 인증서(`chaythan.local:9697`)로 카메라·오디오 권한 영구 유지.",
+        plan2_f7: "<strong>관리자 포털 (`/admin-portal`), 토폴로지 감시 및 365일 이력:</strong> DB/AI/카메라 실시간 상태 그래프, 감사 로그, 1년 진료 이력 및 USB 자동 백업.",
+        plan2_cta: "프리미엄 신청하기 (설치비 0đ) →",
+        plan3_tier: "병원 & 네트워크 · ENTERPRISE",
+        plan3_name: "종합병원 · 대형 투석센터 · 네트워크 의원",
+        plan3_sub: "무제한 계정 및 단말기 지원, 병원 HIS / LIS / 건강보험 시스템 양방향 API 연동.",
+        plan3_price: "맞춤 견적",
+        plan3_period: "/ 병원 규모별 협의",
+        plan3_setup: "전담 엔지니어 현장 구축 및 커스텀 연동",
+        plan3_maint_badge: "✓ 24/7 SLA 99.99% 보장 및 전담 아키텍트 지원",
+        plan3_quota_label: "계정 및 키오스크 한도",
+        plan3_quota_val: "무제한 계정 & 키오스크",
+        plan3_f1: "<strong>프리미엄 전체 기능 + 무제한 계정:</strong> 관리자·의사·간호사 계정 수 및 키오스크·대기실 TV 연결 대수 무제한.",
+        plan3_f2: "<strong>초대용량 벡터 스토어 (50,000+ 프로필):</strong> 일일 수천 명이 내원하는 종합병원 외래 및 대형 혈액투석센터 최적화.",
+        plan3_f3: "<strong>HIS / LIS / PACS / 보험청구 양방향 연동:</strong> 표준 HL7/FHIR 또는 REST API를 통한 환자 처방·검사·호출 상태 자동 동기화.",
+        plan3_f4: "<strong>하드웨어 턴키(Turnkey) 공급 가능:</strong> 무소음 팬리스 미니 PC(Intel N100), 터치 키오스크, 2D 바코드 스캐너 패키지 구축.",
+        plan3_cta: "병원 맞춤 견적 문의 →",
+        hw_1_title: "초경량 하드웨어 요구사양 (Intel N100 / 일반 사무용 PC)",
+        hw_1_desc: "고가 GPU 서버가 필요 없습니다. 약 300만 VND 상당의 팬리스 미니 PC(Intel N100)나 기존 코어 i3 사무용 PC에서 메모리 50 MB 미만으로 24/7 쾌적하게 구동됩니다.",
+        hw_2_title: "100% 내부 LAN 오프라인 구동 — 인터넷 단절 시에도 무중단",
+        hw_2_desc: "모든 안면 벡터와 환자 데이터는 원내 SQLite WAL 데이터베이스에 안전하게 보관되며, 외부 인터넷이 끊겨도 밀리초 단위의 발권과 음성 호출이 정상 작동합니다.",
+        hw_3_title: "유연한 월 구독 모델 — 추가 유지보수 비용 제로",
+        hw_3_desc: "구독을 유지하시는 동안 소프트웨어 기능 업데이트, 병원 로고·인터페이스 수정, 원격 기술 지원이 모두 무료로 제공됩니다.",
         demo_tag: "인터랙티브 샌드박스",
         demo_title: "두 가지 핵심 시스템 실시간 체험",
         demo_desc: "입찰 공고 필터링을 테스트하거나 신규 환자 접수 / 수강생 등록을 화면에서 직접 실행해 보세요.",
@@ -2864,8 +3720,10 @@
         form_name_label: "성함 / 기업·기관명 *",
         form_phone_label: "연락처 / 이메일 *",
         form_prod_label: "관심 솔루션 *",
+        form_opt_cfms_pro: "HUDU CFMS 프리미엄 (999k/월 · 설치비 무료 · 역할당 10계정)",
+        form_opt_cfms_basic: "HUDU CFMS 베이직 (499k/월 · 설치비 1tr799 · 역할당 1계정)",
+        form_opt_cfms_ent: "HUDU CFMS 병원 & 네트워크 맞춤형 (HIS/LIS 연동 · 무제한)",
         form_opt_1: "HUDU DauThau — 공공·민간 입찰 인텔리전스",
-        form_opt_2: "HUDU CFMS/QMS — 병원·의원 스마트 접수 및 순번 시스템",
         form_opt_3: "HUDU CSMS — 학원·교육기관 수강 및 출결 관리",
         form_opt_4: "HUDU 엔터프라이즈 통합 솔루션",
         form_submit: "상담 및 데모 신청하기",
@@ -3176,6 +4034,13 @@
       nameEl.value = '';
       phoneEl.value = '';
       renderCsms();
+    }
+
+    function selectPricingPlan(planVal) {
+      const sel = document.getElementById('formProdSelect');
+      if (sel) {
+        sel.value = planVal;
+      }
     }
 
     function submitConsultation(e) {
