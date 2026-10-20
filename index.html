@@ -1529,6 +1529,101 @@
       margin-bottom: 3px;
     }
 
+    .mini-card-clickable {
+      display: block;
+      cursor: pointer;
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+    .mini-card-clickable:hover {
+      transform: translateY(-3px);
+      border-color: var(--blue-bright);
+      box-shadow: 0 12px 26px rgba(0, 82, 163, 0.22);
+    }
+    .mini-card-cta-bar {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--blue-primary);
+    }
+
+    .product-visual-banner {
+      display: block;
+      background: linear-gradient(145deg, #071426 0%, #0D223D 60%, #09192E 100%);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      margin-bottom: 20px;
+      color: #F8FAFC;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+    .product-visual-banner:hover {
+      transform: translateY(-2px);
+      border-color: #38BDF8;
+      box-shadow: 0 14px 30px rgba(0, 82, 163, 0.28);
+    }
+    .product-visual-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 0.75rem;
+      color: #94A3B8;
+    }
+    .product-visual-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.18);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: #7DD3FC;
+      font-weight: 700;
+      font-size: 0.72rem;
+    }
+    .product-visual-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .product-visual-cell {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      border-radius: 8px;
+      padding: 10px;
+    }
+    .product-visual-cell strong {
+      display: block;
+      font-size: 0.82rem;
+      color: #38BDF8;
+      margin-bottom: 2px;
+    }
+    .product-visual-cell span {
+      font-size: 0.72rem;
+      color: #CBD5E1;
+      line-height: 1.35;
+      display: block;
+    }
+    .product-visual-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 10px;
+      border-top: 1px solid rgba(148, 163, 184, 0.2);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #7DD3FC;
+    }
+
     /* ==========================================================================
        CTA & CONTACT FORM
        ========================================================================== */
@@ -1732,8 +1827,8 @@
 
       <ul class="nav-links">
         <li><a href="#solutions" data-i18n="nav_solutions">Giải pháp</a></li>
-        <li><a href="#dauthau" data-i18n="nav_tender">Đấu thầu Công &amp; Tư</a></li>
-        <li><a href="#cfms" data-i18n="nav_cfms">Quản trị CFMS / QMS</a></li>
+        <li><a href="dauthau/" data-i18n="nav_tender">Đấu thầu Công &amp; Tư</a></li>
+        <li><a href="cfms/" data-i18n="nav_cfms">Quản trị CFMS / QMS</a></li>
         <li><a href="#pricing" data-i18n="nav_pricing">Bảng giá</a></li>
         <li><a href="#live-demo" data-i18n="nav_demo">Trải nghiệm Demo</a></li>
         <li><a href="#architecture" data-i18n="nav_arch">Kiến trúc</a></li>
@@ -1786,11 +1881,11 @@
         </p>
 
         <div class="hero-cta-group">
-          <a href="#live-demo" class="btn btn-primary btn-lg" data-i18n="hero_btn_demo">
-            Trải nghiệm Demo Trực tiếp &darr;
+          <a href="dauthau/" class="btn btn-primary btn-lg">
+            01. Săn Thầu AI &amp; Bảng Giá &rarr;
           </a>
-          <a href="#solutions" class="btn btn-outline btn-lg" data-i18n="hero_btn_explore">
-            Khám phá 2 Hệ thống
+          <a href="cfms/" class="btn btn-outline btn-lg" style="border-color: var(--blue-primary); color: var(--blue-primary);">
+            02. Phòng Khám CFMS &amp; Bảng Giá &rarr;
           </a>
         </div>
 
@@ -1810,7 +1905,7 @@
         </div>
       </div>
 
-      <!-- Right Animated Command Center Card -->
+      <!-- Right Animated Command Center Card (Both Product Cards Clickable to Product Pages) -->
       <div class="hero-showcase">
         <div class="showcase-header">
           <div class="window-dots">
@@ -1818,13 +1913,13 @@
           </div>
           <div class="showcase-url">
             <span class="live-indicator"></span>
-            <span>huduvn.com · Rust + AI Engine</span>
+            <span>huduvn.com · Bấm chọn sản phẩm để xem chi tiết &amp; bảng giá</span>
           </div>
           <img src="svg/hudu-favicon.svg" alt="HUDU" style="width: 24px; height: 24px;" />
         </div>
 
         <div class="mini-product-stack">
-          <div class="mini-card">
+          <a href="dauthau/" class="mini-card mini-card-clickable" title="Mở Trang Sản Phẩm & Bảng Giá Săn Thầu AI (/dauthau)">
             <div class="mini-card-head">
               <div class="mini-card-title">
                 <span class="icon-badge">
@@ -1843,9 +1938,13 @@
               <span class="mini-stat-chip" data-i18n="card1_chip2">Label ltree &amp; Chương V</span>
               <span class="mini-stat-chip" data-i18n="card1_chip3">App Push / SMS / Read-Receipt</span>
             </div>
-          </div>
+            <div class="mini-card-cta-bar">
+              <span>Đường dẫn: <code>huduvn.com/dauthau</code></span>
+              <span>Xem Sản Phẩm &amp; Bảng Giá &rarr;</span>
+            </div>
+          </a>
 
-          <div class="mini-card">
+          <a href="cfms/" class="mini-card mini-card-clickable" title="Mở Trang Sản Phẩm & Bảng Giá Quản Lý Phòng Khám (/cfms)">
             <div class="mini-card-head">
               <div class="mini-card-title">
                 <span class="icon-badge navy">
@@ -1875,7 +1974,11 @@
               <span class="mini-stat-chip" data-i18n="card2_chip2">Phòng học &amp; Trung tâm</span>
               <span class="mini-stat-chip" data-i18n="card2_chip3">Loa gọi số TTS &amp; TV Display</span>
             </div>
-          </div>
+            <div class="mini-card-cta-bar">
+              <span>Đường dẫn: <code>huduvn.com/cfms</code></span>
+              <span>Xem Sản Phẩm &amp; Bảng Giá (499k / 999k) &rarr;</span>
+            </div>
+          </a>
         </div>
       </div>
     </div>
@@ -2056,14 +2159,14 @@
     </div>
   </div>
 
-  <!-- SECTION 1: TWO CORE PLATFORMS -->
+  <!-- SECTION 1: TWO CORE PLATFORMS (WITH CLICKABLE VISUAL BANNERS & DIRECT PRODUCT PAGE LINKS) -->
   <section id="solutions" class="section section-alt">
     <div class="container">
       <div class="section-header">
         <div class="pill-tag" data-i18n="sec1_tag">Hệ sinh thái Sản phẩm</div>
         <h2 data-i18n="sec1_title">Hai Nền Tảng Cốt Lõi Của HUDU</h2>
         <p data-i18n="sec1_desc">
-          Giải quyết bài toán tự động hóa săn dự án thầu cho doanh nghiệp và số hóa toàn diện quy trình tiếp nhận bệnh nhân, học viên tại cơ sở.
+          Bấm trực tiếp vào thẻ hình ảnh hoặc nút bên dưới để truy cập <strong>Trang Chi Tiết &amp; Bảng Giá</strong> riêng của từng sản phẩm (<code>/dauthau</code> và <code>/cfms</code>).
         </p>
       </div>
 
@@ -2071,8 +2174,34 @@
         <!-- Product 1: dauthau -->
         <div id="dauthau" class="solution-card">
           <div>
+            <!-- Clickable Visual Banner for Product 1 -->
+            <a href="dauthau/" class="product-visual-banner" title="Mở Trang Sản Phẩm & Bảng Giá Săn Thầu AI (/dauthau)">
+              <div class="product-visual-top">
+                <span><strong>HUDU DAUTHAU CLOUD</strong> · <code>huduvn.com/dauthau</code></span>
+                <span class="product-visual-badge">Từ 999k/tháng · Xem Bảng Giá &rarr;</span>
+              </div>
+              <div class="product-visual-grid">
+                <div class="product-visual-cell">
+                  <strong>0.26 ms CPU</strong>
+                  <span>Multi-Head ONNX + Aho-Corasick</span>
+                </div>
+                <div class="product-visual-cell">
+                  <strong>0.0 – 10.0</strong>
+                  <span>AI Chấm điểm Hồ sơ năng lực</span>
+                </div>
+                <div class="product-visual-cell">
+                  <strong>Đa nền tảng</strong>
+                  <span>Flutter iOS/Android/Web &amp; Zalo</span>
+                </div>
+              </div>
+              <div class="product-visual-footer">
+                <span>Bấm vào đây để mở Trang Sản Phẩm &amp; Bảng Giá Đấu Thầu AI</span>
+                <span>Mở <code>/dauthau</code> &rarr;</span>
+              </div>
+            </a>
+
             <div class="solution-tag" data-i18n="p1_tag">SẢN PHẨM 01 · DAUTHAU CLOUD SERVER</div>
-            <h3 data-i18n="p1_title">Hệ Thống Săn &amp; Lọc Đấu Thầu Công - Tư Thông Minh</h3>
+            <h3><a href="dauthau/" style="hover: text-decoration: underline;" data-i18n="p1_title">Hệ Thống Săn &amp; Lọc Đấu Thầu Công - Tư Thông Minh</a></h3>
             <p data-i18n="p1_desc">
               Thu thập tự động, chưng cất chống trùng 3 lớp, bóc tách thông số bằng Keyword + AI và phân phối gói thầu khớp chính xác với biên độ năng lực (Sàn/Trần) của từng doanh nghiệp.
             </p>
@@ -2098,7 +2227,7 @@
               </li>
               <li>
                 <span class="check-icon">&#10003;</span>
-                <div data-i18n="p1_f2"><strong>Phân loại 2 tầng (Aho-Corasick + Dual-Mode AI):</strong> Đánh nhãn cây chuyên ngành (ltree), cấp công trình (Cấp I–IV), tổng mức đầu tư, giá gói thầu và bóc tách thông số kỹ thuật Chương V.</div>
+                <div data-i18n="p1_f2"><strong>Phân loại 3 bước (Aho-Corasick &rarr; ONNX CPU &rarr; GLM-5.3-Flash / Qwen3):</strong> Đánh nhãn cây chuyên ngành (ltree), cấp công trình (Cấp I–IV), tổng mức đầu tư, giá gói thầu và bóc tách thông số kỹ thuật Chương V.</div>
               </li>
               <li>
                 <span class="check-icon">&#10003;</span>
@@ -2111,9 +2240,12 @@
             </ul>
           </div>
 
-          <div>
-            <a href="#live-demo" onclick="switchSandbox('tender')" class="btn btn-primary btn-lg" style="width: 100%;" data-i18n="p1_cta">
-              Mở Bộ Lọc Đấu Thầu Công &amp; Tư &rarr;
+          <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 10px;">
+            <a href="dauthau/" class="btn btn-primary btn-lg" style="width: 100%; padding: 0 14px;">
+              Trang Sản Phẩm &amp; Bảng Giá &rarr;
+            </a>
+            <a href="dauthau/#pricing" class="btn btn-outline btn-lg" style="width: 100%; border-color: var(--blue-primary); color: var(--blue-primary); padding: 0 14px;">
+              Bảng Giá Săn Thầu &rarr;
             </a>
           </div>
         </div>
@@ -2121,8 +2253,34 @@
         <!-- Product 2: cfms_qms -->
         <div id="cfms" class="solution-card csms">
           <div>
+            <!-- Clickable Visual Banner for Product 2 -->
+            <a href="cfms/" class="product-visual-banner" title="Mở Trang Sản Phẩm & Bảng Giá Quản Lý Phòng Khám (/cfms)">
+              <div class="product-visual-top">
+                <span><strong>HUDU CFMS / QMS</strong> · <code>huduvn.com/cfms</code></span>
+                <span class="product-visual-badge">Basic 499k · Premium 999k (Free Lắp Đặt) &rarr;</span>
+              </div>
+              <div class="product-visual-grid">
+                <div class="product-visual-cell">
+                  <strong>&lt; 2 ms SIMD</strong>
+                  <span>Face ID 1:N &amp; Quét QR CCCD</span>
+                </div>
+                <div class="product-visual-cell">
+                  <strong>3 Role Y Khoa</strong>
+                  <span>Admin · Bác sĩ · ĐD &amp; Cấp cứu</span>
+                </div>
+                <div class="product-visual-cell">
+                  <strong>100% Offline</strong>
+                  <span>Tauri v2 App &amp; Loa gọi số TTS</span>
+                </div>
+              </div>
+              <div class="product-visual-footer">
+                <span>Bấm vào đây để mở Trang Sản Phẩm &amp; Bảng Giá Phòng Khám</span>
+                <span>Mở <code>/cfms</code> &rarr;</span>
+              </div>
+            </a>
+
             <div class="solution-tag" data-i18n="p2_tag">SẢN PHẨM 02 · CFMS / QMS / CSMS</div>
-            <h3 data-i18n="p2_title">Hệ Thống Nhận Diện Khuôn Mặt, Lấy Đơn &amp; Điều Phối Hàng Đợi</h3>
+            <h3><a href="cfms/" data-i18n="p2_title">Hệ Thống Nhận Diện Khuôn Mặt, Lấy Đơn &amp; Điều Phối Hàng Đợi</a></h3>
             <p data-i18n="p2_desc">
               Giải pháp tiếp nhận đơn bệnh nhân, cấp số thứ tự thông minh bằng nhận diện sinh trắc học cục bộ (Edge AI) kết hợp quét CCCD gắn chip cho Bệnh viện, Phòng khám và Phòng học dạy thêm.
             </p>
@@ -2164,12 +2322,12 @@
             </ul>
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-            <a href="#live-demo" onclick="switchSandbox('csms')" class="btn btn-outline btn-lg" style="width: 100%; border-color: var(--blue-primary); color: var(--blue-primary); padding: 0 14px;" data-i18n="p2_cta">
-              Mở Bàn Điều Phối &rarr;
+          <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 10px;">
+            <a href="cfms/" class="btn btn-primary btn-lg" style="width: 100%; padding: 0 14px;">
+              Trang Sản Phẩm &amp; Bảng Giá &rarr;
             </a>
-            <a href="#pricing" class="btn btn-primary btn-lg" style="width: 100%; padding: 0 14px;" data-i18n="p2_price_btn">
-              Xem Bảng Giá &darr;
+            <a href="cfms/#pricing" class="btn btn-outline btn-lg" style="width: 100%; border-color: var(--blue-primary); color: var(--blue-primary); padding: 0 14px;">
+              Bảng Giá 499k / 999k &rarr;
             </a>
           </div>
         </div>
@@ -2203,6 +2361,14 @@
         <div class="sandbox-body">
           <!-- PANEL 1: TENDER FILTERING -->
           <div id="panelTender" class="sandbox-panel active">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 12px 16px; margin-bottom: 16px; border-radius: 10px; background: var(--bg-subtle); border: 1px solid var(--border-subtle);">
+              <span style="font-size: 0.88rem; font-weight: 600;">Bạn đang xem bản mô phỏng nhanh của <strong>HUDU DauThau Cloud</strong>.</span>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a href="dauthau/" class="btn btn-outline" style="height: 34px; font-size: 0.82rem;">Chi Tiết Sản Phẩm (/dauthau)</a>
+                <a href="dauthau/#pricing" class="btn btn-primary" style="height: 34px; font-size: 0.82rem;">Xem Bảng Giá Săn Thầu AI &rarr;</a>
+              </div>
+            </div>
+
             <div class="filter-toolbar">
               <div class="search-box">
                 <input type="text" id="tenderSearch" data-i18n-placeholder="tender_search_ph" placeholder="Tìm theo mã TBMT, tên gói thầu, chủ đầu tư, thông số kỹ thuật..." oninput="renderTenders()" />
@@ -2235,6 +2401,14 @@
 
           <!-- PANEL 2: CFMS / CSMS -->
           <div id="panelCsms" class="sandbox-panel">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 12px 16px; margin-bottom: 16px; border-radius: 10px; background: var(--bg-subtle); border: 1px solid var(--border-subtle);">
+              <span style="font-size: 0.88rem; font-weight: 600;">Bạn đang xem bản mô phỏng nhanh của <strong>HUDU CFMS / QMS</strong>.</span>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a href="cfms/" class="btn btn-outline" style="height: 34px; font-size: 0.82rem;">Chi Tiết Sản Phẩm (/cfms)</a>
+                <a href="cfms/#pricing" class="btn btn-primary" style="height: 34px; font-size: 0.82rem;">Xem Bảng Giá Phòng Khám (499k / 999k) &rarr;</a>
+              </div>
+            </div>
+
             <div class="csms-top-bar">
               <div>
                 <strong style="font-size: 1rem;" data-i18n="csms_mode_label">Chế độ vận hành:</strong>
@@ -2270,222 +2444,99 @@
     </div>
   </section>
 
-  <!-- SECTION 2.5: CFMS / QMS PRICING PLANS -->
+  <!-- SECTION 2.5: 2-PRODUCT PRICING & PORTAL GATEWAY -->
   <section id="pricing" class="section section-alt">
     <div class="container">
       <div class="section-header">
-        <div class="pill-tag" data-i18n="price_tag">Bảng Giá Quản Lý Phòng Khám &amp; Bệnh Viện (CFMS / QMS)</div>
-        <h2 data-i18n="price_title">Gói Dịch Vụ Minh Bạch · Miễn Phí Bảo Trì Trọn Đời Thuê Bao</h2>
-        <p data-i18n="price_desc">
-          Thiết kế tối ưu chi phí cho Phòng khám chuyên khoa, Khoa Thận Nhân Tạo, Bệnh viện và Cơ sở đào tạo. Tặng kèm dịch vụ Custom thương hiệu riêng (Logo, Tên đơn vị) trên toàn bộ màn hình Kiosk, Dashboard &amp; TV Phòng chờ.
+        <div class="pill-tag">Bảng Giá &amp; Chuyên Trang 2 Sản Phẩm</div>
+        <h2>Chọn Sản Phẩm Để Xem Chi Tiết &amp; Bảng Giá Đầy Đủ</h2>
+        <p>
+          Mỗi sản phẩm của HUDU được thiết kế chuyên sâu trên một đường dẫn riêng kèm bảng giá minh bạch, chính sách Custom thương hiệu riêng và cam kết <strong>miễn phí 100% bảo trì khi còn Subscribe</strong>.
         </p>
       </div>
 
-      <div class="pricing-grid">
-        <!-- PLAN 1: BASIC -->
+      <div class="product-split">
+        <!-- Gateway 1: DauThau Pricing Summary -->
         <div class="pricing-card">
           <div>
-            <div class="pricing-tier-label" data-i18n="plan1_badge">GÓI CƠ BẢN · BASIC</div>
-            <h3 data-i18n="plan1_name">Phòng Khám &amp; Cơ Sở Tiêu Chuẩn</h3>
-            <p class="pricing-subtitle" data-i18n="plan1_sub">
-              Phù hợp cho Phòng khám chuyên khoa, Phòng mạch tư nhân hoặc Trung tâm đào tạo quy mô gọn (1 quầy tiếp nhận).
+            <div class="pricing-tier-label">CHUYÊN TRANG 01 · HUDUVN.COM/DAUTHAU</div>
+            <h3>Bảng Giá Hệ Thống Săn Thầu Công &amp; Tư AI</h3>
+            <p class="pricing-subtitle">
+              Dành cho Nhà thầu Xây lắp, Thiết bị Y tế, CNTT &amp; Cung ứng dịch vụ muốn tự động săn gói thầu khớp biên độ Sàn/Trần.
             </p>
 
             <div class="pricing-price-box">
               <div class="price-main-line">
-                <span class="price-amount" data-i18n="plan1_price">499.000đ</span>
-                <span class="price-period" data-i18n="plan_per_month">/ tháng (Subscribe)</span>
+                <span class="price-amount">999.000đ</span>
+                <span class="price-period">&rarr; 2.490.000đ / tháng</span>
               </div>
               <div class="setup-fee-row">
-                <span style="color: var(--text-muted);" data-i18n="plan1_setup_label">Phí lắp đặt &amp; khởi tạo (1 lần):</span>
-                <strong style="color: var(--text-main);" data-i18n="plan1_setup_val">1.799.000đ</strong>
+                <span style="color: var(--text-muted);">Khởi tạo Hồ sơ năng lực Sàn/Trần bằng AI:</span>
+                <strong style="color: var(--blue-primary);">MIỄN PHÍ 0đ</strong>
               </div>
-            </div>
-
-            <div class="role-quota-banner">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-              <span data-i18n="plan1_quota">01 Tài khoản mỗi Role (01 Admin · 01 Bác sĩ · 01 Điều dưỡng)</span>
             </div>
 
             <ul class="pricing-feature-list">
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div data-i18n="plan1_f1"><strong>Dịch vụ Custom thương hiệu riêng:</strong> Cài đặt Tên Phòng khám, Tên Khoa &amp; Logo riêng đồng bộ trên Kiosk lấy số, Bàn điều phối và TV Phòng chờ.</div>
+                <div><strong>Gói Cơ Bản (Starter — 999k/tháng):</strong> Săn thầu Mua sắm công &amp; Báo Đấu Thầu, AI chấm điểm <code>0.0–10.0</code>, 01 Hồ sơ năng lực, 03 tài khoản App/Web.</div>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div data-i18n="plan1_f2"><strong>Miễn phí 100% bảo trì &amp; cập nhật:</strong> Bảo hành phần mềm, nâng cấp tính năng mới và giám sát Watchdog 24/7 trong suốt thời gian còn Subscribe.</div>
+                <div><strong>Gói Nâng Cao (Pro Contractor — 2.490k/tháng):</strong> Toàn bộ nguồn <strong>Công + Tập đoàn SOEs + Ngân hàng/Tư nhân + ODA</strong>, tối đa 15 tài khoản, đẩy tin Zalo/SMS/App &amp; Sổ cái Read-Receipt.</div>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div data-i18n="plan1_f3"><strong>Nhận diện khuôn mặt Edge AI (&lt; 2ms):</strong> Khung 1:1 đếm ngược 3 giây, tự động cân bằng sáng (Histogram Equalization) &amp; chống lấy trùng số tuyệt đối.</div>
-              </li>
-              <li>
-                <span class="pricing-check">&#10003;</span>
-                <div data-i18n="plan1_f4"><strong>Quét QR CCCD gắn chip (3 chế độ):</strong> Hỗ trợ Webcam, tải ảnh thẻ hoặc súng bắn mã vạch 2D USB (tự động bóc tách 7 trường chuẩn Bộ Công An).</div>
-              </li>
-              <li>
-                <span class="pricing-check">&#10003;</span>
-                <div data-i18n="plan1_f5"><strong>Chuông Ding-Dong &amp; Loa gọi số / Gọi lại:</strong> Đọc tên bệnh nhân, số thứ tự, phòng khám/máy lọc bằng giọng đọc TTS tiếng Việt tự nhiên.</div>
-              </li>
-              <li>
-                <span class="pricing-check">&#10003;</span>
-                <div data-i18n="plan1_f6"><strong>Ánh xạ người nhà lấy số giùm (1:N):</strong> Liên kết tối đa <strong>02 khuôn mặt / bệnh nhân</strong>, lưu vết lịch sử khám <strong>30 ngày</strong> &amp; khôi phục mật khẩu Master Key.</div>
+                <div><strong>Gói Tập Đoàn (Enterprise):</strong> Triển khai cụm Private Cloud riêng với <code>core-iam</code> SSO &amp; Local LLM <code>Qwen3</code>.</div>
               </li>
             </ul>
           </div>
 
-          <a href="#contact" onclick="selectPricingPlan('cfms-basic')" class="btn btn-outline btn-lg" style="width: 100%; border-color: var(--blue-primary); color: var(--blue-primary);" data-i18n="plan1_cta">
-            Đăng Ký Gói Basic &rarr;
+          <a href="dauthau/#pricing" class="btn btn-primary btn-lg" style="width: 100%;">
+            Mở Trang Sản Phẩm &amp; Bảng Giá Đấu Thầu (/dauthau) &rarr;
           </a>
         </div>
 
-        <!-- PLAN 2: PREMIUM (FEATURED) -->
+        <!-- Gateway 2: CFMS/QMS Pricing Summary -->
         <div class="pricing-card featured">
-          <div class="pricing-popular-ribbon" data-i18n="plan2_ribbon">PHỔ BIẾN NHẤT · MIỄN PHÍ LẮP ĐẶT 1.799K</div>
+          <div class="pricing-popular-ribbon">PHÒNG KHÁM &amp; BỆNH VIỆN · TỪ 499K/THÁNG</div>
           <div>
-            <div class="pricing-tier-label" data-i18n="plan2_badge">GÓI NÂNG CAO · PREMIUM</div>
-            <h3 data-i18n="plan2_name">Phòng Khám Đa Khoa &amp; Khoa Bệnh Viện</h3>
-            <p class="pricing-subtitle" data-i18n="plan2_sub">
-              Tối ưu cho Phòng khám Đa khoa, Khoa Thận Nhân Tạo / Khoa Khám bệnh nhiều ca trực và Trung tâm quy mô lớn.
+            <div class="pricing-tier-label">CHUYÊN TRANG 02 · HUDUVN.COM/CFMS</div>
+            <h3>Bảng Giá Quản Lý Phòng Khám &amp; Hàng Đợi (CFMS/QMS)</h3>
+            <p class="pricing-subtitle">
+              Dành cho Phòng khám chuyên khoa/đa khoa, Khoa Thận Nhân Tạo, Bệnh viện &amp; Cơ sở đào tạo. Tặng kèm Custom thương hiệu riêng.
             </p>
 
             <div class="pricing-price-box">
               <div class="price-main-line">
-                <span class="price-amount" data-i18n="plan2_price">999.000đ</span>
-                <span class="price-period" data-i18n="plan_per_month">/ tháng (Subscribe)</span>
+                <span class="price-amount">499.000đ</span>
+                <span class="price-period">&rarr; 999.000đ / tháng</span>
               </div>
               <div class="setup-fee-row">
-                <span style="color: #CBD5E1;" data-i18n="plan2_setup_label">Phí lắp đặt &amp; khởi tạo:</span>
-                <span class="setup-free-badge" data-i18n="plan2_setup_val">MIỄN PHÍ 0đ (Tiết kiệm 1.799k)</span>
+                <span style="color: #CBD5E1;">Ưu đãi Gói Nâng Cao (Premium 999k/tháng):</span>
+                <span class="setup-free-badge">MIỄN PHÍ LẮP ĐẶT 0đ (Tiết kiệm 1.799k)</span>
               </div>
-            </div>
-
-            <div class="role-quota-banner">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              <span data-i18n="plan2_quota">Tối đa 10 Tài khoản mỗi Role (10 Admin · 10 Bác sĩ · 10 Điều dưỡng)</span>
             </div>
 
             <ul class="pricing-feature-list">
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div data-i18n="plan2_f1"><strong>Toàn bộ quyền lợi Gói Basic:</strong> Bao gồm dịch vụ Custom thương hiệu riêng &amp; <strong>Miễn phí bảo trì, cập nhật phần mềm trọn đời</strong> khi còn Subscribe.</div>
+                <div><strong>Gói Cơ Bản (Basic — 499k/tháng · Lắp đặt 1.799k):</strong> Custom thương hiệu riêng (Logo, Tên phòng khám), <strong>01 tài khoản mỗi Role</strong> (<code>Admin</code> · <code>Bác sĩ</code> · <code>Điều dưỡng</code>), Face ID &lt; 2ms, quét CCCD, loa gọi số TTS &amp; miễn phí bảo trì khi còn Subscribe.</div>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div data-i18n="plan2_f2"><strong>Miễn phí 100% chi phí lắp đặt ban đầu:</strong> Đội ngũ kỹ sư HUDU thiết lập trọn gói hệ thống, phân quyền ca trực và bàn giao tận nơi (Tiết kiệm 1.799.000đ).</div>
+                <div><strong>Gói Nâng Cao (Premium — 999k/tháng · Miễn phí lắp đặt):</strong> Toàn bộ gói Cơ bản + <strong>Tối đa 10 tài khoản mỗi Role</strong> (tới 30 nhân sự), Cấp số Cấp cứu <code>CC-xx</code>, ánh xạ 05 người nhà, App Desktop Tauri v2 &amp; lưu lịch sử 365 ngày.</div>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div data-i18n="plan2_f3"><strong>Đa tài khoản nhân sự (Tối đa 10 Account / Role):</strong> Lên tới <strong>30 tài khoản</strong> cho đội ngũ Bác sĩ, Điều dưỡng, Giáo vụ làm việc đồng thời trên nhiều máy trạm.</div>
-              </li>
-              <li>
-                <span class="pricing-check">&#10003;</span>
-                <div data-i18n="plan2_f4"><strong>Đặc quyền Bác sĩ &amp; Ưu tiên Cấp cứu (CC-xx):</strong> Cấp phiếu thủ công không qua camera (<code>[➕ Cấp Số Mới]</code>), tạo mã cấp cứu đẩy đầu hàng đợi &amp; quản lý nhân sự.</div>
-              </li>
-              <li>
-                <span class="pricing-check">&#10003;</span>
-                <div data-i18n="plan2_f5"><strong>Ánh xạ 1:N Mở rộng (05 người nhà / bệnh nhân):</strong> Tự động học khuôn mặt người nhà mới (Dynamic Face Learning) trực tiếp vào bộ nhớ RAM 10.000 hồ sơ.</div>
-              </li>
-              <li>
-                <span class="pricing-check">&#10003;</span>
-                <div data-i18n="plan2_f6"><strong>App Desktop Tauri v2 &amp; Chứng chỉ HTTPS Nội bộ (Root CA):</strong> Cài đặt trên Windows/macOS/Linux (<code>chaythan.local:9697</code>), cấp quyền Camera &amp; Loa vĩnh viễn không bị chặn.</div>
-              </li>
-              <li>
-                <span class="pricing-check">&#10003;</span>
-                <div data-i18n="plan2_f7"><strong>Cổng Admin Ẩn, Sơ đồ Topology &amp; Lưu lịch sử 365 ngày:</strong> Giám sát trực quan Camera FPS, Loa, TV, nhật ký Audit Log và tự động sao lưu CSDL ra USB.</div>
+                <div><strong>Gói Bệnh Viện &amp; Chuỗi (Enterprise):</strong> Không giới hạn tài khoản &amp; Kiosk, tích hợp 2 chiều <strong>HIS / LIS / BHYT</strong>.</div>
               </li>
             </ul>
           </div>
 
-          <a href="#contact" onclick="selectPricingPlan('cfms-premium')" class="btn btn-primary btn-lg" style="width: 100%; background: linear-gradient(135deg, #38BDF8 0%, #0284C7 100%); color: #061325; font-weight: 800;" data-i18n="plan2_cta">
-            Đăng Ký Gói Premium (Miễn Phí Lắp Đặt) &rarr;
+          <a href="cfms/#pricing" class="btn btn-primary btn-lg" style="width: 100%; background: linear-gradient(135deg, #38BDF8 0%, #0284C7 100%); color: #061325; font-weight: 800;">
+            Mở Trang Sản Phẩm &amp; Bảng Giá Phòng Khám (/cfms) &rarr;
           </a>
-        </div>
-
-        <!-- PLAN 3: ENTERPRISE / HOSPITAL -->
-        <div class="pricing-card">
-          <div>
-            <div class="pricing-tier-label" data-i18n="plan3_badge">GÓI BỆNH VIỆN &amp; CHUỖI · ENTERPRISE</div>
-            <h3 data-i18n="plan3_name">Bệnh Viện Đa Khoa &amp; Chuỗi Cơ Sở</h3>
-            <p class="pricing-subtitle" data-i18n="plan3_sub">
-              Giải pháp may đo toàn diện cho Bệnh viện tuyến Tỉnh/Trung ương hoặc Chuỗi phòng khám đa chi nhánh cần tích hợp HIS/LIS.
-            </p>
-
-            <div class="pricing-price-box">
-              <div class="price-main-line">
-                <span class="price-amount" data-i18n="plan3_price">Báo giá riêng</span>
-                <span class="price-period" data-i18n="plan3_period">/ theo quy mô khoa phòng</span>
-              </div>
-              <div class="setup-fee-row">
-                <span style="color: var(--text-muted);" data-i18n="plan3_setup_label">Triển khai &amp; Tích hợp:</span>
-                <strong style="color: var(--blue-primary);" data-i18n="plan3_setup_val">Khảo sát &amp; Bàn giao tận nơi</strong>
-              </div>
-            </div>
-
-            <div class="role-quota-banner">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-              <span data-i18n="plan3_quota">Không giới hạn Tài khoản mỗi Role · Đa Kiosk &amp; Đa Khoa Phòng</span>
-            </div>
-
-            <ul class="pricing-feature-list">
-              <li>
-                <span class="pricing-check">&#10003;</span>
-                <div data-i18n="plan3_f1"><strong>Toàn bộ tính năng Gói Premium:</strong> Không giới hạn tài khoản Admin, Bác sĩ, Điều dưỡng và không giới hạn số lượng Kiosk tiếp nhận / màn hình TV.</div>
-              </li>
-              <li>
-                <span class="pricing-check">&#10003;</span>
-                <div data-i18n="plan3_f2"><strong>Mở rộng bộ nhớ SIMD Vector Store:</strong> Dung lượng trên <strong>50.000+ khuôn mặt</strong> trong RAM với tốc độ đối soát dưới 2 mili-giây.</div>
-              </li>
-              <li>
-                <span class="pricing-check">&#10003;</span>
-                <div data-i18n="plan3_f3"><strong>Tích hợp API 2 chiều chuyên sâu:</strong> Đồng bộ dữ liệu trực tiếp với hệ thống <strong>HIS / LIS / PACS / Cổng Bảo hiểm Y tế</strong> hiện hữu của Bệnh viện.</div>
-              </li>
-              <li>
-                <span class="pricing-check">&#10003;</span>
-                <div data-i18n="plan3_f4"><strong>Cung cấp &amp; Lắp đặt Phần cứng Trọn gói:</strong> Trang bị Mini-PC Intel N100 Fanless chạy êm 24/7, màn hình cảm ứng Kiosk, súng quét QR 2D USB &amp; hệ thống âm thanh.</div>
-              </li>
-              <li>
-                <span class="pricing-check">&#10003;</span>
-                <div data-i18n="plan3_f5"><strong>Cam kết SLA 99.99% &amp; Kỹ sư chuyên trách:</strong> Hỗ trợ kỹ thuật ưu tiên 24/7/365 và đào tạo vận hành trực tiếp tại từng khoa phòng.</div>
-              </li>
-            </ul>
-          </div>
-
-          <a href="#contact" onclick="selectPricingPlan('cfms-enterprise')" class="btn btn-outline btn-lg" style="width: 100%; border-color: var(--blue-primary); color: var(--blue-primary);" data-i18n="plan3_cta">
-            Nhận Tư Vấn &amp; Báo Giá Bệnh Viện &rarr;
-          </a>
-        </div>
-      </div>
-
-      <!-- Hardware & System Efficiency Strip from cfms_qms/requirement.txt -->
-      <div class="pricing-hw-banner">
-        <div class="hw-item">
-          <span class="icon-badge">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/></svg>
-          </span>
-          <div>
-            <strong data-i18n="hw_1_title">Tương Thích Phần Cứng Giá Rẻ (Mini-PC / Máy Cũ)</strong>
-            <span data-i18n="hw_1_desc">Chỉ tốn &lt; 50 MB RAM &amp; &lt; 0.05% CPU khi nhàn rỗi nhờ Motion Filter. Chạy mượt 24/7 trên Mini-PC Intel N100 (~3 triệu) hoặc PC văn phòng Core i3 / RAM 4GB / SSD 120GB sẵn có.</span>
-          </div>
-        </div>
-        <div class="hw-item">
-          <span class="icon-badge">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </span>
-          <div>
-            <strong data-i18n="hw_2_title">100% Offline LAN · Tuân Thủ Nghị Định 13/2023/NĐ-CP</strong>
-            <span data-i18n="hw_2_desc">Toàn bộ ảnh sinh trắc và dữ liệu CCCD lưu cục bộ trong SQLite WAL nội bộ bệnh viện/phòng khám; vẫn hoạt động bình thường ngay cả khi đứt cáp Internet.</span>
-          </div>
-        </div>
-        <div class="hw-item">
-          <span class="icon-badge">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          </span>
-          <div>
-            <strong data-i18n="hw_3_title">Cam Kết Bảo Trì Miễn Phí Khi Còn Subscribe</strong>
-            <span data-i18n="hw_3_desc">Bao gồm cập nhật thuật toán nhận diện mới, hỗ trợ cài lại máy trạm, điều chỉnh giao diện thương hiệu riêng và xử lý sự cố từ xa hoàn toàn miễn phí.</span>
-          </div>
         </div>
       </div>
     </div>
@@ -2527,9 +2578,9 @@
           <div class="benefit-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <h3 data-i18n="arch_3_title">Keycloak IAM &amp; Bảo Mật Dữ Liệu</h3>
+          <h3 data-i18n="arch_3_title">Rust Core-IAM &amp; Bảo Mật Dữ Liệu</h3>
           <p data-i18n="arch_3_desc">
-            Quản lý định danh đa tổ chức (Multi-tenant RBAC) qua Keycloak OIDC, cô lập dữ liệu khách hàng tuyệt đối và hỗ trợ triển khai Offline LAN tuân thủ Nghị định 13/2023/NĐ-CP.
+            Quản lý định danh đa tổ chức (Multi-tenant RBAC) qua Rust Core-IAM, cô lập dữ liệu khách hàng tuyệt đối và hỗ trợ triển khai Offline LAN tuân thủ Nghị định 13/2023/NĐ-CP.
           </p>
         </div>
       </div>
@@ -2625,10 +2676,10 @@
         <div class="footer-col">
           <h4 data-i18n="footer_col1">Sản phẩm</h4>
           <ul>
-            <li><a href="#dauthau">HUDU DauThau</a></li>
-            <li><a href="#cfms">HUDU CFMS / QMS</a></li>
-            <li><a href="#cfms">HUDU Education CSMS</a></li>
-            <li><a href="#live-demo" data-i18n="nav_demo">Trải nghiệm Demo</a></li>
+            <li><a href="dauthau/">HUDU DauThau (/dauthau)</a></li>
+            <li><a href="cfms/">HUDU CFMS / QMS (/cfms)</a></li>
+            <li><a href="cfms/#pricing">Bảng Giá Phòng Khám</a></li>
+            <li><a href="dauthau/#pricing">Bảng Giá Đấu Thầu AI</a></li>
           </ul>
         </div>
 
@@ -2636,9 +2687,9 @@
           <h4 data-i18n="footer_col2">Công nghệ</h4>
           <ul>
             <li><a href="#architecture">Rust Cloud &amp; Edge</a></li>
-            <li><a href="#architecture">Dual-Mode AI Router</a></li>
-            <li><a href="#architecture">Keycloak Multi-Tenant IAM</a></li>
-            <li><a href="#architecture">512-D SIMD Biometrics</a></li>
+            <li><a href="dauthau/#pipeline">3-Step ONNX + LLM</a></li>
+            <li><a href="#architecture">Rust Core-IAM</a></li>
+            <li><a href="cfms/#features">512-D SIMD Biometrics</a></li>
           </ul>
         </div>
 
@@ -2646,7 +2697,7 @@
           <h4 data-i18n="footer_col3">Liên hệ</h4>
           <ul>
             <li>Website: <a href="https://huduvn.com">huduvn.com</a></li>
-            <li>Email: contact@huduvn.com</li>
+            <li>Email: <a href="mailto:tnhung1896@gmail.com">tnhung1896@gmail.com</a></li>
             <li>Support: 24/7 Enterprise SLA</li>
           </ul>
         </div>
