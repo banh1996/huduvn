@@ -1230,16 +1230,16 @@
       </a>
 
       <ul class="nav-links">
-        <li><a href="../">Trang chủ</a></li>
-        <li><a href="#pricing" class="active">Bảng giá</a></li>
-        <li><a href="#features">Tính năng</a></li>
-        <li><a href="#roles">Phân quyền 3 Role</a></li>
-        <li><a href="../dauthau/">Đấu thầu AI</a></li>
+        <li><a href="../" data-i18n="nav_home">Trang chủ</a></li>
+        <li><a href="#pricing" class="active" data-i18n="nav_pricing">Bảng giá</a></li>
+        <li><a href="#features" data-i18n="nav_features">Tính năng</a></li>
+        <li><a href="#roles" data-i18n="nav_roles">Phân quyền 3 Role</a></li>
+        <li><a href="../dauthau/" data-i18n="nav_dauthau">Đấu thầu AI</a></li>
       </ul>
 
       <div class="nav-actions">
         <div class="lang-select-wrap">
-          <select id="langSelect" class="lang-select" aria-label="Language">
+          <select id="langSelect" class="lang-select" onchange="setLanguage(this.value)" aria-label="Language">
             <option value="vi">🇻🇳 Tiếng Việt</option>
             <option value="en">🇺🇸 English</option>
             <option value="es">🇪🇸 Español</option>
@@ -1255,7 +1255,7 @@
           <svg id="themeIconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         </button>
 
-        <a href="#contact" class="btn btn-primary">Đăng ký Dùng thử</a>
+        <a href="#contact" class="btn btn-primary" data-i18n="nav_cta">Đăng ký Dùng thử</a>
       </div>
     </div>
   </header>
@@ -1274,36 +1274,36 @@
       <div>
         <div class="pill-tag">
           <span class="pill-dot"></span>
-          <span>SẢN PHẨM 02 · HUDU CFMS / QMS · huduvn.com/cfms</span>
+          <span data-i18n="hero_badge">SẢN PHẨM 02 · HUDU CFMS / QMS · huduvn.com/cfms</span>
         </div>
-        <h1>
+        <h1 data-i18n="hero_title">
           Hệ Thống <span class="highlight">Nhận Diện Khuôn Mặt</span>, Quét CCCD &amp; Điều Phối Phòng Khám
         </h1>
-        <p class="hero-desc">
+        <p class="hero-desc" data-i18n="hero_desc">
           Giải pháp tiếp nhận bệnh nhân tự động bằng nhận diện khuôn mặt, hỗ trợ <strong>người nhà lấy số khám giùm</strong>, quét mã QR CCCD gắn chip và phát loa gọi số tự động cho Phòng khám, Khoa Thận Nhân Tạo &amp; Bệnh viện.
         </p>
 
         <div class="hero-cta-group">
-          <a href="#pricing" class="btn btn-primary btn-lg">
+          <a href="#pricing" class="btn btn-primary btn-lg" data-i18n="hero_btn_pricing">
             Xem Bảng Giá Gói Basic &amp; Premium &darr;
           </a>
-          <a href="#features" class="btn btn-outline btn-lg">
+          <a href="#features" class="btn btn-outline btn-lg" data-i18n="hero_btn_features">
             Khám Phá Tính Năng
           </a>
         </div>
 
         <div class="hero-metrics">
           <div class="metric-item">
-            <strong>Tức thì</strong>
-            <span>Nhận diện khuôn mặt &amp; cấp số thứ tự tự động</span>
+            <strong data-i18n="m1_val">Tức thì</strong>
+            <span data-i18n="m1_lbl">Nhận diện khuôn mặt &amp; cấp số thứ tự tự động</span>
           </div>
           <div class="metric-item">
             <strong>5.000 – 100.000</strong>
-            <span>Hồ sơ bệnh nhân &amp; người nhà lưu trữ theo gói</span>
+            <span data-i18n="m2_lbl">Hồ sơ bệnh nhân &amp; người nhà lưu trữ theo gói</span>
           </div>
           <div class="metric-item">
-            <strong>Hoạt động 24/7</strong>
-            <span>Vận hành ổn định ngay cả khi mất kết nối Internet</span>
+            <strong data-i18n="m3_val">Hoạt động 24/7</strong>
+            <span data-i18n="m3_lbl">Vận hành ổn định ngay cả khi mất kết nối Internet</span>
           </div>
         </div>
       </div>
@@ -1316,14 +1316,14 @@
           </div>
           <div class="showcase-url">
             <span class="live-indicator"></span>
-            HUDU CFMS · Tiếp Nhận &amp; Điều Phối Thông Minh
+            <span data-i18n="sc_header">HUDU CFMS · Tiếp Nhận &amp; Điều Phối Thông Minh</span>
           </div>
         </div>
 
         <div class="mini-card">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-            <strong style="font-size:0.95rem;">Quầy Nhận Diện Khuôn Mặt &amp; Quét CCCD</strong>
-            <span class="status-pill">Tự động cấp số</span>
+            <strong style="font-size:0.95rem;" data-i18n="sc_card_title">Quầy Nhận Diện Khuôn Mặt &amp; Quét CCCD</strong>
+            <span class="status-pill" data-i18n="sc_card_pill">Tự động cấp số</span>
           </div>
           <div class="biometric-live-row">
             <div class="face-scan-box">
@@ -1331,31 +1331,31 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0066CC" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
             </div>
             <div style="font-size: 0.8rem; line-height: 1.4;">
-              <strong style="color: var(--text-main); display: block;">BN-1001 · Nguyễn Văn Hòa (1962)</strong>
-              <span style="color: var(--text-muted);">Người nhà lấy số khám giùm · Ca 1 (Máy lọc số 08)</span>
+              <strong style="color: var(--text-main); display: block;" data-i18n="sc_patient">BN-1001 · Nguyễn Văn Hòa (1962)</strong>
+              <span style="color: var(--text-muted);" data-i18n="sc_patient_sub">Người nhà lấy số khám giùm · Ca 1 (Máy lọc số 08)</span>
             </div>
           </div>
           <div style="display:flex; justify-content:space-between; font-size:0.78rem; color:var(--text-muted);">
-            <span>&#10003; Đã chống lấy trùng số trong ca</span>
-            <span style="color:var(--blue-primary); font-weight:700;">&#128266; Loa gọi số: Mời số 008</span>
+            <span data-i18n="sc_anti_dup">&#10003; Đã chống lấy trùng số trong ca</span>
+            <span style="color:var(--blue-primary); font-weight:700;" data-i18n="sc_voice">&#128266; Loa gọi số: Mời số 008</span>
           </div>
         </div>
 
         <div class="mini-card" style="background: linear-gradient(145deg, #0B192C, #132A46); color: #F8FAFC; border-color: #38BDF8;">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-            <span style="font-size:0.75rem; font-weight:800; color:#7DD3FC; text-transform:uppercase; letter-spacing:0.06em;">Bảng giá công khai · Miễn phí bảo trì</span>
-            <span style="font-size:0.72rem; background:rgba(56,189,248,0.2); color:#7DD3FC; padding:3px 9px; border-radius:99px; font-weight:700;">Custom Thương Hiệu Riêng</span>
+            <span style="font-size:0.75rem; font-weight:800; color:#7DD3FC; text-transform:uppercase; letter-spacing:0.06em;" data-i18n="sc_price_head">Bảng giá công khai · Miễn phí bảo trì</span>
+            <span style="font-size:0.72rem; background:rgba(56,189,248,0.2); color:#7DD3FC; padding:3px 9px; border-radius:99px; font-weight:700;" data-i18n="sc_price_badge">Custom Thương Hiệu Riêng</span>
           </div>
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:8px;">
             <div style="background:rgba(15,23,42,0.7); padding:10px 12px; border-radius:10px; border:1px solid rgba(148,163,184,0.25);">
-              <div style="font-size:0.74rem; color:#94A3B8; font-weight:700;">GÓI BASIC (5.000 Hồ sơ)</div>
-              <div style="font-size:1.2rem; font-weight:800; color:#FFFFFF;">499.000đ<span style="font-size:0.75rem; font-weight:500; color:#CBD5E1;">/tháng</span></div>
-              <div style="font-size:0.72rem; color:#CBD5E1; margin-top:2px;">Lắp đặt: 1.799.000đ · 01 Acc/Role</div>
+              <div style="font-size:0.74rem; color:#94A3B8; font-weight:700;" data-i18n="sc_b_title">GÓI BASIC (5.000 Hồ sơ)</div>
+              <div style="font-size:1.2rem; font-weight:800; color:#FFFFFF;">499.000đ<span style="font-size:0.75rem; font-weight:500; color:#CBD5E1;" data-i18n="sc_per_mo">/tháng</span></div>
+              <div style="font-size:0.72rem; color:#CBD5E1; margin-top:2px;" data-i18n="sc_b_sub">Lắp đặt: 1.799.000đ · 01 Acc/Role</div>
             </div>
             <div style="background:rgba(2,132,199,0.25); padding:10px 12px; border-radius:10px; border:1px solid #38BDF8;">
-              <div style="font-size:0.74rem; color:#7DD3FC; font-weight:700;">GÓI PREMIUM (100.000 Hồ sơ)</div>
-              <div style="font-size:1.2rem; font-weight:800; color:#7DD3FC;">999.000đ<span style="font-size:0.75rem; font-weight:500; color:#E2E8F0;">/tháng</span></div>
-              <div style="font-size:0.72rem; color:#BAE6FD; font-weight:700; margin-top:2px;">Miễn phí lắp đặt · 10 Acc/Role</div>
+              <div style="font-size:0.74rem; color:#7DD3FC; font-weight:700;" data-i18n="sc_p_title">GÓI PREMIUM (100.000 Hồ sơ)</div>
+              <div style="font-size:1.2rem; font-weight:800; color:#7DD3FC;">999.000đ<span style="font-size:0.75rem; font-weight:500; color:#E2E8F0;" data-i18n="sc_per_mo">/tháng</span></div>
+              <div style="font-size:0.72rem; color:#BAE6FD; font-weight:700; margin-top:2px;" data-i18n="sc_p_sub">Miễn phí lắp đặt · 10 Acc/Role</div>
             </div>
           </div>
         </div>
@@ -1369,10 +1369,10 @@
       <div class="section-header">
         <div class="pill-tag">
           <span class="pill-dot"></span>
-          <span>Bảng Giá Quản Lý Phòng Khám &amp; Bệnh Viện (CFMS / QMS)</span>
+          <span data-i18n="price_tag">Bảng Giá Quản Lý Phòng Khám &amp; Bệnh Viện (CFMS / QMS)</span>
         </div>
-        <h2>Gói Dịch Vụ Minh Bạch · Miễn Phí Bảo Trì Trọn Đời Thuê Bao</h2>
-        <p>
+        <h2 data-i18n="price_title">Gói Dịch Vụ Minh Bạch · Miễn Phí Bảo Trì Trọn Đời Thuê Bao</h2>
+        <p data-i18n="price_desc">
           Thiết kế tối ưu chi phí cho Phòng khám chuyên khoa, Khoa Thận Nhân Tạo, Bệnh viện và Cơ sở đào tạo. Tặng kèm dịch vụ <strong>Custom thương hiệu riêng (Logo, Tên đơn vị)</strong> trên toàn bộ màn hình lấy số, Bàn điều phối &amp; TV Phòng chờ.
         </p>
       </div>
@@ -1383,120 +1383,120 @@
           <div>
             <div class="pricing-tier-label">
               <span>●</span>
-              <span>GÓI CƠ BẢN · BASIC</span>
+              <span data-i18n="plan1_tier">GÓI CƠ BẢN · BASIC</span>
             </div>
-            <h3>Phòng Khám &amp; Cơ Sở Tiêu Chuẩn</h3>
-            <p class="pricing-subtitle">
+            <h3 data-i18n="plan1_name">Phòng Khám &amp; Cơ Sở Tiêu Chuẩn</h3>
+            <p class="pricing-subtitle" data-i18n="plan1_sub">
               Phù hợp cho Phòng khám chuyên khoa, Phòng mạch tư nhân hoặc Cơ sở quy mô gọn (1 quầy tiếp nhận).
             </p>
 
             <div class="pricing-price-box">
               <div class="price-main-line">
                 <span class="price-amount">499.000đ</span>
-                <span class="price-period">/ tháng (Subscribe)</span>
+                <span class="price-period" data-i18n="plan_per_month">/ tháng (Subscribe)</span>
               </div>
               <div class="setup-fee-row">
-                <span>Phí lắp đặt &amp; khởi tạo (1 lần):</span>
+                <span data-i18n="plan1_setup_lbl">Phí lắp đặt &amp; khởi tạo (1 lần):</span>
                 <strong style="color: var(--text-main);">1.799.000đ</strong>
               </div>
             </div>
 
             <div class="role-quota-banner">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-              <span>01 Tài khoản mỗi Role · Tối đa 5.000 Hồ sơ</span>
+              <span data-i18n="plan1_quota">01 Tài khoản mỗi Role · Tối đa 5.000 Hồ sơ</span>
             </div>
 
             <ul class="pricing-feature-list">
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Lưu trữ tối đa 5.000 hồ sơ:</strong> Quản lý tới <strong>5.000 hồ sơ bệnh nhân &amp; người nhà</strong> đăng ký khuôn mặt lấy số khám.</span>
+                <span data-i18n="plan1_f1"><strong>Lưu trữ tối đa 5.000 hồ sơ:</strong> Quản lý tới <strong>5.000 hồ sơ bệnh nhân &amp; người nhà</strong> đăng ký khuôn mặt lấy số khám.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Dịch vụ Custom thương hiệu riêng:</strong> Cài đặt Tên Phòng khám, Tên Khoa &amp; Logo riêng đồng bộ trên Quầy lấy số, Bàn điều phối và TV Phòng chờ.</span>
+                <span data-i18n="plan1_f2"><strong>Dịch vụ Custom thương hiệu riêng:</strong> Cài đặt Tên Phòng khám, Tên Khoa &amp; Logo riêng đồng bộ trên Quầy lấy số, Bàn điều phối và TV Phòng chờ.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Miễn phí 100% bảo trì &amp; cập nhật:</strong> Bảo hành phần mềm, nâng cấp tính năng mới và hỗ trợ kỹ thuật trong suốt thời gian còn Subscribe.</span>
+                <span data-i18n="plan1_f3"><strong>Miễn phí 100% bảo trì &amp; cập nhật:</strong> Bảo hành phần mềm, nâng cấp tính năng mới và hỗ trợ kỹ thuật trong suốt thời gian còn Subscribe.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Nhận diện khuôn mặt &amp; Người nhà lấy số giùm:</strong> Nhận diện tự động bệnh nhân hoặc người thân đi kèm, chống bấm lấy trùng nhiều phiếu trong cùng ca.</span>
+                <span data-i18n="plan1_f4"><strong>Nhận diện khuôn mặt &amp; Người nhà lấy số giùm:</strong> Nhận diện tự động bệnh nhân hoặc người thân đi kèm, chống bấm lấy trùng nhiều phiếu trong cùng ca.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Quét mã QR CCCD gắn chip tiện lợi:</strong> Quét nhanh CCCD qua Camera hoặc máy quét mã vạch để tự động điền thông tin hành chính của bệnh nhân.</span>
+                <span data-i18n="plan1_f5"><strong>Quét mã QR CCCD gắn chip tiện lợi:</strong> Quét nhanh CCCD qua Camera hoặc máy quét mã vạch để tự động điền thông tin hành chính của bệnh nhân.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Chuông báo &amp; Loa gọi số / Gọi lại:</strong> Tự động đọc tên bệnh nhân, số thứ tự, phòng khám/máy lọc rõ ràng trên loa và màn hình TV phòng chờ.</span>
+                <span data-i18n="plan1_f6"><strong>Chuông báo &amp; Loa gọi số / Gọi lại:</strong> Tự động đọc tên bệnh nhân, số thứ tự, phòng khám/máy lọc rõ ràng trên loa và màn hình TV phòng chờ.</span>
               </li>
             </ul>
           </div>
 
-          <a href="#contact" onclick="selectPricingPlan('CFMS_BASIC')" class="btn btn-outline btn-lg" style="width: 100%; justify-content: center;">
+          <a href="#contact" onclick="selectPricingPlan('CFMS_BASIC')" class="btn btn-outline btn-lg" style="width: 100%; justify-content: center;" data-i18n="plan1_cta">
             Đăng Ký Gói Basic &rarr;
           </a>
         </div>
 
         <!-- PLAN 2: PREMIUM (FEATURED) -->
         <div class="pricing-card featured">
-          <div class="pricing-popular-ribbon">PHỔ BIẾN NHẤT · MIỄN PHÍ LẮP ĐẶT 1.799K</div>
+          <div class="pricing-popular-ribbon" data-i18n="plan2_ribbon">PHỔ BIẾN NHẤT · MIỄN PHÍ LẮP ĐẶT 1.799K</div>
           <div>
             <div class="pricing-tier-label">
               <span>★</span>
-              <span>GÓI NÂNG CAO · PREMIUM</span>
+              <span data-i18n="plan2_tier">GÓI NÂNG CAO · PREMIUM</span>
             </div>
-            <h3>Phòng Khám Đa Khoa &amp; Khoa Bệnh Viện</h3>
-            <p class="pricing-subtitle">
+            <h3 data-i18n="plan2_name">Phòng Khám Đa Khoa &amp; Khoa Bệnh Viện</h3>
+            <p class="pricing-subtitle" data-i18n="plan2_sub">
               Tối ưu cho Phòng khám Đa khoa, Khoa Thận Nhân Tạo / Khoa Khám bệnh nhiều ca trực và lưu lượng bệnh nhân lớn.
             </p>
 
             <div class="pricing-price-box">
               <div class="price-main-line">
                 <span class="price-amount">999.000đ</span>
-                <span class="price-period">/ tháng (Subscribe)</span>
+                <span class="price-period" data-i18n="plan_per_month">/ tháng (Subscribe)</span>
               </div>
               <div class="setup-fee-row">
-                <span>Phí lắp đặt &amp; khởi tạo:</span>
-                <span class="setup-free-badge">MIỄN PHÍ 0đ (Tiết kiệm 1.799k)</span>
+                <span data-i18n="plan2_setup_lbl">Phí lắp đặt &amp; khởi tạo:</span>
+                <span class="setup-free-badge" data-i18n="plan2_setup_val">MIỄN PHÍ 0đ (Tiết kiệm 1.799k)</span>
               </div>
             </div>
 
             <div class="role-quota-banner">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              <span>Tối đa 10 Tài khoản mỗi Role · 100.000 Hồ sơ</span>
+              <span data-i18n="plan2_quota">Tối đa 10 Tài khoản mỗi Role · 100.000 Hồ sơ</span>
             </div>
 
             <ul class="pricing-feature-list">
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Mở rộng lưu trữ tới 100.000 hồ sơ:</strong> Quản lý lên đến <strong>100.000 hồ sơ bệnh nhân &amp; người nhà</strong>, đáp ứng thoải mái nhu cầu lưu trữ dài hạn của Khoa/Phòng khám lớn.</span>
+                <span data-i18n="plan2_f1"><strong>Mở rộng lưu trữ tới 100.000 hồ sơ:</strong> Quản lý lên đến <strong>100.000 hồ sơ bệnh nhân &amp; người nhà</strong>, đáp ứng thoải mái nhu cầu lưu trữ dài hạn của Khoa/Phòng khám lớn.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Toàn bộ quyền lợi Gói Basic:</strong> Bao gồm dịch vụ Custom thương hiệu riêng &amp; <strong>Miễn phí bảo trì, cập nhật phần mềm trọn đời</strong> khi còn Subscribe.</span>
+                <span data-i18n="plan2_f2"><strong>Toàn bộ quyền lợi Gói Basic:</strong> Bao gồm dịch vụ Custom thương hiệu riêng &amp; <strong>Miễn phí bảo trì, cập nhật phần mềm trọn đời</strong> khi còn Subscribe.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Miễn phí 100% chi phí lắp đặt ban đầu:</strong> Đội ngũ HUDU thiết lập trọn gói hệ thống, cấu hình phòng ban/ca trực và bàn giao tận nơi (Tiết kiệm 1.799.000đ).</span>
+                <span data-i18n="plan2_f3"><strong>Miễn phí 100% chi phí lắp đặt ban đầu:</strong> Đội ngũ HUDU thiết lập trọn gói hệ thống, cấu hình phòng ban/ca trực và bàn giao tận nơi (Tiết kiệm 1.799.000đ).</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Đa tài khoản nhân sự (Tối đa 10 Account / Role):</strong> Lên tới <strong>30 tài khoản</strong> cho đội ngũ Admin, Bác sĩ, Điều dưỡng làm việc đồng thời trên nhiều máy tính.</span>
+                <span data-i18n="plan2_f4"><strong>Đa tài khoản nhân sự (Tối đa 10 Account / Role):</strong> Lên tới <strong>30 tài khoản</strong> cho đội ngũ Admin, Bác sĩ, Điều dưỡng làm việc đồng thời trên nhiều máy tính.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Đặc quyền Bác sĩ &amp; Ưu tiên Cấp cứu:</strong> Cấp phiếu khám trực tiếp tại bàn và bật chế độ <strong>Ưu tiên Cấp cứu</strong> để chuyển bệnh nhân lên đầu danh sách chờ.</span>
+                <span data-i18n="plan2_f5"><strong>Đặc quyền Bác sĩ &amp; Ưu tiên Cấp cứu:</strong> Cấp phiếu khám trực tiếp tại bàn và bật chế độ <strong>Ưu tiên Cấp cứu</strong> để chuyển bệnh nhân lên đầu danh sách chờ.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Báo cáo Thống kê &amp; Sao lưu Dữ liệu Định kỳ:</strong> Thống kê chi tiết lưu lượng bệnh nhân theo ca trực/ngày/tháng và hỗ trợ sao lưu hồ sơ an toàn.</span>
+                <span data-i18n="plan2_f6"><strong>Báo cáo Thống kê &amp; Sao lưu Dữ liệu Định kỳ:</strong> Thống kê chi tiết lưu lượng bệnh nhân theo ca trực/ngày/tháng và hỗ trợ sao lưu hồ sơ an toàn.</span>
               </li>
             </ul>
           </div>
 
-          <a href="#contact" onclick="selectPricingPlan('CFMS_PREMIUM')" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;">
+          <a href="#contact" onclick="selectPricingPlan('CFMS_PREMIUM')" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;" data-i18n="plan2_cta">
             Đăng Ký Gói Premium (Miễn Phí Lắp Đặt) &rarr;
           </a>
         </div>
@@ -1506,54 +1506,54 @@
           <div>
             <div class="pricing-tier-label">
               <span>◆</span>
-              <span>GÓI BỆNH VIỆN &amp; CHUỖI · ENTERPRISE</span>
+              <span data-i18n="plan3_tier">GÓI BỆNH VIỆN &amp; CHUỖI · ENTERPRISE</span>
             </div>
-            <h3>Bệnh Viện Đa Khoa &amp; Chuỗi Cơ Sở</h3>
-            <p class="pricing-subtitle">
+            <h3 data-i18n="plan3_name">Bệnh Viện Đa Khoa &amp; Chuỗi Cơ Sở</h3>
+            <p class="pricing-subtitle" data-i18n="plan3_sub">
               Giải pháp may đo toàn diện cho Bệnh viện tuyến Tỉnh/Trung ương hoặc Chuỗi phòng khám đa chi nhánh cần tích hợp phần mềm bệnh viện.
             </p>
 
             <div class="pricing-price-box">
               <div class="price-main-line">
-                <span class="price-amount">Báo giá riêng</span>
-                <span class="price-period">/ theo quy mô khoa phòng</span>
+                <span class="price-amount" data-i18n="plan3_price">Báo giá riêng</span>
+                <span class="price-period" data-i18n="plan3_period">/ theo quy mô khoa phòng</span>
               </div>
               <div class="setup-fee-row">
-                <span>Triển khai &amp; Tích hợp:</span>
-                <strong style="color: var(--blue-primary);">Khảo sát &amp; Bàn giao tận nơi</strong>
+                <span data-i18n="plan3_setup_lbl">Triển khai &amp; Tích hợp:</span>
+                <strong style="color: var(--blue-primary);" data-i18n="plan3_setup_val">Khảo sát &amp; Bàn giao tận nơi</strong>
               </div>
             </div>
 
             <div class="role-quota-banner">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              <span>Không giới hạn Tài khoản &amp; Hồ sơ · Đa Khoa Phòng</span>
+              <span data-i18n="plan3_quota">Không giới hạn Tài khoản &amp; Hồ sơ · Đa Khoa Phòng</span>
             </div>
 
             <ul class="pricing-feature-list">
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Không giới hạn Hồ sơ &amp; Tài khoản:</strong> Đáp ứng quy mô toàn Bệnh viện hoặc Chuỗi phòng khám kèm cam kết hỗ trợ kỹ thuật ưu tiên 24/7.</span>
+                <span data-i18n="plan3_f1"><strong>Không giới hạn Hồ sơ &amp; Tài khoản:</strong> Đáp ứng quy mô toàn Bệnh viện hoặc Chuỗi phòng khám kèm cam kết hỗ trợ kỹ thuật ưu tiên 24/7.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Liên thông phần mềm Bệnh viện (HIS / LIS / BHYT):</strong> Tự động đồng bộ danh sách bệnh nhân, chỉ định cận lâm sàng và lịch chạy thận theo ca.</span>
+                <span data-i18n="plan3_f2"><strong>Liên thông phần mềm Bệnh viện (HIS / LIS / BHYT):</strong> Tự động đồng bộ danh sách bệnh nhân, chỉ định cận lâm sàng và lịch chạy thận theo ca.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Quản lý Tập trung Đa chi nhánh:</strong> Theo dõi hoạt động tiếp đón và báo cáo tổng hợp của toàn bộ chuỗi cơ sở trên một giao diện thống nhất.</span>
+                <span data-i18n="plan3_f3"><strong>Quản lý Tập trung Đa chi nhánh:</strong> Theo dõi hoạt động tiếp đón và báo cáo tổng hợp của toàn bộ chuỗi cơ sở trên một giao diện thống nhất.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Tư vấn &amp; Trang bị Trọn gói Thiết bị Quầy Kiosk:</strong> Cung cấp đồng bộ màn hình cảm ứng lấy số, camera nhận diện, máy quét CCCD và hệ thống âm thanh.</span>
+                <span data-i18n="plan3_f4"><strong>Tư vấn &amp; Trang bị Trọn gói Thiết bị Quầy Kiosk:</strong> Cung cấp đồng bộ màn hình cảm ứng lấy số, camera nhận diện, máy quét CCCD và hệ thống âm thanh.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Bảo mật Hồ sơ Y tế Tuyệt đối:</strong> Dữ liệu bệnh nhân và người nhà được bảo vệ an toàn ngay tại cơ sở theo tiêu chuẩn bảo mật y tế.</span>
+                <span data-i18n="plan3_f5"><strong>Bảo mật Hồ sơ Y tế Tuyệt đối:</strong> Dữ liệu bệnh nhân và người nhà được bảo vệ an toàn ngay tại cơ sở theo tiêu chuẩn bảo mật y tế.</span>
               </li>
             </ul>
           </div>
 
-          <a href="#contact" onclick="selectPricingPlan('CFMS_ENTERPRISE')" class="btn btn-outline btn-lg" style="width: 100%; justify-content: center;">
+          <a href="#contact" onclick="selectPricingPlan('CFMS_ENTERPRISE')" class="btn btn-outline btn-lg" style="width: 100%; justify-content: center;" data-i18n="plan3_cta">
             Liên Hệ Khảo Sát &amp; Báo Giá &rarr;
           </a>
         </div>
@@ -1566,8 +1566,8 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/></svg>
           </div>
           <div>
-            <strong>Tương thích Máy tính Văn phòng Sẵn có</strong>
-            <span>Chạy mượt ngay trên máy tính bàn hoặc Laptop sẵn có tại quầy tiếp nhận của Phòng khám mà không đòi hỏi cấu hình cao.</span>
+            <strong data-i18n="hw1_title">Tương thích Máy tính Văn phòng Sẵn có</strong>
+            <span data-i18n="hw1_desc">Chạy mượt ngay trên máy tính bàn hoặc Laptop sẵn có tại quầy tiếp nhận của Phòng khám mà không đòi hỏi cấu hình cao.</span>
           </div>
         </div>
         <div class="hw-item">
@@ -1575,8 +1575,8 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <div>
-            <strong>Hoạt động Ổn định Kể cả Khi Mất Internet</strong>
-            <span>Mất mạng Internet vẫn nhận diện khuôn mặt, quét CCCD, cấp số và gọi loa phòng chờ bình thường trong mạng nội bộ.</span>
+            <strong data-i18n="hw2_title">Hoạt động Ổn định Kể cả Khi Mất Internet</strong>
+            <span data-i18n="hw2_desc">Mất mạng Internet vẫn nhận diện khuôn mặt, quét CCCD, cấp số và gọi loa phòng chờ bình thường trong mạng nội bộ.</span>
           </div>
         </div>
         <div class="hw-item">
@@ -1584,8 +1584,8 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
           </div>
           <div>
-            <strong>Miễn phí Bảo trì &amp; Hỗ trợ Từ xa Trọn đời Gói</strong>
-            <span>Cam kết không phát sinh chi phí ẩn. Hỗ trợ thiết kế giao diện Logo/Thương hiệu riêng miễn phí ngay khi khởi tạo.</span>
+            <strong data-i18n="hw3_title">Miễn phí Bảo trì &amp; Hỗ trợ Từ xa Trọn đời Gói</strong>
+            <span data-i18n="hw3_desc">Cam kết không phát sinh chi phí ẩn. Hỗ trợ thiết kế giao diện Logo/Thương hiệu riêng miễn phí ngay khi khởi tạo.</span>
           </div>
         </div>
       </div>
@@ -1598,10 +1598,10 @@
       <div class="section-header">
         <div class="pill-tag">
           <span class="pill-dot"></span>
-          <span>6 Tính Năng Nghiệp Vụ Trọng Tâm</span>
+          <span data-i18n="feat_tag">6 Tính Năng Nghiệp Vụ Trọng Tâm</span>
         </div>
-        <h2>Thiết Kế Chuyên Sâu Cho Khoa Thận Nhân Tạo &amp; Phòng Khám</h2>
-        <p>
+        <h2 data-i18n="feat_title">Thiết Kế Chuyên Sâu Cho Khoa Thận Nhân Tạo &amp; Phòng Khám</h2>
+        <p data-i18n="feat_desc">
           Tối ưu hóa quy trình đón tiếp, giảm tải áp lực hành chính cho đội ngũ điều dưỡng và rút ngắn thời gian chờ đợi của bệnh nhân.
         </p>
       </div>
@@ -1611,8 +1611,8 @@
           <div class="benefit-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
           </div>
-          <h3>1. Nhận Diện Khuôn Mặt &amp; Người Nhà Lấy Số Giùm</h3>
-          <p>
+          <h3 data-i18n="f1_title">1. Nhận Diện Khuôn Mặt &amp; Người Nhà Lấy Số Giùm</h3>
+          <p data-i18n="f1_desc">
             Nhận diện tự động bệnh nhân chỉ trong tích tắc. Hỗ trợ đăng ký khuôn mặt người thân đi kèm để lấy phiếu khám giùm cho bệnh nhân lớn tuổi hoặc chạy thận định kỳ, chống cấp trùng số tuyệt đối.
           </p>
         </div>
@@ -1621,8 +1621,8 @@
           <div class="benefit-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7h3v3H7zM14 7h3v3h-3zM7 14h3v3H7zM14 14h3v3h-3z"/></svg>
           </div>
-          <h3>2. Quét Mã QR CCCD Gắn Chip Tiện Lợi</h3>
-          <p>
+          <h3 data-i18n="f2_title">2. Quét Mã QR CCCD Gắn Chip Tiện Lợi</h3>
+          <p data-i18n="f2_desc">
             Hỗ trợ quét nhanh thẻ CCCD gắn chip qua Camera hoặc máy quét mã vạch cầm tay để tự động điền đầy đủ Họ tên, Năm sinh, Số định danh và Địa chỉ mà không cần nhập tay.
           </p>
         </div>
@@ -1631,9 +1631,9 @@
           <div class="benefit-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
           </div>
-          <h3>3. Bàn Điều Phối &amp; Loa Gọi Số Tự Động</h3>
-          <p>
-            Tìm kiếm bệnh nhân nhanh chóng. Tích hợp chuông báo <em>Ding-Dong</em> và giọng đọc tiếng Việt tự nhiên đọc rõ Số thứ tự, Họ tên, Phòng khám/Máy lọc, kèm nút <strong>Gọi lại</strong> tiện lợi.
+          <h3 data-i18n="f3_title">3. Bàn Điều Phối &amp; Loa Gọi Số Tự Động</h3>
+          <p data-i18n="f3_desc">
+            Tìm kiếm bệnh nhân nhanh chóng. Tích hợp chuông báo <em>Ding-Dong</em> và giọng đọc tự nhiên đọc rõ Số thứ tự, Họ tên, Phòng khám/Máy lọc, kèm nút <strong>Gọi lại</strong> tiện lợi.
           </p>
         </div>
 
@@ -1641,8 +1641,8 @@
           <div class="benefit-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <h3>4. Ưu Tiên Cấp Cứu &amp; Cấp Số Trực Tiếp</h3>
-          <p>
+          <h3 data-i18n="f4_title">4. Ưu Tiên Cấp Cứu &amp; Cấp Số Trực Tiếp</h3>
+          <p data-i18n="f4_desc">
             Bác sĩ và Quản trị viên có thể cấp số khám trực tiếp tại bàn mà không cần qua camera, đồng thời bật chế độ <strong>Ưu tiên Cấp cứu</strong> để tự động đưa bệnh nhân lên đầu danh sách chờ.
           </p>
         </div>
@@ -1651,8 +1651,8 @@
           <div class="benefit-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
-          <h3>5. Màn Hình TV Phòng Chờ Thương Hiệu Riêng</h3>
-          <p>
+          <h3 data-i18n="f5_title">5. Màn Hình TV Phòng Chờ Thương Hiệu Riêng</h3>
+          <p data-i18n="f5_desc">
             Hiển thị trực quan danh sách bệnh nhân đang vào khám và chuẩn bị tới lượt trên màn hình TV lớn tại sảnh chờ, đồng bộ Logo và màu sắc thương hiệu riêng của Phòng khám.
           </p>
         </div>
@@ -1661,8 +1661,8 @@
           <div class="benefit-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
           </div>
-          <h3>6. Quản Trị Nhân Sự, Ca Trực &amp; Thống Kê</h3>
-          <p>
+          <h3 data-i18n="f6_title">6. Quản Trị Nhân Sự, Ca Trực &amp; Thống Kê</h3>
+          <p data-i18n="f6_desc">
             Phân quyền chặt chẽ theo 3 nhóm vai trò (Admin, Bác sĩ, Điều dưỡng); thống kê lưu lượng bệnh nhân theo từng ca trực, tra cứu lịch sử khám và sao lưu dữ liệu dễ dàng.
           </p>
         </div>
@@ -1676,10 +1676,10 @@
       <div class="section-header">
         <div class="pill-tag">
           <span class="pill-dot"></span>
-          <span>Phân Quyền 3 Role (RBAC)</span>
+          <span data-i18n="rbac_tag">Phân Quyền 3 Role (RBAC)</span>
         </div>
-        <h2>Ma Trận Phân Quyền: Admin · Bác Sĩ · Điều Dưỡng</h2>
-        <p>
+        <h2 data-i18n="rbac_title">Ma Trận Phân Quyền: Admin · Bác Sĩ · Điều Dưỡng</h2>
+        <p data-i18n="rbac_desc">
           Gói <strong>Basic (499k/tháng)</strong> cung cấp <strong>01 tài khoản mỗi Role (tối đa 5.000 hồ sơ)</strong>; Gói <strong>Premium (999k/tháng)</strong> mở rộng tới <strong>10 tài khoản mỗi Role (tối đa 100.000 hồ sơ)</strong>.
         </p>
       </div>
@@ -1688,48 +1688,48 @@
         <table class="data-table">
           <thead>
             <tr>
-              <th>Chức Năng Nghiệp Vụ</th>
-              <th>Điều Dưỡng (Nurse)</th>
-              <th>Bác Sĩ (Doctor)</th>
-              <th>Quản Trị Viên (Admin)</th>
+              <th data-i18n="th_func">Chức Năng Nghiệp Vụ</th>
+              <th data-i18n="th_nurse">Điều Dưỡng (Nurse)</th>
+              <th data-i18n="th_doc">Bác Sĩ (Doctor)</th>
+              <th data-i18n="th_admin">Quản Trị Viên (Admin)</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Gọi số kế tiếp, Gọi lại trên loa &amp; Theo dõi danh sách chờ</strong></td>
-              <td><span class="status-pill">&#10003; Có quyền</span></td>
-              <td><span class="status-pill">&#10003; Có quyền</span></td>
-              <td><span class="status-pill">&#10003; Toàn quyền</span></td>
+              <td data-i18n="r1_func"><strong>Gọi số kế tiếp, Gọi lại trên loa &amp; Theo dõi danh sách chờ</strong></td>
+              <td><span class="status-pill" data-i18n="r_yes">&#10003; Có quyền</span></td>
+              <td><span class="status-pill" data-i18n="r_yes">&#10003; Có quyền</span></td>
+              <td><span class="status-pill" data-i18n="r_full">&#10003; Toàn quyền</span></td>
             </tr>
             <tr>
-              <td><strong>Tiếp nhận bệnh nhân mới, Quét CCCD &amp; Đăng ký người nhà lấy số giùm</strong></td>
-              <td><span class="status-pill">&#10003; Có quyền</span></td>
-              <td><span class="status-pill">&#10003; Có quyền</span></td>
-              <td><span class="status-pill">&#10003; Toàn quyền</span></td>
+              <td data-i18n="r2_func"><strong>Tiếp nhận bệnh nhân mới, Quét CCCD &amp; Đăng ký người nhà lấy số giùm</strong></td>
+              <td><span class="status-pill" data-i18n="r_yes">&#10003; Có quyền</span></td>
+              <td><span class="status-pill" data-i18n="r_yes">&#10003; Có quyền</span></td>
+              <td><span class="status-pill" data-i18n="r_full">&#10003; Toàn quyền</span></td>
             </tr>
             <tr>
-              <td><strong>Cấp số khám thủ công trực tiếp tại bàn (không cần qua Camera)</strong></td>
-              <td><span style="color:var(--text-muted); font-size:0.82rem;">&#10005; Giới hạn</span></td>
-              <td><span class="status-pill">&#10003; Đặc quyền Bác sĩ</span></td>
-              <td><span class="status-pill">&#10003; Toàn quyền</span></td>
+              <td data-i18n="r3_func"><strong>Cấp số khám thủ công trực tiếp tại bàn (không cần qua Camera)</strong></td>
+              <td><span style="color:var(--text-muted); font-size:0.82rem;" data-i18n="r_no">&#10005; Giới hạn</span></td>
+              <td><span class="status-pill" data-i18n="r_doc">&#10003; Đặc quyền Bác sĩ</span></td>
+              <td><span class="status-pill" data-i18n="r_full">&#10003; Toàn quyền</span></td>
             </tr>
             <tr>
-              <td><strong>Kích hoạt chế độ Ưu tiên Cấp cứu đẩy lên đầu danh sách chờ</strong></td>
-              <td><span style="color:var(--text-muted); font-size:0.82rem;">&#10005; Giới hạn</span></td>
-              <td><span class="status-pill">&#10003; Đặc quyền Bác sĩ</span></td>
-              <td><span class="status-pill">&#10003; Toàn quyền</span></td>
+              <td data-i18n="r4_func"><strong>Kích hoạt chế độ Ưu tiên Cấp cứu đẩy lên đầu danh sách chờ</strong></td>
+              <td><span style="color:var(--text-muted); font-size:0.82rem;" data-i18n="r_no">&#10005; Giới hạn</span></td>
+              <td><span class="status-pill" data-i18n="r_doc">&#10003; Đặc quyền Bác sĩ</span></td>
+              <td><span class="status-pill" data-i18n="r_full">&#10003; Toàn quyền</span></td>
             </tr>
             <tr>
-              <td><strong>Quản lý danh sách tài khoản Bác sĩ &amp; Điều dưỡng trong khoa</strong></td>
-              <td><span style="color:var(--text-muted); font-size:0.82rem;">&#10005; Giới hạn</span></td>
-              <td><span class="status-pill">&#10003; Quản lý nhân sự khoa</span></td>
-              <td><span class="status-pill">&#10003; Toàn quyền</span></td>
+              <td data-i18n="r5_func"><strong>Quản lý danh sách tài khoản Bác sĩ &amp; Điều dưỡng trong khoa</strong></td>
+              <td><span style="color:var(--text-muted); font-size:0.82rem;" data-i18n="r_no">&#10005; Giới hạn</span></td>
+              <td><span class="status-pill" data-i18n="r_dept">&#10003; Quản lý nhân sự khoa</span></td>
+              <td><span class="status-pill" data-i18n="r_full">&#10003; Toàn quyền</span></td>
             </tr>
             <tr>
-              <td><strong>Cài đặt Thương hiệu riêng (Logo, Tên đơn vị), Phòng ban &amp; Sao lưu</strong></td>
-              <td><span style="color:var(--text-muted); font-size:0.82rem;">&#10005; Giới hạn</span></td>
-              <td><span style="color:var(--text-muted); font-size:0.82rem;">&#10005; Giới hạn</span></td>
-              <td><span class="status-pill">&#10003; Đặc quyền Admin</span></td>
+              <td data-i18n="r6_func"><strong>Cài đặt Thương hiệu riêng (Logo, Tên đơn vị), Phòng ban &amp; Sao lưu</strong></td>
+              <td><span style="color:var(--text-muted); font-size:0.82rem;" data-i18n="r_no">&#10005; Giới hạn</span></td>
+              <td><span style="color:var(--text-muted); font-size:0.82rem;" data-i18n="r_no">&#10005; Giới hạn</span></td>
+              <td><span class="status-pill" data-i18n="r_admin">&#10003; Đặc quyền Admin</span></td>
             </tr>
           </tbody>
         </table>
@@ -1744,41 +1744,41 @@
         <div>
           <div class="pill-tag" style="background: rgba(56, 189, 248, 0.16); color: #BAE6FD; border-color: rgba(125, 211, 252, 0.3);">
             <span class="pill-dot" style="background: #38BDF8;"></span>
-            <span>HUDU CFMS / QMS · Triển Khai Nhanh Trong 24h</span>
+            <span data-i18n="cta_tag">HUDU CFMS / QMS · Triển Khai Nhanh Trong 24h</span>
           </div>
-          <h2>Sẵn Sàng Chuẩn Hóa Tiếp Nhận Tự Động Cho Phòng Khám?</h2>
-          <p>
+          <h2 data-i18n="cta_title">Sẵn Sàng Chuẩn Hóa Tiếp Nhận Tự Động Cho Phòng Khám?</h2>
+          <p data-i18n="cta_desc">
             Đăng ký ngay <strong>Gói Basic (499k/tháng · 5.000 hồ sơ)</strong> hoặc <strong>Gói Premium (999k/tháng · 100.000 hồ sơ · Miễn phí lắp đặt)</strong> để được đội ngũ HUDU cài đặt Custom thương hiệu riêng và bàn giao hệ thống tận nơi.
           </p>
           <div style="display: flex; flex-wrap: wrap; gap: 22px; font-size: 0.9rem; color: #E2E8F0;">
-            <span>&#10003; Custom Logo &amp; Tên Phòng khám miễn phí</span>
-            <span>&#10003; Miễn phí bảo trì trọn đời Subscribe</span>
-            <span>&#10003; Hỗ trợ kỹ thuật 24/7</span>
+            <span data-i18n="cta_b1">&#10003; Custom Logo &amp; Tên Phòng khám miễn phí</span>
+            <span data-i18n="cta_b2">&#10003; Miễn phí bảo trì trọn đời Subscribe</span>
+            <span data-i18n="cta_b3">&#10003; Hỗ trợ kỹ thuật 24/7</span>
           </div>
         </div>
 
         <form class="contact-form" onsubmit="submitConsultation(event)">
-          <h3>Đăng Ký Gói Dịch Vụ CFMS / QMS</h3>
+          <h3 data-i18n="form_title">Đăng Ký Gói Dịch Vụ CFMS / QMS</h3>
           <div class="form-group">
-            <label>Họ tên &amp; Tên Phòng khám / Bệnh viện</label>
-            <input type="text" required placeholder="VD: BS. Minh — Phòng Khám Đa Khoa An Tâm" />
+            <label data-i18n="form_name_lbl">Họ tên &amp; Tên Phòng khám / Bệnh viện</label>
+            <input type="text" required data-i18n-placeholder="form_name_ph" placeholder="VD: BS. Minh — Phòng Khám Đa Khoa An Tâm" />
           </div>
           <div class="form-group">
-            <label>Số điện thoại / Email liên hệ</label>
-            <input type="text" required placeholder="090x xxx xxx / clinic@domain.vn" />
+            <label data-i18n="form_phone_lbl">Số điện thoại / Email liên hệ</label>
+            <input type="text" required data-i18n-placeholder="form_phone_ph" placeholder="090x xxx xxx / clinic@domain.vn" />
           </div>
           <div class="form-group">
-            <label>Gói dịch vụ lựa chọn</label>
+            <label data-i18n="form_plan_lbl">Gói dịch vụ lựa chọn</label>
             <select id="formProdSelect">
-              <option value="CFMS_PREMIUM">CFMS Gói Premium (999k/tháng · Miễn phí lắp đặt · 100.000 hồ sơ · 10 Acc/Role)</option>
-              <option value="CFMS_BASIC">CFMS Gói Basic (499k/tháng + 1tr799 lắp đặt · 5.000 hồ sơ · 01 Acc/Role)</option>
-              <option value="CFMS_ENTERPRISE">CFMS Gói Enterprise (Bệnh viện / Chuỗi phòng khám)</option>
+              <option value="CFMS_PREMIUM" data-i18n="form_opt_prem">CFMS Gói Premium (999k/tháng · Miễn phí lắp đặt · 100.000 hồ sơ · 10 Acc/Role)</option>
+              <option value="CFMS_BASIC" data-i18n="form_opt_basic">CFMS Gói Basic (499k/tháng + 1tr799 lắp đặt · 5.000 hồ sơ · 01 Acc/Role)</option>
+              <option value="CFMS_ENTERPRISE" data-i18n="form_opt_ent">CFMS Gói Enterprise (Bệnh viện / Chuỗi phòng khám)</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 4px;">
+          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 4px;" data-i18n="form_submit">
             Gửi Yêu Cầu Khởi Tạo Hệ Thống
           </button>
-          <div id="formToast" class="form-toast">
+          <div id="formToast" class="form-toast" data-i18n="form_toast">
             &#10003; Đã ghi nhận yêu cầu! Đội ngũ HUDU sẽ liên hệ bàn giao demo sớm nhất.
           </div>
         </form>
@@ -1816,33 +1816,33 @@
               <path d="M 211 27.8 A 3.8 3.8 0 0 1 218.6 27.8 V 45 A 7.4 7.4 0 0 0 233.4 45 V 27.8 A 3.8 3.8 0 0 1 241 27.8 V 45 A 15 15 0 0 1 211 45 Z" />
             </g>
           </svg>
-          <p style="font-size: 0.86rem; max-width: 340px;">
+          <p style="font-size: 0.86rem; max-width: 340px;" data-i18n="footer_desc">
             HUDU (huduvn.com) — Công ty phát triển phần mềm phân tích dữ liệu đấu thầu thông minh và hệ thống tự động hóa tiếp nhận, quản trị phòng khám.
           </p>
         </div>
 
         <div class="footer-col">
-          <h4>Sản phẩm</h4>
+          <h4 data-i18n="footer_col1">Sản phẩm</h4>
           <ul>
-            <li><a href="../">Trang chủ HUDU</a></li>
-            <li><a href="#pricing">Bảng Giá Phòng Khám (CFMS)</a></li>
+            <li><a href="../" data-i18n="f_link_home">Trang chủ HUDU</a></li>
+            <li><a href="#pricing" data-i18n="f_link_cfms_price">Bảng Giá Phòng Khám (CFMS)</a></li>
             <li><a href="../dauthau/">HUDU DauThau (/dauthau)</a></li>
-            <li><a href="../dauthau/#pricing">Bảng Giá Đấu Thầu AI</a></li>
+            <li><a href="../dauthau/#pricing" data-i18n="f_link_dt_price">Bảng Giá Đấu Thầu AI</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Tính năng CFMS</h4>
+          <h4 data-i18n="footer_col2">Tính năng CFMS</h4>
           <ul>
-            <li><a href="#features">Nhận diện khuôn mặt &amp; Người nhà</a></li>
-            <li><a href="#features">Quét nhanh CCCD gắn chip</a></li>
-            <li><a href="#roles">Phân quyền 3 Role (RBAC)</a></li>
-            <li><a href="#features">Loa gọi số &amp; TV Phòng chờ</a></li>
+            <li><a href="#features" data-i18n="f_feat_1">Nhận diện khuôn mặt &amp; Người nhà</a></li>
+            <li><a href="#features" data-i18n="f_feat_2">Quét nhanh CCCD gắn chip</a></li>
+            <li><a href="#roles" data-i18n="f_feat_3">Phân quyền 3 Role (RBAC)</a></li>
+            <li><a href="#features" data-i18n="f_feat_4">Loa gọi số &amp; TV Phòng chờ</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Liên hệ</h4>
+          <h4 data-i18n="footer_col3">Liên hệ</h4>
           <ul>
             <li>Website: <a href="https://huduvn.com">huduvn.com</a></li>
             <li>Email: <a href="mailto:tnhung1896@gmail.com">tnhung1896@gmail.com</a></li>
@@ -1853,7 +1853,7 @@
 
       <div class="footer-bottom">
         <span>&copy; 2026 HUDU Technology (huduvn.com). All rights reserved.</span>
-        <span>Enterprise AI &amp; High-Performance Systems</span>
+        <span>Enterprise AI &amp; Healthcare Solutions</span>
       </div>
     </div>
   </footer>
@@ -1946,13 +1946,879 @@
       requestAnimationFrame(draw);
     })();
 
-    function toggleTheme() {
+    const I18N = {
+      vi: {
+        nav_home: "Trang chủ",
+        nav_pricing: "Bảng giá",
+        nav_features: "Tính năng",
+        nav_roles: "Phân quyền 3 Role",
+        nav_dauthau: "Đấu thầu AI",
+        nav_cta: "Đăng ký Dùng thử",
+        hero_badge: "SẢN PHẨM 02 · HUDU CFMS / QMS · huduvn.com/cfms",
+        hero_title: 'Hệ Thống <span class="highlight">Nhận Diện Khuôn Mặt</span>, Quét CCCD &amp; Điều Phối Phòng Khám',
+        hero_desc: "Giải pháp tiếp nhận bệnh nhân tự động bằng nhận diện khuôn mặt, hỗ trợ <strong>người nhà lấy số khám giùm</strong>, quét mã QR CCCD gắn chip và phát loa gọi số tự động cho Phòng khám, Khoa Thận Nhân Tạo &amp; Bệnh viện.",
+        hero_btn_pricing: "Xem Bảng Giá Gói Basic &amp; Premium ↓",
+        hero_btn_features: "Khám Phá Tính Năng",
+        m1_val: "Tức thì",
+        m1_lbl: "Nhận diện khuôn mặt & cấp số thứ tự tự động",
+        m2_lbl: "Hồ sơ bệnh nhân & người nhà lưu trữ theo gói",
+        m3_val: "Hoạt động 24/7",
+        m3_lbl: "Vận hành ổn định ngay cả khi mất kết nối Internet",
+        sc_header: "HUDU CFMS · Tiếp Nhận & Điều Phối Thông Minh",
+        sc_card_title: "Quầy Nhận Diện Khuôn Mặt & Quét CCCD",
+        sc_card_pill: "Tự động cấp số",
+        sc_patient: "BN-1001 · Nguyễn Văn Hòa (1962)",
+        sc_patient_sub: "Người nhà lấy số khám giùm · Ca 1 (Máy lọc số 08)",
+        sc_anti_dup: "✓ Đã chống lấy trùng số trong ca",
+        sc_voice: "🔊 Loa gọi số: Mời số 008",
+        sc_price_head: "Bảng giá công khai · Miễn phí bảo trì",
+        sc_price_badge: "Custom Thương Hiệu Riêng",
+        sc_b_title: "GÓI BASIC (5.000 Hồ sơ)",
+        sc_p_title: "GÓI PREMIUM (100.000 Hồ sơ)",
+        sc_per_mo: "/tháng",
+        sc_b_sub: "Lắp đặt: 1.799.000đ · 01 Acc/Role",
+        sc_p_sub: "Miễn phí lắp đặt · 10 Acc/Role",
+        price_tag: "Bảng Giá Quản Lý Phòng Khám & Bệnh Viện (CFMS / QMS)",
+        price_title: "Gói Dịch Vụ Minh Bạch · Miễn Phí Bảo Trì Trọn Đời Thuê Bao",
+        price_desc: "Thiết kế tối ưu chi phí cho Phòng khám chuyên khoa, Khoa Thận Nhân Tạo, Bệnh viện và Cơ sở đào tạo. Tặng kèm dịch vụ <strong>Custom thương hiệu riêng (Logo, Tên đơn vị)</strong> trên toàn bộ màn hình lấy số, Bàn điều phối &amp; TV Phòng chờ.",
+        plan_per_month: "/ tháng (Subscribe)",
+        plan1_tier: "GÓI CƠ BẢN · BASIC",
+        plan1_name: "Phòng Khám & Cơ Sở Tiêu Chuẩn",
+        plan1_sub: "Phù hợp cho Phòng khám chuyên khoa, Phòng mạch tư nhân hoặc Cơ sở quy mô gọn (1 quầy tiếp nhận).",
+        plan1_setup_lbl: "Phí lắp đặt & khởi tạo (1 lần):",
+        plan1_quota: "01 Tài khoản mỗi Role · Tối đa 5.000 Hồ sơ",
+        plan1_f1: "<strong>Lưu trữ tối đa 5.000 hồ sơ:</strong> Quản lý tới <strong>5.000 hồ sơ bệnh nhân &amp; người nhà</strong> đăng ký khuôn mặt lấy số khám.",
+        plan1_f2: "<strong>Dịch vụ Custom thương hiệu riêng:</strong> Cài đặt Tên Phòng khám, Tên Khoa &amp; Logo riêng đồng bộ trên Quầy lấy số, Bàn điều phối và TV Phòng chờ.",
+        plan1_f3: "<strong>Miễn phí 100% bảo trì &amp; cập nhật:</strong> Bảo hành phần mềm, nâng cấp tính năng mới và hỗ trợ kỹ thuật trong suốt thời gian còn Subscribe.",
+        plan1_f4: "<strong>Nhận diện khuôn mặt &amp; Người nhà lấy số giùm:</strong> Nhận diện tự động bệnh nhân hoặc người thân đi kèm, chống bấm lấy trùng nhiều phiếu trong cùng ca.",
+        plan1_f5: "<strong>Quét mã QR CCCD gắn chip tiện lợi:</strong> Quét nhanh CCCD qua Camera hoặc máy quét mã vạch để tự động điền thông tin hành chính của bệnh nhân.",
+        plan1_f6: "<strong>Chuông báo &amp; Loa gọi số / Gọi lại:</strong> Tự động đọc tên bệnh nhân, số thứ tự, phòng khám/máy lọc rõ ràng trên loa và màn hình TV phòng chờ.",
+        plan1_cta: "Đăng Ký Gói Basic →",
+        plan2_ribbon: "PHỔ BIẾN NHẤT · MIỄN PHÍ LẮP ĐẶT 1.799K",
+        plan2_tier: "GÓI NÂNG CAO · PREMIUM",
+        plan2_name: "Phòng Khám Đa Khoa & Khoa Bệnh Viện",
+        plan2_sub: "Tối ưu cho Phòng khám Đa khoa, Khoa Thận Nhân Tạo / Khoa Khám bệnh nhiều ca trực và lưu lượng bệnh nhân lớn.",
+        plan2_setup_lbl: "Phí lắp đặt & khởi tạo:",
+        plan2_setup_val: "MIỄN PHÍ 0đ (Tiết kiệm 1.799k)",
+        plan2_quota: "Tối đa 10 Tài khoản mỗi Role · 100.000 Hồ sơ",
+        plan2_f1: "<strong>Mở rộng lưu trữ tới 100.000 hồ sơ:</strong> Quản lý lên đến <strong>100.000 hồ sơ bệnh nhân &amp; người nhà</strong>, đáp ứng thoải mái nhu cầu lưu trữ dài hạn của Khoa/Phòng khám lớn.",
+        plan2_f2: "<strong>Toàn bộ quyền lợi Gói Basic:</strong> Bao gồm dịch vụ Custom thương hiệu riêng &amp; <strong>Miễn phí bảo trì, cập nhật phần mềm trọn đời</strong> khi còn Subscribe.",
+        plan2_f3: "<strong>Miễn phí 100% chi phí lắp đặt ban đầu:</strong> Đội ngũ HUDU thiết lập trọn gói hệ thống, cấu hình phòng ban/ca trực và bàn giao tận nơi (Tiết kiệm 1.799.000đ).",
+        plan2_f4: "<strong>Đa tài khoản nhân sự (Tối đa 10 Account / Role):</strong> Lên tới <strong>30 tài khoản</strong> cho đội ngũ Admin, Bác sĩ, Điều dưỡng làm việc đồng thời trên nhiều máy tính.",
+        plan2_f5: "<strong>Đặc quyền Bác sĩ &amp; Ưu tiên Cấp cứu:</strong> Cấp phiếu khám trực tiếp tại bàn và bật chế độ <strong>Ưu tiên Cấp cứu</strong> để chuyển bệnh nhân lên đầu danh sách chờ.",
+        plan2_f6: "<strong>Báo cáo Thống kê &amp; Sao lưu Dữ liệu Định kỳ:</strong> Thống kê chi tiết lưu lượng bệnh nhân theo ca trực/ngày/tháng và hỗ trợ sao lưu hồ sơ an toàn.",
+        plan2_cta: "Đăng Ký Gói Premium (Miễn Phí Lắp Đặt) →",
+        plan3_tier: "GÓI BỆNH VIỆN & CHUỖI · ENTERPRISE",
+        plan3_name: "Bệnh Viện Đa Khoa & Chuỗi Cơ Sở",
+        plan3_sub: "Giải pháp may đo toàn diện cho Bệnh viện tuyến Tỉnh/Trung ương hoặc Chuỗi phòng khám đa chi nhánh cần tích hợp phần mềm bệnh viện.",
+        plan3_price: "Báo giá riêng",
+        plan3_period: "/ theo quy mô khoa phòng",
+        plan3_setup_lbl: "Triển khai & Tích hợp:",
+        plan3_setup_val: "Khảo sát & Bàn giao tận nơi",
+        plan3_quota: "Không giới hạn Tài khoản & Hồ sơ · Đa Khoa Phòng",
+        plan3_f1: "<strong>Không giới hạn Hồ sơ &amp; Tài khoản:</strong> Đáp ứng quy mô toàn Bệnh viện hoặc Chuỗi phòng khám kèm cam kết hỗ trợ kỹ thuật ưu tiên 24/7.",
+        plan3_f2: "<strong>Liên thông phần mềm Bệnh viện (HIS / LIS / BHYT):</strong> Tự động đồng bộ danh sách bệnh nhân, chỉ định cận lâm sàng và lịch chạy thận theo ca.",
+        plan3_f3: "<strong>Quản lý Tập trung Đa chi nhánh:</strong> Theo dõi hoạt động tiếp đón và báo cáo tổng hợp của toàn bộ chuỗi cơ sở trên một giao diện thống nhất.",
+        plan3_f4: "<strong>Tư vấn &amp; Trang bị Trọn gói Thiết bị Quầy Kiosk:</strong> Cung cấp đồng bộ màn hình cảm ứng lấy số, camera nhận diện, máy quét CCCD và hệ thống âm thanh.",
+        plan3_f5: "<strong>Bảo mật Hồ sơ Y tế Tuyệt đối:</strong> Dữ liệu bệnh nhân và người nhà được bảo vệ an toàn ngay tại cơ sở theo tiêu chuẩn bảo mật y tế.",
+        plan3_cta: "Liên Hệ Khảo Sát & Báo Giá →",
+        hw1_title: "Tương thích Máy tính Văn phòng Sẵn có",
+        hw1_desc: "Chạy mượt ngay trên máy tính bàn hoặc Laptop sẵn có tại quầy tiếp nhận của Phòng khám mà không đòi hỏi cấu hình cao.",
+        hw2_title: "Hoạt động Ổn định Kể cả Khi Mất Internet",
+        hw2_desc: "Mất mạng Internet vẫn nhận diện khuôn mặt, quét CCCD, cấp số và gọi loa phòng chờ bình thường trong mạng nội bộ.",
+        hw3_title: "Miễn phí Bảo trì & Hỗ trợ Từ xa Trọn đời Gói",
+        hw3_desc: "Cam kết không phát sinh chi phí ẩn. Hỗ trợ thiết kế giao diện Logo/Thương hiệu riêng miễn phí ngay khi khởi tạo.",
+        feat_tag: "6 Tính Năng Nghiệp Vụ Trọng Tâm",
+        feat_title: "Thiết Kế Chuyên Sâu Cho Khoa Thận Nhân Tạo & Phòng Khám",
+        feat_desc: "Tối ưu hóa quy trình đón tiếp, giảm tải áp lực hành chính cho đội ngũ điều dưỡng và rút ngắn thời gian chờ đợi của bệnh nhân.",
+        f1_title: "1. Nhận Diện Khuôn Mặt & Người Nhà Lấy Số Giùm",
+        f1_desc: "Nhận diện tự động bệnh nhân chỉ trong tích tắc. Hỗ trợ đăng ký khuôn mặt người thân đi kèm để lấy phiếu khám giùm cho bệnh nhân lớn tuổi hoặc chạy thận định kỳ, chống cấp trùng số tuyệt đối.",
+        f2_title: "2. Quét Mã QR CCCD Gắn Chip Tiện Lợi",
+        f2_desc: "Hỗ trợ quét nhanh thẻ CCCD gắn chip qua Camera hoặc máy quét mã vạch cầm tay để tự động điền đầy đủ Họ tên, Năm sinh, Số định danh và Địa chỉ mà không cần nhập tay.",
+        f3_title: "3. Bàn Điều Phối & Loa Gọi Số Tự Động",
+        f3_desc: "Tìm kiếm bệnh nhân nhanh chóng. Tích hợp chuông báo Ding-Dong và giọng đọc tự nhiên đọc rõ Số thứ tự, Họ tên, Phòng khám/Máy lọc, kèm nút Gọi lại tiện lợi.",
+        f4_title: "4. Ưu Tiên Cấp Cứu & Cấp Số Trực Tiếp",
+        f4_desc: "Bác sĩ và Quản trị viên có thể cấp số khám trực tiếp tại bàn mà không cần qua camera, đồng thời bật chế độ Ưu tiên Cấp cứu để tự động đưa bệnh nhân lên đầu danh sách chờ.",
+        f5_title: "5. Màn Hình TV Phòng Chờ Thương Hiệu Riêng",
+        f5_desc: "Hiển thị trực quan danh sách bệnh nhân đang vào khám và chuẩn bị tới lượt trên màn hình TV lớn tại sảnh chờ, đồng bộ Logo và màu sắc thương hiệu riêng của Phòng khám.",
+        f6_title: "6. Quản Trị Nhân Sự, Ca Trực & Thống Kê",
+        f6_desc: "Phân quyền chặt chẽ theo 3 nhóm vai trò (Admin, Bác sĩ, Điều dưỡng); thống kê lưu lượng bệnh nhân theo từng ca trực, tra cứu lịch sử khám và sao lưu dữ liệu dễ dàng.",
+        rbac_tag: "Phân Quyền 3 Role (RBAC)",
+        rbac_title: "Ma Trận Phân Quyền: Admin · Bác Sĩ · Điều Dưỡng",
+        rbac_desc: "Gói <strong>Basic (499k/tháng)</strong> cung cấp <strong>01 tài khoản mỗi Role (tối đa 5.000 hồ sơ)</strong>; Gói <strong>Premium (999k/tháng)</strong> mở rộng tới <strong>10 tài khoản mỗi Role (tối đa 100.000 hồ sơ)</strong>.",
+        th_func: "Chức Năng Nghiệp Vụ",
+        th_nurse: "Điều Dưỡng (Nurse)",
+        th_doc: "Bác Sĩ (Doctor)",
+        th_admin: "Quản Trị Viên (Admin)",
+        r1_func: "<strong>Gọi số kế tiếp, Gọi lại trên loa &amp; Theo dõi danh sách chờ</strong>",
+        r2_func: "<strong>Tiếp nhận bệnh nhân mới, Quét CCCD &amp; Đăng ký người nhà lấy số giùm</strong>",
+        r3_func: "<strong>Cấp số khám thủ công trực tiếp tại bàn (không cần qua Camera)</strong>",
+        r4_func: "<strong>Kích hoạt chế độ Ưu tiên Cấp cứu đẩy lên đầu danh sách chờ</strong>",
+        r5_func: "<strong>Quản lý danh sách tài khoản Bác sĩ &amp; Điều dưỡng trong khoa</strong>",
+        r6_func: "<strong>Cài đặt Thương hiệu riêng (Logo, Tên đơn vị), Phòng ban &amp; Sao lưu</strong>",
+        r_yes: "✓ Có quyền",
+        r_full: "✓ Toàn quyền",
+        r_no: "✕ Giới hạn",
+        r_doc: "✓ Đặc quyền Bác sĩ",
+        r_dept: "✓ Quản lý nhân sự khoa",
+        r_admin: "✓ Đặc quyền Admin",
+        cta_tag: "HUDU CFMS / QMS · Triển Khai Nhanh Trong 24h",
+        cta_title: "Sẵn Sàng Chuẩn Hóa Tiếp Nhận Tự Động Cho Phòng Khám?",
+        cta_desc: "Đăng ký ngay <strong>Gói Basic (499k/tháng · 5.000 hồ sơ)</strong> hoặc <strong>Gói Premium (999k/tháng · 100.000 hồ sơ · Miễn phí lắp đặt)</strong> để được đội ngũ HUDU cài đặt Custom thương hiệu riêng và bàn giao hệ thống tận nơi.",
+        cta_b1: "✓ Custom Logo & Tên Phòng khám miễn phí",
+        cta_b2: "✓ Miễn phí bảo trì trọn đời Subscribe",
+        cta_b3: "✓ Hỗ trợ kỹ thuật 24/7",
+        form_title: "Đăng Ký Gói Dịch Vụ CFMS / QMS",
+        form_name_lbl: "Họ tên & Tên Phòng khám / Bệnh viện",
+        form_name_ph: "VD: BS. Minh — Phòng Khám Đa Khoa An Tâm",
+        form_phone_lbl: "Số điện thoại / Email liên hệ",
+        form_phone_ph: "090x xxx xxx / clinic@domain.vn",
+        form_plan_lbl: "Gói dịch vụ lựa chọn",
+        form_opt_prem: "CFMS Gói Premium (999k/tháng · Miễn phí lắp đặt · 100.000 hồ sơ · 10 Acc/Role)",
+        form_opt_basic: "CFMS Gói Basic (499k/tháng + 1tr799 lắp đặt · 5.000 hồ sơ · 01 Acc/Role)",
+        form_opt_ent: "CFMS Gói Enterprise (Bệnh viện / Chuỗi phòng khám)",
+        form_submit: "Gửi Yêu Cầu Khởi Tạo Hệ Thống",
+        form_toast: "✓ Đã ghi nhận yêu cầu! Đội ngũ HUDU sẽ liên hệ bàn giao demo sớm nhất.",
+        footer_desc: "HUDU (huduvn.com) — Công ty phát triển phần mềm phân tích dữ liệu đấu thầu thông minh và hệ thống tự động hóa tiếp nhận, quản trị phòng khám.",
+        footer_col1: "Sản phẩm",
+        footer_col2: "Tính năng CFMS",
+        footer_col3: "Liên hệ",
+        f_link_home: "Trang chủ HUDU",
+        f_link_cfms_price: "Bảng Giá Phòng Khám (CFMS)",
+        f_link_dt_price: "Bảng Giá Đấu Thầu AI",
+        f_feat_1: "Nhận diện khuôn mặt & Người nhà",
+        f_feat_2: "Quét nhanh CCCD gắn chip",
+        f_feat_3: "Phân quyền 3 Role (RBAC)",
+        f_feat_4: "Loa gọi số & TV Phòng chờ"
+      },
+      en: {
+        nav_home: "Home",
+        nav_pricing: "Pricing",
+        nav_features: "Features",
+        nav_roles: "3-Role Access",
+        nav_dauthau: "Tender AI",
+        nav_cta: "Request Demo",
+        hero_badge: "PRODUCT 02 · HUDU CFMS / QMS · huduvn.com/cfms",
+        hero_title: 'Automated <span class="highlight">Face Recognition</span>, ID Scanning &amp; Clinic Queue System',
+        hero_desc: "Smart patient check-in via face recognition, supporting <strong>family caregiver proxy check-in</strong>, citizen ID QR scanning, and automated voice calling for Specialty Clinics, Hemodialysis Wards &amp; Hospitals.",
+        hero_btn_pricing: "View Basic &amp; Premium Pricing ↓",
+        hero_btn_features: "Explore Features",
+        m1_val: "Instant",
+        m1_lbl: "Automated face recognition & queue ticket issuance",
+        m2_lbl: "Patient & caregiver profiles stored per plan",
+        m3_val: "24/7 Reliable",
+        m3_lbl: "Operates smoothly even during Internet outages",
+        sc_header: "HUDU CFMS · Smart Clinic Intake & Dispatch",
+        sc_card_title: "Face Recognition & Citizen ID Check-in Desk",
+        sc_card_pill: "Auto Ticket",
+        sc_patient: "BN-1001 · Nguyen Van Hoa (1962)",
+        sc_patient_sub: "Family caregiver proxy check-in · Shift 1 (Machine 08)",
+        sc_anti_dup: "✓ Duplicate ticket prevented in shift",
+        sc_voice: "🔊 Voice Call: Now serving #008",
+        sc_price_head: "Transparent Pricing · Free Maintenance",
+        sc_price_badge: "Custom Clinic Branding",
+        sc_b_title: "BASIC PLAN (5,000 Profiles)",
+        sc_p_title: "PREMIUM PLAN (100,000 Profiles)",
+        sc_per_mo: "/mo",
+        sc_b_sub: "Setup: 1,799,000đ · 01 Acc/Role",
+        sc_p_sub: "Free Setup 0đ · 10 Acc/Role",
+        price_tag: "Clinic & Hospital Queue Management Pricing (CFMS / QMS)",
+        price_title: "Transparent Plans · Free Maintenance While Subscribed",
+        price_desc: "Cost-effective subscription for Specialty Clinics, Hemodialysis Wards, Hospitals, and Training Centers. Includes <strong>Custom Clinic Branding (your Logo &amp; Facility Name)</strong> across Check-in, Nurse Console &amp; Waiting Room TVs.",
+        plan_per_month: "/ month (Subscription)",
+        plan1_tier: "BASIC PLAN · STANDARD",
+        plan1_name: "Standard Clinic & Practice",
+        plan1_sub: "Ideal for specialty clinics, private medical practices, or compact facilities (1 reception desk).",
+        plan1_setup_lbl: "One-time setup & installation:",
+        plan1_quota: "01 Account per Role · Up to 5,000 Profiles",
+        plan1_f1: "<strong>Store up to 5,000 profiles:</strong> Manage up to <strong>5,000 patient &amp; family caregiver profiles</strong> for facial check-in.",
+        plan1_f2: "<strong>Custom Clinic Branding:</strong> Display your Clinic Name, Department &amp; Logo across Check-in, Dispatch Console, and Waiting Room TV.",
+        plan1_f3: "<strong>100% Free Maintenance &amp; Updates:</strong> Full software warranty, new feature updates, and technical support throughout your subscription.",
+        plan1_f4: "<strong>Face Recognition &amp; Family Proxy Check-in:</strong> Automatically identifies patients or accompanying family members and prevents duplicate tickets in the same shift.",
+        plan1_f5: "<strong>Fast Citizen ID QR Scanning:</strong> Scan chip-based ID cards via camera or handheld barcode scanner to auto-fill patient details.",
+        plan1_f6: "<strong>Chime &amp; Automated Voice Calling / Recall:</strong> Clearly announces patient name, ticket number, and room/machine on speakers and waiting room TVs.",
+        plan1_cta: "Subscribe to Basic →",
+        plan2_ribbon: "MOST POPULAR · FREE 1,799K INSTALLATION",
+        plan2_tier: "PREMIUM PLAN · ADVANCED",
+        plan2_name: "Multi-Specialty Clinic & Hospital Ward",
+        plan2_sub: "Best for multi-specialty clinics, Hemodialysis / Outpatient wards with multiple shifts and high patient volume.",
+        plan2_setup_lbl: "Setup & installation fee:",
+        plan2_setup_val: "FREE 0đ (Save 1,799k)",
+        plan2_quota: "Up to 10 Accounts per Role · 100,000 Profiles",
+        plan2_f1: "<strong>Expanded storage up to 100,000 profiles:</strong> Manage up to <strong>100,000 patient &amp; family profiles</strong> for long-term clinic and hospital ward operations.",
+        plan2_f2: "<strong>Everything in Basic Plan:</strong> Includes Custom Clinic Branding &amp; <strong>Free lifetime software maintenance and updates</strong> while subscribed.",
+        plan2_f3: "<strong>100% Free Initial Setup:</strong> HUDU team configures your departments, shifts, and branding with 0đ setup cost (Save 1,799,000đ).",
+        plan2_f4: "<strong>Multi-Staff Accounts (Up to 10 Accounts / Role):</strong> Up to <strong>30 staff accounts</strong> for Admins, Doctors, and Nurses working concurrently.",
+        plan2_f5: "<strong>Doctor Privileges &amp; Emergency Priority:</strong> Issue tickets directly at the desk and enable <strong>Emergency Priority</strong> to place urgent patients at the top of the queue.",
+        plan2_f6: "<strong>Statistical Reports &amp; Scheduled Backups:</strong> Detailed patient volume reports by shift/day/month and safe data backups.",
+        plan2_cta: "Get Premium (Free Setup) →",
+        plan3_tier: "ENTERPRISE · HOSPITAL & CHAINS",
+        plan3_name: "General Hospital & Clinic Chains",
+        plan3_sub: "Tailored solution for Provincial/Central Hospitals or multi-branch clinic chains requiring hospital software integration.",
+        plan3_price: "Custom Quote",
+        plan3_period: "/ tailored to ward scale",
+        plan3_setup_lbl: "Deployment & Integration:",
+        plan3_setup_val: "On-site Survey & Turnkey Setup",
+        plan3_quota: "Unlimited Accounts & Profiles · Multi-Ward",
+        plan3_f1: "<strong>Unlimited Profiles &amp; Staff Accounts:</strong> Scales across the entire hospital or multi-branch clinic chain with 24/7 priority support.",
+        plan3_f2: "<strong>Hospital Software Integration (HIS / LIS / Insurance):</strong> Automatically syncs patient lists, lab orders, and dialysis schedules.",
+        plan3_f3: "<strong>Centralized Multi-Branch Management:</strong> Monitor check-in activity and consolidated reports across all branches on a unified dashboard.",
+        plan3_f4: "<strong>Turnkey Kiosk Hardware Consultation:</strong> Optional supply of touchscreen kiosks, cameras, ID scanners, and ward audio systems.",
+        plan3_f5: "<strong>Strict Medical Data Privacy:</strong> Patient and family records are safely protected on-premise in compliance with healthcare privacy standards.",
+        plan3_cta: "Contact for Enterprise Quote →",
+        hw1_title: "Compatible with Existing Office PCs",
+        hw1_desc: "Runs smoothly on standard desktop PCs or laptops already available at your reception desk without requiring high-end hardware.",
+        hw2_title: "Operates Reliably Even Without Internet",
+        hw2_desc: "Continues face recognition, ID scanning, ticket issuance, and waiting room voice announcements over your local network if Internet drops.",
+        hw3_title: "Free Maintenance & Remote Support While Subscribed",
+        hw3_desc: "Zero hidden fees. Includes free setup of your custom clinic logo and brand interface right from day one.",
+        feat_tag: "6 Core Clinical Capabilities",
+        feat_title: "Purpose-Built for Hemodialysis Wards & Specialty Clinics",
+        feat_desc: "Streamline patient reception, reduce administrative workload for nurses, and shorten patient waiting times.",
+        f1_title: "1. Face Recognition & Family Proxy Check-in",
+        f1_desc: "Identifies patients in a split second. Allows registering family caregivers to pick up queue tickets on behalf of elderly or regular dialysis patients, preventing duplicate tickets.",
+        f2_title: "2. Fast Citizen ID QR Scanning",
+        f2_desc: "Quickly scan chip-based citizen ID cards via camera or handheld barcode scanner to auto-fill Full Name, Birth Year, ID Number, and Address without manual typing.",
+        f3_title: "3. Nurse Console & Automated Voice Calling",
+        f3_desc: "Instant patient search. Built-in Ding-Dong chime and natural voice announcements for Ticket Number, Patient Name, and Room/Machine, plus a convenient Recall button.",
+        f4_title: "4. Emergency Priority & Direct Desk Issuance",
+        f4_desc: "Doctors and Admins can issue tickets directly from the console without camera check-in and activate Emergency Priority to move urgent patients to the front of the queue.",
+        f5_title: "5. Custom-Branded Waiting Room TV Display",
+        f5_desc: "Clearly displays patients currently being served and next in line on large lobby TV screens, customized with your Clinic Logo and brand colors.",
+        f6_title: "6. Staff Roles, Shifts & Volume Analytics",
+        f6_desc: "Strict 3-role permission control (Admin, Doctor, Nurse); tracks patient volume by shift, visit history, and easy data backup.",
+        rbac_tag: "3-Role Permission Control (RBAC)",
+        rbac_title: "Permission Matrix: Admin · Doctor · Nurse",
+        rbac_desc: "The <strong>Basic Plan (499k/mo)</strong> includes <strong>01 account per Role (up to 5,000 profiles)</strong>; the <strong>Premium Plan (999k/mo)</strong> expands to <strong>10 accounts per Role (up to 100,000 profiles)</strong>.",
+        th_func: "Clinical Function",
+        th_nurse: "Nurse",
+        th_doc: "Doctor",
+        th_admin: "Administrator (Admin)",
+        r1_func: "<strong>Call next ticket, Recall on speaker &amp; Monitor waiting queue</strong>",
+        r2_func: "<strong>Register new patients, Scan ID QR &amp; Bind family proxy faces</strong>",
+        r3_func: "<strong>Issue queue tickets manually at desk (without camera scan)</strong>",
+        r4_func: "<strong>Activate Emergency Priority to place patient at top of queue</strong>",
+        r5_func: "<strong>Manage Doctor &amp; Nurse staff accounts within the department</strong>",
+        r6_func: "<strong>Configure Custom Branding (Logo, Clinic Name), Rooms &amp; Backups</strong>",
+        r_yes: "✓ Allowed",
+        r_full: "✓ Full Access",
+        r_no: "✕ Restricted",
+        r_doc: "✓ Doctor Privilege",
+        r_dept: "✓ Ward Staff Mgmt",
+        r_admin: "✓ Admin Only",
+        cta_tag: "HUDU CFMS / QMS · Rapid 24h Deployment",
+        cta_title: "Ready to Automate Patient Reception at Your Clinic?",
+        cta_desc: "Subscribe to the <strong>Basic Plan (499k/mo · 5,000 profiles)</strong> or <strong>Premium Plan (999k/mo · 100,000 profiles · Free Setup)</strong> and let HUDU configure your custom clinic branding.",
+        cta_b1: "✓ Free Custom Logo & Clinic Name Branding",
+        cta_b2: "✓ Free Lifetime Maintenance While Subscribed",
+        cta_b3: "✓ 24/7 Technical Support",
+        form_title: "Subscribe to HUDU CFMS / QMS",
+        form_name_lbl: "Full Name & Clinic / Hospital Name",
+        form_name_ph: "e.g., Dr. Minh — An Tam Polyclinic",
+        form_phone_lbl: "Phone Number / Contact Email",
+        form_phone_ph: "090x xxx xxx / clinic@domain.vn",
+        form_plan_lbl: "Select Subscription Plan",
+        form_opt_prem: "CFMS Premium Plan (999k/mo · Free Setup · 100,000 profiles · 10 Acc/Role)",
+        form_opt_basic: "CFMS Basic Plan (499k/mo + 1,799k setup · 5,000 profiles · 01 Acc/Role)",
+        form_opt_ent: "CFMS Enterprise Plan (Hospital / Multi-Branch Chain)",
+        form_submit: "Submit Setup Request",
+        form_toast: "✓ Request received! Our HUDU team will contact you shortly.",
+        footer_desc: "HUDU (huduvn.com) — Enterprise software company specializing in AI tender intelligence and automated clinic reception & queue management.",
+        footer_col1: "Products",
+        footer_col2: "CFMS Features",
+        footer_col3: "Contact",
+        f_link_home: "HUDU Home",
+        f_link_cfms_price: "Clinic Pricing (CFMS)",
+        f_link_dt_price: "Tender AI Pricing",
+        f_feat_1: "Face Recognition & Family Proxy",
+        f_feat_2: "Citizen ID QR Scanning",
+        f_feat_3: "3-Role Access Control",
+        f_feat_4: "Voice Calling & Lobby TV"
+      },
+      es: {
+        nav_home: "Inicio",
+        nav_pricing: "Precios",
+        nav_features: "Funciones",
+        nav_roles: "3 Roles",
+        nav_dauthau: "Licitaciones IA",
+        nav_cta: "Solicitar Demo",
+        hero_badge: "PRODUCTO 02 · HUDU CFMS / QMS · huduvn.com/cfms",
+        hero_title: 'Sistema de <span class="highlight">Reconocimiento Facial</span>, Escaneo QR y Turnos para Clínicas',
+        hero_desc: "Recepción automatizada de pacientes por reconocimiento facial, soporte para <strong>toma de turnos por familiares</strong>, lectura QR de documento de identidad y llamado por voz para Clínicas, Unidades de Hemodiálisis y Hospitales.",
+        hero_btn_pricing: "Ver Precios Básico y Premium ↓",
+        hero_btn_features: "Explorar Funciones",
+        m1_val: "Al instante",
+        m1_lbl: "Reconocimiento facial y emisión automática de turnos",
+        m2_lbl: "Perfiles de pacientes y familiares según el plan",
+        m3_val: "Activo 24/7",
+        m3_lbl: "Funciona con total estabilidad incluso sin conexión a Internet",
+        sc_header: "HUDU CFMS · Admisión y Despacho Inteligente",
+        sc_card_title: "Mostrador de Reconocimiento Facial y Escaneo QR",
+        sc_card_pill: "Turno Automático",
+        sc_patient: "BN-1001 · Nguyen Van Hoa (1962)",
+        sc_patient_sub: "Familiar toma turno por paciente · Turno 1 (Máquina 08)",
+        sc_anti_dup: "✓ Bloqueo de tickets duplicados en el turno",
+        sc_voice: "🔊 Altavoz: Llamando al turno 008",
+        sc_price_head: "Precios transparentes · Mantenimiento gratis",
+        sc_price_badge: "Marca Propia Personalizada",
+        sc_b_title: "PLAN BÁSICO (5.000 Perfiles)",
+        sc_p_title: "PLAN PREMIUM (100.000 Perfiles)",
+        sc_per_mo: "/mes",
+        sc_b_sub: "Instalación: 1.799.000đ · 01 Cuenta/Rol",
+        sc_p_sub: "Instalación Gratis · 10 Cuentas/Rol",
+        price_tag: "Precios de Gestión para Clínicas y Hospitales (CFMS / QMS)",
+        price_title: "Planes Transparentes · Mantenimiento Gratuito durante la Suscripción",
+        price_desc: "Optimizado para Clínicas Especializadas, Hemodiálisis, Hospitales y Centros Educativos. Incluye <strong>Personalización de Marca Propia (Logo y Nombre)</strong> en pantallas de admisión, consola y TV de sala de espera.",
+        plan_per_month: "/ mes (Suscripción)",
+        plan1_tier: "PLAN BÁSICO · BASIC",
+        plan1_name: "Clínica y Consultorio Estándar",
+        plan1_sub: "Ideal para clínicas especializadas, consultorios privados o centros con 1 mostrador de admisión.",
+        plan1_setup_lbl: "Instalación y configuración (pago único):",
+        plan1_quota: "01 Cuenta por Rol · Máximo 5.000 Perfiles",
+        plan1_f1: "<strong>Almacenamiento de hasta 5.000 perfiles:</strong> Gestione hasta <strong>5.000 perfiles de pacientes y familiares</strong> registrados con rostro.",
+        plan1_f2: "<strong>Personalización de Marca Propia:</strong> Nombre de la clínica, departamento y logotipo en el mostrador, consola y TV de espera.",
+        plan1_f3: "<strong>Mantenimiento y actualizaciones 100% gratis:</strong> Garantía de software, mejoras continuas y soporte técnico durante toda la suscripción.",
+        plan1_f4: "<strong>Reconocimiento facial y Toma de turno por familiares:</strong> Identifica al paciente o familiar acompañante evitando tickets duplicados en el mismo turno.",
+        plan1_f5: "<strong>Escaneo rápido QR de Documento de Identidad:</strong> Lectura por cámara o lector de código de barras para autocompletar datos del paciente.",
+        plan1_f6: "<strong>Timbre y Llamado por Voz / Rellamada:</strong> Anuncia claramente nombre del paciente, número de turno y consultorio en altavoces y TV.",
+        plan1_cta: "Suscribir Plan Básico →",
+        plan2_ribbon: "MÁS POPULAR · INSTALACIÓN GRATIS 1.799K",
+        plan2_tier: "PLAN AVANZADO · PREMIUM",
+        plan2_name: "Policlínica y Servicio Hospitalario",
+        plan2_sub: "Óptimo para policlínicas, unidades de hemodiálisis y consulta externa con múltiples turnos y alto flujo de pacientes.",
+        plan2_setup_lbl: "Costo de instalación inicial:",
+        plan2_setup_val: "GRATIS 0đ (Ahorra 1.799k)",
+        plan2_quota: "Hasta 10 Cuentas por Rol · 100.000 Perfiles",
+        plan2_f1: "<strong>Capacidad ampliada hasta 100.000 perfiles:</strong> Gestione hasta <strong>100.000 perfiles de pacientes y familiares</strong> para operación a largo plazo.",
+        plan2_f2: "<strong>Todo lo incluido en el Plan Básico:</strong> Incluye marca personalizada y <strong>mantenimiento gratuito de por vida</strong> mientras esté suscrito.",
+        plan2_f3: "<strong>100% Gratis instalación inicial:</strong> El equipo de HUDU configura departamentos, turnos y entrega el sistema listo para usar (Ahorra 1.799.000đ).",
+        plan2_f4: "<strong>Múltiples cuentas de personal (Hasta 10 Cuentas / Rol):</strong> Hasta <strong>30 cuentas</strong> para Administradores, Médicos y Enfermeras trabajando en simultáneo.",
+        plan2_f5: "<strong>Privilegios Médicos y Prioridad de Emergencia:</strong> Emisión directa de turnos en mesa y modo <strong>Prioridad de Emergencia</strong> al inicio de la fila.",
+        plan2_f6: "<strong>Informes Estadísticos y Respaldo Periódico:</strong> Estadísticas detalladas de pacientes por turno/día/mes y copias de seguridad seguras.",
+        plan2_cta: "Elegir Plan Premium (Instalación Gratis) →",
+        plan3_tier: "PLAN HOSPITALARIO Y CADENAS · ENTERPRISE",
+        plan3_name: "Hospital General y Red de Clínicas",
+        plan3_sub: "Solución a medida para Hospitales Provinciales/Centrales o cadenas de clínicas que requieren integración con sistemas hospitalarios.",
+        plan3_price: "Cotización a medida",
+        plan3_period: "/ según escala hospitalaria",
+        plan3_setup_lbl: "Despliegue e Integración:",
+        plan3_setup_val: "Estudio y Entrega en Sitio",
+        plan3_quota: "Cuentas y Perfiles Ilimitados · Múltiples Servicios",
+        plan3_f1: "<strong>Perfiles y Cuentas Ilimitados:</strong> Cubre todo el hospital o cadena de clínicas con soporte técnico prioritario 24/7.",
+        plan3_f2: "<strong>Integración con Software Hospitalario (HIS / LIS / Seguro):</strong> Sincroniza listas de pacientes, órdenes médicas y turnos de diálisis.",
+        plan3_f3: "<strong>Gestión Centralizada Multisucursal:</strong> Supervise la admisión y reportes consolidados de todas las sedes en una sola interfaz.",
+        plan3_f4: "<strong>Equipamiento Completo de Kioscos:</strong> Suministro opcional de pantallas táctiles, cámaras, lectores QR y sistema de sonido.",
+        plan3_f5: "<strong>Máxima Privacidad de Datos Médicos:</strong> Los datos de pacientes y familiares se resguardan de forma segura en la propia institución.",
+        plan3_cta: "Solicitar Cotización Enterprise →",
+        hw1_title: "Compatible con Computadoras de Oficina Existentes",
+        hw1_desc: "Funciona con fluidez en PCs de escritorio o portátiles estándar disponibles en recepción sin requerir equipos costosos.",
+        hw2_title: "Operación Estable Incluso Sin Internet",
+        hw2_desc: "Si se corta Internet, el reconocimiento facial, lectura de ID, emisión de turnos y llamado por altavoz siguen funcionando en red local.",
+        hw3_title: "Mantenimiento y Soporte Remoto Gratuito",
+        hw3_desc: "Sin costos ocultos. Incluye diseño y configuración gratuita del logotipo y nombre de su clínica desde el primer día.",
+        feat_tag: "6 Funciones Clínicas Clave",
+        feat_title: "Diseñado para Unidades de Hemodiálisis y Clínicas",
+        feat_desc: "Optimiza la recepción, reduce la carga administrativa del personal de enfermería y acorta el tiempo de espera del paciente.",
+        f1_title: "1. Reconocimiento Facial y Toma de Turno por Familiares",
+        f1_desc: "Identifica al paciente al instante. Permite registrar a familiares acompañantes para tomar turno en nombre de pacientes mayores o de diálisis, evitando duplicados.",
+        f2_title: "2. Escaneo QR de Documento de Identidad",
+        f2_desc: "Lectura rápida del código QR de identificación por cámara o lector de mano para rellenar automáticamente Nombre, Año de nacimiento, ID y Dirección.",
+        f3_title: "3. Consola de Coordinación y Llamado por Voz",
+        f3_desc: "Búsqueda rápida de pacientes. Incluye timbre Ding-Dong y voz clara que anuncia Número de turno, Nombre y Consultorio/Máquina con botón de Rellamada.",
+        f4_title: "4. Prioridad de Emergencia y Emisión Directa",
+        f4_desc: "Médicos y Administradores pueden emitir turnos directamente en mesa sin pasar por cámara y activar Prioridad de Emergencia al inicio de la lista.",
+        f5_title: "5. Pantalla TV de Sala de Espera con Marca Propia",
+        f5_desc: "Muestra claramente los pacientes en atención y próximos en turno en pantallas TV del vestíbulo con el Logo y colores de su clínica.",
+        f6_title: "6. Gestión de Personal, Turnos y Estadísticas",
+        f6_desc: "Control de permisos en 3 roles (Admin, Médico, Enfermería); estadísticas de flujo de pacientes por turno, historial de visitas y respaldo sencillo.",
+        rbac_tag: "Control de Acceso de 3 Roles (RBAC)",
+        rbac_title: "Matriz de Permisos: Admin · Médico · Enfermería",
+        rbac_desc: "El plan <strong>Básico (499k/mes)</strong> ofrece <strong>01 cuenta por Rol (hasta 5.000 perfiles)</strong>; el plan <strong>Premium (999k/mes)</strong> amplía hasta <strong>10 cuentas por Rol (hasta 100.000 perfiles)</strong>.",
+        th_func: "Función Operativa",
+        th_nurse: "Enfermería (Nurse)",
+        th_doc: "Médico (Doctor)",
+        th_admin: "Administrador (Admin)",
+        r1_func: "<strong>Llamar siguiente turno, Rellamar por altavoz y Ver lista de espera</strong>",
+        r2_func: "<strong>Admitir nuevos pacientes, Escanear ID y Registrar familiares</strong>",
+        r3_func: "<strong>Emitir turno manualmente en mesa (sin pasar por cámara)</strong>",
+        r4_func: "<strong>Activar Prioridad de Emergencia al primer lugar de la fila</strong>",
+        r5_func: "<strong>Gestionar cuentas de Médicos y Enfermeras del servicio</strong>",
+        r6_func: "<strong>Configurar Marca Propia (Logo, Nombre), Consultorios y Respaldos</strong>",
+        r_yes: "✓ Permitido",
+        r_full: "✓ Acceso Total",
+        r_no: "✕ Restringido",
+        r_doc: "✓ Privilegio Médico",
+        r_dept: "✓ Gestión de Servicio",
+        r_admin: "✓ Exclusivo Admin",
+        cta_tag: "HUDU CFMS / QMS · Implementación en 24h",
+        cta_title: "¿Listo para Automatizar la Recepción de su Clínica?",
+        cta_desc: "Suscríbase al <strong>Plan Básico (499k/mes · 5.000 perfiles)</strong> o <strong>Plan Premium (999k/mes · 100.000 perfiles · Instalación Gratis)</strong> con personalización de marca incluida.",
+        cta_b1: "✓ Personalización gratis de Logo y Nombre",
+        cta_b2: "✓ Mantenimiento gratuito durante la suscripción",
+        cta_b3: "✓ Soporte técnico 24/7",
+        form_title: "Suscribirse a HUDU CFMS / QMS",
+        form_name_lbl: "Nombre completo y Nombre de Clínica / Hospital",
+        form_name_ph: "Ej: Dr. Minh — Policlínica An Tam",
+        form_phone_lbl: "Teléfono / Correo de contacto",
+        form_phone_ph: "090x xxx xxx / clinic@domain.vn",
+        form_plan_lbl: "Plan seleccionado",
+        form_opt_prem: "CFMS Plan Premium (999k/mes · Instalación gratis · 100.000 perfiles · 10 Cuentas/Rol)",
+        form_opt_basic: "CFMS Plan Básico (499k/mes + 1tr799 instalación · 5.000 perfiles · 01 Cuenta/Rol)",
+        form_opt_ent: "CFMS Plan Enterprise (Hospital / Cadena de clínicas)",
+        form_submit: "Enviar Solicitud de Activación",
+        form_toast: "✓ ¡Solicitud registrada! El equipo de HUDU se pondrá en contacto pronto.",
+        footer_desc: "HUDU (huduvn.com) — Empresa de software especializada en inteligencia de licitaciones con IA y automatización de recepción para clínicas.",
+        footer_col1: "Productos",
+        footer_col2: "Funciones CFMS",
+        footer_col3: "Contacto",
+        f_link_home: "Inicio HUDU",
+        f_link_cfms_price: "Precios para Clínicas (CFMS)",
+        f_link_dt_price: "Precios de Licitaciones IA",
+        f_feat_1: "Reconocimiento facial y Familiares",
+        f_feat_2: "Escaneo rápido de ID con chip",
+        f_feat_3: "Permisos de 3 Roles (RBAC)",
+        f_feat_4: "Llamado por voz y TV de espera"
+      },
+      zh: {
+        nav_home: "首页",
+        nav_pricing: "价格方案",
+        nav_features: "核心功能",
+        nav_roles: "三级权限",
+        nav_dauthau: "AI 招投标",
+        nav_cta: "申请试用",
+        hero_badge: "产品 02 · HUDU CFMS / QMS · huduvn.com/cfms",
+        hero_title: '智能<span class="highlight">人脸识别</span>、身份证扫码与诊所叫号调度系统',
+        hero_desc: "通过人脸识别实现患者自动接诊取号，支持<strong>家属代取号</strong>、芯片身份证二维码快速扫描及自动语音叫号，专为专科诊所、血液透析科及医院门诊打造。",
+        hero_btn_pricing: "查看基础版与高级版价格 ↓",
+        hero_btn_features: "了解系统功能",
+        m1_val: "秒级响应",
+        m1_lbl: "人脸识别与自动派发就诊序号",
+        m2_lbl: "按套餐存储患者与家属档案容量",
+        m3_val: "24/7 稳定运行",
+        m3_lbl: "即使外网中断也能在局域网内正常接诊叫号",
+        sc_header: "HUDU CFMS · 智能接诊与排队调度",
+        sc_card_title: "人脸识别与身份证扫码取号台",
+        sc_card_pill: "自动派号",
+        sc_patient: "BN-1001 · 阮文和 (1962)",
+        sc_patient_sub: "家属代取号 · 第一班次 (08号透析机)",
+        sc_anti_dup: "✓ 已拦截同班次重复取号",
+        sc_voice: "🔊 语音广播：请 008 号患者就诊",
+        sc_price_head: "公开透明价格 · 免费维护升级",
+        sc_price_badge: "专属品牌定制",
+        sc_b_title: "基础版 BASIC (5,000 份档案)",
+        sc_p_title: "高级版 PREMIUM (100,000 份档案)",
+        sc_per_mo: "/月",
+        sc_b_sub: "安装费: 1.799.000đ · 01 账号/角色",
+        sc_p_sub: "免安装费 0đ · 10 账号/角色",
+        price_tag: "诊所与医院排队管理系统价格表 (CFMS / QMS)",
+        price_title: "透明订阅套餐 · 订阅期内终身免费维护",
+        price_desc: "专为专科诊所、血液透析中心、医院及培训机构打造的高性价比方案。免费赠送<strong>专属品牌定制（医院/诊所 Logo 与名称）</strong>，同步展示于取号屏、护士工作台与候诊电视。",
+        plan_per_month: "/ 月 (按月订阅)",
+        plan1_tier: "基础版 · BASIC",
+        plan1_name: "标准诊所与门诊套餐",
+        plan1_sub: "适合专科诊所、私人门诊或单前台接诊规模的医疗机构。",
+        plan1_setup_lbl: "首次安装与初始化费 (一次性)：",
+        plan1_quota: "每个角色 01 个账号 · 最多 5,000 份档案",
+        plan1_f1: "<strong>支持存储多达 5,000 份档案：</strong>可管理多达 <strong>5,000 名患者及家属</strong>的人脸取号档案。",
+        plan1_f2: "<strong>专属品牌定制服务：</strong>在取号终端、护士工作台和候诊大厅 TV 同步展示您的诊所名称、科室与专属 Logo。",
+        plan1_f3: "<strong>100% 免费维护与软件更新：</strong>在订阅有效期内享受软件质保、新功能升级及全程技术支持。",
+        plan1_f4: "<strong>人脸识别与家属代取号：</strong>自动识别患者或陪同家属，严格防止同一班次内重复按键领取多张号票。",
+        plan1_f5: "<strong>便捷扫描芯片身份证二维码：</strong>支持通过摄像头或手持扫码枪快速读取身份证信息，免去人工输入。",
+        plan1_f6: "<strong>叮咚提示音与自动语音叫号 / 重呼：</strong>通过音箱与候诊电视清晰播报患者姓名、序号及诊室/透析机号。",
+        plan1_cta: "订购基础版 Basic →",
+        plan2_ribbon: "最受欢迎 · 免除 1.799K 安装费",
+        plan2_tier: "高级版 · PREMIUM",
+        plan2_name: "综合门诊与医院科室套餐",
+        plan2_sub: "专为综合诊所、血液透析科/多班次门诊及大客流医疗机构优化。",
+        plan2_setup_lbl: "首次安装与初始化费：",
+        plan2_setup_val: "免费 0đ (立省 1.799k)",
+        plan2_quota: "每个角色多达 10 个账号 · 100,000 份档案",
+        plan2_f1: "<strong>超大容量支持 100,000 份档案：</strong>可管理多达 <strong>100,000 名患者与家属档案</strong>，轻松满足大型科室长期存储需求。",
+        plan2_f2: "<strong>包含基础版全部权益：</strong>包含专属品牌定制服务，以及<strong>订阅期内免费软件维护与版本更新</strong>。",
+        plan2_f3: "<strong>100% 免除首次安装部署费：</strong>HUDU 团队提供全套系统搭建、科室班次配置与交付培训（立省 1.799.000đ）。",
+        plan2_f4: "<strong>多医护人员账号 (每角色多达 10 个账号)：</strong>最高支持 <strong>30 个账号</strong>供管理员、医生、护士在多台电脑上同时协同办公。",
+        plan2_f5: "<strong>医生专属派号与急诊优先插队：</strong>支持在工作台直接派发就诊号，并可开启<strong>急诊优先模式</strong>将危急患者置顶优先呼叫。",
+        plan2_f6: "<strong>统计报表与定期数据备份：</strong>按班次/日/月统计接诊流量，支持安全便捷的档案数据备份。",
+        plan2_cta: "订购高级版 Premium (免安装费) →",
+        plan3_tier: "医院与连锁机构 · ENTERPRISE",
+        plan3_name: "综合医院与多院区连锁",
+        plan3_sub: "面向省/中央级综合医院或需要对接医院信息系统的多分支连锁诊所的全面定制方案。",
+        plan3_price: "定制报价",
+        plan3_period: "/ 按科室与院区规模",
+        plan3_setup_lbl: "部署与系统对接：",
+        plan3_setup_val: "现场调研与交钥匙交付",
+        plan3_quota: "不限账号与档案容量 · 多科室协同",
+        plan3_f1: "<strong>不限档案容量与账号数量：</strong>满足全院或连锁诊所规模，配备 24/7 优先技术支持保障。",
+        plan3_f2: "<strong>对接医院现有系统 (HIS / LIS / 医保)：</strong>自动同步患者名单、检验医嘱与血液透析排班表。",
+        plan3_f3: "<strong>多分支机构集中管理：</strong>在统一管理后台实时查看各分院接诊动态与汇总统计报表。",
+        plan3_f4: "<strong>自助取号终端硬件一站式配套：</strong>可按需提供触摸屏取号机、识别摄像头、身份证扫码器与音响系统。",
+        plan3_f5: "<strong>医疗档案隐私安全保障：</strong>患者与家属信息安全保存在医疗机构本地，符合医疗数据保密规范。",
+        plan3_cta: "联系现场调研与报价 →",
+        hw1_title: "兼容诊所现有办公电脑",
+        hw1_desc: "直接在前台现有的台式电脑或笔记本上流畅运行，无需采购昂贵的高配服务器。",
+        hw2_title: "断网情况下依然稳定运行",
+        hw2_desc: "即使外部互联网中断，局域网内的人脸识别、身份证扫码、取号及候诊大厅语音叫号仍照常工作。",
+        hw3_title: "订阅期内免费维护与远程支持",
+        hw3_desc: "承诺无任何隐形收费。系统初始化时免费为您定制诊所专属 Logo 与品牌名称界面。",
+        feat_tag: "6 大核心业务功能",
+        feat_title: "专为血液透析科与专科诊所深度打造",
+        feat_desc: "全面优化接诊流程，减轻护士团队行政录入负担，显著缩短患者候诊等待时间。",
+        f1_title: "1. 人脸识别与家属代取号",
+        f1_desc: "瞬间自动识别患者身份。支持绑定陪同家属人脸，方便为老年患者或定期透析患者代领就诊号，彻底杜绝重复取号。",
+        f2_title: "2. 芯片身份证二维码便捷扫描",
+        f2_desc: "支持通过摄像头或手持扫码枪快速扫描芯片身份证二维码，自动填入姓名、出生年份、身份证号与地址，无需手工打字。",
+        f3_title: "3. 护士调度台与自动语音叫号",
+        f3_desc: "快速检索患者信息。内置叮咚提示音与清晰自然的语音播报（序号、姓名、诊室/透析机），并配有便捷的一键重呼按钮。",
+        f4_title: "4. 急诊优先与前台直接派号",
+        f4_desc: "医生与管理员无需通过摄像头即可在电脑前直接派发就诊号，并可开启急诊优先模式将紧急患者自动排至候诊队列首位。",
+        f5_title: "5. 专属品牌候诊大厅 TV 显示屏",
+        f5_desc: "在候诊大厅大屏电视上直观展示正在就诊与准备就诊的患者名单，全面同步诊所专属 Logo 与品牌配色。",
+        f6_title: "6. 医护人员权限、班次与统计报表",
+        f6_desc: "严格划分三级角色权限（管理员、医生、护士）；按班次统计患者流量，轻松查询就诊历史并安全备份数据。",
+        rbac_tag: "三级角色权限控制 (RBAC)",
+        rbac_title: "权限矩阵：管理员 · 医生 · 护士",
+        rbac_desc: "<strong>基础版 Basic (499k/月)</strong> 提供<strong>每个角色 01 个账号（最多 5,000 份档案）</strong>；<strong>高级版 Premium (999k/月)</strong> 扩展至<strong>每个角色 10 个账号（最多 100,000 份档案）</strong>。",
+        th_func: "业务功能模块",
+        th_nurse: "护士 (Nurse)",
+        th_doc: "医生 (Doctor)",
+        th_admin: "管理员 (Admin)",
+        r1_func: "<strong>呼叫下一位、语音重呼及查看实时候诊队列</strong>",
+        r2_func: "<strong>接诊新患者、身份证扫码及登记家属代取号</strong>",
+        r3_func: "<strong>在工作台直接手动派发就诊号（无需经过摄像头）</strong>",
+        r4_func: "<strong>开启急诊优先模式将患者置顶至队列最前</strong>",
+        r5_func: "<strong>管理本科室内的医生与护士账号名单</strong>",
+        r6_func: "<strong>设置诊所专属品牌（Logo、单位名称）、科室配置与数据备份</strong>",
+        r_yes: "✓ 拥有权限",
+        r_full: "✓ 全部权限",
+        r_no: "✕ 权限受限",
+        r_doc: "✓ 医生特权",
+        r_dept: "✓ 科室人员管理",
+        r_admin: "✓ 管理员特权",
+        cta_tag: "HUDU CFMS / QMS · 24小时快速部署交付",
+        cta_title: "准备好为您的诊所升级智能接诊系统了吗？",
+        cta_desc: "立即登记 <strong>基础版 Basic (499k/月 · 5,000 份档案)</strong> 或 <strong>高级版 Premium (999k/月 · 100,000 份档案 · 免安装费)</strong>，由 HUDU 团队为您配置专属品牌并交付使用。",
+        cta_b1: "✓ 免费定制诊所专属 Logo 与名称",
+        cta_b2: "✓ 订阅期内终身免费维护升级",
+        cta_b3: "✓ 24/7 全天候技术支持",
+        form_title: "申请开通 CFMS / QMS 服务套餐",
+        form_name_lbl: "您的姓名与诊所 / 医院名称",
+        form_name_ph: "例如：明医生 — 安心综合门诊部",
+        form_phone_lbl: "联系电话 / 电子邮箱",
+        form_phone_ph: "090x xxx xxx / clinic@domain.vn",
+        form_plan_lbl: "选择服务套餐",
+        form_opt_prem: "CFMS 高级版 Premium (999k/月 · 免安装费 · 100,000 份档案 · 10 账号/角色)",
+        form_opt_basic: "CFMS 基础版 Basic (499k/月 + 1tr799 安装费 · 5,000 份档案 · 01 账号/角色)",
+        form_opt_ent: "CFMS 医院定制版 Enterprise (综合医院 / 连锁诊所)",
+        form_submit: "提交系统开通申请",
+        form_toast: "✓ 申请已收到！HUDU 团队将尽快联系您安排演示与交付。",
+        footer_desc: "HUDU (huduvn.com) — 专注于智能招投标数据分析软件与医疗诊所自动化接诊管理系统的科技企业。",
+        footer_col1: "产品中心",
+        footer_col2: "CFMS 功能",
+        footer_col3: "联系我们",
+        f_link_home: "HUDU 首页",
+        f_link_cfms_price: "诊所系统价格 (CFMS)",
+        f_link_dt_price: "AI 招投标系统价格",
+        f_feat_1: "人脸识别与家属代取号",
+        f_feat_2: "芯片身份证快速扫码",
+        f_feat_3: "三级角色权限 (RBAC)",
+        f_feat_4: "自动语音叫号与候诊 TV"
+      },
+      ja: {
+        nav_home: "ホーム",
+        nav_pricing: "料金プラン",
+        nav_features: "機能一覧",
+        nav_roles: "3ロール権限",
+        nav_dauthau: "入札 AI",
+        nav_cta: "トライアル申込",
+        hero_badge: "製品 02 · HUDU CFMS / QMS · huduvn.com/cfms",
+        hero_title: '<span class="highlight">顔認証</span>・ICカードQR読取＆クリニック順番管理システム',
+        hero_desc: "顔認証による自動受付、<strong>ご家族による代理発券</strong>、ICチップ付き身分証のQR読取、自動音声呼出を備えた、クリニック・人工透析科・病院向けスマート受付ソリューション。",
+        hero_btn_pricing: "ベーシック＆プレミアム料金を見る ↓",
+        hero_btn_features: "機能を見る",
+        m1_val: "即時受付",
+        m1_lbl: "顔認証＆整理券番号の自動発券",
+        m2_lbl: "プランに応じた患者・家族カルテ保存数",
+        m3_val: "24/7 安定稼働",
+        m3_lbl: "インターネット切断時も院内ネットワークで安定動作",
+        sc_header: "HUDU CFMS · スマート受付＆順番案内",
+        sc_card_title: "顔認証＆身分証QR読取カウンター",
+        sc_card_pill: "自動発券",
+        sc_patient: "BN-1001 · グエン・ヴァン・ホア (1962)",
+        sc_patient_sub: "家族による代理発券 · 第1シフト (透析器 08番)",
+        sc_anti_dup: "✓ 同一シフト内の重複発券を防止済",
+        sc_voice: "🔊 音声案内：008番の方、どうぞ",
+        sc_price_head: "明確な料金体系 · 保守サポート無料",
+        sc_price_badge: "独自ブランド設定",
+        sc_b_title: "BASIC プラン (5,000名分)",
+        sc_p_title: "PREMIUM プラン (100,000名分)",
+        sc_per_mo: "/月",
+        sc_b_sub: "初期費用: 1.799.000đ · 各ロール1 계정",
+        sc_p_sub: "初期費用無料 0đ · 各ロール10アカウント",
+        price_tag: "クリニック・病院向け順番管理システム料金表 (CFMS / QMS)",
+        price_title: "明確な料金プラン · ご契約中は保守・アップデート永久無料",
+        price_desc: "専門クリニック、人工透析科、病院、スクール向けに最適化。受付画面、スタッフ管理画面、待合室TVのすべてに<strong>貴院のロゴ・名称を表示する独自ブランド設定</strong>が無料で含まれます。",
+        plan_per_month: "/ 月 (サブスクリプション)",
+        plan1_tier: "ベーシック · BASIC",
+        plan1_name: "標準クリニック・診療所プラン",
+        plan1_sub: "専門クリニック、個人医院、受付窓口1箇所の施設に最適です。",
+        plan1_setup_lbl: "初期導入・セットアップ費用 (初回のみ)：",
+        plan1_quota: "各ロール 01 アカウント · 最大 5,000 カルテ",
+        plan1_f1: "<strong>最大 5,000 件のカルテ保存：</strong><strong>患者様およびご家族最大 5,000 名分</strong>の顔認証プロフィールを登録・管理可能。",
+        plan1_f2: "<strong>独自ブランドカスタマイズ：</strong>受付端末、スタッフ画面、待合室TVに貴院名・診療科・ロゴを統一表示。",
+        plan1_f3: "<strong>保守・アップデート 100% 無料：</strong>ご契約期間中はソフトウェア保証、新機能アップデート、技術サポートがすべて無料。",
+        plan1_f4: "<strong>顔認証＆ご家族の代理発券：</strong>ご本人または付き添いのご家族を自動認識し、同一シフトでの重複発券を確実に防止。",
+        plan1_f5: "<strong>身分証 QR コードの簡単読取：</strong>カメラやバーコードリーダーで身分証QRを素早く読み取り、患者情報を自動入力。",
+        plan1_f6: "<strong>チャイム音＆自動音声呼出 / 再呼出：</strong>患者名、受付番号、診察室/透析ベッド番号をスピーカーと待合室TVで明瞭に案内。",
+        plan1_cta: "Basic プランを申し込む →",
+        plan2_ribbon: "人気 No.1 · 初期導入費 1.799K 無料",
+        plan2_tier: "プレミアム · PREMIUM",
+        plan2_name: "総合クリニック・病院診療科プラン",
+        plan2_sub: "複数シフト制の総合クリニック、人工透析科、外来患者数の多い病院診療科に最適。",
+        plan2_setup_lbl: "初期導入・セットアップ費用：",
+        plan2_setup_val: "無料 0đ (1.799k お得)",
+        plan2_quota: "各ロール最大 10 アカウント · 100,000 カルテ",
+        plan2_f1: "<strong>最大 100,000 件の大容量カルテ保存：</strong><strong>患者様・ご家族最大 100,000 名分</strong>を保存でき、大規模施設の長期運用も安心。",
+        plan2_f2: "<strong>Basic プランの全機能を含む：</strong>独自ブランド設定および<strong>ご契約中の無料保守・ソフトウェア更新</strong>をすべて網羅。",
+        plan2_f3: "<strong>初期導入費用が 100% 無料：</strong>HUDU チームがシステム設定、診療科・シフト構築、導入サポートを初期費用 0đ で実施。",
+        plan2_f4: "<strong>複数スタッフアカウント (各ロール最大10名)：</strong>管理者・医師・看護師向けに<strong>最大30アカウント</strong>を発行し複数PCで同時利用可能。",
+        plan2_f5: "<strong>医師専用権限＆緊急優先呼出：</strong>デスクでの直接番号発券や、<strong>緊急優先モード</strong>による 대기リスト最上位への即時割込に対応。",
+        plan2_f6: "<strong>統計レポート＆定期データバックアップ：</strong>シフト・日・月別の来院数集計レポートと安全なデータバックアップ機能を提供。",
+        plan2_cta: "Premium を申し込む (初期費用無料) →",
+        plan3_tier: "病院・医療法人 · ENTERPRISE",
+        plan3_name: "総合病院＆複数分院チェーン",
+        plan3_sub: "病院システムとの連携が必要な総合病院や複数拠点を持つクリニックグループ向けオーダーメイドプラン。",
+        plan3_price: "個別見積",
+        plan3_period: "/ 診療科・施設規模に応じる",
+        plan3_setup_lbl: "導入＆システム連携：",
+        plan3_setup_val: "現地調査＆ターンキー導入",
+        plan3_quota: "アカウント＆カルテ数無制限 · 複数診療科対応",
+        plan3_f1: "<strong>カルテ数・アカウント数無制限：</strong>病院全体や複数分院の規模に対応し、24時間365日の優先技術サポートを提供。",
+        plan3_f2: "<strong>病院システム連携 (HIS / LIS / 医療保険)：</strong>患者リスト、検査オーダー、透析スケジュールを自動的に同期。",
+        plan3_f3: "<strong>複数拠点の一元管理：</strong>すべての分院の受付状況と集計レポートを一つの管理画面でリアルタイムに把握。",
+        plan3_f4: "<strong>キオスク端末・機器の一括提供：</strong>タッチパネル端末、カメラ、QRリーダー、音響機器のセット導入をご提案可能。",
+        plan3_f5: "<strong>医療情報の高度なセキュリティ：</strong>患者様とご家族のデータは院内で安全に保護され、医療情報保護基準に準拠。",
+        plan3_cta: "現地調査・お見積りを依頼 →",
+        hw1_title: "既存の事務用パソコンでそのまま稼働",
+        hw1_desc: "受付にある一般的なデスクトップPCやノートPCで軽快に動作し、高価な専用機は不要です。",
+        hw2_title: "インターネット切断時も止まらず稼働",
+        hw2_desc: "万一ネット回線が切れても、院内ネットワーク内で顔認証・QR読取・発券・音声呼出が通常通り使えます。",
+        hw3_title: "契約期間中は保守・リモート支援が無料",
+        hw3_desc: "追加の隠れコストは一切ありません。導入時に貴院のロゴ・名称デザインを無料でセットアップします。",
+        feat_tag: "6つの主要クリニック機能",
+        feat_title: "人工透析科・専門クリニックの現場に合わせて設計",
+        feat_desc: "受付業務を自動化し、看護師の事務負担を軽減するとともに患者様の待ち時間を短縮します。",
+        f1_title: "1. 顔認証＆ご家族による代理発券",
+        f1_desc: "患者様を瞬時に自動認識。ご高齢の方や定期透析患者様に代わり、付き添いのご家族の顔でも代理発券でき、重複発券も防ぎます。",
+        f2_title: "2. 身分証 QR コードのスピード読取",
+        f2_desc: "カメラやハンディスキャナでIC身分証のQRコードを読み取り、氏名・生年・番号・住所を自動入力します。",
+        f3_title: "3. スタッフ操作盤＆自動音声アナウンス",
+        f3_desc: "患者様を素早く検索。チャイム音と自然な音声で受付番号・氏名・診察室/ベッド番号を読み上げ、便利な再呼出ボタンも搭載。",
+        f4_title: "4. 緊急優先モード＆デスク直接発券",
+        f4_desc: "医師や管理者はカメラを通さず手元で直接番号を発券でき、緊急患者様を待機列の先頭へ自動で繰り上げることができます。",
+        f5_title: "5. 貴院ロゴ入り待合室 TV ディスプレイ",
+        f5_desc: "診察中および次にお呼びする患者様の一覧を待合室の大型TVに分かりやすく表示し、貴院のロゴとカラーで統一します。",
+        f6_title: "6. スタッフ権限・シフト管理＆来院統計",
+        f6_desc: "3つの役割（管理者・医師・看護師）ごとに権限を管理。シフト別の来院数集計や履歴検索、バックアップも簡単です。",
+        rbac_tag: "3ロール権限管理 (RBAC)",
+        rbac_title: "権限マトリックス：管理者 · 医師 · 看護師",
+        rbac_desc: "<strong>Basic (499k/月)</strong> は<strong>各ロール1アカウント（最大5,000カルテ）</strong>、<strong>Premium (999k/月)</strong> は<strong>各ロール最大10アカウント（最大100,000カルテ）</strong>まで利用可能です。",
+        th_func: "業務機能",
+        th_nurse: "看護師 (Nurse)",
+        th_doc: "医師 (Doctor)",
+        th_admin: "管理者 (Admin)",
+        r1_func: "<strong>次の方の呼出、スピーカー再呼出、待機リストの確認</strong>",
+        r2_func: "<strong>新規患者登録、身分証QR読取、ご家族の代理顔登録</strong>",
+        r3_func: "<strong>デスクでの直接手動発券（カメラ撮影なし）</strong>",
+        r4_func: "<strong>緊急優先モードの有効化（待機リストの先頭へ移動）</strong>",
+        r5_func: "<strong>診療科内の医師・看護師アカウントの管理</strong>",
+        r6_func: "<strong>独自ブランド設定（ロゴ・医院名）、診察室設定＆バックアップ</strong>",
+        r_yes: "✓ 利用可能",
+        r_full: "✓ 全権限",
+        r_no: "✕ 制限あり",
+        r_doc: "✓ 医師専用権限",
+        r_dept: "✓ 科内スタッフ管理",
+        r_admin: "✓ 管理者専用",
+        cta_tag: "HUDU CFMS / QMS · 最短24時間でスピード導入",
+        cta_title: "クリニックの自動受付・順番管理を始めませんか？",
+        cta_desc: "<strong>Basicプラン (499k/月・5,000カルテ)</strong> または <strong>Premiumプラン (999k/月・100,000カルテ・初期費用無料)</strong> にお申し込みいただくと、独自ロゴ設定を含めてすぐに導入いたします。",
+        cta_b1: "✓ 医院ロゴ・名称カスタマイズ無料",
+        cta_b2: "✓ 契約期間中の保守・更新が永久無料",
+        cta_b3: "✓ 24時間365日の技術サポート",
+        form_title: "CFMS / QMS プランのお申し込み",
+        form_name_lbl: "お名前＆クリニック・病院名",
+        form_name_ph: "例：ミン医師 — アンタム総合クリニック",
+        form_phone_lbl: "電話番号 / メールアドレス",
+        form_phone_ph: "090x xxx xxx / clinic@domain.vn",
+        form_plan_lbl: "ご希望のプラン",
+        form_opt_prem: "CFMS Premium プラン (999k/月 · 初期費用無料 · 100,000カルテ · 各ロール10名)",
+        form_opt_basic: "CFMS Basic プラン (499k/月 + 初期1tr799 · 5,000カルテ · 各ロール1名)",
+        form_opt_ent: "CFMS Enterprise プラン (総合病院 / 複数分院チェーン)",
+        form_submit: "システム導入を申し込む",
+        form_toast: "✓ お申し込みを受け付けました！HUDU チームより速やかにご連絡いたします。",
+        footer_desc: "HUDU (huduvn.com) — AI 入札データ解析ソフトウェアおよび医療機関向けスマート受付・順番管理システムを開発するテクノロジー企業。",
+        footer_col1: "製品一覧",
+        footer_col2: "CFMS 機能",
+        footer_col3: "お問い合わせ",
+        f_link_home: "HUDU ホーム",
+        f_link_cfms_price: "クリニック料金表 (CFMS)",
+        f_link_dt_price: "入札 AI 料金表",
+        f_feat_1: "顔認証＆ご家族代理発券",
+        f_feat_2: "身分証 QR スピード読取",
+        f_feat_3: "3ロール権限管理 (RBAC)",
+        f_feat_4: "自動音声呼出＆待合室 TV"
+      },
+      ko: {
+        nav_home: "홈",
+        nav_pricing: "요금제",
+        nav_features: "주요 기능",
+        nav_roles: "3단계 권한",
+        nav_dauthau: "입찰 AI",
+        nav_cta: "무료 체험 신청",
+        hero_badge: "제품 02 · HUDU CFMS / QMS · huduvn.com/cfms",
+        hero_title: '<span class="highlight">안면인식</span>, 신분증 QR 스캔 및 스마트 의원·병원 접수 시스템',
+        hero_desc: "안면인식을 통한 환자 자동 접수, <strong>보호자 대리 번호표 발권</strong>, 칩 내장 신분증 QR 스캔 및 자동 음성 호출을 지원하는 의원·인공신장실·병원 전용 솔루션입니다.",
+        hero_btn_pricing: "베이직 & 프리미엄 요금제 보기 ↓",
+        hero_btn_features: "핵심 기능 살펴보기",
+        m1_val: "즉시 처리",
+        m1_lbl: "안면인식 및 대기 순번 자동 발권",
+        m2_lbl: "요금제별 환자 및 보호자 프로필 저장 용량",
+        m3_val: "24/7 무중단",
+        m3_lbl: "인터넷 연결이 끊겨도 원내에서 안정적으로 정상 작동",
+        sc_header: "HUDU CFMS · 스마트 접수 및 대기열 관리",
+        sc_card_title: "안면인식 및 신분증 QR 접수처",
+        sc_card_pill: "자동 발권",
+        sc_patient: "BN-1001 · 응우옌 반 호아 (1962)",
+        sc_patient_sub: "보호자 대리 접수 · 1교대 (투석기 08번)",
+        sc_anti_dup: "✓ 동일 교대 내 중복 발권 차단 완료",
+        sc_voice: "🔊 음성 호출: 008번 환자분 입장해 주세요",
+        sc_price_head: "투명한 공개 요금 · 유지보수 무료",
+        sc_price_badge: "병원 전용 브랜드 커스텀",
+        sc_b_title: "베이직 BASIC (5,000 프로필)",
+        sc_p_title: "프리미엄 PREMIUM (100,000 프로필)",
+        sc_per_mo: "/월",
+        sc_b_sub: "설치비: 1.799.000đ · 역할당 01 계정",
+        sc_p_sub: "설치비 무료 0đ · 역할당 10 계정",
+        price_tag: "의원 및 병원 접수·대기 관리 요금표 (CFMS / QMS)",
+        price_title: "투명한 구독 요금제 · 구독 기간 내 평생 무료 유지보수",
+        price_desc: "전문 의원, 인공신장실, 병원 및 교육기관을 위한 최적의 요금제입니다. 접수 화면, 간호사 콘솔, 대기실 TV 전체에 <strong>병원 전용 브랜드 커스텀(로고 및 병원명)</strong>이 무료로 제공됩니다.",
+        plan_per_month: "/ 월 (정기 구독)",
+        plan1_tier: "기본 플랜 · BASIC",
+        plan1_name: "표준 의원 및 단일 접수처",
+        plan1_sub: "전문 클리닉, 개인 의원 또는 단일 접수 창구를 운영하는 기관에 적합합니다.",
+        plan1_setup_lbl: "초기 설치 및 세팅비 (1회):",
+        plan1_quota: "역할당 01개 계정 · 최대 5,000 프로필",
+        plan1_f1: "<strong>최대 5,000명 프로필 저장:</strong> 안면인식 접수를 위한 <strong>환자 및 보호자 프로필 최대 5,000건</strong> 관리 지원.",
+        plan1_f2: "<strong>병원 전용 브랜드 커스텀:</strong> 접수 키오스크, 간호사 콘솔, 대기실 TV에 병원명, 진료과, 전용 로고 일괄 적용.",
+        plan1_f3: "<strong>유지보수 및 업데이트 100% 무료:</strong> 구독을 유지하는 동안 소프트웨어 보증, 신규 기능 업데이트 및 기술 지원 무료 제공.",
+        plan1_f4: "<strong>안면인식 및 보호자 대리 접수:</strong> 환자 본인 또는 동반 보호자를 자동 인식하며 동일 근무조 내 중복 발권을 완벽히 방지.",
+        plan1_f5: "<strong>신분증 QR 코드 간편 스캔:</strong> 카메라 또는 바코드 스캐너로 신분증을 빠르게 스캔하여 환자 인적사항 자동 입력.",
+        plan1_f6: "<strong>딩동 알림음 및 자동 음성 호출 / 재호출:</strong> 환자 성함, 대기번호, 진료실/투석기 번호를 스피커와 대기실 TV로 선명하게 안내.",
+        plan1_cta: "베이직 플랜 신청하기 →",
+        plan2_ribbon: "인기 1위 · 초기 설치비 1.799K 무료",
+        plan2_tier: "고급 플랜 · PREMIUM",
+        plan2_name: "종합 클리닉 및 병원 진료과",
+        plan2_sub: "다교대 근무가 이루어지는 종합의원, 인공신장실, 외래 환자가 많은 병원 진료과에 최적화되어 있습니다.",
+        plan2_setup_lbl: "초기 설치 및 세팅비:",
+        plan2_setup_val: "무료 0đ (1.799k 절감)",
+        plan2_quota: "역할당 최대 10개 계정 · 100,000 프로필",
+        plan2_f1: "<strong>최대 100,000명 대용량 프로필 확장:</strong> <strong>환자 및 보호자 프로필을 최대 100,000건</strong>까지 저장하여 대형 진료과의 장기 운영에 완벽 대응.",
+        plan2_f2: "<strong>베이직 플랜의 모든 혜택 포함:</strong> 전용 브랜드 커스텀 및 <strong>구독 중 무제한 무료 유지보수·업데이트</strong> 포함.",
+        plan2_f3: "<strong>초기 설치 비용 100% 무료:</strong> HUDU 팀이 시스템 구축, 진료과/교대 설정 및 현장 인계를 설치비 0đ에 제공 (1.799.000đ 절감).",
+        plan2_f4: "<strong>다중 의료진 계정 (역할당 최대 10개):</strong> 관리자, 의사, 간호사가 여러 PC에서 동시에 근무할 수 있도록 <strong>최대 30개 계정</strong> 지원.",
+        plan2_f5: "<strong>의사 전용 권한 및 응급 우선 호출:</strong> 데스크에서 직접 번호표를 발급하고 <strong>응급 우선 모드</strong>로 위급 환자를 대기열 최상단에 배치.",
+        plan2_f6: "<strong>통계 리포트 및 정기 데이터 백업:</strong> 교대/일/월별 환자 방문 통계 보고서 및 안전한 프로필 데이터 백업 지원.",
+        plan2_cta: "프리미엄 신청하기 (설치비 무료) →",
+        plan3_tier: "병원 및 네트워크 · ENTERPRISE",
+        plan3_name: "종합병원 및 멀티 지점 네트워크",
+        plan3_sub: "병원 전산 연동이 필요한 종합병원이나 다수 지점을 운영하는 네트워크 의원을 위한 맞춤형 플랜입니다.",
+        plan3_price: "맞춤 견적",
+        plan3_period: "/ 진료과 및 병원 규모별",
+        plan3_setup_lbl: "구축 및 시스템 연동:",
+        plan3_setup_val: "현장 실사 및 맞춤형 구축",
+        plan3_quota: "계정 및 프로필 무제한 · 다중 진료과",
+        plan3_f1: "<strong>프로필 및 계정 무제한:</strong> 병원 전체 또는 네트워크 의원 규모를 완벽 지원하며 24/7 우선 기술 지원 보장.",
+        plan3_f2: "<strong>병원 프로그램 연동 (HIS / LIS / 건강보험):</strong> 환자 명단, 검사 처방 및 교대별 투석 일정을 자동으로 동기화.",
+        plan3_f3: "<strong>다지점 중앙 통합 관리:</strong> 모든 지점의 접수 현황과 종합 통계 보고서를 단일 화면에서 통합 모니터링.",
+        plan3_f4: "<strong>키오스크 단말기 패키지 공급:</strong> 터치스크린 번호표 발급기, 인식 카메라, 신분증 스캐너 및 음향 시스템 일괄 구축 상담.",
+        plan3_f5: "<strong>의료 데이터 완벽 보안:</strong> 환자 및 보호자 기록을 의료기관 내부에서 안전하게 보호하여 의료 보안 기준 준수.",
+        plan3_cta: "현장 실사 및 견적 문의 →",
+        hw1_title: "기존 사무용 컴퓨터와 완벽 호환",
+        hw1_desc: "고가 장비 없이 접수처에 이미 구비된 일반 데스크톱 PC나 노트북에서 쾌적하게 작동합니다.",
+        hw2_title: "인터넷이 끊겨도 흔들림 없는 안정성",
+        hw2_desc: "외부 인터넷이 단절되어도 원내 네트워크에서 안면인식, 신분증 스캔, 번호 발권, 대기실 음성 호출이 정상 작동합니다.",
+        hw3_title: "구독 기간 내 평생 무료 유지보수 및 원격 지원",
+        hw3_desc: "숨겨진 추가 비용이 없습니다. 초기 도입 시 병원 로고와 맞춤 브랜드 화면을 무료로 제작·적용해 드립니다.",
+        feat_tag: "6대 핵심 의료 업무 기능",
+        feat_title: "인공신장실 및 전문 클리닉에 특화된 설계",
+        feat_desc: "접수 절차를 간소화하여 간호사의 행정 업무 부담을 줄이고 환자의 대기 시간을 단축합니다.",
+        f1_title: "1. 안면인식 및 보호자 대리 번호표 발권",
+        f1_desc: "순식간에 환자를 자동 인식합니다. 고령 환자나 정기 투석 환자를 대신해 동반 가족이 번호표를 뽑을 수 있도록 보호자 얼굴 등록을 지원하며 중복 발권을 차단합니다.",
+        f2_title: "2. 칩 내장 신분증 QR 코드 빠른 스캔",
+        f2_desc: "카메라나 핸디형 바코드 스캐너로 신분증 QR을 스캔하여 성명, 출생연도, 식별번호, 주소를 수기 입력 없이 자동으로 채웁니다.",
+        f3_title: "3. 간호사 콘솔 및 자동 음성 호출",
+        f3_desc: "빠른 환자 검색을 지원합니다. 딩동 알림음과 자연스러운 음성으로 대기번호, 성함, 진료실/투석기를 선명하게 안내하며 편리한 재호출 버튼을 제공합니다.",
+        f4_title: "4. 응급 우선 호출 및 데스크 직접 발권",
+        f4_desc: "의사와 관리자는 카메라 촬영 없이도 데스크에서 즉시 번호표를 발급할 수 있으며, 응급 우선 모드로 환자를 대기열 맨 앞으로 올릴 수 있습니다.",
+        f5_title: "5. 병원 브랜드 맞춤형 대기실 TV 화면",
+        f5_desc: "현재 진료 중인 환자와 대기 순번을 로비 대형 TV 화면에 직관적으로 표시하며 병원의 로고와 브랜드 컬러를 동일하게 적용합니다.",
+        f6_title: "6. 의료진 권한, 교대 근무 및 통계 관리",
+        f6_desc: "3개 역할(관리자, 의사, 간호사)별 철저한 권한 분리; 교대별 환자 수 통계, 진료 이력 조회 및 손쉬운 데이터 백업을 지원합니다.",
+        rbac_tag: "3단계 역할 권한 제어 (RBAC)",
+        rbac_title: "권한 매트릭스: 관리자 · 의사 · 간호사",
+        rbac_desc: "<strong>베이직 (499k/월)</strong>은 <strong>역할당 01개 계정(최대 5,000 프로필)</strong>을 제공하며, <strong>프리미엄 (999k/월)</strong>은 <strong>역할당 최대 10개 계정(최대 100,000 프로필)</strong>으로 확장됩니다.",
+        th_func: "업무 기능",
+        th_nurse: "간호사 (Nurse)",
+        th_doc: "의사 (Doctor)",
+        th_admin: "관리자 (Admin)",
+        r1_func: "<strong>다음 번호 호출, 스피커 재호출 및 실시간 대기열 확인</strong>",
+        r2_func: "<strong>신규 환자 접수, 신분증 스캔 및 대리 접수 보호자 등록</strong>",
+        r3_func: "<strong>데스크에서 직접 수동 번호표 발권 (카메라 스캔 생략)</strong>",
+        r4_func: "<strong>응급 우선 모드를 활성화하여 대기열 최상단으로 이동</strong>",
+        r5_func: "<strong>진료과 내 의사 및 간호사 계정 목록 관리</strong>",
+        r6_func: "<strong>전용 브랜드(로고, 병원명) 설정, 진료실 구성 및 백업</strong>",
+        r_yes: "✓ 권한 있음",
+        r_full: "✓ 전체 권한",
+        r_no: "✕ 제한됨",
+        r_doc: "✓ 의사 전용 권한",
+        r_dept: "✓ 과내 인력 관리",
+        r_admin: "✓ 관리자 전용",
+        cta_tag: "HUDU CFMS / QMS · 24시간 내 신속 구축",
+        cta_title: "우리 병원의 자동 접수 시스템을 시작해 볼까요?",
+        cta_desc: "지금 <strong>베이직 플랜 (499k/월 · 5,000 프로필)</strong> 또는 <strong>프리미엄 플랜 (999k/월 · 100,000 프로필 · 설치비 무료)</strong>을 신청하시면 전용 브랜드 세팅과 함께 신속히 구축해 드립니다.",
+        cta_b1: "✓ 병원 로고 및 명칭 커스텀 무료",
+        cta_b2: "✓ 구독 기간 내 평생 무료 유지보수",
+        cta_b3: "✓ 24/7 기술 지원",
+        form_title: "CFMS / QMS 요금제 신청",
+        form_name_lbl: "성함 및 의원 / 병원명",
+        form_name_ph: "예: 민 원장 — 안심종합의원",
+        form_phone_lbl: "연락처 / 이메일",
+        form_phone_ph: "090x xxx xxx / clinic@domain.vn",
+        form_plan_lbl: "선택 요금제",
+        form_opt_prem: "CFMS 프리미엄 플랜 (999k/월 · 설치비 무료 · 100,000 프로필 · 역할당 10계정)",
+        form_opt_basic: "CFMS 베이직 플랜 (499k/월 + 설치비 1tr799 · 5,000 프로필 · 역할당 01계정)",
+        form_opt_ent: "CFMS 엔터프라이즈 플랜 (종합병원 / 네트워크 의원)",
+        form_submit: "시스템 개통 요청하기",
+        form_toast: "✓ 요청이 접수되었습니다! HUDU 팀에서 빠르게 연락드리겠습니다.",
+        footer_desc: "HUDU (huduvn.com) — 지능형 입찰 데이터 분석 소프트웨어 및 병원·의원 자동 접수 관리 시스템을 개발하는 기술 기업.",
+        footer_col1: "제품 안내",
+        footer_col2: "CFMS 기능",
+        footer_col3: "문의처",
+        f_link_home: "HUDU 홈",
+        f_link_cfms_price: "클리닉 요금표 (CFMS)",
+        f_link_dt_price: "입찰 AI 요금표",
+        f_feat_1: "안면인식 및 보호자 대리 접수",
+        f_feat_2: "칩 신분증 빠른 스캔",
+        f_feat_3: "3단계 역할 권한 (RBAC)",
+        f_feat_4: "자동 음성 호출 및 대기실 TV"
+      }
+    };
+
+    function applyTheme(isDark) {
       const body = document.body;
       const moon = document.getElementById('themeIconMoon');
       const sun = document.getElementById('themeIconSun');
 
-      body.classList.toggle('dark-mode');
-      const isDark = body.classList.contains('dark-mode');
+      body.classList.toggle('dark-mode', isDark);
 
       document.getElementById('navGradStop1').setAttribute('stop-color', isDark ? '#38BDF8' : '#0052A3');
       document.getElementById('navGradStop2').setAttribute('stop-color', isDark ? '#7DD3FC' : '#0284C7');
@@ -1961,6 +2827,30 @@
 
       moon.style.display = isDark ? 'none' : 'block';
       sun.style.display = isDark ? 'block' : 'none';
+    }
+
+    function toggleTheme() {
+      const isDark = !document.body.classList.contains('dark-mode');
+      applyTheme(isDark);
+      try { localStorage.setItem('hudu_theme', isDark ? 'dark' : 'light'); } catch (e) {}
+    }
+
+    function setLanguage(lang) {
+      const validLang = I18N[lang] ? lang : 'vi';
+      document.documentElement.lang = validLang;
+      const sel = document.getElementById('langSelect');
+      if (sel && sel.value !== validLang) sel.value = validLang;
+      try { localStorage.setItem('hudu_lang', validLang); } catch (e) {}
+
+      const dict = I18N[validLang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) el.innerHTML = dict[key];
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (dict[key]) el.placeholder = dict[key];
+      });
     }
 
     function selectPricingPlan(planVal) {
@@ -1973,6 +2863,15 @@
       document.getElementById('formToast').style.display = 'block';
       e.target.reset();
     }
+
+    (function initPrefs() {
+      try {
+        const savedTheme = localStorage.getItem('hudu_theme');
+        if (savedTheme === 'dark') applyTheme(true);
+        const savedLang = localStorage.getItem('hudu_lang');
+        if (savedLang && I18N[savedLang]) setLanguage(savedLang);
+      } catch (e) {}
+    })();
   </script>
 </body>
 </html>

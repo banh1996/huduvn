@@ -1142,16 +1142,16 @@
       </a>
 
       <ul class="nav-links">
-        <li><a href="../">Trang chủ</a></li>
-        <li><a href="#pricing" class="active">Bảng giá</a></li>
-        <li><a href="#pipeline">Pipeline 3 Bước</a></li>
-        <li><a href="#features">Tính năng</a></li>
-        <li><a href="../cfms/">Quản trị CFMS</a></li>
+        <li><a href="../" data-i18n="nav_home">Trang chủ</a></li>
+        <li><a href="#pricing" class="active" data-i18n="nav_pricing">Bảng giá</a></li>
+        <li><a href="#pipeline" data-i18n="nav_pipeline">Quy trình 3 Bước</a></li>
+        <li><a href="#features" data-i18n="nav_features">Tính năng</a></li>
+        <li><a href="../cfms/" data-i18n="nav_cfms">Quản trị CFMS</a></li>
       </ul>
 
       <div class="nav-actions">
         <div class="lang-select-wrap">
-          <select id="langSelect" class="lang-select" aria-label="Language">
+          <select id="langSelect" class="lang-select" onchange="setLanguage(this.value)" aria-label="Language">
             <option value="vi">🇻🇳 Tiếng Việt</option>
             <option value="en">🇺🇸 English</option>
             <option value="es">🇪🇸 Español</option>
@@ -1167,7 +1167,7 @@
           <svg id="themeIconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         </button>
 
-        <a href="#contact" class="btn btn-primary">Đăng ký Dùng thử</a>
+        <a href="#contact" class="btn btn-primary" data-i18n="nav_cta">Đăng ký Dùng thử</a>
       </div>
     </div>
   </header>
@@ -1186,36 +1186,36 @@
       <div>
         <div class="pill-tag">
           <span class="pill-dot"></span>
-          <span>SẢN PHẨM 01 · HUDU DAUTHAU · huduvn.com/dauthau</span>
+          <span data-i18n="hero_badge">SẢN PHẨM 01 · HUDU DAUTHAU · huduvn.com/dauthau</span>
         </div>
-        <h1>
+        <h1 data-i18n="hero_title">
           Hệ Thống <span class="highlight">Săn &amp; Lọc Đấu Thầu</span> Công - Tư - ODA Bằng AI
         </h1>
-        <p class="hero-desc">
-          Thu thập tự động từ Mạng Đấu Thầu Quốc Gia (muasamcong), Tập đoàn Nhà nước (EVN, PVN, ACV), Ngân hàng &amp; Vốn ODA; chưng cất chống trùng 3 lớp, bóc tách Chương V và <strong>Matching biên độ năng lực Sàn/Trần (Floor/Ceiling)</strong>.
+        <p class="hero-desc" data-i18n="hero_desc">
+          Thu thập tự động từ Mạng Đấu Thầu Quốc Gia (muasamcong), Tập đoàn Nhà nước (EVN, PVN, ACV), Ngân hàng &amp; Vốn ODA; tự động gộp thông báo sửa đổi, bóc tách Chương V và <strong>so khớp biên độ năng lực Sàn/Trần (Floor/Ceiling)</strong>.
         </p>
 
         <div class="hero-cta-group">
-          <a href="#pricing" class="btn btn-primary btn-lg">
+          <a href="#pricing" class="btn btn-primary btn-lg" data-i18n="hero_btn_pricing">
             Xem Bảng Giá Gói Doanh Nghiệp &darr;
           </a>
-          <a href="#pipeline" class="btn btn-outline btn-lg">
-            Khám Phá Pipeline 3 Bước
+          <a href="#pipeline" class="btn btn-outline btn-lg" data-i18n="hero_btn_pipeline">
+            Khám Phá Quy Trình 3 Bước
           </a>
         </div>
 
         <div class="hero-metrics">
           <div class="metric-item">
-            <strong>Chống trùng 100%</strong>
-            <span>Tự động gộp các thông báo sửa đổi &amp; loại bỏ tin trùng</span>
+            <strong data-i18n="m1_val">Chống trùng 100%</strong>
+            <span data-i18n="m1_lbl">Tự động gộp các thông báo sửa đổi &amp; loại bỏ tin trùng</span>
           </div>
           <div class="metric-item">
-            <strong>Sàn / Trần</strong>
-            <span>So khớp chính xác biên độ tài chính &amp; cấp công trình</span>
+            <strong data-i18n="m2_val">Sàn / Trần</strong>
+            <span data-i18n="m2_lbl">So khớp chính xác biên độ tài chính &amp; cấp công trình</span>
           </div>
           <div class="metric-item">
-            <strong>Tức thì</strong>
-            <span>Đẩy tin qua Mobile App, Zalo, SMS &amp; theo dõi trạng thái đọc</span>
+            <strong data-i18n="m3_val">Tức thì</strong>
+            <span data-i18n="m3_lbl">Đẩy tin qua Mobile App, Zalo, SMS &amp; theo dõi trạng thái đọc</span>
           </div>
         </div>
       </div>
@@ -1228,41 +1228,41 @@
           </div>
           <div class="showcase-url">
             <span class="live-indicator"></span>
-            HUDU DauThau · Hệ Thống Săn Thầu Thông Minh
+            <span data-i18n="sc_header">HUDU DauThau · Hệ Thống Săn Thầu Thông Minh</span>
           </div>
         </div>
 
         <div class="mini-card">
           <div style="display:flex; justify-content:space-between; align-items:center;">
-            <strong style="font-size:0.95rem;">IB2600881920-01 · Cầu Sông Nhạn (Đồng Nai)</strong>
-            <span class="status-pill">Khớp 99%</span>
+            <strong style="font-size:0.95rem;" data-i18n="sc_pkg_title">IB2600881920-01 · Cầu Sông Nhạn (Đồng Nai)</strong>
+            <span class="status-pill" data-i18n="sc_pkg_pill">Khớp 99%</span>
           </div>
           <div class="stream-bar"></div>
           <div style="font-size:0.8rem; color:var(--text-body); margin-bottom:8px;">
-            <div><strong>Lĩnh vực:</strong> Hạ tầng Cầu đường · Công trình Cấp II (3x30m)</div>
-            <div><strong>Biên độ khớp:</strong> Sàn 10 tỷ &le; <strong>35,5 tỷ</strong> &le; Trần 80 tỷ</div>
+            <div data-i18n="sc_pkg_line1"><strong>Lĩnh vực:</strong> Hạ tầng Cầu đường · Công trình Cấp II (3x30m)</div>
+            <div data-i18n="sc_pkg_line2"><strong>Biên độ khớp:</strong> Sàn 10 tỷ &le; <strong>35,5 tỷ</strong> &le; Trần 80 tỷ</div>
           </div>
           <div style="display:flex; justify-content:space-between; font-size:0.76rem; color:var(--text-muted);">
-            <span>&#10003; Đã gộp bản sửa đổi (-00 &rarr; -01)</span>
-            <span style="color:var(--blue-primary); font-weight:700;">&#10003; Đã báo qua App &amp; Zalo</span>
+            <span data-i18n="sc_pkg_rev">&#10003; Đã gộp bản sửa đổi (-00 &rarr; -01)</span>
+            <span style="color:var(--blue-primary); font-weight:700;" data-i18n="sc_pkg_push">&#10003; Đã báo qua App &amp; Zalo</span>
           </div>
         </div>
 
         <div class="mini-card" style="background: linear-gradient(145deg, #0B192C, #132A46); color: #F8FAFC; border-color: #38BDF8;">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-            <span style="font-size:0.75rem; font-weight:800; color:#7DD3FC; text-transform:uppercase; letter-spacing:0.06em;">Bảng giá linh hoạt theo quy mô nhà thầu</span>
-            <span style="font-size:0.72rem; background:rgba(56,189,248,0.2); color:#7DD3FC; padding:3px 9px; border-radius:99px; font-weight:700;">Quét Tự Động</span>
+            <span style="font-size:0.75rem; font-weight:800; color:#7DD3FC; text-transform:uppercase; letter-spacing:0.06em;" data-i18n="sc_price_head">Bảng giá linh hoạt theo quy mô nhà thầu</span>
+            <span style="font-size:0.72rem; background:rgba(56,189,248,0.2); color:#7DD3FC; padding:3px 9px; border-radius:99px; font-weight:700;" data-i18n="sc_price_badge">Quét Tự Động</span>
           </div>
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:8px;">
             <div style="background:rgba(15,23,42,0.7); padding:10px 12px; border-radius:10px; border:1px solid rgba(148,163,184,0.25);">
-              <div style="font-size:0.74rem; color:#94A3B8; font-weight:700;">GÓI STARTER (03 User)</div>
-              <div style="font-size:1.2rem; font-weight:800; color:#FFFFFF;">999.000đ<span style="font-size:0.75rem; font-weight:500; color:#CBD5E1;">/tháng</span></div>
-              <div style="font-size:0.72rem; color:#CBD5E1; margin-top:2px;">Miễn phí khởi tạo 0đ</div>
+              <div style="font-size:0.74rem; color:#94A3B8; font-weight:700;" data-i18n="sc_s_title">GÓI STARTER (03 User)</div>
+              <div style="font-size:1.2rem; font-weight:800; color:#FFFFFF;">999.000đ<span style="font-size:0.75rem; font-weight:500; color:#CBD5E1;" data-i18n="sc_per_mo">/tháng</span></div>
+              <div style="font-size:0.72rem; color:#CBD5E1; margin-top:2px;" data-i18n="sc_s_sub">Miễn phí khởi tạo 0đ</div>
             </div>
             <div style="background:rgba(2,132,199,0.25); padding:10px 12px; border-radius:10px; border:1px solid #38BDF8;">
-              <div style="font-size:0.74rem; color:#7DD3FC; font-weight:700;">PRO CONTRACTOR (15 User)</div>
-              <div style="font-size:1.2rem; font-weight:800; color:#7DD3FC;">2.490.000đ<span style="font-size:0.75rem; font-weight:500; color:#E2E8F0;">/tháng</span></div>
-              <div style="font-size:0.72rem; color:#BAE6FD; font-weight:700; margin-top:2px;">Bóc tách Chương V + ODA</div>
+              <div style="font-size:0.74rem; color:#7DD3FC; font-weight:700;" data-i18n="sc_p_title">PRO CONTRACTOR (15 User)</div>
+              <div style="font-size:1.2rem; font-weight:800; color:#7DD3FC;">2.490.000đ<span style="font-size:0.75rem; font-weight:500; color:#E2E8F0;" data-i18n="sc_per_mo">/tháng</span></div>
+              <div style="font-size:0.72rem; color:#BAE6FD; font-weight:700; margin-top:2px;" data-i18n="sc_p_sub">Bóc tách Chương V + ODA</div>
             </div>
           </div>
         </div>
@@ -1276,10 +1276,10 @@
       <div class="section-header">
         <div class="pill-tag">
           <span class="pill-dot"></span>
-          <span>Bảng Giá Hệ Thống Săn Thầu AI (HUDU DauThau)</span>
+          <span data-i18n="price_tag">Bảng Giá Hệ Thống Săn Thầu AI (HUDU DauThau)</span>
         </div>
-        <h2>Đầu Tư Tối Ưu Cho Phòng Đấu Thầu &amp; Ban Kế Hoạch Kỹ Thuật</h2>
-        <p>
+        <h2 data-i18n="price_title">Đầu Tư Tối Ưu Cho Phòng Đấu Thầu &amp; Ban Kế Hoạch Kỹ Thuật</h2>
+        <p data-i18n="price_desc">
           Miễn phí 100% chi phí khởi tạo hồ sơ năng lực ban đầu, tự động <strong>rà soát toàn bộ các gói thầu đang mở</strong> ngay khi kích hoạt tài khoản.
         </p>
       </div>
@@ -1290,112 +1290,112 @@
           <div>
             <div class="pricing-tier-label">
               <span>●</span>
-              <span>GÓI KHỞI ĐẦU · STARTER</span>
+              <span data-i18n="plan1_tier">GÓI KHỞI ĐẦU · STARTER</span>
             </div>
-            <h3>Nhà Thầu Chuyên Ngành</h3>
-            <p class="pricing-subtitle">
+            <h3 data-i18n="plan1_name">Nhà Thầu Chuyên Ngành</h3>
+            <p class="pricing-subtitle" data-i18n="plan1_sub">
               Phù hợp cho doanh nghiệp vừa và nhỏ tập trung săn thầu Mua sắm công (muasamcong) theo tỉnh thành &amp; ngành nghề cố định.
             </p>
 
             <div class="pricing-price-box">
               <div class="price-main-line">
                 <span class="price-amount">999.000đ</span>
-                <span class="price-period">/ tháng (Subscribe)</span>
+                <span class="price-period" data-i18n="plan_per_month">/ tháng (Subscribe)</span>
               </div>
               <div class="setup-fee-row">
-                <span>Phí khởi tạo Hồ sơ năng lực:</span>
-                <strong style="color: var(--blue-primary);">MIỄN PHÍ 0đ</strong>
+                <span data-i18n="plan1_setup_lbl">Phí khởi tạo Hồ sơ năng lực:</span>
+                <strong style="color: var(--blue-primary);" data-i18n="plan1_setup_val">MIỄN PHÍ 0đ</strong>
               </div>
             </div>
 
             <div class="role-quota-banner">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-              <span>01 Hồ sơ Năng lực Công ty · Tối đa 03 Tài khoản nhận tin</span>
+              <span data-i18n="plan1_quota">01 Hồ sơ Năng lực Công ty · Tối đa 03 Tài khoản nhận tin</span>
             </div>
 
             <ul class="pricing-feature-list">
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Thu thập Mạng Đấu Thầu Quốc Gia (muasamcong):</strong> Tự động gộp các bản thông báo sửa đổi và luôn đính kèm link gói thầu gốc.</span>
+                <span data-i18n="plan1_f1"><strong>Thu thập Mạng Đấu Thầu Quốc Gia (muasamcong):</strong> Tự động gộp các bản thông báo sửa đổi và luôn đính kèm link gói thầu gốc.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>So khớp biên độ Sàn / Trần (Floor &amp; Ceiling):</strong> Lọc chính xác theo Giá gói thầu, Tổng mức đầu tư và Tỉnh/Thành phố.</span>
+                <span data-i18n="plan1_f2"><strong>So khớp biên độ Sàn / Trần (Floor &amp; Ceiling):</strong> Lọc chính xác theo Giá gói thầu, Tổng mức đầu tư và Tỉnh/Thành phố.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Phân loại chuyên sâu theo ngành nghề:</strong> Theo dõi tự động tối đa <strong>03 lĩnh vực chuyên ngành</strong> đăng ký của doanh nghiệp.</span>
+                <span data-i18n="plan1_f3"><strong>Phân loại chuyên sâu theo ngành nghề:</strong> Theo dõi tự động tối đa <strong>03 lĩnh vực chuyên ngành</strong> đăng ký của doanh nghiệp.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Thông báo qua Email &amp; Ứng dụng Di động:</strong> Nhận thông báo tức thì ngay khi có gói thầu mới phù hợp năng lực.</span>
+                <span data-i18n="plan1_f4"><strong>Thông báo qua Email &amp; Ứng dụng Di động:</strong> Nhận thông báo tức thì ngay khi có gói thầu mới phù hợp năng lực.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Rà soát gói thầu đang mở ngay khi kích hoạt:</strong> Tự động lọc toàn bộ các gói thầu còn hạn nộp hồ sơ để làm việc ngay.</span>
+                <span data-i18n="plan1_f5"><strong>Rà soát gói thầu đang mở ngay khi kích hoạt:</strong> Tự động lọc toàn bộ các gói thầu còn hạn nộp hồ sơ để làm việc ngay.</span>
               </li>
             </ul>
           </div>
 
-          <a href="#contact" onclick="selectPricingPlan('DAUTHAU_STARTER')" class="btn btn-outline btn-lg" style="width: 100%; justify-content: center;">
+          <a href="#contact" onclick="selectPricingPlan('DAUTHAU_STARTER')" class="btn btn-outline btn-lg" style="width: 100%; justify-content: center;" data-i18n="plan1_cta">
             Đăng Ký Gói Starter &rarr;
           </a>
         </div>
 
         <!-- PLAN 2: PRO CONTRACTOR (FEATURED) -->
         <div class="pricing-card featured">
-          <div class="pricing-popular-ribbon">PHỔ BIẾN NHẤT · BÓC TÁCH CHƯƠNG V &amp; ĐA NGUỒN THẦU</div>
+          <div class="pricing-popular-ribbon" data-i18n="plan2_ribbon">PHỔ BIẾN NHẤT · BÓC TÁCH CHƯƠNG V &amp; ĐA NGUỒN THẦU</div>
           <div>
             <div class="pricing-tier-label">
               <span>★</span>
-              <span>GÓI CHUYÊN NGHIỆP · PRO CONTRACTOR</span>
+              <span data-i18n="plan2_tier">GÓI CHUYÊN NGHIỆP · PRO CONTRACTOR</span>
             </div>
-            <h3>Nhà Thầu Tổng Hợp &amp; Tập Đoàn</h3>
-            <p class="pricing-subtitle">
+            <h3 data-i18n="plan2_name">Nhà Thầu Tổng Hợp &amp; Tập Đoàn</h3>
+            <p class="pricing-subtitle" data-i18n="plan2_sub">
               Tối ưu cho Phòng Đấu thầu chuyên nghiệp cần săn cả Thầu Công, Tập đoàn Nhà nước (EVN, PVN, ACV), Ngân hàng &amp; Vốn ODA.
             </p>
 
             <div class="pricing-price-box">
               <div class="price-main-line">
                 <span class="price-amount">2.490.000đ</span>
-                <span class="price-period">/ tháng (Subscribe)</span>
+                <span class="price-period" data-i18n="plan_per_month">/ tháng (Subscribe)</span>
               </div>
               <div class="setup-fee-row">
-                <span>Cấu hình &amp; Khởi tạo:</span>
-                <span class="setup-free-badge">MIỄN PHÍ 0đ · Hỗ trợ 24/7</span>
+                <span data-i18n="plan2_setup_lbl">Cấu hình &amp; Khởi tạo:</span>
+                <span class="setup-free-badge" data-i18n="plan2_setup_val">MIỄN PHÍ 0đ · Hỗ trợ 24/7</span>
               </div>
             </div>
 
             <div class="role-quota-banner">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              <span>03 Hồ sơ Năng lực (Liên danh/Công ty con) · 15 Tài khoản</span>
+              <span data-i18n="plan2_quota">03 Hồ sơ Năng lực (Liên danh/Công ty con) · 15 Tài khoản</span>
             </div>
 
             <ul class="pricing-feature-list">
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Toàn bộ nguồn thầu Công + Tư nhân + ODA:</strong> Mua sắm công, EVN, PVN, Viettel, VNPT, ACV, Khối Ngân hàng TMCP &amp; WB/ADB.</span>
+                <span data-i18n="plan2_f1"><strong>Toàn bộ nguồn thầu Công + Tư nhân + ODA:</strong> Mua sắm công, EVN, PVN, Viettel, VNPT, ACV, Khối Ngân hàng TMCP &amp; WB/ADB.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>AI Bóc tách Chương V &amp; Cấp công trình:</strong> Tự động đọc hồ sơ mời thầu để tóm tắt Cấp công trình (Cấp I–IV), quy mô kỹ thuật và yêu cầu thiết bị.</span>
+                <span data-i18n="plan2_f2"><strong>AI Bóc tách Chương V &amp; Cấp công trình:</strong> Tự động đọc hồ sơ mời thầu để tóm tắt Cấp công trình (Cấp I–IV), quy mô kỹ thuật và yêu cầu thiết bị.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Không giới hạn Lĩnh vực &amp; Ngành nghề:</strong> Theo dõi đa lĩnh vực Xây lắp, Giao thông, Thủy lợi, Thiết bị Y tế, CNTT &amp; Cung ứng vật tư.</span>
+                <span data-i18n="plan2_f3"><strong>Không giới hạn Lĩnh vực &amp; Ngành nghề:</strong> Theo dõi đa lĩnh vực Xây lắp, Giao thông, Thủy lợi, Thiết bị Y tế, CNTT &amp; Cung ứng vật tư.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Đa kênh Thông báo (App + Zalo + SMS + Email):</strong> Đảm bảo Ban Giám đốc và Phòng Đấu thầu không bỏ lỡ bất kỳ gói thầu trọng điểm nào.</span>
+                <span data-i18n="plan2_f4"><strong>Đa kênh Thông báo (App + Zalo + SMS + Email):</strong> Đảm bảo Ban Giám đốc và Phòng Đấu thầu không bỏ lỡ bất kỳ gói thầu trọng điểm nào.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Theo dõi Trạng thái Đọc tin của Nhân sự:</strong> Kiểm soát rõ nhân sự nào đã nhận tin, thời gian mở xem và lượt bấm vào link thầu gốc.</span>
+                <span data-i18n="plan2_f5"><strong>Theo dõi Trạng thái Đọc tin của Nhân sự:</strong> Kiểm soát rõ nhân sự nào đã nhận tin, thời gian mở xem và lượt bấm vào link thầu gốc.</span>
               </li>
             </ul>
           </div>
 
-          <a href="#contact" onclick="selectPricingPlan('DAUTHAU_PRO')" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;">
+          <a href="#contact" onclick="selectPricingPlan('DAUTHAU_PRO')" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;" data-i18n="plan2_cta">
             Đăng Ký Gói Pro Contractor &rarr;
           </a>
         </div>
@@ -1405,50 +1405,50 @@
           <div>
             <div class="pricing-tier-label">
               <span>◆</span>
-              <span>GÓI TẬP ĐOÀN · ENTERPRISE</span>
+              <span data-i18n="plan3_tier">GÓI TẬP ĐOÀN · ENTERPRISE</span>
             </div>
-            <h3>Tổng Công Ty &amp; Triển Khai Riêng</h3>
-            <p class="pricing-subtitle">
+            <h3 data-i18n="plan3_name">Tổng Công Ty &amp; Triển Khai Riêng</h3>
+            <p class="pricing-subtitle" data-i18n="plan3_sub">
               Dành cho Tổng công ty nhiều đơn vị thành viên cần tích hợp dữ liệu thầu vào phần mềm quản trị nội bộ (ERP/CRM).
             </p>
 
             <div class="pricing-price-box">
               <div class="price-main-line">
-                <span class="price-amount">Báo giá riêng</span>
-                <span class="price-period">/ theo quy mô đơn vị</span>
+                <span class="price-amount" data-i18n="plan3_price">Báo giá riêng</span>
+                <span class="price-period" data-i18n="plan3_period">/ theo quy mô đơn vị</span>
               </div>
               <div class="setup-fee-row">
-                <span>Triển khai &amp; Tích hợp:</span>
-                <strong style="color: var(--blue-primary);">May đo theo yêu cầu</strong>
+                <span data-i18n="plan3_setup_lbl">Triển khai &amp; Tích hợp:</span>
+                <strong style="color: var(--blue-primary);" data-i18n="plan3_setup_val">May đo theo yêu cầu</strong>
               </div>
             </div>
 
             <div class="role-quota-banner">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              <span>Không giới hạn Hồ sơ Công ty thành viên &amp; Tài khoản</span>
+              <span data-i18n="plan3_quota">Không giới hạn Hồ sơ Công ty thành viên &amp; Tài khoản</span>
             </div>
 
             <ul class="pricing-feature-list">
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Bổ sung Nguồn thầu Tư nhân theo yêu cầu:</strong> Tích hợp thêm bất kỳ cổng mua sắm doanh nghiệp hoặc website chủ đầu tư mục tiêu nào trong 24h.</span>
+                <span data-i18n="plan3_f1"><strong>Bổ sung Nguồn thầu Tư nhân theo yêu cầu:</strong> Tích hợp thêm bất kỳ cổng mua sắm doanh nghiệp hoặc website chủ đầu tư mục tiêu nào trong 24h.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Triển khai Máy chủ Riêng (On-Premise):</strong> Hỗ trợ cài đặt độc lập trên hạ tầng riêng của Tập đoàn, bảo mật tuyệt đối dữ liệu và chiến lược dự thầu.</span>
+                <span data-i18n="plan3_f2"><strong>Triển khai Máy chủ Riêng (On-Premise):</strong> Hỗ trợ cài đặt độc lập trên hạ tầng riêng của Tập đoàn, bảo mật tuyệt đối dữ liệu và chiến lược dự thầu.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Kết nối tự động sang phần mềm Quản trị (ERP/CRM):</strong> Đồng bộ thông tin gói thầu trực tiếp sang hệ thống làm việc nội bộ của doanh nghiệp.</span>
+                <span data-i18n="plan3_f3"><strong>Kết nối tự động sang phần mềm Quản trị (ERP/CRM):</strong> Đồng bộ thông tin gói thầu trực tiếp sang hệ thống làm việc nội bộ của doanh nghiệp.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span><strong>Quản lý Tập trung Đa Công ty con:</strong> Phân quyền rõ ràng cho từng chi nhánh khu vực và phòng ban chuyên môn với cam kết hỗ trợ 24/7.</span>
+                <span data-i18n="plan3_f4"><strong>Quản lý Tập trung Đa Công ty con:</strong> Phân quyền rõ ràng cho từng chi nhánh khu vực và phòng ban chuyên môn với cam kết hỗ trợ 24/7.</span>
               </li>
             </ul>
           </div>
 
-          <a href="#contact" onclick="selectPricingPlan('DAUTHAU_ENTERPRISE')" class="btn btn-outline btn-lg" style="width: 100%; justify-content: center;">
+          <a href="#contact" onclick="selectPricingPlan('DAUTHAU_ENTERPRISE')" class="btn btn-outline btn-lg" style="width: 100%; justify-content: center;" data-i18n="plan3_cta">
             Liên Hệ Tư Vấn Enterprise &rarr;
           </a>
         </div>
@@ -1462,10 +1462,10 @@
       <div class="section-header">
         <div class="pill-tag">
           <span class="pill-dot"></span>
-          <span>Quy Trình Sàng Lọc 3 Bước Tự Động</span>
+          <span data-i18n="pipe_tag">Quy Trình Sàng Lọc 3 Bước Tự Động</span>
         </div>
-        <h2>Loại Bỏ 95% Nhiễu Thông Tin Trước Khi Đến Bàn Làm Việc</h2>
-        <p>
+        <h2 data-i18n="pipe_title">Loại Bỏ 95% Nhiễu Thông Tin Trước Khi Đến Bàn Làm Việc</h2>
+        <p data-i18n="pipe_desc">
           Giúp đội ngũ kỹ sư đấu thầu tập trung hoàn toàn vào việc lập hồ sơ chất lượng cao thay vì mất hàng giờ tìm kiếm thủ công mỗi ngày.
         </p>
       </div>
@@ -1475,8 +1475,8 @@
           <div class="benefit-icon">
             <strong style="font-size:1.1rem;">01</strong>
           </div>
-          <h3>Bước 1: Thu Thập Đa Nguồn &amp; Gộp Bản Sửa Đổi</h3>
-          <p>
+          <h3 data-i18n="s1_title">Bước 1: Thu Thập Đa Nguồn &amp; Gộp Bản Sửa Đổi</h3>
+          <p data-i18n="s1_desc">
             Tự động quét liên tục các cổng đấu thầu Công, Tư nhân và ODA; gộp các thông báo điều chỉnh/gia hạn vào cùng một hồ sơ duy nhất để không bao giờ báo trùng lặp.
           </p>
         </div>
@@ -1485,8 +1485,8 @@
           <div class="benefit-icon">
             <strong style="font-size:1.1rem;">02</strong>
           </div>
-          <h3>Bước 2: Phân Loại Ngành Nghề &amp; Bóc Tách Chương V</h3>
-          <p>
+          <h3 data-i18n="s2_title">Bước 2: Phân Loại Ngành Nghề &amp; Bóc Tách Chương V</h3>
+          <p data-i18n="s2_desc">
             AI tự động phân loại đúng lĩnh vực chuyên môn sâu, trích xuất Giá gói thầu, Tổng mức đầu tư, Cấp công trình (Cấp I–IV) và các yêu cầu kỹ thuật trọng tâm trong Chương V.
           </p>
         </div>
@@ -1495,8 +1495,8 @@
           <div class="benefit-icon">
             <strong style="font-size:1.1rem;">03</strong>
           </div>
-          <h3>Bước 3: So Khớp Sàn/Trần &amp; Báo Tin Đa Kênh</h3>
-          <p>
+          <h3 data-i18n="s3_title">Bước 3: So Khớp Sàn/Trần &amp; Báo Tin Đa Kênh</h3>
+          <p data-i18n="s3_desc">
             Đối chiếu chính xác với ngưỡng năng lực tối thiểu (Sàn) và tối đa (Trần) của từng nhà thầu; gửi thông báo tức thì qua App, Zalo, SMS, Email và ghi nhận trạng thái đã xem.
           </p>
         </div>
@@ -1510,38 +1510,38 @@
       <div class="section-header">
         <div class="pill-tag">
           <span class="pill-dot"></span>
-          <span>Tính Năng Chuyên Sâu</span>
+          <span data-i18n="feat_tag">Tính Năng Chuyên Sâu</span>
         </div>
-        <h2>Vũ Khí Cạnh Tranh Cho Đội Ngũ Săn Thầu Doanh Nghiệp</h2>
-        <p>
+        <h2 data-i18n="feat_title">Vũ Khí Cạnh Tranh Cho Đội Ngũ Săn Thầu Doanh Nghiệp</h2>
+        <p data-i18n="feat_desc">
           Mọi thông tin gói thầu luôn đi kèm liên kết gốc chính thống từ Chủ đầu tư và lịch sử theo dõi minh bạch.
         </p>
       </div>
 
       <div class="grid-3">
         <div class="benefit-card">
-          <h3>Đa Nguồn Thầu Công - Tư - ODA</h3>
-          <p>Kết nối đồng thời Mạng Đấu Thầu Quốc Gia (muasamcong), cổng mua sắm Tập đoàn (EVN, PVN, ACV, Viettel), Ngân hàng TMCP và dự án WB/ADB.</p>
+          <h3 data-i18n="f1_title">Đa Nguồn Thầu Công - Tư - ODA</h3>
+          <p data-i18n="f1_desc">Kết nối đồng thời Mạng Đấu Thầu Quốc Gia (muasamcong), cổng mua sắm Tập đoàn (EVN, PVN, ACV, Viettel), Ngân hàng TMCP và dự án WB/ADB.</p>
         </div>
         <div class="benefit-card">
-          <h3>Phân Loại Sâu Theo Đúng Chuyên Môn</h3>
-          <p>Tự động phân tách chi tiết từng nhóm ngành nghề hẹp (Cầu đường, Thủy lợi, Thiết bị Y tế, Phần mềm...) giúp lọc đúng sở trường của nhà thầu.</p>
+          <h3 data-i18n="f2_title">Phân Loại Sâu Theo Đúng Chuyên Môn</h3>
+          <p data-i18n="f2_desc">Tự động phân tách chi tiết từng nhóm ngành nghề hẹp (Cầu đường, Thủy lợi, Thiết bị Y tế, Phần mềm...) giúp lọc đúng sở trường của nhà thầu.</p>
         </div>
         <div class="benefit-card">
-          <h3>So Khớp Biên Độ Sàn &amp; Trần</h3>
-          <p>Loại bỏ các gói thầu quá nhỏ dưới mức sàn chi phí hoặc vượt quá hạn mức trần năng lực tài chính / cấp công trình của công ty.</p>
+          <h3 data-i18n="f3_title">So Khớp Biên Độ Sàn &amp; Trần</h3>
+          <p data-i18n="f3_desc">Loại bỏ các gói thầu quá nhỏ dưới mức sàn chi phí hoặc vượt quá hạn mức trần năng lực tài chính / cấp công trình của công ty.</p>
         </div>
         <div class="benefit-card">
-          <h3>Rà Soát Ngay Gói Thầu Đang Mở</h3>
-          <p>Ngay khi thêm công ty mới hoặc cập nhật năng lực, hệ thống tự động quét lại toàn bộ các gói thầu đang còn hạn nộp hồ sơ để trả kết quả tức thì.</p>
+          <h3 data-i18n="f4_title">Rà Soát Ngay Gói Thầu Đang Mở</h3>
+          <p data-i18n="f4_desc">Ngay khi thêm công ty mới hoặc cập nhật năng lực, hệ thống tự động quét lại toàn bộ các gói thầu đang còn hạn nộp hồ sơ để trả kết quả tức thì.</p>
         </div>
         <div class="benefit-card">
-          <h3>Bóc Tách Thông Số Kỹ Thuật Chương V</h3>
-          <p>AI tự động tóm tắt yêu cầu thiết bị, vật tư chính, cấp công trình (Cấp I–IV) và điều kiện năng lực kinh nghiệm trọng tâm trong hồ sơ mời thầu.</p>
+          <h3 data-i18n="f5_title">Bóc Tách Thông Số Kỹ Thuật Chương V</h3>
+          <p data-i18n="f5_desc">AI tự động tóm tắt yêu cầu thiết bị, vật tư chính, cấp công trình (Cấp I–IV) và điều kiện năng lực kinh nghiệm trọng tâm trong hồ sơ mời thầu.</p>
         </div>
         <div class="benefit-card">
-          <h3>Kiểm Soát Trạng Thái Đọc Tin</h3>
-          <p>Theo dõi thời gian thực từng thông báo gửi qua App/SMS/Email: ai đã nhận, ai đã mở xem, ai đã bấm vào link gốc để tránh bỏ sót gói thầu.</p>
+          <h3 data-i18n="f6_title">Kiểm Soát Trạng Thái Đọc Tin</h3>
+          <p data-i18n="f6_desc">Theo dõi thời gian thực từng thông báo gửi qua App/SMS/Email: ai đã nhận, ai đã mở xem, ai đã bấm vào link gốc để tránh bỏ sót gói thầu.</p>
         </div>
       </div>
     </div>
@@ -1554,41 +1554,41 @@
         <div>
           <div class="pill-tag" style="background: rgba(56, 189, 248, 0.16); color: #BAE6FD; border-color: rgba(125, 211, 252, 0.3);">
             <span class="pill-dot" style="background: #38BDF8;"></span>
-            <span>HUDU DauThau · Kích Hoạt Nhanh Trong 15 Phút</span>
+            <span data-i18n="cta_tag">HUDU DauThau · Kích Hoạt Nhanh Trong 15 Phút</span>
           </div>
-          <h2>Sẵn Sàng Tự Động Hóa Quy Trình Săn Thầu Cho Doanh Nghiệp?</h2>
-          <p>
+          <h2 data-i18n="cta_title">Sẵn Sàng Tự Động Hóa Quy Trình Săn Thầu Cho Doanh Nghiệp?</h2>
+          <p data-i18n="cta_desc">
             Đăng ký ngay để được đội ngũ HUDU cấu hình danh mục ngành nghề, thiết lập ngưỡng năng lực Sàn/Trần và nhận danh sách gói thầu đang mở ngay hôm nay.
           </p>
           <div style="display: flex; flex-wrap: wrap; gap: 22px; font-size: 0.9rem; color: #E2E8F0;">
-            <span>&#10003; Miễn phí 100% khởi tạo Hồ sơ năng lực</span>
-            <span>&#10003; Tự động rà soát gói thầu đang mở</span>
-            <span>&#10003; Bảo toàn link thầu gốc chính thống</span>
+            <span data-i18n="cta_b1">&#10003; Miễn phí 100% khởi tạo Hồ sơ năng lực</span>
+            <span data-i18n="cta_b2">&#10003; Tự động rà soát gói thầu đang mở</span>
+            <span data-i18n="cta_b3">&#10003; Bảo toàn link thầu gốc chính thống</span>
           </div>
         </div>
 
         <form class="contact-form" onsubmit="submitConsultation(event)">
-          <h3>Đăng Ký Gói Dịch Vụ HUDU DauThau</h3>
+          <h3 data-i18n="form_title">Đăng Ký Gói Dịch Vụ HUDU DauThau</h3>
           <div class="form-group">
-            <label>Họ tên &amp; Tên Doanh nghiệp / Nhà thầu</label>
-            <input type="text" required placeholder="VD: Nguyễn Văn A — Công ty CP Xây Dựng & Thiết Bị..." />
+            <label data-i18n="form_name_lbl">Họ tên &amp; Tên Doanh nghiệp / Nhà thầu</label>
+            <input type="text" required data-i18n-placeholder="form_name_ph" placeholder="VD: Nguyễn Văn A — Công ty CP Xây Dựng & Thiết Bị..." />
           </div>
           <div class="form-group">
-            <label>Số điện thoại / Email nhận thông báo thầu</label>
-            <input type="text" required placeholder="090x xxx xxx / dauthau@company.vn" />
+            <label data-i18n="form_phone_lbl">Số điện thoại / Email nhận thông báo thầu</label>
+            <input type="text" required data-i18n-placeholder="form_phone_ph" placeholder="090x xxx xxx / dauthau@company.vn" />
           </div>
           <div class="form-group">
-            <label>Gói dịch vụ lựa chọn</label>
+            <label data-i18n="form_plan_lbl">Gói dịch vụ lựa chọn</label>
             <select id="formProdSelect">
-              <option value="DAUTHAU_PRO">DauThau Gói Pro Contractor (2.490k/tháng — Công + Tư + ODA · 15 User)</option>
-              <option value="DAUTHAU_STARTER">DauThau Gói Starter (999k/tháng — Mua sắm công · 03 User)</option>
-              <option value="DAUTHAU_ENTERPRISE">DauThau Gói Enterprise (Tổng công ty &amp; Tích hợp riêng)</option>
+              <option value="DAUTHAU_PRO" data-i18n="form_opt_pro">DauThau Gói Pro Contractor (2.490k/tháng — Công + Tư + ODA · 15 User)</option>
+              <option value="DAUTHAU_STARTER" data-i18n="form_opt_starter">DauThau Gói Starter (999k/tháng — Mua sắm công · 03 User)</option>
+              <option value="DAUTHAU_ENTERPRISE" data-i18n="form_opt_ent">DauThau Gói Enterprise (Tổng công ty &amp; Tích hợp riêng)</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 4px;">
+          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 4px;" data-i18n="form_submit">
             Gửi Yêu Cầu Kích Hoạt Tài Khoản
           </button>
-          <div id="formToast" class="form-toast">
+          <div id="formToast" class="form-toast" data-i18n="form_toast">
             &#10003; Đã ghi nhận yêu cầu! Đội ngũ HUDU sẽ liên hệ cấu hình Hồ sơ năng lực ngay.
           </div>
         </form>
@@ -1626,33 +1626,33 @@
               <path d="M 211 27.8 A 3.8 3.8 0 0 1 218.6 27.8 V 45 A 7.4 7.4 0 0 0 233.4 45 V 27.8 A 3.8 3.8 0 0 1 241 27.8 V 45 A 15 15 0 0 1 211 45 Z" />
             </g>
           </svg>
-          <p style="font-size: 0.86rem; max-width: 340px;">
+          <p style="font-size: 0.86rem; max-width: 340px;" data-i18n="footer_desc">
             HUDU (huduvn.com) — Công ty phát triển phần mềm phân tích dữ liệu đấu thầu thông minh và hệ thống tự động hóa tiếp nhận, quản trị phòng khám.
           </p>
         </div>
 
         <div class="footer-col">
-          <h4>Sản phẩm</h4>
+          <h4 data-i18n="footer_col1">Sản phẩm</h4>
           <ul>
-            <li><a href="../">Trang chủ HUDU</a></li>
-            <li><a href="#pricing">Bảng Giá Đấu Thầu AI</a></li>
+            <li><a href="../" data-i18n="f_link_home">Trang chủ HUDU</a></li>
+            <li><a href="#pricing" data-i18n="f_link_dt_price">Bảng Giá Đấu Thầu AI</a></li>
             <li><a href="../cfms/">HUDU CFMS / QMS (/cfms)</a></li>
-            <li><a href="../cfms/#pricing">Bảng Giá Phòng Khám</a></li>
+            <li><a href="../cfms/#pricing" data-i18n="f_link_cfms_price">Bảng Giá Phòng Khám</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Tính năng DauThau</h4>
+          <h4 data-i18n="footer_col2">Tính năng DauThau</h4>
           <ul>
-            <li><a href="#pipeline">Chống trùng &amp; Gộp sửa đổi</a></li>
-            <li><a href="#pipeline">AI Bóc tách Chương V</a></li>
-            <li><a href="#features">So khớp Sàn / Trần</a></li>
-            <li><a href="#features">Theo dõi trạng thái đọc tin</a></li>
+            <li><a href="#pipeline" data-i18n="f_feat_1">Chống trùng &amp; Gộp sửa đổi</a></li>
+            <li><a href="#pipeline" data-i18n="f_feat_2">AI Bóc tách Chương V</a></li>
+            <li><a href="#features" data-i18n="f_feat_3">So khớp Sàn / Trần</a></li>
+            <li><a href="#features" data-i18n="f_feat_4">Theo dõi trạng thái đọc tin</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Liên hệ</h4>
+          <h4 data-i18n="footer_col3">Liên hệ</h4>
           <ul>
             <li>Website: <a href="https://huduvn.com">huduvn.com</a></li>
             <li>Email: <a href="mailto:tnhung1896@gmail.com">tnhung1896@gmail.com</a></li>
@@ -1663,7 +1663,7 @@
 
       <div class="footer-bottom">
         <span>&copy; 2026 HUDU Technology (huduvn.com). All rights reserved.</span>
-        <span>Enterprise AI &amp; High-Performance Systems</span>
+        <span>Enterprise AI &amp; Procurement Intelligence</span>
       </div>
     </div>
   </footer>
@@ -1756,13 +1756,777 @@
       requestAnimationFrame(draw);
     })();
 
-    function toggleTheme() {
+    const I18N = {
+      vi: {
+        nav_home: "Trang chủ",
+        nav_pricing: "Bảng giá",
+        nav_pipeline: "Quy trình 3 Bước",
+        nav_features: "Tính năng",
+        nav_cfms: "Quản trị CFMS",
+        nav_cta: "Đăng ký Dùng thử",
+        hero_badge: "SẢN PHẨM 01 · HUDU DAUTHAU · huduvn.com/dauthau",
+        hero_title: 'Hệ Thống <span class="highlight">Săn &amp; Lọc Đấu Thầu</span> Công - Tư - ODA Bằng AI',
+        hero_desc: "Thu thập tự động từ Mạng Đấu Thầu Quốc Gia (muasamcong), Tập đoàn Nhà nước (EVN, PVN, ACV), Ngân hàng &amp; Vốn ODA; tự động gộp thông báo sửa đổi, bóc tách Chương V và <strong>so khớp biên độ năng lực Sàn/Trần (Floor/Ceiling)</strong>.",
+        hero_btn_pricing: "Xem Bảng Giá Gói Doanh Nghiệp ↓",
+        hero_btn_pipeline: "Khám Phá Quy Trình 3 Bước",
+        m1_val: "Chống trùng 100%",
+        m1_lbl: "Tự động gộp các thông báo sửa đổi & loại bỏ tin trùng",
+        m2_val: "Sàn / Trần",
+        m2_lbl: "So khớp chính xác biên độ tài chính & cấp công trình",
+        m3_val: "Tức thì",
+        m3_lbl: "Đẩy tin qua Mobile App, Zalo, SMS & theo dõi trạng thái đọc",
+        sc_header: "HUDU DauThau · Hệ Thống Săn Thầu Thông Minh",
+        sc_pkg_title: "IB2600881920-01 · Cầu Sông Nhạn (Đồng Nai)",
+        sc_pkg_pill: "Khớp 99%",
+        sc_pkg_line1: "<strong>Lĩnh vực:</strong> Hạ tầng Cầu đường · Công trình Cấp II (3x30m)",
+        sc_pkg_line2: "<strong>Biên độ khớp:</strong> Sàn 10 tỷ ≤ <strong>35,5 tỷ</strong> ≤ Trần 80 tỷ",
+        sc_pkg_rev: "✓ Đã gộp bản sửa đổi (-00 → -01)",
+        sc_pkg_push: "✓ Đã báo qua App & Zalo",
+        sc_price_head: "Bảng giá linh hoạt theo quy mô nhà thầu",
+        sc_price_badge: "Quét Tự Động",
+        sc_s_title: "GÓI STARTER (03 User)",
+        sc_p_title: "PRO CONTRACTOR (15 User)",
+        sc_per_mo: "/tháng",
+        sc_s_sub: "Miễn phí khởi tạo 0đ",
+        sc_p_sub: "Bóc tách Chương V + ODA",
+        price_tag: "Bảng Giá Hệ Thống Săn Thầu AI (HUDU DauThau)",
+        price_title: "Đầu Tư Tối Ưu Cho Phòng Đấu Thầu & Ban Kế Hoạch Kỹ Thuật",
+        price_desc: "Miễn phí 100% chi phí khởi tạo hồ sơ năng lực ban đầu, tự động <strong>rà soát toàn bộ các gói thầu đang mở</strong> ngay khi kích hoạt tài khoản.",
+        plan_per_month: "/ tháng (Subscribe)",
+        plan1_tier: "GÓI KHỞI ĐẦU · STARTER",
+        plan1_name: "Nhà Thầu Chuyên Ngành",
+        plan1_sub: "Phù hợp cho doanh nghiệp vừa và nhỏ tập trung săn thầu Mua sắm công (muasamcong) theo tỉnh thành & ngành nghề cố định.",
+        plan1_setup_lbl: "Phí khởi tạo Hồ sơ năng lực:",
+        plan1_setup_val: "MIỄN PHÍ 0đ",
+        plan1_quota: "01 Hồ sơ Năng lực Công ty · Tối đa 03 Tài khoản nhận tin",
+        plan1_f1: "<strong>Thu thập Mạng Đấu Thầu Quốc Gia (muasamcong):</strong> Tự động gộp các bản thông báo sửa đổi và luôn đính kèm link gói thầu gốc.",
+        plan1_f2: "<strong>So khớp biên độ Sàn / Trần (Floor &amp; Ceiling):</strong> Lọc chính xác theo Giá gói thầu, Tổng mức đầu tư và Tỉnh/Thành phố.",
+        plan1_f3: "<strong>Phân loại chuyên sâu theo ngành nghề:</strong> Theo dõi tự động tối đa <strong>03 lĩnh vực chuyên ngành</strong> đăng ký của doanh nghiệp.",
+        plan1_f4: "<strong>Thông báo qua Email &amp; Ứng dụng Di động:</strong> Nhận thông báo tức thì ngay khi có gói thầu mới phù hợp năng lực.",
+        plan1_f5: "<strong>Rà soát gói thầu đang mở ngay khi kích hoạt:</strong> Tự động lọc toàn bộ các gói thầu còn hạn nộp hồ sơ để làm việc ngay.",
+        plan1_cta: "Đăng Ký Gói Starter →",
+        plan2_ribbon: "PHỔ BIẾN NHẤT · BÓC TÁCH CHƯƠNG V & ĐA NGUỒN THẦU",
+        plan2_tier: "GÓI CHUYÊN NGHIỆP · PRO CONTRACTOR",
+        plan2_name: "Nhà Thầu Tổng Hợp & Tập Đoàn",
+        plan2_sub: "Tối ưu cho Phòng Đấu thầu chuyên nghiệp cần săn cả Thầu Công, Tập đoàn Nhà nước (EVN, PVN, ACV), Ngân hàng & Vốn ODA.",
+        plan2_setup_lbl: "Cấu hình & Khởi tạo:",
+        plan2_setup_val: "MIỄN PHÍ 0đ · Hỗ trợ 24/7",
+        plan2_quota: "03 Hồ sơ Năng lực (Liên danh/Công ty con) · 15 Tài khoản",
+        plan2_f1: "<strong>Toàn bộ nguồn thầu Công + Tư nhân + ODA:</strong> Mua sắm công, EVN, PVN, Viettel, VNPT, ACV, Khối Ngân hàng TMCP &amp; WB/ADB.",
+        plan2_f2: "<strong>AI Bóc tách Chương V &amp; Cấp công trình:</strong> Tự động đọc hồ sơ mời thầu để tóm tắt Cấp công trình (Cấp I–IV), quy mô kỹ thuật và yêu cầu thiết bị.",
+        plan2_f3: "<strong>Không giới hạn Lĩnh vực &amp; Ngành nghề:</strong> Theo dõi đa lĩnh vực Xây lắp, Giao thông, Thủy lợi, Thiết bị Y tế, CNTT &amp; Cung ứng vật tư.",
+        plan2_f4: "<strong>Đa kênh Thông báo (App + Zalo + SMS + Email):</strong> Đảm bảo Ban Giám đốc và Phòng Đấu thầu không bỏ lỡ bất kỳ gói thầu trọng điểm nào.",
+        plan2_f5: "<strong>Theo dõi Trạng thái Đọc tin của Nhân sự:</strong> Kiểm soát rõ nhân sự nào đã nhận tin, thời gian mở xem và lượt bấm vào link thầu gốc.",
+        plan2_cta: "Đăng Ký Gói Pro Contractor →",
+        plan3_tier: "GÓI TẬP ĐOÀN · ENTERPRISE",
+        plan3_name: "Tổng Công Ty & Triển Khai Riêng",
+        plan3_sub: "Dành cho Tổng công ty nhiều đơn vị thành viên cần tích hợp dữ liệu thầu vào phần mềm quản trị nội bộ (ERP/CRM).",
+        plan3_price: "Báo giá riêng",
+        plan3_period: "/ theo quy mô đơn vị",
+        plan3_setup_lbl: "Triển khai & Tích hợp:",
+        plan3_setup_val: "May đo theo yêu cầu",
+        plan3_quota: "Không giới hạn Hồ sơ Công ty thành viên & Tài khoản",
+        plan3_f1: "<strong>Bổ sung Nguồn thầu Tư nhân theo yêu cầu:</strong> Tích hợp thêm bất kỳ cổng mua sắm doanh nghiệp hoặc website chủ đầu tư mục tiêu nào trong 24h.",
+        plan3_f2: "<strong>Triển khai Máy chủ Riêng (On-Premise):</strong> Hỗ trợ cài đặt độc lập trên hạ tầng riêng của Tập đoàn, bảo mật tuyệt đối dữ liệu và chiến lược dự thầu.",
+        plan3_f3: "<strong>Kết nối tự động sang phần mềm Quản trị (ERP/CRM):</strong> Đồng bộ thông tin gói thầu trực tiếp sang hệ thống làm việc nội bộ của doanh nghiệp.",
+        plan3_f4: "<strong>Quản lý Tập trung Đa Công ty con:</strong> Phân quyền rõ ràng cho từng chi nhánh khu vực và phòng ban chuyên môn với cam kết hỗ trợ 24/7.",
+        plan3_cta: "Liên Hệ Tư Vấn Enterprise →",
+        pipe_tag: "Quy Trình Sàng Lọc 3 Bước Tự Động",
+        pipe_title: "Loại Bỏ 95% Nhiễu Thông Tin Trước Khi Đến Bàn Làm Việc",
+        pipe_desc: "Giúp đội ngũ kỹ sư đấu thầu tập trung hoàn toàn vào việc lập hồ sơ chất lượng cao thay vì mất hàng giờ tìm kiếm thủ công mỗi ngày.",
+        s1_title: "Bước 1: Thu Thập Đa Nguồn & Gộp Bản Sửa Đổi",
+        s1_desc: "Tự động quét liên tục các cổng đấu thầu Công, Tư nhân và ODA; gộp các thông báo điều chỉnh/gia hạn vào cùng một hồ sơ duy nhất để không bao giờ báo trùng lặp.",
+        s2_title: "Bước 2: Phân Loại Ngành Nghề & Bóc Tách Chương V",
+        s2_desc: "AI tự động phân loại đúng lĩnh vực chuyên môn sâu, trích xuất Giá gói thầu, Tổng mức đầu tư, Cấp công trình (Cấp I–IV) và các yêu cầu kỹ thuật trọng tâm trong Chương V.",
+        s3_title: "Bước 3: So Khớp Sàn/Trần & Báo Tin Đa Kênh",
+        s3_desc: "Đối chiếu chính xác với ngưỡng năng lực tối thiểu (Sàn) và tối đa (Trần) của từng nhà thầu; gửi thông báo tức thì qua App, Zalo, SMS, Email và ghi nhận trạng thái đã xem.",
+        feat_tag: "Tính Năng Chuyên Sâu",
+        feat_title: "Vũ Khí Cạnh Tranh Cho Đội Ngũ Săn Thầu Doanh Nghiệp",
+        feat_desc: "Mọi thông tin gói thầu luôn đi kèm liên kết gốc chính thống từ Chủ đầu tư và lịch sử theo dõi minh bạch.",
+        f1_title: "Đa Nguồn Thầu Công - Tư - ODA",
+        f1_desc: "Kết nối đồng thời Mạng Đấu Thầu Quốc Gia (muasamcong), cổng mua sắm Tập đoàn (EVN, PVN, ACV, Viettel), Ngân hàng TMCP và dự án WB/ADB.",
+        f2_title: "Phân Loại Sâu Theo Đúng Chuyên Môn",
+        f2_desc: "Tự động phân tách chi tiết từng nhóm ngành nghề hẹp (Cầu đường, Thủy lợi, Thiết bị Y tế, Phần mềm...) giúp lọc đúng sở trường của nhà thầu.",
+        f3_title: "So Khớp Biên Độ Sàn & Trần",
+        f3_desc: "Loại bỏ các gói thầu quá nhỏ dưới mức sàn chi phí hoặc vượt quá hạn mức trần năng lực tài chính / cấp công trình của công ty.",
+        f4_title: "Rà Soát Ngay Gói Thầu Đang Mở",
+        f4_desc: "Ngay khi thêm công ty mới hoặc cập nhật năng lực, hệ thống tự động quét lại toàn bộ các gói thầu đang còn hạn nộp hồ sơ để trả kết quả tức thì.",
+        f5_title: "Bóc Tách Thông Số Kỹ Thuật Chương V",
+        f5_desc: "AI tự động tóm tắt yêu cầu thiết bị, vật tư chính, cấp công trình (Cấp I–IV) và điều kiện năng lực kinh nghiệm trọng tâm trong hồ sơ mời thầu.",
+        f6_title: "Kiểm Soát Trạng Thái Đọc Tin",
+        f6_desc: "Theo dõi thời gian thực từng thông báo gửi qua App/SMS/Email: ai đã nhận, ai đã mở xem, ai đã bấm vào link gốc để tránh bỏ sót gói thầu.",
+        cta_tag: "HUDU DauThau · Kích Hoạt Nhanh Trong 15 Phút",
+        cta_title: "Sẵn Sàng Tự Động Hóa Quy Trình Săn Thầu Cho Doanh Nghiệp?",
+        cta_desc: "Đăng ký ngay để được đội ngũ HUDU cấu hình danh mục ngành nghề, thiết lập ngưỡng năng lực Sàn/Trần và nhận danh sách gói thầu đang mở ngay hôm nay.",
+        cta_b1: "✓ Miễn phí 100% khởi tạo Hồ sơ năng lực",
+        cta_b2: "✓ Tự động rà soát gói thầu đang mở",
+        cta_b3: "✓ Bảo toàn link thầu gốc chính thống",
+        form_title: "Đăng Ký Gói Dịch Vụ HUDU DauThau",
+        form_name_lbl: "Họ tên & Tên Doanh nghiệp / Nhà thầu",
+        form_name_ph: "VD: Nguyễn Văn A — Công ty CP Xây Dựng & Thiết Bị...",
+        form_phone_lbl: "Số điện thoại / Email nhận thông báo thầu",
+        form_phone_ph: "090x xxx xxx / dauthau@company.vn",
+        form_plan_lbl: "Gói dịch vụ lựa chọn",
+        form_opt_pro: "DauThau Gói Pro Contractor (2.490k/tháng — Công + Tư + ODA · 15 User)",
+        form_opt_starter: "DauThau Gói Starter (999k/tháng — Mua sắm công · 03 User)",
+        form_opt_ent: "DauThau Gói Enterprise (Tổng công ty & Tích hợp riêng)",
+        form_submit: "Gửi Yêu Cầu Kích Hoạt Tài Khoản",
+        form_toast: "✓ Đã ghi nhận yêu cầu! Đội ngũ HUDU sẽ liên hệ cấu hình Hồ sơ năng lực ngay.",
+        footer_desc: "HUDU (huduvn.com) — Công ty phát triển phần mềm phân tích dữ liệu đấu thầu thông minh và hệ thống tự động hóa tiếp nhận, quản trị phòng khám.",
+        footer_col1: "Sản phẩm",
+        footer_col2: "Tính năng DauThau",
+        footer_col3: "Liên hệ",
+        f_link_home: "Trang chủ HUDU",
+        f_link_dt_price: "Bảng Giá Đấu Thầu AI",
+        f_link_cfms_price: "Bảng Giá Phòng Khám",
+        f_feat_1: "Chống trùng & Gộp sửa đổi",
+        f_feat_2: "AI Bóc tách Chương V",
+        f_feat_3: "So khớp Sàn / Trần",
+        f_feat_4: "Theo dõi trạng thái đọc tin"
+      },
+      en: {
+        nav_home: "Home",
+        nav_pricing: "Pricing",
+        nav_pipeline: "3-Step Process",
+        nav_features: "Features",
+        nav_cfms: "CFMS Clinic",
+        nav_cta: "Request Demo",
+        hero_badge: "PRODUCT 01 · HUDU DAUTHAU · huduvn.com/dauthau",
+        hero_title: 'AI-Powered <span class="highlight">Public, Private &amp; ODA</span> Tender Matching System',
+        hero_desc: "Automated collection from the National e-Procurement Portal (muasamcong), State Corporations (EVN, PVN, ACV), Commercial Banks &amp; ODA; merges tender revisions, extracts Chapter V specs, and <strong>matches Floor/Ceiling capability bounds</strong>.",
+        hero_btn_pricing: "View Enterprise Pricing ↓",
+        hero_btn_pipeline: "Explore 3-Step Process",
+        m1_val: "100% Dedup",
+        m1_lbl: "Automatically merges tender revisions & eliminates duplicates",
+        m2_val: "Floor / Ceiling",
+        m2_lbl: "Matches exact financial capacity & construction grade bounds",
+        m3_val: "Real-Time",
+        m3_lbl: "Instant alerts via Mobile App, Zalo, SMS & read tracking",
+        sc_header: "HUDU DauThau · Smart Tender Intelligence",
+        sc_pkg_title: "IB2600881920-01 · Song Nhan Bridge (Dong Nai)",
+        sc_pkg_pill: "99% Match",
+        sc_pkg_line1: "<strong>Sector:</strong> Bridge & Road Infrastructure · Grade II (3x30m)",
+        sc_pkg_line2: "<strong>Matched Range:</strong> Floor 10B ≤ <strong>35.5B VND</strong> ≤ Ceiling 80B",
+        sc_pkg_rev: "✓ Merged revision notice (-00 → -01)",
+        sc_pkg_push: "✓ Alerted via App & Zalo",
+        sc_price_head: "Flexible plans for every contractor scale",
+        sc_price_badge: "24/7 Auto Scan",
+        sc_s_title: "STARTER PLAN (03 Users)",
+        sc_p_title: "PRO CONTRACTOR (15 Users)",
+        sc_per_mo: "/mo",
+        sc_s_sub: "Free 0đ profile setup",
+        sc_p_sub: "Chapter V Specs + ODA",
+        price_tag: "AI Tender Matching Pricing (HUDU DauThau)",
+        price_title: "Smart Investment for Bidding & Technical Planning Teams",
+        price_desc: "100% Free initial capability profile setup, with instant <strong>automated scanning of all currently open tenders</strong> upon account activation.",
+        plan_per_month: "/ month (Subscription)",
+        plan1_tier: "STARTER PLAN · STANDARD",
+        plan1_name: "Specialty Contractor",
+        plan1_sub: "Ideal for SMEs focusing on National Public Procurement (muasamcong) within target provinces & core sectors.",
+        plan1_setup_lbl: "Capability profile setup fee:",
+        plan1_setup_val: "FREE 0đ",
+        plan1_quota: "01 Company Capability Profile · Up to 03 User Accounts",
+        plan1_f1: "<strong>National e-Procurement Coverage (muasamcong):</strong> Automatically merges revision notices and preserves official source links.",
+        plan1_f2: "<strong>Floor &amp; Ceiling Capability Matching:</strong> Filters accurately by Package Budget, Total Investment, and Province/City.",
+        plan1_f3: "<strong>Deep Industry Classification:</strong> Tracks up to <strong>03 registered specialty sectors</strong> for your business.",
+        plan1_f4: "<strong>Email &amp; Mobile App Notifications:</strong> Receive instant alerts whenever a matching tender is published.",
+        plan1_f5: "<strong>Instant Open-Tender Scan on Activation:</strong> Automatically scans all active tenders still open for bidding.",
+        plan1_cta: "Subscribe to Starter →",
+        plan2_ribbon: "MOST POPULAR · CHAPTER V SPECS & MULTI-SOURCE",
+        plan2_tier: "PROFESSIONAL · PRO CONTRACTOR",
+        plan2_name: "General Contractor & Corporation",
+        plan2_sub: "Built for professional bidding teams targeting Public Tenders, State Corporations (EVN, PVN, ACV), Banks & ODA.",
+        plan2_setup_lbl: "Configuration & Onboarding:",
+        plan2_setup_val: "FREE 0đ · 24/7 Support",
+        plan2_quota: "03 Capability Profiles (JV / Subsidiaries) · 15 User Accounts",
+        plan2_f1: "<strong>Full Public + Private + ODA Coverage:</strong> National portal, EVN, PVN, Viettel, VNPT, ACV, Commercial Banks &amp; WB/ADB.",
+        plan2_f2: "<strong>AI Chapter V &amp; Construction Grade Extraction:</strong> Summarizes Construction Grades (I–IV), technical scale, and key equipment requirements.",
+        plan2_f3: "<strong>Unlimited Industry Sectors:</strong> Monitor Civil, Transport, Hydro, Medical Equipment, IT &amp; Industrial Supply.",
+        plan2_f4: "<strong>Multi-Channel Alerts (App + Zalo + SMS + Email):</strong> Ensures executives and bidding engineers never miss a high-value tender.",
+        plan2_f5: "<strong>Staff Read-Receipt Tracking:</strong> Track which team member received, opened, and clicked the official tender link.",
+        plan2_cta: "Subscribe to Pro Contractor →",
+        plan3_tier: "ENTERPRISE · HOLDINGS & CUSTOM",
+        plan3_name: "Holding Group & Dedicated Server",
+        plan3_sub: "For multi-subsidiary corporations requiring custom private tender sources and internal ERP/CRM data synchronization.",
+        plan3_price: "Custom Quote",
+        plan3_period: "/ tailored to group scale",
+        plan3_setup_lbl: "Deployment & Integration:",
+        plan3_setup_val: "Tailored Turnkey Setup",
+        plan3_quota: "Unlimited Subsidiary Profiles & User Accounts",
+        plan3_f1: "<strong>Custom Private Tender Sources on Demand:</strong> Add any target corporate procurement portal or investor website within 24 hours.",
+        plan3_f2: "<strong>Dedicated On-Premise Server Deployment:</strong> Optional standalone installation on your corporate infrastructure for maximum strategic privacy.",
+        plan3_f3: "<strong>Automated ERP / CRM Integration:</strong> Synchronize matched tender packages directly into your internal enterprise workflow.",
+        plan3_f4: "<strong>Centralized Multi-Subsidiary Management:</strong> Role-based access across regional branches and divisions with 24/7 SLA support.",
+        plan3_cta: "Contact for Enterprise Quote →",
+        pipe_tag: "Automated 3-Step Filtering Process",
+        pipe_title: "Eliminate 95% of Information Noise Before It Reaches Your Desk",
+        pipe_desc: "Empower your bidding engineers to focus on winning proposals instead of spending hours searching portals manually every day.",
+        s1_title: "Step 1: Multi-Source Collection & Revision Merging",
+        s1_desc: "Continuously scans Public, Private, and ODA tender portals; merges addenda and deadline extensions into a single record to prevent duplicate alerts.",
+        s2_title: "Step 2: Sector Classification & Chapter V Extraction",
+        s2_desc: "AI categorizes tenders into precise sub-sectors and extracts Package Budget, Total Investment, Construction Grade (I–IV), and Chapter V technical specs.",
+        s3_title: "Step 3: Floor/Ceiling Matching & Multi-Channel Alerts",
+        s3_desc: "Matches against each contractor's minimum (Floor) and maximum (Ceiling) capacity; delivers instant alerts via App, Zalo, SMS, Email with read tracking.",
+        feat_tag: "Core Capabilities",
+        feat_title: "Competitive Advantage for Enterprise Bidding Teams",
+        feat_desc: "Every matched tender includes the official source URL from the investor and transparent team read-tracking history.",
+        f1_title: "Public - Private - ODA Multi-Source",
+        f1_desc: "Connects simultaneously to National e-Procurement (muasamcong), SOE portals (EVN, PVN, ACV, Viettel), Commercial Banks, and WB/ADB projects.",
+        f2_title: "Deep Specialty Categorization",
+        f2_desc: "Separates narrow sub-sectors (Bridges & Roads, Hydro, Medical Devices, Enterprise Software...) to match your exact core strengths.",
+        f3_title: "Floor & Ceiling Capacity Matching",
+        f3_desc: "Filters out tenders below your minimum floor threshold or exceeding your maximum financial / construction grade ceiling.",
+        f4_title: "Instant Scan of Open Tenders",
+        f4_desc: "As soon as you onboard or update your capability profile, the system scans all currently open tenders for immediate actionable results.",
+        f5_title: "Chapter V Technical Spec Extraction",
+        f5_desc: "AI summarizes key equipment requirements, materials, construction grades (I–IV), and experience criteria from bidding documents.",
+        f6_title: "Team Read-Receipt Tracking",
+        f6_desc: "Real-time tracking of every alert sent via App/SMS/Email: see who received, opened, and clicked the original tender link.",
+        cta_tag: "HUDU DauThau · Fast 15-Minute Activation",
+        cta_title: "Ready to Automate Tender Discovery for Your Business?",
+        cta_desc: "Register now and let HUDU configure your industry sectors, set up your Floor/Ceiling capacity bounds, and deliver your open tender list today.",
+        cta_b1: "✓ 100% Free Capability Profile Setup",
+        cta_b2: "✓ Instant Scan of Open Tenders",
+        cta_b3: "✓ Official Investor Source Links Preserved",
+        form_title: "Subscribe to HUDU DauThau",
+        form_name_lbl: "Full Name & Company / Contractor Name",
+        form_name_ph: "e.g., Nguyen Van A — ABC Construction & Equipment JSC...",
+        form_phone_lbl: "Phone Number / Email for Tender Alerts",
+        form_phone_ph: "090x xxx xxx / bidding@company.vn",
+        form_plan_lbl: "Select Subscription Plan",
+        form_opt_pro: "DauThau Pro Contractor (2,490k/mo — Public + Private + ODA · 15 Users)",
+        form_opt_starter: "DauThau Starter Plan (999k/mo — Public Procurement · 03 Users)",
+        form_opt_ent: "DauThau Enterprise Plan (Holding Group & Custom Integration)",
+        form_submit: "Request Account Activation",
+        form_toast: "✓ Request received! Our HUDU team will contact you to configure your profile.",
+        footer_desc: "HUDU (huduvn.com) — Enterprise software company specializing in AI tender intelligence and automated clinic reception & queue management.",
+        footer_col1: "Products",
+        footer_col2: "DauThau Features",
+        footer_col3: "Contact",
+        f_link_home: "HUDU Home",
+        f_link_dt_price: "Tender AI Pricing",
+        f_link_cfms_price: "Clinic Pricing (CFMS)",
+        f_feat_1: "Deduplication & Revision Merge",
+        f_feat_2: "AI Chapter V Extraction",
+        f_feat_3: "Floor / Ceiling Matching",
+        f_feat_4: "Staff Read-Receipt Tracking"
+      },
+      es: {
+        nav_home: "Inicio",
+        nav_pricing: "Precios",
+        nav_pipeline: "Proceso 3 Pasos",
+        nav_features: "Funciones",
+        nav_cfms: "Gestión CFMS",
+        nav_cta: "Solicitar Demo",
+        hero_badge: "PRODUCTO 01 · HUDU DAUTHAU · huduvn.com/dauthau",
+        hero_title: 'Sistema de <span class="highlight">Búsqueda y Filtrado de Licitaciones</span> Públicas, Privadas y ODA con IA',
+        hero_desc: "Recolección automática del Portal Nacional de Contratación (muasamcong), Empresas Estatales (EVN, PVN, ACV), Bancos y ODA; unifica enmiendas, extrae el Capítulo V y <strong>ajusta rangos de capacidad Suelo/Techo (Floor/Ceiling)</strong>.",
+        hero_btn_pricing: "Ver Precios Empresariales ↓",
+        hero_btn_pipeline: "Proceso de 3 Pasos",
+        m1_val: "0% Duplicados",
+        m1_lbl: "Unifica avisos de modificación y elimina licitaciones repetidas",
+        m2_val: "Suelo / Techo",
+        m2_lbl: "Ajuste exacto por capacidad financiera y grado de obra",
+        m3_val: "Al instante",
+        m3_lbl: "Alertas por App Móvil, Zalo, SMS y control de lectura",
+        sc_header: "HUDU DauThau · Inteligencia de Licitaciones",
+        sc_pkg_title: "IB2600881920-01 · Puente Song Nhan (Dong Nai)",
+        sc_pkg_pill: "Ajuste 99%",
+        sc_pkg_line1: "<strong>Sector:</strong> Infraestructura Vial y Puentes · Grado II (3x30m)",
+        sc_pkg_line2: "<strong>Rango:</strong> Suelo 10B ≤ <strong>35,5B VND</strong> ≤ Techo 80B",
+        sc_pkg_rev: "✓ Enmienda unificada (-00 → -01)",
+        sc_pkg_push: "✓ Notificado por App y Zalo",
+        sc_price_head: "Planes flexibles según escala del contratista",
+        sc_price_badge: "Escaneo Automático",
+        sc_s_title: "PLAN STARTER (03 Usuarios)",
+        sc_p_title: "PRO CONTRACTOR (15 Usuarios)",
+        sc_per_mo: "/mes",
+        sc_s_sub: "Configuración gratis 0đ",
+        sc_p_sub: "Análisis Capítulo V + ODA",
+        price_tag: "Precios del Sistema de Licitaciones IA (HUDU DauThau)",
+        price_title: "Inversión Óptima para Departamentos de Licitaciones",
+        price_desc: "Configuración inicial del perfil de capacidad 100% gratuita, con <strong>escaneo inmediato de todas las licitaciones abiertas</strong> al activar la cuenta.",
+        plan_per_month: "/ mes (Suscripción)",
+        plan1_tier: "PLAN INICIAL · STARTER",
+        plan1_name: "Contratista Especializado",
+        plan1_sub: "Ideal para PYMES enfocadas en Contratación Pública (muasamcong) por provincias y sectores específicos.",
+        plan1_setup_lbl: "Configuración de perfil de capacidad:",
+        plan1_setup_val: "GRATIS 0đ",
+        plan1_quota: "01 Perfil de Capacidad · Hasta 03 Cuentas de Usuario",
+        plan1_f1: "<strong>Portal Nacional de Contratación (muasamcong):</strong> Unifica avisos de corrección e incluye siempre el enlace oficial original.",
+        plan1_f2: "<strong>Ajuste por Rango Suelo / Techo (Floor &amp; Ceiling):</strong> Filtra con precisión por Presupuesto, Inversión Total y Provincia.",
+        plan1_f3: "<strong>Clasificación profunda por especialidad:</strong> Seguimiento automático de hasta <strong>03 sectores especializados</strong> de su empresa.",
+        plan1_f4: "<strong>Alertas por Correo y Aplicación Móvil:</strong> Notificación instantánea en cuanto se publica una licitación compatible.",
+        plan1_f5: "<strong>Revisión inmediata de licitaciones vigentes:</strong> Filtra automáticamente todas las licitaciones en plazo de presentación.",
+        plan1_cta: "Suscribir Plan Starter →",
+        plan2_ribbon: "MÁS POPULAR · CAPÍTULO V Y MULTIFUENTE",
+        plan2_tier: "PROFESIONAL · PRO CONTRACTOR",
+        plan2_name: "Contratista General y Corporación",
+        plan2_sub: "Óptimo para equipos profesionales que buscan licitaciones Públicas, Estatales (EVN, PVN, ACV), Banca y fondos ODA.",
+        plan2_setup_lbl: "Configuración y Puesta en Marcha:",
+        plan2_setup_val: "GRATIS 0đ · Soporte 24/7",
+        plan2_quota: "03 Perfiles de Capacidad (Consorcio/Filiales) · 15 Usuarios",
+        plan2_f1: "<strong>Todas las fuentes Públicas + Privadas + ODA:</strong> Contratación pública, EVN, PVN, Viettel, VNPT, ACV, Bancos y BM/BAD.",
+        plan2_f2: "<strong>IA para Capítulo V y Grado de Obra:</strong> Resume automáticamente Grado de obra (I–IV), escala técnica y requisitos de equipos.",
+        plan2_f3: "<strong>Sectores y Especialidades Ilimitados:</strong> Construcción, Transporte, Hidráulica, Equipos Médicos, TI y Suministros.",
+        plan2_f4: "<strong>Alertas Multicanal (App + Zalo + SMS + Email):</strong> Garantiza que la dirección y el equipo técnico no pierdan ninguna oportunidad.",
+        plan2_f5: "<strong>Control de Estado de Lectura del Personal:</strong> Verifique quién recibió la alerta, hora de apertura y clics en el enlace original.",
+        plan2_cta: "Suscribir Pro Contractor →",
+        plan3_tier: "CORPORATIVO · ENTERPRISE",
+        plan3_name: "Grupo Empresarial y Servidor Propio",
+        plan3_sub: "Para corporaciones con múltiples filiales que requieren integrar datos de licitaciones en su software interno (ERP/CRM).",
+        plan3_price: "A Medida",
+        plan3_period: "/ según escala corporativa",
+        plan3_setup_lbl: "Despliegue e Integración:",
+        plan3_setup_val: "A Medida del Cliente",
+        plan3_quota: "Perfiles de Filiales y Cuentas Ilimitados",
+        plan3_f1: "<strong>Nuevas Fuentes Privadas Bajo Demanda:</strong> Integración de cualquier portal de compras corporativo en 24 horas.",
+        plan3_f2: "<strong>Servidor Dedicado (On-Premise):</strong> Instalación independiente en la infraestructura del grupo para máxima confidencialidad.",
+        plan3_f3: "<strong>Conexión Automática con ERP / CRM:</strong> Sincronización directa de licitaciones con el sistema interno de la empresa.",
+        plan3_f4: "<strong>Gestión Centralizada Multifilial:</strong> Permisos detallados por sucursal regional y soporte prioritario 24/7.",
+        plan3_cta: "Contactar Consultoría Enterprise →",
+        pipe_tag: "Proceso Automático de Filtrado en 3 Pasos",
+        pipe_title: "Elimine el 95% del Ruido Informativo Antes de Llegar a su Escritorio",
+        pipe_desc: "Permita que sus ingenieros de licitaciones se concentren en preparar ofertas ganadoras en lugar de buscar manualmente cada día.",
+        s1_title: "Paso 1: Recolección Multifuente y Fusión de Enmiendas",
+        s1_desc: "Escanea portales Públicos, Privados y ODA continuamente; fusiona avisos de prórroga o modificación en un único expediente sin duplicados.",
+        s2_title: "Paso 2: Clasificación Sectorial y Análisis del Capítulo V",
+        s2_desc: "La IA clasifica la especialidad exacta y extrae Presupuesto, Inversión Total, Grado de Obra (I–IV) y requisitos técnicos del Capítulo V.",
+        s3_title: "Paso 3: Ajuste Suelo/Techo y Notificación Multicanal",
+        s3_desc: "Compara con la capacidad mínima (Suelo) y máxima (Techo) de cada contratista; envía alertas al instante por App, Zalo, SMS y Email.",
+        feat_tag: "Funciones Avanzadas",
+        feat_title: "Ventaja Competitiva para Equipos de Licitaciones",
+        feat_desc: "Cada licitación incluye siempre el enlace oficial de la entidad convocante y trazabilidad transparente de lectura.",
+        f1_title: "Multifuente Público - Privado - ODA",
+        f1_desc: "Conecta simultáneamente Contratación Pública (muasamcong), portales estatales (EVN, PVN, ACV, Viettel), Bancos y proyectos BM/BAD.",
+        f2_title: "Clasificación Profunda por Especialidad",
+        f2_desc: "Separa subsectores específicos (Puentes y Carreteras, Hidráulica, Equipos Médicos, Software...) según la fortaleza del contratista.",
+        f3_title: "Ajuste de Rango Suelo y Techo",
+        f3_desc: "Descarta licitaciones demasiado pequeñas bajo el umbral mínimo o que superen el techo financiero y técnico de su empresa.",
+        f4_title: "Escaneo Inmediato de Licitaciones Abiertas",
+        f4_desc: "Al registrar una empresa o actualizar capacidades, el sistema escanea todas las licitaciones vigentes para entregar resultados al instante.",
+        f5_title: "Extracción de Especificaciones del Capítulo V",
+        f5_desc: "La IA resume requisitos de maquinaria, materiales principales, grado de obra (I–IV) y experiencia requerida en los pliegos.",
+        f6_title: "Seguimiento de Estado de Lectura",
+        f6_desc: "Monitoreo en tiempo real de cada alerta enviada por App/SMS/Email: quién la recibió, quién la abrió y quién visitó el enlace oficial.",
+        cta_tag: "HUDU DauThau · Activación Rápida en 15 Minutos",
+        cta_title: "¿Listo para Automatizar la Búsqueda de Licitaciones?",
+        cta_desc: "Regístrese hoy para que el equipo de HUDU configure sus sectores, defina sus rangos Suelo/Techo y le entregue las licitaciones abiertas.",
+        cta_b1: "✓ Configuración de perfil 100% gratuita",
+        cta_b2: "✓ Escaneo inmediato de licitaciones vigentes",
+        cta_b3: "✓ Enlaces oficiales de origen garantizados",
+        form_title: "Suscribirse a HUDU DauThau",
+        form_name_lbl: "Nombre completo y Empresa / Contratista",
+        form_name_ph: "Ej: Nguyen Van A — Constructora ABC S.A...",
+        form_phone_lbl: "Teléfono / Correo para recibir alertas",
+        form_phone_ph: "090x xxx xxx / licitaciones@empresa.vn",
+        form_plan_lbl: "Plan seleccionado",
+        form_opt_pro: "DauThau Plan Pro Contractor (2.490k/mes — Público + Privado + ODA · 15 Usuarios)",
+        form_opt_starter: "DauThau Plan Starter (999k/mes — Contratación Pública · 03 Usuarios)",
+        form_opt_ent: "DauThau Plan Enterprise (Grupo Empresarial e Integración a Medida)",
+        form_submit: "Solicitar Activación de Cuenta",
+        form_toast: "✓ ¡Solicitud registrada! El equipo de HUDU configurará su perfil de inmediato.",
+        footer_desc: "HUDU (huduvn.com) — Empresa de software especializada en análisis inteligente de licitaciones y automatización de recepción para clínicas.",
+        footer_col1: "Productos",
+        footer_col2: "Funciones DauThau",
+        footer_col3: "Contacto",
+        f_link_home: "Inicio HUDU",
+        f_link_dt_price: "Precios de Licitaciones IA",
+        f_link_cfms_price: "Precios para Clínicas",
+        f_feat_1: "Antiduplicados y Fusión de Enmiendas",
+        f_feat_2: "IA para Capítulo V",
+        f_feat_3: "Ajuste Suelo / Techo",
+        f_feat_4: "Control de Lectura de Alertas"
+      },
+      zh: {
+        nav_home: "首页",
+        nav_pricing: "价格方案",
+        nav_pipeline: "三步筛选流程",
+        nav_features: "核心功能",
+        nav_cfms: "CFMS 诊所管理",
+        nav_cta: "申请试用",
+        hero_badge: "产品 01 · HUDU DAUTHAU · huduvn.com/dauthau",
+        hero_title: 'AI 驱动的<span class="highlight">政府、国企、私企与 ODA</span> 招投标智能检索系统',
+        hero_desc: "自动采集越南国家公共采购网 (muasamcong)、大型国企集团 (EVN, PVN, ACV)、商业银行及 ODA 项目；自动合并变更公告、解析招标文件第五章并<strong>精准匹配企业资质上下限 (Floor/Ceiling)</strong>。",
+        hero_btn_pricing: "查看企业订阅价格 ↓",
+        hero_btn_pipeline: "了解三步自动筛选流程",
+        m1_val: "100% 防重",
+        m1_lbl: "自动合并变更/延期公告并彻底剔除重复标讯",
+        m2_val: "上下限匹配",
+        m2_lbl: "精准匹配企业财务承接范围与工程等级资质",
+        m3_val: "实时推送",
+        m3_lbl: "通过手机 App、Zalo、短信秒级推送并追踪已读状态",
+        sc_header: "HUDU DauThau · 智能招投标检索系统",
+        sc_pkg_title: "IB2600881920-01 · 同奈省雁河大桥施工标段",
+        sc_pkg_pill: "匹配度 99%",
+        sc_pkg_line1: "<strong>专业领域：</strong>路桥基建 · 二级工程 (3x30m 跨径)",
+        sc_pkg_line2: "<strong>匹配区间：</strong>下限 100亿 ≤ <strong>355亿盾</strong> ≤ 上限 800亿",
+        sc_pkg_rev: "✓ 已合并修正公告 (-00 → -01)",
+        sc_pkg_push: "✓ 已通过 App 与 Zalo 推送",
+        sc_price_head: "按承包商规模灵活订阅",
+        sc_price_badge: "全自动扫描",
+        sc_s_title: "入门版 STARTER (03 账号)",
+        sc_p_title: "专业版 PRO CONTRACTOR (15 账号)",
+        sc_per_mo: "/月",
+        sc_s_sub: "免费建档 0đ",
+        sc_p_sub: "第五章技术解析 + ODA",
+        price_tag: "AI 招投标检索系统价格表 (HUDU DauThau)",
+        price_title: "为投标部与市场经营部打造的高回报投资",
+        price_desc: "100% 免除首次企业资质建档费用，账号激活瞬间自动<strong>回溯扫描全部正在招标的有效项目</strong>。",
+        plan_per_month: "/ 月 (按月订阅)",
+        plan1_tier: "入门版 · STARTER",
+        plan1_name: "专业分包与中小型承包商",
+        plan1_sub: "适合专注于国家公共采购网 (muasamcong) 特定省市与固定专业领域的中小企业。",
+        plan1_setup_lbl: "企业资质档案初始化费：",
+        plan1_setup_val: "免费 0đ",
+        plan1_quota: "01 份企业资质档案 · 最多 03 个接收账号",
+        plan1_f1: "<strong>覆盖国家公共采购网 (muasamcong)：</strong>自动合并变更修正公告，始终保留官方原始招标链接。",
+        plan1_f2: "<strong>资质上下限精准匹配 (Floor &amp; Ceiling)：</strong>按标段预算、总投资额及目标省市精准过滤。",
+        plan1_f3: "<strong>行业细分深度分类：</strong>自动追踪企业登记的最多 <strong>03 个核心专业领域</strong>。",
+        plan1_f4: "<strong>邮件与手机 App 实时通知：</strong>一旦出现符合资质的新招标项目，第一时间推送提醒。",
+        plan1_f5: "<strong>开户即刻扫描全部在招项目：</strong>激活后自动筛选当前所有尚未截标的匹配项目。",
+        plan1_cta: "订购入门版 Starter →",
+        plan2_ribbon: "最受欢迎 · 第五章解析 & 全源招标",
+        plan2_tier: "专业版 · PRO CONTRACTOR",
+        plan2_name: "总承包商与大型工程公司",
+        plan2_sub: "专为需要同时追踪政府采购、大型国企 (EVN, PVN, ACV)、商业银行及 ODA 项目的专业投标团队打造。",
+        plan2_setup_lbl: "系统配置与初始化：",
+        plan2_setup_val: "免费 0đ · 24/7 技术支持",
+        plan2_quota: "03 份企业资质档案 (联合体/子公司) · 15 个账号",
+        plan2_f1: "<strong>全量覆盖政府 + 国企 + 私企 + ODA：</strong>涵盖公共采购网、EVN、PVN、Viettel、VNPT、ACV、商业银行及世行/亚行项目。",
+        plan2_f2: "<strong>AI 解析第五章与工程等级：</strong>自动阅读招标文件，提炼工程等级（一至四级）、技术规模与关键设备要求。",
+        plan2_f3: "<strong>不限行业与专业领域数量：</strong>同时监控房建、路桥、水利、医疗器械、IT 软件与物资供应链。",
+        plan2_f4: "<strong>全渠道通知 (App + Zalo + 短信 + 邮件)：</strong>确保公司管理层与投标工程师绝不错过任何重点项目。",
+        plan2_f5: "<strong>团队成员已读回执追踪：</strong>清晰掌握哪位员工已收到通知、打开阅读时间及原始链接点击记录。",
+        plan2_cta: "订购专业版 Pro Contractor →",
+        plan3_tier: "集团定制版 · ENTERPRISE",
+        plan3_name: "大型集团与私有化部署",
+        plan3_sub: "面向拥有多家下属分子公司、需要将招标数据对接至内部管理系统 (ERP/CRM) 的大型集团。",
+        plan3_price: "定制报价",
+        plan3_period: "/ 按集团单位规模",
+        plan3_setup_lbl: "部署与系统集成：",
+        plan3_setup_val: "按需定制开发",
+        plan3_quota: "不限下属分子公司档案与账号数量",
+        plan3_f1: "<strong>按需新增专属商业招标源：</strong>24 小时内快速接入任何目标企业采购门户或业主官网。",
+        plan3_f2: "<strong>企业私有服务器部署 (On-Premise)：</strong>支持在集团自有服务器独立部署，绝对保障投标数据与商业机密。",
+        plan3_f3: "<strong>自动对接内部管理系统 (ERP/CRM)：</strong>将高匹配招标信息直接同步至企业内部办公平台。",
+        plan3_f4: "<strong>多分子公司集中权限管理：</strong>为各区域分公司及业务部门配置独立权限，提供 24/7 专属保障。",
+        plan3_cta: "联系企业定制版顾问 →",
+        pipe_tag: "全自动三步精准筛选流程",
+        pipe_title: "在标讯到达办公桌前剔除 95% 的无效噪音",
+        pipe_desc: "让投标工程师将全部精力集中在编制高质量标书上，彻底告别每天数小时的人工搜标。",
+        s1_title: "第一步：多源采集与变更公告自动合并",
+        s1_desc: "持续扫描政府、商业及 ODA 招标网站；将澄清、修改与延期公告自动归并至同一项目档案，绝不重复打扰。",
+        s2_title: "第二步：行业细分归类与第五章参数提炼",
+        s2_desc: "AI 自动归入细分专业领域，精准提取标段预算、总投资额、工程等级（一至四级）及第五章核心技术要求。",
+        s3_title: "第三步：上下限双向匹配与多渠道推送",
+        s3_desc: "严格比对每家承包商的最低（下限）与最高（上限）承接能力；通过 App、Zalo、短信、邮件即时推送并记录阅读状态。",
+        feat_tag: "深度业务功能",
+        feat_title: "赋能企业投标团队的核心竞争武器",
+        feat_desc: "每一条标讯均附带业主官方原始链接与透明的团队跟踪记录。",
+        f1_title: "政府 - 私企 - ODA 多源汇聚",
+        f1_desc: "同时连接国家公共采购网 (muasamcong)、国企采购网 (EVN, PVN, ACV, Viettel)、商业银行及世行/亚行项目。",
+        f2_title: "按细分专业深度归类",
+        f2_desc: "自动细分至具体子行业（路桥施工、水利水电、医疗设备、软件开发等），精准契合承包商主营强项。",
+        f3_title: "承接能力上下限精准匹配",
+        f3_desc: "自动剔除金额过小低于成本底线，或超出企业财务/工程资质上限的招标项目。",
+        f4_title: "开户即刻回溯扫描在招项目",
+        f4_desc: "新增企业或更新资质条件后，系统立即扫描所有尚未截止投标的项目，即刻输出可用标讯。",
+        f5_title: "第五章技术规范智能提炼",
+        f5_desc: "AI 自动总结招标文件中的主要设备要求、核心材料、工程等级（一至四级）及关键业绩资质条件。",
+        f6_title: "团队通知阅读状态管控",
+        f6_desc: "实时追踪每条 App/短信/邮件通知：谁已接收、谁已打开查看、谁已点击官方原链接，杜绝漏标。",
+        cta_tag: "HUDU DauThau · 15 分钟快速开通",
+        cta_title: "准备好为您的企业实现自动化搜标与筛标了吗？",
+        cta_desc: "立即登记，由 HUDU 团队为您配置专业目录、设定资质上下限，并在今天获取所有匹配的在招项目清单。",
+        cta_b1: "✓ 100% 免费初始化企业资质档案",
+        cta_b2: "✓ 自动扫描当前全部有效在招项目",
+        cta_b3: "✓ 完整保留业主官方原始链接",
+        form_title: "申请开通 HUDU DauThau 服务套餐",
+        form_name_lbl: "您的姓名与企业 / 承包商名称",
+        form_name_ph: "例如：阮文 A — ABC 建设工程与设备股份公司...",
+        form_phone_lbl: "接收标讯的联系电话 / 企业邮箱",
+        form_phone_ph: "090x xxx xxx / dauthau@company.vn",
+        form_plan_lbl: "选择服务套餐",
+        form_opt_pro: "DauThau 专业版 Pro Contractor (2.490k/月 — 政府+私企+ODA · 15 账号)",
+        form_opt_starter: "DauThau 入门版 Starter (999k/月 — 公共采购网 · 03 账号)",
+        form_opt_ent: "DauThau 集团定制版 Enterprise (总公司与专属系统对接)",
+        form_submit: "提交账号激活申请",
+        form_toast: "✓ 申请已收到！HUDU 团队将立即联系您配置企业资质档案。",
+        footer_desc: "HUDU (huduvn.com) — 专注于智能招投标数据分析软件与医疗诊所自动化接诊管理系统的科技企业。",
+        footer_col1: "产品中心",
+        footer_col2: "DauThau 功能",
+        footer_col3: "联系我们",
+        f_link_home: "HUDU 首页",
+        f_link_dt_price: "AI 招投标系统价格",
+        f_link_cfms_price: "诊所系统价格 (CFMS)",
+        f_feat_1: "标讯去重与变更合并",
+        f_feat_2: "AI 解析第五章技术要求",
+        f_feat_3: "资质上下限精准匹配",
+        f_feat_4: "员工阅读状态实时追踪"
+      },
+      ja: {
+        nav_home: "ホーム",
+        nav_pricing: "料金プラン",
+        nav_pipeline: "3ステップ選別",
+        nav_features: "機能一覧",
+        nav_cfms: "CFMS クリニック",
+        nav_cta: "トライアル申込",
+        hero_badge: "製品 01 · HUDU DAUTHAU · huduvn.com/dauthau",
+        hero_title: 'AI による<span class="highlight">官公庁・民間・ODA 入札</span>自動収集＆マッチングシステム',
+        hero_desc: "国家電子調達システム (muasamcong)、国営企業 (EVN, PVN, ACV)、商業銀行、ODA案件から自動収集。訂正公告の統合、第V章仕様書の解析、および<strong>受注能力の下限・上限 (Floor/Ceiling) マッチング</strong>を自動化します。",
+        hero_btn_pricing: "法人向け料金プランを見る ↓",
+        hero_btn_pipeline: "3ステップの仕組みを見る",
+        m1_val: "重複排除 100%",
+        m1_lbl: "訂正・延長公告を自動統合し、重複通知を完全排除",
+        m2_val: "下限 / 上限",
+        m2_lbl: "財務規模および工事等級の範囲で高精度マッチング",
+        m3_val: "リアルタイム",
+        m3_lbl: "アプリ・Zalo・SMSで即座に通知し既読状況を追跡",
+        sc_header: "HUDU DauThau · スマート入札インテリジェンス",
+        sc_pkg_title: "IB2600881920-01 · ソンニャン橋建設工事 (ドンナイ省)",
+        sc_pkg_pill: "適合度 99%",
+        sc_pkg_line1: "<strong>分野：</strong>橋梁・道路インフラ · 第II級工事 (3x30m)",
+        sc_pkg_line2: "<strong>適合レンジ：</strong>下限 100億 ≤ <strong>355億ドン</strong> ≤ 上限 800億",
+        sc_pkg_rev: "✓ 訂正公告を統合済 (-00 → -01)",
+        sc_pkg_push: "✓ アプリ＆Zaloで通知済",
+        sc_price_head: "企業規模に応じた柔軟な料金プラン",
+        sc_price_badge: "自動スキャン",
+        sc_s_title: "STARTER プラン (03名)",
+        sc_p_title: "PRO CONTRACTOR (15名)",
+        sc_per_mo: "/月",
+        sc_s_sub: "初期設定費用 0đ",
+        sc_p_sub: "第V章仕様解析 + ODA",
+        price_tag: "AI 入札収集・マッチング料金表 (HUDU DauThau)",
+        price_title: "入札担当部門・技術営業チームに最適な投資",
+        price_desc: "企業能力プロファイルの初期設定費用は 100% 無料。アカウント有効化と同時に<strong>現在公募中の全案件を自動スキャン</strong>して即座に配信します。",
+        plan_per_month: "/ 月 (サブスクリプション)",
+        plan1_tier: "スターター · STARTER",
+        plan1_name: "専門工事・中小企業プラン",
+        plan1_sub: "特定の地域・業種で国家電子調達 (muasamcong) の案件を獲得したい中小企業に最適です。",
+        plan1_setup_lbl: "企業能力プロファイル初期設定：",
+        plan1_setup_val: "無料 0đ",
+        plan1_quota: "企業能力プロファイル 01件 · 最大 03 ユーザー",
+        plan1_f1: "<strong>国家電子調達ポータル (muasamcong) 対応：</strong>訂正公告を自動でまとめ、常に公式の元リンクを添付。",
+        plan1_f2: "<strong>下限・上限 (Floor &amp; Ceiling) 能力照合：</strong>予算額、総投資額、対象省・都市で正確にフィルタリング。",
+        plan1_f3: "<strong>業種別の専門分類：</strong>登録された<strong>最大 03 専門分野</strong>の入札案件を自動モニタリング。",
+        plan1_f4: "<strong>メール＆モバイルアプリ通知：</strong>条件に合う新規案件が公開されると即座にプッシュ通知。",
+        plan1_f5: "<strong>導入時に公募中の全案件を即時スキャン：</strong>入札期限内のすべての案件を自動抽出してすぐに業務開始可能。",
+        plan1_cta: "Starter プランを申し込む →",
+        plan2_ribbon: "人気 No.1 · 第V章解析＆官民・ODA 全対応",
+        plan2_tier: "プロフェッショナル · PRO CONTRACTOR",
+        plan2_name: "総合建設・大手企業プラン",
+        plan2_sub: "官公庁、国営グループ (EVN, PVN, ACV)、民間銀行、ODA案件を網羅したい専門入札チーム向け。",
+        plan2_setup_lbl: "初期構築＆セットアップ：",
+        plan2_setup_val: "無料 0đ · 24/7 サポート",
+        plan2_quota: "企業能力プロファイル 03件 (JV/子会社) · 15 ユーザー",
+        plan2_f1: "<strong>官公庁＋民間＋ODA の全ソース網羅：</strong>公共調達、EVN、PVN、Viettel、VNPT、ACV、商業銀行、世銀/ADB案件。",
+        plan2_f2: "<strong>AI による第V章＆工事等級の抽出：</strong>入札書類から工事等級（I〜IV級）、技術規模、主要機材要件を自動要約。",
+        plan2_f3: "<strong>対象分野・業種数無制限：</strong>建設、交通、水利、医療機器、IT、資材調達など複数分野を同時に監視。",
+        plan2_f4: "<strong>マルチチャネル通知 (App + Zalo + SMS + Email)：</strong>経営陣や入札担当者が重要案件を見逃すリスクをゼロに。",
+        plan2_f5: "<strong>担当者の既読・リンク閲覧トラッキング：</strong>誰が通知を受け取り、いつ開封し、元リンクを開いたかを可視化。",
+        plan2_cta: "Pro Contractor を申し込む →",
+        plan3_tier: "エンタープライズ · ENTERPRISE",
+        plan3_name: "ホールディングス＆専用環境構築",
+        plan3_sub: "複数のグループ会社を持ち、社内の基幹システム (ERP/CRM) に入札データを連携したい大手企業グループ向け。",
+        plan3_price: "個別見積",
+        plan3_period: "/ グループ規模に応じる",
+        plan3_setup_lbl: "導入＆システム連携：",
+        plan3_setup_val: "オーダーメイド構築",
+        plan3_quota: "グループ会社プロファイル＆アカウント数無制限",
+        plan3_f1: "<strong>民間発注ポータルのカスタム追加：</strong>ご指定の企業調達サイトや発注者Webサイトを24時間以内に追加連携。",
+        plan3_f2: "<strong>専用サーバー導入 (オンプレミス対応)：</strong>自社インフラ上への独立構築に対応し、入札戦略と機密を完全保護。",
+        plan3_f3: "<strong>社内 ERP / CRM への自動データ連携：</strong>抽出した案件情報を社内の営業管理システムへダイレクトに同期。",
+        plan3_f4: "<strong>複数子会社の一元管理：</strong>地域拠点や専門部門ごとに権限を細かく設定し、24/7 優先サポートを提供。",
+        plan3_cta: "Enterprise 導入相談を依頼 →",
+        pipe_tag: "自動3ステップ選別プロセス",
+        pipe_title: "デスクに届く前に95%の情報ノイズを自動カット",
+        pipe_desc: "毎日の手作業による案件検索をなくし、勝てる入札提案書の作成に100%集中できる環境を作ります。",
+        s1_title: "ステップ 1：マルチソース収集＆訂正公告の統合",
+        s1_desc: "官公庁・民間・ODAの入札サイトを常時スキャン。訂正や期限延長の通知を同一案件に統合し、重複通知を防ぎます。",
+        s2_title: "ステップ 2：専門分野の分類＆第V章の技術要件抽出",
+        s2_desc: "AIが専門分野を精密に分類し、予算額、総投資額、工事等級（I〜IV級）、第V章の主要技術要件を自動抽出します。",
+        s3_title: "ステップ 3：下限/上限マッチング＆マルチチャネル通知",
+        s3_desc: "各企業の最小（下限）〜最大（上限）受注能力と照合し、アプリ・Zalo・SMS・メールで即時配信＆既読状況を記録します。",
+        feat_tag: "専門機能",
+        feat_title: "企業の入札チームを強化する競争優位機能",
+        feat_desc: "すべての案件情報には発注機関の公式リンクが保持され、チーム内の確認履歴も透明に管理できます。",
+        f1_title: "官公庁・民間・ODA マルチソース接続",
+        f1_desc: "国家電子調達 (muasamcong)、国営企業ポータル (EVN, PVN, ACV, Viettel)、民間銀行、WB/ADB案件を同時収集。",
+        f2_title: "専門分野ごとの詳細カテゴリ分類",
+        f2_desc: "橋梁・道路、水利、医療機器、ソフトウェアなど細分化された専門領域ごとに自動分類し、自社の強みに合致させます。",
+        f3_title: "下限・上限 (Floor & Ceiling) 能力照合",
+        f3_desc: "採算ライン未満の小規模案件や、自社の財務・工事等級の上限を超える過大案件を自動的に除外します。",
+        f4_title: "公募中案件の即時スキャン",
+        f4_desc: "新規登録や能力条件の更新時に、現在応募可能な全公開案件を即座に再スキャンして結果を返します。",
+        f5_title: "第V章の技術仕様・要件サマリー",
+        f5_desc: "入札書類内の主要設備、資材、工事等級（I〜IV級）、必要な施工実績条件をAIが分かりやすく要約します。",
+        f6_title: "チーム内の既読・クリック状況管理",
+        f6_desc: "アプリ・SMS・メールで送信した各通知について、誰が受信・開封し、公式リンクを開いたかをリアルタイムに把握。",
+        cta_tag: "HUDU DauThau · 最短15分でスピード開通",
+        cta_title: "貴社の入札案件発掘を今すぐ自動化しませんか？",
+        cta_desc: "今すぐお申し込みいただくと、HUDUチームが業種設定と下限/上限レンジを構築し、公募中の適合案件リストを即日お届けします。",
+        cta_b1: "✓ 企業能力プロファイル初期設定 100% 無料",
+        cta_b2: "✓ 公募中の全案件を即時自動スキャン",
+        cta_b3: "✓ 発注者の公式元リンクを完全保持",
+        form_title: "HUDU DauThau プランのお申し込み",
+        form_name_lbl: "お名前＆企業・建設会社名",
+        form_name_ph: "例：グエン・ヴァン・A — ABC建設設備株式会社...",
+        form_phone_lbl: "通知を受け取る電話番号 / メールアドレス",
+        form_phone_ph: "090x xxx xxx / dauthau@company.vn",
+        form_plan_lbl: "ご希望のプラン",
+        form_opt_pro: "DauThau Pro Contractor (2.490k/月 — 官公庁+民間+ODA · 15名)",
+        form_opt_starter: "DauThau Starter プラン (999k/月 — 公共調達 · 03名)",
+        form_opt_ent: "DauThau Enterprise プラン (グループ企業＆専用連携)",
+        form_submit: "アカウント有効化を申し込む",
+        form_toast: "✓ お申し込みを受け付けました！HUDUチームより速やかにご連絡いたします。",
+        footer_desc: "HUDU (huduvn.com) — AI 入札データ解析ソフトウェアおよび医療機関向けスマート受付・順番管理システムを開発するテクノロジー企業。",
+        footer_col1: "製品一覧",
+        footer_col2: "DauThau 機能",
+        footer_col3: "お問い合わせ",
+        f_link_home: "HUDU ホーム",
+        f_link_dt_price: "入札 AI 料金表",
+        f_link_cfms_price: "クリニック料金表",
+        f_feat_1: "重複排除＆訂正公告の統合",
+        f_feat_2: "AI 第V章仕様解析",
+        f_feat_3: "下限 / 上限マッチング",
+        f_feat_4: "既読ステータスの追跡"
+      },
+      ko: {
+        nav_home: "홈",
+        nav_pricing: "요금제",
+        nav_pipeline: "3단계 프로세스",
+        nav_features: "주요 기능",
+        nav_cfms: "CFMS 클리닉",
+        nav_cta: "무료 체험 신청",
+        hero_badge: "제품 01 · HUDU DAUTHAU · huduvn.com/dauthau",
+        hero_title: 'AI 기반 <span class="highlight">공공 · 민간 · ODA 입찰</span> 자동 수집 및 맞춤 매칭 시스템',
+        hero_desc: "국가종합전자조달(muasamcong), 국영기업(EVN, PVN, ACV), 시중은행 및 ODA 차관 사업을 자동 수집하고, 정정공고 병합, 제5장 기술규격 분석 및 <strong>기업 수행 능력 하한/상한(Floor/Ceiling) 매칭</strong>을 수행합니다.",
+        hero_btn_pricing: "기업용 요금제 보기 ↓",
+        hero_btn_pipeline: "3단계 자동 선별 과정",
+        m1_val: "중복 제거 100%",
+        m1_lbl: "정정·연기 공고를 하나로 병합하고 중복 알림 원천 차단",
+        m2_val: "하한 / 상한",
+        m2_lbl: "재무 수행 범위 및 공종 등급에 따른 정밀 매칭",
+        m3_val: "실시간 알림",
+        m3_lbl: "모바일 앱, Zalo, SMS 즉시 발송 및 담당자 열람 확인",
+        sc_header: "HUDU DauThau · 스마트 입찰 인텔리전스",
+        sc_pkg_title: "IB2600881920-01 · 송냔 교량 건설공사 (동나이성)",
+        sc_pkg_pill: "적합도 99%",
+        sc_pkg_line1: "<strong>분야:</strong> 도로·교량 인프라 · 2급 공사 (3x30m 경간)",
+        sc_pkg_line2: "<strong>매칭 범위:</strong> 하한 100억 ≤ <strong>355억 동</strong> ≤ 상한 800억",
+        sc_pkg_rev: "✓ 정정공고 자동 병합 완료 (-00 → -01)",
+        sc_pkg_push: "✓ 앱 & Zalo 알림 발송 완료",
+        sc_price_head: "시공사 규모에 맞춘 합리적인 요금제",
+        sc_price_badge: "자동 스캔",
+        sc_s_title: "STARTER 플랜 (03 계정)",
+        sc_p_title: "PRO CONTRACTOR (15 계정)",
+        sc_per_mo: "/월",
+        sc_s_sub: "초기 세팅비 무료 0đ",
+        sc_p_sub: "제5장 기술규격 분석 + ODA",
+        price_tag: "AI 입찰 매칭 시스템 요금표 (HUDU DauThau)",
+        price_title: "입찰팀 및 기술영업부를 위한 최적의 투자",
+        price_desc: "초기 기업 실적·역량 프로필 세팅비 100% 무료 혜택과 함께, 계정 활성화 즉시 <strong>현재 진행 중인 모든 입찰 공고를 자동으로 전수 스캔</strong>합니다.",
+        plan_per_month: "/ 월 (정기 구독)",
+        plan1_tier: "시작 플랜 · STARTER",
+        plan1_name: "전문 시공사 및 중소기업",
+        plan1_sub: "특정 지역 및 전문 업종의 국가 공공조달(muasamcong) 입찰에 집중하는 중소기업에 적합합니다.",
+        plan1_setup_lbl: "기업 역량 프로필 초기 세팅비:",
+        plan1_setup_val: "무료 0đ",
+        plan1_quota: "01개 기업 역량 프로필 · 최대 03개 알림 수신 계정",
+        plan1_f1: "<strong>국가종합전자조달(muasamcong) 수집:</strong> 정정 공고를 자동으로 병합하며 항상 원본 입찰 공고 링크를 함께 제공합니다.",
+        plan1_f2: "<strong>하한 / 상한 (Floor &amp; Ceiling) 역량 매칭:</strong> 패키지 예산, 총투자비, 지역(성/시) 기준으로 정확히 필터링합니다.",
+        plan1_f3: "<strong>업종별 정밀 분류:</strong> 기업이 등록한 <strong>최대 03개 핵심 전문 분야</strong>를 자동으로 추적합니다.",
+        plan1_f4: "<strong>이메일 및 모바일 앱 실시간 알림:</strong> 기업 역량에 부합하는 신규 입찰이 올라오면 즉시 알림을 받습니다.",
+        plan1_f5: "<strong>개통 즉시 진행 중인 입찰 전수 조사:</strong> 마감 기한이 남은 모든 유효 입찰을 즉시 추출하여 바로 업무에 활용할 수 있습니다.",
+        plan1_cta: "Starter 플랜 신청하기 →",
+        plan2_ribbon: "인기 1위 · 제5장 기술규격 분석 & 다중 입찰처",
+        plan2_tier: "프로페셔널 · PRO CONTRACTOR",
+        plan2_name: "종합 시공사 및 중견·대기업",
+        plan2_sub: "공공입찰뿐만 아니라 국영기업(EVN, PVN, ACV), 시중은행 및 ODA 차관 사업까지 모두 포착해야 하는 전문 입찰팀에 최적입니다.",
+        plan2_setup_lbl: "맞춤 설정 및 초기 세팅:",
+        plan2_setup_val: "무료 0đ · 24/7 기술 지원",
+        plan2_quota: "03개 기업 역량 프로필 (컨소시엄/자회사) · 15개 계정",
+        plan2_f1: "<strong>공공 + 민간 + ODA 전체 입찰 소스:</strong> 국가조달포털, EVN, PVN, Viettel, VNPT, ACV, 시중은행 및 세계은행(WB)/ADB 사업 포함.",
+        plan2_f2: "<strong>AI 제5장 기술규격 및 공사 등급 추출:</strong> 입찰 문서를 분석하여 공사 등급(I~IV급), 기술 규모 및 핵심 장비 요건을 자동 요약합니다.",
+        plan2_f3: "<strong>분야 및 업종 무제한 등록:</strong> 건축, 토목, 수자원, 의료기기, IT 소프트웨어 및 자재 납품 등 다중 분야 동시 모니터링.",
+        plan2_f4: "<strong>멀티채널 알림 (앱 + Zalo + SMS + 이메일):</strong> 경영진과 입찰 담당자가 핵심 입찰 공고를 절대 놓치지 않도록 보장합니다.",
+        plan2_f5: "<strong>담당자 알림 열람 상태 확인:</strong> 어느 직원이 알림을 받았고, 언제 열어보았으며 원본 링크를 클릭했는지 명확히 파악합니다.",
+        plan2_cta: "Pro Contractor 신청하기 →",
+        plan3_tier: "그룹사 맞춤형 · ENTERPRISE",
+        plan3_name: "지주사·대기업 그룹 및 단독 구축",
+        plan3_sub: "다수의 계열사를 보유하고 입찰 데이터를 사내 관리 프로그램(ERP/CRM)과 직접 연동해야 하는 그룹사를 위한 플랜입니다.",
+        plan3_price: "맞춤 견적",
+        plan3_period: "/ 기업 규모별 협의",
+        plan3_setup_lbl: "구축 및 시스템 연동:",
+        plan3_setup_val: "요구사항 맞춤형 구축",
+        plan3_quota: "계열사 프로필 및 사용자 계정 무제한",
+        plan3_f1: "<strong>요청에 따른 민간 입찰처 추가 연동:</strong> 목표 기업 구매 포털이나 발주처 웹사이트를 24시간 내에 추가 연결합니다.",
+        plan3_f2: "<strong>전용 서버 구축 (On-Premise):</strong> 그룹사 자체 인프라에 독립적으로 설치하여 입찰 데이터와 전략 보안을 완벽히 유지합니다.",
+        plan3_f3: "<strong>사내 ERP / CRM 자동 연동:</strong> 선별된 입찰 공고 정보를 기업의 내부 업무 시스템으로 자동 동기화합니다.",
+        plan3_f4: "<strong>다수 자회사 중앙 통합 관리:</strong> 지역 지사 및 전문 부서별 세밀한 권한 부여와 24/7 우선 기술 지원을 약속합니다.",
+        plan3_cta: "Enterprise 도입 상담 문의 →",
+        pipe_tag: "자동화된 3단계 입찰 선별 프로세스",
+        pipe_title: "실무자의 책상에 도달하기 전에 95%의 불필요한 정보를 걸러냅니다",
+        pipe_desc: "입찰 엔지니어가 매일 수 시간씩 수작업으로 공고를 찾는 대신, 수주 확률을 높이는 제안서 작성에만 집중할 수 있도록 돕습니다.",
+        s1_title: "1단계: 다중 출처 수집 및 정정공고 자동 병합",
+        s1_desc: "공공, 민간, ODA 입찰 사이트를 상시 스캔하며, 변경·연기 공고를 단일 건으로 자동 합쳐 중복 알림이 발생하지 않습니다.",
+        s2_title: "2단계: 전문 업종 분류 및 제5장 기술규격 추출",
+        s2_desc: "AI가 세부 전문 분야를 정확히 분류하고 패키지 예산, 총투자비, 공사 등급(I~IV급) 및 제5장 핵심 기술 요건을 추출합니다.",
+        s3_title: "3단계: 하한/상한 역량 대조 및 멀티채널 발송",
+        s3_desc: "각 시공사의 최소(하한) 및 최대(상한) 수행 능력과 대조하여 앱, Zalo, SMS, 이메일로 즉시 알리고 열람 상태를 기록합니다.",
+        feat_tag: "핵심 전문 기능",
+        feat_title: "기업 입찰팀을 위한 강력한 수주 경쟁력",
+        feat_desc: "모든 입찰 공고는 발주처의 공식 원본 링크를 그대로 보존하며 투명한 열람 이력을 제공합니다.",
+        f1_title: "공공 - 민간 - ODA 통합 수집",
+        f1_desc: "국가조달포털(muasamcong), 국영기업(EVN, PVN, ACV, Viettel), 시중은행 및 WB/ADB 프로젝트를 동시에 연결합니다.",
+        f2_title: "세부 전문 분야별 정밀 분류",
+        f2_desc: "교량·도로, 수자원, 의료장비, 소프트웨어 등 세분화된 업종별로 자동 분리하여 기업의 주력 분야만 정확히 골라냅니다.",
+        f3_title: "하한 및 상한 (Floor & Ceiling) 매칭",
+        f3_desc: "최소 기준 금액보다 너무 작은 소액 공고나 회사의 재무·공사 등급 상한선을 초과하는 공고를 자동으로 제외합니다.",
+        f4_title: "진행 중인 입찰 공고 즉시 전수 스캔",
+        f4_desc: "신규 회사를 등록하거나 역량 기준을 수정하는 즉시, 현재 마감되지 않은 모든 입찰 공고를 스캔하여 결과를 바로 보여줍니다.",
+        f5_title: "제5장 기술 사양 요약 추출",
+        f5_desc: "입찰 문서 내 주요 장비 요구사항, 핵심 자재, 공사 등급(I~IV급) 및 필수 실적 조건을 AI가 한눈에 보기 쉽게 요약합니다.",
+        f6_title: "팀원 알림 열람 상태 관리",
+        f6_desc: "앱/SMS/이메일로 발송된 각 알림을 누가 수신했고, 누가 열어보았으며 원본 링크를 클릭했는지 실시간으로 확인하여 누락을 방지합니다.",
+        cta_tag: "HUDU DauThau · 15분 내 신속 개통",
+        cta_title: "귀사의 입찰 발굴 프로세스를 지금 자동화하시겠습니까?",
+        cta_desc: "지금 신청하시면 HUDU 팀이 업종 카테고리와 하한/상한 역량 기준을 세팅하여 오늘 바로 진행 중인 맞춤 입찰 목록을 전달해 드립니다.",
+        cta_b1: "✓ 기업 역량 프로필 세팅 100% 무료",
+        cta_b2: "✓ 진행 중인 입찰 공고 즉시 자동 스캔",
+        cta_b3: "✓ 발주처 공식 원본 링크 완벽 보존",
+        form_title: "HUDU DauThau 서비스 신청",
+        form_name_lbl: "성함 및 기업 / 시공사명",
+        form_name_ph: "예: 응우옌 반 A — ABC 건설장비 주식회사...",
+        form_phone_lbl: "입찰 알림을 받을 연락처 / 이메일",
+        form_phone_ph: "090x xxx xxx / dauthau@company.vn",
+        form_plan_lbl: "선택 요금제",
+        form_opt_pro: "DauThau Pro Contractor (2.490k/월 — 공공 + 민간 + ODA · 15 계정)",
+        form_opt_starter: "DauThau Starter 플랜 (999k/월 — 공공조달 · 03 계정)",
+        form_opt_ent: "DauThau Enterprise 플랜 (그룹사 및 맞춤형 연동)",
+        form_submit: "계정 개통 요청하기",
+        form_toast: "✓ 요청이 접수되었습니다! HUDU 팀에서 즉시 연락드려 역량 프로필을 설정해 드리겠습니다.",
+        footer_desc: "HUDU (huduvn.com) — 지능형 입찰 데이터 분석 소프트웨어 및 병원·의원 자동 접수 관리 시스템을 개발하는 기술 기업.",
+        footer_col1: "제품 안내",
+        footer_col2: "DauThau 기능",
+        footer_col3: "문의처",
+        f_link_home: "HUDU 홈",
+        f_link_dt_price: "입찰 AI 요금표",
+        f_link_cfms_price: "클리닉 요금표",
+        f_feat_1: "중복 제거 및 정정공고 병합",
+        f_feat_2: "AI 제5장 기술규격 분석",
+        f_feat_3: "하한 / 상한 역량 매칭",
+        f_feat_4: "알림 열람 상태 실시간 추적"
+      }
+    };
+
+    function applyTheme(isDark) {
       const body = document.body;
       const moon = document.getElementById('themeIconMoon');
       const sun = document.getElementById('themeIconSun');
 
-      body.classList.toggle('dark-mode');
-      const isDark = body.classList.contains('dark-mode');
+      body.classList.toggle('dark-mode', isDark);
 
       document.getElementById('navGradStop1').setAttribute('stop-color', isDark ? '#38BDF8' : '#0052A3');
       document.getElementById('navGradStop2').setAttribute('stop-color', isDark ? '#7DD3FC' : '#0284C7');
@@ -1771,6 +2535,30 @@
 
       moon.style.display = isDark ? 'none' : 'block';
       sun.style.display = isDark ? 'block' : 'none';
+    }
+
+    function toggleTheme() {
+      const isDark = !document.body.classList.contains('dark-mode');
+      applyTheme(isDark);
+      try { localStorage.setItem('hudu_theme', isDark ? 'dark' : 'light'); } catch (e) {}
+    }
+
+    function setLanguage(lang) {
+      const validLang = I18N[lang] ? lang : 'vi';
+      document.documentElement.lang = validLang;
+      const sel = document.getElementById('langSelect');
+      if (sel && sel.value !== validLang) sel.value = validLang;
+      try { localStorage.setItem('hudu_lang', validLang); } catch (e) {}
+
+      const dict = I18N[validLang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) el.innerHTML = dict[key];
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (dict[key]) el.placeholder = dict[key];
+      });
     }
 
     function selectPricingPlan(planVal) {
@@ -1783,6 +2571,15 @@
       document.getElementById('formToast').style.display = 'block';
       e.target.reset();
     }
+
+    (function initPrefs() {
+      try {
+        const savedTheme = localStorage.getItem('hudu_theme');
+        if (savedTheme === 'dark') applyTheme(true);
+        const savedLang = localStorage.getItem('hudu_lang');
+        if (savedLang && I18N[savedLang]) setLanguage(savedLang);
+      } catch (e) {}
+    })();
   </script>
 </body>
 </html>
