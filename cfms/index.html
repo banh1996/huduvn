@@ -3,758 +3,1377 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HUDU CFMS / QMS — Phần Mềm Nhận Diện Khuôn Mặt, Lấy Đơn &amp; Quản Lý Hàng Đợi Phòng Khám · Bảng Giá</title>
-  <meta name="description" content="Hệ thống nhận diện khuôn mặt Edge AI (< 2ms), quét QR CCCD gắn chip, cấp số thứ tự, loa gọi số TTS tiếng Việt và điều phối hàng đợi cho Phòng khám, Khoa Thận Nhân Tạo, Bệnh viện &amp; Trung tâm đào tạo. Bảng giá từ 499k/tháng." />
+  <title>HUDU CFMS / QMS — Phần Mềm Quản Lý Phòng Khám, Nhận Diện Khuôn Mặt &amp; Bảng Giá</title>
+  <meta name="description" content="Hệ thống Nhận diện Khuôn mặt Edge AI (< 2ms), Quét QR CCCD gắn chip, Điều phối hàng đợi Loa gọi số TTS & Bảng giá Gói Cơ Bản (Basic 499k/tháng) - Nâng Cao (Premium 999k/tháng) cho Phòng khám, Khoa Thận Nhân Tạo & Bệnh viện." />
+  <link rel="canonical" href="https://huduvn.com/cfms/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://huduvn.com/cfms/" />
+  <meta property="og:title" content="HUDU CFMS / QMS — Giải Pháp Quản Lý Phòng Khám &amp; Bảng Giá Thuê Bao" />
+  <meta property="og:description" content="Nhận diện sinh trắc học 512 chiều (< 2ms), ánh xạ 1:N người nhà lấy số giùm, quét CCCD gắn chip, loa gọi số Ding-Dong TTS và phân quyền 3 Role (Admin, Bác sĩ, Điều dưỡng)." />
+  <meta property="og:image" content="https://huduvn.com/images/hudu-logo-dark.png" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/svg+xml" href="../svg/hudu-favicon.svg" />
-  <link rel="alternate icon" type="image/png" href="../images/hudu-favicon.png" />
   <link rel="apple-touch-icon" href="../images/hudu-icon-app.png" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
   <style>
+    /* ==========================================================================
+       PLATINUM SILVER & SAPPHIRE BLUE ENTERPRISE THEME (100% UNIFIED WITH HOME)
+       ========================================================================== */
     :root {
-      --bg-page: #E6ECF5;
-      --bg-surface: #F1F5FA;
-      --bg-elevated: #F8FAFC;
-      --bg-subtle: #DCE5F2;
-      --bg-glass: rgba(241, 245, 250, 0.88);
-      --silver-border: #C5D1E0;
-      --silver-border-strong: #9FB2C9;
-      --text-main: #0A1424;
-      --text-secondary: #2C3E58;
-      --text-muted: #566A86;
-      --blue-deep: #002B5B;
-      --blue-primary: #0052A3;
-      --blue-bright: #0284C7;
-      --cyan-accent: #38BDF8;
-      --blue-tint-bg: #D8E6F7;
-      --blue-tint-border: #93C5FD;
-      --gradient-brand: linear-gradient(135deg, #002B5B 0%, #0052A3 50%, #0284C7 100%);
-      --gradient-card: linear-gradient(180deg, #F8FAFC 0%, #EDF2F9 100%);
-      --shadow-sm: 0 2px 8px rgba(10, 20, 36, 0.06);
-      --shadow-md: 0 12px 28px -6px rgba(10, 20, 36, 0.10);
-      --shadow-lg: 0 22px 48px -12px rgba(0, 43, 91, 0.18);
+      --bg-page: #E6ECF4;
+      --bg-page-grad: linear-gradient(180deg, #EEF2F7 0%, #E2E8F0 50%, #EAEFF6 100%);
+      --bg-surface: linear-gradient(145deg, #FFFFFF 0%, #F1F5F9 100%);
+      --bg-surface-solid: #F8FAFC;
+      --bg-surface-glass: rgba(241, 245, 249, 0.85);
+      --bg-subtle: #DCE4EE;
+      --bg-ice: #E8F2FC;
+      --bg-ice-strong: #D6E9FA;
+      --bg-navy: #0F2942;
+      --bg-navy-deep: #0B1829;
+
+      --text-main: #0F233A;
+      --text-body: #334155;
+      --text-muted: #5A6B82;
+
+      --blue-primary: #0066CC;
+      --blue-hover: #0052A3;
+      --blue-sky: #0284C7;
+      --blue-ice: #38BDF8;
+      --silver-accent: #94A3B8;
+
+      --border-light: #CBD5E1;
+      --border-subtle: #B6C4D6;
+      --border-ice: #93C5FD;
+      --inset-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.95);
+
+      --shadow-sm: 0 2px 10px rgba(15, 35, 58, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      --shadow-md: 0 12px 32px rgba(15, 35, 58, 0.09), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+      --shadow-lg: 0 24px 56px rgba(15, 35, 58, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+      --shadow-hover: 0 20px 44px rgba(0, 102, 204, 0.18), inset 0 1px 0 #FFFFFF;
+
       --radius-sm: 8px;
-      --radius-md: 14px;
-      --radius-lg: 22px;
-      --radius-xl: 30px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-xl: 24px;
     }
 
     body.dark-mode {
-      --bg-page: #070E1A;
-      --bg-surface: #0D1829;
-      --bg-elevated: #132238;
-      --bg-subtle: #182B46;
-      --bg-glass: rgba(13, 24, 41, 0.88);
-      --silver-border: #1E3250;
-      --silver-border-strong: #2D4A73;
+      --bg-page: #0B1524;
+      --bg-page-grad: linear-gradient(180deg, #0B1524 0%, #102036 50%, #0B1524 100%);
+      --bg-surface: linear-gradient(145deg, #152944 0%, #0F2036 100%);
+      --bg-surface-solid: #132640;
+      --bg-surface-glass: rgba(15, 32, 54, 0.86);
+      --bg-subtle: #162B47;
+      --bg-ice: #183456;
+      --bg-ice-strong: #1E416B;
+
       --text-main: #F1F5F9;
-      --text-secondary: #CBD5E1;
-      --text-muted: #8CA0BA;
-      --blue-deep: #38BDF8;
+      --text-body: #CBD5E1;
+      --text-muted: #94A3B8;
+
       --blue-primary: #38BDF8;
-      --blue-bright: #7DD3FC;
-      --blue-tint-bg: rgba(2, 132, 199, 0.18);
-      --blue-tint-border: rgba(56, 189, 248, 0.35);
-      --gradient-card: linear-gradient(180deg, #132238 0%, #0D1829 100%);
-      --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.35);
-      --shadow-md: 0 14px 32px -6px rgba(0, 0, 0, 0.5);
-      --shadow-lg: 0 24px 54px -12px rgba(0, 0, 0, 0.65);
+      --blue-hover: #7DD3FC;
+      --blue-sky: #7DD3FC;
+
+      --border-light: #264264;
+      --border-subtle: #355882;
+      --border-ice: #0284C7;
+      --inset-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+      --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      --shadow-md: 0 14px 36px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      --shadow-hover: 0 22px 48px rgba(56, 189, 248, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg-page-grad);
       background-color: var(--bg-page);
       color: var(--text-main);
       line-height: 1.6;
-      transition: background-color 0.25s ease, color 0.25s ease;
+      overflow-x: hidden;
+      transition: background 0.25s ease, color 0.25s ease;
     }
-    a { text-decoration: none; color: inherit; }
-    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
 
-    /* NAVBAR */
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(0, 102, 204, 0.45); }
+      50% { transform: scale(1.15); opacity: 0.85; box-shadow: 0 0 0 6px rgba(0, 102, 204, 0); }
+    }
+
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+
+    @keyframes waveSlide {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(-25px); }
+      100% { transform: translateX(0); }
+    }
+
+    @keyframes scanSweep {
+      0% { top: 10%; opacity: 0.25; }
+      50% { top: 86%; opacity: 0.95; }
+      100% { top: 10%; opacity: 0.25; }
+    }
+
+    @keyframes orbDrift {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(24px, -18px) scale(1.06); }
+    }
+
+    /* ==========================================================================
+       NAVBAR — METALLIC SILVER GLASS, SINGLE LINE (NO WRAPPING)
+       ========================================================================== */
     .navbar {
       position: sticky;
       top: 0;
-      z-index: 1000;
-      background: var(--bg-glass);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--silver-border);
+      z-index: 100;
+      height: 72px;
+      background: var(--bg-surface-glass);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border-light);
+      box-shadow: 0 4px 20px rgba(15, 35, 58, 0.04);
+      transition: background 0.25s ease, border-color 0.25s ease;
     }
+
     .nav-inner {
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 76px;
-      gap: 16px;
+      gap: 24px;
+      flex-wrap: nowrap;
     }
-    .brand-logo { display: flex; align-items: center; gap: 12px; }
-    .brand-logo svg { height: 42px; width: auto; }
+
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .brand-logo svg {
+      height: 40px;
+      width: auto;
+      display: block;
+    }
+
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 26px;
       list-style: none;
+      flex-wrap: nowrap;
     }
+
+    .nav-links li {
+      flex-shrink: 0;
+    }
+
     .nav-links a {
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       font-weight: 600;
-      color: var(--text-secondary);
-      transition: color 0.2s ease;
+      color: var(--text-body);
+      white-space: nowrap;
+      padding: 6px 2px;
+      position: relative;
+      transition: color 0.15s ease;
     }
-    .nav-links a:hover, .nav-links a.active { color: var(--blue-primary); }
-    .nav-actions { display: flex; align-items: center; gap: 10px; }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, #0066CC, #94A3B8);
+      transform: scaleX(0);
+      transition: transform 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--blue-primary);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      transform: scaleX(1);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .lang-select-wrap {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .lang-select {
+      appearance: none;
+      -webkit-appearance: none;
+      background: var(--bg-surface);
+      color: var(--text-main);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--inset-highlight);
+      border-radius: 99px;
+      height: 38px;
+      padding: 0 30px 0 14px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      outline: none;
+      white-space: nowrap;
+      transition: border-color 0.15s ease;
+    }
+
+    .lang-select:hover,
+    .lang-select:focus {
+      border-color: var(--blue-primary);
+    }
+
+    .lang-chevron {
+      position: absolute;
+      right: 11px;
+      pointer-events: none;
+      color: var(--text-muted);
+    }
+
+    .icon-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid var(--border-light);
+      background: var(--bg-surface);
+      box-shadow: var(--inset-highlight);
+      color: var(--text-main);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.18s ease;
+    }
+
+    .icon-btn:hover {
+      border-color: var(--blue-primary);
+      color: var(--blue-primary);
+      transform: rotate(12deg);
+    }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      height: 40px;
-      padding: 0 18px;
-      border-radius: var(--radius-sm);
-      font-size: 0.9rem;
-      font-weight: 700;
-      cursor: pointer;
-      border: 1px solid transparent;
-      transition: all 0.22s ease;
-    }
-    .btn-primary {
-      background: var(--gradient-brand);
-      color: #F8FAFC;
-      box-shadow: 0 4px 14px rgba(0, 82, 163, 0.26);
-    }
-    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(2, 132, 199, 0.36); }
-    .btn-outline {
-      background: var(--bg-elevated);
-      color: var(--text-main);
-      border-color: var(--silver-border-strong);
-    }
-    .btn-outline:hover { border-color: var(--blue-primary); color: var(--blue-primary); }
-    .btn-lg { height: 48px; padding: 0 24px; font-size: 0.96rem; border-radius: 10px; }
-
-    .icon-btn {
       height: 38px;
-      width: 38px;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--silver-border-strong);
-      background: var(--bg-elevated);
-      color: var(--text-main);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+      padding: 0 18px;
+      border-radius: 99px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      white-space: nowrap;
       cursor: pointer;
-    }
-
-    /* BREADCRUMB SWITCHER BAR */
-    .product-switcher-bar {
-      background: linear-gradient(90deg, #061325 0%, #0B213F 50%, #061325 100%);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.22);
-      padding: 10px 0;
-      color: #E2E8F0;
-      font-size: 0.84rem;
-    }
-    .switcher-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .switcher-tabs {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .switcher-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 0.8rem;
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(148, 163, 184, 0.22);
-      color: #CBD5E1;
       transition: all 0.2s ease;
-    }
-    .switcher-pill:hover {
-      background: rgba(56, 189, 248, 0.15);
-      color: #FFFFFF;
-      border-color: #38BDF8;
-    }
-    .switcher-pill.active {
-      background: linear-gradient(135deg, #0284C7 0%, #38BDF8 100%);
-      color: #061325;
-      border-color: transparent;
+      border: 1px solid transparent;
+      font-family: inherit;
+      flex-shrink: 0;
     }
 
-    /* HERO */
-    .hero {
-      padding: 60px 0 54px;
-      border-bottom: 1px solid var(--silver-border);
-      position: relative;
-      overflow: hidden;
+    .btn-outline {
+      background: var(--bg-surface);
+      color: var(--text-main);
+      border-color: var(--border-subtle);
+      box-shadow: var(--shadow-sm);
     }
+
+    .btn-outline:hover {
+      border-color: var(--blue-primary);
+      color: var(--blue-primary);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #0052A3 0%, #0066CC 55%, #0284C7 100%);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 6px 16px rgba(0, 102, 204, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #004488 0%, #0052A3 60%, #0066CC 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(0, 102, 204, 0.36), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    }
+
+    .btn-lg {
+      height: 48px;
+      padding: 0 26px;
+      font-size: 0.95rem;
+    }
+
+    /* ==========================================================================
+       HERO SECTION (BRUSHED SILVER + ANIMATED NETWORK + WAVES)
+       ========================================================================== */
+    .hero {
+      position: relative;
+      padding: 72px 0 84px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 18% 15%, rgba(255, 255, 255, 0.85) 0%, transparent 45%),
+        radial-gradient(circle at 84% 22%, rgba(56, 189, 248, 0.16) 0%, transparent 48%);
+    }
+
+    body.dark-mode .hero {
+      background:
+        radial-gradient(circle at 18% 15%, rgba(56, 189, 248, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 84% 22%, rgba(0, 102, 204, 0.16) 0%, transparent 48%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(100, 116, 139, 0.09) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(100, 116, 139, 0.09) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 50%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 50%, transparent 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    #heroCanvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-ambient-orb {
+      position: absolute;
+      width: 440px;
+      height: 440px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, rgba(148, 163, 184, 0) 70%);
+      top: -100px;
+      right: 6%;
+      pointer-events: none;
+      z-index: 0;
+      animation: orbDrift 11s ease-in-out infinite;
+    }
+
+    .hero-bg-wave {
+      position: absolute;
+      left: -4%;
+      right: -4%;
+      bottom: -2px;
+      width: 108%;
+      height: 140px;
+      pointer-events: none;
+      z-index: 1;
+      animation: waveSlide 14s ease-in-out infinite;
+    }
+
     .hero-grid {
+      position: relative;
+      z-index: 2;
       display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 40px;
+      grid-template-columns: 1.06fr 0.94fr;
+      gap: 48px;
       align-items: center;
     }
+
     .pill-tag {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       padding: 6px 14px;
-      border-radius: 999px;
-      background: var(--blue-tint-bg);
-      border: 1px solid var(--blue-tint-border);
-      color: var(--blue-primary);
-      font-size: 0.78rem;
+      border-radius: 99px;
+      background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 100%);
+      color: #0052A3;
+      font-size: 0.79rem;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 16px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 20px;
     }
+
+    body.dark-mode .pill-tag {
+      background: linear-gradient(135deg, #162F4E 0%, #0F233A 100%);
+      color: #7DD3FC;
+      border-color: #2A4B72;
+    }
+
+    .pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #0066CC;
+      flex-shrink: 0;
+      animation: pulseDot 2.4s infinite;
+    }
+
+    body.dark-mode .pill-dot {
+      background: #38BDF8;
+    }
+
     .hero h1 {
-      font-size: clamp(2rem, 3.6vw, 3rem);
+      font-size: 2.75rem;
+      line-height: 1.18;
       font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-      margin-bottom: 16px;
+      letter-spacing: -0.028em;
+      margin-bottom: 20px;
     }
+
     .hero h1 .highlight {
-      background: linear-gradient(135deg, var(--blue-primary) 0%, var(--blue-bright) 100%);
+      background: linear-gradient(90deg, #0052A3 0%, #0284C7 52%, #64748B 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .hero-desc {
-      font-size: 1.04rem;
-      color: var(--text-secondary);
-      margin-bottom: 24px;
+
+    body.dark-mode .hero h1 .highlight {
+      background: linear-gradient(90deg, #38BDF8 0%, #BAE6FD 55%, #CBD5E1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
+
+    .hero-desc {
+      font-size: 1.02rem;
+      color: var(--text-body);
+      margin-bottom: 30px;
+      max-width: 590px;
+    }
+
     .hero-cta-group {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 28px;
-    }
-    .hero-kpi-strip {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      padding-top: 20px;
-      border-top: 1px solid var(--silver-border);
-    }
-    .hero-kpi-item strong {
-      display: block;
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: var(--blue-primary);
-    }
-    .hero-kpi-item span {
-      font-size: 0.78rem;
-      color: var(--text-muted);
+      margin-bottom: 34px;
     }
 
-    /* VISUAL MOCKUP CARD */
-    .visual-console-card {
-      background: linear-gradient(160deg, #071426 0%, #0D223D 55%, #071426 100%);
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      border-radius: var(--radius-lg);
-      padding: 22px;
-      color: #F8FAFC;
-      box-shadow: var(--shadow-lg);
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border-light);
     }
-    .console-top {
+
+    .metric-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      border-radius: var(--radius-md);
+      padding: 13px 15px;
+    }
+
+    .metric-item strong {
+      display: block;
+      font-size: 1.32rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #0052A3, #475569);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.02em;
+    }
+
+    body.dark-mode .metric-item strong {
+      background: linear-gradient(90deg, #38BDF8, #E2E8F0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .metric-item span {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+      display: block;
+      margin-top: 3px;
+    }
+
+    /* Hero Right Command Center */
+    .hero-showcase {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 22px;
+      box-shadow: var(--shadow-lg);
+      animation: floatSlow 7s ease-in-out infinite;
+      position: relative;
+    }
+
+    .showcase-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding-bottom: 14px;
       margin-bottom: 16px;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
-      font-size: 0.8rem;
-      color: #94A3B8;
-    }
-    .screen-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-    .screen-box {
-      background: rgba(15, 23, 42, 0.78);
-      border: 1px solid rgba(148, 163, 184, 0.24);
-      border-radius: 12px;
-      padding: 14px;
-    }
-    .screen-box-tag {
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: #38BDF8;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 6px;
-      display: flex;
-      justify-content: space-between;
-    }
-    .screen-box h4 {
-      font-size: 0.9rem;
-      margin-bottom: 6px;
-      color: #F1F5F9;
-    }
-    .screen-box p {
-      font-size: 0.76rem;
-      color: #94A3B8;
-      line-height: 1.45;
+      border-bottom: 1px solid var(--border-light);
     }
 
-    /* SECTIONS */
-    .section { padding: 72px 0; }
-    .section-alt {
-      background: var(--bg-surface);
-      border-top: 1px solid var(--silver-border);
-      border-bottom: 1px solid var(--silver-border);
+    .window-dots {
+      display: flex;
+      gap: 6px;
     }
+
+    .window-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--border-subtle);
+    }
+
+    .window-dots span:first-child {
+      background: #0066CC;
+    }
+
+    .window-dots span:nth-child(2) {
+      background: #64748B;
+    }
+
+    .showcase-url {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--bg-subtle);
+      padding: 4px 12px;
+      border-radius: 99px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    .live-indicator {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #0066CC;
+      animation: pulseDot 2s infinite;
+    }
+
+    .mini-card {
+      background: var(--bg-surface-solid);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      margin-bottom: 12px;
+    }
+
+    .mini-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .biometric-live-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 12px 0 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: var(--bg-ice);
+      border: 1px solid var(--border-light);
+    }
+
+    .face-scan-box {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      border: 1.5px dashed var(--blue-primary);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: var(--bg-surface-solid);
+    }
+
+    .scan-laser {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #0066CC;
+      box-shadow: 0 0 6px #38BDF8;
+      animation: scanSweep 2.4s ease-in-out infinite;
+    }
+
+    .status-pill {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 99px;
+      background: var(--bg-ice);
+      color: var(--blue-primary);
+      border: 1px solid var(--border-light);
+      white-space: nowrap;
+    }
+
+    /* ==========================================================================
+       SECTIONS & PRICING
+       ========================================================================== */
+    .section {
+      padding: 84px 0;
+      position: relative;
+    }
+
+    .section-alt {
+      background: linear-gradient(180deg, #DCE4EE 0%, #E6ECF4 100%);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    body.dark-mode .section-alt {
+      background: linear-gradient(180deg, #0E1D31 0%, #132742 100%);
+    }
+
     .section-header {
       text-align: center;
-      max-width: 800px;
-      margin: 0 auto 48px;
-    }
-    .section-header h2 {
-      font-size: clamp(1.75rem, 3vw, 2.4rem);
-      font-weight: 800;
-      letter-spacing: -0.025em;
-      margin-bottom: 12px;
-    }
-    .section-header p {
-      color: var(--text-secondary);
-      font-size: 1rem;
+      max-width: 780px;
+      margin: 0 auto 54px;
     }
 
-    /* PRICING CARDS */
+    .section-header h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.022em;
+      margin-bottom: 12px;
+    }
+
+    .section-header p {
+      color: var(--text-body);
+      font-size: 1.02rem;
+    }
+
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 26px;
       align-items: stretch;
     }
+
     .pricing-card {
-      background: var(--gradient-card);
-      border: 1px solid var(--silver-border-strong);
-      border-radius: var(--radius-lg);
-      padding: 32px 28px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
       box-shadow: var(--shadow-md);
+      border-radius: var(--radius-xl);
+      padding: 32px 28px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       position: relative;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
     }
+
     .pricing-card:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow-lg);
+      border-color: var(--blue-sky);
     }
+
     .pricing-card.featured {
-      background: linear-gradient(165deg, #061529 0%, #0B2545 52%, #071930 100%);
+      background: linear-gradient(155deg, #0B192C 0%, #102A49 55%, #163860 100%);
       color: #F8FAFC;
       border: 2px solid #38BDF8;
-      box-shadow: 0 24px 56px -12px rgba(0, 82, 163, 0.38);
+      box-shadow: 0 24px 60px rgba(0, 82, 163, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.22);
       transform: translateY(-6px);
     }
+
+    .pricing-card.featured:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 28px 68px rgba(0, 82, 163, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+
     .pricing-popular-ribbon {
       position: absolute;
       top: -13px;
-      right: 24px;
-      background: linear-gradient(135deg, #0284C7 0%, #38BDF8 100%);
-      color: #061325;
-      font-size: 0.72rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, #0284C7 0%, #38BDF8 50%, #E2E8F0 100%);
+      color: #071324;
+      font-size: 0.73rem;
       font-weight: 800;
-      padding: 5px 14px;
-      border-radius: 999px;
       letter-spacing: 0.06em;
       text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 99px;
+      white-space: nowrap;
+      box-shadow: 0 6px 18px rgba(2, 132, 199, 0.35);
     }
+
     .pricing-tier-label {
       display: inline-flex;
-      font-size: 0.75rem;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.76rem;
       font-weight: 800;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      padding: 5px 12px;
-      border-radius: 999px;
-      background: var(--blue-tint-bg);
       color: var(--blue-primary);
-      border: 1px solid var(--blue-tint-border);
-      margin-bottom: 14px;
+      margin-bottom: 8px;
     }
+
     .pricing-card.featured .pricing-tier-label {
-      background: rgba(56, 189, 248, 0.16);
       color: #7DD3FC;
-      border-color: rgba(56, 189, 248, 0.4);
     }
-    .pricing-card h3 { font-size: 1.38rem; font-weight: 800; margin-bottom: 8px; }
+
+    .pricing-card h3 {
+      font-size: 1.38rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .pricing-card.featured h3 {
+      color: #FFFFFF;
+    }
+
     .pricing-subtitle {
-      font-size: 0.88rem;
-      color: var(--text-secondary);
+      font-size: 0.86rem;
+      color: var(--text-muted);
       margin-bottom: 20px;
-      min-height: 42px;
+      min-height: 40px;
+      line-height: 1.45;
     }
-    .pricing-card.featured .pricing-subtitle { color: #CBD5E1; }
+
+    .pricing-card.featured .pricing-subtitle {
+      color: #CBD5E1;
+    }
+
     .pricing-price-box {
       padding: 18px;
       border-radius: var(--radius-md);
-      background: var(--bg-elevated);
-      border: 1px solid var(--silver-border);
-      margin-bottom: 18px;
+      background: var(--bg-surface-solid);
+      border: 1px solid var(--border-light);
+      margin-bottom: 16px;
     }
+
     .pricing-card.featured .pricing-price-box {
-      background: rgba(15, 29, 51, 0.82);
-      border-color: rgba(56, 189, 248, 0.32);
+      background: rgba(15, 35, 62, 0.78);
+      border-color: rgba(125, 211, 252, 0.32);
     }
+
     .price-main-line {
       display: flex;
       align-items: baseline;
       gap: 6px;
       margin-bottom: 8px;
     }
+
     .price-amount {
       font-size: 2.05rem;
       font-weight: 800;
       letter-spacing: -0.03em;
-      color: var(--blue-primary);
+      color: var(--text-main);
+      line-height: 1.1;
     }
-    .pricing-card.featured .price-amount { color: #38BDF8; }
-    .price-period { font-size: 0.88rem; font-weight: 600; color: var(--text-muted); }
-    .pricing-card.featured .price-period { color: #94A3B8; }
+
+    .pricing-card.featured .price-amount {
+      background: linear-gradient(90deg, #FFFFFF 0%, #7DD3FC 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .price-period {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .pricing-card.featured .price-period {
+      color: #94A3B8;
+    }
+
     .setup-fee-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 8px;
       padding-top: 8px;
-      border-top: 1px dashed var(--silver-border);
-      font-size: 0.83rem;
+      border-top: 1px dashed var(--border-light);
+      font-size: 0.82rem;
+      font-weight: 600;
     }
-    .pricing-card.featured .setup-fee-row { border-top-color: rgba(148, 163, 184, 0.25); }
+
+    .pricing-card.featured .setup-fee-row {
+      border-top-color: rgba(148, 163, 184, 0.28);
+    }
+
     .setup-free-badge {
-      display: inline-flex;
-      padding: 3px 10px;
-      border-radius: 999px;
-      background: rgba(56, 189, 248, 0.2);
+      display: inline-block;
+      padding: 2px 9px;
+      border-radius: 99px;
+      background: rgba(56, 189, 248, 0.18);
       color: #7DD3FC;
-      font-weight: 800;
-      font-size: 0.76rem;
-      border: 1px solid rgba(56, 189, 248, 0.45);
+      border: 1px solid rgba(125, 211, 252, 0.45);
+      font-size: 0.75rem;
+      font-weight: 700;
     }
+
     .role-quota-banner {
       display: flex;
       align-items: center;
       gap: 10px;
-      padding: 10px 14px;
+      padding: 11px 14px;
       border-radius: 10px;
-      background: var(--blue-tint-bg);
-      border: 1px solid var(--blue-tint-border);
+      background: var(--bg-ice);
+      border: 1px solid var(--border-ice);
+      color: var(--blue-hover);
       font-size: 0.83rem;
       font-weight: 700;
-      color: var(--blue-primary);
       margin-bottom: 18px;
     }
-    .pricing-card.featured .role-quota-banner {
-      background: rgba(2, 132, 199, 0.24);
-      border-color: rgba(56, 189, 248, 0.45);
-      color: #E0F2FE;
+
+    body.dark-mode .role-quota-banner {
+      background: rgba(2, 132, 199, 0.16);
+      color: #7DD3FC;
+      border-color: rgba(56, 189, 248, 0.35);
     }
+
+    .pricing-card.featured .role-quota-banner {
+      background: linear-gradient(90deg, rgba(2, 132, 199, 0.32), rgba(56, 189, 248, 0.18));
+      border-color: rgba(125, 211, 252, 0.45);
+      color: #F0F9FF;
+    }
+
     .pricing-feature-list {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 11px;
-      margin-bottom: 26px;
+      margin-bottom: 24px;
+      font-size: 0.87rem;
+      line-height: 1.48;
+      color: var(--text-body);
     }
+
+    .pricing-card.featured .pricing-feature-list {
+      color: #E2E8F0;
+    }
+
     .pricing-feature-list li {
       display: flex;
       align-items: flex-start;
       gap: 10px;
-      font-size: 0.87rem;
-      color: var(--text-secondary);
-      line-height: 1.48;
     }
-    .pricing-card.featured .pricing-feature-list li { color: #E2E8F0; }
+
     .pricing-check {
       width: 19px;
       height: 19px;
       border-radius: 50%;
-      background: var(--blue-tint-bg);
+      background: rgba(0, 102, 204, 0.12);
       color: var(--blue-primary);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
-      margin-top: 2px;
       font-size: 0.72rem;
       font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 2px;
     }
+
     .pricing-card.featured .pricing-check {
-      background: rgba(56, 189, 248, 0.24);
+      background: rgba(56, 189, 248, 0.22);
       color: #7DD3FC;
     }
 
-    /* MODULE GRID (FROM CFMS_QMS DOCS) */
-    .module-grid {
+    .pricing-hw-banner {
+      margin-top: 28px;
+      padding: 22px 26px;
+      border-radius: var(--radius-lg);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      gap: 20px;
     }
-    .module-card {
-      background: var(--gradient-card);
-      border: 1px solid var(--silver-border-strong);
-      border-radius: var(--radius-md);
-      padding: 26px;
-      box-shadow: var(--shadow-sm);
-    }
-    .module-card .mod-num {
-      display: inline-flex;
-      padding: 4px 10px;
-      border-radius: 6px;
-      background: var(--blue-tint-bg);
-      color: var(--blue-primary);
-      font-family: ui-monospace, monospace;
-      font-size: 0.76rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-    .module-card h3 { font-size: 1.12rem; font-weight: 800; margin-bottom: 8px; }
-    .module-card p { font-size: 0.88rem; color: var(--text-secondary); }
 
-    /* RBAC TABLE */
-    .table-card {
-      background: var(--bg-elevated);
-      border: 1px solid var(--silver-border-strong);
-      border-radius: var(--radius-md);
+    .hw-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.84rem;
+      color: var(--text-body);
+    }
+
+    .hw-item strong {
+      display: block;
+      color: var(--text-main);
+      font-size: 0.9rem;
+      margin-bottom: 3px;
+    }
+
+    /* ==========================================================================
+       FEATURE CARDS & RBAC TABLE
+       ========================================================================== */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .benefit-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--blue-primary);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .benefit-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #FFFFFF, #DCE4EE);
+      color: var(--blue-primary);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    body.dark-mode .benefit-icon {
+      background: linear-gradient(135deg, #1A3658, #11243C);
+    }
+
+    .benefit-card h3 {
+      font-size: 1.12rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .benefit-card p {
+      font-size: 0.9rem;
+      color: var(--text-body);
+    }
+
+    .data-table-wrap {
       overflow-x: auto;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      background: var(--bg-surface-solid);
       box-shadow: var(--shadow-md);
     }
-    .spec-table {
+
+    .data-table {
       width: 100%;
       border-collapse: collapse;
+      text-align: left;
       font-size: 0.9rem;
     }
-    .spec-table th {
+
+    .data-table th {
+      padding: 15px 18px;
       background: var(--bg-subtle);
       color: var(--text-main);
-      text-align: left;
-      padding: 14px 18px;
       font-weight: 800;
-      border-bottom: 1px solid var(--silver-border-strong);
-    }
-    .spec-table td {
-      padding: 14px 18px;
-      border-bottom: 1px solid var(--silver-border);
-      color: var(--text-secondary);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid var(--border-light);
+      white-space: nowrap;
     }
 
-    /* CONTACT BOX */
+    .data-table td {
+      padding: 15px 18px;
+      border-bottom: 1px solid var(--border-light);
+      color: var(--text-body);
+      vertical-align: middle;
+    }
+
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .data-table tr:hover td {
+      background: var(--bg-ice);
+    }
+
+    /* ==========================================================================
+       CTA & FOOTER
+       ========================================================================== */
     .cta-box {
-      background: linear-gradient(135deg, #061325 0%, #0B213F 55%, #0F2D56 100%);
+      background: linear-gradient(135deg, #0B1829 0%, #112844 55%, #1E3E66 100%);
+      color: #FFFFFF;
+      border: 1px solid #335680;
       border-radius: var(--radius-xl);
       padding: 48px;
-      color: #F8FAFC;
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
       gap: 36px;
       align-items: center;
-      border: 1px solid rgba(56, 189, 248, 0.3);
-    }
-    .cta-form {
-      background: rgba(15, 29, 51, 0.85);
-      border: 1px solid rgba(148, 163, 184, 0.25);
-      border-radius: var(--radius-md);
-      padding: 26px;
-    }
-    .form-group { margin-bottom: 14px; }
-    .form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: #CBD5E1; margin-bottom: 6px; }
-    .form-group input, .form-group select {
-      width: 100%;
-      height: 42px;
-      padding: 0 14px;
-      border-radius: 8px;
-      border: 1px solid rgba(148, 163, 184, 0.32);
-      background: rgba(7, 14, 26, 0.85);
-      color: #F8FAFC;
-      font-size: 0.9rem;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
     }
 
-    footer {
-      padding: 40px 0;
-      border-top: 1px solid var(--silver-border);
+    .cta-box h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+
+    .cta-box p {
+      color: #CBD5E1;
+      margin-bottom: 22px;
+      font-size: 0.96rem;
+    }
+
+    .contact-form {
+      background: linear-gradient(145deg, #FFFFFF 0%, #F1F5F9 100%);
+      color: #0F233A;
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      border: 1px solid #CBD5E1;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .contact-form h3 {
+      font-size: 1.12rem;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #475569;
+      margin-bottom: 4px;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      height: 40px;
+      padding: 0 12px;
+      border-radius: 8px;
+      border: 1px solid #CBD5E1;
+      background: #FFFFFF;
+      font-size: 0.88rem;
+      font-family: inherit;
+      color: #0F233A;
+    }
+
+    .form-toast {
+      display: none;
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: #E0F2FE;
+      color: #0052A3;
+      font-size: 0.84rem;
+      font-weight: 600;
       text-align: center;
-      font-size: 0.85rem;
-      color: var(--text-muted);
+    }
+
+    .footer {
+      background: var(--bg-navy-deep);
+      color: #94A3B8;
+      padding: 56px 0 32px;
+      border-top: 1px solid #1E3A5F;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 32px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid #1E3A5F;
+    }
+
+    .footer-brand svg {
+      height: 38px;
+      width: auto;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .footer-col h4 {
+      color: #F1F5F9;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      font-size: 0.86rem;
+    }
+
+    .footer-col a:hover {
+      color: #7DD3FC;
+    }
+
+    .footer-bottom {
+      padding-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.82rem;
     }
 
     @media (max-width: 980px) {
-      .hero-grid, .pricing-grid, .module-grid, .cta-box { grid-template-columns: 1fr; }
-      .pricing-card.featured { transform: none; }
-      .nav-links { display: none; }
-      .hero-kpi-strip { grid-template-columns: 1fr 1fr; }
+      .hero-grid,
+      .cta-box,
+      .grid-3,
+      .pricing-grid,
+      .pricing-hw-banner,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .pricing-card.featured {
+        transform: none;
+      }
+      .nav-links {
+        display: none;
+      }
+      .hero h1 {
+        font-size: 2.15rem;
+      }
+      .cta-box {
+        padding: 32px 24px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- TOP PRODUCT SWITCHER BAR -->
-  <div class="product-switcher-bar">
-    <div class="container switcher-inner">
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <a href="../" style="color: #7DD3FC; font-weight: 700;">&larr; Trang chủ HUDU (huduvn.com)</a>
-        <span style="opacity: 0.4;">|</span>
-        <span>Hệ sinh thái 2 Sản phẩm Chủ lực:</span>
-      </div>
-      <div class="switcher-tabs">
-        <a href="../dauthau/" class="switcher-pill">
-          01. Hệ Thống Săn Thầu AI (HUDU DauThau) &rarr;
-        </a>
-        <a href="./" class="switcher-pill active">
-          &#10003; 02. Quản Lý Phòng Khám &amp; Hàng Đợi (CFMS / QMS)
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- NAVBAR -->
+  <!-- NAVBAR — 100% UNIFIED OFFICIAL LOGO & SINGLE-LINE LINKS -->
   <header class="navbar">
     <div class="container nav-inner">
       <a href="../" class="brand-logo" aria-label="HUDU Home">
-        <svg viewBox="0 0 310 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 246 84">
           <defs>
-            <linearGradient id="cfmsNavGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#0052A3"/>
-              <stop offset="52%" stop-color="#0284C7"/>
-              <stop offset="100%" stop-color="#64748B"/>
+            <linearGradient id="navHuduGrad" gradientUnits="userSpaceOnUse" x1="94" y1="22" x2="241" y2="62">
+              <stop id="navGradStop1" offset="0%" stop-color="#0052A3" />
+              <stop id="navGradStop2" offset="38%" stop-color="#0284C7" />
+              <stop id="navGradStop3" offset="74%" stop-color="#64748B" />
+              <stop id="navGradStop4" offset="100%" stop-color="#94A3B8" />
             </linearGradient>
           </defs>
-          <g transform="translate(4, 6)">
-            <circle cx="30" cy="30" r="27" fill="#0B192C" stroke="url(#cfmsNavGrad)" stroke-width="2.5"/>
-            <path d="M 13 17 V 43 M 13 30 H 25 M 25 17 V 43" stroke="#38BDF8" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M 33 17 V 43 M 33 17 H 40 C 49 17 49 43 40 43 H 33 M 29 26 H 37" stroke="#E2E8F0" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="42" cy="42" r="37" fill="#0066CC" />
+          <g transform="translate(42, 42) scale(0.80) translate(-55.75, -60)">
+            <path fill-rule="evenodd" d="M 54 36.5 H 64 A 23.5 23.5 0 0 1 87.5 60 A 23.5 23.5 0 0 1 64 83.5 H 54 Z M 59 46 V 74 H 64 A 14 14 0 0 0 78 60 A 14 14 0 0 0 64 46 Z" fill="#7DD3FC" />
+            <rect x="24" y="33.5" width="10" height="53" rx="5" fill="#FFFFFF" />
+            <rect x="49" y="33.5" width="10" height="53" rx="5" fill="#FFFFFF" />
+            <path d="M 27.5 56.2 C 38 48.5, 54 64.5, 70.5 55.2 A 4.5 4.5 0 0 1 71.5 64.0 C 54 73.5, 38 57.5, 29.5 64.2 A 4.5 4.5 0 0 1 27.5 56.2 Z" fill="#FFFFFF" />
           </g>
-          <text x="76" y="45" font-family="'Inter', sans-serif" font-weight="800" font-size="30" letter-spacing="4" fill="url(#cfmsNavGrad)">HUDU</text>
-          <text x="195" y="43" font-family="'Inter', sans-serif" font-weight="800" font-size="14" letter-spacing="1" fill="#0284C7">CFMS/QMS</text>
+          <g fill="url(#navHuduGrad)" fill-rule="evenodd">
+            <rect x="94" y="24" width="7.6" height="36" rx="3.8" />
+            <rect x="97.8" y="38.5" width="22.4" height="7" rx="3.5" />
+            <rect x="116.4" y="24" width="7.6" height="36" rx="3.8" />
+            <path d="M 133 27.8 A 3.8 3.8 0 0 1 140.6 27.8 V 45 A 7.4 7.4 0 0 0 155.4 45 V 27.8 A 3.8 3.8 0 0 1 163 27.8 V 45 A 15 15 0 0 1 133 45 Z" />
+            <path d="M 172 27.8 A 3.8 3.8 0 0 1 175.8 24 H 184 A 18 18 0 0 1 202 42 A 18 18 0 0 1 184 60 H 175.8 A 3.8 3.8 0 0 1 172 56.2 Z M 179.6 31.4 V 52.6 H 184 A 10.6 10.6 0 0 0 194.6 42 A 10.6 10.6 0 0 0 184 31.4 Z" />
+            <path d="M 211 27.8 A 3.8 3.8 0 0 1 218.6 27.8 V 45 A 7.4 7.4 0 0 0 233.4 45 V 27.8 A 3.8 3.8 0 0 1 241 27.8 V 45 A 15 15 0 0 1 211 45 Z" />
+          </g>
         </svg>
       </a>
 
       <ul class="nav-links">
-        <li><a href="../">&larr; Trang chủ</a></li>
-        <li><a href="#pricing" class="active">Bảng giá Phòng khám</a></li>
-        <li><a href="#features">Tính năng Edge-AI</a></li>
-        <li><a href="#rbac">Phân quyền 3 Role</a></li>
-        <li><a href="#hardware">Phần cứng &amp; Bảo mật</a></li>
-        <li><a href="../dauthau/">Sản phẩm Đấu thầu AI &rarr;</a></li>
+        <li><a href="../">Trang chủ</a></li>
+        <li><a href="#pricing" class="active">Bảng giá</a></li>
+        <li><a href="#features">Tính năng</a></li>
+        <li><a href="#roles">Phân quyền 3 Role</a></li>
+        <li><a href="../dauthau/">Đấu thầu AI</a></li>
       </ul>
 
       <div class="nav-actions">
-        <button class="icon-btn" onclick="document.body.classList.toggle('dark-mode')" title="Đổi giao diện Sáng / Tối">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <div class="lang-select-wrap">
+          <select id="langSelect" class="lang-select" aria-label="Language">
+            <option value="vi">🇻🇳 Tiếng Việt</option>
+            <option value="en">🇺🇸 English</option>
+            <option value="es">🇪🇸 Español</option>
+            <option value="zh">🇨🇳 中文</option>
+            <option value="ja">🇯🇵 日本語</option>
+            <option value="ko">🇰🇷 한국어</option>
+          </select>
+          <svg class="lang-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+
+        <button id="themeToggleBtn" class="icon-btn" onclick="toggleTheme()" title="Switch Light / Dark Theme" aria-label="Toggle Theme">
+          <svg id="themeIconMoon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="themeIconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         </button>
-        <a href="#pricing" class="btn btn-primary">Xem Bảng Giá &darr;</a>
+
+        <a href="#contact" class="btn btn-primary">Đăng ký Dùng thử</a>
       </div>
     </div>
   </header>
 
-  <!-- PRODUCT HERO -->
+  <!-- HERO SECTION -->
   <section class="hero">
+    <div class="hero-ambient-orb"></div>
+    <canvas id="heroCanvas"></canvas>
+
+    <svg class="hero-bg-wave" viewBox="0 0 1440 160" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 64 C 320 10, 640 130, 960 64 C 1180 20, 1340 50, 1440 80 L 1440 160 L 0 160 Z" fill="#CBD5E1" fill-opacity="0.45"/>
+      <path d="M0 98 C 400 145, 820 35, 1240 105 C 1340 120, 1400 110, 1440 96 L 1440 160 L 0 160 Z" fill="#93C5FD" fill-opacity="0.28"/>
+    </svg>
+
     <div class="container hero-grid">
       <div>
-        <div class="pill-tag">SẢN PHẨM 02 · HUDU CFMS / QMS · EDGE-AI HEALTHCARE</div>
+        <div class="pill-tag">
+          <span class="pill-dot"></span>
+          <span>SẢN PHẨM 02 · HUDU CFMS / QMS · huduvn.com/cfms</span>
+        </div>
         <h1>
-          Phần Mềm Nhận Diện Khuôn Mặt, <span class="highlight">Tiếp Nhận &amp; Gọi Số Phòng Khám</span>
+          Hệ Thống <span class="highlight">Nhận Diện Khuôn Mặt</span>, Quét CCCD &amp; Điều Phối Phòng Khám
         </h1>
         <p class="hero-desc">
-          Giải pháp số hóa toàn diện quy trình lấy số thứ tự, quét CCCD gắn chip, phân quyền <strong>Admin · Bác sĩ · Điều dưỡng</strong> và đọc loa gọi số tự động cho <strong>Phòng khám Đa khoa/Chuyên khoa, Khoa Thận Nhân Tạo, Bệnh viện &amp; Trung tâm Đào tạo</strong>. Vận hành 100% Offline LAN siêu tốc dưới 2 mili-giây.
+          Giải pháp tiếp nhận bệnh nhân tự động, cấp số thứ tự sinh trắc học <strong>Edge AI (&lt; 2 ms)</strong>, ánh xạ <strong>1:N người nhà lấy số giùm</strong>, quét QR CCCD gắn chip và phát loa gọi số TTS tiếng Việt cho Phòng khám, Khoa Thận Nhân Tạo &amp; Bệnh viện.
         </p>
 
         <div class="hero-cta-group">
           <a href="#pricing" class="btn btn-primary btn-lg">
-            Xem Bảng Giá (Từ 499k/tháng) &darr;
+            Xem Bảng Giá Gói Basic &amp; Premium &darr;
           </a>
           <a href="#features" class="btn btn-outline btn-lg">
-            Chi Tiết 5 Phân Hệ Kỹ Thuật
+            Khám Phá Tính Năng
           </a>
         </div>
 
-        <div class="hero-kpi-strip">
-          <div class="hero-kpi-item">
+        <div class="hero-metrics">
+          <div class="metric-item">
             <strong>&lt; 2 ms</strong>
-            <span>Đối soát 10.000 khuôn mặt (512-D SIMD)</span>
+            <span>Đối soát 10.000 hồ sơ bằng SIMD 512 chiều</span>
           </div>
-          <div class="hero-kpi-item">
-            <strong>1:N</strong>
-            <span>Người nhà lấy số hộ &amp; Chống trùng phiếu</span>
+          <div class="metric-item">
+            <strong>1:N Face</strong>
+            <span>Người nhà lấy số giùm &amp; chống trùng phiếu 100%</span>
           </div>
-          <div class="hero-kpi-item">
-            <strong>3 Role</strong>
-            <span>Admin · Bác sĩ · Điều dưỡng &amp; Cấp cứu CC-xx</span>
-          </div>
-          <div class="hero-kpi-item">
+          <div class="metric-item">
             <strong>&lt; 50 MB</strong>
-            <span>RAM siêu nhẹ · Chạy mượt trên Mini-PC / PC cũ</span>
+            <span>App Tauri v2 Offline LAN &amp; Chứng chỉ Root CA</span>
           </div>
         </div>
       </div>
 
-      <!-- Right Visual Architecture Overview -->
-      <div class="visual-console-card">
-        <div class="console-top">
-          <span><strong>HUDU CFMS v2.0</strong> · Local Root CA HTTPS (<code>chaythan.local:9697</code>)</span>
-          <span style="color: #38BDF8; font-weight: 700;">● 100% Offline LAN</span>
-        </div>
-
-        <div class="screen-grid">
-          <div class="screen-box">
-            <div class="screen-box-tag"><span>1. Kiosk Tiếp Nhận</span><code>GET /</code></div>
-            <h4>Khung Face 1:1 &amp; Quét CCCD</h4>
-            <p>Đếm ngược 3 giây tự chụp, tự cân bằng sáng ngược sáng, nhận diện người nhà lấy số giùm &amp; quét QR CCCD 3 chế độ.</p>
+      <!-- Right Live Preview -->
+      <div class="hero-showcase">
+        <div class="showcase-header">
+          <div class="window-dots">
+            <span></span><span></span><span></span>
           </div>
-          <div class="screen-box">
-            <div class="screen-box-tag"><span>2. Bàn Bác Sĩ / ĐD</span><code>GET /dashboard</code></div>
-            <h4>Gọi Loa TTS &amp; Cấp Cứu CC-xx</h4>
-            <p>Tìm kiếm không dấu tức thì, nút <code>[🔊 Gọi Lại]</code>, cấp số thủ công <code>[➕ Cấp Số Mới]</code> &amp; ưu tiên Cấp cứu nhảy đầu hàng đợi.</p>
-          </div>
-          <div class="screen-box">
-            <div class="screen-box-tag"><span>3. Màn Hình TV Chờ</span><code>GET /display</code></div>
-            <h4>Đồng Bộ Loa &amp; Chuông Ding-Dong</h4>
-            <p>Hiển thị rõ nét cho người cao tuổi, phát chuông Ding-Dong và giọng đọc Tiếng Việt tự nhiên mời vào đúng phòng/máy.</p>
-          </div>
-          <div class="screen-box">
-            <div class="screen-box-tag"><span>4. Cổng Admin Ẩn</span><code>/admin-portal</code></div>
-            <h4>Sơ Đồ Topology &amp; Audit Log</h4>
-            <p>Giám sát trực quan trạng thái Camera, Loa, TV, CSDL SQLite WAL, cấu hình thương hiệu riêng &amp; sao lưu USB.</p>
+          <div class="showcase-url">
+            <span class="live-indicator"></span>
+            chaythan.local:9697 · Edge AI Active
           </div>
         </div>
 
-        <div style="background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 10px; padding: 12px 14px; font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
-          <span><strong>App Desktop Native (Tauri v2):</strong> Windows · macOS · Linux</span>
-          <span style="color: #7DD3FC; font-weight: 700;">Tặng Custom Thương Hiệu Riêng &amp; Bảo Trì Miễn Phí</span>
+        <div class="mini-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+            <strong style="font-size:0.95rem;">Kiosk Nhận Diện Khuôn Mặt &amp; Quét CCCD Chip</strong>
+            <span class="status-pill">SIMD 1.4 ms</span>
+          </div>
+          <div class="biometric-live-row">
+            <div class="face-scan-box">
+              <div class="scan-laser"></div>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0066CC" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div style="font-size: 0.8rem; line-height: 1.4;">
+              <strong style="color: var(--text-main); display: block;">BN-1001 · Nguyễn Văn Hòa (1962)</strong>
+              <span style="color: var(--text-muted);">Ánh xạ 1:N: Người nhà lấy số · Ca 1 (Máy lọc số 08)</span>
+            </div>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:0.78rem; color:var(--text-muted);">
+            <span>&#10003; Đã chống trùng phiếu trong ca</span>
+            <span style="color:var(--blue-primary); font-weight:700;">&#128266; Loa TTS: Mời số 008</span>
+          </div>
+        </div>
+
+        <div class="mini-card" style="background: linear-gradient(145deg, #0B192C, #132A46); color: #F8FAFC; border-color: #38BDF8;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+            <span style="font-size:0.75rem; font-weight:800; color:#7DD3FC; text-transform:uppercase; letter-spacing:0.06em;">Bảng giá công khai · Miễn phí bảo trì</span>
+            <span style="font-size:0.72rem; background:rgba(56,189,248,0.2); color:#7DD3FC; padding:3px 9px; border-radius:99px; font-weight:700;">Custom Thương Hiệu Riêng</span>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:8px;">
+            <div style="background:rgba(15,23,42,0.7); padding:10px 12px; border-radius:10px; border:1px solid rgba(148,163,184,0.25);">
+              <div style="font-size:0.74rem; color:#94A3B8; font-weight:700;">GÓI BASIC (01 Acc/Role)</div>
+              <div style="font-size:1.2rem; font-weight:800; color:#FFFFFF;">499.000đ<span style="font-size:0.75rem; font-weight:500; color:#CBD5E1;">/tháng</span></div>
+              <div style="font-size:0.72rem; color:#CBD5E1; margin-top:2px;">Lắp đặt: 1.799.000đ</div>
+            </div>
+            <div style="background:rgba(2,132,199,0.25); padding:10px 12px; border-radius:10px; border:1px solid #38BDF8;">
+              <div style="font-size:0.74rem; color:#7DD3FC; font-weight:700;">GÓI PREMIUM (10 Acc/Role)</div>
+              <div style="font-size:1.2rem; font-weight:800; color:#7DD3FC;">999.000đ<span style="font-size:0.75rem; font-weight:500; color:#E2E8F0;">/tháng</span></div>
+              <div style="font-size:0.72rem; color:#BAE6FD; font-weight:700; margin-top:2px;">Miễn phí lắp đặt 0đ</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 1: PRICING TABLE (MAIN FOCUS) -->
+  <!-- PRICING SECTION (#pricing) -->
   <section id="pricing" class="section section-alt">
     <div class="container">
       <div class="section-header">
-        <div class="pill-tag">Bảng Giá Chính Thức · HUDU CFMS / QMS</div>
-        <h2>Bảng Giá Phần Mềm Quản Lý Phòng Khám &amp; Bệnh Viện</h2>
+        <div class="pill-tag">
+          <span class="pill-dot"></span>
+          <span>Bảng Giá Quản Lý Phòng Khám &amp; Bệnh Viện (CFMS / QMS)</span>
+        </div>
+        <h2>Gói Dịch Vụ Minh Bạch · Miễn Phí Bảo Trì Trọn Đời Thuê Bao</h2>
         <p>
-          Tất cả các gói đều bao gồm <strong>dịch vụ Custom thương hiệu riêng (Logo, Tên Phòng khám/Bệnh viện, Khoa/Phòng)</strong> và <strong>miễn phí 100% bảo trì, cập nhật phần mềm trong suốt thời gian còn Subscribe</strong>.
+          Thiết kế tối ưu chi phí cho Phòng khám chuyên khoa, Khoa Thận Nhân Tạo, Bệnh viện và Cơ sở đào tạo. Tặng kèm dịch vụ <strong>Custom thương hiệu riêng (Logo, Tên đơn vị)</strong> trên toàn bộ màn hình Kiosk, Bàn điều phối &amp; TV Phòng chờ.
         </p>
       </div>
 
@@ -762,10 +1381,13 @@
         <!-- PLAN 1: BASIC -->
         <div class="pricing-card">
           <div>
-            <div class="pricing-tier-label">GÓI CƠ BẢN · BASIC</div>
+            <div class="pricing-tier-label">
+              <span>●</span>
+              <span>GÓI CƠ BẢN · BASIC</span>
+            </div>
             <h3>Phòng Khám &amp; Cơ Sở Tiêu Chuẩn</h3>
             <p class="pricing-subtitle">
-              Giải pháp tiết kiệm cho Phòng khám chuyên khoa, Phòng mạch bác sĩ hoặc Cơ sở đào tạo quy mô gọn (1 ca / 1 quầy tiếp nhận).
+              Phù hợp cho Phòng khám chuyên khoa, Phòng mạch tư nhân hoặc Trung tâm đào tạo quy mô gọn (1 quầy tiếp nhận).
             </p>
 
             <div class="pricing-price-box">
@@ -774,7 +1396,7 @@
                 <span class="price-period">/ tháng (Subscribe)</span>
               </div>
               <div class="setup-fee-row">
-                <span style="color: var(--text-muted);">Phí lắp đặt &amp; bàn giao (1 lần):</span>
+                <span>Phí lắp đặt &amp; khởi tạo (1 lần):</span>
                 <strong style="color: var(--text-main);">1.799.000đ</strong>
               </div>
             </div>
@@ -787,44 +1409,47 @@
             <ul class="pricing-feature-list">
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Dịch vụ Custom thương hiệu riêng:</strong> Cài đặt Tên Phòng khám, Tên Khoa &amp; Logo riêng đồng bộ trên Kiosk lấy số (<code>/</code>), Bàn điều phối (<code>/dashboard</code>) và TV Phòng chờ (<code>/display</code>).</div>
+                <span><strong>Dịch vụ Custom thương hiệu riêng:</strong> Cài đặt Tên Phòng khám, Tên Khoa &amp; Logo riêng đồng bộ trên Kiosk lấy số, Bàn điều phối và TV Phòng chờ.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Miễn phí 100% bảo trì khi còn Subscribe:</strong> Hỗ trợ kỹ thuật từ xa, tự động khởi động lại qua Watchdog 24/7 và nâng cấp tính năng mới hoàn toàn miễn phí.</div>
+                <span><strong>Miễn phí 100% bảo trì &amp; cập nhật:</strong> Bảo hành phần mềm, nâng cấp tính năng mới và giám sát Watchdog 24/7 trong suốt thời gian còn Subscribe.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>03 Tài khoản phân quyền độc lập (01 Account / Role):</strong> Gồm <code>01 Admin</code> + <code>01 Bác sĩ</code> + <code>01 Điều dưỡng</code> bảo mật bằng mã hóa mật khẩu <code>Argon2</code>.</div>
+                <span><strong>Nhận diện khuôn mặt Edge AI (&lt; 2ms):</strong> Khung 1:1 đếm ngược 3 giây, tự động cân bằng sáng (Histogram Equalization) &amp; chống lấy trùng số tuyệt đối.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Nhận diện khuôn mặt Edge AI (&lt; 2ms) &amp; Quét CCCD:</strong> Khung ngắm 1:1 đếm ngược 3 giây, tự cân bằng sáng, hỗ trợ Webcam / tải ảnh thẻ / súng QR 2D USB &amp; chống lấy trùng số.</div>
+                <span><strong>Quét QR CCCD gắn chip (3 chế độ):</strong> Hỗ trợ Webcam, tải ảnh thẻ hoặc súng bắn mã vạch 2D USB (tự động bóc tách 7 trường chuẩn Bộ Công An).</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Chuông Ding-Dong, Loa TTS &amp; Nút Gọi Lại:</strong> Phát âm thanh mời bệnh nhân rõ ràng kèm nút <code>[🔊 Gọi Lại]</code> đồng bộ màn hình TV phòng chờ.</div>
+                <span><strong>Chuông Ding-Dong &amp; Loa gọi số / Gọi lại:</strong> Đọc tên bệnh nhân, số thứ tự, phòng khám/máy lọc bằng giọng đọc TTS tiếng Việt tự nhiên.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Ánh xạ 1:N người nhà &amp; Lưu lịch sử 30 ngày:</strong> Liên kết tối đa <strong>02 khuôn mặt / bệnh nhân</strong>, tra cứu lịch sử khám 30 ngày &amp; khôi phục mật khẩu Offline bằng <code>Master Key</code>.</div>
+                <span><strong>Ánh xạ người nhà lấy số giùm (1:N):</strong> Liên kết tối đa <strong>02 khuôn mặt / bệnh nhân</strong>, lưu vết lịch sử khám <strong>30 ngày</strong> &amp; khôi phục mật khẩu Master Key.</span>
               </li>
             </ul>
           </div>
 
-          <a href="#contact" onclick="selectPlan('Gói Cơ Bản (Basic - 499k/tháng + Lắp đặt 1tr799)')" class="btn btn-outline btn-lg" style="width: 100%; border-color: var(--blue-primary); color: var(--blue-primary);">
-            Đăng Ký Gói Cơ Bản (499k/tháng) &rarr;
+          <a href="#contact" onclick="selectPricingPlan('CFMS_BASIC')" class="btn btn-outline btn-lg" style="width: 100%; justify-content: center;">
+            Đăng Ký Gói Basic &rarr;
           </a>
         </div>
 
         <!-- PLAN 2: PREMIUM (FEATURED) -->
         <div class="pricing-card featured">
-          <div class="pricing-popular-ribbon">ĐƯỢC CHỌN NHIỀU NHẤT · MIỄN PHÍ LẮP ĐẶT</div>
+          <div class="pricing-popular-ribbon">PHỔ BIẾN NHẤT · MIỄN PHÍ LẮP ĐẶT 1.799K</div>
           <div>
-            <div class="pricing-tier-label">GÓI NÂNG CAO · PREMIUM</div>
+            <div class="pricing-tier-label">
+              <span>★</span>
+              <span>GÓI NÂNG CAO · PREMIUM</span>
+            </div>
             <h3>Phòng Khám Đa Khoa &amp; Khoa Bệnh Viện</h3>
             <p class="pricing-subtitle">
-              Dành cho Phòng khám Đa khoa, Khoa Thận Nhân Tạo hoặc Cơ sở hoạt động nhiều ca trực cần nhiều tài khoản Bác sĩ &amp; Điều dưỡng.
+              Tối ưu cho Phòng khám Đa khoa, Khoa Thận Nhân Tạo / Khoa Khám bệnh nhiều ca trực và Trung tâm quy mô lớn.
             </p>
 
             <div class="pricing-price-box">
@@ -833,7 +1458,7 @@
                 <span class="price-period">/ tháng (Subscribe)</span>
               </div>
               <div class="setup-fee-row">
-                <span style="color: #CBD5E1;">Phí lắp đặt &amp; khởi tạo ban đầu:</span>
+                <span>Phí lắp đặt &amp; khởi tạo:</span>
                 <span class="setup-free-badge">MIỄN PHÍ 0đ (Tiết kiệm 1.799k)</span>
               </div>
             </div>
@@ -846,36 +1471,36 @@
             <ul class="pricing-feature-list">
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Toàn bộ tính năng Gói Cơ Bản:</strong> Bao gồm dịch vụ <strong>Custom thương hiệu riêng</strong> &amp; <strong>Miễn phí 100% bảo trì, nâng cấp trọn đời</strong> khi còn Subscribe.</div>
+                <span><strong>Toàn bộ quyền lợi Gói Basic:</strong> Bao gồm dịch vụ Custom thương hiệu riêng &amp; <strong>Miễn phí bảo trì, cập nhật phần mềm trọn đời</strong> khi còn Subscribe.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Miễn phí 100% phí lắp đặt (Tiết kiệm 1.799.000đ):</strong> Kỹ sư HUDU cài đặt trọn gói máy chủ LAN, cấu hình tự khởi động cùng hệ điều hành, chứng chỉ bảo mật và giọng đọc.</div>
+                <span><strong>Miễn phí 100% chi phí lắp đặt ban đầu:</strong> Đội ngũ kỹ sư HUDU thiết lập trọn gói hệ thống, phân quyền ca trực và bàn giao tận nơi (Tiết kiệm 1.799.000đ).</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Mở rộng tối đa 10 Account mỗi Role (Tới 30 nhân sự):</strong> Cấp phát tối đa <code>10 Admin</code> · <code>10 Bác sĩ</code> · <code>10 Điều dưỡng</code> đăng nhập làm việc theo từng ca trực và buồng khám.</div>
+                <span><strong>Đa tài khoản nhân sự (Tối đa 10 Account / Role):</strong> Lên tới <strong>30 tài khoản</strong> cho đội ngũ Bác sĩ, Điều dưỡng, Giáo vụ làm việc đồng thời trên nhiều máy trạm.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Bác sĩ Cấp số thủ công &amp; Ưu tiên Cấp cứu (CC-xx):</strong> Cấp phiếu trực tiếp trên Dashboard (<code>[➕ Cấp Số Mới]</code>) và bật cờ <strong>Cấp cứu (<code>CC-01</code>, <code>CC-02</code>)</strong> đẩy bệnh nhân nặng lên đầu hàng đợi.</div>
+                <span><strong>Đặc quyền Bác sĩ &amp; Ưu tiên Cấp cứu (CC-xx):</strong> Cấp phiếu thủ công không qua camera (<code>[➕ Cấp Số Mới]</code>), tạo mã cấp cứu đẩy đầu hàng đợi &amp; quản lý nhân sự.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Ánh xạ 1:N Mở rộng (05 người nhà / bệnh nhân):</strong> Tự động học thêm khuôn mặt người nhà mới (<em>Dynamic Face Learning</em>) nạp tức thì vào bộ nhớ RAM 10.000 vector.</div>
+                <span><strong>Ánh xạ 1:N Mở rộng (05 người nhà / bệnh nhân):</strong> Tự động học khuôn mặt người nhà mới (Dynamic Face Learning) trực tiếp vào bộ nhớ RAM 10.000 hồ sơ.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>App Desktop Native (Tauri v2) &amp; Local Root CA HTTPS:</strong> Bộ cài Windows/macOS/Linux tích hợp chứng chỉ <code>hospital_root_ca.crt</code> (cổng <code>9697</code>) mở khóa Camera &amp; Loa vĩnh viễn.</div>
+                <span><strong>App Desktop Tauri v2 &amp; Chứng chỉ HTTPS Nội bộ (Root CA):</strong> Cài đặt trên Windows/macOS/Linux (<code>chaythan.local:9697</code>), cấp quyền Camera &amp; Loa vĩnh viễn không bị chặn.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Cổng Admin Ẩn (<code>/admin-portal</code>), Topology &amp; Lưu lịch sử 365 ngày:</strong> Theo dõi sơ đồ kết nối phần cứng thời gian thực, nhật ký <code>Audit Log</code>, lưu 1 năm lịch sử khám &amp; tự động sao lưu ra USB.</div>
+                <span><strong>Cổng Admin Ẩn, Sơ đồ Topology &amp; Lưu lịch sử 365 ngày:</strong> Giám sát trực quan Camera FPS, Loa, TV, nhật ký Audit Log và tự động sao lưu CSDL ra USB.</span>
               </li>
             </ul>
           </div>
 
-          <a href="#contact" onclick="selectPlan('Gói Nâng Cao (Premium - 999k/tháng · Miễn phí lắp đặt · 10 acc/role)')" class="btn btn-primary btn-lg" style="width: 100%; background: linear-gradient(135deg, #38BDF8 0%, #0284C7 100%); color: #061325; font-weight: 800;">
+          <a href="#contact" onclick="selectPricingPlan('CFMS_PREMIUM')" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;">
             Đăng Ký Gói Premium (Miễn Phí Lắp Đặt) &rarr;
           </a>
         </div>
@@ -883,10 +1508,13 @@
         <!-- PLAN 3: ENTERPRISE -->
         <div class="pricing-card">
           <div>
-            <div class="pricing-tier-label">GÓI BỆNH VIỆN &amp; CHUỖI · ENTERPRISE</div>
-            <h3>Bệnh Viện Đa Khoa &amp; Chuỗi Phòng Khám</h3>
+            <div class="pricing-tier-label">
+              <span>◆</span>
+              <span>GÓI BỆNH VIỆN &amp; CHUỖI · ENTERPRISE</span>
+            </div>
+            <h3>Bệnh Viện Đa Khoa &amp; Chuỗi Cơ Sở</h3>
             <p class="pricing-subtitle">
-              May đo theo quy mô cho Bệnh viện tuyến Tỉnh/Trung ương hoặc Chuỗi cơ sở y tế cần kết nối đồng bộ HIS / LIS / BHYT.
+              Giải pháp may đo toàn diện cho Bệnh viện tuyến Tỉnh/Trung ương hoặc Chuỗi phòng khám đa chi nhánh cần tích hợp HIS/LIS.
             </p>
 
             <div class="pricing-price-box">
@@ -895,168 +1523,217 @@
                 <span class="price-period">/ theo quy mô khoa phòng</span>
               </div>
               <div class="setup-fee-row">
-                <span style="color: var(--text-muted);">Triển khai &amp; Tích hợp HIS:</span>
-                <strong style="color: var(--blue-primary);">Kỹ sư khảo sát tận nơi</strong>
+                <span>Triển khai &amp; Tích hợp:</span>
+                <strong style="color: var(--blue-primary);">Khảo sát &amp; Bàn giao tận nơi</strong>
               </div>
             </div>
 
             <div class="role-quota-banner">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
               <span>Không giới hạn Tài khoản mỗi Role · Đa Kiosk &amp; Đa Khoa Phòng</span>
             </div>
 
             <ul class="pricing-feature-list">
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Toàn bộ đặc quyền Gói Premium + Không giới hạn Account:</strong> Không giới hạn số lượng Admin, Bác sĩ, Điều dưỡng, Kiosk lấy số và TV phòng chờ.</div>
+                <span><strong>Toàn bộ tính năng Gói Premium:</strong> Custom giao diện độc quyền theo nhận diện thương hiệu Bệnh viện &amp; SLA hỗ trợ kỹ thuật ưu tiên 24/7.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Mở rộng SIMD Vector Store trên 50.000+ hồ sơ:</strong> Đáp ứng lưu lượng hàng nghìn lượt bệnh nhân mỗi ngày tại khoa Khám bệnh và trung tâm Lọc máu.</div>
+                <span><strong>Tích hợp API 2 chiều với HIS / LIS / PACS / BHYT:</strong> Tự động đồng bộ danh sách bệnh nhân, chỉ định cận lâm sàng và lịch chạy thận theo ca.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Tích hợp API 2 chiều với HIS / LIS / PACS / BHYT:</strong> Tự động đồng bộ mã bệnh nhân, chỉ định cận lâm sàng và trạng thái hoàn tất ca khám.</div>
+                <span><strong>Đồng bộ Liên chi nhánh (Cloud + Edge Hybrid):</strong> Quản lý tập trung chuỗi phòng khám qua <code>Rust Core-IAM</code>, cách ly dữ liệu Multi-Tenant tuyệt đối.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Cung cấp trọn gói Phần cứng Chìa khóa trao tay:</strong> Tuỳ chọn trang bị Mini-PC Intel N100 Fanless, Kiosk cảm ứng, súng QR 2D USB &amp; âm thanh hội trường.</div>
+                <span><strong>Tư vấn &amp; Cung cấp Trọn gói Phần cứng Kiosk:</strong> Thiết lập Mini-PC Intel N100, Camera góc rộng WDR, Súng bắn mã vạch 2D CCCD và Màn hình cảm ứng.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Cam kết SLA 99.99% &amp; Hỗ trợ ưu tiên 24/7:</strong> Đội ngũ kỹ sư chuyên trách đồng hành vận hành và đào tạo trực tiếp tại bệnh viện.</div>
+                <span><strong>Tuân thủ An toàn dữ liệu Y tế (NĐ 13/2023/NĐ-CP):</strong> Mã hóa vector sinh trắc học 512 chiều cục bộ, không lưu ảnh thô trái phép ra Internet.</span>
               </li>
             </ul>
           </div>
 
-          <a href="#contact" onclick="selectPlan('Gói Bệnh Viện & Chuỗi (Enterprise - Tích hợp HIS/LIS)')" class="btn btn-outline btn-lg" style="width: 100%; border-color: var(--blue-primary); color: var(--blue-primary);">
-            Nhận Tư Vấn &amp; Báo Giá Bệnh Viện &rarr;
+          <a href="#contact" onclick="selectPricingPlan('CFMS_ENTERPRISE')" class="btn btn-outline btn-lg" style="width: 100%; justify-content: center;">
+            Liên Hệ Khảo Sát &amp; Báo Giá &rarr;
           </a>
         </div>
       </div>
+
+      <!-- HARDWARE & DEPLOYMENT GUARANTEE BANNER -->
+      <div class="pricing-hw-banner">
+        <div class="hw-item">
+          <div class="benefit-icon" style="margin-bottom: 0; flex-shrink: 0;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/></svg>
+          </div>
+          <div>
+            <strong>Tương thích Máy tính sẵn có (&lt; 50 MB RAM)</strong>
+            <span>Chạy mượt trên Mini-PC Intel N100, Laptop hoặc PC văn phòng cũ của Phòng khám mà không cần card đồ họa rời.</span>
+          </div>
+        </div>
+        <div class="hw-item">
+          <div class="benefit-icon" style="margin-bottom: 0; flex-shrink: 0;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <strong>Vận hành Offline LAN 100% · Chuẩn NĐ 13/2023</strong>
+            <span>Mất mạng Internet vẫn lấy số, quét CCCD và gọi loa bình thường. Tự động Watchdog khởi động lại sau 3 giây nếu cúp điện.</span>
+          </div>
+        </div>
+        <div class="hw-item">
+          <div class="benefit-icon" style="margin-bottom: 0; flex-shrink: 0;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+          </div>
+          <div>
+            <strong>Miễn phí Bảo trì &amp; Hỗ trợ Từ xa Trọn đời Gói</strong>
+            <span>Cam kết không phát sinh chi phí ẩn. Hỗ trợ điều chỉnh giao diện Logo/Thương hiệu riêng miễn phí ngay khi khởi tạo.</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- SECTION 2: DETAILED CLINICAL FEATURES FROM CFMS_QMS -->
+  <!-- 6 CLINICAL MODULES (#features) -->
   <section id="features" class="section">
     <div class="container">
       <div class="section-header">
-        <div class="pill-tag">Kiến Trúc Kỹ Thuật Thực Tế · Rust + ONNX SIMD</div>
-        <h2>6 Điểm Khác Biệt Cốt Lõi Của HUDU CFMS / QMS</h2>
+        <div class="pill-tag">
+          <span class="pill-dot"></span>
+          <span>6 Phân Hệ Nghiệp Vụ Cốt Lõi</span>
+        </div>
+        <h2>Thiết Kế Chuyên Sâu Cho Khoa Thận Nhân Tạo &amp; Phòng Khám</h2>
         <p>
-          Được thiết kế chuyên biệt từ thực tiễn vận hành tại Khoa Thận Nhân Tạo và Phòng khám Đa khoa có lưu lượng bệnh nhân cao tuổi, bệnh nhân nặng và người nhà đi cùng.
+          Xây dựng bằng ngôn ngữ hệ thống Rust kết hợp mô hình ONNX (SCRFD + ArcFace 512 chiều) giúp nhận diện tức thì không độ trễ.
         </p>
       </div>
 
-      <div class="module-grid">
-        <div class="module-card">
-          <div class="mod-num">MODULE 01 · EDGE BIOMETRICS</div>
-          <h3>Nhận Diện Khuôn Mặt &lt; 2ms &amp; Ánh Xạ Người Nhà 1:N</h3>
+      <div class="grid-3">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h3>1. Nhận Diện Khuôn Mặt &amp; Ánh Xạ 1:N</h3>
           <p>
-            Sử dụng thuật toán <code>YuNet</code> &amp; <code>MobileFaceNet ONNX</code> trích xuất vector 512 chiều đối soát 10.000 hồ sơ trong RAM dưới 2ms. Hỗ trợ <strong>1 bệnh nhân gắn với nhiều khuôn mặt người nhà</strong> (ông/bà, bố/mẹ, người chăm sóc) để lấy số hộ mà vẫn ra đúng tên bệnh nhân và chống lấy trùng số trong cùng ca.
+            Đối soát 10.000 hồ sơ trong <strong>&lt; 2 ms</strong>. Hỗ trợ ánh xạ nhiều khuôn mặt người nhà vào 1 hồ sơ bệnh nhân để lấy phiếu khám giùm, chống cấp trùng số tuyệt đối trong ca.
           </p>
         </div>
 
-        <div class="module-card">
-          <div class="mod-num">MODULE 02 · 3-MODE CCCD QR</div>
-          <h3>Quét QR CCCD Gắn Chip Đa Chế Độ &amp; Chuẩn Hóa Mã BN</h3>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7h3v3H7zM14 7h3v3h-3zM7 14h3v3H7zM14 14h3v3h-3z"/></svg>
+          </div>
+          <h3>2. Quét QR CCCD Gắn Chip (3 Chế Độ)</h3>
           <p>
-            Đọc chuẩn chuỗi 7 trường dữ liệu Bộ Công An (Số CCCD 12 số, CMND 9 số, Họ tên, Ngày sinh, Giới tính, Địa chỉ, Ngày cấp) qua <strong>Camera Kiosk, tải ảnh chụp CCCD hoặc Súng bắn mã vạch 2D USB</strong>. Tự động nâng cấp từ mã tạm (<code>TEMP-xxxx</code>) sang mã hồ sơ chính thức mà không mất lịch sử khám.
+            Tích hợp linh hoạt Camera Kiosk, tải ảnh thẻ hoặc súng bắn mã vạch 2D USB (HID Keyboard Emulation). Tự động giải mã chuỗi 7 trường chuẩn Bộ Công An trong 0.2 giây.
           </p>
         </div>
 
-        <div class="module-card">
-          <div class="mod-num">MODULE 03 · REALTIME DISPATCH</div>
-          <h3>Bàn Điều Phối Thời Gian Thực, Loa TTS &amp; Nút Gọi Lại</h3>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+          </div>
+          <h3>3. Bàn Điều Phối &amp; Loa Gọi Số TTS</h3>
           <p>
-            Giao diện Bác sĩ/Điều dưỡng đồng bộ tức thì qua <code>WebSocket</code>: tìm kiếm không dấu theo tên hoặc mã BN, phát chuông <em>Ding-Dong</em> kèm giọng đọc Tiếng Việt tự nhiên và nút <strong><code>[🔊 Gọi Lại]</code> (Re-call)</strong> phát lại thông báo trên TV phòng chờ mà không làm xáo trộn thứ tự hàng đợi.
+            Tìm kiếm bệnh nhân không dấu tức thì. Tích hợp chuông <em>Ding-Dong</em> và giọng đọc TTS tiếng Việt tự nhiên đọc rõ Số thứ tự, Họ tên, Phòng khám/Máy lọc, kèm nút <strong>Gọi lại (Re-call)</strong>.
           </p>
         </div>
 
-        <div class="module-card">
-          <div class="mod-num">MODULE 04 · EMERGENCY OVERRIDE</div>
-          <h3>Cấp Số Thủ Công &amp; Quyền Ưu Tiên Cấp Cứu (CC-xx)</h3>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>4. Ưu Tiên Cấp Cứu (CC-xx) &amp; Cấp Số Thủ Công</h3>
           <p>
-            Đối với bệnh nhân nặng nằm băng ca hoặc không thể ra Kiosk, Bác sĩ/Điều dưỡng bấm <strong><code>[➕ Cấp Số Mới]</code></strong> ngay trên bảng điều khiển và tích chọn <strong>"Cấp cứu / Ưu tiên"</strong> để sinh mã <code>CC-01</code>, <code>CC-02</code>... tự động nhảy lên đầu hàng đợi và nháy đỏ cảnh báo trên màn hình TV.
+            Bác sĩ và Admin sở hữu nút <code>[➕ Cấp Số Mới]</code> không cần qua camera và quyền bật cờ <strong>Ưu tiên Cấp cứu (CC-01, CC-02)</strong> tự động đẩy lên đầu hàng đợi trên TV Phòng chờ.
           </p>
         </div>
 
-        <div class="module-card">
-          <div class="mod-num">MODULE 05 · TAURI V2 + ROOT CA</div>
-          <h3>App Desktop Đa Nền Tảng &amp; Chứng Chỉ Bảo Mật Nội Bộ</h3>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>5. App Desktop Tauri v2 &amp; Root CA (Cổng 9697)</h3>
           <p>
-            Đóng gói ứng dụng Desktop gốc (<code>Tauri v2</code>) cho Windows, macOS và Linux kèm chứng chỉ <strong>Local Root CA (<code>chaythan.local:9697</code>)</strong>. Cài đặt 1 chạm giúp trình duyệt và máy trạm cấp quyền Camera &amp; Loa tự động vĩnh viễn trong mạng LAN nội bộ.
+            Đóng gói kèm chứng chỉ bảo mật nội bộ <code>Local Root CA</code> trên địa chỉ <code>chaythan.local:9697</code>, cấp quyền Camera &amp; Loa vĩnh viễn không bao giờ bị trình duyệt chặn.
           </p>
         </div>
 
-        <div class="module-card">
-          <div class="mod-num">MODULE 06 · TOPOLOGY &amp; WATCHDOG</div>
-          <h3>Sơ Đồ Topology Phần Cứng, Audit Log &amp; Sao Lưu USB</h3>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+          <h3>6. Cổng Admin Ẩn &amp; Sơ Đồ Topology Thiết Bị</h3>
           <p>
-            Cổng quản trị ẩn (<code>/admin-portal</code>) hiển thị sơ đồ trạng thái trực quan của Máy chủ, SQLite WAL, AI Engine, Camera Kiosk, Loa và TV. Tích hợp <code>Watchdog 24/7</code> tự khởi động lại khi sự cố, khôi phục mật khẩu bằng <code>Master Key</code> và script tự động sao lưu ra USB.
+            Đường dẫn quản trị độc lập (<code>/admin-portal</code>) theo dõi trực quan tốc độ FPS Camera, trạng thái Loa/TV, nhật ký Audit Log, xóa rác tự động và khôi phục mật khẩu bằng Master Key.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 3: 3-ROLE RBAC MATRIX -->
-  <section id="rbac" class="section section-alt">
+  <!-- 3-ROLE RBAC MATRIX (#roles) -->
+  <section id="roles" class="section section-alt">
     <div class="container">
       <div class="section-header">
-        <div class="pill-tag">Phân Quyền Y Khoa Chặt Chẽ · 3-Role RBAC</div>
-        <h2>Ma Trận Phân Quyền 3 Role: Admin · Bác Sĩ · Điều Dưỡng</h2>
+        <div class="pill-tag">
+          <span class="pill-dot"></span>
+          <span>Phân Quyền 3 Role (RBAC)</span>
+        </div>
+        <h2>Ma Trận Phân Quyền: Admin · Bác Sĩ · Điều Dưỡng</h2>
         <p>
-          Mỗi tài khoản đăng nhập được kiểm soát chặt chẽ bằng phiên <code>HttpOnly Session</code> và ghi vết đầy đủ vào bảng <code>audit_logs</code>.
+          Gói <strong>Basic (499k/tháng)</strong> cung cấp <strong>01 tài khoản mỗi Role</strong>; Gói <strong>Premium (999k/tháng)</strong> mở rộng tới <strong>10 tài khoản mỗi Role</strong> (tổng cộng 30 tài khoản nhân sự).
         </p>
       </div>
 
-      <div class="table-card">
-        <table class="spec-table">
+      <div class="data-table-wrap">
+        <table class="data-table">
           <thead>
             <tr>
-              <th>Chức năng / Nghiệp vụ</th>
-              <th>Điều dưỡng (<code>Nurse</code>)</th>
-              <th>Bác sĩ (<code>Doctor</code>)</th>
-              <th>Quản trị viên (<code>Admin</code>)</th>
+              <th>Chức Năng Nghiệp Vụ</th>
+              <th>Điều Dưỡng (Nurse)</th>
+              <th>Bác Sĩ (Doctor)</th>
+              <th>Quản Trị Viên (Admin)</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Số lượng tài khoản theo gói</strong></td>
-              <td>Basic: <code>01</code> · Premium: <code>Tối đa 10</code></td>
-              <td>Basic: <code>01</code> · Premium: <code>Tối đa 10</code></td>
-              <td>Basic: <code>01</code> · Premium: <code>Tối đa 10</code></td>
+              <td><strong>Gọi số kế tiếp, Gọi lại (Loa TTS) &amp; Xem hàng đợi Real-time</strong></td>
+              <td><span class="status-pill">&#10003; Có quyền</span></td>
+              <td><span class="status-pill">&#10003; Có quyền</span></td>
+              <td><span class="status-pill">&#10003; Toàn quyền</span></td>
             </tr>
             <tr>
-              <td><strong>Gọi số tiếp theo, Gọi lại (<code>[🔊 Gọi Lại]</code>) &amp; Hoàn tất ca</strong></td>
-              <td>&#10003; Có toàn quyền</td>
-              <td>&#10003; Có toàn quyền</td>
-              <td>&#10003; Có toàn quyền</td>
+              <td><strong>Đăng ký bệnh nhân mới, Quét CCCD &amp; Gán người nhà (1:N)</strong></td>
+              <td><span class="status-pill">&#10003; Có quyền</span></td>
+              <td><span class="status-pill">&#10003; Có quyền</span></td>
+              <td><span class="status-pill">&#10003; Toàn quyền</span></td>
             </tr>
             <tr>
-              <td><strong>Cấp số thủ công (<code>[➕ Cấp Số Mới]</code>) &amp; Ưu tiên Cấp cứu (<code>CC-xx</code>)</strong></td>
-              <td>&#10003; Có</td>
-              <td>&#10003; Có (Đặc quyền ưu tiên lâm sàng)</td>
-              <td>&#10003; Có</td>
+              <td><strong>Cấp số thủ công không qua Camera (<code>[➕ Cấp Số Mới]</code>)</strong></td>
+              <td><span style="color:var(--text-muted); font-size:0.82rem;">&#10005; Khóa bảo mật</span></td>
+              <td><span class="status-pill">&#10003; Đặc quyền Bác sĩ</span></td>
+              <td><span class="status-pill">&#10003; Toàn quyền</span></td>
             </tr>
             <tr>
-              <td><strong>Quét CCCD gắn chip, Đăng ký mới &amp; Học thêm khuôn mặt người nhà (1:N)</strong></td>
-              <td>&#10003; Có</td>
-              <td>&#10003; Có</td>
-              <td>&#10003; Có</td>
+              <td><strong>Kích hoạt Ưu tiên Cấp cứu (CC-01) đẩy đầu hàng đợi</strong></td>
+              <td><span style="color:var(--text-muted); font-size:0.82rem;">&#10005; Khóa bảo mật</span></td>
+              <td><span class="status-pill">&#10003; Đặc quyền Bác sĩ</span></td>
+              <td><span class="status-pill">&#10003; Toàn quyền</span></td>
             </tr>
             <tr>
-              <td><strong>Tạo / Khóa tài khoản nhân sự &amp; Reset mật khẩu ca trực</strong></td>
-              <td>—</td>
-              <td>&#10003; Quản lý tài khoản Điều dưỡng</td>
-              <td>&#10003; Quản lý toàn bộ Bác sĩ &amp; Điều dưỡng</td>
+              <td><strong>Quản lý danh sách tài khoản Bác sĩ &amp; Điều dưỡng trong khoa</strong></td>
+              <td><span style="color:var(--text-muted); font-size:0.82rem;">&#10005; Khóa bảo mật</span></td>
+              <td><span class="status-pill">&#10003; Quản lý nhân sự khoa</span></td>
+              <td><span class="status-pill">&#10003; Toàn quyền</span></td>
             </tr>
             <tr>
-              <td><strong>Cổng <code>/admin-portal</code>, Sơ đồ Topology, Custom Logo &amp; Quota hệ thống</strong></td>
-              <td>—</td>
-              <td>—</td>
-              <td>&#10003; Đặc quyền Admin</td>
+              <td><strong>Cổng Admin ẩn (<code>/admin-portal</code>), Custom Thương hiệu &amp; Topology</strong></td>
+              <td><span style="color:var(--text-muted); font-size:0.82rem;">&#10005; Khóa bảo mật</span></td>
+              <td><span style="color:var(--text-muted); font-size:0.82rem;">&#10005; Khóa bảo mật</span></td>
+              <td><span class="status-pill">&#10003; Đặc quyền Admin</span></td>
             </tr>
           </tbody>
         </table>
@@ -1064,104 +1741,241 @@
     </div>
   </section>
 
-  <!-- SECTION 4: HARDWARE REQUIREMENTS -->
-  <section id="hardware" class="section">
-    <div class="container">
-      <div class="section-header">
-        <div class="pill-tag">Tiết Kiệm Chi Phí Đầu Tư · Tận Dụng Máy Cũ</div>
-        <h2>Yêu Cầu Phần Cứng Siêu Nhẹ &amp; Cam Kết Bảo Mật</h2>
-        <p>
-          Nhờ viết hoàn toàn bằng ngôn ngữ hệ thống <strong>Rust</strong> và thuật toán <em>Motion Filter</em> (chỉ kích hoạt AI khi khung hình có chuyển động), HUDU CFMS chạy mượt mà ngay cả trên các máy tính văn phòng đời cũ.
-        </p>
-      </div>
-
-      <div class="module-grid">
-        <div class="module-card">
-          <div class="mod-num">OPTION A · MINI-PC KHUYẾN NGHỊ</div>
-          <h3>Mini-PC Không Quạt (Intel N100)</h3>
-          <p>
-            Chi phí chỉ khoảng <strong>~3.000.000đ</strong> (Intel Alder Lake-N N100, RAM 8GB, NVMe 128GB, tiêu thụ điện 6W). Thiết kế kín chống bụi y tế, cắm trực tiếp sau lưng màn hình TV phòng chờ, chạy 24/7/365 không tiếng ồn.
-          </p>
-        </div>
-
-        <div class="module-card">
-          <div class="mod-num">OPTION B · TẬN DỤNG PC SẴN CÓ</div>
-          <h3>PC / Laptop Văn Phòng Cũ (RAM 4GB)</h3>
-          <p>
-            Tận dụng ngay máy tính Core i3 thế hệ 4–6, RAM 4GB, SSD 120GB sẵn có tại quầy hành chính. Toàn bộ Server + AI + SQLite chỉ chiếm <strong>&lt; 50 MB RAM</strong> và <strong>&lt; 0.05% CPU</strong> khi phòng chờ vắng người.
-          </p>
-        </div>
-
-        <div class="module-card">
-          <div class="mod-num">SECURITY · NGHỊ ĐỊNH 13/2023/NĐ-CP</div>
-          <h3>100% Offline LAN · Không Đẩy Lên Cloud</h3>
-          <p>
-            Toàn bộ dữ liệu khuôn mặt 512 chiều và thông tin CCCD của bệnh nhân được lưu trữ cục bộ tại cơ sở y tế trong CSDL <code>SQLite WAL</code>. Khi đứt cáp Internet bên ngoài, phòng khám vẫn cấp số và gọi loa bình thường 100%.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 5: CONSULTATION & REGISTRATION -->
-  <section id="contact" class="section section-alt">
+  <!-- CTA & CONSULTATION FORM (#contact) -->
+  <section id="contact" class="section">
     <div class="container">
       <div class="cta-box">
         <div>
-          <div class="pill-tag" style="background: rgba(56,189,248,0.18); color: #7DD3FC; border-color: rgba(56,189,248,0.4);">Đăng Ký Lắp Đặt &amp; Demo Tận Nơi</div>
-          <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 14px;">Triển Khai HUDU CFMS / QMS Cho Phòng Khám Của Bạn</h2>
-          <p style="color: #CBD5E1; margin-bottom: 20px;">
-            Đội ngũ kỹ sư HUDU hỗ trợ thiết kế giao diện mang Logo &amp; Tên phòng khám riêng của bạn, cài đặt trọn gói và bảo trì miễn phí trong suốt thời gian sử dụng.
+          <div class="pill-tag" style="background: rgba(56, 189, 248, 0.16); color: #BAE6FD; border-color: rgba(125, 211, 252, 0.3);">
+            <span class="pill-dot" style="background: #38BDF8;"></span>
+            <span>HUDU CFMS / QMS · Triển Khai Nhanh Trong 24h</span>
+          </div>
+          <h2>Sẵn Sàng Chuẩn Hóa Tiếp Nhận Sinh Trắc Học Cho Phòng Khám?</h2>
+          <p>
+            Đăng ký ngay <strong>Gói Basic (499k/tháng)</strong> hoặc <strong>Gói Premium (999k/tháng — Miễn phí lắp đặt 1.799k)</strong> để được đội ngũ kỹ sư HUDU cài đặt Custom thương hiệu riêng và bàn giao hệ thống tận nơi.
           </p>
-          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem; color: #E2E8F0;">
-            <div>&#10003; <strong>Gói Basic (499k/tháng):</strong> Phí lắp đặt 1.799k · 01 Account/Role · Custom thương hiệu riêng</div>
-            <div>&#10003; <strong>Gói Premium (999k/tháng):</strong> <strong>Miễn phí lắp đặt 0đ</strong> · Tối đa 10 Account/Role · Ưu tiên Cấp cứu</div>
-            <div>&#10003; <strong>Hotline / Email Kỹ thuật:</strong> <code>tnhung1896@gmail.com</code> · <code>huduvn.com</code></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 22px; font-size: 0.9rem; color: #E2E8F0;">
+            <span>&#10003; Custom Logo &amp; Tên Phòng khám miễn phí</span>
+            <span>&#10003; Miễn phí bảo trì trọn đời Subscribe</span>
+            <span>&#10003; Hỗ trợ kỹ thuật 24/7</span>
           </div>
         </div>
 
-        <form class="cta-form" onsubmit="event.preventDefault(); document.getElementById('cfmsToast').style.display='block'; this.reset();">
-          <h3 style="margin-bottom: 16px; font-size: 1.2rem;">Đăng Ký Gói Dịch Vụ Phòng Khám</h3>
+        <form class="contact-form" onsubmit="submitConsultation(event)">
+          <h3>Đăng Ký Gói Dịch Vụ CFMS / QMS</h3>
           <div class="form-group">
-            <label>Họ tên / Tên Phòng khám hoặc Bệnh viện *</label>
-            <input type="text" required placeholder="VD: Phòng khám Đa khoa Tâm An / BS. Hùng..." />
+            <label>Họ tên &amp; Tên Phòng khám / Bệnh viện</label>
+            <input type="text" required placeholder="VD: BS. Minh — Phòng Khám Đa Khoa An Tâm" />
           </div>
           <div class="form-group">
-            <label>Số điện thoại / Zalo liên hệ *</label>
-            <input type="text" required placeholder="0909 xxx xxx" />
+            <label>Số điện thoại / Email liên hệ</label>
+            <input type="text" required placeholder="090x xxx xxx / clinic@domain.vn" />
           </div>
           <div class="form-group">
-            <label>Gói dịch vụ đăng ký *</label>
-            <select id="planSelect">
-              <option value="Gói Nâng Cao (Premium - 999k/tháng · Miễn phí lắp đặt · 10 acc/role)">Gói Nâng Cao (Premium - 999k/tháng · Miễn phí lắp đặt · 10 acc/role)</option>
-              <option value="Gói Cơ Bản (Basic - 499k/tháng + Lắp đặt 1tr799)">Gói Cơ Bản (Basic - 499k/tháng + Lắp đặt 1tr799 · 01 acc/role)</option>
-              <option value="Gói Bệnh Viện & Chuỗi (Enterprise - Tích hợp HIS/LIS)">Gói Bệnh Viện &amp; Chuỗi (Enterprise - Tích hợp HIS/LIS · Không giới hạn)</option>
+            <label>Gói dịch vụ lựa chọn</label>
+            <select id="formProdSelect">
+              <option value="CFMS_PREMIUM">CFMS Gói Premium (999k/tháng — Miễn phí lắp đặt · 10 Acc/Role)</option>
+              <option value="CFMS_BASIC">CFMS Gói Basic (499k/tháng + 1tr799 lắp đặt · 01 Acc/Role)</option>
+              <option value="CFMS_ENTERPRISE">CFMS Gói Enterprise (Bệnh viện / Chuỗi phòng khám)</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 6px;">Gửi Yêu Cầu Lắp Đặt Ngay &rarr;</button>
-          <div id="cfmsToast" style="display:none; margin-top: 12px; padding: 10px; border-radius: 8px; background: rgba(56,189,248,0.2); border: 1px solid #38BDF8; color: #E0F2FE; font-size: 0.85rem;">
-            &#10003; Đã ghi nhận đăng ký! Kỹ sư HUDU sẽ liên hệ xác nhận và thiết lập giao diện thương hiệu riêng cho cơ sở của bạn.
+          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 4px;">
+            Gửi Yêu Cầu Khởi Tạo Hệ Thống
+          </button>
+          <div id="formToast" class="form-toast">
+            &#10003; Đã ghi nhận yêu cầu! Đội ngũ kỹ sư HUDU sẽ liên hệ bàn giao demo sớm nhất.
           </div>
         </form>
       </div>
     </div>
   </section>
 
-  <footer>
+  <!-- FOOTER — 100% UNIFIED OFFICIAL LOGO -->
+  <footer class="footer">
     <div class="container">
-      <div style="margin-bottom: 10px;">
-        <a href="../" style="color: var(--blue-primary); font-weight: 700;">Trang chủ HUDU</a> &nbsp;&middot;&nbsp;
-        <a href="./" style="color: var(--blue-primary); font-weight: 700;">Sản phẩm Phòng khám CFMS/QMS</a> &nbsp;&middot;&nbsp;
-        <a href="../dauthau/" style="color: var(--blue-primary); font-weight: 700;">Sản phẩm Đấu thầu AI (DauThau)</a>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 246 84">
+            <defs>
+              <linearGradient id="footerHuduGrad" gradientUnits="userSpaceOnUse" x1="94" y1="22" x2="241" y2="62">
+                <stop offset="0%" stop-color="#38BDF8" />
+                <stop offset="40%" stop-color="#7DD3FC" />
+                <stop offset="75%" stop-color="#CBD5E1" />
+                <stop offset="100%" stop-color="#F8FAFC" />
+              </linearGradient>
+            </defs>
+            <circle cx="42" cy="42" r="37" fill="#0066CC" />
+            <g transform="translate(42, 42) scale(0.80) translate(-55.75, -60)">
+              <path fill-rule="evenodd" d="M 54 36.5 H 64 A 23.5 23.5 0 0 1 87.5 60 A 23.5 23.5 0 0 1 64 83.5 H 54 Z M 59 46 V 74 H 64 A 14 14 0 0 0 78 60 A 14 14 0 0 0 64 46 Z" fill="#7DD3FC" />
+              <rect x="24" y="33.5" width="10" height="53" rx="5" fill="#FFFFFF" />
+              <rect x="49" y="33.5" width="10" height="53" rx="5" fill="#FFFFFF" />
+              <path d="M 27.5 56.2 C 38 48.5, 54 64.5, 70.5 55.2 A 4.5 4.5 0 0 1 71.5 64.0 C 54 73.5, 38 57.5, 29.5 64.2 A 4.5 4.5 0 0 1 27.5 56.2 Z" fill="#FFFFFF" />
+            </g>
+            <g fill="url(#footerHuduGrad)" fill-rule="evenodd">
+              <rect x="94" y="24" width="7.6" height="36" rx="3.8" />
+              <rect x="97.8" y="38.5" width="22.4" height="7" rx="3.5" />
+              <rect x="116.4" y="24" width="7.6" height="36" rx="3.8" />
+              <path d="M 133 27.8 A 3.8 3.8 0 0 1 140.6 27.8 V 45 A 7.4 7.4 0 0 0 155.4 45 V 27.8 A 3.8 3.8 0 0 1 163 27.8 V 45 A 15 15 0 0 1 133 45 Z" />
+              <path d="M 172 27.8 A 3.8 3.8 0 0 1 175.8 24 H 184 A 18 18 0 0 1 202 42 A 18 18 0 0 1 184 60 H 175.8 A 3.8 3.8 0 0 1 172 56.2 Z M 179.6 31.4 V 52.6 H 184 A 10.6 10.6 0 0 0 194.6 42 A 10.6 10.6 0 0 0 184 31.4 Z" />
+              <path d="M 211 27.8 A 3.8 3.8 0 0 1 218.6 27.8 V 45 A 7.4 7.4 0 0 0 233.4 45 V 27.8 A 3.8 3.8 0 0 1 241 27.8 V 45 A 15 15 0 0 1 211 45 Z" />
+            </g>
+          </svg>
+          <p style="font-size: 0.86rem; max-width: 340px;">
+            HUDU (huduvn.com) — Công ty phát triển phần mềm phân tích dữ liệu đấu thầu thông minh và hệ thống tự động hóa tiếp nhận, quản trị hàng đợi sinh trắc học.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Sản phẩm</h4>
+          <ul>
+            <li><a href="../">Trang chủ HUDU</a></li>
+            <li><a href="#pricing">Bảng Giá Phòng Khám (CFMS)</a></li>
+            <li><a href="../dauthau/">HUDU DauThau (/dauthau)</a></li>
+            <li><a href="../dauthau/#pricing">Bảng Giá Đấu Thầu AI</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Công nghệ CFMS</h4>
+          <ul>
+            <li><a href="#features">512-D SIMD Biometrics</a></li>
+            <li><a href="#features">3-Mode Chip CCCD QR</a></li>
+            <li><a href="#roles">3-Role RBAC Security</a></li>
+            <li><a href="#features">Tauri v2 &amp; Local Root CA</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Liên hệ</h4>
+          <ul>
+            <li>Website: <a href="https://huduvn.com">huduvn.com</a></li>
+            <li>Email: <a href="mailto:tnhung1896@gmail.com">tnhung1896@gmail.com</a></li>
+            <li>Support: 24/7 Enterprise SLA</li>
+          </ul>
+        </div>
       </div>
-      <div>&copy; 2026 HUDU Enterprise Technology (huduvn.com) · Liên hệ: tnhung1896@gmail.com</div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 HUDU Technology (huduvn.com). All rights reserved.</span>
+        <span>Enterprise AI &amp; High-Performance Systems</span>
+      </div>
     </div>
   </footer>
 
   <script>
-    function selectPlan(val) {
-      const sel = document.getElementById('planSelect');
-      if (sel) sel.value = val;
+    (function initHeroCanvas() {
+      const canvas = document.getElementById('heroCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let width = 0;
+      let height = 0;
+      let nodes = [];
+      const mouse = { x: -9999, y: -9999 };
+
+      function resize() {
+        const rect = canvas.parentElement.getBoundingClientRect();
+        width = canvas.width = rect.width;
+        height = canvas.height = rect.height;
+        const count = Math.min(42, Math.max(18, Math.floor(width / 34)));
+        nodes = [];
+        for (let i = 0; i < count; i++) {
+          nodes.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: (Math.random() - 0.5) * 0.45,
+            vy: (Math.random() - 0.5) * 0.45,
+            r: Math.random() * 2 + 1.4
+          });
+        }
+      }
+
+      window.addEventListener('resize', resize);
+      canvas.parentElement.addEventListener('mousemove', e => {
+        const rect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+      });
+      canvas.parentElement.addEventListener('mouseleave', () => {
+        mouse.x = -9999;
+        mouse.y = -9999;
+      });
+
+      resize();
+
+      function draw() {
+        ctx.clearRect(0, 0, width, height);
+        const isDark = document.body.classList.contains('dark-mode');
+        const dotColor = isDark ? 'rgba(125, 211, 252, 0.55)' : 'rgba(0, 102, 204, 0.38)';
+        const lineBase = isDark ? [56, 189, 248] : [0, 102, 204];
+
+        for (let i = 0; i < nodes.length; i++) {
+          const n = nodes[i];
+          n.x += n.vx;
+          n.y += n.vy;
+
+          if (n.x < 0 || n.x > width) n.vx *= -1;
+          if (n.y < 0 || n.y > height) n.vy *= -1;
+
+          const dxm = mouse.x - n.x;
+          const dym = mouse.y - n.y;
+          const distMouse = Math.hypot(dxm, dym);
+          if (distMouse < 180 && distMouse > 0) {
+            n.x += (dxm / distMouse) * 0.25;
+            n.y += (dym / distMouse) * 0.25;
+          }
+
+          ctx.beginPath();
+          ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+          ctx.fillStyle = dotColor;
+          ctx.fill();
+
+          for (let j = i + 1; j < nodes.length; j++) {
+            const m = nodes[j];
+            const dx = n.x - m.x;
+            const dy = n.y - m.y;
+            const dist = Math.hypot(dx, dy);
+            if (dist < 145) {
+              const alpha = (1 - dist / 145) * (isDark ? 0.22 : 0.16);
+              ctx.beginPath();
+              ctx.moveTo(n.x, n.y);
+              ctx.lineTo(m.x, m.y);
+              ctx.strokeStyle = `rgba(${lineBase[0]}, ${lineBase[1]}, ${lineBase[2]}, ${alpha.toFixed(3)})`;
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(draw);
+      }
+      requestAnimationFrame(draw);
+    })();
+
+    function toggleTheme() {
+      const body = document.body;
+      const moon = document.getElementById('themeIconMoon');
+      const sun = document.getElementById('themeIconSun');
+
+      body.classList.toggle('dark-mode');
+      const isDark = body.classList.contains('dark-mode');
+
+      document.getElementById('navGradStop1').setAttribute('stop-color', isDark ? '#38BDF8' : '#0052A3');
+      document.getElementById('navGradStop2').setAttribute('stop-color', isDark ? '#7DD3FC' : '#0284C7');
+      document.getElementById('navGradStop3').setAttribute('stop-color', isDark ? '#CBD5E1' : '#64748B');
+      document.getElementById('navGradStop4').setAttribute('stop-color', isDark ? '#F8FAFC' : '#94A3B8');
+
+      moon.style.display = isDark ? 'none' : 'block';
+      sun.style.display = isDark ? 'block' : 'none';
+    }
+
+    function selectPricingPlan(planVal) {
+      const sel = document.getElementById('formProdSelect');
+      if (sel) sel.value = planVal;
+    }
+
+    function submitConsultation(e) {
+      e.preventDefault();
+      document.getElementById('formToast').style.display = 'block';
+      e.target.reset();
     }
   </script>
 </body>

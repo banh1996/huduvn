@@ -3,689 +3,1284 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HUDU DauThau — Hệ Thống Săn &amp; Lọc Đấu Thầu Công - Tư Thông Minh Bằng AI · Bảng Giá</title>
-  <meta name="description" content="Nền tảng thu thập, chống trùng 3 lớp, phân loại Pipeline 3 bước (Aho-Corasick -> ONNX CPU -> GLM-5.3-Flash / Local LLM), AI phân tích Hồ sơ năng lực Nhà thầu chấm điểm 0.0-10.0 và so khớp Sàn/Trần tự động." />
+  <title>HUDU DauThau — Nền Tảng Săn &amp; Lọc Đấu Thầu Công - Tư AI &amp; Bảng Giá</title>
+  <meta name="description" content="Hệ thống Săn & Lọc Đấu Thầu Công - Tư - ODA tự động trên kiến trúc Rust Cloud + Dual-Mode AI (Qwen3/Cloud), Matching biên độ năng lực Sàn/Trần (Floor/Ceiling) & Bảng giá thuê bao doanh nghiệp." />
+  <link rel="canonical" href="https://huduvn.com/dauthau/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://huduvn.com/dauthau/" />
+  <meta property="og:title" content="HUDU DauThau — Săn &amp; So Khớp Đấu Thầu Công - Tư AI · Bảng Giá" />
+  <meta property="og:description" content="Tự động thu thập muasamcong, EVN, PVN, Ngân hàng & ODA; chống trùng lặp 3 lớp, bóc tách Chương V và so khớp ngưỡng Sàn/Trần năng lực nhà thầu." />
+  <meta property="og:image" content="https://huduvn.com/images/hudu-logo-dark.png" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/svg+xml" href="../svg/hudu-favicon.svg" />
-  <link rel="alternate icon" type="image/png" href="../images/hudu-favicon.png" />
   <link rel="apple-touch-icon" href="../images/hudu-icon-app.png" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
   <style>
+    /* ==========================================================================
+       PLATINUM SILVER & SAPPHIRE BLUE ENTERPRISE THEME (100% UNIFIED WITH HOME)
+       ========================================================================== */
     :root {
-      --bg-page: #E6ECF5;
-      --bg-surface: #F1F5FA;
-      --bg-elevated: #F8FAFC;
-      --bg-subtle: #DCE5F2;
-      --bg-glass: rgba(241, 245, 250, 0.88);
-      --silver-border: #C5D1E0;
-      --silver-border-strong: #9FB2C9;
-      --text-main: #0A1424;
-      --text-secondary: #2C3E58;
-      --text-muted: #566A86;
-      --blue-deep: #002B5B;
-      --blue-primary: #0052A3;
-      --blue-bright: #0284C7;
-      --cyan-accent: #38BDF8;
-      --blue-tint-bg: #D8E6F7;
-      --blue-tint-border: #93C5FD;
-      --gradient-brand: linear-gradient(135deg, #002B5B 0%, #0052A3 50%, #0284C7 100%);
-      --gradient-card: linear-gradient(180deg, #F8FAFC 0%, #EDF2F9 100%);
-      --shadow-sm: 0 2px 8px rgba(10, 20, 36, 0.06);
-      --shadow-md: 0 12px 28px -6px rgba(10, 20, 36, 0.10);
-      --shadow-lg: 0 22px 48px -12px rgba(0, 43, 91, 0.18);
+      --bg-page: #E6ECF4;
+      --bg-page-grad: linear-gradient(180deg, #EEF2F7 0%, #E2E8F0 50%, #EAEFF6 100%);
+      --bg-surface: linear-gradient(145deg, #FFFFFF 0%, #F1F5F9 100%);
+      --bg-surface-solid: #F8FAFC;
+      --bg-surface-glass: rgba(241, 245, 249, 0.85);
+      --bg-subtle: #DCE4EE;
+      --bg-ice: #E8F2FC;
+      --bg-ice-strong: #D6E9FA;
+      --bg-navy: #0F2942;
+      --bg-navy-deep: #0B1829;
+
+      --text-main: #0F233A;
+      --text-body: #334155;
+      --text-muted: #5A6B82;
+
+      --blue-primary: #0066CC;
+      --blue-hover: #0052A3;
+      --blue-sky: #0284C7;
+      --blue-ice: #38BDF8;
+      --silver-accent: #94A3B8;
+
+      --border-light: #CBD5E1;
+      --border-subtle: #B6C4D6;
+      --border-ice: #93C5FD;
+      --inset-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.95);
+
+      --shadow-sm: 0 2px 10px rgba(15, 35, 58, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      --shadow-md: 0 12px 32px rgba(15, 35, 58, 0.09), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+      --shadow-lg: 0 24px 56px rgba(15, 35, 58, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+      --shadow-hover: 0 20px 44px rgba(0, 102, 204, 0.18), inset 0 1px 0 #FFFFFF;
+
       --radius-sm: 8px;
-      --radius-md: 14px;
-      --radius-lg: 22px;
-      --radius-xl: 30px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-xl: 24px;
     }
 
     body.dark-mode {
-      --bg-page: #070E1A;
-      --bg-surface: #0D1829;
-      --bg-elevated: #132238;
-      --bg-subtle: #182B46;
-      --bg-glass: rgba(13, 24, 41, 0.88);
-      --silver-border: #1E3250;
-      --silver-border-strong: #2D4A73;
+      --bg-page: #0B1524;
+      --bg-page-grad: linear-gradient(180deg, #0B1524 0%, #102036 50%, #0B1524 100%);
+      --bg-surface: linear-gradient(145deg, #152944 0%, #0F2036 100%);
+      --bg-surface-solid: #132640;
+      --bg-surface-glass: rgba(15, 32, 54, 0.86);
+      --bg-subtle: #162B47;
+      --bg-ice: #183456;
+      --bg-ice-strong: #1E416B;
+
       --text-main: #F1F5F9;
-      --text-secondary: #CBD5E1;
-      --text-muted: #8CA0BA;
-      --blue-deep: #38BDF8;
+      --text-body: #CBD5E1;
+      --text-muted: #94A3B8;
+
       --blue-primary: #38BDF8;
-      --blue-bright: #7DD3FC;
-      --blue-tint-bg: rgba(2, 132, 199, 0.18);
-      --blue-tint-border: rgba(56, 189, 248, 0.35);
-      --gradient-card: linear-gradient(180deg, #132238 0%, #0D1829 100%);
-      --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.35);
-      --shadow-md: 0 14px 32px -6px rgba(0, 0, 0, 0.5);
-      --shadow-lg: 0 24px 54px -12px rgba(0, 0, 0, 0.65);
+      --blue-hover: #7DD3FC;
+      --blue-sky: #7DD3FC;
+
+      --border-light: #264264;
+      --border-subtle: #355882;
+      --border-ice: #0284C7;
+      --inset-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+      --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      --shadow-md: 0 14px 36px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      --shadow-hover: 0 22px 48px rgba(56, 189, 248, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg-page-grad);
       background-color: var(--bg-page);
       color: var(--text-main);
       line-height: 1.6;
-      transition: background-color 0.25s ease, color 0.25s ease;
-    }
-    a { text-decoration: none; color: inherit; }
-    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
-
-    /* TOP PRODUCT SWITCHER BAR */
-    .product-switcher-bar {
-      background: linear-gradient(90deg, #061325 0%, #0B213F 50%, #061325 100%);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.22);
-      padding: 10px 0;
-      color: #E2E8F0;
-      font-size: 0.84rem;
-    }
-    .switcher-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .switcher-tabs { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-    .switcher-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 0.8rem;
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(148, 163, 184, 0.22);
-      color: #CBD5E1;
-      transition: all 0.2s ease;
-    }
-    .switcher-pill:hover {
-      background: rgba(56, 189, 248, 0.15);
-      color: #FFFFFF;
-      border-color: #38BDF8;
-    }
-    .switcher-pill.active {
-      background: linear-gradient(135deg, #0284C7 0%, #38BDF8 100%);
-      color: #061325;
-      border-color: transparent;
+      overflow-x: hidden;
+      transition: background 0.25s ease, color 0.25s ease;
     }
 
-    /* NAVBAR */
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(0, 102, 204, 0.45); }
+      50% { transform: scale(1.15); opacity: 0.85; box-shadow: 0 0 0 6px rgba(0, 102, 204, 0); }
+    }
+
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+
+    @keyframes waveSlide {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(-25px); }
+      100% { transform: translateX(0); }
+    }
+
+    @keyframes dataPulse {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(220%); }
+    }
+
+    @keyframes orbDrift {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(24px, -18px) scale(1.06); }
+    }
+
+    /* ==========================================================================
+       NAVBAR — METALLIC SILVER GLASS, SINGLE LINE (NO WRAPPING)
+       ========================================================================== */
     .navbar {
       position: sticky;
       top: 0;
-      z-index: 1000;
-      background: var(--bg-glass);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--silver-border);
+      z-index: 100;
+      height: 72px;
+      background: var(--bg-surface-glass);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border-light);
+      box-shadow: 0 4px 20px rgba(15, 35, 58, 0.04);
+      transition: background 0.25s ease, border-color 0.25s ease;
     }
+
     .nav-inner {
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 76px;
-      gap: 16px;
+      gap: 24px;
+      flex-wrap: nowrap;
     }
-    .brand-logo { display: flex; align-items: center; gap: 12px; }
-    .brand-logo svg { height: 42px; width: auto; }
+
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .brand-logo svg {
+      height: 40px;
+      width: auto;
+      display: block;
+    }
+
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 26px;
       list-style: none;
+      flex-wrap: nowrap;
     }
+
+    .nav-links li {
+      flex-shrink: 0;
+    }
+
     .nav-links a {
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       font-weight: 600;
-      color: var(--text-secondary);
-      transition: color 0.2s ease;
+      color: var(--text-body);
+      white-space: nowrap;
+      padding: 6px 2px;
+      position: relative;
+      transition: color 0.15s ease;
     }
-    .nav-links a:hover, .nav-links a.active { color: var(--blue-primary); }
-    .nav-actions { display: flex; align-items: center; gap: 10px; }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, #0066CC, #94A3B8);
+      transform: scaleX(0);
+      transition: transform 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--blue-primary);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      transform: scaleX(1);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .lang-select-wrap {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .lang-select {
+      appearance: none;
+      -webkit-appearance: none;
+      background: var(--bg-surface);
+      color: var(--text-main);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--inset-highlight);
+      border-radius: 99px;
+      height: 38px;
+      padding: 0 30px 0 14px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      outline: none;
+      white-space: nowrap;
+      transition: border-color 0.15s ease;
+    }
+
+    .lang-select:hover,
+    .lang-select:focus {
+      border-color: var(--blue-primary);
+    }
+
+    .lang-chevron {
+      position: absolute;
+      right: 11px;
+      pointer-events: none;
+      color: var(--text-muted);
+    }
+
+    .icon-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid var(--border-light);
+      background: var(--bg-surface);
+      box-shadow: var(--inset-highlight);
+      color: var(--text-main);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.18s ease;
+    }
+
+    .icon-btn:hover {
+      border-color: var(--blue-primary);
+      color: var(--blue-primary);
+      transform: rotate(12deg);
+    }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      height: 40px;
-      padding: 0 18px;
-      border-radius: var(--radius-sm);
-      font-size: 0.9rem;
-      font-weight: 700;
-      cursor: pointer;
-      border: 1px solid transparent;
-      transition: all 0.22s ease;
-    }
-    .btn-primary {
-      background: var(--gradient-brand);
-      color: #F8FAFC;
-      box-shadow: 0 4px 14px rgba(0, 82, 163, 0.26);
-    }
-    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(2, 132, 199, 0.36); }
-    .btn-outline {
-      background: var(--bg-elevated);
-      color: var(--text-main);
-      border-color: var(--silver-border-strong);
-    }
-    .btn-outline:hover { border-color: var(--blue-primary); color: var(--blue-primary); }
-    .btn-lg { height: 48px; padding: 0 24px; font-size: 0.96rem; border-radius: 10px; }
-
-    .icon-btn {
       height: 38px;
-      width: 38px;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--silver-border-strong);
-      background: var(--bg-elevated);
-      color: var(--text-main);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+      padding: 0 18px;
+      border-radius: 99px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      white-space: nowrap;
       cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+      font-family: inherit;
+      flex-shrink: 0;
     }
 
-    /* HERO */
-    .hero {
-      padding: 60px 0 54px;
-      border-bottom: 1px solid var(--silver-border);
+    .btn-outline {
+      background: var(--bg-surface);
+      color: var(--text-main);
+      border-color: var(--border-subtle);
+      box-shadow: var(--shadow-sm);
     }
+
+    .btn-outline:hover {
+      border-color: var(--blue-primary);
+      color: var(--blue-primary);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #0052A3 0%, #0066CC 55%, #0284C7 100%);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 6px 16px rgba(0, 102, 204, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #004488 0%, #0052A3 60%, #0066CC 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(0, 102, 204, 0.36), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    }
+
+    .btn-lg {
+      height: 48px;
+      padding: 0 26px;
+      font-size: 0.95rem;
+    }
+
+    /* ==========================================================================
+       HERO SECTION (BRUSHED SILVER + ANIMATED NETWORK + WAVES)
+       ========================================================================== */
+    .hero {
+      position: relative;
+      padding: 72px 0 84px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 18% 15%, rgba(255, 255, 255, 0.85) 0%, transparent 45%),
+        radial-gradient(circle at 84% 22%, rgba(56, 189, 248, 0.16) 0%, transparent 48%);
+    }
+
+    body.dark-mode .hero {
+      background:
+        radial-gradient(circle at 18% 15%, rgba(56, 189, 248, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 84% 22%, rgba(0, 102, 204, 0.16) 0%, transparent 48%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(100, 116, 139, 0.09) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(100, 116, 139, 0.09) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 50%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 50%, transparent 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    #heroCanvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-ambient-orb {
+      position: absolute;
+      width: 440px;
+      height: 440px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, rgba(148, 163, 184, 0) 70%);
+      top: -100px;
+      right: 6%;
+      pointer-events: none;
+      z-index: 0;
+      animation: orbDrift 11s ease-in-out infinite;
+    }
+
+    .hero-bg-wave {
+      position: absolute;
+      left: -4%;
+      right: -4%;
+      bottom: -2px;
+      width: 108%;
+      height: 140px;
+      pointer-events: none;
+      z-index: 1;
+      animation: waveSlide 14s ease-in-out infinite;
+    }
+
     .hero-grid {
+      position: relative;
+      z-index: 2;
       display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 40px;
+      grid-template-columns: 1.06fr 0.94fr;
+      gap: 48px;
       align-items: center;
     }
+
     .pill-tag {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       padding: 6px 14px;
-      border-radius: 999px;
-      background: var(--blue-tint-bg);
-      border: 1px solid var(--blue-tint-border);
-      color: var(--blue-primary);
-      font-size: 0.78rem;
+      border-radius: 99px;
+      background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 100%);
+      color: #0052A3;
+      font-size: 0.79rem;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 16px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 20px;
     }
+
+    body.dark-mode .pill-tag {
+      background: linear-gradient(135deg, #162F4E 0%, #0F233A 100%);
+      color: #7DD3FC;
+      border-color: #2A4B72;
+    }
+
+    .pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #0066CC;
+      flex-shrink: 0;
+      animation: pulseDot 2.4s infinite;
+    }
+
+    body.dark-mode .pill-dot {
+      background: #38BDF8;
+    }
+
     .hero h1 {
-      font-size: clamp(2rem, 3.6vw, 3rem);
+      font-size: 2.75rem;
+      line-height: 1.18;
       font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-      margin-bottom: 16px;
+      letter-spacing: -0.028em;
+      margin-bottom: 20px;
     }
+
     .hero h1 .highlight {
-      background: linear-gradient(135deg, var(--blue-primary) 0%, var(--blue-bright) 100%);
+      background: linear-gradient(90deg, #0052A3 0%, #0284C7 52%, #64748B 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .hero-desc {
-      font-size: 1.04rem;
-      color: var(--text-secondary);
-      margin-bottom: 24px;
-    }
-    .hero-cta-group { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
-    .hero-kpi-strip {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      padding-top: 20px;
-      border-top: 1px solid var(--silver-border);
-    }
-    .hero-kpi-item strong {
-      display: block;
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: var(--blue-primary);
-    }
-    .hero-kpi-item span { font-size: 0.78rem; color: var(--text-muted); }
 
-    /* VISUAL PIPELINE CARD */
-    .visual-console-card {
-      background: linear-gradient(160deg, #071426 0%, #0D223D 55%, #071426 100%);
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      border-radius: var(--radius-lg);
-      padding: 22px;
-      color: #F8FAFC;
-      box-shadow: var(--shadow-lg);
+    body.dark-mode .hero h1 .highlight {
+      background: linear-gradient(90deg, #38BDF8 0%, #BAE6FD 55%, #CBD5E1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    .console-top {
+
+    .hero-desc {
+      font-size: 1.02rem;
+      color: var(--text-body);
+      margin-bottom: 30px;
+      max-width: 590px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 34px;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .metric-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      border-radius: var(--radius-md);
+      padding: 13px 15px;
+    }
+
+    .metric-item strong {
+      display: block;
+      font-size: 1.32rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #0052A3, #475569);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.02em;
+    }
+
+    body.dark-mode .metric-item strong {
+      background: linear-gradient(90deg, #38BDF8, #E2E8F0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .metric-item span {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+      display: block;
+      margin-top: 3px;
+    }
+
+    /* Hero Right Command Center */
+    .hero-showcase {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 22px;
+      box-shadow: var(--shadow-lg);
+      animation: floatSlow 7s ease-in-out infinite;
+      position: relative;
+    }
+
+    .showcase-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding-bottom: 14px;
       margin-bottom: 16px;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
-      font-size: 0.8rem;
-      color: #94A3B8;
+      border-bottom: 1px solid var(--border-light);
     }
-    .step-stack { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
-    .step-item {
-      background: rgba(15, 23, 42, 0.78);
-      border: 1px solid rgba(148, 163, 184, 0.24);
-      border-radius: 12px;
-      padding: 13px 15px;
-    }
-    .step-head {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.74rem;
-      font-weight: 800;
-      color: #38BDF8;
-      margin-bottom: 4px;
-    }
-    .step-item h4 { font-size: 0.92rem; color: #F1F5F9; margin-bottom: 3px; }
-    .step-item p { font-size: 0.77rem; color: #94A3B8; line-height: 1.42; }
 
-    /* SECTIONS */
-    .section { padding: 72px 0; }
-    .section-alt {
-      background: var(--bg-surface);
-      border-top: 1px solid var(--silver-border);
-      border-bottom: 1px solid var(--silver-border);
+    .window-dots {
+      display: flex;
+      gap: 6px;
     }
-    .section-header {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 48px;
+
+    .window-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--border-subtle);
     }
-    .section-header h2 {
-      font-size: clamp(1.75rem, 3vw, 2.4rem);
-      font-weight: 800;
-      letter-spacing: -0.025em;
+
+    .window-dots span:first-child {
+      background: #0066CC;
+    }
+
+    .window-dots span:nth-child(2) {
+      background: #64748B;
+    }
+
+    .showcase-url {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--bg-subtle);
+      padding: 4px 12px;
+      border-radius: 99px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    .live-indicator {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #0066CC;
+      animation: pulseDot 2s infinite;
+    }
+
+    .mini-card {
+      background: var(--bg-surface-solid);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      border-radius: var(--radius-lg);
+      padding: 18px;
       margin-bottom: 12px;
     }
-    .section-header p { color: var(--text-secondary); font-size: 1rem; }
 
-    /* PRICING CARDS */
+    .mini-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .stream-bar {
+      height: 3px;
+      width: 100%;
+      background: var(--bg-subtle);
+      border-radius: 99px;
+      overflow: hidden;
+      margin: 12px 0 10px;
+      position: relative;
+    }
+
+    .stream-bar::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 42%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, #0066CC, #94A3B8, transparent);
+      animation: dataPulse 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    .status-pill {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 99px;
+      background: var(--bg-ice);
+      color: var(--blue-primary);
+      border: 1px solid var(--border-light);
+      white-space: nowrap;
+    }
+
+    /* ==========================================================================
+       SECTIONS & PRICING
+       ========================================================================== */
+    .section {
+      padding: 84px 0;
+      position: relative;
+    }
+
+    .section-alt {
+      background: linear-gradient(180deg, #DCE4EE 0%, #E6ECF4 100%);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    body.dark-mode .section-alt {
+      background: linear-gradient(180deg, #0E1D31 0%, #132742 100%);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 54px;
+    }
+
+    .section-header h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.022em;
+      margin-bottom: 12px;
+    }
+
+    .section-header p {
+      color: var(--text-body);
+      font-size: 1.02rem;
+    }
+
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 26px;
       align-items: stretch;
     }
+
     .pricing-card {
-      background: var(--gradient-card);
-      border: 1px solid var(--silver-border-strong);
-      border-radius: var(--radius-lg);
-      padding: 32px 28px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
       box-shadow: var(--shadow-md);
+      border-radius: var(--radius-xl);
+      padding: 32px 28px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       position: relative;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
     }
-    .pricing-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+
+    .pricing-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--blue-sky);
+    }
+
     .pricing-card.featured {
-      background: linear-gradient(165deg, #061529 0%, #0B2545 52%, #071930 100%);
+      background: linear-gradient(155deg, #0B192C 0%, #102A49 55%, #163860 100%);
       color: #F8FAFC;
       border: 2px solid #38BDF8;
-      box-shadow: 0 24px 56px -12px rgba(0, 82, 163, 0.38);
+      box-shadow: 0 24px 60px rgba(0, 82, 163, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.22);
       transform: translateY(-6px);
     }
+
+    .pricing-card.featured:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 28px 68px rgba(0, 82, 163, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+
     .pricing-popular-ribbon {
       position: absolute;
       top: -13px;
-      right: 24px;
-      background: linear-gradient(135deg, #0284C7 0%, #38BDF8 100%);
-      color: #061325;
-      font-size: 0.72rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, #0284C7 0%, #38BDF8 50%, #E2E8F0 100%);
+      color: #071324;
+      font-size: 0.73rem;
       font-weight: 800;
-      padding: 5px 14px;
-      border-radius: 999px;
       letter-spacing: 0.06em;
       text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 99px;
+      white-space: nowrap;
+      box-shadow: 0 6px 18px rgba(2, 132, 199, 0.35);
     }
+
     .pricing-tier-label {
       display: inline-flex;
-      font-size: 0.75rem;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.76rem;
       font-weight: 800;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      padding: 5px 12px;
-      border-radius: 999px;
-      background: var(--blue-tint-bg);
       color: var(--blue-primary);
-      border: 1px solid var(--blue-tint-border);
-      margin-bottom: 14px;
+      margin-bottom: 8px;
     }
+
     .pricing-card.featured .pricing-tier-label {
-      background: rgba(56, 189, 248, 0.16);
       color: #7DD3FC;
-      border-color: rgba(56, 189, 248, 0.4);
     }
-    .pricing-card h3 { font-size: 1.38rem; font-weight: 800; margin-bottom: 8px; }
+
+    .pricing-card h3 {
+      font-size: 1.38rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .pricing-card.featured h3 {
+      color: #FFFFFF;
+    }
+
     .pricing-subtitle {
-      font-size: 0.88rem;
-      color: var(--text-secondary);
+      font-size: 0.86rem;
+      color: var(--text-muted);
       margin-bottom: 20px;
-      min-height: 42px;
+      min-height: 40px;
+      line-height: 1.45;
     }
-    .pricing-card.featured .pricing-subtitle { color: #CBD5E1; }
+
+    .pricing-card.featured .pricing-subtitle {
+      color: #CBD5E1;
+    }
+
     .pricing-price-box {
       padding: 18px;
       border-radius: var(--radius-md);
-      background: var(--bg-elevated);
-      border: 1px solid var(--silver-border);
-      margin-bottom: 18px;
+      background: var(--bg-surface-solid);
+      border: 1px solid var(--border-light);
+      margin-bottom: 16px;
     }
+
     .pricing-card.featured .pricing-price-box {
-      background: rgba(15, 29, 51, 0.82);
-      border-color: rgba(56, 189, 248, 0.32);
+      background: rgba(15, 35, 62, 0.78);
+      border-color: rgba(125, 211, 252, 0.32);
     }
+
     .price-main-line {
       display: flex;
       align-items: baseline;
       gap: 6px;
       margin-bottom: 8px;
     }
+
     .price-amount {
       font-size: 2.05rem;
       font-weight: 800;
       letter-spacing: -0.03em;
-      color: var(--blue-primary);
+      color: var(--text-main);
+      line-height: 1.1;
     }
-    .pricing-card.featured .price-amount { color: #38BDF8; }
-    .price-period { font-size: 0.88rem; font-weight: 600; color: var(--text-muted); }
-    .pricing-card.featured .price-period { color: #94A3B8; }
+
+    .pricing-card.featured .price-amount {
+      background: linear-gradient(90deg, #FFFFFF 0%, #7DD3FC 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .price-period {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .pricing-card.featured .price-period {
+      color: #94A3B8;
+    }
+
     .setup-fee-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 8px;
       padding-top: 8px;
-      border-top: 1px dashed var(--silver-border);
-      font-size: 0.83rem;
+      border-top: 1px dashed var(--border-light);
+      font-size: 0.82rem;
+      font-weight: 600;
     }
-    .pricing-card.featured .setup-fee-row { border-top-color: rgba(148, 163, 184, 0.25); }
+
+    .pricing-card.featured .setup-fee-row {
+      border-top-color: rgba(148, 163, 184, 0.28);
+    }
+
     .setup-free-badge {
-      display: inline-flex;
-      padding: 3px 10px;
-      border-radius: 999px;
-      background: rgba(56, 189, 248, 0.2);
+      display: inline-block;
+      padding: 2px 9px;
+      border-radius: 99px;
+      background: rgba(56, 189, 248, 0.18);
       color: #7DD3FC;
-      font-weight: 800;
-      font-size: 0.76rem;
-      border: 1px solid rgba(56, 189, 248, 0.45);
+      border: 1px solid rgba(125, 211, 252, 0.45);
+      font-size: 0.75rem;
+      font-weight: 700;
     }
+
     .role-quota-banner {
       display: flex;
       align-items: center;
       gap: 10px;
-      padding: 10px 14px;
+      padding: 11px 14px;
       border-radius: 10px;
-      background: var(--blue-tint-bg);
-      border: 1px solid var(--blue-tint-border);
+      background: var(--bg-ice);
+      border: 1px solid var(--border-ice);
+      color: var(--blue-hover);
       font-size: 0.83rem;
       font-weight: 700;
-      color: var(--blue-primary);
       margin-bottom: 18px;
     }
-    .pricing-card.featured .role-quota-banner {
-      background: rgba(2, 132, 199, 0.24);
-      border-color: rgba(56, 189, 248, 0.45);
-      color: #E0F2FE;
+
+    body.dark-mode .role-quota-banner {
+      background: rgba(2, 132, 199, 0.16);
+      color: #7DD3FC;
+      border-color: rgba(56, 189, 248, 0.35);
     }
+
+    .pricing-card.featured .role-quota-banner {
+      background: linear-gradient(90deg, rgba(2, 132, 199, 0.32), rgba(56, 189, 248, 0.18));
+      border-color: rgba(125, 211, 252, 0.45);
+      color: #F0F9FF;
+    }
+
     .pricing-feature-list {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 11px;
-      margin-bottom: 26px;
+      margin-bottom: 24px;
+      font-size: 0.87rem;
+      line-height: 1.48;
+      color: var(--text-body);
     }
+
+    .pricing-card.featured .pricing-feature-list {
+      color: #E2E8F0;
+    }
+
     .pricing-feature-list li {
       display: flex;
       align-items: flex-start;
       gap: 10px;
-      font-size: 0.87rem;
-      color: var(--text-secondary);
-      line-height: 1.48;
     }
-    .pricing-card.featured .pricing-feature-list li { color: #E2E8F0; }
+
     .pricing-check {
       width: 19px;
       height: 19px;
       border-radius: 50%;
-      background: var(--blue-tint-bg);
+      background: rgba(0, 102, 204, 0.12);
       color: var(--blue-primary);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
-      margin-top: 2px;
       font-size: 0.72rem;
       font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 2px;
     }
+
     .pricing-card.featured .pricing-check {
-      background: rgba(56, 189, 248, 0.24);
+      background: rgba(56, 189, 248, 0.22);
       color: #7DD3FC;
     }
 
-    /* MODULE GRID */
-    .module-grid {
+    .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      gap: 24px;
     }
-    .module-card {
-      background: var(--gradient-card);
-      border: 1px solid var(--silver-border-strong);
-      border-radius: var(--radius-md);
-      padding: 26px;
-      box-shadow: var(--shadow-sm);
-    }
-    .module-card .mod-num {
-      display: inline-flex;
-      padding: 4px 10px;
-      border-radius: 6px;
-      background: var(--blue-tint-bg);
-      color: var(--blue-primary);
-      font-family: ui-monospace, monospace;
-      font-size: 0.76rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-    .module-card h3 { font-size: 1.12rem; font-weight: 800; margin-bottom: 8px; }
-    .module-card p { font-size: 0.88rem; color: var(--text-secondary); }
 
-    /* CTA BOX */
+    .benefit-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--blue-primary);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .benefit-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #FFFFFF, #DCE4EE);
+      color: var(--blue-primary);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    body.dark-mode .benefit-icon {
+      background: linear-gradient(135deg, #1A3658, #11243C);
+    }
+
+    .benefit-card h3 {
+      font-size: 1.12rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .benefit-card p {
+      font-size: 0.9rem;
+      color: var(--text-body);
+    }
+
+    /* ==========================================================================
+       CTA & FOOTER
+       ========================================================================== */
     .cta-box {
-      background: linear-gradient(135deg, #061325 0%, #0B213F 55%, #0F2D56 100%);
+      background: linear-gradient(135deg, #0B1829 0%, #112844 55%, #1E3E66 100%);
+      color: #FFFFFF;
+      border: 1px solid #335680;
       border-radius: var(--radius-xl);
       padding: 48px;
-      color: #F8FAFC;
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
       gap: 36px;
       align-items: center;
-      border: 1px solid rgba(56, 189, 248, 0.3);
-    }
-    .cta-form {
-      background: rgba(15, 29, 51, 0.85);
-      border: 1px solid rgba(148, 163, 184, 0.25);
-      border-radius: var(--radius-md);
-      padding: 26px;
-    }
-    .form-group { margin-bottom: 14px; }
-    .form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: #CBD5E1; margin-bottom: 6px; }
-    .form-group input, .form-group select {
-      width: 100%;
-      height: 42px;
-      padding: 0 14px;
-      border-radius: 8px;
-      border: 1px solid rgba(148, 163, 184, 0.32);
-      background: rgba(7, 14, 26, 0.85);
-      color: #F8FAFC;
-      font-size: 0.9rem;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
     }
 
-    footer {
-      padding: 40px 0;
-      border-top: 1px solid var(--silver-border);
+    .cta-box h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+
+    .cta-box p {
+      color: #CBD5E1;
+      margin-bottom: 22px;
+      font-size: 0.96rem;
+    }
+
+    .contact-form {
+      background: linear-gradient(145deg, #FFFFFF 0%, #F1F5F9 100%);
+      color: #0F233A;
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      border: 1px solid #CBD5E1;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .contact-form h3 {
+      font-size: 1.12rem;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #475569;
+      margin-bottom: 4px;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      height: 40px;
+      padding: 0 12px;
+      border-radius: 8px;
+      border: 1px solid #CBD5E1;
+      background: #FFFFFF;
+      font-size: 0.88rem;
+      font-family: inherit;
+      color: #0F233A;
+    }
+
+    .form-toast {
+      display: none;
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: #E0F2FE;
+      color: #0052A3;
+      font-size: 0.84rem;
+      font-weight: 600;
       text-align: center;
-      font-size: 0.85rem;
-      color: var(--text-muted);
+    }
+
+    .footer {
+      background: var(--bg-navy-deep);
+      color: #94A3B8;
+      padding: 56px 0 32px;
+      border-top: 1px solid #1E3A5F;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 32px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid #1E3A5F;
+    }
+
+    .footer-brand svg {
+      height: 38px;
+      width: auto;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .footer-col h4 {
+      color: #F1F5F9;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      font-size: 0.86rem;
+    }
+
+    .footer-col a:hover {
+      color: #7DD3FC;
+    }
+
+    .footer-bottom {
+      padding-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.82rem;
     }
 
     @media (max-width: 980px) {
-      .hero-grid, .pricing-grid, .module-grid, .cta-box { grid-template-columns: 1fr; }
-      .pricing-card.featured { transform: none; }
-      .nav-links { display: none; }
-      .hero-kpi-strip { grid-template-columns: 1fr 1fr; }
+      .hero-grid,
+      .cta-box,
+      .grid-3,
+      .pricing-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .pricing-card.featured {
+        transform: none;
+      }
+      .nav-links {
+        display: none;
+      }
+      .hero h1 {
+        font-size: 2.15rem;
+      }
+      .cta-box {
+        padding: 32px 24px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- TOP PRODUCT SWITCHER BAR -->
-  <div class="product-switcher-bar">
-    <div class="container switcher-inner">
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <a href="../" style="color: #7DD3FC; font-weight: 700;">&larr; Trang chủ HUDU (huduvn.com)</a>
-        <span style="opacity: 0.4;">|</span>
-        <span>Hệ sinh thái 2 Sản phẩm Chủ lực:</span>
-      </div>
-      <div class="switcher-tabs">
-        <a href="./" class="switcher-pill active">
-          &#10003; 01. Hệ Thống Săn Thầu AI (HUDU DauThau)
-        </a>
-        <a href="../cfms/" class="switcher-pill">
-          02. Quản Lý Phòng Khám &amp; Hàng Đợi (CFMS / QMS) &rarr;
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- NAVBAR -->
+  <!-- NAVBAR — 100% UNIFIED OFFICIAL LOGO & SINGLE-LINE LINKS -->
   <header class="navbar">
     <div class="container nav-inner">
       <a href="../" class="brand-logo" aria-label="HUDU Home">
-        <svg viewBox="0 0 320 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 246 84">
           <defs>
-            <linearGradient id="dtNavGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#0052A3"/>
-              <stop offset="52%" stop-color="#0284C7"/>
-              <stop offset="100%" stop-color="#64748B"/>
+            <linearGradient id="navHuduGrad" gradientUnits="userSpaceOnUse" x1="94" y1="22" x2="241" y2="62">
+              <stop id="navGradStop1" offset="0%" stop-color="#0052A3" />
+              <stop id="navGradStop2" offset="38%" stop-color="#0284C7" />
+              <stop id="navGradStop3" offset="74%" stop-color="#64748B" />
+              <stop id="navGradStop4" offset="100%" stop-color="#94A3B8" />
             </linearGradient>
           </defs>
-          <g transform="translate(4, 6)">
-            <circle cx="30" cy="30" r="27" fill="#0B192C" stroke="url(#dtNavGrad)" stroke-width="2.5"/>
-            <path d="M 13 17 V 43 M 13 30 H 25 M 25 17 V 43" stroke="#38BDF8" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M 33 17 V 43 M 33 17 H 40 C 49 17 49 43 40 43 H 33 M 29 26 H 37" stroke="#E2E8F0" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="42" cy="42" r="37" fill="#0066CC" />
+          <g transform="translate(42, 42) scale(0.80) translate(-55.75, -60)">
+            <path fill-rule="evenodd" d="M 54 36.5 H 64 A 23.5 23.5 0 0 1 87.5 60 A 23.5 23.5 0 0 1 64 83.5 H 54 Z M 59 46 V 74 H 64 A 14 14 0 0 0 78 60 A 14 14 0 0 0 64 46 Z" fill="#7DD3FC" />
+            <rect x="24" y="33.5" width="10" height="53" rx="5" fill="#FFFFFF" />
+            <rect x="49" y="33.5" width="10" height="53" rx="5" fill="#FFFFFF" />
+            <path d="M 27.5 56.2 C 38 48.5, 54 64.5, 70.5 55.2 A 4.5 4.5 0 0 1 71.5 64.0 C 54 73.5, 38 57.5, 29.5 64.2 A 4.5 4.5 0 0 1 27.5 56.2 Z" fill="#FFFFFF" />
           </g>
-          <text x="76" y="45" font-family="'Inter', sans-serif" font-weight="800" font-size="30" letter-spacing="4" fill="url(#dtNavGrad)">HUDU</text>
-          <text x="195" y="43" font-family="'Inter', sans-serif" font-weight="800" font-size="14" letter-spacing="1" fill="#0284C7">DAUTHAU AI</text>
+          <g fill="url(#navHuduGrad)" fill-rule="evenodd">
+            <rect x="94" y="24" width="7.6" height="36" rx="3.8" />
+            <rect x="97.8" y="38.5" width="22.4" height="7" rx="3.5" />
+            <rect x="116.4" y="24" width="7.6" height="36" rx="3.8" />
+            <path d="M 133 27.8 A 3.8 3.8 0 0 1 140.6 27.8 V 45 A 7.4 7.4 0 0 0 155.4 45 V 27.8 A 3.8 3.8 0 0 1 163 27.8 V 45 A 15 15 0 0 1 133 45 Z" />
+            <path d="M 172 27.8 A 3.8 3.8 0 0 1 175.8 24 H 184 A 18 18 0 0 1 202 42 A 18 18 0 0 1 184 60 H 175.8 A 3.8 3.8 0 0 1 172 56.2 Z M 179.6 31.4 V 52.6 H 184 A 10.6 10.6 0 0 0 194.6 42 A 10.6 10.6 0 0 0 184 31.4 Z" />
+            <path d="M 211 27.8 A 3.8 3.8 0 0 1 218.6 27.8 V 45 A 7.4 7.4 0 0 0 233.4 45 V 27.8 A 3.8 3.8 0 0 1 241 27.8 V 45 A 15 15 0 0 1 211 45 Z" />
+          </g>
         </svg>
       </a>
 
       <ul class="nav-links">
-        <li><a href="../">&larr; Trang chủ</a></li>
-        <li><a href="#pricing" class="active">Bảng giá Đấu thầu</a></li>
-        <li><a href="#pipeline">Pipeline 3 Bước AI</a></li>
-        <li><a href="#features">6 Phân hệ Cốt lõi</a></li>
-        <li><a href="../cfms/">Sản phẩm Phòng khám CFMS &rarr;</a></li>
+        <li><a href="../">Trang chủ</a></li>
+        <li><a href="#pricing" class="active">Bảng giá</a></li>
+        <li><a href="#pipeline">Pipeline 3 Bước</a></li>
+        <li><a href="#features">Tính năng</a></li>
+        <li><a href="../cfms/">Quản trị CFMS</a></li>
       </ul>
 
       <div class="nav-actions">
-        <button class="icon-btn" onclick="document.body.classList.toggle('dark-mode')" title="Đổi giao diện Sáng / Tối">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <div class="lang-select-wrap">
+          <select id="langSelect" class="lang-select" aria-label="Language">
+            <option value="vi">🇻🇳 Tiếng Việt</option>
+            <option value="en">🇺🇸 English</option>
+            <option value="es">🇪🇸 Español</option>
+            <option value="zh">🇨🇳 中文</option>
+            <option value="ja">🇯🇵 日本語</option>
+            <option value="ko">🇰🇷 한국어</option>
+          </select>
+          <svg class="lang-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+
+        <button id="themeToggleBtn" class="icon-btn" onclick="toggleTheme()" title="Switch Light / Dark Theme" aria-label="Toggle Theme">
+          <svg id="themeIconMoon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="themeIconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         </button>
-        <a href="#pricing" class="btn btn-primary">Xem Bảng Giá &darr;</a>
+
+        <a href="#contact" class="btn btn-primary">Đăng ký Dùng thử</a>
       </div>
     </div>
   </header>
 
-  <!-- PRODUCT HERO -->
+  <!-- HERO SECTION -->
   <section class="hero">
+    <div class="hero-ambient-orb"></div>
+    <canvas id="heroCanvas"></canvas>
+
+    <svg class="hero-bg-wave" viewBox="0 0 1440 160" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 64 C 320 10, 640 130, 960 64 C 1180 20, 1340 50, 1440 80 L 1440 160 L 0 160 Z" fill="#CBD5E1" fill-opacity="0.45"/>
+      <path d="M0 98 C 400 145, 820 35, 1240 105 C 1340 120, 1400 110, 1440 96 L 1440 160 L 0 160 Z" fill="#93C5FD" fill-opacity="0.28"/>
+    </svg>
+
     <div class="container hero-grid">
       <div>
-        <div class="pill-tag">SẢN PHẨM 01 · HUDU DAUTHAU CLOUD &amp; FLUTTER APP</div>
+        <div class="pill-tag">
+          <span class="pill-dot"></span>
+          <span>SẢN PHẨM 01 · HUDU DAUTHAU · huduvn.com/dauthau</span>
+        </div>
         <h1>
-          Hệ Thống <span class="highlight">Săn Thầu Công &amp; Tư</span> Thông Minh Bằng AI
+          Hệ Thống <span class="highlight">Săn &amp; Lọc Đấu Thầu</span> Công - Tư - ODA Bằng AI
         </h1>
         <p class="hero-desc">
-          Thu thập tự động đa nguồn (Mua sắm công <code>muasamcong</code> chu kỳ 5 phút, Báo Đấu Thầu, Tập đoàn Nhà nước EVN/PVN/ACV, vốn ODA &amp; Đấu thầu Tư nhân/Ngân hàng), chưng cất chống trùng 3 lớp, phân loại bằng <strong>Pipeline 3 Bước (<code>Aho-Corasick</code> &rarr; <code>ONNX CPU ~0.26ms</code> &rarr; <code>Step 3 GLM-5.3-Flash / Local LLM</code>)</strong> và đẩy gói thầu khớp đúng <strong>Biên độ Năng lực Sàn / Trần</strong> của từng Nhà thầu.
+          Thu thập tự động từ Mạng Đấu Thầu Quốc Gia (muasamcong), Tập đoàn Nhà nước (EVN, PVN, ACV), Ngân hàng &amp; Vốn ODA; chưng cất chống trùng 3 lớp, bóc tách Chương V và <strong>Matching biên độ năng lực Sàn/Trần (Floor/Ceiling)</strong>.
         </p>
 
         <div class="hero-cta-group">
           <a href="#pricing" class="btn btn-primary btn-lg">
-            Xem Bảng Giá Dịch Vụ &darr;
+            Xem Bảng Giá Gói Doanh Nghiệp &darr;
           </a>
           <a href="#pipeline" class="btn btn-outline btn-lg">
-            Kiến Trúc Pipeline 3 Bước AI
+            Khám Phá Pipeline 3 Bước
           </a>
         </div>
 
-        <div class="hero-kpi-strip">
-          <div class="hero-kpi-item">
-            <strong>0.26 ms</strong>
-            <span>Phân loại Multi-Head ONNX trực tiếp trên CPU</span>
-          </div>
-          <div class="hero-kpi-item">
+        <div class="hero-metrics">
+          <div class="metric-item">
             <strong>3-Tier</strong>
-            <span>Chống trùng SHA-256 + Trigram &amp; gộp bản sửa đổi</span>
+            <span>Chống trùng lặp SHA-256, mã gốc &amp; Trigram pg_trgm</span>
           </div>
-          <div class="hero-kpi-item">
-            <strong>0.0–10.0</strong>
-            <span>AI GLM-5.3-Flash chấm điểm Hồ sơ năng lực</span>
+          <div class="metric-item">
+            <strong>Sàn / Trần</strong>
+            <span>So khớp chính xác biên độ tài chính &amp; cấp công trình</span>
           </div>
-          <div class="hero-kpi-item">
-            <strong>Đa nền tảng</strong>
-            <span>Flutter App (iOS/Android/Web/macOS) &amp; Zalo/SMS</span>
+          <div class="metric-item">
+            <strong>Real-time</strong>
+            <span>Đẩy tin qua Mobile App, Zalo ZNS, SMS &amp; Read-Receipt</span>
           </div>
         </div>
       </div>
 
-      <!-- Right Visual Architecture Overview -->
-      <div class="visual-console-card">
-        <div class="console-top">
-          <span><strong>ThreeStepPipeline</strong> · Rust Axum + <code>core-iam</code> (~25MB RAM)</span>
-          <span style="color: #38BDF8; font-weight: 700;">● 100% Benchmark Pass</span>
-        </div>
-
-        <div class="step-stack">
-          <div class="step-item">
-            <div class="step-head"><span>BƯỚC 1 · AHO-CORASICK + REGEX</span><span>&lt; 0.5 ms</span></div>
-            <h4>Lọc Từ Khóa Đa Mẫu &amp; Bóc Tách Định Lượng</h4>
-            <p>Quét siêu tốc từ điển chuyên ngành và bóc tách Tổng mức đầu tư, Giá gói thầu, thông số kỹ thuật Chương V (chiều dài cầu, khẩu độ nhịp, công suất...).</p>
+      <!-- Right Live Preview -->
+      <div class="hero-showcase">
+        <div class="showcase-header">
+          <div class="window-dots">
+            <span></span><span></span><span></span>
           </div>
-          <div class="step-item">
-            <div class="step-head"><span>BƯỚC 2 · EMBEDDED ONNX CPU MODEL</span><span>~0.26 ms / tin</span></div>
-            <h4>Multi-Head ONNX (<code>vn_tender_classifier.onnx</code>)</h4>
-            <p>Xử lý <strong>90%–95% gói thầu</strong> trực tiếp trên CPU không cần GPU: gắn đồng thời nhãn Domain [5], Cây chuyên ngành <code>ltree</code> [16] và Cấp công trình [5].</p>
-          </div>
-          <div class="step-item">
-            <div class="step-head"><span>BƯỚC 3 · ESCALATION LLM &amp; PROFILING</span><span>GLM-5.3-Flash / Qwen3</span></div>
-            <h4>AI Phân Tích Hồ Sơ Năng Lực Nhà Thầu &amp; Ca Khó</h4>
-            <p>Phân tích tài liệu Hồ sơ năng lực công ty để tự động thiết lập ngưỡng <strong>Sàn (Floor) / Trần (Ceiling)</strong> và chấm điểm tương thích <code>0.0 – 10.0</code> cho từng gói thầu đang mở.</p>
+          <div class="showcase-url">
+            <span class="live-indicator"></span>
+            api.bidding.huduvn.com · Rust Tender Engine
           </div>
         </div>
 
-        <div style="background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 10px; padding: 12px 14px; font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
-          <span><strong>App Nhà Thầu:</strong> iOS · Android · Web · macOS</span>
-          <span style="color: #7DD3FC; font-weight: 700;">Read-Receipt Tracking &amp; Link Gốc Chính Thống</span>
+        <div class="mini-card">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <strong style="font-size:0.95rem;">IB2600881920-01 · Cầu Sông Nhạn (Đồng Nai)</strong>
+            <span class="status-pill">Match 99%</span>
+          </div>
+          <div class="stream-bar"></div>
+          <div style="font-size:0.8rem; color:var(--text-body); margin-bottom:8px;">
+            <div><strong>Nhãn ltree:</strong> <code>xay_dung.ha_tang.cau_duong</code> · Cấp II (3x30m)</div>
+            <div><strong>Biên độ khớp:</strong> Sàn 10 tỷ &le; <strong>35,5 tỷ</strong> &le; Trần 80 tỷ</div>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:0.76rem; color:var(--text-muted);">
+            <span>&#10003; Đã gộp bản sửa đổi (-00 &rarr; -01)</span>
+            <span style="color:var(--blue-primary); font-weight:700;">&#10003; Đã đẩy App/Zalo ZNS</span>
+          </div>
+        </div>
+
+        <div class="mini-card" style="background: linear-gradient(145deg, #0B192C, #132A46); color: #F8FAFC; border-color: #38BDF8;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+            <span style="font-size:0.75rem; font-weight:800; color:#7DD3FC; text-transform:uppercase; letter-spacing:0.06em;">Bảng giá linh hoạt theo quy mô nhà thầu</span>
+            <span style="font-size:0.72rem; background:rgba(56,189,248,0.2); color:#7DD3FC; padding:3px 9px; border-radius:99px; font-weight:700;">Backfill Tự Động</span>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:8px;">
+            <div style="background:rgba(15,23,42,0.7); padding:10px 12px; border-radius:10px; border:1px solid rgba(148,163,184,0.25);">
+              <div style="font-size:0.74rem; color:#94A3B8; font-weight:700;">GÓI STARTER (03 User)</div>
+              <div style="font-size:1.2rem; font-weight:800; color:#FFFFFF;">999.000đ<span style="font-size:0.75rem; font-weight:500; color:#CBD5E1;">/tháng</span></div>
+              <div style="font-size:0.72rem; color:#CBD5E1; margin-top:2px;">Miễn phí khởi tạo 0đ</div>
+            </div>
+            <div style="background:rgba(2,132,199,0.25); padding:10px 12px; border-radius:10px; border:1px solid #38BDF8;">
+              <div style="font-size:0.74rem; color:#7DD3FC; font-weight:700;">PRO CONTRACTOR (15 User)</div>
+              <div style="font-size:1.2rem; font-weight:800; color:#7DD3FC;">2.490.000đ<span style="font-size:0.75rem; font-weight:500; color:#E2E8F0;">/tháng</span></div>
+              <div style="font-size:0.72rem; color:#BAE6FD; font-weight:700; margin-top:2px;">Bóc tách Chương V + ODA</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 1: PRICING TABLE FOR HUDU DAUTHAU -->
+  <!-- PRICING SECTION (#pricing) -->
   <section id="pricing" class="section section-alt">
     <div class="container">
       <div class="section-header">
-        <div class="pill-tag">Bảng Giá Chính Thức · HUDU DauThau Cloud</div>
-        <h2>Bảng Giá Phần Mềm Săn &amp; Lọc Đấu Thầu Công - Tư Bằng AI</h2>
+        <div class="pill-tag">
+          <span class="pill-dot"></span>
+          <span>Bảng Giá Hệ Thống Săn Thầu AI (HUDU DauThau)</span>
+        </div>
+        <h2>Đầu Tư Tối Ưu Cho Phòng Đấu Thầu &amp; Ban Kế Hoạch Kỹ Thuật</h2>
         <p>
-          Tự động hóa hoàn toàn việc săn tìm dự án phù hợp với <strong>Biên độ Năng lực Sàn / Trần</strong> của doanh nghiệp. Cam kết <strong>miễn phí 100% bảo trì &amp; cập nhật nguồn thầu mới trong suốt thời gian còn Subscribe</strong>.
+          Miễn phí 100% chi phí khởi tạo hồ sơ năng lực ban đầu, tự động quét <strong>Backfill toàn bộ các gói thầu đang mở</strong> ngay khi kích hoạt tài khoản.
         </p>
       </div>
 
@@ -693,10 +1288,13 @@
         <!-- PLAN 1: STARTER -->
         <div class="pricing-card">
           <div>
-            <div class="pricing-tier-label">GÓI CƠ BẢN · STARTER</div>
+            <div class="pricing-tier-label">
+              <span>●</span>
+              <span>GÓI KHỞI ĐẦU · STARTER</span>
+            </div>
             <h3>Nhà Thầu Chuyên Ngành</h3>
             <p class="pricing-subtitle">
-              Dành cho Doanh nghiệp nhà thầu vừa và nhỏ cần tự động săn gói thầu Mua sắm công khớp với năng lực thi công / cung ứng.
+              Phù hợp cho doanh nghiệp vừa và nhỏ tập trung săn thầu Mua sắm công (muasamcong) theo tỉnh thành &amp; ngành nghề cố định.
             </p>
 
             <div class="pricing-price-box">
@@ -705,7 +1303,7 @@
                 <span class="price-period">/ tháng (Subscribe)</span>
               </div>
               <div class="setup-fee-row">
-                <span style="color: var(--text-muted);">Phí khởi tạo Hồ sơ năng lực AI:</span>
+                <span>Phí khởi tạo Hồ sơ năng lực:</span>
                 <strong style="color: var(--blue-primary);">MIỄN PHÍ 0đ</strong>
               </div>
             </div>
@@ -718,40 +1316,43 @@
             <ul class="pricing-feature-list">
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Quét tự động Mua sắm công &amp; Báo Đấu Thầu:</strong> Cập nhật liên tục KHLCNT, TBMT (chu kỳ 5 phút/lần), tự động gộp bản sửa đổi (<code>-00 &rarr; -01</code>) và giữ nguyên link gốc.</div>
+                <span><strong>Thu thập Mạng Đấu Thầu Quốc Gia (muasamcong):</strong> Tự động gộp các bản sửa đổi TBMT (<code>-00 &rarr; -01</code>) và bảo toàn link gốc.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>AI Phân tích Hồ sơ Năng lực (GLM-5.3-Flash):</strong> Tự động bóc tách ngành nghề <code>ltree</code>, Cấp công trình (I–IV) và thiết lập ngưỡng <strong>Sàn / Trần doanh thu</strong>.</div>
+                <span><strong>So khớp biên độ Sàn / Trần (Floor &amp; Ceiling):</strong> Lọc chính xác theo Giá gói thầu, Tổng mức đầu tư và Tỉnh/Thành phố.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Chấm điểm Tương thích (0.0 – 10.0) &amp; Backfill:</strong> Ngay khi đăng ký, hệ thống tự động quét ngược toàn bộ các gói thầu <strong>ĐANG MỞ</strong> để trả kết quả khớp ngay lập tức.</div>
+                <span><strong>Phân loại từ khóa Aho-Corasick (&lt; 1ms):</strong> Đánh nhãn cây chuyên ngành <code>ltree</code> tối đa 03 lĩnh vực đăng ký.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Ứng dụng Mobile App (iOS/Android) &amp; Web Portal:</strong> Nhận thông báo Push qua App và Email ngay khi có gói thầu phù hợp.</div>
+                <span><strong>Thông báo qua Email &amp; Mobile App Push:</strong> Nhận thông báo tức thì khi có gói thầu khớp hồ sơ năng lực.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Miễn phí 100% bảo trì khi còn Subscribe:</strong> Tự động cập nhật cấu trúc trang nguồn và nâng cấp mô hình AI phân loại hoàn toàn miễn phí.</div>
+                <span><strong>Quét Backfill tự động khi tạo tài khoản:</strong> Rà soát ngay toàn bộ gói thầu còn hạn đóng thầu trên hệ thống.</span>
               </li>
             </ul>
           </div>
 
-          <a href="#contact" onclick="selectDauThauPlan('Gói Cơ Bản (Starter - 999k/tháng · 01 Hồ sơ năng lực · 03 Account)')" class="btn btn-outline btn-lg" style="width: 100%; border-color: var(--blue-primary); color: var(--blue-primary);">
-            Đăng Ký Gói Cơ Bản (999k/tháng) &rarr;
+          <a href="#contact" onclick="selectPricingPlan('DAUTHAU_STARTER')" class="btn btn-outline btn-lg" style="width: 100%; justify-content: center;">
+            Đăng Ký Gói Starter &rarr;
           </a>
         </div>
 
-        <!-- PLAN 2: GROWTH / PRO (FEATURED) -->
+        <!-- PLAN 2: PRO CONTRACTOR (FEATURED) -->
         <div class="pricing-card featured">
-          <div class="pricing-popular-ribbon">PHỔ BIẾN NHẤT · CÔNG + TƯ NHÂN + ODA</div>
+          <div class="pricing-popular-ribbon">PHỔ BIẾN NHẤT · BÓC TÁCH CHƯƠNG V &amp; ĐA NGUỒN THẦU</div>
           <div>
-            <div class="pricing-tier-label">GÓI NÂNG CAO · PRO CONTRACTOR</div>
-            <h3>Doanh Nghiệp Đấu Thầu Đa Mảng</h3>
+            <div class="pricing-tier-label">
+              <span>★</span>
+              <span>GÓI CHUYÊN NGHIỆP · PRO CONTRACTOR</span>
+            </div>
+            <h3>Nhà Thầu Tổng Hợp &amp; Tập Đoàn</h3>
             <p class="pricing-subtitle">
-              Săn toàn diện cả Đấu thầu Công, Tập đoàn Nhà nước (SOEs), Khối Tư nhân / Ngân hàng và dự án ODA với đa kênh thông báo tức thì.
+              Tối ưu cho Phòng Đấu thầu chuyên nghiệp cần săn cả Thầu Công, Tập đoàn Nhà nước (EVN, PVN, ACV), Ngân hàng &amp; Vốn ODA.
             </p>
 
             <div class="pricing-price-box">
@@ -760,224 +1361,427 @@
                 <span class="price-period">/ tháng (Subscribe)</span>
               </div>
               <div class="setup-fee-row">
-                <span style="color: #CBD5E1;">Phí thiết lập &amp; Huấn luyện Hồ sơ năng lực:</span>
-                <span class="setup-free-badge">MIỄN PHÍ 0đ</span>
+                <span>Cấu hình AI &amp; Khởi tạo:</span>
+                <span class="setup-free-badge">MIỄN PHÍ 0đ · Hỗ trợ 24/7</span>
               </div>
             </div>
 
             <div class="role-quota-banner">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              <span>Đa Hồ sơ Năng lực Chuyên ngành · Tối đa 15 Tài khoản Phòng Đấu thầu</span>
+              <span>03 Hồ sơ Năng lực (Liên danh/Công ty con) · 15 Tài khoản</span>
             </div>
 
             <ul class="pricing-feature-list">
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Toàn bộ quyền lợi Gói Cơ Bản + Săn Thầu Tư Nhân &amp; ODA:</strong> Mở khóa kho thầu Tập đoàn (EVN, PVN, ACV), Ngân hàng (BIDV, Vietcombank, Techcombank...), Tập đoàn tư nhân &amp; WB/ADB.</div>
+                <span><strong>Toàn bộ nguồn thầu Công + Tư nhân + ODA:</strong> Mua sắm công, EVN, PVN, Viettel, VNPT, ACV, Khối Ngân hàng TMCP &amp; WB/ADB.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Bóc tách chuyên sâu Chương III &amp; Chương V:</strong> AI trích xuất yêu cầu kỹ thuật chi tiết, thiết bị chủ yếu, nhân sự chủ chốt và điều kiện năng lực kinh nghiệm.</div>
+                <span><strong>Dual-Mode AI Bóc tách Chương V &amp; Cấp công trình:</strong> Tự động đọc HSMT đính kèm để trích xuất Cấp công trình (Cấp I–IV), khẩu độ cầu, công suất thiết bị.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Đa kênh Thông báo Tức thì (App Push + Zalo ZNS / SMS + Email):</strong> Đẩy tin tự động tới Giám đốc và chuyên viên phụ trách từng mảng ngành <code>ltree</code> riêng biệt.</div>
+                <span><strong>Không giới hạn Nhãn cây chuyên ngành (ltree):</strong> Theo dõi đa lĩnh vực Xây lắp, Giao thông, Thủy lợi, Thiết bị Y tế, CNTT &amp; Hóa chất.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Sổ cái Theo dõi Đã Xem (Read-Receipt Ledger):</strong> Ban giám đốc kiểm soát rõ gói thầu nào đã đẩy, nhân sự nào đã đọc, đọc lúc mấy giờ và đã bấm vào link gốc chưa.</div>
+                <span><strong>Đa kênh Thông báo (App Push + Zalo ZNS + SMS + Email):</strong> Đảm bảo Giám đốc và Trưởng phòng Đấu thầu không bỏ lỡ bất kỳ gói thầu trọng điểm nào.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Hỗ trợ thêm nguồn thầu theo yêu cầu (YAML Scraper):</strong> Đội ngũ HUDU hỗ trợ cấu hình quét thêm các cổng mua sắm chủ đầu tư mục tiêu của doanh nghiệp.</div>
-              </li>
-              <li>
-                <span class="pricing-check">&#10003;</span>
-                <div><strong>Miễn phí 100% bảo trì &amp; nâng cấp trọn đời thuê bao:</strong> Bảo hành toàn diện hệ thống, hỗ trợ kỹ thuật ưu tiên 24/7.</div>
+                <span><strong>Sổ cái Kiểm toán Read-Receipt (Audit Ledger):</strong> Theo dõi chính xác nhân sự nào đã nhận tin, thời gian mở xem và lượt bấm vào link thầu gốc.</span>
               </li>
             </ul>
           </div>
 
-          <a href="#contact" onclick="selectDauThauPlan('Gói Nâng Cao (Pro Contractor - 2.490k/tháng · Công + Tư + ODA · 15 Account)')" class="btn btn-primary btn-lg" style="width: 100%; background: linear-gradient(135deg, #38BDF8 0%, #0284C7 100%); color: #061325; font-weight: 800;">
-            Đăng Ký Gói Nâng Cao (Pro Contractor) &rarr;
+          <a href="#contact" onclick="selectPricingPlan('DAUTHAU_PRO')" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;">
+            Đăng Ký Gói Pro Contractor &rarr;
           </a>
         </div>
 
-        <!-- PLAN 3: ENTERPRISE / PRIVATE CLOUD -->
+        <!-- PLAN 3: ENTERPRISE -->
         <div class="pricing-card">
           <div>
-            <div class="pricing-tier-label">GÓI TẬP ĐOÀN · ENTERPRISE</div>
+            <div class="pricing-tier-label">
+              <span>◆</span>
+              <span>GÓI TẬP ĐOÀN · ENTERPRISE &amp; ON-PREMISE</span>
+            </div>
             <h3>Tổng Công Ty &amp; Triển Khai Riêng</h3>
             <p class="pricing-subtitle">
-              Triển khai cụm máy chủ HUDU DauThau độc lập (On-Premise / Private Cloud) cho Tập đoàn đa công ty thành viên.
+              Dành cho Tổng công ty đa thành viên cần tích hợp Webhook vào ERP/CRM nội bộ hoặc chạy mô hình Local AI Qwen3 độc lập.
             </p>
 
             <div class="pricing-price-box">
               <div class="price-main-line">
                 <span class="price-amount">Báo giá riêng</span>
-                <span class="price-period">/ theo hạ tầng Tập đoàn</span>
+                <span class="price-period">/ theo hạ tầng &amp; số đơn vị</span>
               </div>
               <div class="setup-fee-row">
-                <span style="color: var(--text-muted);">Triển khai Docker / Private Cloud:</span>
-                <strong style="color: var(--blue-primary);">Bàn giao trọn gói</strong>
+                <span>Triển khai &amp; Tích hợp API:</span>
+                <strong style="color: var(--blue-primary);">May đo theo yêu cầu</strong>
               </div>
             </div>
 
             <div class="role-quota-banner">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-              <span>Không giới hạn Công ty Thành viên &amp; Tài khoản · SSO Riêng</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              <span>Không giới hạn Hồ sơ Công ty thành viên &amp; Tài khoản</span>
             </div>
 
             <ul class="pricing-feature-list">
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Toàn bộ tính năng Gói Pro + Không giới hạn Tenants:</strong> Quản lý tập trung hàng chục công ty con trên giao diện <code>SuperAdmin Command Center UI</code>.</div>
+                <span><strong>Cấu hình YAML Scraper riêng theo yêu cầu:</strong> Bổ sung bất kỳ cổng mua sắm tư nhân hoặc website chủ đầu tư mục tiêu nào trong 24h.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Tích hợp Shared Rust IAM (<code>core-iam</code>) &amp; SSO:</strong> Đăng nhập một lần qua Google Workspace / Microsoft Entra ID doanh nghiệp và đồng bộ ERP/CRM nội bộ.</div>
+                <span><strong>Triển khai Local LLM (Qwen3 1.7B/4B On-Premise):</strong> Vận hành hoàn toàn trên máy chủ riêng của Tập đoàn, bảo mật tuyệt đối chiến lược đấu thầu.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Tùy chọn Local LLM (<code>Qwen3-14B</code> / <code>vLLM</code>):</strong> Vận hành mô hình ngôn ngữ lớn hoàn toàn nội bộ với chi phí API $0 và bảo mật tuyệt đối hồ sơ năng lực.</div>
+                <span><strong>Tích hợp REST API / Webhook 2 chiều:</strong> Đẩy trực tiếp dữ liệu JSON gói thầu đã bóc tách sang phần mềm ERP, CRM hoặc Bitrix24/Larksuite.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <div><strong>Custom Thương hiệu App &amp; Web Portal riêng:</strong> Đóng gói ứng dụng Flutter mang thương hiệu riêng của Tập đoàn.</div>
+                <span><strong>Phân quyền Multi-Tenant qua Rust Core-IAM:</strong> Quản trị tập trung toàn bộ các công ty con, chi nhánh khu vực với SLA 99.9%.</span>
               </li>
             </ul>
           </div>
 
-          <a href="#contact" onclick="selectDauThauPlan('Gói Tập Đoàn & Private Cloud (Enterprise)')" class="btn btn-outline btn-lg" style="width: 100%; border-color: var(--blue-primary); color: var(--blue-primary);">
-            Nhận Tư Vấn &amp; Báo Giá Tập Đoàn &rarr;
+          <a href="#contact" onclick="selectPricingPlan('DAUTHAU_ENTERPRISE')" class="btn btn-outline btn-lg" style="width: 100%; justify-content: center;">
+            Liên Hệ Tư Vấn Enterprise &rarr;
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 2: 6 CORE MODULES FROM DAUTHAU README -->
-  <section id="features" class="section">
+  <!-- 3-STEP PIPELINE (#pipeline) -->
+  <section id="pipeline" class="section">
     <div class="container">
       <div class="section-header">
-        <div class="pill-tag">Kiến Trúc 9 Crates Rust · Chuẩn Enterprise</div>
-        <h2>6 Phân Hệ Cốt Lõi Của HUDU DauThau</h2>
+        <div class="pill-tag">
+          <span class="pill-dot"></span>
+          <span>Kiến Trúc Chưng Cất &amp; Phân Loại 3 Bước</span>
+        </div>
+        <h2>Pipeline Sàng Lọc Đấu Thầu Hiệu Năng Cao Trên Nền Rust</h2>
         <p>
-          Tối ưu hóa toàn diện từ khâu quét dữ liệu thô, làm sạch chống trùng, phân loại AI 3 bước đến chấm điểm hồ sơ năng lực và theo dõi lịch sử đọc tin.
+          Loại bỏ 95% nhiễu thông tin và bản tin trùng lặp trước khi chuyển đến bàn làm việc của kỹ sư lập hồ sơ dự thầu.
         </p>
       </div>
 
-      <div class="module-grid">
-        <div class="module-card">
-          <div class="mod-num">01 · MULTI-SOURCE INGESTION</div>
-          <h3>Quét Đa Nguồn Công - Tư &amp; Tùy Chỉnh Chu Kỳ Động</h3>
+      <div class="grid-3">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <strong style="font-size:1.1rem;">01</strong>
+          </div>
+          <h3>Bước 1: Thu Thập &amp; Chống Trùng 3 Lớp</h3>
           <p>
-            Thu thập tự động từ Mạng đấu thầu quốc gia (<code>muasamcong.mof.gov.vn</code> chu kỳ mặc định 5 phút/lần, cho phép SuperAdmin chỉnh động qua API), Báo Đấu Thầu, Tập đoàn Nhà nước, ODA và các cổng mua sắm Ngân hàng/Tư nhân qua <code>YAML Scraper</code> không cần sửa code.
+            Chuẩn hóa mã gốc (gộp các thông báo sửa đổi <code>-00</code>, <code>-01</code>), kiểm tra mã băm <strong>SHA-256</strong> và đối sánh độ tương đồng văn bản <strong>Trigram (pg_trgm)</strong> để không bao giờ báo trùng một gói thầu.
           </p>
         </div>
 
-        <div class="module-card">
-          <div class="mod-num">02 · 3-TIER DEDUPLICATION</div>
-          <h3>Chưng Cất Chống Trùng 3 Lớp &amp; Giữ Nguyên Link Gốc</h3>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <strong style="font-size:1.1rem;">02</strong>
+          </div>
+          <h3>Bước 2: Phân Loại Aho-Corasick + Dual-Mode AI</h3>
           <p>
-            Tự động gộp các phiên bản thông báo sửa đổi (<code>-00 &rarr; -01</code>), đối soát mã băm <code>SHA-256</code> và độ tương đồng văn bản <code>pg_trgm</code> trên PostgreSQL 16. Luôn bảo toàn đường dẫn gốc chính thống (<code>canonical_source_url</code>).
+            Quét từ khóa siêu tốc <strong>Aho-Corasick (&lt; 1ms)</strong> kết hợp mô hình <strong>ONNX / Qwen3 / Cloud LLM</strong> để gán nhãn cây chuyên ngành <code>ltree</code>, bóc tách Giá gói thầu, TMĐT và yêu cầu kỹ thuật Chương V.
           </p>
         </div>
 
-        <div class="module-card">
-          <div class="mod-num">03 · 3-STEP AI CLASSIFIER</div>
-          <h3>Pipeline 3 Bước: Aho-Corasick &rarr; ONNX CPU &rarr; LLM</h3>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <strong style="font-size:1.1rem;">03</strong>
+          </div>
+          <h3>Bước 3: Matching Sàn/Trần &amp; Đẩy Tin Đa Kênh</h3>
           <p>
-            Bước 1 lọc từ khóa dưới <code>0.5ms</code>; Bước 2 dùng mô hình nhúng <code>vn_tender_classifier.onnx</code> xử lý 90%–95% gói thầu trên CPU trong <code>~0.26ms</code>; Bước 3 dùng <code>GLM-5.3-Flash</code> hoặc <code>Local Qwen3</code> xử lý 5%–10% ca phức tạp.
-          </p>
-        </div>
-
-        <div class="module-card">
-          <div class="mod-num">04 · CONTRACTOR AI PROFILING</div>
-          <h3>AI Phân Tích Hồ Sơ Năng Lực &amp; Chấm Điểm 0.0–10.0</h3>
-          <p>
-            Nhà thầu tải lên Hồ sơ năng lực hoặc mô tả kinh nghiệm; AI tự động gắn nhãn cây chuyên ngành <code>ltree</code>, Cấp công trình (Thông tư <code>06/2021/TT-BXD</code>), thiết lập biên độ Sàn/Trần và chấm điểm độ khớp từ <code>0.0 – 10.0</code>.
-          </p>
-        </div>
-
-        <div class="module-card">
-          <div class="mod-num">05 · SHARED RUST IAM (CORE-IAM)</div>
-          <h3>Định Danh Đa Dự Án Siêu Nhẹ &amp; Bảo Vệ Role Nhà Thầu</h3>
-          <p>
-            Microservice <code>core-iam</code> viết bằng Rust chỉ tốn <code>~25 MB RAM</code> (thay thế hoàn toàn Keycloak nặng nề), hỗ trợ đăng nhập Google / Microsoft / Facebook OAuth2 và kiểm soát chặt chẽ quyền <code>CONTRACTOR</code>.
-          </p>
-        </div>
-
-        <div class="module-card">
-          <div class="mod-num">06 · FLUTTER APP &amp; READ-RECEIPT</div>
-          <h3>App Đa Nền Tảng &amp; Sổ Cái Theo Dõi Đã Xem</h3>
-          <p>
-            Ứng dụng <code>dauthau_flutter</code> chạy mượt trên iOS, Android, Web và macOS. Tích hợp sổ cái <code>Read-Receipt Tracking</code> ghi nhận chính xác ai đã xem gói thầu, thời gian đọc và thao tác bấm sang link gốc.
+            Đối chiếu 2 chiều với ngưỡng <strong>Sàn (Floor)</strong> và <strong>Trần (Ceiling)</strong> của từng nhà thầu. Tự động đẩy thông báo qua App Push, Zalo ZNS, SMS, Email và ghi nhận trạng thái đã đọc (Read-Receipt).
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 3: CONSULTATION & REGISTRATION -->
-  <section id="contact" class="section section-alt">
+  <!-- 6 CORE MODULES (#features) -->
+  <section id="features" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <div class="pill-tag">
+          <span class="pill-dot"></span>
+          <span>Tính Năng Chuyên Sâu</span>
+        </div>
+        <h2>Vũ Khí Cạnh Tranh Cho Đội Ngũ Săn Thầu Doanh Nghiệp</h2>
+        <p>
+          Mọi thông tin gói thầu luôn đi kèm liên kết gốc chính thống (<code>canonical_source_url</code>) và lịch sử kiểm toán minh bạch.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="benefit-card">
+          <h3>Đa Nguồn Thầu Công - Tư - ODA</h3>
+          <p>Kết nối đồng thời Mạng Đấu Thầu Quốc Gia (muasamcong), cổng mua sắm Tập đoàn (EVN, PVN, ACV, Viettel), Ngân hàng TMCP và dự án WB/ADB.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>Cây Phân Loại Chuyên Ngành ltree</h3>
+          <p>Phân cấp sâu theo chuẩn PostgreSQL <code>ltree</code> (VD: <code>xay_dung.ha_tang.cau_duong</code>, <code>y_te.thiet_bi.than_nhan_tao</code>) giúp lọc đúng chuyên môn hẹp.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>Matching Biên Độ Sàn &amp; Trần</h3>
+          <p>Loại bỏ các gói thầu quá nhỏ dưới mức sàn chi phí hoặc vượt quá hạn mức trần năng lực tài chính / cấp công trình của công ty.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>Quét Backfill Tự Động Tức Thì</h3>
+          <p>Ngay khi thêm công ty mới hoặc cập nhật năng lực, hệ thống tự động quét ngược toàn bộ các gói thầu đang còn hạn mở thầu để trả kết quả ngay.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>Bóc Tách Thông Số Kỹ Thuật Chương V</h3>
+          <p>AI tự động tóm tắt yêu cầu thiết bị, vật tư chính, cấp công trình (Cấp I–IV) và điều kiện năng lực kinh nghiệm trọng tâm trong HSMT.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>Sổ Cái Kiểm Toán Read-Receipt</h3>
+          <p>Theo dõi thời gian thực từng thông báo gửi qua App/SMS/Email: ai đã nhận, ai đã mở xem, ai đã bấm vào link gốc để tránh bỏ sót gói thầu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA & CONSULTATION FORM (#contact) -->
+  <section id="contact" class="section">
     <div class="container">
       <div class="cta-box">
         <div>
-          <div class="pill-tag" style="background: rgba(56,189,248,0.18); color: #7DD3FC; border-color: rgba(56,189,248,0.4);">Cấp Tài Khoản Dùng Thử &amp; Thiết Lập Hồ Sơ Năng Lực</div>
-          <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 14px;">Bắt Đầu Săn Thầu Tự Động Cùng HUDU DauThau</h2>
-          <p style="color: #CBD5E1; margin-bottom: 20px;">
-            Gửi thông tin doanh nghiệp hoặc lĩnh vực thi công/cung ứng của bạn, hệ thống AI sẽ thiết lập ngay biên độ Sàn/Trần và quét toàn bộ các gói thầu đang mở phù hợp nhất.
+          <div class="pill-tag" style="background: rgba(56, 189, 248, 0.16); color: #BAE6FD; border-color: rgba(125, 211, 252, 0.3);">
+            <span class="pill-dot" style="background: #38BDF8;"></span>
+            <span>HUDU DauThau · Kích Hoạt &amp; Quét Backfill Trong 15 Phút</span>
+          </div>
+          <h2>Sẵn Sàng Tự Động Hóa Quy Trình Săn Thầu Cho Doanh Nghiệp?</h2>
+          <p>
+            Đăng ký ngay để được đội ngũ kỹ sư HUDU cấu hình cây chuyên ngành <code>ltree</code>, thiết lập ngưỡng năng lực Sàn/Trần và trả kết quả gói thầu đang mở ngay hôm nay.
           </p>
-          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem; color: #E2E8F0;">
-            <div>&#10003; <strong>Gói Cơ Bản (999k/tháng):</strong> Săn thầu Mua sắm công · 01 Hồ sơ năng lực · 03 Tài khoản</div>
-            <div>&#10003; <strong>Gói Nâng Cao (2.490k/tháng):</strong> Công + Tư nhân + Ngân hàng + ODA · 15 Tài khoản · Zalo/SMS/App</div>
-            <div>&#10003; <strong>Liên hệ Kỹ thuật:</strong> <code>tnhung1896@gmail.com</code> · <code>huduvn.com</code></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 22px; font-size: 0.9rem; color: #E2E8F0;">
+            <span>&#10003; Miễn phí 100% khởi tạo Hồ sơ năng lực</span>
+            <span>&#10003; Tự động quét Backfill gói thầu đang mở</span>
+            <span>&#10003; Bảo toàn link thầu gốc chính thống</span>
           </div>
         </div>
 
-        <form class="cta-form" onsubmit="event.preventDefault(); document.getElementById('dtToast').style.display='block'; this.reset();">
-          <h3 style="margin-bottom: 16px; font-size: 1.2rem;">Đăng Ký Giải Pháp Săn Thầu AI</h3>
+        <form class="contact-form" onsubmit="submitConsultation(event)">
+          <h3>Đăng Ký Gói Dịch Vụ HUDU DauThau</h3>
           <div class="form-group">
-            <label>Họ tên / Tên Doanh nghiệp Nhà thầu *</label>
-            <input type="text" required placeholder="VD: Công ty Cổ phần Xây dựng & Thiết bị..." />
+            <label>Họ tên &amp; Tên Doanh nghiệp / Nhà thầu</label>
+            <input type="text" required placeholder="VD: Nguyễn Văn A — Công ty CP Xây Dựng & Thiết Bị..." />
           </div>
           <div class="form-group">
-            <label>Số điện thoại / Email doanh nghiệp *</label>
-            <input type="text" required placeholder="0909 xxx xxx / contact@company.vn" />
+            <label>Số điện thoại / Email nhận thông báo thầu</label>
+            <input type="text" required placeholder="090x xxx xxx / dauthau@company.vn" />
           </div>
           <div class="form-group">
-            <label>Gói dịch vụ quan tâm *</label>
-            <select id="dtPlanSelect">
-              <option value="Gói Nâng Cao (Pro Contractor - 2.490k/tháng · Công + Tư + ODA · 15 Account)">Gói Nâng Cao (Pro Contractor - 2.490k/tháng · Công + Tư + ODA · 15 Account)</option>
-              <option value="Gói Cơ Bản (Starter - 999k/tháng · 01 Hồ sơ năng lực · 03 Account)">Gói Cơ Bản (Starter - 999k/tháng · 01 Hồ sơ năng lực · 03 Account)</option>
-              <option value="Gói Tập Đoàn & Private Cloud (Enterprise)">Gói Tập Đoàn &amp; Private Cloud (Enterprise · Không giới hạn)</option>
+            <label>Gói dịch vụ lựa chọn</label>
+            <select id="formProdSelect">
+              <option value="DAUTHAU_PRO">DauThau Gói Pro Contractor (2.490k/tháng — Công + Tư + ODA · 15 User)</option>
+              <option value="DAUTHAU_STARTER">DauThau Gói Starter (999k/tháng — Mua sắm công · 03 User)</option>
+              <option value="DAUTHAU_ENTERPRISE">DauThau Gói Enterprise / On-Premise (Tổng công ty & API)</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 6px;">Đăng Ký &amp; Nhận Kết Quả Quét Thầu &rarr;</button>
-          <div id="dtToast" style="display:none; margin-top: 12px; padding: 10px; border-radius: 8px; background: rgba(56,189,248,0.2); border: 1px solid #38BDF8; color: #E0F2FE; font-size: 0.85rem;">
-            &#10003; Đã ghi nhận yêu cầu! Đội ngũ HUDU sẽ liên hệ cấp tài khoản và cấu hình Hồ sơ năng lực Sàn/Trần cho doanh nghiệp của bạn.
+          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 4px;">
+            Gửi Yêu Cầu Kích Hoạt Tài Khoản
+          </button>
+          <div id="formToast" class="form-toast">
+            &#10003; Đã ghi nhận yêu cầu! Đội ngũ kỹ sư HUDU sẽ liên hệ cấu hình Hồ sơ năng lực ngay.
           </div>
         </form>
       </div>
     </div>
   </section>
 
-  <footer>
+  <!-- FOOTER — 100% UNIFIED OFFICIAL LOGO -->
+  <footer class="footer">
     <div class="container">
-      <div style="margin-bottom: 10px;">
-        <a href="../" style="color: var(--blue-primary); font-weight: 700;">Trang chủ HUDU</a> &nbsp;&middot;&nbsp;
-        <a href="./" style="color: var(--blue-primary); font-weight: 700;">Sản phẩm Đấu thầu AI (DauThau)</a> &nbsp;&middot;&nbsp;
-        <a href="../cfms/" style="color: var(--blue-primary); font-weight: 700;">Sản phẩm Phòng khám CFMS/QMS</a>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 246 84">
+            <defs>
+              <linearGradient id="footerHuduGrad" gradientUnits="userSpaceOnUse" x1="94" y1="22" x2="241" y2="62">
+                <stop offset="0%" stop-color="#38BDF8" />
+                <stop offset="40%" stop-color="#7DD3FC" />
+                <stop offset="75%" stop-color="#CBD5E1" />
+                <stop offset="100%" stop-color="#F8FAFC" />
+              </linearGradient>
+            </defs>
+            <circle cx="42" cy="42" r="37" fill="#0066CC" />
+            <g transform="translate(42, 42) scale(0.80) translate(-55.75, -60)">
+              <path fill-rule="evenodd" d="M 54 36.5 H 64 A 23.5 23.5 0 0 1 87.5 60 A 23.5 23.5 0 0 1 64 83.5 H 54 Z M 59 46 V 74 H 64 A 14 14 0 0 0 78 60 A 14 14 0 0 0 64 46 Z" fill="#7DD3FC" />
+              <rect x="24" y="33.5" width="10" height="53" rx="5" fill="#FFFFFF" />
+              <rect x="49" y="33.5" width="10" height="53" rx="5" fill="#FFFFFF" />
+              <path d="M 27.5 56.2 C 38 48.5, 54 64.5, 70.5 55.2 A 4.5 4.5 0 0 1 71.5 64.0 C 54 73.5, 38 57.5, 29.5 64.2 A 4.5 4.5 0 0 1 27.5 56.2 Z" fill="#FFFFFF" />
+            </g>
+            <g fill="url(#footerHuduGrad)" fill-rule="evenodd">
+              <rect x="94" y="24" width="7.6" height="36" rx="3.8" />
+              <rect x="97.8" y="38.5" width="22.4" height="7" rx="3.5" />
+              <rect x="116.4" y="24" width="7.6" height="36" rx="3.8" />
+              <path d="M 133 27.8 A 3.8 3.8 0 0 1 140.6 27.8 V 45 A 7.4 7.4 0 0 0 155.4 45 V 27.8 A 3.8 3.8 0 0 1 163 27.8 V 45 A 15 15 0 0 1 133 45 Z" />
+              <path d="M 172 27.8 A 3.8 3.8 0 0 1 175.8 24 H 184 A 18 18 0 0 1 202 42 A 18 18 0 0 1 184 60 H 175.8 A 3.8 3.8 0 0 1 172 56.2 Z M 179.6 31.4 V 52.6 H 184 A 10.6 10.6 0 0 0 194.6 42 A 10.6 10.6 0 0 0 184 31.4 Z" />
+              <path d="M 211 27.8 A 3.8 3.8 0 0 1 218.6 27.8 V 45 A 7.4 7.4 0 0 0 233.4 45 V 27.8 A 3.8 3.8 0 0 1 241 27.8 V 45 A 15 15 0 0 1 211 45 Z" />
+            </g>
+          </svg>
+          <p style="font-size: 0.86rem; max-width: 340px;">
+            HUDU (huduvn.com) — Công ty phát triển phần mềm phân tích dữ liệu đấu thầu thông minh và hệ thống tự động hóa tiếp nhận, quản trị hàng đợi sinh trắc học.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Sản phẩm</h4>
+          <ul>
+            <li><a href="../">Trang chủ HUDU</a></li>
+            <li><a href="#pricing">Bảng Giá Đấu Thầu AI</a></li>
+            <li><a href="../cfms/">HUDU CFMS / QMS (/cfms)</a></li>
+            <li><a href="../cfms/#pricing">Bảng Giá Phòng Khám</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Công nghệ DauThau</h4>
+          <ul>
+            <li><a href="#pipeline">3-Tier Deduplication</a></li>
+            <li><a href="#pipeline">Aho-Corasick + Dual AI</a></li>
+            <li><a href="#features">Floor/Ceiling Matching</a></li>
+            <li><a href="#features">Read-Receipt Audit Ledger</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Liên hệ</h4>
+          <ul>
+            <li>Website: <a href="https://huduvn.com">huduvn.com</a></li>
+            <li>Email: <a href="mailto:tnhung1896@gmail.com">tnhung1896@gmail.com</a></li>
+            <li>Support: 24/7 Enterprise SLA</li>
+          </ul>
+        </div>
       </div>
-      <div>&copy; 2026 HUDU Enterprise Technology (huduvn.com) · Liên hệ: tnhung1896@gmail.com</div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 HUDU Technology (huduvn.com). All rights reserved.</span>
+        <span>Enterprise AI &amp; High-Performance Systems</span>
+      </div>
     </div>
   </footer>
 
   <script>
-    function selectDauThauPlan(val) {
-      const sel = document.getElementById('dtPlanSelect');
-      if (sel) sel.value = val;
+    (function initHeroCanvas() {
+      const canvas = document.getElementById('heroCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let width = 0;
+      let height = 0;
+      let nodes = [];
+      const mouse = { x: -9999, y: -9999 };
+
+      function resize() {
+        const rect = canvas.parentElement.getBoundingClientRect();
+        width = canvas.width = rect.width;
+        height = canvas.height = rect.height;
+        const count = Math.min(42, Math.max(18, Math.floor(width / 34)));
+        nodes = [];
+        for (let i = 0; i < count; i++) {
+          nodes.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: (Math.random() - 0.5) * 0.45,
+            vy: (Math.random() - 0.5) * 0.45,
+            r: Math.random() * 2 + 1.4
+          });
+        }
+      }
+
+      window.addEventListener('resize', resize);
+      canvas.parentElement.addEventListener('mousemove', e => {
+        const rect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+      });
+      canvas.parentElement.addEventListener('mouseleave', () => {
+        mouse.x = -9999;
+        mouse.y = -9999;
+      });
+
+      resize();
+
+      function draw() {
+        ctx.clearRect(0, 0, width, height);
+        const isDark = document.body.classList.contains('dark-mode');
+        const dotColor = isDark ? 'rgba(125, 211, 252, 0.55)' : 'rgba(0, 102, 204, 0.38)';
+        const lineBase = isDark ? [56, 189, 248] : [0, 102, 204];
+
+        for (let i = 0; i < nodes.length; i++) {
+          const n = nodes[i];
+          n.x += n.vx;
+          n.y += n.vy;
+
+          if (n.x < 0 || n.x > width) n.vx *= -1;
+          if (n.y < 0 || n.y > height) n.vy *= -1;
+
+          const dxm = mouse.x - n.x;
+          const dym = mouse.y - n.y;
+          const distMouse = Math.hypot(dxm, dym);
+          if (distMouse < 180 && distMouse > 0) {
+            n.x += (dxm / distMouse) * 0.25;
+            n.y += (dym / distMouse) * 0.25;
+          }
+
+          ctx.beginPath();
+          ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+          ctx.fillStyle = dotColor;
+          ctx.fill();
+
+          for (let j = i + 1; j < nodes.length; j++) {
+            const m = nodes[j];
+            const dx = n.x - m.x;
+            const dy = n.y - m.y;
+            const dist = Math.hypot(dx, dy);
+            if (dist < 145) {
+              const alpha = (1 - dist / 145) * (isDark ? 0.22 : 0.16);
+              ctx.beginPath();
+              ctx.moveTo(n.x, n.y);
+              ctx.lineTo(m.x, m.y);
+              ctx.strokeStyle = `rgba(${lineBase[0]}, ${lineBase[1]}, ${lineBase[2]}, ${alpha.toFixed(3)})`;
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(draw);
+      }
+      requestAnimationFrame(draw);
+    })();
+
+    function toggleTheme() {
+      const body = document.body;
+      const moon = document.getElementById('themeIconMoon');
+      const sun = document.getElementById('themeIconSun');
+
+      body.classList.toggle('dark-mode');
+      const isDark = body.classList.contains('dark-mode');
+
+      document.getElementById('navGradStop1').setAttribute('stop-color', isDark ? '#38BDF8' : '#0052A3');
+      document.getElementById('navGradStop2').setAttribute('stop-color', isDark ? '#7DD3FC' : '#0284C7');
+      document.getElementById('navGradStop3').setAttribute('stop-color', isDark ? '#CBD5E1' : '#64748B');
+      document.getElementById('navGradStop4').setAttribute('stop-color', isDark ? '#F8FAFC' : '#94A3B8');
+
+      moon.style.display = isDark ? 'none' : 'block';
+      sun.style.display = isDark ? 'block' : 'none';
+    }
+
+    function selectPricingPlan(planVal) {
+      const sel = document.getElementById('formProdSelect');
+      if (sel) sel.value = planVal;
+    }
+
+    function submitConsultation(e) {
+      e.preventDefault();
+      document.getElementById('formToast').style.display = 'block';
+      e.target.reset();
     }
   </script>
 </body>
