@@ -987,6 +987,72 @@
       font-size: 0.96rem;
     }
 
+    .cta-portal-card {
+      margin-top: 24px;
+      padding: 14px 18px;
+      border-radius: 14px;
+      background: rgba(15, 35, 62, 0.75);
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      text-decoration: none;
+      color: #FFFFFF;
+      box-shadow: 0 10px 26px rgba(2, 132, 199, 0.22);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cta-portal-card:hover {
+      transform: translateY(-2px);
+      background: rgba(2, 132, 199, 0.28);
+      border-color: #7DD3FC;
+      box-shadow: 0 14px 32px rgba(56, 189, 248, 0.32);
+    }
+
+    .cta-portal-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 99px;
+      background: linear-gradient(135deg, #0284C7 0%, #38BDF8 100%);
+      color: #FFFFFF;
+      font-size: 0.84rem;
+      font-weight: 800;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+    }
+
+    .form-portal-row {
+      margin-top: 2px;
+      padding-top: 10px;
+      border-top: 1px dashed #CBD5E1;
+      text-align: center;
+      font-size: 0.82rem;
+      color: #475569;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .form-portal-row a {
+      color: #0052A3;
+      font-weight: 800;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .form-portal-row a:hover {
+      text-decoration: underline;
+      color: #0284C7;
+    }
+
     .contact-form {
       background: linear-gradient(145deg, #FFFFFF 0%, #F1F5F9 100%);
       color: #0F233A;
@@ -2730,9 +2796,23 @@
           </p>
           <div style="display: flex; flex-wrap: wrap; gap: 22px; font-size: 0.9rem; color: #E2E8F0;">
             <span data-i18n="cta_b1">&#10003; Đầy đủ 100% tính năng AI hiện có</span>
-            <span data-i188n="cta_b2" data-i18n="cta_b2">&#10003; Tự động rà soát gói thầu đang mở</span>
+            <span data-i18n="cta_b2">&#10003; Tự động rà soát gói thầu đang mở</span>
             <span data-i18n="cta_b3">&#10003; Bảo toàn link thầu gốc chính thống</span>
           </div>
+
+          <a href="https://dauthau.huduvn.com" target="_blank" rel="noopener noreferrer" class="cta-portal-card">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span class="rt-live-dot" style="width: 10px; height: 10px; flex-shrink: 0;"></span>
+              <div>
+                <div style="font-size: 0.75rem; color: #7DD3FC; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;" data-i18n="cta_portal_lbl">Nền Tảng Web App Chính Thức</div>
+                <div style="font-size: 0.96rem; font-weight: 800; color: #FFFFFF; margin-top: 2px;">https://dauthau.huduvn.com</div>
+              </div>
+            </div>
+            <span class="cta-portal-badge">
+              <span data-i18n="cta_portal_btn">Truy Cập Hệ Thống</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </span>
+          </a>
         </div>
 
         <form class="contact-form" onsubmit="submitConsultation(event)">
@@ -2756,6 +2836,13 @@
           <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 4px;" data-i18n="form_submit">
             Gửi Yêu Cầu Kích Hoạt Tài Khoản
           </button>
+          <div class="form-portal-row">
+            <span data-i18n="form_portal_lbl">Đã có tài khoản hoặc muốn trải nghiệm ngay?</span>
+            <a href="https://dauthau.huduvn.com" target="_blank" rel="noopener noreferrer">
+              dauthau.huduvn.com
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
           <div id="formToast" class="form-toast" data-i18n="form_toast">
             &#10003; Đã ghi nhận yêu cầu! Đội ngũ HUDU sẽ liên hệ cấu hình Hồ sơ năng lực ngay.
           </div>
@@ -3031,6 +3118,8 @@
         cta_b1: "✓ Đầy đủ 100% tính năng AI hiện có",
         cta_b2: "✓ Tự động rà soát gói thầu đang mở",
         cta_b3: "✓ Bảo toàn link thầu gốc chính thống",
+        cta_portal_lbl: "Nền tảng Web App chính thức",
+        cta_portal_btn: "Mở Hệ Thống ↗",
         form_title: "Đăng Ký Gói Dịch Vụ HUDU DauThau",
         form_name_lbl: "Họ tên & Tên Doanh nghiệp / Nhà thầu",
         form_name_ph: "VD: Nguyễn Văn A — Công ty CP Xây Dựng & Thiết Bị...",
@@ -3041,6 +3130,7 @@
         form_opt_starter: "DauThau Gói Basic (499k/tháng hoặc 4tr9/năm — 01 Account · 01 Mảng Domain)",
         form_opt_ent: "DauThau Gói Enterprise (Trên 05 Account · Đa mảng Domain · Tích hợp riêng)",
         form_submit: "Gửi Yêu Cầu Kích Hoạt Tài Khoản",
+        form_portal_lbl: "Truy cập trực tiếp hệ thống:",
         form_toast: "✓ Đã ghi nhận yêu cầu! Đội ngũ HUDU sẽ liên hệ cấu hình Hồ sơ năng lực ngay.",
         footer_desc: "HUDU (huduvn.com) — Công ty phát triển phần mềm phân tích dữ liệu đấu thầu thông minh và hệ thống tự động hóa tiếp nhận, quản trị phòng khám.",
         footer_col1: "Sản phẩm",
@@ -3160,6 +3250,8 @@
         cta_b1: "✓ 100% Full AI Features Included",
         cta_b2: "✓ Instant Scan of Open Tenders",
         cta_b3: "✓ Official Source Links Preserved",
+        cta_portal_lbl: "Official Web App Platform",
+        cta_portal_btn: "Open Platform ↗",
         form_title: "Subscribe to HUDU DauThau",
         form_name_lbl: "Full Name & Company / Contractor Name",
         form_name_ph: "e.g., Nguyen Van A — ABC Construction & Equipment JSC...",
@@ -3170,6 +3262,7 @@
         form_opt_starter: "DauThau Basic Plan (499k/mo or 4.9M/year — 01 Account · 01 Domain)",
         form_opt_ent: "DauThau Enterprise Plan (5+ Accounts · Multi-Domain & Custom Integration)",
         form_submit: "Request Account Activation",
+        form_portal_lbl: "Direct portal access:",
         form_toast: "✓ Request received! Our HUDU team will contact you to configure your profile.",
         footer_desc: "HUDU (huduvn.com) — Enterprise software company specializing in AI tender intelligence and automated clinic reception & queue management.",
         footer_col1: "Products",
@@ -3289,6 +3382,8 @@
         cta_b1: "✓ 100% de las funciones IA incluidas",
         cta_b2: "✓ Escaneo inmediato de licitaciones vigentes",
         cta_b3: "✓ Enlaces oficiales de origen garantizados",
+        cta_portal_lbl: "Plataforma Web App Oficial",
+        cta_portal_btn: "Abrir Sistema ↗",
         form_title: "Suscribirse a HUDU DauThau",
         form_name_lbl: "Nombre completo y Empresa / Contratista",
         form_name_ph: "Ej: Nguyen Van A — Constructora ABC S.A...",
@@ -3299,6 +3394,7 @@
         form_opt_starter: "DauThau Plan Basic (499k/mes o 4,9M/año — 01 Cuenta · 01 Dominio)",
         form_opt_ent: "DauThau Plan Enterprise (+05 Cuentas · Multidominio e Integración a Medida)",
         form_submit: "Solicitar Activación de Cuenta",
+        form_portal_lbl: "Acceso directo al sistema:",
         form_toast: "✓ ¡Solicitud registrada! El equipo de HUDU configurará su perfil de inmediato.",
         footer_desc: "HUDU (huduvn.com) — Empresa de software especializada en análisis inteligente de licitaciones y automatización de recepción para clínicas.",
         footer_col1: "Productos",
@@ -3418,6 +3514,8 @@
         cta_b1: "✓ 包含 100% 全部现有 AI 功能",
         cta_b2: "✓ 自动扫描当前全部有效在招项目",
         cta_b3: "✓ 完整保留官方原始招标链接",
+        cta_portal_lbl: "官方 Web App 平台",
+        cta_portal_btn: "进入系统 ↗",
         form_title: "申请开通 HUDU DauThau 服务套餐",
         form_name_lbl: "您的姓名与企业 / 承包商名称",
         form_name_ph: "例如：阮文 A — ABC 建设工程与设备股份公司...",
@@ -3428,6 +3526,7 @@
         form_opt_starter: "DauThau Basic 套餐 (499k/月 或 490万盾/年 — 01 账号 · 01 Domain)",
         form_opt_ent: "DauThau Enterprise 套餐 (05+ 账号 · 多领域 Domain 与专属系统对接)",
         form_submit: "提交账号激活申请",
+        form_portal_lbl: "直接访问系统平台：",
         form_toast: "✓ 申请已收到！HUDU 团队将立即联系您配置企业资质档案。",
         footer_desc: "HUDU (huduvn.com) — 专注于智能招投标数据分析软件与医疗诊所自动化接诊管理系统的科技企业。",
         footer_col1: "产品中心",
@@ -3547,6 +3646,8 @@
         cta_b1: "✓ 全AI機能を100%フル開放",
         cta_b2: "✓ 公募中の全案件を即時自動スキャン",
         cta_b3: "✓ 公式の元リンクを完全保持",
+        cta_portal_lbl: "公式 Web App プラットフォーム",
+        cta_portal_btn: "システムを開く ↗",
         form_title: "HUDU DauThau プランのお申し込み",
         form_name_lbl: "お名前＆企業・建設会社名",
         form_name_ph: "例：グエン・ヴァン・A — ABC建設設備株式会社...",
@@ -3557,6 +3658,7 @@
         form_opt_starter: "DauThau Basic プラン (499k/月 または 490万VND/年 — 01 アカウント · 01 Domain)",
         form_opt_ent: "DauThau Enterprise プラン (06名以上 · マルチDomain＆専用連携)",
         form_submit: "アカウント有効化を申し込む",
+        form_portal_lbl: "システムへ直接アクセス：",
         form_toast: "✓ お申し込みを受け付けました！HUDUチームより速やかにご連絡いたします。",
         footer_desc: "HUDU (huduvn.com) — AI 入札データ解析ソフトウェアおよび医療機関向けスマート受付・順番管理システムを開発するテクノロジー企業。",
         footer_col1: "製品一覧",
@@ -3676,6 +3778,8 @@
         cta_b1: "✓ 현행 모든 AI 기능 100% 포함",
         cta_b2: "✓ 진행 중인 입찰 공고 즉시 자동 스캔",
         cta_b3: "✓ 공식 원본 입찰 링크 완벽 보존",
+        cta_portal_lbl: "공식 웹 앱 플랫폼",
+        cta_portal_btn: "시스템 열기 ↗",
         form_title: "HUDU DauThau 서비스 신청",
         form_name_lbl: "성함 및 기업 / 시공사명",
         form_name_ph: "예: 응우옌 반 A — ABC 건설장비 주식회사...",
@@ -3686,6 +3790,7 @@
         form_opt_starter: "DauThau Basic 플랜 (499k/월 또는 490만동/년 — 01 계정 · 01 Domain)",
         form_opt_ent: "DauThau Enterprise 플랜 (05+ 계정 · 다중 Domain 및 맞춤형 연동)",
         form_submit: "계정 개통 요청하기",
+        form_portal_lbl: "시스템 직접 접속:",
         form_toast: "✓ 요청이 접수되었습니다! HUDU 팀에서 즉시 연락드려 역량 프로필을 설정해 드리겠습니다.",
         footer_desc: "HUDU (huduvn.com) — 지능형 입찰 데이터 분석 소프트웨어 및 병원·의원 자동 접수 관리 시스템을 개발하는 기술 기업.",
         footer_col1: "제품 안내",
