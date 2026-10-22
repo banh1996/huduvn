@@ -1738,6 +1738,7 @@
       font-size: 0.72rem;
       padding: 12px 14px;
       text-align: left;
+      white-space: nowrap;
       border-bottom: 1px solid var(--border-light);
     }
 
@@ -2272,26 +2273,8 @@
         </div>
         <h2 data-i18n="rt_title">Bản Đồ Đấu Thầu Việt Nam &amp; Hệ Thống Biểu Đồ Phân Tích Realtime</h2>
         <p data-i18n="rt_desc">
-          Theo dõi trực tiếp lưu lượng gói thầu trên <strong>63 Tỉnh/Thành phố (kèm Quần đảo Hoàng Sa &amp; Trường Sa)</strong>, cơ cấu <strong>9 Hình thức lựa chọn nhà thầu</strong> chuẩn Luật Đấu thầu 2023 và tỷ trọng <strong>5 Lĩnh vực chuyên ngành</strong>.
+          Theo dõi trực tiếp lưu lượng gói thầu trên <strong>63 Tỉnh/Thành phố (kèm Quần đảo Hoàng Sa &amp; Trường Sa)</strong> và cơ cấu <strong>9 Hình thức lựa chọn nhà thầu</strong> chuẩn Luật Đấu thầu 2023.
         </p>
-      </div>
-
-      <!-- Status Bar -->
-      <div class="rt-status-bar">
-        <div class="rt-status-left">
-          <span class="rt-live-pill">
-            <span class="rt-live-dot"></span>
-            <span id="rtLiveStatusText" data-i18n="rt_live_badge">REALTIME LIVE · ĐANG ĐỒNG BỘ</span>
-          </span>
-          <span style="color: var(--text-body); font-weight: 600;" id="rtWindowInfo">30 ngày gần nhất · Cập nhật tự động mỗi 5 phút</span>
-        </div>
-        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-          <span style="font-size: 0.78rem; color: var(--text-muted);" id="rtUpdatedTimestamp">--:--:--</span>
-          <button type="button" class="rt-refresh-btn" onclick="window.fetchRealtimeMapStats(true)">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-            <span data-i18n="rt_btn_refresh">Làm mới ngay</span>
-          </button>
-        </div>
       </div>
 
       <!-- 4 National KPI Cards -->
@@ -2391,7 +2374,7 @@
         </div>
       </div>
 
-      <!-- 4 DEEP-DIVE ANALYTICAL CHARTS GRID -->
+      <!-- 4 DEEP-DIVE ANALTS CHARTS GRID -->
       <div class="rt-charts-grid">
         <!-- CHART 1: National 9 Bid Forms Breakdown (Donut + Horizontal Bars) -->
         <div class="rt-chart-card">
@@ -2412,13 +2395,13 @@
           </div>
         </div>
 
-        <!-- CHART 2: Selected Province Deep-Dive (5 Domains + Bid Form Mix) -->
+        <!-- CHART 2: Selected Province Deep-Dive -->
         <div class="rt-chart-card">
           <div>
             <div class="rt-chart-head">
               <div>
-                <h3 data-i18n="rt_c2_title">2. Phân Tích Lĩnh Vực &amp; Hình Thức Theo Tỉnh / Thành</h3>
-                <p data-i18n="rt_c2_sub">Bấm vào tỉnh trên bản đồ hoặc chọn bên cạnh để xem cơ cấu 5 lĩnh vực</p>
+                <h3 data-i18n="rt_c2_title">2. Phân Tích Loại Hình &amp; Hình Thức Theo Tỉnh / Thành</h3>
+                <p data-i18n="rt_c2_sub">Bấm vào tỉnh trên bản đồ hoặc chọn bên cạnh để xem cơ cấu loại hình gói thầu</p>
               </div>
               <select id="rtProvinceSelect" class="rt-prov-select" onchange="window.selectMapProvince(this.value)" aria-label="Select Province"></select>
             </div>
@@ -2453,7 +2436,7 @@
             <div class="rt-chart-head">
               <div>
                 <h3 data-i18n="rt_c4_title">4. Phân Bổ Lưu Lượng Đấu Thầu Theo 3 Miền Bắc – Trung – Nam</h3>
-                <p data-i18n="rt_c4_sub">Tổng hợp quy mô gói thầu, gói đang mở và cơ cấu lĩnh vực theo vùng kinh tế</p>
+                <p data-i18n="rt_c4_sub">Tổng hợp quy mô gói thầu, gói đang mở và cơ cấu loại hình theo vùng kinh tế</p>
               </div>
             </div>
             <div id="rtRegionalComparisonChart"></div>
@@ -2461,11 +2444,11 @@
         </div>
       </div>
 
-      <!-- LIVE STREAM FEED: 15 NEWEST TENDERS -->
+      <!-- LIVE STREAM FEED: 7 NEWEST TENDERS -->
       <div class="rt-live-feed-card">
         <div class="rt-chart-head" style="margin-bottom: 8px;">
           <div>
-            <h3 data-i18n="rt_feed_title">Danh Sách Gói Thầu Mới Nhất Vừa Phát Hành (Live Feed)</h3>
+            <h3 data-i18n="rt_feed_title">Danh Sách Gói Thầu Mới Nhất</h3>
             <p data-i18n="rt_feed_sub">Cập nhật trực tiếp các thông báo mời thầu mới nhất kèm dự toán, thời điểm đóng thầu và liên kết gốc</p>
           </div>
           <div style="display: flex; gap: 6px; flex-wrap: wrap;" id="rtFeedFilterPills">
@@ -2473,7 +2456,7 @@
             <button type="button" class="rt-refresh-btn" data-domain="XAY_LAP" onclick="window.setRtFeedFilter('XAY_LAP')" data-i18n="rt_flt_xl">Xây lắp</button>
             <button type="button" class="rt-refresh-btn" data-domain="HANG_HOA" onclick="window.setRtFeedFilter('HANG_HOA')" data-i18n="rt_flt_hh">Hàng hóa</button>
             <button type="button" class="rt-refresh-btn" data-domain="TU_VAN" onclick="window.setRtFeedFilter('TU_VAN')" data-i18n="rt_flt_tv">Tư vấn</button>
-            <button type="button" class="rt-refresh-btn" data-domain="PHI_TU_VAN" onclick="window.setRtFeedFilter('PHI_TU_VAN')" data-i18n="rt_flt_ptv">Phi tư vấn</button>
+            <button type="button" class="rt-refresh-btn" data-domain="PHI_TU_VAN" onclick="window.setRtFeedFilter('PHI_TU_VAN')" data-i18n="rt_flt_ptv">Dịch vụ phi tư vấn</button>
           </div>
         </div>
 
@@ -2481,7 +2464,7 @@
           <table class="rt-feed-table">
             <thead>
               <tr>
-                <th data-i18n="rt_th_code">Mã TBMT / Hình Thức</th>
+                <th data-i18n="rt_th_code">Mã TBMT</th>
                 <th data-i18n="rt_th_title">Tên Gói Thầu &amp; Dự Án</th>
                 <th data-i18n="rt_th_inv">Chủ Đầu Tư / Bên Mời Thầu</th>
                 <th data-i18n="rt_th_budget">Giá Gói Thầu</th>
