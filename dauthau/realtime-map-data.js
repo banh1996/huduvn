@@ -6,6 +6,7 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal": "https://muasamcong.mof.gov.vn
 // HUDU DAUTHAU REALTIME MAP & MULTI-CHART ANALYTICS ENGINE
 // ============================================================================
 (function () {
+  const PUBLIC_REALTIME_MAP_API_KEY = "hudu_map_live_2026_k9x8v2m4q7p1";
   const API_URLS = [
     "https://dauthau.huduvn.com/api/v1/public/realtime-map-stats",
     "https://dauthau.huduvn.com/api/v1/realtime/map-stats"
@@ -1186,27 +1187,76 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal": "https://muasamcong.mof.gov.vn
     renderToastItem();
   }
 
+  let isFetchingRealtime = false;
+  let lastManualFetchAt = 0;
+
   window.fetchRealtimeMapStats = async function (isManual) {
+    if (isFetchingRealtime) return;
+    const now = Date.now();
+    if (isManual && now - lastManualFetchAt < 3000) {
+      return;
+    }
+    if (isManual) {
+      lastManualFetchAt = now;
+    }
+
+    isFetchingRealtime = true;
     const badgeEl = document.getElementById("rtLiveStatusText");
     if (isManual && badgeEl) {
       badgeEl.textContent = "SYNCING...";
     }
-    for (let i = 0; i < API_URLS.length; i++) {
-      try {
-        const resp = await fetch(API_URLS[i], { method: "GET", mode: "cors", cache: "no-store" });
-        if (resp.ok) {
-          const json = await resp.json();
-          if (json && Array.isArray(json.map_provinces)) {
-            renderAllRealtimeWidgets(json);
-            if (badgeEl) badgeEl.textContent = t("rt_live_badge");
-            return;
+
+    try {
+      for (let i = 0; i < API_URLS.length; i++) {
+        try {
+          const resp = await fetch(API_URLS[i], {
+            method: "GET",
+            mode: "cors",
+            headers: {
+              "X-API-Key": PUBLIC_REALTIME_MAP_API_KEY,
+              "Accept": "application/json"
+            }
+          });
+          if (resp.status === 429 || resp.status === 401) {
+            break;
+          }
+          if (resp.ok) {
+            const json = await resp.json();
+            if (json && Array.isArray(json.map_provinces)) {
+              renderAllRealtimeWidgets(json);
+              if (badgeEl) badgeEl.textContent = t("rt_live_badge");
+              return;
+            }
+          }
+        } catch (err) {
+          // Fallback to query string ?api_key=... if custom header was blocked by a proxy
+          try {
+            const fallbackUrl = API_URLS[i] + "?api_key=" + encodeURIComponent(PUBLIC_REALTIME_MAP_API_KEY);
+            const respQs = await fetch(fallbackUrl, {
+              method: "GET",
+              mode: "cors",
+              headers: { "Accept": "application/json" }
+            });
+            if (respQs.status === 429 || respQs.status === 401) {
+              break;
+            }
+            if (respQs.ok) {
+              const jsonQs = await respQs.json();
+              if (jsonQs && Array.isArray(jsonQs.map_provinces)) {
+                renderAllRealtimeWidgets(jsonQs);
+                if (badgeEl) badgeEl.textContent = t("rt_live_badge");
+                return;
+              }
+            }
+          } catch (fallbackErr) {
+            // Continue to next URL or keep snapshot
           }
         }
-      } catch (err) {
-        // Fallback to next URL or snapshot
       }
+    } finally {
+      isFetchingRealtime = false;
+      if (badgeEl) badgeEl.textContent = t("rt_live_badge");
     }
-    if (badgeEl) badgeEl.textContent = t("rt_live_badge");
   };
 
   // Hook into language switcher so all charts and map labels re-render in the chosen language
