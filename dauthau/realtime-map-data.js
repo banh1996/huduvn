@@ -580,10 +580,17 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal": "https://muasamcong.mof.gov.vn
     Object.keys(window.HUDU_VN_MAP_SHAPES).forEach(function (code) {
       const shape = window.HUDU_VN_MAP_SHAPES[code];
       const pData = provMap[code] || {};
-      // Highlight VN-49 (Quang Nam) alongside VN-48 (Da Nang) in red so the Central region matches the reference visual
-      let fill = pData.map_fill_color_hex || "#0077CC";
-      if (code === "VN-49" || code === "VN-HS" || code === "VN-TS") {
+      const totalTenders = Number(pData.total_tenders) || 0;
+      const isArchipelago = code === "VN-HS" || code === "VN-TS";
+      let fill = "#0077CC";
+      if (isArchipelago) {
         fill = "#E11D48";
+      } else if (totalTenders <= 0) {
+        fill = "#7CB8E8";
+      } else if (pData.is_highlighted_hotspot || pData.map_fill_color_hex === "#E11D48") {
+        fill = "#E11D48";
+      } else if (pData.map_fill_color_hex) {
+        fill = pData.map_fill_color_hex;
       }
       const isSelected = selectedProvinceCode === code ? " active-prov" : "";
       htmlParts.push(
@@ -881,8 +888,9 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal": "https://muasamcong.mof.gov.vn
       const total = Number(p.total_tenders) || 0;
       const open = Number(p.open_tenders_count) || 0;
       const wPct = Math.max(8, (total / maxTenders) * 100);
-      const barColor = p.is_highlighted_hotspot ? "linear-gradient(90deg, #E11D48, #FB7185)" : "linear-gradient(90deg, #0066CC, #38BDF8)";
-      const badgeBg = p.is_highlighted_hotspot ? "#E11D48" : "#0077CC";
+      const isHotspot = Boolean(p.is_highlighted_hotspot) && total > 0;
+      const barColor = isHotspot ? "linear-gradient(90deg, #E11D48, #FB7185)" : "linear-gradient(90deg, #0066CC, #38BDF8)";
+      const badgeBg = isHotspot ? "#E11D48" : "#0077CC";
 
       return (
         '<div class="rt-rank-row" onclick="window.selectMapProvince(\'' + p.province_code + '\')">' +
