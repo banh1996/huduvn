@@ -350,35 +350,85 @@
     }
 
     /* ==========================================================================
-       HERO SECTION (BRUSHED SILVER + ANIMATED NETWORK + WAVES)
+       FULL-PAGE ARCHITECTURAL SWEEPING CURVES & AMBIENT FLOW BACKGROUND
        ========================================================================== */
-    .hero {
-      position: relative;
-      padding: 72px 0 84px;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 18% 15%, rgba(255, 255, 255, 0.85) 0%, transparent 45%),
-        radial-gradient(circle at 84% 22%, rgba(56, 189, 248, 0.16) 0%, transparent 48%);
+    @keyframes curveFlowPulse {
+      0% { stroke-dashoffset: 1600; opacity: 0.25; }
+      50% { opacity: 0.95; }
+      100% { stroke-dashoffset: -1600; opacity: 0.25; }
     }
 
-    body.dark-mode .hero {
-      background:
-        radial-gradient(circle at 18% 15%, rgba(56, 189, 248, 0.12) 0%, transparent 45%),
-        radial-gradient(circle at 84% 22%, rgba(0, 102, 204, 0.16) 0%, transparent 48%);
+    @keyframes curveBreath {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      50% { transform: translate3d(-12px, 8px, 0) scale(1.018); }
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
+    .page-flow-bg {
+      position: fixed;
       inset: 0;
-      background-image:
-        linear-gradient(to right, rgba(100, 116, 139, 0.09) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(100, 116, 139, 0.09) 1px, transparent 1px);
-      background-size: 44px 44px;
-      mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 50%, transparent 100%);
-      -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 50%, transparent 100%);
+      width: 100vw;
+      height: 100vh;
       pointer-events: none;
       z-index: 0;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 14% 12%, rgba(255, 255, 255, 0.95) 0%, transparent 45%),
+        radial-gradient(circle at 82% 20%, rgba(56, 189, 248, 0.16) 0%, transparent 50%),
+        radial-gradient(circle at 22% 72%, rgba(2, 132, 199, 0.10) 0%, transparent 52%),
+        radial-gradient(circle at 88% 84%, rgba(148, 163, 184, 0.20) 0%, transparent 48%),
+        linear-gradient(135deg, #F8FAFC 0%, #EEF3F9 48%, #E3ECF6 100%);
+      transition: background 0.3s ease;
+    }
+
+    body.dark-mode .page-flow-bg {
+      background:
+        radial-gradient(circle at 16% 14%, rgba(56, 189, 248, 0.12) 0%, transparent 46%),
+        radial-gradient(circle at 82% 22%, rgba(0, 102, 204, 0.18) 0%, transparent 52%),
+        radial-gradient(circle at 24% 76%, rgba(2, 132, 199, 0.12) 0%, transparent 50%),
+        linear-gradient(135deg, #07101E 0%, #0C1B30 50%, #081323 100%);
+    }
+
+    .page-flow-svg {
+      position: absolute;
+      inset: -6% -4%;
+      width: 108%;
+      height: 112%;
+      pointer-events: none;
+      z-index: 0;
+      animation: curveBreath 18s ease-in-out infinite;
+      will-change: transform;
+    }
+
+    .flow-glint {
+      stroke-dasharray: 240 1360;
+      animation: curveFlowPulse 14s linear infinite;
+    }
+
+    .flow-glint.delay-1 {
+      animation-duration: 18s;
+      animation-delay: -5s;
+    }
+
+    .flow-glint.delay-2 {
+      animation-duration: 21s;
+      animation-delay: -11s;
+    }
+
+    .page-flow-bg .ribbon-band {
+      opacity: 0.92;
+      transition: opacity 0.3s ease;
+    }
+
+    body.dark-mode .page-flow-bg .ribbon-band {
+      opacity: 0.65;
+    }
+
+    .page-flow-bg .curve-stroke-main {
+      opacity: 0.88;
+    }
+
+    body.dark-mode .page-flow-bg .curve-stroke-main {
+      opacity: 0.78;
     }
 
     #heroCanvas {
@@ -392,15 +442,39 @@
 
     .hero-ambient-orb {
       position: absolute;
-      width: 440px;
-      height: 440px;
+      width: 520px;
+      height: 520px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, rgba(148, 163, 184, 0) 70%);
-      top: -100px;
-      right: 6%;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.18) 0%, rgba(148, 163, 184, 0) 70%);
+      top: -120px;
+      right: 5%;
       pointer-events: none;
       z-index: 0;
-      animation: orbDrift 11s ease-in-out infinite;
+      animation: orbDrift 12s ease-in-out infinite;
+    }
+
+    .hero-ambient-orb-2 {
+      position: absolute;
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 102, 204, 0.11) 0%, rgba(148, 163, 184, 0) 70%);
+      bottom: 6%;
+      left: -80px;
+      pointer-events: none;
+      z-index: 0;
+      animation: orbDrift 15s ease-in-out infinite reverse;
+    }
+
+    /* ==========================================================================
+       HERO SECTION (TRANSPARENT OVER FULL-PAGE FLOW BACKGROUND)
+       ========================================================================== */
+    .hero {
+      position: relative;
+      z-index: 1;
+      padding: 72px 0 84px;
+      overflow: hidden;
+      background: transparent;
     }
 
     .hero-bg-wave {
@@ -639,21 +713,25 @@
     }
 
     /* ==========================================================================
-       SECTIONS & PRICING
+       SECTIONS & PRICING (TRANSLUCENT OVER FULL-PAGE FLOWING CURVES)
        ========================================================================== */
     .section {
       padding: 84px 0;
       position: relative;
+      z-index: 1;
+      background: transparent;
     }
 
     .section-alt {
-      background: linear-gradient(180deg, #DCE4EE 0%, #E6ECF4 100%);
-      border-top: 1px solid var(--border-subtle);
-      border-bottom: 1px solid var(--border-subtle);
+      background: linear-gradient(180deg, rgba(220, 228, 238, 0.42) 0%, rgba(230, 236, 244, 0.42) 100%);
+      border-top: 1px solid rgba(182, 196, 214, 0.65);
+      border-bottom: 1px solid rgba(182, 196, 214, 0.65);
     }
 
     body.dark-mode .section-alt {
-      background: linear-gradient(180deg, #0E1D31 0%, #132742 100%);
+      background: linear-gradient(180deg, rgba(14, 29, 49, 0.46) 0%, rgba(19, 39, 66, 0.46) 100%);
+      border-top-color: rgba(53, 88, 130, 0.55);
+      border-bottom-color: rgba(53, 88, 130, 0.55);
     }
 
     .section-header {
@@ -2100,6 +2178,86 @@
 </head>
 <body>
 
+  <!-- FULL-PAGE ARCHITECTURAL SWEEPING CURVES & AMBIENT FLOW BACKGROUND -->
+  <div class="page-flow-bg" aria-hidden="true">
+    <div class="hero-ambient-orb"></div>
+    <div class="hero-ambient-orb-2"></div>
+
+    <svg class="page-flow-svg" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="ribbonBand1" x1="820" y1="240" x2="915" y2="435" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#0066CC" stop-opacity="0.11" />
+          <stop offset="32%" stop-color="#38BDF8" stop-opacity="0.06" />
+          <stop offset="68%" stop-color="#FFFFFF" stop-opacity="0.45" />
+          <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+        </linearGradient>
+
+        <linearGradient id="ribbonBand2" x1="1120" y1="450" x2="1205" y2="625" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#0284C7" stop-opacity="0.10" />
+          <stop offset="38%" stop-color="#94A3B8" stop-opacity="0.08" />
+          <stop offset="75%" stop-color="#FFFFFF" stop-opacity="0.38" />
+          <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+        </linearGradient>
+
+        <linearGradient id="ribbonBand3" x1="420" y1="160" x2="500" y2="325" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#64748B" stop-opacity="0.09" />
+          <stop offset="45%" stop-color="#38BDF8" stop-opacity="0.05" />
+          <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+        </linearGradient>
+
+        <linearGradient id="curveStrokePrimary" x1="1160" y1="-40" x2="40" y2="960" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#94A3B8" stop-opacity="0.12" />
+          <stop offset="22%" stop-color="#0284C7" stop-opacity="0.52" />
+          <stop offset="46%" stop-color="#0066CC" stop-opacity="0.78" />
+          <stop offset="72%" stop-color="#38BDF8" stop-opacity="0.48" />
+          <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.08" />
+        </linearGradient>
+
+        <linearGradient id="curveStrokeSecondary" x1="1640" y1="260" x2="60" y2="1060" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#94A3B8" stop-opacity="0.1" />
+          <stop offset="25%" stop-color="#38BDF8" stop-opacity="0.58" />
+          <stop offset="55%" stop-color="#0066CC" stop-opacity="0.64" />
+          <stop offset="82%" stop-color="#64748B" stop-opacity="0.34" />
+          <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.06" />
+        </linearGradient>
+
+        <linearGradient id="curveStrokeSilver" x1="740" y1="-40" x2="-60" y2="680" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#94A3B8" stop-opacity="0.08" />
+          <stop offset="35%" stop-color="#64748B" stop-opacity="0.38" />
+          <stop offset="65%" stop-color="#0284C7" stop-opacity="0.46" />
+          <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.06" />
+        </linearGradient>
+
+        <linearGradient id="curveGlintGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#38BDF8" stop-opacity="0" />
+          <stop offset="50%" stop-color="#0066CC" stop-opacity="0.95" />
+          <stop offset="75%" stop-color="#7DD3FC" stop-opacity="0.95" />
+          <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+        </linearGradient>
+      </defs>
+
+      <path class="ribbon-band" d="M 680 -80 L 680 95 C 680 245, 575 360, 395 445 L -160 705 L -160 815 L 445 532 C 655 434, 780 295, 780 95 L 780 -80 Z" fill="url(#ribbonBand3)" />
+      <path class="curve-stroke-main" d="M 680 -80 L 680 95 C 680 245, 575 360, 395 445 L -160 705" stroke="url(#curveStrokeSilver)" stroke-width="1.35" />
+
+      <path class="ribbon-band" d="M 1140 -80 L 1140 195 C 1140 385, 1015 515, 800 615 L -160 1065 L -160 1205 L 865 725 C 1110 610, 1255 455, 1255 195 L 1255 -80 Z" fill="url(#ribbonBand1)" />
+      <path class="curve-stroke-main" d="M 1140 -80 L 1140 195 C 1140 385, 1015 515, 800 615 L -160 1065" stroke="url(#curveStrokePrimary)" stroke-width="1.65" />
+      <path class="flow-glint" d="M 1140 -80 L 1140 195 C 1140 385, 1015 515, 800 615 L -160 1065" stroke="url(#curveGlintGrad)" stroke-width="2.2" stroke-linecap="round" />
+
+      <path class="ribbon-band" d="M 1720 270 L 1565 395 C 1465 475, 1360 535, 1225 598 L -120 1228 L -120 1355 L 1285 698 C 1435 628, 1550 560, 1660 470 L 1720 420 Z" fill="url(#ribbonBand2)" />
+      <path class="curve-stroke-main" d="M 1720 270 L 1565 395 C 1465 475, 1360 535, 1225 598 L -120 1228" stroke="url(#curveStrokeSecondary)" stroke-width="1.5" />
+      <path class="flow-glint delay-1" d="M 1720 270 L 1565 395 C 1465 475, 1360 535, 1225 598 L -120 1228" stroke="url(#curveGlintGrad)" stroke-width="2" stroke-linecap="round" />
+
+      <path class="ribbon-band" d="M 1720 490 L 1600 578 C 1510 644, 1410 698, 1290 754 L 120 1302 L 120 1410 L 1345 838 C 1475 777, 1580 718, 1680 644 L 1720 614 Z" fill="url(#ribbonBand1)" />
+      <path class="curve-stroke-main" d="M 1720 490 L 1600 578 C 1510 644, 1410 698, 1290 754 L 120 1302" stroke="url(#curveStrokePrimary)" stroke-width="1.35" />
+      <path class="flow-glint delay-2" d="M 1720 490 L 1600 578 C 1510 644, 1410 698, 1290 754 L 120 1302" stroke="url(#curveGlintGrad)" stroke-width="1.9" stroke-linecap="round" />
+
+      <path class="curve-stroke-main" d="M 1720 715 L 540 1268" stroke="url(#curveStrokeSilver)" stroke-width="1.2" />
+      <path class="curve-stroke-main" d="M -120 290 C 280 250, 560 470, 980 420 C 1280 384, 1460 190, 1720 120" stroke="url(#curveStrokeSilver)" stroke-width="1" stroke-dasharray="6 10" />
+    </svg>
+
+    <canvas id="heroCanvas"></canvas>
+  </div>
+
   <!-- NAVBAR — 100% UNIFIED OFFICIAL LOGO & SINGLE-LINE LINKS -->
   <header class="navbar">
     <div class="container nav-inner">
@@ -2165,12 +2323,9 @@
 
   <!-- HERO SECTION -->
   <section class="hero">
-    <div class="hero-ambient-orb"></div>
-    <canvas id="heroCanvas"></canvas>
-
     <svg class="hero-bg-wave" viewBox="0 0 1440 160" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M0 64 C 320 10, 640 130, 960 64 C 1180 20, 1340 50, 1440 80 L 1440 160 L 0 160 Z" fill="#CBD5E1" fill-opacity="0.45"/>
-      <path d="M0 98 C 400 145, 820 35, 1240 105 C 1340 120, 1400 110, 1440 96 L 1440 160 L 0 160 Z" fill="#93C5FD" fill-opacity="0.28"/>
+      <path d="M0 64 C 320 10, 640 130, 960 64 C 1180 20, 1340 50, 1440 80 L 1440 160 L 0 160 Z" fill="#CBD5E1" fill-opacity="0.32"/>
+      <path d="M0 98 C 400 145, 820 35, 1240 105 C 1340 120, 1400 110, 1440 96 L 1440 160 L 0 160 Z" fill="#93C5FD" fill-opacity="0.22"/>
     </svg>
 
     <div class="container hero-grid">
@@ -2847,7 +3002,7 @@
   </section>
 
   <!-- FOOTER — 100% UNIFIED OFFICIAL LOGO -->
-  <footer class="footer">
+  <footer class="footer" style="position: relative; z-index: 1;">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
@@ -2929,31 +3084,31 @@
       const mouse = { x: -9999, y: -9999 };
 
       function resize() {
-        const rect = canvas.parentElement.getBoundingClientRect();
-        width = canvas.width = rect.width;
-        height = canvas.height = rect.height;
-        const count = Math.min(42, Math.max(18, Math.floor(width / 34)));
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+        const count = Math.min(46, Math.max(20, Math.floor(width / 32)));
         nodes = [];
         for (let i = 0; i < count; i++) {
           nodes.push({
             x: Math.random() * width,
             y: Math.random() * height,
-            vx: (Math.random() - 0.5) * 0.45,
-            vy: (Math.random() - 0.5) * 0.45,
-            r: Math.random() * 2 + 1.4
+            vx: (Math.random() - 0.5) * 0.42,
+            vy: (Math.random() - 0.5) * 0.42,
+            r: Math.random() * 2 + 1.3
           });
         }
       }
 
       window.addEventListener('resize', resize);
-      canvas.parentElement.addEventListener('mousemove', e => {
-        const rect = canvas.getBoundingClientRect();
-        mouse.x = e.clientX - rect.left;
-        mouse.y = e.clientY - rect.top;
-      });
-      canvas.parentElement.addEventListener('mouseleave', () => {
-        mouse.x = -9999;
-        mouse.y = -9999;
+      window.addEventListener('mousemove', e => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+      }, { passive: true });
+      window.addEventListener('mouseout', e => {
+        if (!e.relatedTarget) {
+          mouse.x = -9999;
+          mouse.y = -9999;
+        }
       });
 
       resize();
@@ -2961,7 +3116,7 @@
       function draw() {
         ctx.clearRect(0, 0, width, height);
         const isDark = document.body.classList.contains('dark-mode');
-        const dotColor = isDark ? 'rgba(125, 211, 252, 0.55)' : 'rgba(0, 102, 204, 0.38)';
+        const dotColor = isDark ? 'rgba(125, 211, 252, 0.50)' : 'rgba(0, 102, 204, 0.34)';
         const lineBase = isDark ? [56, 189, 248] : [0, 102, 204];
 
         for (let i = 0; i < nodes.length; i++) {
@@ -2991,7 +3146,7 @@
             const dy = n.y - m.y;
             const dist = Math.hypot(dx, dy);
             if (dist < 145) {
-              const alpha = (1 - dist / 145) * (isDark ? 0.22 : 0.16);
+              const alpha = (1 - dist / 145) * (isDark ? 0.20 : 0.14);
               ctx.beginPath();
               ctx.moveTo(n.x, n.y);
               ctx.lineTo(m.x, m.y);
