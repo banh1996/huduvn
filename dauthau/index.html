@@ -353,9 +353,9 @@
        FULL-PAGE ARCHITECTURAL SWEEPING CURVES & AMBIENT FLOW BACKGROUND
        ========================================================================== */
     @keyframes curveFlowPulse {
-      0% { stroke-dashoffset: 1600; opacity: 0.08; }
-      50% { opacity: 0.36; }
-      100% { stroke-dashoffset: -1600; opacity: 0.08; }
+      0% { stroke-dashoffset: 1600; opacity: 0.18; }
+      50% { opacity: 0.55; }
+      100% { stroke-dashoffset: -1600; opacity: 0.18; }
     }
 
     @keyframes curveBreath {
@@ -372,19 +372,19 @@
       z-index: 0;
       overflow: hidden;
       background:
-        radial-gradient(circle at 14% 12%, rgba(255, 255, 255, 0.96) 0%, transparent 45%),
-        radial-gradient(circle at 82% 20%, rgba(56, 189, 248, 0.11) 0%, transparent 50%),
-        radial-gradient(circle at 22% 72%, rgba(2, 132, 199, 0.06) 0%, transparent 52%),
-        radial-gradient(circle at 88% 84%, rgba(148, 163, 184, 0.14) 0%, transparent 48%),
-        linear-gradient(135deg, #F8FAFC 0%, #EEF3F9 48%, #E5EDF6 100%);
+        radial-gradient(circle at 14% 12%, rgba(255, 255, 255, 0.95) 0%, transparent 45%),
+        radial-gradient(circle at 82% 20%, rgba(56, 189, 248, 0.16) 0%, transparent 50%),
+        radial-gradient(circle at 22% 72%, rgba(2, 132, 199, 0.10) 0%, transparent 52%),
+        radial-gradient(circle at 88% 84%, rgba(148, 163, 184, 0.20) 0%, transparent 48%),
+        linear-gradient(135deg, #F8FAFC 0%, #EEF3F9 48%, #E3ECF6 100%);
       transition: background 0.3s ease;
     }
 
     body.dark-mode .page-flow-bg {
       background:
-        radial-gradient(circle at 16% 14%, rgba(56, 189, 248, 0.09) 0%, transparent 46%),
-        radial-gradient(circle at 82% 22%, rgba(0, 102, 204, 0.13) 0%, transparent 52%),
-        radial-gradient(circle at 24% 76%, rgba(2, 132, 199, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 16% 14%, rgba(56, 189, 248, 0.12) 0%, transparent 46%),
+        radial-gradient(circle at 82% 22%, rgba(0, 102, 204, 0.18) 0%, transparent 52%),
+        radial-gradient(circle at 24% 76%, rgba(2, 132, 199, 0.12) 0%, transparent 50%),
         linear-gradient(135deg, #07101E 0%, #0C1B30 50%, #081323 100%);
     }
 
@@ -401,34 +401,34 @@
 
     .flow-glint {
       stroke-dasharray: 240 1360;
-      animation: curveFlowPulse 16s linear infinite;
+      animation: curveFlowPulse 14s linear infinite;
     }
 
     .flow-glint.delay-1 {
-      animation-duration: 20s;
+      animation-duration: 18s;
       animation-delay: -5s;
     }
 
     .flow-glint.delay-2 {
-      animation-duration: 24s;
+      animation-duration: 21s;
       animation-delay: -11s;
     }
 
     .page-flow-bg .ribbon-band {
-      opacity: 0.62;
+      opacity: 0.92;
       transition: opacity 0.3s ease;
     }
 
     body.dark-mode .page-flow-bg .ribbon-band {
-      opacity: 0.38;
+      opacity: 0.65;
     }
 
     .page-flow-bg .curve-stroke-main {
-      opacity: 0.28;
+      opacity: 0.48;
     }
 
     body.dark-mode .page-flow-bg .curve-stroke-main {
-      opacity: 0.22;
+      opacity: 0.45;
     }
 
     #heroCanvas {
@@ -438,7 +438,6 @@
       height: 100%;
       pointer-events: none;
       z-index: 1;
-      opacity: 0.55;
     }
 
     .hero-ambient-orb {
@@ -2187,72 +2186,73 @@
     <svg class="page-flow-svg" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
       <defs>
         <linearGradient id="ribbonBand1" x1="820" y1="240" x2="915" y2="435" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#0284C7" stop-opacity="0.06" />
-          <stop offset="32%" stop-color="#38BDF8" stop-opacity="0.035" />
-          <stop offset="68%" stop-color="#FFFFFF" stop-opacity="0.42" />
+          <stop offset="0%" stop-color="#0066CC" stop-opacity="0.11" />
+          <stop offset="32%" stop-color="#38BDF8" stop-opacity="0.06" />
+          <stop offset="68%" stop-color="#FFFFFF" stop-opacity="0.45" />
           <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
         </linearGradient>
 
         <linearGradient id="ribbonBand2" x1="1120" y1="450" x2="1205" y2="625" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.055" />
-          <stop offset="38%" stop-color="#94A3B8" stop-opacity="0.045" />
-          <stop offset="75%" stop-color="#FFFFFF" stop-opacity="0.36" />
+          <stop offset="0%" stop-color="#0284C7" stop-opacity="0.10" />
+          <stop offset="38%" stop-color="#94A3B8" stop-opacity="0.08" />
+          <stop offset="75%" stop-color="#FFFFFF" stop-opacity="0.38" />
           <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
         </linearGradient>
 
         <linearGradient id="ribbonBand3" x1="420" y1="160" x2="500" y2="325" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#94A3B8" stop-opacity="0.05" />
-          <stop offset="45%" stop-color="#38BDF8" stop-opacity="0.03" />
+          <stop offset="0%" stop-color="#64748B" stop-opacity="0.09" />
+          <stop offset="45%" stop-color="#38BDF8" stop-opacity="0.05" />
           <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
         </linearGradient>
 
         <linearGradient id="curveStrokePrimary" x1="1160" y1="-40" x2="40" y2="960" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#94A3B8" stop-opacity="0.08" />
-          <stop offset="25%" stop-color="#38BDF8" stop-opacity="0.28" />
-          <stop offset="50%" stop-color="#0284C7" stop-opacity="0.34" />
-          <stop offset="75%" stop-color="#38BDF8" stop-opacity="0.24" />
-          <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.05" />
+          <stop offset="0%" stop-color="#94A3B8" stop-opacity="0.12" />
+          <stop offset="22%" stop-color="#0284C7" stop-opacity="0.48" />
+          <stop offset="46%" stop-color="#0066CC" stop-opacity="0.65" />
+          <stop offset="72%" stop-color="#38BDF8" stop-opacity="0.44" />
+          <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.08" />
         </linearGradient>
 
         <linearGradient id="curveStrokeSecondary" x1="1640" y1="260" x2="60" y2="1060" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#94A3B8" stop-opacity="0.06" />
-          <stop offset="30%" stop-color="#38BDF8" stop-opacity="0.26" />
-          <stop offset="58%" stop-color="#0284C7" stop-opacity="0.30" />
-          <stop offset="82%" stop-color="#94A3B8" stop-opacity="0.18" />
-          <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.04" />
+          <stop offset="0%" stop-color="#94A3B8" stop-opacity="0.1" />
+          <stop offset="25%" stop-color="#38BDF8" stop-opacity="0.50" />
+          <stop offset="55%" stop-color="#0066CC" stop-opacity="0.56" />
+          <stop offset="82%" stop-color="#64748B" stop-opacity="0.32" />
+          <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.06" />
         </linearGradient>
 
         <linearGradient id="curveStrokeSilver" x1="740" y1="-40" x2="-60" y2="680" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#94A3B8" stop-opacity="0.05" />
-          <stop offset="40%" stop-color="#94A3B8" stop-opacity="0.22" />
-          <stop offset="70%" stop-color="#38BDF8" stop-opacity="0.24" />
-          <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.04" />
+          <stop offset="0%" stop-color="#94A3B8" stop-opacity="0.08" />
+          <stop offset="35%" stop-color="#64748B" stop-opacity="0.34" />
+          <stop offset="65%" stop-color="#0284C7" stop-opacity="0.42" />
+          <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.06" />
         </linearGradient>
 
         <linearGradient id="curveGlintGrad" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="#38BDF8" stop-opacity="0" />
-          <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.35" />
-          <stop offset="75%" stop-color="#BAE6FD" stop-opacity="0.45" />
+          <stop offset="50%" stop-color="#0066CC" stop-opacity="0.68" />
+          <stop offset="75%" stop-color="#7DD3FC" stop-opacity="0.72" />
           <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
         </linearGradient>
       </defs>
 
       <path class="ribbon-band" d="M 680 -80 L 680 95 C 680 245, 575 360, 395 445 L -160 705 L -160 815 L 445 532 C 655 434, 780 295, 780 95 L 780 -80 Z" fill="url(#ribbonBand3)" />
-      <path class="curve-stroke-main" d="M 680 -80 L 680 95 C 680 245, 575 360, 395 445 L -160 705" stroke="url(#curveStrokeSilver)" stroke-width="1.05" />
+      <path class="curve-stroke-main" d="M 680 -80 L 680 95 C 680 245, 575 360, 395 445 L -160 705" stroke="url(#curveStrokeSilver)" stroke-width="1.35" />
 
       <path class="ribbon-band" d="M 1140 -80 L 1140 195 C 1140 385, 1015 515, 800 615 L -160 1065 L -160 1205 L 865 725 C 1110 610, 1255 455, 1255 195 L 1255 -80 Z" fill="url(#ribbonBand1)" />
-      <path class="curve-stroke-main" d="M 1140 -80 L 1140 195 C 1140 385, 1015 515, 800 615 L -160 1065" stroke="url(#curveStrokePrimary)" stroke-width="1.2" />
-      <path class="flow-glint" d="M 1140 -80 L 1140 195 C 1140 385, 1015 515, 800 615 L -160 1065" stroke="url(#curveGlintGrad)" stroke-width="1.6" stroke-linecap="round" />
+      <path class="curve-stroke-main" d="M 1140 -80 L 1140 195 C 1140 385, 1015 515, 800 615 L -160 1065" stroke="url(#curveStrokePrimary)" stroke-width="1.65" />
+      <path class="flow-glint" d="M 1140 -80 L 1140 195 C 1140 385, 1015 515, 800 615 L -160 1065" stroke="url(#curveGlintGrad)" stroke-width="2.1" stroke-linecap="round" />
 
       <path class="ribbon-band" d="M 1720 270 L 1565 395 C 1465 475, 1360 535, 1225 598 L -120 1228 L -120 1355 L 1285 698 C 1435 628, 1550 560, 1660 470 L 1720 420 Z" fill="url(#ribbonBand2)" />
-      <path class="curve-stroke-main" d="M 1720 270 L 1565 395 C 1465 475, 1360 535, 1225 598 L -120 1228" stroke="url(#curveStrokeSecondary)" stroke-width="1.15" />
-      <path class="flow-glint delay-1" d="M 1720 270 L 1565 395 C 1465 475, 1360 535, 1225 598 L -120 1228" stroke="url(#curveGlintGrad)" stroke-width="1.5" stroke-linecap="round" />
+      <path class="curve-stroke-main" d="M 1720 270 L 1565 395 C 1465 475, 1360 535, 1225 598 L -120 1228" stroke="url(#curveStrokeSecondary)" stroke-width="1.5" />
+      <path class="flow-glint delay-1" d="M 1720 270 L 1565 395 C 1465 475, 1360 535, 1225 598 L -120 1228" stroke="url(#curveGlintGrad)" stroke-width="1.9" stroke-linecap="round" />
 
       <path class="ribbon-band" d="M 1720 490 L 1600 578 C 1510 644, 1410 698, 1290 754 L 120 1302 L 120 1410 L 1345 838 C 1475 777, 1580 718, 1680 644 L 1720 614 Z" fill="url(#ribbonBand1)" />
-      <path class="curve-stroke-main" d="M 1720 490 L 1600 578 C 1510 644, 1410 698, 1290 754 L 120 1302" stroke="url(#curveStrokePrimary)" stroke-width="1.05" />
-      <path class="flow-glint delay-2" d="M 1720 490 L 1600 578 C 1510 644, 1410 698, 1290 754 L 120 1302" stroke="url(#curveGlintGrad)" stroke-width="1.4" stroke-linecap="round" />
+      <path class="curve-stroke-main" d="M 1720 490 L 1600 578 C 1510 644, 1410 698, 1290 754 L 120 1302" stroke="url(#curveStrokePrimary)" stroke-width="1.35" />
+      <path class="flow-glint delay-2" d="M 1720 490 L 1600 578 C 1510 644, 1410 698, 1290 754 L 120 1302" stroke="url(#curveGlintGrad)" stroke-width="1.8" stroke-linecap="round" />
 
-      <path class="curve-stroke-main" d="M 1720 715 L 540 1268" stroke="url(#curveStrokeSilver)" stroke-width="0.95" />
+      <path class="curve-stroke-main" d="M 1720 715 L 540 1268" stroke="url(#curveStrokeSilver)" stroke-width="1.2" />
+      <path class="curve-stroke-main" d="M -120 290 C 280 250, 560 470, 980 420 C 1280 384, 1460 190, 1720 120" stroke="url(#curveStrokeSilver)" stroke-width="1" stroke-dasharray="6 10" />
     </svg>
 
     <canvas id="heroCanvas"></canvas>
@@ -3116,8 +3116,8 @@
       function draw() {
         ctx.clearRect(0, 0, width, height);
         const isDark = document.body.classList.contains('dark-mode');
-        const dotColor = isDark ? 'rgba(125, 211, 252, 0.22)' : 'rgba(2, 132, 199, 0.14)';
-        const lineBase = isDark ? [56, 189, 248] : [2, 132, 199];
+        const dotColor = isDark ? 'rgba(125, 211, 252, 0.50)' : 'rgba(0, 102, 204, 0.34)';
+        const lineBase = isDark ? [56, 189, 248] : [0, 102, 204];
 
         for (let i = 0; i < nodes.length; i++) {
           const n = nodes[i];
@@ -3146,12 +3146,12 @@
             const dy = n.y - m.y;
             const dist = Math.hypot(dx, dy);
             if (dist < 145) {
-              const alpha = (1 - dist / 145) * (isDark ? 0.085 : 0.055);
+              const alpha = (1 - dist / 145) * (isDark ? 0.20 : 0.14);
               ctx.beginPath();
               ctx.moveTo(n.x, n.y);
               ctx.lineTo(m.x, m.y);
               ctx.strokeStyle = `rgba(${lineBase[0]}, ${lineBase[1]}, ${lineBase[2]}, ${alpha.toFixed(3)})`;
-              ctx.lineWidth = 0.85;
+              ctx.lineWidth = 1;
               ctx.stroke();
             }
           }
