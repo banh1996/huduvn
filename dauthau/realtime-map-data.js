@@ -605,22 +605,24 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal": "https://muasamcong.mof.gov.vn
       );
     });
 
+    const activeShapeD =
+      selectedProvinceCode && selectedProvinceCode !== "ALL" && window.HUDU_VN_MAP_SHAPES[selectedProvinceCode]
+        ? window.HUDU_VN_MAP_SHAPES[selectedProvinceCode].d
+        : "";
+    htmlParts.push(
+      '<path id="rtActiveOutlinePath" d="' + activeShapeD + '" style="pointer-events:none;fill:none;stroke:#FEF08A;stroke-width:1.85;stroke-linejoin:round;" />' +
+      '<path id="rtHoverOutlinePath" d="" style="pointer-events:none;fill:none;stroke:#FEF08A;stroke-width:1.85;stroke-linejoin:round;" />'
+    );
+
     group.innerHTML = htmlParts.join("");
+    const hoverOutlineEl = document.getElementById("rtHoverOutlinePath");
 
-    // Ensure selected province (if any) is on top of SVG z-order
-    if (selectedProvinceCode && selectedProvinceCode !== "ALL") {
-      const selEl = document.getElementById("vnProv_" + selectedProvinceCode);
-      if (selEl && selEl.parentNode === group) {
-        group.appendChild(selEl);
-      }
-    }
-
-    // Attach hover & click events
+    // Attach hover & click events without mutating DOM order
     group.querySelectorAll("path.vn-prov").forEach(function (pathEl) {
       const code = pathEl.getAttribute("data-prov-code");
       pathEl.addEventListener("mouseenter", function (ev) {
-        if (pathEl.parentNode === group) {
-          group.appendChild(pathEl);
+        if (hoverOutlineEl && window.HUDU_VN_MAP_SHAPES[code]) {
+          hoverOutlineEl.setAttribute("d", window.HUDU_VN_MAP_SHAPES[code].d);
         }
         showProvinceTooltip(code, ev);
       });
@@ -628,11 +630,8 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal": "https://muasamcong.mof.gov.vn
         moveTooltip(ev);
       });
       pathEl.addEventListener("mouseleave", function () {
-        if (selectedProvinceCode && selectedProvinceCode !== "ALL") {
-          const selEl = document.getElementById("vnProv_" + selectedProvinceCode);
-          if (selEl && selEl.parentNode === group) {
-            group.appendChild(selEl);
-          }
+        if (hoverOutlineEl) {
+          hoverOutlineEl.setAttribute("d", "");
         }
         hideTooltip();
       });
@@ -1119,10 +1118,23 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal": "https://muasamcong.mof.gov.vn
     const tooltip = document.getElementById("rtMapTooltip");
     if (!tooltip) return;
     const pad = 16;
+    const tipW = tooltip.offsetWidth || 270;
+    const tipH = tooltip.offsetHeight || 155;
     let left = ev.clientX + pad;
     let top = ev.clientY + pad;
-    if (left + 280 > window.innerWidth) left = ev.clientX - 280;
-    if (top + 170 > window.innerHeight) top = ev.clientY - 170;
+
+    const stageEl = ev.target && ev.target.closest ? ev.target.closest("#rtMapStage") : null;
+    if (stageEl) {
+      const rect = stageEl.getBoundingClientRect();
+      if (left + tipW + 12 > rect.right) left = ev.clientX - tipW - pad;
+      if (top + tipH + 12 > rect.bottom) top = ev.clientY - tipH - pad;
+      left = Math.max(rect.left + 12, Math.min(left, rect.right - tipW - 12));
+      top = Math.max(rect.top + 12, Math.min(top, rect.bottom - tipH - 12));
+    } else {
+      if (left + tipW + 12 > window.innerWidth) left = ev.clientX - tipW - pad;
+      if (top + tipH + 12 > window.innerHeight) top = ev.clientY - tipH - pad;
+    }
+
     tooltip.style.left = Math.max(8, left) + "px";
     tooltip.style.top = Math.max(8, top) + "px";
   }
@@ -1130,7 +1142,24 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal": "https://muasamcong.mof.gov.vn
   function hideTooltip() {
     const tooltip = document.getElementById("rtMapTooltip");
     if (tooltip) tooltip.classList.remove("visible");
+    const hoverOutlineEl = document.getElementById("rtHoverOutlinePath");
+    if (hoverOutlineEl) hoverOutlineEl.setAttribute("d", "");
   }
+
+  // Global guards so tooltip never gets stuck when scrolling or moving cursor off SVG paths
+  window.addEventListener("scroll", hideTooltip, { passive: true });
+  document.addEventListener(
+    "mousemove",
+    function (ev) {
+      const tooltip = document.getElementById("rtMapTooltip");
+      if (!tooltip || !tooltip.classList.contains("visible")) return;
+      const tEl = ev.target;
+      if (!tEl || typeof tEl.closest !== "function" || !tEl.closest("path.vn-prov, .pie-slice")) {
+        hideTooltip();
+      }
+    },
+    { passive: true }
+  );
 
   // Bottom-Left Floating Realtime Tender Toast
   function renderToastItem() {
@@ -1178,14 +1207,18 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal": "https://muasamcong.mof.gov.vn
     if (sel && sel.value !== selectedProvinceCode) {
       sel.value = selectedProvinceCode;
     }
-    const group = document.getElementById("rtVietnamPathsGroup");
     document.querySelectorAll("#rtVietnamPathsGroup path.vn-prov").forEach(function (el) {
       const isAct = el.getAttribute("data-prov-code") === selectedProvinceCode;
       el.classList.toggle("active-prov", isAct);
-      if (isAct && group && el.parentNode === group) {
-        group.appendChild(el);
-      }
     });
+    const activeOutlineEl = document.getElementById("rtActiveOutlinePath");
+    if (activeOutlineEl) {
+      const dStr =
+        selectedProvinceCode && selectedProvinceCode !== "ALL" && window.HUDU_VN_MAP_SHAPES && window.HUDU_VN_MAP_SHAPES[selectedProvinceCode]
+          ? window.HUDU_VN_MAP_SHAPES[selectedProvinceCode].d
+          : "";
+      activeOutlineEl.setAttribute("d", dStr);
+    }
     if (currentData) {
       renderChart2SelectedProvince(currentData);
     }
