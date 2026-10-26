@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HUDU (huduvn.com) — Hệ Thống Săn Thầu Thông Minh &amp; Quản Trị Phòng Khám CFMS/QMS</title>
-  <meta name="description" content="HUDU (huduvn.com) cung cấp Hệ thống Săn & So khớp Đấu thầu bằng Thuật toán Thông minh theo tiêu chí năng lực (Biên độ Sàn/Trần, Chấm điểm 0–10) và Hệ thống Nhận diện Khuôn mặt & Lấy đơn CFMS/QMS cho Bệnh viện, Phòng khám." />
+  <title>HUDU (huduvn.com) — Phần Mềm Đấu Thầu Thông Minh &amp; Quản Lý Phòng Khám Tự Động</title>
+  <meta name="description" content="HUDU (huduvn.com) cung cấp Phần mềm tìm kiếm, chấm điểm và chọn lọc gói thầu tự động theo đúng tầm vốn, năng lực nhà thầu và Hệ thống nhận diện khuôn mặt, lấy số khám tự động cho Bệnh viện, Phòng khám." />
   <link rel="canonical" href="https://huduvn.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://huduvn.com/" />
-  <meta property="og:title" content="HUDU — Hệ Sinh Thái Săn Thầu Thông Minh &amp; Quản Trị Phòng Khám CFMS/QMS" />
-  <meta property="og:description" content="Nền tảng thuật toán thông minh phân tích tiêu chí năng lực nhà thầu, chấm điểm độ khớp 0–10 (Hạn mức Sàn–Trần) và Hệ thống CFMS/QMS nhận diện khuôn mặt lấy đơn bệnh nhân." />
+  <meta property="og:title" content="HUDU — Phần Mềm Đấu Thầu Thông Minh &amp; Quản Lý Phòng Khám Tự Động" />
+  <meta property="og:description" content="Tự động đọc tóm tắt hồ sơ mời thầu, chấm điểm độ phù hợp (0–10 điểm) theo đúng tầm vốn doanh nghiệp và Hệ thống nhận diện khuôn mặt, gọi số tự động cho Phòng khám." />
   <meta property="og:image" content="https://huduvn.com/images/hudu-logo-dark.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/svg+xml" href="svg/hudu-favicon.svg" />
@@ -34,8 +34,8 @@
       --bg-navy-deep: #0B1829;
 
       --text-main: #0F233A;
-      --text-body: #334155;
-      --text-muted: #5A6B82;
+      --text-body: #1E293B;
+      --text-muted: #475569;
 
       --blue-primary: #0066CC;
       --blue-hover: #0052A3;
@@ -69,9 +69,9 @@
       --bg-ice: #183456;
       --bg-ice-strong: #1E416B;
 
-      --text-main: #F1F5F9;
-      --text-body: #CBD5E1;
-      --text-muted: #94A3B8;
+      --text-main: #F8FAFC;
+      --text-body: #E2E8F0;
+      --text-muted: #CBD5E1;
 
       --blue-primary: #38BDF8;
       --blue-hover: #7DD3FC;
@@ -95,6 +95,7 @@
     }
 
     html {
+      font-size: 17px;
       scroll-behavior: smooth;
       overflow-x: hidden;
       max-width: 100%;
@@ -105,7 +106,7 @@
       background: var(--bg-page-grad);
       background-color: var(--bg-page);
       color: var(--text-main);
-      line-height: 1.6;
+      line-height: 1.65;
       overflow-x: hidden;
       max-width: 100%;
       width: 100%;
@@ -119,7 +120,7 @@
 
     .container {
       width: 100%;
-      max-width: 1220px;
+      max-width: 1240px;
       margin: 0 auto;
       padding: 0 24px;
       position: relative;
@@ -173,7 +174,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      height: 72px;
+      height: 74px;
       background: var(--bg-surface-glass);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
@@ -206,7 +207,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 26px;
+      gap: 24px;
       list-style: none;
       flex-wrap: nowrap;
     }
@@ -216,7 +217,7 @@
     }
 
     .nav-links a {
-      font-size: 0.9rem;
+      font-size: 0.96rem;
       font-weight: 600;
       color: var(--text-body);
       white-space: nowrap;
@@ -267,9 +268,9 @@
       border: 1px solid var(--border-light);
       box-shadow: var(--inset-highlight);
       border-radius: 99px;
-      height: 38px;
-      padding: 0 30px 0 14px;
-      font-size: 0.84rem;
+      height: 40px;
+      padding: 0 32px 0 14px;
+      font-size: 0.9rem;
       font-weight: 600;
       font-family: inherit;
       cursor: pointer;
@@ -291,8 +292,8 @@
     }
 
     .icon-btn {
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       border: 1px solid var(--border-light);
       background: var(--bg-surface);
@@ -317,10 +318,10 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      height: 38px;
-      padding: 0 18px;
+      height: 40px;
+      padding: 0 20px;
       border-radius: 99px;
-      font-size: 0.88rem;
+      font-size: 0.94rem;
       font-weight: 600;
       white-space: nowrap;
       cursor: pointer;
@@ -356,9 +357,9 @@
     }
 
     .btn-lg {
-      height: 48px;
+      height: 50px;
       padding: 0 26px;
-      font-size: 0.95rem;
+      font-size: 1.0rem;
     }
 
     /* ==========================================================================
@@ -514,11 +515,11 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 6px 14px;
+      padding: 7px 16px;
       border-radius: 99px;
       background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 100%);
       color: #0052A3;
-      font-size: 0.79rem;
+      font-size: 0.86rem;
       font-weight: 700;
       border: 1px solid var(--border-subtle);
       box-shadow: var(--shadow-sm);
@@ -545,10 +546,10 @@
     }
 
     .hero h1 {
-      font-size: 2.85rem;
-      line-height: 1.18;
+      font-size: 2.75rem;
+      line-height: 1.22;
       font-weight: 800;
-      letter-spacing: -0.028em;
+      letter-spacing: -0.025em;
       margin-bottom: 20px;
     }
 
@@ -565,10 +566,11 @@
     }
 
     .hero-desc {
-      font-size: 1.03rem;
+      font-size: 1.12rem;
+      line-height: 1.68;
       color: var(--text-body);
       margin-bottom: 30px;
-      max-width: 590px;
+      max-width: 610px;
     }
 
     .hero-cta-group {
@@ -591,12 +593,12 @@
       border: 1px solid var(--border-light);
       box-shadow: var(--shadow-sm);
       border-radius: var(--radius-md);
-      padding: 13px 15px;
+      padding: 14px 16px;
     }
 
     .metric-item strong {
       display: block;
-      font-size: 1.36rem;
+      font-size: 1.4rem;
       font-weight: 800;
       background: linear-gradient(90deg, #0052A3, #475569);
       -webkit-background-clip: text;
@@ -611,11 +613,11 @@
     }
 
     .metric-item span {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      line-height: 1.35;
+      font-size: 0.9rem;
+      color: var(--text-body);
+      line-height: 1.45;
       display: block;
-      margin-top: 3px;
+      margin-top: 4px;
     }
 
     /* Hero Right Command Center */
@@ -633,6 +635,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 14px;
       padding-bottom: 14px;
       margin-bottom: 16px;
       border-bottom: 1px solid var(--border-light);
@@ -640,7 +643,8 @@
 
     .window-dots {
       display: flex;
-      gap: 6px;
+      gap: 7px;
+      flex-shrink: 0;
     }
 
     .window-dots span {
@@ -661,22 +665,23 @@
     .showcase-url {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      background: var(--bg-subtle);
-      padding: 4px 12px;
+      gap: 8px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--blue-primary);
+      background: var(--bg-ice);
+      border: 1px solid var(--border-light);
+      padding: 6px 14px;
       border-radius: 99px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: inherit;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
     }
 
     .live-indicator {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #0066CC;
-      animation: pulseDot 2s infinite;
+      display: none;
     }
 
     .mini-product-stack {
@@ -731,7 +736,7 @@
       align-items: flex-start;
       gap: 12px;
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 1.02rem;
     }
 
     .icon-badge {
@@ -752,9 +757,9 @@
     }
 
     .status-pill {
-      font-size: 0.72rem;
+      font-size: 0.82rem;
       font-weight: 700;
-      padding: 4px 10px;
+      padding: 5px 12px;
       border-radius: 99px;
       background: var(--bg-ice);
       color: var(--blue-primary);
@@ -770,9 +775,9 @@
     }
 
     .mini-stat-chip {
-      font-size: 0.75rem;
+      font-size: 0.85rem;
       font-weight: 600;
-      padding: 4px 10px;
+      padding: 5px 11px;
       border-radius: 6px;
       background: var(--bg-surface);
       border: 1px solid var(--border-light);
@@ -831,11 +836,11 @@
 
     .partner-marquee-label {
       text-align: center;
-      font-size: 0.72rem;
+      font-size: 0.82rem;
       font-weight: 700;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #94A3B8;
+      color: #CBD5E1;
       margin-bottom: 18px;
     }
 
@@ -900,12 +905,12 @@
 
     .section-header {
       text-align: center;
-      max-width: 760px;
+      max-width: 780px;
       margin: 0 auto 54px;
     }
 
     .section-header h2 {
-      font-size: 2.2rem;
+      font-size: 2.25rem;
       font-weight: 800;
       letter-spacing: -0.022em;
       margin-bottom: 12px;
@@ -913,7 +918,8 @@
 
     .section-header p {
       color: var(--text-body);
-      font-size: 1.02rem;
+      font-size: 1.1rem;
+      line-height: 1.62;
     }
 
     .product-split {
@@ -961,25 +967,26 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 0.75rem;
+      font-size: 0.84rem;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.05em;
       color: var(--blue-primary);
       margin-bottom: 10px;
     }
 
     .solution-card h3 {
-      font-size: 1.52rem;
+      font-size: 1.56rem;
       font-weight: 800;
       margin-bottom: 12px;
-      line-height: 1.28;
+      line-height: 1.3;
     }
 
     .solution-card > div > p {
       color: var(--text-body);
       margin-bottom: 20px;
-      font-size: 0.94rem;
+      font-size: 1.02rem;
+      line-height: 1.62;
     }
 
     .pipeline-flow {
@@ -995,7 +1002,7 @@
 
     .pipe-step {
       text-align: center;
-      padding: 7px 4px;
+      padding: 9px 6px;
       border-radius: 8px;
       background: var(--bg-surface);
       border: 1px solid var(--border-light);
@@ -1004,14 +1011,14 @@
 
     .pipe-step strong {
       display: block;
-      font-size: 0.72rem;
+      font-size: 0.84rem;
       color: var(--blue-primary);
       font-weight: 800;
     }
 
     .pipe-step span {
-      font-size: 0.7rem;
-      color: var(--text-muted);
+      font-size: 0.82rem;
+      color: var(--text-body);
       font-weight: 600;
     }
 
@@ -1023,12 +1030,12 @@
     }
 
     .v-badge {
-      padding: 5px 11px;
+      padding: 6px 12px;
       border-radius: 6px;
       background: var(--bg-ice);
       border: 1px solid var(--border-light);
       color: var(--text-main);
-      font-size: 0.78rem;
+      font-size: 0.88rem;
       font-weight: 600;
     }
 
@@ -1036,21 +1043,22 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 13px;
+      gap: 14px;
       margin-bottom: 28px;
     }
 
     .feature-list li {
       display: flex;
       align-items: flex-start;
-      gap: 11px;
-      font-size: 0.91rem;
+      gap: 12px;
+      font-size: 0.98rem;
+      line-height: 1.58;
       color: var(--text-body);
     }
 
     .check-icon {
-      width: 20px;
-      height: 20px;
+      width: 22px;
+      height: 22px;
       border-radius: 50%;
       background: var(--bg-ice-strong);
       color: var(--blue-primary);
@@ -1060,7 +1068,7 @@
       flex-shrink: 0;
       margin-top: 3px;
       font-weight: 800;
-      font-size: 0.72rem;
+      font-size: 0.78rem;
     }
 
     /* ==========================================================================
@@ -1086,12 +1094,12 @@
     .sandbox-tab-btn {
       flex: 1;
       min-width: 260px;
-      padding: 14px 18px;
+      padding: 15px 18px;
       border-radius: var(--radius-md);
       border: 1px solid transparent;
       background: transparent;
       color: var(--text-muted);
-      font-size: 0.92rem;
+      font-size: 0.98rem;
       font-weight: 700;
       cursor: pointer;
       display: flex;
@@ -1139,13 +1147,13 @@
 
     .search-box input {
       width: 100%;
-      height: 40px;
-      padding: 0 16px;
+      height: 44px;
+      padding: 0 18px;
       border-radius: 99px;
       border: 1px solid var(--border-subtle);
       background: var(--bg-surface-solid);
       color: var(--text-main);
-      font-size: 0.88rem;
+      font-size: 0.95rem;
       font-family: inherit;
       outline: none;
     }
@@ -1161,13 +1169,13 @@
     }
 
     .filter-pill {
-      height: 36px;
-      padding: 0 14px;
+      height: 40px;
+      padding: 0 16px;
       border-radius: 99px;
       border: 1px solid var(--border-light);
       background: var(--bg-surface-solid);
       color: var(--text-body);
-      font-size: 0.82rem;
+      font-size: 0.9rem;
       font-weight: 600;
       cursor: pointer;
       font-family: inherit;
@@ -1193,23 +1201,23 @@
       width: 100%;
       border-collapse: collapse;
       text-align: left;
-      font-size: 0.88rem;
+      font-size: 0.95rem;
     }
 
     .data-table th {
-      padding: 13px 16px;
+      padding: 14px 16px;
       background: var(--bg-subtle);
-      color: var(--text-muted);
+      color: var(--text-body);
       font-weight: 700;
-      font-size: 0.75rem;
+      font-size: 0.84rem;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.03em;
       border-bottom: 1px solid var(--border-light);
       white-space: nowrap;
     }
 
     .data-table td {
-      padding: 15px 16px;
+      padding: 16px;
       border-bottom: 1px solid var(--border-light);
       color: var(--text-body);
       vertical-align: middle;
@@ -1227,13 +1235,13 @@
       display: inline-flex;
       align-items: center;
       gap: 5px;
-      padding: 4px 10px;
+      padding: 5px 12px;
       border-radius: 99px;
       background: var(--bg-ice-strong);
       color: var(--blue-primary);
       border: 1px solid var(--border-light);
       font-weight: 700;
-      font-size: 0.78rem;
+      font-size: 0.85rem;
       white-space: nowrap;
     }
 
@@ -1258,18 +1266,18 @@
       border: 1px solid var(--border-light);
       box-shadow: var(--shadow-sm);
       border-radius: var(--radius-md);
-      padding: 14px 16px;
+      padding: 15px 16px;
     }
 
     .kpi-box span {
-      font-size: 0.78rem;
-      color: var(--text-muted);
+      font-size: 0.88rem;
+      color: var(--text-body);
       display: block;
       margin-bottom: 4px;
     }
 
     .kpi-box strong {
-      font-size: 1.32rem;
+      font-size: 1.4rem;
       font-weight: 800;
       color: var(--blue-primary);
     }
@@ -1288,13 +1296,13 @@
 
     .quick-add-bar input,
     .quick-add-bar select {
-      height: 38px;
-      padding: 0 12px;
+      height: 42px;
+      padding: 0 14px;
       border-radius: 8px;
       border: 1px solid var(--border-subtle);
       background: var(--bg-surface-solid);
       color: var(--text-main);
-      font-size: 0.86rem;
+      font-size: 0.94rem;
       font-family: inherit;
       flex: 1;
       min-width: 170px;
@@ -1325,8 +1333,8 @@
     }
 
     .benefit-icon {
-      width: 46px;
-      height: 46px;
+      width: 48px;
+      height: 48px;
       border-radius: 12px;
       background: linear-gradient(135deg, #FFFFFF, #DCE4EE);
       color: var(--blue-primary);
@@ -1343,13 +1351,14 @@
     }
 
     .benefit-card h3 {
-      font-size: 1.12rem;
+      font-size: 1.2rem;
       font-weight: 700;
-      margin-bottom: 8px;
+      margin-bottom: 9px;
     }
 
     .benefit-card p {
-      font-size: 0.9rem;
+      font-size: 0.98rem;
+      line-height: 1.6;
       color: var(--text-body);
     }
 
@@ -1402,9 +1411,9 @@
       transform: translateX(-50%);
       background: linear-gradient(90deg, #0284C7 0%, #38BDF8 50%, #E2E8F0 100%);
       color: #071324;
-      font-size: 0.73rem;
+      font-size: 0.78rem;
       font-weight: 800;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
       padding: 5px 16px;
       border-radius: 99px;
@@ -1416,9 +1425,9 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 0.76rem;
+      font-size: 0.84rem;
       font-weight: 800;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--blue-primary);
       margin-bottom: 8px;
@@ -1429,7 +1438,7 @@
     }
 
     .pricing-card h3 {
-      font-size: 1.38rem;
+      font-size: 1.44rem;
       font-weight: 800;
       margin-bottom: 8px;
       letter-spacing: -0.02em;
@@ -1440,15 +1449,15 @@
     }
 
     .pricing-subtitle {
-      font-size: 0.86rem;
-      color: var(--text-muted);
+      font-size: 0.96rem;
+      color: var(--text-body);
       margin-bottom: 20px;
-      min-height: 40px;
-      line-height: 1.45;
+      min-height: 44px;
+      line-height: 1.5;
     }
 
     .pricing-card.featured .pricing-subtitle {
-      color: #CBD5E1;
+      color: #E2E8F0;
     }
 
     .pricing-price-box {
@@ -1472,7 +1481,7 @@
     }
 
     .price-amount {
-      font-size: 2.05rem;
+      font-size: 2.15rem;
       font-weight: 800;
       letter-spacing: -0.03em;
       color: var(--text-main);
@@ -1486,13 +1495,13 @@
     }
 
     .price-period {
-      font-size: 0.86rem;
+      font-size: 0.94rem;
       font-weight: 600;
       color: var(--text-muted);
     }
 
     .pricing-card.featured .price-period {
-      color: #94A3B8;
+      color: #CBD5E1;
     }
 
     .setup-fee-row {
@@ -1502,7 +1511,7 @@
       gap: 8px;
       padding-top: 8px;
       border-top: 1px dashed var(--border-light);
-      font-size: 0.82rem;
+      font-size: 0.9rem;
       font-weight: 600;
     }
 
@@ -1512,12 +1521,12 @@
 
     .setup-free-badge {
       display: inline-block;
-      padding: 2px 9px;
+      padding: 3px 10px;
       border-radius: 99px;
       background: rgba(56, 189, 248, 0.18);
       color: #7DD3FC;
       border: 1px solid rgba(125, 211, 252, 0.45);
-      font-size: 0.75rem;
+      font-size: 0.84rem;
       font-weight: 700;
     }
 
@@ -1525,12 +1534,12 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      padding: 11px 14px;
+      padding: 12px 14px;
       border-radius: 10px;
       background: var(--bg-ice);
       border: 1px solid var(--border-ice);
       color: var(--blue-hover);
-      font-size: 0.83rem;
+      font-size: 0.92rem;
       font-weight: 700;
       margin-bottom: 18px;
     }
@@ -1551,15 +1560,15 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 11px;
+      gap: 13px;
       margin-bottom: 24px;
-      font-size: 0.87rem;
-      line-height: 1.48;
+      font-size: 0.96rem;
+      line-height: 1.56;
       color: var(--text-body);
     }
 
     .pricing-card.featured .pricing-feature-list {
-      color: #E2E8F0;
+      color: #F1F5F9;
     }
 
     .pricing-feature-list li {
@@ -1569,15 +1578,15 @@
     }
 
     .pricing-check {
-      width: 19px;
-      height: 19px;
+      width: 21px;
+      height: 21px;
       border-radius: 50%;
       background: rgba(0, 102, 204, 0.12);
       color: var(--blue-primary);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.72rem;
+      font-size: 0.78rem;
       font-weight: 800;
       flex-shrink: 0;
       margin-top: 2px;
@@ -1604,14 +1613,14 @@
       display: flex;
       align-items: flex-start;
       gap: 12px;
-      font-size: 0.84rem;
+      font-size: 0.92rem;
       color: var(--text-body);
     }
 
     .hw-item strong {
       display: block;
       color: var(--text-main);
-      font-size: 0.9rem;
+      font-size: 0.98rem;
       margin-bottom: 3px;
     }
 
@@ -1632,7 +1641,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-size: 0.78rem;
+      font-size: 0.88rem;
       font-weight: 700;
       color: var(--blue-primary);
     }
@@ -1660,20 +1669,20 @@
       justify-content: space-between;
       gap: 10px;
       margin-bottom: 12px;
-      font-size: 0.75rem;
-      color: #94A3B8;
+      font-size: 0.85rem;
+      color: #CBD5E1;
     }
     .product-visual-badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 4px 10px;
+      padding: 5px 12px;
       border-radius: 999px;
       background: rgba(56, 189, 248, 0.18);
       border: 1px solid rgba(56, 189, 248, 0.4);
       color: #7DD3FC;
       font-weight: 700;
-      font-size: 0.72rem;
+      font-size: 0.82rem;
     }
     .product-visual-grid {
       display: grid;
@@ -1685,18 +1694,18 @@
       background: rgba(15, 23, 42, 0.75);
       border: 1px solid rgba(148, 163, 184, 0.22);
       border-radius: 8px;
-      padding: 10px;
+      padding: 11px 12px;
     }
     .product-visual-cell strong {
       display: block;
-      font-size: 0.82rem;
+      font-size: 0.94rem;
       color: #38BDF8;
-      margin-bottom: 2px;
+      margin-bottom: 3px;
     }
     .product-visual-cell span {
-      font-size: 0.72rem;
-      color: #CBD5E1;
-      line-height: 1.35;
+      font-size: 0.84rem;
+      color: #E2E8F0;
+      line-height: 1.4;
       display: block;
     }
     .product-visual-footer {
@@ -1705,7 +1714,7 @@
       justify-content: space-between;
       padding-top: 10px;
       border-top: 1px solid rgba(148, 163, 184, 0.2);
-      font-size: 0.8rem;
+      font-size: 0.88rem;
       font-weight: 700;
       color: #7DD3FC;
     }
@@ -1729,16 +1738,17 @@
     }
 
     .cta-box h2 {
-      font-size: 2rem;
+      font-size: 2.05rem;
       font-weight: 800;
       margin-bottom: 12px;
-      line-height: 1.25;
+      line-height: 1.28;
     }
 
     .cta-box p {
-      color: #CBD5E1;
+      color: #E2E8F0;
       margin-bottom: 22px;
-      font-size: 0.96rem;
+      font-size: 1.05rem;
+      line-height: 1.6;
     }
 
     .contact-form {
@@ -1756,39 +1766,39 @@
     }
 
     .contact-form h3 {
-      font-size: 1.12rem;
+      font-size: 1.22rem;
       font-weight: 700;
       margin-bottom: 2px;
     }
 
     .form-group label {
       display: block;
-      font-size: 0.78rem;
+      font-size: 0.9rem;
       font-weight: 600;
-      color: #475569;
-      margin-bottom: 4px;
+      color: #1E293B;
+      margin-bottom: 5px;
     }
 
     .form-group input,
     .form-group select {
       width: 100%;
-      height: 40px;
-      padding: 0 12px;
+      height: 44px;
+      padding: 0 14px;
       border-radius: 8px;
       border: 1px solid #CBD5E1;
       background: #FFFFFF;
-      font-size: 0.88rem;
+      font-size: 0.95rem;
       font-family: inherit;
       color: #0F233A;
     }
 
     .form-toast {
       display: none;
-      padding: 10px 12px;
+      padding: 12px 14px;
       border-radius: 8px;
       background: #E0F2FE;
       color: #0052A3;
-      font-size: 0.84rem;
+      font-size: 0.92rem;
       font-weight: 600;
       text-align: center;
     }
@@ -1798,7 +1808,7 @@
        ========================================================================== */
     .footer {
       background: var(--bg-navy-deep);
-      color: #94A3B8;
+      color: #CBD5E1;
       padding: 56px 0 32px;
       border-top: 1px solid #1E3A5F;
     }
@@ -1819,8 +1829,8 @@
     }
 
     .footer-col h4 {
-      color: #F1F5F9;
-      font-size: 0.9rem;
+      color: #F8FAFC;
+      font-size: 1.0rem;
       font-weight: 700;
       margin-bottom: 12px;
     }
@@ -1829,8 +1839,8 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 9px;
-      font-size: 0.86rem;
+      gap: 10px;
+      font-size: 0.94rem;
     }
 
     .footer-col a:hover {
@@ -1844,7 +1854,7 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 12px;
-      font-size: 0.82rem;
+      font-size: 0.9rem;
     }
 
     .hero-grid > *,
@@ -2322,10 +2332,10 @@
 
       <ul class="nav-links">
         <li><a href="#solutions" data-i18n="nav_solutions">Giải pháp</a></li>
-        <li><a href="dauthau/" data-i18n="nav_tender">Săn Thầu Thông Minh (/dauthau)</a></li>
-        <li><a href="cfms/" data-i18n="nav_cfms">Phòng Khám (/cfms)</a></li>
-        <li><a href="#live-demo" data-i18n="nav_demo">Trải nghiệm Demo</a></li>
-        <li><a href="#architecture" data-i18n="nav_arch">Công nghệ</a></li>
+        <li><a href="dauthau/" data-i18n="nav_tender">Phần Mềm Đấu Thầu (/dauthau)</a></li>
+        <li><a href="cfms/" data-i18n="nav_cfms">Phần Mềm Phòng Khám (/cfms)</a></li>
+        <li><a href="#live-demo" data-i18n="nav_demo">Xem Dùng Thử</a></li>
+        <li><a href="#architecture" data-i18n="nav_arch">Ưu điểm</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -2346,7 +2356,7 @@
           <svg id="themeIconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         </button>
 
-        <a href="#contact" class="btn btn-primary" data-i18n="nav_cta">Đăng ký Dùng thử</a>
+        <a href="#contact" class="btn btn-primary" data-i18n="nav_cta">Đăng Ký Tư Vấn</a>
       </div>
     </div>
   </header>
@@ -2362,36 +2372,36 @@
       <div>
         <div class="pill-tag">
           <span class="pill-dot"></span>
-          <span data-i18n="hero_badge">HUDU Enterprise Technology · huduvn.com</span>
+          <span data-i18n="hero_badge">Giải Pháp Phần Mềm HUDU · huduvn.com</span>
         </div>
         <h1 data-i18n="hero_title">
-          Nền tảng Phần mềm <span class="highlight">Săn Thầu Thông Minh</span> &amp; Quản Trị Tiếp Nhận Hiệu Quả
+          Phần Mềm <span class="highlight">Tìm &amp; Chọn Lọc Gói Thầu</span> Thông Minh Và Quản Lý Phòng Khám Tự Động
         </h1>
         <p class="hero-desc" data-i18n="hero_desc">
-          Ứng dụng <strong>thuật toán chuyên sâu bóc tách Hồ sơ mời thầu &amp; đối chiếu tiêu chí năng lực bảo mật</strong>, chấm điểm độ khớp 0–10 và lọc gói thầu theo biên độ Sàn/Trần; đồng thời số hóa <strong>Hệ thống Nhận diện Khuôn mặt &amp; Lấy đơn CFMS/QMS</strong> cho Bệnh viện, Phòng khám và Cơ sở Đào tạo.
+          Giúp doanh nghiệp <strong>tự động đọc tóm tắt hồ sơ mời thầu, chấm điểm độ phù hợp (0–10 điểm) và chọn lọc gói thầu vừa đúng tầm vốn, năng lực</strong>. Đồng thời cung cấp <strong>hệ thống nhận diện khuôn mặt, lấy số khám và gọi loa tự động</strong> cho Bệnh viện, Phòng khám.
         </p>
 
         <div class="hero-cta-group">
           <a href="#live-demo" class="btn btn-primary btn-lg" data-i18n="hero_btn_demo">
-            Trải nghiệm Demo Trực tiếp &darr;
+            Xem Giao Diện Dùng Thử &darr;
           </a>
           <a href="#solutions" class="btn btn-outline btn-lg" data-i18n="hero_btn_explore">
-            Khám phá 2 Hệ thống
+            Tìm Hiểu 2 Sản Phẩm
           </a>
         </div>
 
         <div class="hero-metrics">
           <div class="metric-item">
             <strong data-i18n="metric_1_val">Tự động</strong>
-            <span data-i18n="metric_1">Thuật toán chấm điểm khớp thầu &amp; Nhận diện tiếp nhận bệnh nhân</span>
+            <span data-i18n="metric_1">Chấm điểm gói thầu phù hợp &amp; Nhận diện bệnh nhân lấy số nhanh</span>
           </div>
           <div class="metric-item">
             <strong data-i18n="metric_2_val">Chính xác</strong>
-            <span data-i18n="metric_2">Gộp bản sửa đổi gói thầu &amp; so khớp biên độ Sàn/Trần</span>
+            <span data-i18n="metric_2">Chọn lọc gói thầu đúng tầm vốn &amp; Tự động gộp tin sửa đổi, gia hạn</span>
           </div>
           <div class="metric-item">
             <strong>100%</strong>
-            <span data-i18n="metric_3">Bảo mật nội bộ &amp; Vận hành ổn định tại Cơ sở</span>
+            <span data-i18n="metric_3">Bảo mật thông tin doanh nghiệp &amp; Vận hành ổn định tại Cơ sở</span>
           </div>
         </div>
       </div>
@@ -2403,10 +2413,9 @@
             <span></span><span></span><span></span>
           </div>
           <div class="showcase-url">
-            <span class="live-indicator"></span>
-            <span data-i18n="showcase_url">huduvn.com · Hệ sinh thái Phần mềm HUDU</span>
+            <span data-i18n="showcase_url">huduvn.com · Hệ Sinh Thái Phần Mềm HUDU</span>
           </div>
-          <img src="svg/hudu-favicon.svg" alt="HUDU" style="width: 24px; height: 24px;" />
+          <img src="svg/hudu-favicon.svg" alt="HUDU" style="width: 24px; height: 24px; flex-shrink: 0;" />
         </div>
 
         <div class="mini-product-stack">
@@ -2417,17 +2426,17 @@
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
                 </span>
                 <div>
-                  <div data-i18n="card1_title">HUDU DauThau — Săn &amp; Chấm Điểm Khớp Thầu Thông Minh</div>
-                  <div style="font-size: 0.78rem; font-weight: 500; color: var(--text-muted);" data-i18n="card1_sub">Thuật toán Bóc tách HSMT, Đối chiếu Năng lực &amp; So khớp Sàn/Trần</div>
+                  <div data-i18n="card1_title">HUDU DauThau — Tìm &amp; Chọn Lọc Gói Thầu Tự Động</div>
+                  <div style="font-size: 0.88rem; font-weight: 500; color: var(--text-body); margin-top: 2px;" data-i18n="card1_sub">Đọc tóm tắt hồ sơ mời thầu, chấm điểm phù hợp &amp; chọn gói đúng tầm vốn</div>
                 </div>
               </div>
-              <span class="status-pill" data-i18n="card1_pill">1 – 5 Accounts</span>
+              <span class="status-pill" data-i18n="card1_pill">01 – 05 Tài khoản</span>
             </div>
             <div class="stream-bar"></div>
             <div class="mini-stats-row">
-              <span class="mini-stat-chip" data-i18n="card1_chip1">Chấm điểm Đa chiều (0–10đ)</span>
-              <span class="mini-stat-chip" data-i18n="card1_chip2">Phân loại chuyên ngành &amp; Chương V</span>
-              <span class="mini-stat-chip" data-i18n="card1_chip3">App Mobile / Zalo / Email</span>
+              <span class="mini-stat-chip" data-i18n="card1_chip1">Chấm điểm phù hợp (0–10đ)</span>
+              <span class="mini-stat-chip" data-i18n="card1_chip2">Chọn đúng ngành &amp; tầm vốn</span>
+              <span class="mini-stat-chip" data-i18n="card1_chip3">Báo qua Zalo / Điện thoại</span>
             </div>
             <div class="mini-card-cta-bar">
               <span data-i18n="mini_cta_left">Chuyên trang sản phẩm</span>
@@ -2442,11 +2451,11 @@
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                 </span>
                 <div>
-                  <div data-i18n="card2_title">HUDU CFMS / QMS — Nhận Diện &amp; Lấy Đơn Tiếp Nhận</div>
-                  <div style="font-size: 0.78rem; font-weight: 500; color: var(--text-muted);" data-i18n="card2_sub">Nhận diện khuôn mặt, người nhà lấy số giùm &amp; quét CCCD gắn chip</div>
+                  <div data-i18n="card2_title">HUDU CFMS — Tiếp Nhận &amp; Gọi Số Phòng Khám Tự Động</div>
+                  <div style="font-size: 0.88rem; font-weight: 500; color: var(--text-body); margin-top: 2px;" data-i18n="card2_sub">Nhận diện khuôn mặt, người nhà lấy số giùm &amp; quét CCCD gắn chip</div>
                 </div>
               </div>
-              <span class="status-pill" data-i18n="card2_pill">5K – 100K Hồ sơ</span>
+              <span class="status-pill" data-i18n="card2_pill">5.000 – 100.000 Hồ sơ</span>
             </div>
 
             <div class="biometric-live-row">
@@ -2454,9 +2463,9 @@
                 <div class="scan-laser"></div>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue-primary)" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
               </div>
-              <div style="font-size: 0.76rem; line-height: 1.35;">
+              <div style="font-size: 0.86rem; line-height: 1.4;">
                 <strong style="color: var(--text-main); display: block;" data-i18n="bio_row_title">Nhận diện Khuôn mặt &amp; Chống bấm trùng số</strong>
-                <span style="color: var(--text-muted);" data-i18n="bio_row_sub">Màn hình lấy số + Quét CCCD &rarr; Loa gọi số &amp; TV Phòng chờ</span>
+                <span style="color: var(--text-body);" data-i18n="bio_row_sub">Màn hình lấy số + Quét CCCD &rarr; Loa gọi số &amp; TV Phòng chờ</span>
               </div>
             </div>
 
@@ -2477,7 +2486,7 @@
 
   <!-- INFINITE CIRCULAR PARTNER LOGO MARQUEE (FPT SOFTWARE, BVTW HUẾ, MICROSOFT, AMAZON) -->
   <div class="partner-marquee-section">
-    <div class="partner-marquee-label" data-i18n="partner_label">STRATEGIC TECHNOLOGY &amp; HEALTHCARE ECOSYSTEM PARTNERS</div>
+    <div class="partner-marquee-label" data-i18n="partner_label">ĐỐI TÁC CÔNG NGHỆ, HẠ TẦNG SỐ &amp; ĐƠN VỊ Y TẾ TIÊU BIỂU</div>
     <div class="marquee-viewport">
       <div class="marquee-track">
         <!-- Group 1 (2 cycles of the 4 logos for wide screens) -->
@@ -2654,10 +2663,10 @@
   <section id="solutions" class="section section-alt">
     <div class="container">
       <div class="section-header">
-        <div class="pill-tag" data-i18n="sec1_tag">Hệ sinh thái Sản phẩm</div>
-        <h2 data-i18n="sec1_title">Hai Nền Tảng Cốt Lõi Của HUDU</h2>
+        <div class="pill-tag" data-i18n="sec1_tag">Hệ Sinh Thái Sản Phẩm</div>
+        <h2 data-i18n="sec1_title">Hai Phần Mềm Chủ Lực Của HUDU</h2>
         <p data-i18n="sec1_desc">
-          Giải quyết bài toán tự động hóa săn dự án thầu cho doanh nghiệp và số hóa toàn diện quy trình tiếp nhận bệnh nhân, học viên tại cơ sở.
+          Giúp doanh nghiệp tìm kiếm gói thầu vừa sức nhanh chóng và giúp bệnh viện, phòng khám tự động hóa quy trình tiếp đón bệnh nhân.
         </p>
       </div>
 
@@ -2668,17 +2677,17 @@
             <!-- Clickable Visual Banner for Product 1 -->
             <a href="dauthau/" class="product-visual-banner">
               <div class="product-visual-top">
-                <span><strong>HUDU DAUTHAU SYSTEM</strong> · <code>huduvn.com/dauthau</code></span>
+                <span><strong>PHẦN MỀM ĐẤU THẦU HUDU</strong> · <code>huduvn.com/dauthau</code></span>
                 <span class="product-visual-badge" data-i18n="vis_badge">Xem Chi Tiết &amp; Bảng Giá &rarr;</span>
               </div>
               <div class="product-visual-grid">
                 <div class="product-visual-cell">
-                  <strong data-i18n="p1_v1_val">1 – 5 Accounts</strong>
-                  <span data-i18n="p1_v1_sub">1 – 2 Mảng Lĩnh Vực Năng Lực</span>
+                  <strong data-i18n="p1_v1_val">01 – 05 Tài khoản</strong>
+                  <span data-i18n="p1_v1_sub">01 – 02 Lĩnh vực ngành nghề</span>
                 </div>
                 <div class="product-visual-cell">
-                  <strong>0.0 – 10.0</strong>
-                  <span data-i18n="p1_v2_sub">Thuật toán Chấm điểm Khớp Thầu</span>
+                  <strong>0 – 10 Điểm</strong>
+                  <span data-i18n="p1_v2_sub">Chấm điểm gói thầu phù hợp</span>
                 </div>
                 <div class="product-visual-cell">
                   <strong data-i18n="p1_v3_val">499k – 899k/tháng</strong>
@@ -2686,57 +2695,57 @@
                 </div>
               </div>
               <div class="product-visual-footer">
-                <span data-i18n="p1_v_foot_l">Bấm vào đây để mở Chuyên trang &amp; Bảng giá Đấu thầu Thông minh</span>
-                <span data-i18n="p1_v_foot_r">Mở <code>/dauthau</code> &rarr;</span>
+                <span data-i18n="p1_v_foot_l">Bấm vào đây để xem Chi tiết &amp; Bảng giá Phần mềm Đấu thầu</span>
+                <span data-i18n="p1_v_foot_r">Xem <code>/dauthau</code> &rarr;</span>
               </div>
             </a>
 
-            <div class="solution-tag" data-i18n="p1_tag">SẢN PHẨM 01 · HỆ THỐNG ĐẤU THẦU THÔNG MINH</div>
-            <h3><a href="dauthau/" data-i18n="p1_title">Hệ Thống Phân Tích Năng Lực &amp; Săn Thầu Thông Minh Hiệu Quả</a></h3>
+            <div class="solution-tag" data-i18n="p1_tag">SẢN PHẨM 01 · PHẦN MỀM ĐẤU THẦU THÔNG MINH</div>
+            <h3><a href="dauthau/" data-i18n="p1_title">Tự Động Tìm Kiếm, Chấm Điểm &amp; Chọn Lọc Gói Thầu Phù Hợp</a></h3>
             <p data-i18n="p1_desc">
-              Chuẩn hóa tiêu chí năng lực nhà thầu bảo mật nội bộ, tự động gộp các bản thông báo sửa đổi/gia hạn, bóc tách E-HSMT (Chương III &amp; Chương V) bằng thuật toán chuyên sâu và chấm điểm độ khớp đa chiều 0–10 theo biên độ Sàn/Trần &amp; Khu vực ưu tiên.
+              Thiết lập tiêu chí năng lực và quy mô vốn hoàn toàn bảo mật nội bộ. Phần mềm tự động đọc tóm tắt hồ sơ mời thầu, gộp các bản tin sửa đổi và chấm điểm độ phù hợp (0–10 điểm) để báo ngay gói thầu khả thi nhất.
             </p>
 
             <div class="pipeline-flow">
-              <div class="pipe-step"><strong data-i18n="p1_s1_t">01. Tiêu chí NL</strong><span data-i18n="p1_s1_s">Thiết lập bảo mật</span></div>
-              <div class="pipe-step"><strong data-i18n="p1_s2_t">02. Chống trùng</strong><span data-i18n="p1_s2_s">Gộp bản sửa đổi</span></div>
-              <div class="pipe-step"><strong data-i18n="p1_s3_t">03. Thuật toán</strong><span data-i18n="p1_s3_s">Chương III &amp; Chương V</span></div>
-              <div class="pipe-step"><strong data-i18n="p1_s4_t">04. Chấm điểm</strong><span data-i18n="p1_s4_s">Đa chiều &amp; Khu vực</span></div>
+              <div class="pipe-step"><strong data-i18n="p1_s1_t">01. Năng lực</strong><span data-i18n="p1_s1_s">Cài đặt bảo mật</span></div>
+              <div class="pipe-step"><strong data-i18n="p1_s2_t">02. Gộp tin</strong><span data-i18n="p1_s2_s">Không trùng lặp</span></div>
+              <div class="pipe-step"><strong data-i18n="p1_s3_t">03. Đọc hồ sơ</strong><span data-i18n="p1_s3_s">Tóm tắt yêu cầu</span></div>
+              <div class="pipe-step"><strong data-i18n="p1_s4_t">04. Chấm điểm</strong><span data-i18n="p1_s4_s">Đúng tầm vốn</span></div>
             </div>
 
             <div class="vertical-badges">
-              <span class="v-badge" data-i18n="p1_b1">Gói Basic: 499k/tháng · 4tr9/năm (1 Account · 1 Mảng)</span>
-              <span class="v-badge" data-i18n="p1_b2">Gói Premium: 899k/tháng · 8tr9/năm (5 Accounts · 2 Mảng)</span>
-              <span class="v-badge" data-i18n="p1_b3">Chấm điểm Đa chiều (0.0 – 10.0đ)</span>
-              <span class="v-badge" data-i18n="p1_b4">Đầy đủ 100% tính năng hiện có</span>
+              <span class="v-badge" data-i18n="p1_b1">Gói Cơ Bản: 499k/tháng · 4tr9/năm (01 Tài khoản)</span>
+              <span class="v-badge" data-i18n="p1_b2">Gói Nâng Cao: 899k/tháng · 8tr9/năm (05 Tài khoản)</span>
+              <span class="v-badge" data-i18n="p1_b3">Chấm điểm phù hợp (0 – 10 điểm)</span>
+              <span class="v-badge" data-i18n="p1_b4">Đầy đủ 100% tính năng</span>
             </div>
 
             <ul class="feature-list">
               <li>
                 <span class="check-icon">&#10003;</span>
-                <div data-i18n="p1_f1"><strong>Thuật toán Phân tích Tiêu chí Năng lực 2 Tầng &amp; Chống trùng thông minh:</strong> Thiết lập và chuẩn hóa bộ lọc Sàn/Trần bảo mật nội bộ, tự động loại trừ các ngành không làm; hợp nhất các bản sửa đổi, gia hạn vào một hồ sơ duy nhất kèm link gốc.</div>
+                <div data-i18n="p1_f1"><strong>Chọn lọc gói thầu đúng tầm vốn &amp; bảo mật tuyệt đối:</strong> Chỉ nhận các gói thầu vừa sức tài chính, tự động loại bỏ mảng công việc không nhận làm và gộp gọn các lần sửa đổi, gia hạn.</div>
               </li>
               <li>
                 <span class="check-icon">&#10003;</span>
-                <div data-i18n="p1_f2"><strong>Phân loại chuyên ngành sâu &amp; Bóc tách PDF E-HSMT (Chương III &amp; Chương V):</strong> Tự động gắn nhãn lĩnh vực, loại hình, cấp công trình (Cấp I–IV), tiêu chuẩn đánh giá Chương III, thông số kỹ thuật Chương V và nhấn mạnh yêu cầu bắt buộc.</div>
+                <div data-i18n="p1_f2"><strong>Tự động đọc tóm tắt hồ sơ mời thầu:</strong> Nắm bắt nhanh yêu cầu kinh nghiệm, nhân sự chủ chốt, thiết bị thi công và các điều kiện bắt buộc mà không mất hàng giờ đọc thủ công.</div>
               </li>
               <li>
                 <span class="check-icon">&#10003;</span>
-                <div data-i18n="p1_f3"><strong>Chấm điểm Đa chiều (0–10đ), Sàn / Trần &amp; Ưu tiên Khu vực:</strong> Đánh giá Chuyên ngành, Tài chính, Dư địa năng lực, Quy mô kỹ thuật – Nhân sự – Thiết bị, Khu vực vùng miền &amp; Tỉnh/Thành trọng điểm, Nguồn vốn và Thời gian chuẩn bị.</div>
+                <div data-i18n="p1_f3"><strong>Chấm điểm độ phù hợp (0–10 điểm) &amp; Ưu tiên tỉnh/thành:</strong> Xếp hạng các gói thầu tại khu vực quen thuộc và đúng sở trường của doanh nghiệp lên đầu danh sách.</div>
               </li>
               <li>
                 <span class="check-icon">&#10003;</span>
-                <div data-i18n="p1_f4"><strong>Đa kênh Thông báo &amp; Quản trị Trạng thái Làm thầu:</strong> Đẩy tin tức thời qua Mobile App (iOS/Android), Zalo, SMS, Email và quản lý trạng thái (Đã xem, Quan tâm, Dự thầu, Bỏ qua) giữa các thành viên.</div>
+                <div data-i18n="p1_f4"><strong>Báo tin qua Zalo, Điện thoại &amp; Quản lý làm việc nhóm:</strong> Gửi thông báo tức thì và giúp Ban Giám đốc theo dõi tiến độ xem thầu, chuẩn bị hồ sơ của từng nhân viên.</div>
               </li>
             </ul>
           </div>
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
             <a href="dauthau/" class="btn btn-primary btn-lg" style="width: 100%; padding: 0 14px;" data-i18n="btn_prod_pricing">
-              Trang Sản Phẩm &amp; Bảng Giá &rarr;
+              Xem Chi Tiết &amp; Bảng Giá &rarr;
             </a>
             <a href="#live-demo" onclick="switchSandbox('tender')" class="btn btn-outline btn-lg" style="width: 100%; border-color: var(--blue-primary); color: var(--blue-primary); padding: 0 14px;" data-i18n="p1_cta">
-              Mở Bộ Lọc Demo &darr;
+              Dùng Thử Bên Dưới &darr;
             </a>
           </div>
         </div>
@@ -2747,7 +2756,7 @@
             <!-- Clickable Visual Banner for Product 2 -->
             <a href="cfms/" class="product-visual-banner">
               <div class="product-visual-top">
-                <span><strong>HUDU CFMS / QMS</strong> · <code>huduvn.com/cfms</code></span>
+                <span><strong>PHẦN MỀM PHÒNG KHÁM HUDU</strong> · <code>huduvn.com/cfms</code></span>
                 <span class="product-visual-badge" data-i18n="vis_badge">Xem Chi Tiết &amp; Bảng Giá &rarr;</span>
               </div>
               <div class="product-visual-grid">
@@ -2756,31 +2765,31 @@
                   <span data-i18n="p2_v1_sub">Hồ sơ Bệnh nhân &amp; Người nhà</span>
                 </div>
                 <div class="product-visual-cell">
-                  <strong data-i18n="p2_v2_val">3 Role Y Khoa</strong>
-                  <span data-i18n="p2_v2_sub">Admin · Bác sĩ · ĐD &amp; Cấp cứu</span>
+                  <strong data-i18n="p2_v2_val">3 Vai Trò Y Tế</strong>
+                  <span data-i18n="p2_v2_sub">Quản lý · Bác sĩ · Điều dưỡng</span>
                 </div>
                 <div class="product-visual-cell">
-                  <strong data-i18n="p2_v3_val">Custom Thương Hiệu</strong>
-                  <span data-i18n="p2_v3_sub">Logo riêng, Loa gọi số &amp; TV</span>
+                  <strong data-i18n="p2_v3_val">Thương Hiệu Riêng</strong>
+                  <span data-i18n="p2_v3_sub">Gắn Logo riêng, Loa gọi &amp; TV</span>
                 </div>
               </div>
               <div class="product-visual-footer">
-                <span data-i18n="p2_v_foot_l">Bấm vào đây để mở Chuyên trang &amp; Bảng giá Phòng khám</span>
-                <span data-i18n="p2_v_foot_r">Mở <code>/cfms</code> &rarr;</span>
+                <span data-i18n="p2_v_foot_l">Bấm vào đây để xem Chi tiết &amp; Bảng giá Phần mềm Phòng khám</span>
+                <span data-i18n="p2_v_foot_r">Xem <code>/cfms</code> &rarr;</span>
               </div>
             </a>
 
-            <div class="solution-tag" data-i18n="p2_tag">SẢN PHẨM 02 · CFMS / QMS / CSMS</div>
-            <h3><a href="cfms/" data-i18n="p2_title">Hệ Thống Nhận Diện Khuôn Mặt, Lấy Đơn &amp; Điều Phối Phòng Khám</a></h3>
+            <div class="solution-tag" data-i18n="p2_tag">SẢN PHẨM 02 · TIẾP NHẬN &amp; GỌI SỐ PHÒNG KHÁM</div>
+            <h3><a href="cfms/" data-i18n="p2_title">Hệ Thống Nhận Diện Khuôn Mặt, Lấy Số Khám &amp; Loa Gọi Tự Động</a></h3>
             <p data-i18n="p2_desc">
-              Giải pháp tiếp nhận đơn bệnh nhân tự động bằng nhận diện khuôn mặt, hỗ trợ người nhà lấy số khám giùm và quét CCCD gắn chip cho Bệnh viện, Phòng khám và Cơ sở đào tạo.
+              Giúp bệnh nhân hoặc người nhà lấy số thứ tự nhanh chóng qua nhận diện khuôn mặt và quét thẻ CCCD gắn chip, tự động đọc loa mời vào khám văn minh, trật tự.
             </p>
 
             <div class="pipeline-flow">
               <div class="pipe-step"><strong data-i18n="p2_s1_t">01. Tiếp nhận</strong><span data-i18n="p2_s1_s">Khuôn mặt / CCCD</span></div>
               <div class="pipe-step"><strong data-i18n="p2_s2_t">02. Người nhà</strong><span data-i18n="p2_s2_s">Lấy số khám giùm</span></div>
-              <div class="pipe-step"><strong data-i18n="p2_s3_t">03. Hàng đợi</strong><span data-i18n="p2_s3_s">Chống lấy trùng số</span></div>
-              <div class="pipe-step"><strong data-i18n="p2_s4_t">04. Điều phối</strong><span data-i18n="p2_s4_s">Loa gọi số &amp; TV</span></div>
+              <div class="pipe-step"><strong data-i18n="p2_s3_t">03. Hàng đợi</strong><span data-i18n="p2_s3_s">Chống bấm trùng</span></div>
+              <div class="pipe-step"><strong data-i18n="p2_s4_t">04. Gọi khám</strong><span data-i18n="p2_s4_s">Loa đọc &amp; TV</span></div>
             </div>
 
             <div class="vertical-badges">
@@ -2792,30 +2801,30 @@
             <ul class="feature-list">
               <li>
                 <span class="check-icon">&#10003;</span>
-                <div data-i18n="p2_f1"><strong>Nhận diện khuôn mặt &amp; Người nhà lấy số giùm:</strong> Lưu trữ tối đa <strong>5.000 hồ sơ (Gói Basic)</strong> và <strong>100.000 hồ sơ bệnh nhân/người nhà (Gói Premium)</strong>; hỗ trợ người thân lấy phiếu khám giùm và chống bấm trùng số tuyệt đối.</div>
+                <div data-i18n="p2_f1"><strong>Nhận diện khuôn mặt &amp; Người nhà lấy số giùm:</strong> Lưu trữ từ <strong>5.000 hồ sơ (Gói Cơ Bản)</strong> đến <strong>100.000 hồ sơ (Gói Nâng Cao)</strong>; hỗ trợ người thân lấy phiếu khám giùm và chống bấm trùng số.</div>
               </li>
               <li>
                 <span class="check-icon">&#10003;</span>
-                <div data-i18n="p2_f2"><strong>Đa phương thức tiếp nhận &amp; Quét CCCD gắn chip:</strong> Hỗ trợ quét nhanh mã QR CCCD qua Camera hoặc máy quét mã vạch cầm tay để tự động điền đầy đủ thông tin hành chính của bệnh nhân.</div>
+                <div data-i18n="p2_f2"><strong>Quét mã QR thẻ CCCD gắn chip:</strong> Quét nhanh qua camera hoặc máy quét cầm tay để tự động điền đầy đủ họ tên, năm sinh, địa chỉ của bệnh nhân.</div>
               </li>
               <li>
                 <span class="check-icon">&#10003;</span>
-                <div data-i18n="p2_f3"><strong>Bàn điều phối trực quan, Loa gọi số &amp; TV Phòng chờ:</strong> Tìm kiếm bệnh nhân nhanh chóng, tích hợp chuông báo và giọng đọc tự động mời bệnh nhân theo số thứ tự, họ tên, phòng khám/máy lọc kèm nút Gọi lại.</div>
+                <div data-i18n="p2_f3"><strong>Loa gọi số tự động &amp; Màn hình TV phòng chờ:</strong> Phát giọng đọc rõ ràng mời bệnh nhân theo số thứ tự, họ tên, phòng khám/máy lọc máu kèm nút Gọi lại tiện lợi.</div>
               </li>
               <li>
                 <span class="check-icon">&#10003;</span>
-                <div data-i18n="p2_f4"><strong>Phân quyền 3 Role (Admin · Bác sĩ · Điều dưỡng) &amp; Ưu tiên Cấp cứu:</strong> Hỗ trợ cấp số khám trực tiếp tại bàn và bật chế độ Ưu tiên Cấp cứu để chuyển bệnh nhân lên đầu danh sách chờ.</div>
+                <div data-i18n="p2_f4"><strong>Phân quyền 3 vai trò (Quản lý · Bác sĩ · Điều dưỡng) &amp; Ưu tiên Cấp cứu:</strong> Dễ dàng cấp số trực tiếp tại quầy và đưa bệnh nhân cấp cứu lên đầu danh sách chờ.</div>
               </li>
               <li>
                 <span class="check-icon">&#10003;</span>
-                <div data-i18n="p2_f5"><strong>Custom Thương hiệu riêng &amp; Miễn phí bảo trì:</strong> Thiết kế đồng bộ Logo, Tên Phòng khám trên toàn bộ màn hình lấy số, Bàn điều phối, TV Phòng chờ; hoạt động ổn định cả khi mất Internet.</div>
+                <div data-i18n="p2_f5"><strong>Thiết kế thương hiệu riêng &amp; Hoạt động cả khi mất mạng:</strong> Hiển thị Logo, Tên Phòng khám riêng trên mọi màn hình và vận hành liên tục không gián đoạn.</div>
               </li>
             </ul>
           </div>
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
             <a href="cfms/" class="btn btn-primary btn-lg" style="width: 100%; padding: 0 14px;" data-i18n="btn_prod_pricing">
-              Trang Sản Phẩm &amp; Bảng Giá &rarr;
+              Xem Chi Tiết &amp; Bảng Giá &rarr;
             </a>
             <a href="#live-demo" onclick="switchSandbox('csms')" class="btn btn-outline btn-lg" style="width: 100%; border-color: var(--blue-primary); color: var(--blue-primary); padding: 0 14px;" data-i18n="p2_cta">
               Mở Bàn Điều Phối &darr;
@@ -2830,10 +2839,10 @@
   <section id="live-demo" class="section">
     <div class="container">
       <div class="section-header">
-        <div class="pill-tag" data-i18n="demo_tag">Mô phỏng Tương tác</div>
-        <h2 data-i18n="demo_title">Trải Nghiệm Trực Tiếp Hai Phân Hệ</h2>
+        <div class="pill-tag" data-i18n="demo_tag">Trải Nghiệm Nhanh</div>
+        <h2 data-i18n="demo_title">Dùng Thử Trực Tiếp Hai Phần Mềm</h2>
         <p data-i18n="demo_desc">
-          Thử nghiệm lọc gói thầu theo biên độ năng lực Sàn/Trần hoặc tiếp nhận đơn bệnh nhân / học viên ngay trên giao diện mẫu.
+          Bấm chọn bên dưới để xem thử danh sách gói thầu đã chấm điểm hoặc thử tiếp nhận, cấp số bệnh nhân trên giao diện mẫu.
         </p>
       </div>
 
@@ -2841,11 +2850,11 @@
         <div class="sandbox-tabs">
           <button id="tabBtnTender" class="sandbox-tab-btn active" onclick="switchSandbox('tender')">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            <span data-i18n="tab_tender">1. Sàn Lọc &amp; Chấm Điểm Đấu Thầu Thông Minh (DauThau Matcher)</span>
+            <span data-i18n="tab_tender">1. Phần Mềm Chọn Lọc &amp; Chấm Điểm Gói Thầu (HUDU DauThau)</span>
           </button>
           <button id="tabBtnCsms" class="sandbox-tab-btn" onclick="switchSandbox('csms')">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
-            <span data-i18n="tab_csms">2. Bàn Điều Phối Tiếp Nhận Đơn (CFMS / CSMS)</span>
+            <span data-i18n="tab_csms">2. Bàn Tiếp Nhận &amp; Gọi Số Phòng Khám (HUDU CFMS)</span>
           </button>
         </div>
 
@@ -2853,15 +2862,15 @@
           <!-- PANEL 1: TENDER FILTERING -->
           <div id="panelTender" class="sandbox-panel active">
             <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 12px 16px; margin-bottom: 16px; border-radius: 10px; background: var(--bg-subtle); border: 1px solid var(--border-subtle);">
-              <span style="font-size: 0.88rem; font-weight: 600;" data-i18n="sb_p1_banner">Bạn đang xem bản mô phỏng nhanh của <strong>HUDU DauThau Platform</strong>.</span>
+              <span style="font-size: 0.94rem; font-weight: 600;" data-i18n="sb_p1_banner">Giao diện minh họa danh sách gói thầu đã được chấm điểm độ phù hợp của <strong>HUDU DauThau</strong>.</span>
               <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                <a href="dauthau/" class="btn btn-primary" style="height: 34px; font-size: 0.82rem;" data-i18n="sb_p1_btn">Mở Chuyên Trang &amp; Bảng Giá Đấu Thầu (/dauthau) &rarr;</a>
+                <a href="dauthau/" class="btn btn-primary" style="height: 38px; font-size: 0.88rem;" data-i18n="sb_p1_btn">Xem Chuyên Trang &amp; Bảng Giá Đấu Thầu (/dauthau) &rarr;</a>
               </div>
             </div>
 
             <div class="filter-toolbar">
               <div class="search-box">
-                <input type="text" id="tenderSearch" data-i18n-placeholder="tender_search_ph" placeholder="Tìm theo mã gói thầu, tên dự án, chủ đầu tư, thông số kỹ thuật..." oninput="renderTenders()" />
+                <input type="text" id="tenderSearch" data-i18n-placeholder="tender_search_ph" placeholder="Tìm theo mã gói thầu, tên dự án, chủ đầu tư, hạng mục..." oninput="renderTenders()" />
               </div>
               <div class="filter-pills" id="tenderCategoryPills">
                 <button class="filter-pill active" onclick="setTenderCat('ALL', this)" data-i18n="cat_all">Tất cả</button>
@@ -2877,11 +2886,11 @@
                 <thead>
                   <tr>
                     <th data-i18n="th_code">Mã Gói / Loại Hình</th>
-                    <th data-i18n="th_taxonomy">Phân Loại &amp; Kỹ Thuật Chương V</th>
+                    <th data-i18n="th_taxonomy">Tên Gói Thầu &amp; Hạng Mục Chính</th>
                     <th data-i18n="th_investor">Chủ Đầu Tư</th>
                     <th data-i18n="th_budget">Giá Gói / Tổng Mức ĐT</th>
                     <th data-i18n="th_deadline">Trạng Thái</th>
-                    <th data-i18n="th_match">So Khớp Sàn/Trần</th>
+                    <th data-i18n="th_match">Độ Phù Hợp &amp; Tầm Vốn</th>
                   </tr>
                 </thead>
                 <tbody id="tenderTableBody"></tbody>
@@ -2892,22 +2901,22 @@
           <!-- PANEL 2: CFMS / CSMS -->
           <div id="panelCsms" class="sandbox-panel">
             <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 12px 16px; margin-bottom: 16px; border-radius: 10px; background: var(--bg-subtle); border: 1px solid var(--border-subtle);">
-              <span style="font-size: 0.88rem; font-weight: 600;" data-i18n="sb_p2_banner">Bạn đang xem bản mô phỏng nhanh của <strong>HUDU CFMS / QMS</strong>.</span>
+              <span style="font-size: 0.94rem; font-weight: 600;" data-i18n="sb_p2_banner">Giao diện minh họa bàn điều phối tiếp nhận bệnh nhân của <strong>HUDU CFMS</strong>.</span>
               <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                <a href="cfms/" class="btn btn-primary" style="height: 34px; font-size: 0.82rem;" data-i18n="sb_p2_btn">Mở Chuyên Trang &amp; Bảng Giá Phòng Khám (/cfms) &rarr;</a>
+                <a href="cfms/" class="btn btn-primary" style="height: 38px; font-size: 0.88rem;" data-i18n="sb_p2_btn">Xem Chuyên Trang &amp; Bảng Giá Phòng Khám (/cfms) &rarr;</a>
               </div>
             </div>
 
             <div class="csms-top-bar">
               <div>
-                <strong style="font-size: 1rem;" data-i18n="csms_mode_label">Chế độ vận hành:</strong>
+                <strong style="font-size: 1.02rem;" data-i18n="csms_mode_label">Mô hình sử dụng:</strong>
               </div>
               <div class="filter-pills">
                 <button id="btnModeClinic" class="filter-pill active" onclick="setCsmsMode('CLINIC')" data-i18n="mode_clinic">
-                  Bệnh Viện &amp; Phòng Khám (Lấy đơn &amp; Cấp số)
+                  Bệnh Viện &amp; Phòng Khám (Lấy số &amp; Gọi khám)
                 </button>
                 <button id="btnModeClass" class="filter-pill" onclick="setCsmsMode('CLASS')" data-i18n="mode_class">
-                  Phòng Học Dạy Thêm (Ghi danh &amp; Ca học)
+                  Phòng Học &amp; Trung Tâm (Điểm danh &amp; Ca học)
                 </button>
               </div>
             </div>
@@ -2916,7 +2925,7 @@
 
             <div class="quick-add-bar">
               <input type="text" id="csmsInputName" data-i18n-placeholder="csms_name_ph" placeholder="Họ tên bệnh nhân / học viên..." />
-              <input type="text" id="csmsInputPhone" data-i18n-placeholder="csms_phone_ph" placeholder="CCCD / SĐT người nhà..." />
+              <input type="text" id="csmsInputPhone" data-i18n-placeholder="csms_phone_ph" placeholder="Số CCCD / SĐT người nhà..." />
               <select id="csmsInputService"></select>
               <button class="btn btn-primary" onclick="addCsmsRecord()" data-i18n="btn_add_order">+ Tiếp nhận &amp; Cấp số</button>
             </div>
@@ -2937,10 +2946,10 @@
   <section id="architecture" class="section">
     <div class="container">
       <div class="section-header">
-        <div class="pill-tag" data-i18n="arch_tag">Giá trị Cốt lõi</div>
-        <h2 data-i18n="arch_title">Nền Tảng Vận Hành Ổn Định &amp; Bảo Mật</h2>
+        <div class="pill-tag" data-i18n="arch_tag">Giá Trị Cốt Lõi</div>
+        <h2 data-i18n="arch_title">Dễ Sử Dụng, Vận Hành Ổn Định &amp; Bảo Mật</h2>
         <p data-i18n="arch_desc">
-          Được thiết kế tối ưu cho doanh nghiệp dự thầu và các cơ sở y tế, giáo dục cần tốc độ xử lý tức thời và an toàn dữ liệu.
+          Giao diện rõ ràng, chữ lớn dễ nhìn, giúp Chủ doanh nghiệp và Ban Giám đốc nắm bắt thông tin ngay lập tức.
         </p>
       </div>
 
@@ -2949,9 +2958,9 @@
           <div class="benefit-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
           </div>
-          <h3 data-i18n="arch_1_title">Tốc Độ Xử Lý Tức Thời</h3>
+          <h3 data-i18n="arch_1_title">Tốc Độ Nhanh &amp; Dễ Thao Tác</h3>
           <p data-i18n="arch_1_desc">
-            Tự động xử lý hàng chục ngàn bản tin đấu thầu mỗi ngày và nhận diện khuôn mặt bệnh nhân lấy số khám ngay lập tức trên cả những máy tính văn phòng phổ thông.
+            Xử lý hàng chục ngàn thông báo thầu mỗi ngày và nhận diện khuôn mặt bệnh nhân lấy số khám ngay lập tức trên cả những máy tính văn phòng thông thường.
           </p>
         </div>
 
@@ -2959,9 +2968,9 @@
           <div class="benefit-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
-          <h3 data-i18n="arch_2_title">Thuật Toán Phân Tích Thông Minh &amp; Hiệu Quả</h3>
+          <h3 data-i18n="arch_2_title">Chấm Điểm Thông Minh &amp; Sát Thực Tế</h3>
           <p data-i18n="arch_2_desc">
-            Tự động bóc tách hồ sơ mời thầu bằng thuật toán chuyên sâu, chấm điểm mức độ phù hợp theo tiêu chí năng lực bảo mật nội bộ và tối ưu chi phí vận hành.
+            Tự động đọc tóm tắt hồ sơ mời thầu, chấm điểm độ phù hợp theo đúng năng lực nội bộ của doanh nghiệp và giúp tiết kiệm tối đa thời gian nhân sự.
           </p>
         </div>
 
@@ -2969,9 +2978,9 @@
           <div class="benefit-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <h3 data-i18n="arch_3_title">An Toàn Dữ Liệu &amp; Hoạt Động Khi Mất Mạng</h3>
+          <h3 data-i18n="arch_3_title">Bảo Mật Tuyệt Đối &amp; Chạy Khi Mất Mạng</h3>
           <p data-i18n="arch_3_desc">
-            Phân quyền chặt chẽ theo từng vai trò nhân sự, cô lập dữ liệu độc lập cho từng đơn vị và đảm bảo phòng khám vẫn tiếp nhận, gọi số bình thường ngay cả khi mất kết nối Internet.
+            Thông tin năng lực dự thầu và hồ sơ bệnh nhân được bảo mật riêng biệt cho từng đơn vị; phòng khám vẫn lấy số, gọi loa bình thường ngay cả khi mất Internet.
           </p>
         </div>
       </div>
@@ -2986,13 +2995,13 @@
           <div class="pill-tag" style="background: rgba(226,232,240,0.14); color: #E2E8F0; border-color: rgba(203,213,225,0.3);">
             <span>HUDUVN.COM</span>
           </div>
-          <h2 data-i18n="cta_title">Triển Khai Giải Pháp HUDU Cho Đơn Vị Của Bạn</h2>
+          <h2 data-i18n="cta_title">Đăng Ký Tư Vấn &amp; Trải Nghiệm Phần Mềm HUDU</h2>
           <p data-i18n="cta_desc">
-            Đăng ký nhận tài khoản trải nghiệm hệ thống Săn thầu thông minh hoặc triển khai hệ thống tiếp nhận đơn CFMS/QMS tại cơ sở.
+            Đội ngũ HUDU hỗ trợ cài đặt trọn gói tiêu chí tìm thầu cho doanh nghiệp hoặc thiết lập hệ thống lấy số, gọi loa tự động cho phòng khám.
           </p>
-          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.9rem; color: #E2E8F0;">
-            <div data-i18n="cta_b1">&#10003; Cấu hình sẵn biên độ năng lực Sàn/Trần và tự động quét các gói thầu đang mở</div>
-            <div data-i18n="cta_b2">&#10003; Tùy biến thương hiệu riêng, luồng lấy đơn bệnh nhân, quét CCCD, loa gọi số và TV phòng chờ</div>
+          <div style="display: flex; flex-direction: column; gap: 11px; font-size: 0.98rem; color: #F1F5F9;">
+            <div data-i18n="cta_b1">&#10003; Cài đặt sẵn tiêu chí ngành nghề, tầm vốn và rà soát ngay các gói thầu đang mở</div>
+            <div data-i18n="cta_b2">&#10003; Thiết kế thương hiệu phòng khám riêng, quét CCCD, loa gọi số và màn hình TV phòng chờ</div>
             <div data-i18n="cta_b3">&#10003; Miễn phí 100% bảo trì và cập nhật phần mềm trong suốt thời gian sử dụng</div>
           </div>
         </div>
@@ -3004,26 +3013,26 @@
             <input type="text" required id="formNameInput" data-i18n-placeholder="form_name_ph" placeholder="Công ty / Bệnh viện / Phòng khám..." />
           </div>
           <div class="form-group">
-            <label data-i18n="form_phone_label">Số điện thoại / Email liên hệ *</label>
+            <label data-i18n="form_phone_label">Số điện thoại / Zalo liên hệ *</label>
             <input type="text" required id="formPhoneInput" data-i18n-placeholder="form_phone_ph" placeholder="0909 xxx xxx / contact@company.com" />
           </div>
           <div class="form-group">
-            <label data-i18n="form_prod_label">Giải pháp &amp; Gói dịch vụ quan tâm *</label>
+            <label data-i18n="form_prod_label">Phần mềm &amp; Gói dịch vụ quan tâm *</label>
             <select required id="formProdSelect">
-              <option value="dauthau-premium" data-i18n="form_opt_dt_prem">DauThau Gói Premium — 899k/tháng · Cả năm 8tr9/năm (05 Tài khoản · 02 Mảng)</option>
-              <option value="dauthau-basic" data-i18n="form_opt_1">DauThau Gói Basic — 499k/tháng · Cả năm 4tr9/năm (01 Tài khoản · 01 Mảng)</option>
-              <option value="cfms-premium" data-i18n="form_opt_cfms_prem">CFMS/QMS Gói Premium — 999k/tháng (Miễn phí lắp đặt · 100.000 hồ sơ)</option>
-              <option value="cfms-basic" data-i18n="form_opt_cfms_basic">CFMS/QMS Gói Basic — 499k/tháng (Lắp đặt 1tr799 · 5.000 hồ sơ)</option>
-              <option value="cfms-enterprise" data-i18n="form_opt_cfms_ent">CFMS/QMS Gói Enterprise — Bệnh viện Đa khoa &amp; Chuỗi cơ sở</option>
-              <option value="cfms-edu" data-i18n="form_opt_3">HUDU CSMS — Quản trị Phòng học dạy thêm &amp; Trung tâm</option>
-              <option value="all" data-i18n="form_opt_4">Tư vấn toàn bộ hệ sinh thái HUDU</option>
+              <option value="dauthau-premium" data-i18n="form_opt_dt_prem">Phần mềm Đấu thầu Gói Nâng Cao — 899k/tháng · 8tr9/năm (05 Tài khoản · 02 Lĩnh vực)</option>
+              <option value="dauthau-basic" data-i18n="form_opt_1">Phần mềm Đấu thầu Gói Cơ Bản — 499k/tháng · 4tr9/năm (01 Tài khoản · 01 Lĩnh vực)</option>
+              <option value="cfms-premium" data-i18n="form_opt_cfms_prem">Phần mềm Phòng khám Gói Nâng Cao — 999k/tháng (Miễn phí lắp đặt · 100.000 hồ sơ)</option>
+              <option value="cfms-basic" data-i18n="form_opt_cfms_basic">Phần mềm Phòng khám Gói Cơ Bản — 499k/tháng (Lắp đặt 1tr799 · 5.000 hồ sơ)</option>
+              <option value="cfms-enterprise" data-i18n="form_opt_cfms_ent">Hệ thống Bệnh viện Đa khoa &amp; Chuỗi Phòng khám</option>
+              <option value="cfms-edu" data-i18n="form_opt_3">Phần mềm Điểm danh Phòng học &amp; Trung tâm Đào tạo</option>
+              <option value="all" data-i18n="form_opt_4">Tư vấn toàn bộ giải pháp HUDU</option>
             </select>
           </div>
           <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; border-radius: 10px;" data-i18n="form_submit">
             Gửi Yêu Cầu Đăng Ký
           </button>
           <div id="formToast" class="form-toast" data-i18n="form_success">
-            &#10003; Đã ghi nhận thông tin! Đội ngũ kỹ thuật HUDU sẽ liên hệ với bạn sớm nhất.
+            &#10003; Đã ghi nhận thông tin! Đội ngũ HUDU sẽ liên hệ hỗ trợ ngay.
           </div>
         </form>
       </div>
@@ -3060,26 +3069,26 @@
               <path d="M 211 27.8 A 3.8 3.8 0 0 1 218.6 27.8 V 45 A 7.4 7.4 0 0 0 233.4 45 V 27.8 A 3.8 3.8 0 0 1 241 27.8 V 45 A 15 15 0 0 1 211 45 Z" />
             </g>
           </svg>
-          <p style="font-size: 0.86rem; max-width: 340px;" data-i18n="footer_desc">
-            HUDU (huduvn.com) — Công ty phát triển phần mềm phân tích dữ liệu đấu thầu thông minh và hệ thống tự động hóa tiếp nhận, quản trị hàng đợi phòng khám.
+          <p style="font-size: 0.94rem; max-width: 360px; line-height: 1.58;" data-i18n="footer_desc">
+            HUDU (huduvn.com) — Đơn vị phát triển phần mềm chọn lọc gói thầu thông minh và hệ thống tự động tiếp nhận, gọi số phòng khám.
           </p>
         </div>
 
         <div class="footer-col">
           <h4 data-i18n="footer_col1">Sản phẩm</h4>
           <ul>
-            <li><a href="dauthau/" data-i18n="f_link_dauthau">HUDU DauThau (/dauthau)</a></li>
-            <li><a href="cfms/" data-i18n="f_link_cfms">HUDU CFMS / QMS (/cfms)</a></li>
+            <li><a href="dauthau/" data-i18n="f_link_dauthau">Phần Mềm Đấu Thầu (/dauthau)</a></li>
+            <li><a href="cfms/" data-i18n="f_link_cfms">Phần Mềm Phòng Khám (/cfms)</a></li>
             <li><a href="cfms/#pricing" data-i18n="f_link_cfms_price">Bảng Giá Phòng Khám</a></li>
-            <li><a href="dauthau/#pricing" data-i18n="f_link_dt_price">Bảng Giá Đấu Thầu Thông Minh</a></li>
+            <li><a href="dauthau/#pricing" data-i18n="f_link_dt_price">Bảng Giá Phần Mềm Đấu Thầu</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h4 data-i18n="footer_col2">Tính năng nổi bật</h4>
           <ul>
-            <li><a href="dauthau/#pipeline" data-i18n="f_link_tech1">Săn &amp; Lọc Thầu Sàn/Trần</a></li>
-            <li><a href="dauthau/#features" data-i18n="f_link_tech2">Thuật Toán Chấm Điểm Khớp Thầu</a></li>
+            <li><a href="dauthau/#pipeline" data-i18n="f_link_tech1">Chọn Lọc Gói Thầu Đúng Tầm Vốn</a></li>
+            <li><a href="dauthau/#features" data-i18n="f_link_tech2">Chấm Điểm Phù Hợp (0–10 Điểm)</a></li>
             <li><a href="cfms/#features" data-i18n="f_link_tech3">Nhận Diện Khuôn Mặt &amp; CCCD</a></li>
             <li><a href="cfms/#rbac" data-i18n="f_link_tech4">Loa Gọi Số &amp; TV Phòng Chờ</a></li>
           </ul>
@@ -3090,14 +3099,14 @@
           <ul>
             <li>Website: <a href="https://huduvn.com">huduvn.com</a></li>
             <li>Email: <a href="mailto:tnhung1896@gmail.com">tnhung1896@gmail.com</a></li>
-            <li>Support: 24/7 Enterprise SLA</li>
+            <li>Hỗ trợ: 24/7 tận tâm</li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <span>&copy; 2026 HUDU Technology (huduvn.com). All rights reserved.</span>
-        <span data-i18n="footer_tagline">Enterprise Smart Algorithms &amp; Healthcare Solutions</span>
+        <span>&copy; 2026 Công nghệ HUDU (huduvn.com). Bảo lưu mọi quyền.</span>
+        <span data-i18n="footer_tagline">Giải Pháp Phần Mềm Thông Minh Cho Doanh Nghiệp &amp; Y Tế</span>
       </div>
     </div>
   </footer>
@@ -3194,167 +3203,167 @@
     const I18N = {
       vi: {
         nav_solutions: "Giải pháp",
-        nav_tender: "Săn Thầu Thông Minh (/dauthau)",
-        nav_cfms: "Phòng Khám (/cfms)",
-        nav_demo: "Demo Trực tiếp",
-        nav_arch: "Công nghệ",
-        nav_cta: "Đăng ký Dùng thử",
-        hero_badge: "HUDU Enterprise Technology · huduvn.com",
-        hero_title: 'Nền tảng Phần mềm <span class="highlight">Săn Thầu Thông Minh</span> &amp; Quản Trị Tiếp Nhận Tự Động',
-        hero_desc: "Tự động phân tích <strong>tiêu chí năng lực dự thầu &amp; Hồ sơ mời thầu bằng thuật toán chuyên sâu</strong>, chấm điểm độ khớp 0–10 và lọc gói thầu theo biên độ Sàn/Trần bảo mật nội bộ; đồng thời số hóa <strong>Hệ thống Nhận diện Khuôn mặt &amp; Lấy đơn CFMS/QMS</strong> cho Bệnh viện, Phòng khám và Cơ sở Đào tạo.",
-        hero_btn_demo: "Trải nghiệm Demo Trực tiếp ↓",
-        hero_btn_explore: "Khám phá 2 Hệ thống",
+        nav_tender: "Phần Mềm Đấu Thầu (/dauthau)",
+        nav_cfms: "Phần Mềm Phòng Khám (/cfms)",
+        nav_demo: "Xem Dùng Thử",
+        nav_arch: "Ưu điểm",
+        nav_cta: "Đăng Ký Tư Vấn",
+        hero_badge: "Giải Pháp Phần Mềm HUDU · huduvn.com",
+        hero_title: 'Phần Mềm <span class="highlight">Tìm &amp; Chọn Lọc Gói Thầu</span> Thông Minh Và Quản Lý Phòng Khám Tự Động',
+        hero_desc: "Giúp doanh nghiệp <strong>tự động đọc tóm tắt hồ sơ mời thầu, chấm điểm độ phù hợp (0–10 điểm) và chọn lọc gói thầu vừa đúng tầm vốn, năng lực</strong>. Đồng thời cung cấp <strong>hệ thống nhận diện khuôn mặt, lấy số khám và gọi loa tự động</strong> cho Bệnh viện, Phòng khám.",
+        hero_btn_demo: "Xem Giao Diện Dùng Thử ↓",
+        hero_btn_explore: "Tìm Hiểu 2 Sản Phẩm",
         metric_1_val: "Tự động",
-        metric_1: "Thuật toán chấm điểm khớp năng lực & Nhận diện tiếp nhận bệnh nhân",
+        metric_1: "Chấm điểm gói thầu phù hợp & Nhận diện bệnh nhân lấy số nhanh",
         metric_2_val: "Chính xác",
-        metric_2: "Gộp bản sửa đổi gói thầu & so khớp biên độ Sàn/Trần",
-        metric_3: "Vận hành ổn định, bảo mật nội bộ & Mạng LAN Phòng khám",
-        showcase_url: "huduvn.com · Hệ sinh thái Phần mềm HUDU",
+        metric_2: "Chọn lọc gói thầu đúng tầm vốn & Tự động gộp tin sửa đổi, gia hạn",
+        metric_3: "Bảo mật thông tin doanh nghiệp & Vận hành ổn định tại Cơ sở",
+        showcase_url: "huduvn.com · Hệ Sinh Thái Phần Mềm HUDU",
         partner_label: "ĐỐI TÁC CÔNG NGHỆ, HẠ TẦNG SỐ & ĐƠN VỊ Y TẾ TIÊU BIỂU",
-        card1_title: "HUDU DauThau — Săn & Chấm Điểm Khớp Thầu Thông Minh",
-        card1_sub: "Chuẩn hóa tiêu chí năng lực bảo mật, Bóc tách HSMT & So khớp Sàn/Trần",
-        card1_pill: "1 – 5 Accounts",
-        card1_chip1: "Chấm điểm Đa chiều (0–10đ)",
-        card1_chip2: "Phân loại chuyên ngành & Chương V",
-        card1_chip3: "App Mobile / Zalo / Email",
+        card1_title: "HUDU DauThau — Tìm & Chọn Lọc Gói Thầu Tự Động",
+        card1_sub: "Đọc tóm tắt hồ sơ mời thầu, chấm điểm phù hợp & chọn gói đúng tầm vốn",
+        card1_pill: "01 – 05 Tài khoản",
+        card1_chip1: "Chấm điểm phù hợp (0–10đ)",
+        card1_chip2: "Chọn đúng ngành & tầm vốn",
+        card1_chip3: "Báo qua Zalo / Điện thoại",
         mini_cta_left: "Chuyên trang sản phẩm",
         mini_cta_right: "Xem chi tiết & Bảng giá →",
-        card2_title: "HUDU CFMS / QMS — Nhận Diện & Lấy Đơn Tiếp Nhận",
+        card2_title: "HUDU CFMS — Tiếp Nhận & Gọi Số Phòng Khám Tự Động",
         card2_sub: "Nhận diện khuôn mặt, người nhà lấy số giùm & quét CCCD gắn chip",
-        card2_pill: "5K – 100K Hồ sơ",
+        card2_pill: "5.000 – 100.000 Hồ sơ",
         bio_row_title: "Nhận diện Khuôn mặt & Chống bấm trùng số",
         bio_row_sub: "Màn hình lấy số + Quét CCCD → Loa gọi số & TV Phòng chờ",
         card2_chip1: "Bệnh viện & Phòng khám",
         card2_chip2: "Phòng học & Trung tâm",
         card2_chip3: "Loa gọi số & TV Phòng chờ",
-        sec1_tag: "Hệ sinh thái Sản phẩm",
-        sec1_title: "Hai Nền Tảng Cốt Lõi Của HUDU",
-        sec1_desc: "Giải quyết bài toán tự động hóa săn dự án thầu hiệu quả cho doanh nghiệp và số hóa toàn diện quy trình tiếp nhận bệnh nhân, học viên tại cơ sở.",
+        sec1_tag: "Hệ Sinh Thái Sản Phẩm",
+        sec1_title: "Hai Phần Mềm Chủ Lực Của HUDU",
+        sec1_desc: "Giúp doanh nghiệp tìm kiếm gói thầu vừa sức nhanh chóng và giúp bệnh viện, phòng khám tự động hóa quy trình tiếp đón bệnh nhân.",
         vis_badge: "Xem Chi Tiết & Bảng Giá →",
-        p1_v1_val: "1 – 5 Accounts",
-        p1_v1_sub: "1 – 2 Mảng Lĩnh Vực Năng Lực",
-        p1_v2_sub: "Thuật Toán Chấm Điểm Đa Chiều Khớp Thầu",
+        p1_v1_val: "01 – 05 Tài khoản",
+        p1_v1_sub: "01 – 02 Lĩnh vực ngành nghề",
+        p1_v2_sub: "Chấm điểm gói thầu phù hợp",
         p1_v3_val: "499k – 899k/tháng",
         p1_v3_sub: "Cả năm: 4tr9 – 8tr9/năm",
-        p1_v_foot_l: "Bấm vào đây để mở Chuyên trang & Bảng giá Đấu thầu Thông minh",
-        p1_v_foot_r: "Mở <code>/dauthau</code> →",
-        p1_tag: "SẢN PHẨM 01 · DAUTHAU ENTERPRISE PLATFORM",
-        p1_title: "Hệ Thống Đối Chiếu Năng Lực & Săn Thầu Thông Minh Bằng Thuật Toán",
-        p1_desc: "Tự động chuẩn hóa tiêu chí năng lực bảo mật nội bộ, gộp các bản thông báo sửa đổi/gia hạn, bóc tách E-HSMT (Chương III & Chương V) và chấm điểm độ khớp đa chiều 0–10 theo biên độ Sàn/Trần & Khu vực ưu tiên.",
-        p1_s1_t: "01. Tiêu chí NL",
-        p1_s1_s: "Chuẩn hóa bảo mật",
-        p1_s2_t: "02. Chống trùng",
-        p1_s2_s: "Gộp bản sửa đổi",
-        p1_s3_t: "03. Bóc tách",
-        p1_s3_s: "Chương III & Chương V",
+        p1_v_foot_l: "Bấm vào đây để xem Chi tiết & Bảng giá Phần mềm Đấu thầu",
+        p1_v_foot_r: "Xem <code>/dauthau</code> →",
+        p1_tag: "SẢN PHẨM 01 · PHẦN MỀM ĐẤU THẦU THÔNG MINH",
+        p1_title: "Tự Động Tìm Kiếm, Chấm Điểm & Chọn Lọc Gói Thầu Phù Hợp",
+        p1_desc: "Thiết lập tiêu chí năng lực và quy mô vốn hoàn toàn bảo mật nội bộ. Phần mềm tự động đọc tóm tắt hồ sơ mời thầu, gộp các bản tin sửa đổi và chấm điểm độ phù hợp (0–10 điểm) để báo ngay gói thầu khả thi nhất.",
+        p1_s1_t: "01. Năng lực",
+        p1_s1_s: "Cài đặt bảo mật",
+        p1_s2_t: "02. Gộp tin",
+        p1_s2_s: "Không trùng lặp",
+        p1_s3_t: "03. Đọc hồ sơ",
+        p1_s3_s: "Tóm tắt yêu cầu",
         p1_s4_t: "04. Chấm điểm",
-        p1_s4_s: "Đa chiều & Khu vực",
-        p1_b1: "Gói Basic: 499k/tháng · 4tr9/năm (1 Account · 1 Mảng)",
-        p1_b2: "Gói Premium: 899k/tháng · 8tr9/năm (5 Accounts · 2 Mảng)",
-        p1_b3: "Chấm điểm Đa chiều (0.0 – 10.0đ)",
-        p1_b4: "Đầy đủ 100% tính năng hiện có",
-        p1_f1: "<strong>Thuật toán Phân tích Năng lực 2 Tầng & Chống trùng thông minh:</strong> Thiết lập bộ lọc biên độ Sàn/Trần bảo mật nội bộ và loại trừ các ngành không làm; tự động gộp các bản sửa đổi, gia hạn vào một hồ sơ duy nhất kèm link gốc.",
-        p1_f2: "<strong>Phân loại chuyên ngành sâu & Bóc tách PDF E-HSMT (Chương III & Chương V):</strong> Tự động gắn nhãn lĩnh vực, loại hình, cấp công trình (Cấp I–IV), tiêu chuẩn đánh giá Chương III, thông số kỹ thuật Chương V và nhấn mạnh yêu cầu bắt buộc.",
-        p1_f3: "<strong>Chấm điểm Đa chiều (0–10đ), Sàn / Trần & Ưu tiên Khu vực:</strong> Đánh giá Chuyên ngành, Tài chính, Dư địa năng lực, Quy mô kỹ thuật – Nhân sự – Thiết bị, Khu vực vùng miền & Tỉnh/Thành trọng điểm, Nguồn vốn và Thời gian chuẩn bị.",
-        p1_f4: "<strong>Đa kênh Thông báo & Quản trị Trạng thái Làm thầu:</strong> Đẩy tin tức thời qua Mobile App (iOS/Android), Zalo, SMS, Email và quản lý trạng thái (Đã xem, Quan tâm, Dự thầu, Bỏ qua) giữa các thành viên.",
-        btn_prod_pricing: "Trang Sản Phẩm & Bảng Giá →",
-        p1_cta: "Mở Bộ Lọc Demo ↓",
+        p1_s4_s: "Đúng tầm vốn",
+        p1_b1: "Gói Cơ Bản: 499k/tháng · 4tr9/năm (01 Tài khoản)",
+        p1_b2: "Gói Nâng Cao: 899k/tháng · 8tr9/năm (05 Tài khoản)",
+        p1_b3: "Chấm điểm phù hợp (0 – 10 điểm)",
+        p1_b4: "Đầy đủ 100% tính năng",
+        p1_f1: "<strong>Chọn lọc gói thầu đúng tầm vốn & bảo mật tuyệt đối:</strong> Chỉ nhận các gói thầu vừa sức tài chính, tự động loại bỏ mảng công việc không nhận làm và gộp gọn các lần sửa đổi, gia hạn.",
+        p1_f2: "<strong>Tự động đọc tóm tắt hồ sơ mời thầu:</strong> Nắm bắt nhanh yêu cầu kinh nghiệm, nhân sự chủ chốt, thiết bị thi công và các điều kiện bắt buộc mà không mất hàng giờ đọc thủ công.",
+        p1_f3: "<strong>Chấm điểm độ phù hợp (0–10 điểm) & Ưu tiên tỉnh/thành:</strong> Xếp hạng các gói thầu tại khu vực quen thuộc và đúng sở trường của doanh nghiệp lên đầu danh sách.",
+        p1_f4: "<strong>Báo tin qua Zalo, Điện thoại & Quản lý làm việc nhóm:</strong> Gửi thông báo tức thì và giúp Ban Giám đốc theo dõi tiến độ xem thầu, chuẩn bị hồ sơ của từng nhân viên.",
+        btn_prod_pricing: "Xem Chi Tiết & Bảng Giá →",
+        p1_cta: "Dùng Thử Bên Dưới ↓",
         p2_v1_sub: "Hồ sơ Bệnh nhân & Người nhà",
-        p2_v2_val: "3 Role Y Khoa",
-        p2_v2_sub: "Admin · Bác sĩ · ĐD & Cấp cứu",
-        p2_v3_val: "Custom Thương Hiệu",
-        p2_v3_sub: "Logo riêng, Loa gọi số & TV",
-        p2_v_foot_l: "Bấm vào đây để mở Chuyên trang & Bảng giá Phòng khám",
-        p2_v_foot_r: "Mở <code>/cfms</code> →",
-        p2_tag: "SẢN PHẨM 02 · CFMS / QMS / CSMS",
-        p2_title: "Hệ Thống Nhận Diện Khuôn Mặt, Lấy Đơn & Điều Phối Phòng Khám",
-        p2_desc: "Giải pháp tiếp nhận đơn bệnh nhân tự động bằng nhận diện khuôn mặt, hỗ trợ người nhà lấy số khám giùm và quét CCCD gắn chip cho Bệnh viện, Phòng khám và Cơ sở đào tạo.",
+        p2_v2_val: "3 Vai Trò Y Tế",
+        p2_v2_sub: "Quản lý · Bác sĩ · Điều dưỡng",
+        p2_v3_val: "Thương Hiệu Riêng",
+        p2_v3_sub: "Gắn Logo riêng, Loa gọi & TV",
+        p2_v_foot_l: "Bấm vào đây để xem Chi tiết & Bảng giá Phần mềm Phòng khám",
+        p2_v_foot_r: "Xem <code>/cfms</code> →",
+        p2_tag: "SẢN PHẨM 02 · TIẾP NHẬN & GỌI SỐ PHÒNG KHÁM",
+        p2_title: "Hệ Thống Nhận Diện Khuôn Mặt, Lấy Số Khám & Loa Gọi Tự Động",
+        p2_desc: "Giúp bệnh nhân hoặc người nhà lấy số thứ tự nhanh chóng qua nhận diện khuôn mặt và quét thẻ CCCD gắn chip, tự động đọc loa mời vào khám văn minh, trật tự.",
         p2_s1_t: "01. Tiếp nhận",
         p2_s1_s: "Khuôn mặt / CCCD",
         p2_s2_t: "02. Người nhà",
         p2_s2_s: "Lấy số khám giùm",
         p2_s3_t: "03. Hàng đợi",
-        p2_s3_s: "Chống lấy trùng số",
-        p2_s4_t: "04. Điều phối",
-        p2_s4_s: "Loa gọi số & TV",
+        p2_s3_s: "Chống bấm trùng",
+        p2_s4_t: "04. Gọi khám",
+        p2_s4_s: "Loa đọc & TV",
         p2_b1: "Bệnh viện & Khoa Thận Nhân Tạo",
         p2_b2: "Phòng khám Đa khoa / Chuyên khoa",
         p2_b3: "Phòng học Dạy thêm & Trung tâm",
-        p2_f1: "<strong>Nhận diện khuôn mặt & Người nhà lấy số giùm:</strong> Lưu trữ tối đa <strong>5.000 hồ sơ (Gói Basic)</strong> và <strong>100.000 hồ sơ bệnh nhân/người nhà (Gói Premium)</strong>; hỗ trợ người thân lấy phiếu khám giùm và chống bấm trùng số tuyệt đối.",
-        p2_f2: "<strong>Đa phương thức tiếp nhận & Quét CCCD gắn chip:</strong> Hỗ trợ quét nhanh mã QR CCCD qua Camera hoặc máy quét mã vạch cầm tay để tự động điền đầy đủ thông tin hành chính của bệnh nhân.",
-        p2_f3: "<strong>Bàn điều phối trực quan, Loa gọi số & TV Phòng chờ:</strong> Tìm kiếm bệnh nhân nhanh chóng, tích hợp chuông báo và giọng đọc tự động mời bệnh nhân theo số thứ tự, họ tên, phòng khám/máy lọc kèm nút Gọi lại.",
-        p2_f4: "<strong>Phân quyền 3 Role (Admin · Bác sĩ · Điều dưỡng) & Ưu tiên Cấp cứu:</strong> Hỗ trợ cấp số khám trực tiếp tại bàn và bật chế độ Ưu tiên Cấp cứu để chuyển bệnh nhân lên đầu danh sách chờ.",
-        p2_f5: "<strong>Custom Thương hiệu riêng & Miễn phí bảo trì:</strong> Thiết kế đồng bộ Logo, Tên Phòng khám trên toàn bộ màn hình lấy số, Bàn điều phối, TV Phòng chờ; hoạt động ổn định cả khi mất Internet.",
+        p2_f1: "<strong>Nhận diện khuôn mặt & Người nhà lấy số giùm:</strong> Lưu trữ từ <strong>5.000 hồ sơ (Gói Cơ Bản)</strong> đến <strong>100.000 hồ sơ (Gói Nâng Cao)</strong>; hỗ trợ người thân lấy phiếu khám giùm và chống bấm trùng số.",
+        p2_f2: "<strong>Quét mã QR thẻ CCCD gắn chip:</strong> Quét nhanh qua camera hoặc máy quét cầm tay để tự động điền đầy đủ họ tên, năm sinh, địa chỉ của bệnh nhân.",
+        p2_f3: "<strong>Loa gọi số tự động & Màn hình TV phòng chờ:</strong> Phát giọng đọc rõ ràng mời bệnh nhân theo số thứ tự, họ tên, phòng khám/máy lọc máu kèm nút Gọi lại tiện lợi.",
+        p2_f4: "<strong>Phân quyền 3 vai trò (Quản lý · Bác sĩ · Điều dưỡng) & Ưu tiên Cấp cứu:</strong> Dễ dàng cấp số trực tiếp tại quầy và đưa bệnh nhân cấp cứu lên đầu danh sách chờ.",
+        p2_f5: "<strong>Thiết kế thương hiệu riêng & Hoạt động cả khi mất mạng:</strong> Hiển thị Logo, Tên Phòng khám riêng trên mọi màn hình và vận hành liên tục không gián đoạn.",
         p2_cta: "Mở Bàn Điều Phối ↓",
-        demo_tag: "Mô phỏng Tương tác",
-        demo_title: "Trải Nghiệm Trực Tiếp Hai Phân Hệ",
-        demo_desc: "Thử nghiệm lọc gói thầu theo biên độ năng lực Sàn/Trần hoặc tiếp nhận đơn bệnh nhân / học viên ngay trên giao diện mẫu.",
-        tab_tender: "1. Sàn Lọc & Chấm Điểm Đấu Thầu Thông Minh (DauThau Matcher)",
-        tab_csms: "2. Bàn Điều Phối Tiếp Nhận Đơn (CFMS / CSMS)",
-        sb_p1_banner: "Bạn đang xem bản mô phỏng nhanh của <strong>HUDU DauThau Platform</strong>.",
-        sb_p1_btn: "Mở Chuyên Trang & Bảng Giá Đấu Thầu (/dauthau) →",
-        tender_search_ph: "Tìm theo mã gói thầu, tên dự án, chủ đầu tư, thông số kỹ thuật...",
+        demo_tag: "Trải Nghiệm Nhanh",
+        demo_title: "Dùng Thử Trực Tiếp Hai Phần Mềm",
+        demo_desc: "Bấm chọn bên dưới để xem thử danh sách gói thầu đã chấm điểm hoặc thử tiếp nhận, cấp số bệnh nhân trên giao diện mẫu.",
+        tab_tender: "1. Phần Mềm Chọn Lọc & Chấm Điểm Gói Thầu (HUDU DauThau)",
+        tab_csms: "2. Bàn Tiếp Nhận & Gọi Số Phòng Khám (HUDU CFMS)",
+        sb_p1_banner: "Giao diện minh họa danh sách gói thầu đã được chấm điểm độ phù hợp của <strong>HUDU DauThau</strong>.",
+        sb_p1_btn: "Xem Chuyên Trang & Bảng Giá Đấu Thầu (/dauthau) →",
+        tender_search_ph: "Tìm theo mã gói thầu, tên dự án, chủ đầu tư, hạng mục...",
         cat_all: "Tất cả",
         cat_infra: "Giao thông & Xây lắp",
         cat_it: "CNTT & Phần mềm",
         cat_med: "Thiết bị Y tế",
         cat_priv: "Hạ tầng & Thiết bị",
         th_code: "Mã Gói / Loại Hình",
-        th_taxonomy: "Phân Loại & Kỹ Thuật Chương V",
+        th_taxonomy: "Tên Gói Thầu & Hạng Mục Chính",
         th_investor: "Chủ Đầu Tư",
         th_budget: "Giá Gói / Tổng Mức ĐT",
         th_deadline: "Trạng Thái",
-        th_match: "So Khớp Sàn/Trần",
-        sb_p2_banner: "Bạn đang xem bản mô phỏng nhanh của <strong>HUDU CFMS / QMS</strong>.",
-        sb_p2_btn: "Mở Chuyên Trang & Bảng Giá Phòng Khám (/cfms) →",
-        csms_mode_label: "Chế độ vận hành:",
-        mode_clinic: "Bệnh Viện & Phòng Khám (Lấy đơn & Cấp số)",
-        mode_class: "Phòng Học Dạy Thêm (Ghi danh & Ca học)",
+        th_match: "Độ Phù Hợp & Tầm Vốn",
+        sb_p2_banner: "Giao diện minh họa bàn điều phối tiếp nhận bệnh nhân của <strong>HUDU CFMS</strong>.",
+        sb_p2_btn: "Xem Chuyên Trang & Bảng Giá Phòng Khám (/cfms) →",
+        csms_mode_label: "Mô hình sử dụng:",
+        mode_clinic: "Bệnh Viện & Phòng Khám (Lấy số & Gọi khám)",
+        mode_class: "Phòng Học & Trung Tâm (Điểm danh & Ca học)",
         csms_name_ph: "Họ tên bệnh nhân / học viên...",
-        csms_phone_ph: "CCCD / SĐT người nhà...",
+        csms_phone_ph: "Số CCCD / SĐT người nhà...",
         btn_add_order: "+ Tiếp nhận & Cấp số",
-        arch_tag: "Giá trị Cốt lõi",
-        arch_title: "Nền Tảng Vận Hành Ổn Định & Bảo Mật",
-        arch_desc: "Được thiết kế tối ưu cho doanh nghiệp dự thầu và các cơ sở y tế, giáo dục cần tốc độ xử lý tức thời và an toàn dữ liệu.",
-        arch_1_title: "Tốc Độ Xử Lý Tức Thời",
-        arch_1_desc: "Tự động xử lý hàng chục ngàn bản tin đấu thầu mỗi ngày và nhận diện khuôn mặt bệnh nhân lấy số khám ngay lập tức trên cả những máy tính văn phòng phổ thông.",
-        arch_2_title: "Thuật Toán Phân Tích Thông Minh & Hiệu Quả",
-        arch_2_desc: "Tự động bóc tách hồ sơ mời thầu bằng thuật toán chuyên sâu, chấm điểm mức độ phù hợp theo tiêu chí năng lực bảo mật nội bộ và tối ưu chi phí vận hành.",
-        arch_3_title: "An Toàn Dữ Liệu & Hoạt Động Khi Mất Mạng",
-        arch_3_desc: "Phân quyền chặt chẽ theo từng vai trò nhân sự, cô lập dữ liệu độc lập cho từng đơn vị và đảm bảo phòng khám vẫn tiếp nhận, gọi số bình thường ngay cả khi mất kết nối Internet.",
-        cta_title: "Triển Khai Giải Pháp HUDU Cho Đơn Vị Của Bạn",
-        cta_desc: "Đăng ký nhận tài khoản trải nghiệm hệ thống Săn thầu thông minh hoặc triển khai hệ thống tiếp nhận đơn CFMS/QMS tại cơ sở.",
-        cta_b1: "✓ Cấu hình sẵn biên độ năng lực Sàn/Trần và tự động quét các gói thầu đang mở",
-        cta_b2: "✓ Tùy biến thương hiệu riêng, luồng lấy đơn bệnh nhân, quét CCCD, loa gọi số và TV phòng chờ",
+        arch_tag: "Giá Trị Cốt Lõi",
+        arch_title: "Dễ Sử Dụng, Vận Hành Ổn Định & Bảo Mật",
+        arch_desc: "Giao diện rõ ràng, chữ lớn dễ nhìn, giúp Chủ doanh nghiệp và Ban Giám đốc nắm bắt thông tin ngay lập tức.",
+        arch_1_title: "Tốc Độ Nhanh & Dễ Thao Tác",
+        arch_1_desc: "Xử lý hàng chục ngàn thông báo thầu mỗi ngày và nhận diện khuôn mặt bệnh nhân lấy số khám ngay lập tức trên cả những máy tính văn phòng thông thường.",
+        arch_2_title: "Chấm Điểm Thông Minh & Sát Thực Tế",
+        arch_2_desc: "Tự động đọc tóm tắt hồ sơ mời thầu, chấm điểm độ phù hợp theo đúng năng lực nội bộ của doanh nghiệp và giúp tiết kiệm tối đa thời gian nhân sự.",
+        arch_3_title: "Bảo Mật Tuyệt Đối & Chạy Khi Mất Mạng",
+        arch_3_desc: "Thông tin năng lực dự thầu và hồ sơ bệnh nhân được bảo mật riêng biệt cho từng đơn vị; phòng khám vẫn lấy số, gọi loa bình thường ngay cả khi mất Internet.",
+        cta_title: "Đăng Ký Tư Vấn & Trải Nghiệm Phần Mềm HUDU",
+        cta_desc: "Đội ngũ HUDU hỗ trợ cài đặt trọn gói tiêu chí tìm thầu cho doanh nghiệp hoặc thiết lập hệ thống lấy số, gọi loa tự động cho phòng khám.",
+        cta_b1: "✓ Cài đặt sẵn tiêu chí ngành nghề, tầm vốn và rà soát ngay các gói thầu đang mở",
+        cta_b2: "✓ Thiết kế thương hiệu phòng khám riêng, quét CCCD, loa gọi số và màn hình TV phòng chờ",
         cta_b3: "✓ Miễn phí 100% bảo trì và cập nhật phần mềm trong suốt thời gian sử dụng",
         form_title: "Yêu Cầu Tư Vấn & Đăng Ký Gói",
         form_name_label: "Họ tên / Tên doanh nghiệp, phòng khám *",
         form_name_ph: "Công ty / Bệnh viện / Phòng khám...",
-        form_phone_label: "Số điện thoại / Email liên hệ *",
+        form_phone_label: "Số điện thoại / Zalo liên hệ *",
         form_phone_ph: "0909 xxx xxx / contact@company.com",
-        form_prod_label: "Giải pháp & Gói dịch vụ quan tâm *",
-        form_opt_dt_prem: "DauThau Gói Premium — 899k/tháng · Cả năm 8tr9/năm (05 Tài khoản · 02 Mảng)",
-        form_opt_1: "DauThau Gói Basic — 499k/tháng · Cả năm 4tr9/năm (01 Tài khoản · 01 Mảng)",
-        form_opt_cfms_prem: "CFMS/QMS Gói Premium — 999k/tháng (Miễn phí lắp đặt · 100.000 hồ sơ)",
-        form_opt_cfms_basic: "CFMS/QMS Gói Basic — 499k/tháng (Lắp đặt 1tr799 · 5.000 hồ sơ)",
-        form_opt_cfms_ent: "CFMS/QMS Gói Enterprise — Bệnh viện Đa khoa & Chuỗi cơ sở",
-        form_opt_3: "HUDU CSMS — Quản trị Phòng học dạy thêm & Trung tâm",
-        form_opt_4: "Tư vấn toàn bộ hệ sinh thái HUDU",
+        form_prod_label: "Phần mềm & Gói dịch vụ quan tâm *",
+        form_opt_dt_prem: "Phần mềm Đấu thầu Gói Nâng Cao — 899k/tháng · 8tr9/năm (05 Tài khoản · 02 Lĩnh vực)",
+        form_opt_1: "Phần mềm Đấu thầu Gói Cơ Bản — 499k/tháng · 4tr9/năm (01 Tài khoản · 01 Lĩnh vực)",
+        form_opt_cfms_prem: "Phần mềm Phòng khám Gói Nâng Cao — 999k/tháng (Miễn phí lắp đặt · 100.000 hồ sơ)",
+        form_opt_cfms_basic: "Phần mềm Phòng khám Gói Cơ Bản — 499k/tháng (Lắp đặt 1tr799 · 5.000 hồ sơ)",
+        form_opt_cfms_ent: "Hệ thống Bệnh viện Đa khoa & Chuỗi Phòng khám",
+        form_opt_3: "Phần mềm Điểm danh Phòng học & Trung tâm Đào tạo",
+        form_opt_4: "Tư vấn toàn bộ giải pháp HUDU",
         form_submit: "Gửi Yêu Cầu Đăng Ký",
-        form_success: "✓ Đã ghi nhận thông tin! Đội ngũ kỹ thuật HUDU sẽ liên hệ với bạn sớm nhất.",
-        footer_desc: "HUDU (huduvn.com) — Công ty phát triển phần mềm phân tích dữ liệu đấu thầu thông minh và hệ thống tự động hóa tiếp nhận, quản trị hàng đợi phòng khám.",
+        form_success: "✓ Đã ghi nhận thông tin! Đội ngũ HUDU sẽ liên hệ hỗ trợ ngay.",
+        footer_desc: "HUDU (huduvn.com) — Đơn vị phát triển phần mềm chọn lọc gói thầu thông minh và hệ thống tự động tiếp nhận, gọi số phòng khám.",
         footer_col1: "Sản phẩm",
         footer_col2: "Tính năng nổi bật",
         footer_col3: "Liên hệ",
-        f_link_dauthau: "HUDU DauThau (/dauthau)",
-        f_link_cfms: "HUDU CFMS / QMS (/cfms)",
+        f_link_dauthau: "Phần Mềm Đấu Thầu (/dauthau)",
+        f_link_cfms: "Phần Mềm Phòng Khám (/cfms)",
         f_link_cfms_price: "Bảng Giá Phòng Khám",
-        f_link_dt_price: "Bảng Giá Đấu Thầu Thông Minh",
-        f_link_tech1: "Săn & Lọc Thầu Sàn/Trần",
-        f_link_tech2: "Thuật Toán Chấm Điểm Khớp Thầu",
+        f_link_dt_price: "Bảng Giá Phần Mềm Đấu Thầu",
+        f_link_tech1: "Chọn Lọc Gói Thầu Đúng Tầm Vốn",
+        f_link_tech2: "Chấm Điểm Phù Hợp (0–10 Điểm)",
         f_link_tech3: "Nhận Diện Khuôn Mặt & CCCD",
         f_link_tech4: "Loa Gọi Số & TV Phòng Chờ",
-        footer_tagline: "Enterprise Smart Algorithms & Healthcare Solutions"
+        footer_tagline: "Giải Pháp Phần Mềm Thông Minh Cho Doanh Nghiệp & Y Tế"
       },
       en: {
         nav_solutions: "Solutions",
@@ -3365,18 +3374,18 @@
         nav_cta: "Request Demo",
         hero_badge: "HUDU Enterprise Technology · huduvn.com",
         hero_title: 'Algorithm-Driven <span class="highlight">Smart Tender Matching</span> &amp; Clinic Queue Management',
-        hero_desc: "Automated <strong>Capability Criteria &amp; Bid Document Algorithmic Analysis</strong>, 0–10 fit scoring, and secure internal Floor/Ceiling capability matching; alongside <strong>Face Recognition &amp; Patient Intake (CFMS/QMS)</strong> for Hospitals, Clinics, and Education Centers.",
+        hero_desc: "Automated <strong>Capability Criteria &amp; Bid Document Algorithmic Analysis</strong>, 0–10 fit scoring, and secure internal Financial Scale capability matching; alongside <strong>Face Recognition &amp; Patient Intake (CFMS/QMS)</strong> for Hospitals, Clinics, and Education Centers.",
         hero_btn_demo: "Try Interactive Demo ↓",
         hero_btn_explore: "Explore 2 Platforms",
         metric_1_val: "Automated",
         metric_1: "Smart algorithmic capability scoring & instant patient check-in",
         metric_2_val: "Accurate",
-        metric_2: "Smart revision merging & Floor/Ceiling capability matching",
+        metric_2: "Smart revision merging & Financial Scale capability matching",
         metric_3: "Reliable operation with strict internal privacy & Clinic Offline LAN",
         showcase_url: "huduvn.com · HUDU Software Ecosystem",
         partner_label: "STRATEGIC TECHNOLOGY, DIGITAL INFRASTRUCTURE & HEALTHCARE PARTNERS",
         card1_title: "HUDU DauThau — Smart Tender Hunting & Fit Scoring",
-        card1_sub: "Secure Capability Criteria Matching, Bid Spec Extraction & Floor/Ceiling Filter",
+        card1_sub: "Secure Capability Criteria Matching, Bid Spec Extraction & Financial Scale Filter",
         card1_pill: "1 – 5 Accounts",
         card1_chip1: "Multi-Dimensional Scoring (0–10 pts)",
         card1_chip2: "Sector Classification & Tech Specs",
@@ -3404,7 +3413,7 @@
         p1_v_foot_r: "Open <code>/dauthau</code> →",
         p1_tag: "PRODUCT 01 · DAUTHAU ENTERPRISE PLATFORM",
         p1_title: "Smart Capability Criteria & Algorithmic Tender Matching Platform",
-        p1_desc: "Automatically standardizes internal capability criteria with strict privacy, merges tender revisions/extensions, extracts E-HSMT (Chapter III & Chapter V) specs, and scores multi-dimensional fit from 0–10 within Floor/Ceiling bounds & preferred regions.",
+        p1_desc: "Automatically standardizes internal capability criteria with strict privacy, merges tender revisions/extensions, extracts E-HSMT (Chapter III & Chapter V) specs, and scores multi-dimensional fit from 0–10 within Financial Scale bounds & preferred regions.",
         p1_s1_t: "01. Criteria",
         p1_s1_s: "Secure Internal Setup",
         p1_s2_t: "02. Deduplicate",
@@ -3417,9 +3426,9 @@
         p1_b2: "Premium Plan: 899k/mo · 8.9M VND/yr (5 Accounts · 2 Domains)",
         p1_b3: "Multi-Dimensional Scoring (0.0 – 10.0 pts)",
         p1_b4: "100% Full Features Included",
-        p1_f1: "<strong>2-Tier Algorithmic Capability Matching & Smart Deduplication:</strong> Configures secure internal Floor/Ceiling filters and excludes non-target sectors without exposing sensitive company data externally; merges amendments and extensions into a single record.",
+        p1_f1: "<strong>2-Tier Algorithmic Capability Matching & Smart Deduplication:</strong> Configures secure internal Financial Scale filters and excludes non-target sectors without exposing sensitive company data externally; merges amendments and extensions into a single record.",
         p1_f2: "<strong>Deep Industry Classification & PDF E-HSMT Extraction (Ch. III & Ch. V):</strong> Automatically tags sectors, procurement types, project grades (I–IV), Chapter III criteria, Chapter V technical specs, and highlights mandatory requirements.",
-        p1_f3: "<strong>Multi-Dimensional Fit Scoring (0–10 pts), Floor/Ceiling & Regional Priority:</strong> Evaluates Sector, Finance, Capacity Headroom, Technical Scale – Personnel – Equipment, Preferred Regions & Hotspot Provinces, Funding Source, and Prep Time.",
+        p1_f3: "<strong>Multi-Dimensional Fit Scoring (0–10 pts), Financial Scale & Regional Priority:</strong> Evaluates Sector, Finance, Capacity Headroom, Technical Scale – Personnel – Equipment, Preferred Regions & Hotspot Provinces, Funding Source, and Prep Time.",
         p1_f4: "<strong>Multi-Channel Alerts & Bid Workflow Tracking:</strong> Instant notifications via Mobile App (iOS/Android), Zalo, SMS, and Email with shared team statuses (Viewed, Interested, Bidding, Skipped).",
         btn_prod_pricing: "Product Page & Pricing →",
         p1_cta: "Open Matcher Demo ↓",
@@ -3452,7 +3461,7 @@
         p2_cta: "Open Queue Console ↓",
         demo_tag: "Interactive Sandbox",
         demo_title: "Live Product Experience",
-        demo_desc: "Test the Floor/Ceiling Tender Matcher or add new patient/student intake tickets directly in the browser.",
+        demo_desc: "Test the Financial Scale Tender Matcher or add new patient/student intake tickets directly in the browser.",
         tab_tender: "1. Smart Tender Scoring & Matcher (DauThau)",
         tab_csms: "2. Patient & Student Intake Console (CFMS / CSMS)",
         sb_p1_banner: "You are viewing the interactive preview of <strong>HUDU DauThau Platform</strong>.",
@@ -3468,7 +3477,7 @@
         th_investor: "Investor / Entity",
         th_budget: "Package Budget",
         th_deadline: "Status",
-        th_match: "Floor/Ceiling Match",
+        th_match: "Financial Scale Match",
         sb_p2_banner: "You are viewing the interactive preview of <strong>HUDU CFMS / QMS</strong>.",
         sb_p2_btn: "Open Clinic Product & Pricing Page (/cfms) →",
         csms_mode_label: "Operating Mode:",
@@ -3488,7 +3497,7 @@
         arch_3_desc: "Strict role-based access control, complete organization data isolation, and uninterrupted clinic reception & voice calling even when the internet is down.",
         cta_title: "Deploy HUDU Solutions for Your Organization",
         cta_desc: "Request a trial account for our Smart Tender Matching platform or deploy the CFMS/QMS reception system at your facility.",
-        cta_b1: "✓ Pre-configured Floor/Ceiling capability filters with instant open-tender scanning",
+        cta_b1: "✓ Pre-configured Financial Scale capability filters with instant open-tender scanning",
         cta_b2: "✓ Custom clinic branding, patient intake flows, ID scanning, voice calling & waiting room TV",
         cta_b3: "✓ 100% free software maintenance and updates throughout your subscription",
         form_title: "Request Consultation & Plan Subscription",
@@ -3514,7 +3523,7 @@
         f_link_cfms: "HUDU CFMS / QMS (/cfms)",
         f_link_cfms_price: "Clinic Pricing Plans",
         f_link_dt_price: "Smart Tender Pricing Plans",
-        f_link_tech1: "Floor/Ceiling Tender Matching",
+        f_link_tech1: "Financial Scale Tender Matching",
         f_link_tech2: "Algorithmic Bid Scoring",
         f_link_tech3: "Face Recognition & ID Scan",
         f_link_tech4: "Voice Calling & Waiting TV",
@@ -3693,7 +3702,7 @@
         nav_cta: "申请试用",
         hero_badge: "HUDU Enterprise Technology · huduvn.com",
         hero_title: '智能算法驱动的<span class="highlight">高效招投标检索</span>与诊所接单管理平台',
-        hero_desc: "通过专业算法自动分析<strong>投标能力指标与招标文件</strong>，进行 0–10 分契合度评分并按内部安全能力上下限（Floor/Ceiling）精准筛选；同时为医院、诊所及教育培训机构提供<strong>人脸识别取号与接单管理系统 (CFMS/QMS)</strong>。",
+        hero_desc: "通过专业算法自动分析<strong>投标能力指标与招标文件</strong>，进行 0–10 分契合度评分并按内部安全能力上下限（Financial Scale）精准筛选；同时为医院、诊所及教育培训机构提供<strong>人脸识别取号与接单管理系统 (CFMS/QMS)</strong>。",
         hero_btn_demo: "立即体验交互式演示 ↓",
         hero_btn_explore: "了解两大核心系统",
         metric_1_val: "全自动",
@@ -4021,13 +4030,13 @@
         nav_cta: "데모 신청",
         hero_badge: "HUDU Enterprise Technology · huduvn.com",
         hero_title: '스마트 알고리즘 기반 <span class="highlight">입찰 매칭</span> 및 클리닉 접수·대기열 플랫폼',
-        hero_desc: "<strong>기업 수행역량 기준 및 입찰 제안요청서를 정밀 알고리즘으로 자동 분석</strong>하여 0–10점 적합도 채점 및 안전한 내부 하한/상한(Floor/Ceiling) 매칭을 수행하며, 병원·의원·교육기관을 위한 <strong>안면인식 접수 및 순번 대기 시스템 (CFMS/QMS)</strong>을 제공합니다.",
+        hero_desc: "<strong>기업 수행역량 기준 및 입찰 제안요청서를 정밀 알고리즘으로 자동 분석</strong>하여 0–10점 적합도 채점 및 안전한 내부 하한/상한 매칭을 수행하며, 병원·의원·교육기관을 위한 <strong>안면인식 접수 및 순번 대기 시스템 (CFMS/QMS)</strong>을 제공합니다.",
         hero_btn_demo: "실시간 인터랙티브 데모 체험 ↓",
         hero_btn_explore: "2대 핵심 플랫폼 보기",
         metric_1_val: "자동화",
         metric_1: "스마트 알고리즘 입찰 적합도 채점 및 안면인식 환자 접수",
         metric_2_val: "정밀성",
-        metric_2: "정정 공고 자동 병합 및 기업 역량(Floor/Ceiling) 매칭",
+        metric_2: "정정 공고 자동 병합 및 기업 역량 매칭",
         metric_3: "철저한 내부 데이터 보안 및 원내 네트워크 안정 구동",
         showcase_url: "huduvn.com · HUDU 소프트웨어 에코시스템",
         partner_label: "전략적 기술 · 디지털 인프라 · 의료 생태계 파트너십",
@@ -4262,61 +4271,61 @@
         code: 'IB2600881201-01',
         source: 'Xây lắp · Công trình Cấp II',
         cat: 'CAUDUONG',
-        taxonomy: 'xay_dung.giao_thong.cau_duong · Cầu dài 90m (3 nhịp 30m)',
+        taxonomy: 'Giao thông · Cầu đường · Cầu dài 90m (3 nhịp)',
         title: {
-          vi: 'Thi công xây dựng Cầu Sông Nhạn chiều dài 90m và đường hai đầu cầu (Đã gộp bản sửa đổi -01)',
+          vi: 'Thi công xây dựng Cầu Sông Nhạn chiều dài 90m và đường hai đầu cầu (Đã gộp thông báo sửa đổi)',
           en: 'Construction of Song Nhan Bridge (length 90m, 3x30m spans) & approach roads (Merged Rev -01)',
           es: 'Construcción del Puente Song Nhan (longitud 90m, 3 tramos) y accesos (Rev -01)',
           zh: '同奈省雁河大桥（桥长90m，3x30m跨径）及引道施工标段（已合并-01修正版）',
           ja: 'ソンニャン橋（橋長90m・3径間）および取付道路建設工事（改訂-01統合済）',
           ko: '동나이성 송냔 교량(길이 90m, 3경간) 및 접속도로 시공 (정정공고 -01 병합)'
         },
-        investor: 'Ban QLDA ĐTXD Tỉnh Đồng Nai (VN-39)',
+        investor: 'Ban QLDA ĐTXD Tỉnh Đồng Nai',
         budget: '35,5 tỷ / TMĐT 120 tỷ',
-        status: { vi: 'Đang mở · Đã đẩy App/Zalo', en: 'Open · Pushed App/Zalo', es: 'Abierto · Notificado', zh: '招标中 · 已推送', ja: '公開中 · 通知済', ko: '진행중 · 푸시 완료' },
-        match: '9.8/10đ · Sàn 10 tỷ ≤ 35,5 tỷ ≤ Trần 80 tỷ'
+        status: { vi: 'Đang mở · Đã báo Zalo', en: 'Open · Pushed App/Zalo', es: 'Abierto · Notificado', zh: '招标中 · 已推送', ja: '公開中 · 通知済', ko: '진행중 · 푸시 완료' },
+        match: '9.8/10đ · Đúng tầm vốn (10 – 80 tỷ)'
       },
       {
         code: 'IB2600910452-00',
         source: 'Hàng hóa & CNTT · Cấp III',
         cat: 'CNTT',
-        taxonomy: 'cntt.phan_mem.y_te_so · HIS/LIS & Kiosk Sinh trắc học',
+        taxonomy: 'Phần mềm Y tế · Tiếp nhận & Gọi số tự động',
         title: {
-          vi: 'Triển khai hệ thống phần mềm quản trị bệnh viện thông minh, Kiosk nhận diện khuôn mặt & quét CCCD',
+          vi: 'Triển khai hệ thống phần mềm quản lý bệnh viện thông minh, nhận diện khuôn mặt & quét CCCD',
           en: 'Smart Hospital Management Software (HIS), Face Recognition Kiosk & Chip-ID Queue System',
           es: 'Sistema de Gestión Hospitalaria (HIS), Kiosco de Reconocimiento Facial y Turnos QR',
           zh: '智慧医院管理系统 (HIS)、人脸识别自助取号终端及芯片身份证核验系统采购',
           ja: 'スマート病院管理システム (HIS)・顔認証キオスク＆ICカード受付システム導入',
           ko: '스마트 병원 관리 시스템(HIS), 안면인식 키오스크 및 신분증 QR 접수 시스템 구축'
         },
-        investor: 'Bệnh viện Đa khoa Khu vực — TP.HCM (VN-79)',
+        investor: 'Bệnh viện Đa khoa Khu vực — TP.HCM',
         budget: '14,8 tỷ / TMĐT 45 tỷ',
-        status: { vi: 'Đang mở · Read-Receipt ✓', en: 'Open · Read-Receipt ✓', es: 'Abierto · Leído ✓', zh: '招标中 · 已读回执 ✓', ja: '公開中 · 既読 ✓', ko: '진행중 · 열람완료 ✓' },
-        match: '9.5/10đ · Sàn 5 tỷ ≤ 14,8 tỷ ≤ Trần 50 tỷ'
+        status: { vi: 'Đang mở · Đã mở xem ✓', en: 'Open · Read-Receipt ✓', es: 'Abierto · Leído ✓', zh: '招标中 · 已读回执 ✓', ja: '公開中 · 既読 ✓', ko: '진행중 · 열람완료 ✓' },
+        match: '9.5/10đ · Đúng tầm vốn (5 – 50 tỷ)'
       },
       {
         code: 'PKG-INFRA-2026-88',
-        source: 'Hỗn hợp · Tích hợp Hệ thống',
+        source: 'Hỗn hợp · Thiết bị & Hạ tầng',
         cat: 'PRIVATE',
-        taxonomy: 'ha_tang_so.may_chu_bao_mat · Cloud & Data Center Cluster',
+        taxonomy: 'Hạ tầng số · Hệ thống Máy chủ & Bảo mật dữ liệu',
         title: {
-          vi: 'Cung cấp bản quyền phần mềm bảo mật định danh đa tổ chức và nâng cấp hạ tầng máy chủ cụm dữ liệu',
+          vi: 'Cung cấp bản quyền phần mềm bảo mật dữ liệu và nâng cấp hệ thống máy chủ trung tâm',
           en: 'Enterprise Multi-Tenant IAM Security Licensing & Data Center Cluster Upgrade',
           es: 'Licenciamiento de Seguridad IAM Multiempresa y Actualización de Clúster de Datos',
           zh: '多租户身份安全认证平台授权及核心数据中心服务器集群升级采购',
           ja: 'マルチテナント IAM セキュリティライセンスおよびデータセンターサーバークラスタ増強',
           ko: '멀티테넌트 IAM 보안 라이선스 공급 및 데이터센터 클러스터 고도화'
         },
-        investor: 'Trung Tâm Hạ Tầng Dữ Liệu Khu Vực (VN-HN)',
+        investor: 'Trung Tâm Hạ Tầng Dữ Liệu Khu Vực — Hà Nội',
         budget: '22,0 tỷ / TMĐT 65 tỷ',
-        status: { vi: 'Đang mở · Quét ngay khi tạo hồ sơ', en: 'Open · Instant Scan', es: 'Abierto · Escaneo inmediato', zh: '招标中 · 即刻扫描', ja: '公開中 · 即時スキャン', ko: '진행중 · 즉시 스캔' },
-        match: '9.2/10đ · Sàn 10 tỷ ≤ 22,0 tỷ ≤ Trần 60 tỷ'
+        status: { vi: 'Đang mở · Rà soát tức thì', en: 'Open · Instant Scan', es: 'Abierto · Escaneo inmediato', zh: '招标中 · 即刻扫描', ja: '公開中 · 即時スキャン', ko: '진행중 · 즉시 스캔' },
+        match: '9.2/10đ · Đúng tầm vốn (10 – 60 tỷ)'
       },
       {
         code: 'IB2600945110-00',
         source: 'Thiết bị Y tế · Cấp I',
         cat: 'YTE',
-        taxonomy: 'y_te.thiet_bi.than_nhan_tao · Hemodialysis & RO Systems',
+        taxonomy: 'Thiết bị Y tế · Máy thận nhân tạo & Lọc nước RO',
         title: {
           vi: 'Cung cấp và lắp đặt hệ thống 30 máy thận nhân tạo công nghệ cao và hệ thống xử lý nước RO y tế',
           en: 'Supply and installation of 30 Hemodialysis Machines & Medical RO Water Treatment System',
@@ -4327,21 +4336,21 @@
         },
         investor: 'Ban QLDA Y tế Trọng điểm — Đà Nẵng',
         budget: '28,4 tỷ / TMĐT 90 tỷ',
-        status: { vi: 'Đang mở · Đã đẩy Zalo/SMS', en: 'Open · Sent Zalo/SMS', es: 'Abierto · SMS enviado', zh: '招标中 · 已发短信', ja: '公開中 · SMS送信済', ko: '진행중 · SMS 발송' },
-        match: '9.6/10đ · Sàn 15 tỷ ≤ 28,4 tỷ ≤ Trần 70 tỷ'
+        status: { vi: 'Đang mở · Đã báo Zalo/Điện thoại', en: 'Open · Sent Zalo/SMS', es: 'Abierto · SMS enviado', zh: '招标中 · 已发短信', ja: '公開中 · SMS送信済', ko: '진행중 · SMS 발송' },
+        match: '9.6/10đ · Đúng tầm vốn (15 – 70 tỷ)'
       }
     ];
 
     const CLINIC_DATA = [
-      { id: 'BN-1001', name: 'Nguyễn Văn Hòa (1962)', cccd: 'CCCD Chip · Đã ánh xạ người nhà (Con trai lấy số)', dept: 'Khoa Thận Nhân Tạo — Ca 1 (Máy số 08)', mode: 'Face ID', status: 'Đang lọc máu · Đã phát loa gọi số' },
-      { id: 'BN-1002', name: 'Trần Thị Mai (1975)', cccd: 'CCCD QR · Máy quét mã vạch (Chống trùng phiếu)', dept: 'Phòng Khám Nội Tổng Quát — P.102', mode: 'QR CCCD', status: 'Chuẩn bị vào khám (Số TT: 012)' },
-      { id: 'BN-1003', name: 'Lê Minh Tuấn (1988)', cccd: 'Camera Lấy số · Tự động nhận diện', dept: 'Chẩn đoán Hình ảnh & Siêu âm — P.205', mode: 'Face ID', status: 'Mới cấp phiếu (Số TT: 015)' }
+      { id: 'BN-1001', name: 'Nguyễn Văn Hòa (1962)', cccd: 'Thẻ CCCD · Người nhà (Con trai) lấy số giùm', dept: 'Khoa Thận Nhân Tạo — Ca 1 (Máy số 08)', mode: 'Khuôn mặt', status: 'Đang lọc máu · Đã phát loa gọi số' },
+      { id: 'BN-1002', name: 'Trần Thị Mai (1975)', cccd: 'Quét mã CCCD · Đã kiểm tra chống trùng số', dept: 'Phòng Khám Nội Tổng Quát — P.102', mode: 'Quét CCCD', status: 'Chuẩn bị vào khám (Số TT: 012)' },
+      { id: 'BN-1003', name: 'Lê Minh Tuấn (1988)', cccd: 'Camera lấy số · Tự động nhận diện bệnh nhân cũ', dept: 'Chẩn đoán Hình ảnh & Siêu âm — P.205', mode: 'Khuôn mặt', status: 'Mới cấp phiếu (Số TT: 015)' }
     ];
 
     const CLASS_DATA = [
-      { id: 'HV-2001', name: 'Phạm Gia Huy — Lớp 10A', cccd: 'PH đón/điểm danh: Phụ huynh Phạm Văn Long', dept: 'Toán Chuyên Sâu — Ca Tối 18:00 (Phòng P.201)', mode: 'Face ID', status: 'Đã điểm danh · Đã báo Zalo PH' },
-      { id: 'HV-2002', name: 'Võ Ngọc Khuê — Lớp 12B', cccd: 'Thẻ học viên QR · Chống điểm danh trùng', dept: 'Luyện thi IELTS & Học thuật — Ca 19:30 (P.104)', mode: 'QR Code', status: 'Đang học · Hoàn tất học phí' },
-      { id: 'HV-2003', name: 'Đặng Hoàng Nam — Lớp 9C', cccd: 'Đăng ký mới tại quầy Giáo vụ', dept: 'Khoa học Máy tính & STEM — Ca Sáng CN (P.302)', mode: 'Web Intake', status: 'Mới ghi danh · Đã xếp lớp' }
+      { id: 'HV-2001', name: 'Phạm Gia Huy — Lớp 10A', cccd: 'Phụ huynh đưa đón: Phạm Văn Long', dept: 'Toán Chuyên Sâu — Ca Tối 18:00 (Phòng P.201)', mode: 'Khuôn mặt', status: 'Đã điểm danh · Đã báo Zalo PH' },
+      { id: 'HV-2002', name: 'Võ Ngọc Khuê — Lớp 12B', cccd: 'Thẻ học viên · Đã kiểm tra chống điểm danh trùng', dept: 'Luyện thi Tiếng Anh — Ca 19:30 (P.104)', mode: 'Quét mã thẻ', status: 'Đang học · Hoàn tất học phí' },
+      { id: 'HV-2003', name: 'Đặng Hoàng Nam — Lớp 9C', cccd: 'Đăng ký mới tại bàn Giáo vụ', dept: 'Tin học & Lập trình — Ca Sáng CN (P.302)', mode: 'Tại quầy', status: 'Mới ghi danh · Đã xếp lớp' }
     ];
 
     function applyThemeState(isDark) {
@@ -4424,7 +4433,7 @@
       });
 
       if (filtered.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; padding: 26px; color: var(--text-muted);">No matching tenders found.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; padding: 26px; color: var(--text-muted);">Không tìm thấy gói thầu phù hợp.</td></tr>`;
         return;
       }
 
@@ -4432,11 +4441,11 @@
         <tr>
           <td>
             <div style="font-weight: 700; color: var(--blue-primary); font-family: ui-monospace, monospace;">${item.code}</div>
-            <div style="font-size: 0.75rem; color: var(--text-muted);">${item.source}</div>
+            <div style="font-size: 0.84rem; color: var(--text-muted);">${item.source}</div>
           </td>
           <td>
-            <div style="font-weight: 600; color: var(--text-main); max-width: 370px; margin-bottom: 4px;">${item.title[currentLang] || item.title.vi}</div>
-            <span class="status-pill" style="font-family: ui-monospace, monospace; font-size: 0.71rem;">${item.taxonomy}</span>
+            <div style="font-weight: 600; color: var(--text-main); max-width: 390px; margin-bottom: 5px;">${item.title[currentLang] || item.title.vi}</div>
+            <span class="status-pill" style="font-size: 0.8rem;">${item.taxonomy}</span>
           </td>
           <td>${item.investor}</td>
           <td style="font-weight: 700; color: var(--text-main); white-space: nowrap;">${item.budget}</td>
@@ -4458,8 +4467,8 @@
       } else {
         serviceSelect.innerHTML = `
           <option value="Toán Chuyên Sâu — Ca 18:00 (P.201)">Toán Chuyên Sâu — Ca 18:00 (P.201)</option>
-          <option value="Luyện thi IELTS — Ca 19:30 (P.104)">Luyện thi IELTS — Ca 19:30 (P.104)</option>
-          <option value="Khoa học Máy tính & STEM — Ca Sáng (P.302)">Khoa học Máy tính & STEM (P.302)</option>
+          <option value="Luyện thi Tiếng Anh — Ca 19:30 (P.104)">Luyện thi Tiếng Anh — Ca 19:30 (P.104)</option>
+          <option value="Tin học & Lập trình — Ca Sáng (P.302)">Tin học & Lập trình (P.302)</option>
         `;
       }
     }
@@ -4533,7 +4542,7 @@
       const serviceEl = document.getElementById('csmsInputService');
 
       const name = nameEl.value.trim() || (csmsMode === 'CLINIC' ? 'Bệnh nhân mới (Tiếp nhận nhanh)' : 'Học viên mới (Ghi danh ca học)');
-      const cccd = phoneEl.value.trim() || (csmsMode === 'CLINIC' ? 'CCCD gắn chip · Đã xác thực chống trùng' : 'PH đăng ký · Đã liên kết hồ sơ');
+      const cccd = phoneEl.value.trim() || (csmsMode === 'CLINIC' ? 'CCCD gắn chip · Đã kiểm tra chống trùng' : 'Phụ huynh đăng ký · Đã liên kết hồ sơ');
       const dept = serviceEl.value;
 
       if (csmsMode === 'CLINIC') {
@@ -4543,7 +4552,7 @@
           name: name,
           cccd: cccd,
           dept: dept,
-          mode: 'Face ID / QR',
+          mode: 'Khuôn mặt / CCCD',
           status: 'Vừa cấp số · Đang gọi loa'
         });
       } else {
@@ -4553,7 +4562,7 @@
           name: name,
           cccd: cccd,
           dept: dept,
-          mode: 'QR / Face ID',
+          mode: 'Thẻ / Khuôn mặt',
           status: 'Vừa ghi danh · Đã xếp lớp'
         });
       }

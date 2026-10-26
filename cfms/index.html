@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HUDU CFMS / QMS — Phần Mềm Quản Lý Phòng Khám, Nhận Diện Khuôn Mặt &amp; Bảng Giá</title>
-  <meta name="description" content="Hệ thống Nhận diện Khuôn mặt, Quét QR CCCD gắn chip, Điều phối hàng đợi Loa gọi số tự động & Bảng giá Gói Cơ Bản (Basic 499k/tháng - 5.000 hồ sơ) & Nâng Cao (Premium 999k/tháng - 100.000 hồ sơ) cho Phòng khám & Bệnh viện." />
+  <title>HUDU CFMS — Phần Mềm Tiếp Nhận &amp; Điều Phối Phòng Khám</title>
+  <meta name="description" content="Phần mềm nhận diện khuôn mặt, quét CCCD gắn chip, loa gọi số tự động và bảng giá Gói Cơ Bản (499k/tháng) & Nâng Cao (999k/tháng) cho Phòng khám & Bệnh viện." />
   <link rel="canonical" href="https://huduvn.com/cfms/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://huduvn.com/cfms/" />
-  <meta property="og:title" content="HUDU CFMS / QMS — Giải Pháp Quản Lý Phòng Khám &amp; Bảng Giá Thuê Bao" />
-  <meta property="og:description" content="Nhận diện khuôn mặt tự động, hỗ trợ người nhà lấy số khám giùm, quét CCCD gắn chip, loa gọi số tự động và phân quyền 3 Role (Admin, Bác sĩ, Điều dưỡng)." />
+  <meta property="og:title" content="HUDU CFMS — Phần Mềm Tiếp Nhận &amp; Điều Phối Phòng Khám" />
+  <meta property="og:description" content="Nhận diện khuôn mặt tự động, người nhà lấy số giùm, quét CCCD gắn chip, loa gọi số tự động và phân quyền 3 vai trò y tế." />
   <meta property="og:image" content="https://huduvn.com/images/hudu-logo-dark.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/svg+xml" href="../svg/hudu-favicon.svg" />
@@ -34,8 +34,8 @@
       --bg-navy-deep: #0B1829;
 
       --text-main: #0F233A;
-      --text-body: #334155;
-      --text-muted: #5A6B82;
+      --text-body: #1E293B;
+      --text-muted: #475569;
 
       --blue-primary: #0066CC;
       --blue-hover: #0052A3;
@@ -70,8 +70,8 @@
       --bg-ice-strong: #1E416B;
 
       --text-main: #F1F5F9;
-      --text-body: #CBD5E1;
-      --text-muted: #94A3B8;
+      --text-body: #E2E8F0;
+      --text-muted: #CBD5E1;
 
       --blue-primary: #38BDF8;
       --blue-hover: #7DD3FC;
@@ -95,6 +95,7 @@
     }
 
     html {
+      font-size: 17px;
       scroll-behavior: smooth;
       overflow-x: hidden;
       max-width: 100%;
@@ -105,7 +106,7 @@
       background: var(--bg-page-grad);
       background-color: var(--bg-page);
       color: var(--text-main);
-      line-height: 1.6;
+      line-height: 1.65;
       overflow-x: hidden;
       max-width: 100%;
       width: 100%;
@@ -203,7 +204,7 @@
     }
 
     .nav-links a {
-      font-size: 0.9rem;
+      font-size: 0.96rem;
       font-weight: 600;
       color: var(--text-body);
       white-space: nowrap;
@@ -258,7 +259,7 @@
       border-radius: 99px;
       height: 38px;
       padding: 0 30px 0 14px;
-      font-size: 0.84rem;
+      font-size: 0.9rem;
       font-weight: 600;
       font-family: inherit;
       cursor: pointer;
@@ -306,10 +307,10 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      height: 38px;
-      padding: 0 18px;
+      height: 40px;
+      padding: 0 20px;
       border-radius: 99px;
-      font-size: 0.88rem;
+      font-size: 0.94rem;
       font-weight: 600;
       white-space: nowrap;
       cursor: pointer;
@@ -345,9 +346,9 @@
     }
 
     .btn-lg {
-      height: 48px;
-      padding: 0 26px;
-      font-size: 0.95rem;
+      height: 50px;
+      padding: 0 28px;
+      font-size: 1rem;
     }
 
     /* ==========================================================================
@@ -508,11 +509,11 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 6px 14px;
+      padding: 7px 16px;
       border-radius: 99px;
       background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 100%);
       color: #0052A3;
-      font-size: 0.79rem;
+      font-size: 0.85rem;
       font-weight: 700;
       border: 1px solid var(--border-subtle);
       box-shadow: var(--shadow-sm);
@@ -540,9 +541,9 @@
 
     .hero h1 {
       font-size: 2.75rem;
-      line-height: 1.18;
+      line-height: 1.2;
       font-weight: 800;
-      letter-spacing: -0.028em;
+      letter-spacing: -0.025em;
       margin-bottom: 20px;
     }
 
@@ -559,7 +560,8 @@
     }
 
     .hero-desc {
-      font-size: 1.02rem;
+      font-size: 1.1rem;
+      line-height: 1.68;
       color: var(--text-body);
       margin-bottom: 30px;
       max-width: 590px;
@@ -590,7 +592,7 @@
 
     .metric-item strong {
       display: block;
-      font-size: 1.32rem;
+      font-size: 1.38rem;
       font-weight: 800;
       background: linear-gradient(90deg, #0052A3, #475569);
       -webkit-background-clip: text;
@@ -605,11 +607,12 @@
     }
 
     .metric-item span {
-      font-size: 0.78rem;
+      font-size: 0.88rem;
+      font-weight: 500;
       color: var(--text-muted);
-      line-height: 1.35;
+      line-height: 1.42;
       display: block;
-      margin-top: 3px;
+      margin-top: 4px;
     }
 
     /* Hero Right Command Center */
@@ -627,6 +630,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 12px;
       padding-bottom: 14px;
       margin-bottom: 16px;
       border-bottom: 1px solid var(--border-light);
@@ -635,6 +639,7 @@
     .window-dots {
       display: flex;
       gap: 6px;
+      flex-shrink: 0;
     }
 
     .window-dots span {
@@ -655,22 +660,28 @@
     .showcase-url {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      background: var(--bg-subtle);
-      padding: 4px 12px;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--blue-hover);
+      background: var(--bg-ice);
+      border: 1px solid var(--border-ice);
+      padding: 5px 14px;
       border-radius: 99px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: calc(100% - 60px);
+    }
+
+    body.dark-mode .showcase-url {
+      color: #7DD3FC;
+      background: rgba(2, 132, 199, 0.18);
+      border-color: rgba(56, 189, 248, 0.35);
     }
 
     .live-indicator {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #0066CC;
-      animation: pulseDot 2s infinite;
+      display: none;
     }
 
     .mini-card {
@@ -722,9 +733,9 @@
     }
 
     .status-pill {
-      font-size: 0.72rem;
+      font-size: 0.8rem;
       font-weight: 700;
-      padding: 4px 10px;
+      padding: 5px 12px;
       border-radius: 99px;
       background: var(--bg-ice);
       color: var(--blue-primary);
@@ -767,7 +778,7 @@
     }
 
     .section-header h2 {
-      font-size: 2.2rem;
+      font-size: 2.25rem;
       font-weight: 800;
       letter-spacing: -0.022em;
       margin-bottom: 12px;
@@ -775,7 +786,8 @@
 
     .section-header p {
       color: var(--text-body);
-      font-size: 1.02rem;
+      font-size: 1.08rem;
+      line-height: 1.65;
     }
 
     .pricing-grid {
@@ -824,9 +836,9 @@
       transform: translateX(-50%);
       background: linear-gradient(90deg, #0284C7 0%, #38BDF8 50%, #E2E8F0 100%);
       color: #071324;
-      font-size: 0.73rem;
+      font-size: 0.78rem;
       font-weight: 800;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
       padding: 5px 16px;
       border-radius: 99px;
@@ -838,9 +850,9 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 0.76rem;
+      font-size: 0.82rem;
       font-weight: 800;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--blue-primary);
       margin-bottom: 8px;
@@ -851,7 +863,7 @@
     }
 
     .pricing-card h3 {
-      font-size: 1.38rem;
+      font-size: 1.42rem;
       font-weight: 800;
       margin-bottom: 8px;
       letter-spacing: -0.02em;
@@ -862,11 +874,11 @@
     }
 
     .pricing-subtitle {
-      font-size: 0.86rem;
+      font-size: 0.95rem;
       color: var(--text-muted);
       margin-bottom: 20px;
       min-height: 40px;
-      line-height: 1.45;
+      line-height: 1.52;
     }
 
     .pricing-card.featured .pricing-subtitle {
@@ -894,7 +906,7 @@
     }
 
     .price-amount {
-      font-size: 2.05rem;
+      font-size: 2.1rem;
       font-weight: 800;
       letter-spacing: -0.03em;
       color: var(--text-main);
@@ -908,13 +920,13 @@
     }
 
     .price-period {
-      font-size: 0.86rem;
+      font-size: 0.94rem;
       font-weight: 600;
       color: var(--text-muted);
     }
 
     .pricing-card.featured .price-period {
-      color: #94A3B8;
+      color: #CBD5E1;
     }
 
     .setup-fee-row {
@@ -924,7 +936,7 @@
       gap: 8px;
       padding-top: 8px;
       border-top: 1px dashed var(--border-light);
-      font-size: 0.82rem;
+      font-size: 0.9rem;
       font-weight: 600;
     }
 
@@ -934,12 +946,12 @@
 
     .setup-free-badge {
       display: inline-block;
-      padding: 2px 9px;
+      padding: 3px 10px;
       border-radius: 99px;
       background: rgba(56, 189, 248, 0.18);
       color: #7DD3FC;
       border: 1px solid rgba(125, 211, 252, 0.45);
-      font-size: 0.75rem;
+      font-size: 0.82rem;
       font-weight: 700;
     }
 
@@ -947,12 +959,12 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      padding: 11px 14px;
+      padding: 12px 15px;
       border-radius: 10px;
       background: var(--bg-ice);
       border: 1px solid var(--border-ice);
       color: var(--blue-hover);
-      font-size: 0.83rem;
+      font-size: 0.92rem;
       font-weight: 700;
       margin-bottom: 18px;
     }
@@ -973,15 +985,15 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 11px;
+      gap: 12px;
       margin-bottom: 24px;
-      font-size: 0.87rem;
-      line-height: 1.48;
+      font-size: 0.96rem;
+      line-height: 1.56;
       color: var(--text-body);
     }
 
     .pricing-card.featured .pricing-feature-list {
-      color: #E2E8F0;
+      color: #F1F5F9;
     }
 
     .pricing-feature-list li {
@@ -991,18 +1003,18 @@
     }
 
     .pricing-check {
-      width: 19px;
-      height: 19px;
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
       background: rgba(0, 102, 204, 0.12);
       color: var(--blue-primary);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.72rem;
+      font-size: 0.76rem;
       font-weight: 800;
       flex-shrink: 0;
-      margin-top: 2px;
+      margin-top: 3px;
     }
 
     .pricing-card.featured .pricing-check {
@@ -1012,29 +1024,30 @@
 
     .pricing-hw-banner {
       margin-top: 28px;
-      padding: 22px 26px;
+      padding: 24px 28px;
       border-radius: var(--radius-lg);
       background: var(--bg-surface);
       border: 1px solid var(--border-light);
       box-shadow: var(--shadow-sm);
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 22px;
     }
 
     .hw-item {
       display: flex;
       align-items: flex-start;
       gap: 12px;
-      font-size: 0.84rem;
+      font-size: 0.94rem;
+      line-height: 1.55;
       color: var(--text-body);
     }
 
     .hw-item strong {
       display: block;
       color: var(--text-main);
-      font-size: 0.9rem;
-      margin-bottom: 3px;
+      font-size: 1rem;
+      margin-bottom: 4px;
     }
 
     /* ==========================================================================
@@ -1080,13 +1093,14 @@
     }
 
     .benefit-card h3 {
-      font-size: 1.12rem;
+      font-size: 1.18rem;
       font-weight: 700;
       margin-bottom: 8px;
     }
 
     .benefit-card p {
-      font-size: 0.9rem;
+      font-size: 0.98rem;
+      line-height: 1.58;
       color: var(--text-body);
     }
 
@@ -1102,15 +1116,15 @@
       width: 100%;
       border-collapse: collapse;
       text-align: left;
-      font-size: 0.9rem;
+      font-size: 0.96rem;
     }
 
     .data-table th {
-      padding: 15px 18px;
+      padding: 16px 18px;
       background: var(--bg-subtle);
       color: var(--text-main);
       font-weight: 800;
-      font-size: 0.8rem;
+      font-size: 0.88rem;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       border-bottom: 1px solid var(--border-light);
@@ -1118,7 +1132,7 @@
     }
 
     .data-table td {
-      padding: 15px 18px;
+      padding: 16px 18px;
       border-bottom: 1px solid var(--border-light);
       color: var(--text-body);
       vertical-align: middle;
@@ -1151,16 +1165,17 @@
     }
 
     .cta-box h2 {
-      font-size: 2rem;
+      font-size: 2.05rem;
       font-weight: 800;
       margin-bottom: 12px;
       line-height: 1.25;
     }
 
     .cta-box p {
-      color: #CBD5E1;
+      color: #E2E8F0;
       margin-bottom: 22px;
-      font-size: 0.96rem;
+      font-size: 1.04rem;
+      line-height: 1.62;
     }
 
     .contact-form {
@@ -1178,28 +1193,28 @@
     }
 
     .contact-form h3 {
-      font-size: 1.12rem;
+      font-size: 1.2rem;
       font-weight: 700;
       margin-bottom: 2px;
     }
 
     .form-group label {
       display: block;
-      font-size: 0.78rem;
+      font-size: 0.88rem;
       font-weight: 600;
-      color: #475569;
-      margin-bottom: 4px;
+      color: #334155;
+      margin-bottom: 5px;
     }
 
     .form-group input,
     .form-group select {
       width: 100%;
-      height: 40px;
-      padding: 0 12px;
+      height: 44px;
+      padding: 0 14px;
       border-radius: 8px;
       border: 1px solid #CBD5E1;
       background: #FFFFFF;
-      font-size: 0.88rem;
+      font-size: 0.95rem;
       font-family: inherit;
       color: #0F233A;
     }
@@ -1210,14 +1225,14 @@
       border-radius: 8px;
       background: #E0F2FE;
       color: #0052A3;
-      font-size: 0.84rem;
+      font-size: 0.9rem;
       font-weight: 600;
       text-align: center;
     }
 
     .footer {
       background: var(--bg-navy-deep);
-      color: #94A3B8;
+      color: #CBD5E1;
       padding: 56px 0 32px;
       border-top: 1px solid #1E3A5F;
     }
@@ -1239,7 +1254,7 @@
 
     .footer-col h4 {
       color: #F1F5F9;
-      font-size: 0.9rem;
+      font-size: 0.98rem;
       font-weight: 700;
       margin-bottom: 12px;
     }
@@ -1248,8 +1263,8 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 9px;
-      font-size: 0.86rem;
+      gap: 10px;
+      font-size: 0.92rem;
     }
 
     .footer-col a:hover {
@@ -1263,7 +1278,7 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 12px;
-      font-size: 0.82rem;
+      font-size: 0.88rem;
     }
 
     .hero-grid > *,
@@ -1638,7 +1653,7 @@
         <li><a href="../" data-i18n="nav_home">Trang chủ</a></li>
         <li><a href="#pricing" class="active" data-i18n="nav_pricing">Bảng giá</a></li>
         <li><a href="#features" data-i18n="nav_features">Tính năng</a></li>
-        <li><a href="#roles" data-i18n="nav_roles">Phân quyền 3 Role</a></li>
+        <li><a href="#roles" data-i18n="nav_roles">Phân quyền 3 vai trò</a></li>
         <li><a href="../dauthau/" data-i18n="nav_dauthau">Đấu thầu Thông minh</a></li>
       </ul>
 
@@ -1676,18 +1691,18 @@
       <div>
         <div class="pill-tag">
           <span class="pill-dot"></span>
-          <span data-i18n="hero_badge">SẢN PHẨM 02 · HUDU CFMS / QMS · huduvn.com/cfms</span>
+          <span data-i18n="hero_badge">SẢN PHẨM 02 · HUDU CFMS · huduvn.com/cfms</span>
         </div>
         <h1 data-i18n="hero_title">
-          Hệ Thống <span class="highlight">Nhận Diện Khuôn Mặt</span>, Quét CCCD &amp; Điều Phối Phòng Khám
+          Phần Mềm <span class="highlight">Nhận Diện Khuôn Mặt</span>, Quét CCCD &amp; Điều Phối Phòng Khám
         </h1>
         <p class="hero-desc" data-i18n="hero_desc">
-          Giải pháp tiếp nhận bệnh nhân tự động bằng nhận diện khuôn mặt, hỗ trợ <strong>người nhà lấy số khám giùm</strong>, quét mã QR CCCD gắn chip và phát loa gọi số tự động cho Phòng khám, Khoa Thận Nhân Tạo &amp; Bệnh viện.
+          Tiếp nhận bệnh nhân tự động bằng khuôn mặt, hỗ trợ <strong>người nhà lấy số khám giùm</strong>, quét thẻ CCCD gắn chip và phát loa gọi số tự động cho Phòng khám, Khoa Thận Nhân Tạo &amp; Bệnh viện.
         </p>
 
         <div class="hero-cta-group">
           <a href="#pricing" class="btn btn-primary btn-lg" data-i18n="hero_btn_pricing">
-            Xem Bảng Giá Gói Basic &amp; Premium &darr;
+            Xem Bảng Giá Gói Dịch Vụ &darr;
           </a>
           <a href="#features" class="btn btn-outline btn-lg" data-i18n="hero_btn_features">
             Khám Phá Tính Năng
@@ -1705,7 +1720,7 @@
           </div>
           <div class="metric-item">
             <strong data-i18n="m3_val">Hoạt động 24/7</strong>
-            <span data-i18n="m3_lbl">Vận hành ổn định ngay cả khi mất kết nối Internet</span>
+            <span data-i18n="m3_lbl">Vận hành ổn định ngay cả khi mất kết nối mạng</span>
           </div>
         </div>
       </div>
@@ -1717,14 +1732,13 @@
             <span></span><span></span><span></span>
           </div>
           <div class="showcase-url">
-            <span class="live-indicator"></span>
-            <span data-i18n="sc_header">HUDU CFMS · Tiếp Nhận &amp; Điều Phối Thông Minh</span>
+            <span data-i18n="sc_header">HUDU CFMS · Tiếp Nhận &amp; Điều Phối Phòng Khám</span>
           </div>
         </div>
 
         <div class="mini-card">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-            <strong style="font-size:0.95rem;" data-i18n="sc_card_title">Quầy Nhận Diện Khuôn Mặt &amp; Quét CCCD</strong>
+            <strong style="font-size:1rem;" data-i18n="sc_card_title">Quầy Nhận Diện Khuôn Mặt &amp; Quét CCCD</strong>
             <span class="status-pill" data-i18n="sc_card_pill">Tự động cấp số</span>
           </div>
           <div class="biometric-live-row">
@@ -1732,12 +1746,12 @@
               <div class="scan-laser"></div>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0066CC" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
             </div>
-            <div style="font-size: 0.8rem; line-height: 1.4;">
+            <div style="font-size: 0.88rem; line-height: 1.45;">
               <strong style="color: var(--text-main); display: block;" data-i18n="sc_patient">BN-1001 · Nguyễn Văn Hòa (1962)</strong>
               <span style="color: var(--text-muted);" data-i18n="sc_patient_sub">Người nhà lấy số khám giùm · Ca 1 (Máy lọc số 08)</span>
             </div>
           </div>
-          <div style="display:flex; justify-content:space-between; font-size:0.78rem; color:var(--text-muted);">
+          <div style="display:flex; justify-content:space-between; font-size:0.86rem; color:var(--text-muted);">
             <span data-i18n="sc_anti_dup">&#10003; Đã chống lấy trùng số trong ca</span>
             <span style="color:var(--blue-primary); font-weight:700;" data-i18n="sc_voice">&#128266; Loa gọi số: Mời số 008</span>
           </div>
@@ -1745,19 +1759,19 @@
 
         <div class="mini-card" style="background: linear-gradient(145deg, #0B192C, #132A46); color: #F8FAFC; border-color: #38BDF8;">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-            <span style="font-size:0.75rem; font-weight:800; color:#7DD3FC; text-transform:uppercase; letter-spacing:0.06em;" data-i18n="sc_price_head">Bảng giá công khai · Miễn phí bảo trì</span>
-            <span style="font-size:0.72rem; background:rgba(56,189,248,0.2); color:#7DD3FC; padding:3px 9px; border-radius:99px; font-weight:700;" data-i18n="sc_price_badge">Custom Thương Hiệu Riêng</span>
+            <span style="font-size:0.82rem; font-weight:800; color:#7DD3FC; text-transform:uppercase; letter-spacing:0.06em;" data-i18n="sc_price_head">Bảng giá công khai · Miễn phí bảo trì</span>
+            <span style="font-size:0.78rem; background:rgba(56,189,248,0.2); color:#7DD3FC; padding:4px 10px; border-radius:99px; font-weight:700;" data-i18n="sc_price_badge">Thương Hiệu Riêng</span>
           </div>
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:8px;">
-            <div style="background:rgba(15,23,42,0.7); padding:10px 12px; border-radius:10px; border:1px solid rgba(148,163,184,0.25);">
-              <div style="font-size:0.74rem; color:#94A3B8; font-weight:700;" data-i18n="sc_b_title">GÓI BASIC (5.000 Hồ sơ)</div>
-              <div style="font-size:1.2rem; font-weight:800; color:#FFFFFF;">499.000đ<span style="font-size:0.75rem; font-weight:500; color:#CBD5E1;" data-i18n="sc_per_mo">/tháng</span></div>
-              <div style="font-size:0.72rem; color:#CBD5E1; margin-top:2px;" data-i18n="sc_b_sub">Lắp đặt: 1.799.000đ · 01 Acc/Role</div>
+            <div style="background:rgba(15,23,42,0.7); padding:12px 14px; border-radius:10px; border:1px solid rgba(148,163,184,0.25);">
+              <div style="font-size:0.8rem; color:#CBD5E1; font-weight:700;" data-i18n="sc_b_title">GÓI CƠ BẢN (5.000 Hồ sơ)</div>
+              <div style="font-size:1.25rem; font-weight:800; color:#FFFFFF;">499.000đ<span style="font-size:0.82rem; font-weight:500; color:#CBD5E1;" data-i18n="sc_per_mo">/tháng</span></div>
+              <div style="font-size:0.8rem; color:#CBD5E1; margin-top:2px;" data-i18n="sc_b_sub">Lắp đặt: 1.799.000đ · 01 Tài khoản/Vai trò</div>
             </div>
-            <div style="background:rgba(2,132,199,0.25); padding:10px 12px; border-radius:10px; border:1px solid #38BDF8;">
-              <div style="font-size:0.74rem; color:#7DD3FC; font-weight:700;" data-i18n="sc_p_title">GÓI PREMIUM (100.000 Hồ sơ)</div>
-              <div style="font-size:1.2rem; font-weight:800; color:#7DD3FC;">999.000đ<span style="font-size:0.75rem; font-weight:500; color:#E2E8F0;" data-i18n="sc_per_mo">/tháng</span></div>
-              <div style="font-size:0.72rem; color:#BAE6FD; font-weight:700; margin-top:2px;" data-i18n="sc_p_sub">Miễn phí lắp đặt · 10 Acc/Role</div>
+            <div style="background:rgba(2,132,199,0.25); padding:12px 14px; border-radius:10px; border:1px solid #38BDF8;">
+              <div style="font-size:0.8rem; color:#7DD3FC; font-weight:700;" data-i18n="sc_p_title">GÓI NÂNG CAO (100.000 Hồ sơ)</div>
+              <div style="font-size:1.25rem; font-weight:800; color:#7DD3FC;">999.000đ<span style="font-size:0.82rem; font-weight:500; color:#E2E8F0;" data-i18n="sc_per_mo">/tháng</span></div>
+              <div style="font-size:0.8rem; color:#BAE6FD; font-weight:700; margin-top:2px;" data-i18n="sc_p_sub">Miễn phí lắp đặt · 10 Tài khoản/Vai trò</div>
             </div>
           </div>
         </div>
@@ -1771,11 +1785,11 @@
       <div class="section-header">
         <div class="pill-tag">
           <span class="pill-dot"></span>
-          <span data-i18n="price_tag">Bảng Giá Quản Lý Phòng Khám &amp; Bệnh Viện (CFMS / QMS)</span>
+          <span data-i18n="price_tag">Bảng Giá Quản Lý Phòng Khám &amp; Bệnh Viện (HUDU CFMS)</span>
         </div>
-        <h2 data-i18n="price_title">Gói Dịch Vụ Minh Bạch · Miễn Phí Bảo Trì Trọn Đời Thuê Bao</h2>
+        <h2 data-i18n="price_title">Gói Dịch Vụ Minh Bạch · Miễn Phí Bảo Trì Trọn Đời</h2>
         <p data-i18n="price_desc">
-          Thiết kế tối ưu chi phí cho Phòng khám chuyên khoa, Khoa Thận Nhân Tạo, Bệnh viện và Cơ sở đào tạo. Tặng kèm dịch vụ <strong>Custom thương hiệu riêng (Logo, Tên đơn vị)</strong> trên toàn bộ màn hình lấy số, Bàn điều phối &amp; TV Phòng chờ.
+          Tối ưu chi phí cho Phòng khám chuyên khoa, Khoa Thận Nhân Tạo và Bệnh viện. Tặng kèm dịch vụ <strong>thiết kế thương hiệu riêng (Logo, Tên đơn vị)</strong> trên Quầy lấy số, Bàn điều phối &amp; TV Phòng chờ.
         </p>
       </div>
 
@@ -1785,7 +1799,7 @@
           <div>
             <div class="pricing-tier-label">
               <span>●</span>
-              <span data-i18n="plan1_tier">GÓI CƠ BẢN · BASIC</span>
+              <span data-i18n="plan1_tier">GÓI CƠ BẢN</span>
             </div>
             <h3 data-i18n="plan1_name">Phòng Khám &amp; Cơ Sở Tiêu Chuẩn</h3>
             <p class="pricing-subtitle" data-i18n="plan1_sub">
@@ -1795,7 +1809,7 @@
             <div class="pricing-price-box">
               <div class="price-main-line">
                 <span class="price-amount">499.000đ</span>
-                <span class="price-period" data-i18n="plan_per_month">/ tháng (Subscribe)</span>
+                <span class="price-period" data-i18n="plan_per_month">/ tháng</span>
               </div>
               <div class="setup-fee-row">
                 <span data-i18n="plan1_setup_lbl">Phí lắp đặt &amp; khởi tạo (1 lần):</span>
@@ -1805,7 +1819,7 @@
 
             <div class="role-quota-banner">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-              <span data-i18n="plan1_quota">01 Tài khoản mỗi Role · Tối đa 5.000 Hồ sơ</span>
+              <span data-i18n="plan1_quota">01 Tài khoản mỗi vai trò · Tối đa 5.000 Hồ sơ</span>
             </div>
 
             <ul class="pricing-feature-list">
@@ -1815,19 +1829,19 @@
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span data-i18n="plan1_f2"><strong>Dịch vụ Custom thương hiệu riêng:</strong> Cài đặt Tên Phòng khám, Tên Khoa &amp; Logo riêng đồng bộ trên Quầy lấy số, Bàn điều phối và TV Phòng chờ.</span>
+                <span data-i18n="plan1_f2"><strong>Thiết kế thương hiệu riêng:</strong> Cài đặt Tên Phòng khám, Tên Khoa &amp; Logo riêng đồng bộ trên Quầy lấy số, Bàn điều phối và TV Phòng chờ.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span data-i18n="plan1_f3"><strong>Miễn phí 100% bảo trì &amp; cập nhật:</strong> Bảo hành phần mềm, nâng cấp tính năng mới và hỗ trợ kỹ thuật trong suốt thời gian còn Subscribe.</span>
+                <span data-i18n="plan1_f3"><strong>Miễn phí 100% bảo trì &amp; cập nhật:</strong> Bảo hành phần mềm, nâng cấp tính năng mới và hỗ trợ kỹ thuật trong suốt thời gian sử dụng.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span data-i18n="plan1_f4"><strong>Nhận diện khuôn mặt &amp; Người nhà lấy số giùm:</strong> Nhận diện tự động bệnh nhân hoặc người thân đi kèm, chống bấm lấy trùng nhiều phiếu trong cùng ca.</span>
+                <span data-i18n="plan1_f4"><strong>Nhận diện khuôn mặt &amp; Người nhà lấy số giùm:</strong> Nhận diện tự động bệnh nhân hoặc người thân đi kèm, chống bấm lấy trùng phiếu trong ca.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span data-i18n="plan1_f5"><strong>Quét mã QR CCCD gắn chip tiện lợi:</strong> Quét nhanh CCCD qua Camera hoặc máy quét mã vạch để tự động điền thông tin hành chính của bệnh nhân.</span>
+                <span data-i18n="plan1_f5"><strong>Quét thẻ CCCD gắn chip tiện lợi:</strong> Quét nhanh CCCD qua máy ảnh hoặc máy quét mã vạch để tự động điền thông tin hành chính.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
@@ -1837,7 +1851,7 @@
           </div>
 
           <a href="#contact" onclick="selectPricingPlan('CFMS_BASIC')" class="btn btn-outline btn-lg" style="width: 100%; justify-content: center;" data-i18n="plan1_cta">
-            Đăng Ký Gói Basic &rarr;
+            Đăng Ký Gói Cơ Bản &rarr;
           </a>
         </div>
 
@@ -1847,7 +1861,7 @@
           <div>
             <div class="pricing-tier-label">
               <span>★</span>
-              <span data-i18n="plan2_tier">GÓI NÂNG CAO · PREMIUM</span>
+              <span data-i18n="plan2_tier">GÓI NÂNG CAO</span>
             </div>
             <h3 data-i18n="plan2_name">Phòng Khám Đa Khoa &amp; Khoa Bệnh Viện</h3>
             <p class="pricing-subtitle" data-i18n="plan2_sub">
@@ -1857,7 +1871,7 @@
             <div class="pricing-price-box">
               <div class="price-main-line">
                 <span class="price-amount">999.000đ</span>
-                <span class="price-period" data-i18n="plan_per_month">/ tháng (Subscribe)</span>
+                <span class="price-period" data-i18n="plan_per_month">/ tháng</span>
               </div>
               <div class="setup-fee-row">
                 <span data-i18n="plan2_setup_lbl">Phí lắp đặt &amp; khởi tạo:</span>
@@ -1867,17 +1881,17 @@
 
             <div class="role-quota-banner">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              <span data-i18n="plan2_quota">Tối đa 10 Tài khoản mỗi Role · 100.000 Hồ sơ</span>
+              <span data-i18n="plan2_quota">Tối đa 10 Tài khoản mỗi vai trò · 100.000 Hồ sơ</span>
             </div>
 
             <ul class="pricing-feature-list">
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span data-i18n="plan2_f1"><strong>Mở rộng lưu trữ tới 100.000 hồ sơ:</strong> Quản lý lên đến <strong>100.000 hồ sơ bệnh nhân &amp; người nhà</strong>, đáp ứng thoải mái nhu cầu lưu trữ dài hạn của Khoa/Phòng khám lớn.</span>
+                <span data-i18n="plan2_f1"><strong>Mở rộng lưu trữ tới 100.000 hồ sơ:</strong> Quản lý lên đến <strong>100.000 hồ sơ bệnh nhân &amp; người nhà</strong>, đáp ứng nhu cầu lưu trữ dài hạn của Khoa/Phòng khám lớn.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span data-i18n="plan2_f2"><strong>Toàn bộ quyền lợi Gói Basic:</strong> Bao gồm dịch vụ Custom thương hiệu riêng &amp; <strong>Miễn phí bảo trì, cập nhật phần mềm trọn đời</strong> khi còn Subscribe.</span>
+                <span data-i18n="plan2_f2"><strong>Toàn bộ quyền lợi Gói Cơ Bản:</strong> Bao gồm dịch vụ thiết kế thương hiệu riêng &amp; <strong>Miễn phí bảo trì, cập nhật phần mềm trọn đời</strong>.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
@@ -1885,7 +1899,7 @@
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span data-i18n="plan2_f4"><strong>Đa tài khoản nhân sự (Tối đa 10 Account / Role):</strong> Lên tới <strong>30 tài khoản</strong> cho đội ngũ Admin, Bác sĩ, Điều dưỡng làm việc đồng thời trên nhiều máy tính.</span>
+                <span data-i18n="plan2_f4"><strong>Đa tài khoản nhân sự (10 Tài khoản / Vai trò):</strong> Lên tới <strong>30 tài khoản</strong> cho Quản trị viên, Bác sĩ, Điều dưỡng làm việc đồng thời trên nhiều máy.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
@@ -1893,13 +1907,13 @@
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span data-i18n="plan2_f6"><strong>Báo cáo Thống kê &amp; Sao lưu Dữ liệu Định kỳ:</strong> Thống kê chi tiết lưu lượng bệnh nhân theo ca trực/ngày/tháng và hỗ trợ sao lưu hồ sơ an toàn.</span>
+                <span data-i18n="plan2_f6"><strong>Báo cáo Thống kê &amp; Sao lưu Định kỳ:</strong> Thống kê chi tiết lưu lượng bệnh nhân theo ca trực/ngày/tháng và hỗ trợ sao lưu hồ sơ an toàn.</span>
               </li>
             </ul>
           </div>
 
           <a href="#contact" onclick="selectPricingPlan('CFMS_PREMIUM')" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;" data-i18n="plan2_cta">
-            Đăng Ký Gói Premium (Miễn Phí Lắp Đặt) &rarr;
+            Đăng Ký Gói Nâng Cao (Miễn Phí Lắp Đặt) &rarr;
           </a>
         </div>
 
@@ -1908,11 +1922,11 @@
           <div>
             <div class="pricing-tier-label">
               <span>◆</span>
-              <span data-i18n="plan3_tier">GÓI BỆNH VIỆN &amp; CHUỖI · ENTERPRISE</span>
+              <span data-i18n="plan3_tier">GÓI BỆNH VIỆN &amp; CHUỖI</span>
             </div>
             <h3 data-i18n="plan3_name">Bệnh Viện Đa Khoa &amp; Chuỗi Cơ Sở</h3>
             <p class="pricing-subtitle" data-i18n="plan3_sub">
-              Giải pháp may đo toàn diện cho Bệnh viện tuyến Tỉnh/Trung ương hoặc Chuỗi phòng khám đa chi nhánh cần tích hợp phần mềm bệnh viện.
+              Giải pháp thiết kế riêng cho Bệnh viện tuyến Tỉnh/Trung ương hoặc Chuỗi phòng khám nhiều chi nhánh.
             </p>
 
             <div class="pricing-price-box">
@@ -1934,11 +1948,11 @@
             <ul class="pricing-feature-list">
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span data-i18n="plan3_f1"><strong>Không giới hạn Hồ sơ &amp; Tài khoản:</strong> Đáp ứng quy mô toàn Bệnh viện hoặc Chuỗi phòng khám kèm cam kết hỗ trợ kỹ thuật ưu tiên 24/7.</span>
+                <span data-i18n="plan3_f1"><strong>Không giới hạn Hồ sơ &amp; Tài khoản:</strong> Đáp ứng quy mô toàn Bệnh viện hoặc Chuỗi phòng khám kèm hỗ trợ kỹ thuật ưu tiên 24/7.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span data-i18n="plan3_f2"><strong>Liên thông phần mềm Bệnh viện (HIS / LIS / BHYT):</strong> Tự động đồng bộ danh sách bệnh nhân, chỉ định cận lâm sàng và lịch chạy thận theo ca.</span>
+                <span data-i18n="plan3_f2"><strong>Kết nối phần mềm Bệnh viện &amp; Bảo hiểm y tế:</strong> Tự động đồng bộ danh sách bệnh nhân, chỉ định khám và lịch chạy thận theo ca.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
@@ -1946,11 +1960,11 @@
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span data-i18n="plan3_f4"><strong>Tư vấn &amp; Trang bị Trọn gói Thiết bị Quầy Kiosk:</strong> Cung cấp đồng bộ màn hình cảm ứng lấy số, camera nhận diện, máy quét CCCD và hệ thống âm thanh.</span>
+                <span data-i18n="plan3_f4"><strong>Tư vấn &amp; Trang bị Trọn gói Thiết bị Quầy Lấy Số:</strong> Cung cấp đồng bộ màn hình cảm ứng lấy số, máy ảnh nhận diện, máy quét CCCD và hệ thống loa.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span data-i18n="plan3_f5"><strong>Bảo mật Hồ sơ Y tế Tuyệt đối:</strong> Dữ liệu bệnh nhân và người nhà được bảo vệ an toàn ngay tại cơ sở theo tiêu chuẩn bảo mật y tế.</span>
+                <span data-i18n="plan3_f5"><strong>Bảo mật Hồ sơ Y tế Tuyệt đối:</strong> Dữ liệu bệnh nhân và người nhà được lưu trữ an toàn ngay tại cơ sở theo tiêu chuẩn y tế.</span>
               </li>
             </ul>
           </div>
@@ -1968,8 +1982,8 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/></svg>
           </div>
           <div>
-            <strong data-i18n="hw1_title">Tương thích Máy tính Văn phòng Sẵn có</strong>
-            <span data-i18n="hw1_desc">Chạy mượt ngay trên máy tính bàn hoặc Laptop sẵn có tại quầy tiếp nhận của Phòng khám mà không đòi hỏi cấu hình cao.</span>
+            <strong data-i18n="hw1_title">Chạy Mượt Trên Máy Tính Văn Phòng Sẵn Có</strong>
+            <span data-i18n="hw1_desc">Sử dụng ngay trên máy tính bàn hoặc máy tính xách tay sẵn có tại quầy tiếp nhận mà không đòi hỏi cấu hình cao.</span>
           </div>
         </div>
         <div class="hw-item">
@@ -1977,8 +1991,8 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <div>
-            <strong data-i18n="hw2_title">Hoạt động Ổn định Kể cả Khi Mất Internet</strong>
-            <span data-i18n="hw2_desc">Mất mạng Internet vẫn nhận diện khuôn mặt, quét CCCD, cấp số và gọi loa phòng chờ bình thường trong mạng nội bộ.</span>
+            <strong data-i18n="hw2_title">Hoạt Động Ổn Định Kể Cả Khi Mất Mạng</strong>
+            <span data-i18n="hw2_desc">Khi mất mạng vẫn nhận diện khuôn mặt, quét CCCD, cấp số và gọi loa phòng chờ bình thường trong mạng nội bộ.</span>
           </div>
         </div>
         <div class="hw-item">
@@ -1986,8 +2000,8 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
           </div>
           <div>
-            <strong data-i18n="hw3_title">Miễn phí Bảo trì &amp; Hỗ trợ Từ xa Trọn đời Gói</strong>
-            <span data-i18n="hw3_desc">Cam kết không phát sinh chi phí ẩn. Hỗ trợ thiết kế giao diện Logo/Thương hiệu riêng miễn phí ngay khi khởi tạo.</span>
+            <strong data-i18n="hw3_title">Miễn Phí Bảo Trì &amp; Hỗ Trợ Từ Xa Trọn Đời</strong>
+            <span data-i18n="hw3_desc">Cam kết không phát sinh chi phí ẩn. Hỗ trợ thiết kế giao diện Logo và Thương hiệu riêng miễn phí ngay khi khởi tạo.</span>
           </div>
         </div>
       </div>
@@ -2002,9 +2016,9 @@
           <span class="pill-dot"></span>
           <span data-i18n="feat_tag">6 Tính Năng Nghiệp Vụ Trọng Tâm</span>
         </div>
-        <h2 data-i18n="feat_title">Thiết Kế Chuyên Sâu Cho Khoa Thận Nhân Tạo &amp; Phòng Khám</h2>
+        <h2 data-i18n="feat_title">Thiết Kế Chuyên Biệt Cho Khoa Thận Nhân Tạo &amp; Phòng Khám</h2>
         <p data-i18n="feat_desc">
-          Tối ưu hóa quy trình đón tiếp, giảm tải áp lực hành chính cho đội ngũ điều dưỡng và rút ngắn thời gian chờ đợi của bệnh nhân.
+          Đơn giản hóa quy trình đón tiếp, giảm áp lực ghi chép cho điều dưỡng và rút ngắn thời gian chờ đợi của bệnh nhân.
         </p>
       </div>
 
@@ -2015,7 +2029,7 @@
           </div>
           <h3 data-i18n="f1_title">1. Nhận Diện Khuôn Mặt &amp; Người Nhà Lấy Số Giùm</h3>
           <p data-i18n="f1_desc">
-            Nhận diện tự động bệnh nhân chỉ trong tích tắc. Hỗ trợ đăng ký khuôn mặt người thân đi kèm để lấy phiếu khám giùm cho bệnh nhân lớn tuổi hoặc chạy thận định kỳ, chống cấp trùng số tuyệt đối.
+            Nhận diện tự động bệnh nhân chỉ trong tích tắc. Hỗ trợ đăng ký khuôn mặt người thân đi kèm để lấy phiếu khám giùm, chống cấp trùng số tuyệt đối.
           </p>
         </div>
 
@@ -2023,9 +2037,9 @@
           <div class="benefit-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7h3v3H7zM14 7h3v3h-3zM7 14h3v3H7zM14 14h3v3h-3z"/></svg>
           </div>
-          <h3 data-i18n="f2_title">2. Quét Mã QR CCCD Gắn Chip Tiện Lợi</h3>
+          <h3 data-i18n="f2_title">2. Quét Thẻ CCCD Gắn Chip Tiện Lợi</h3>
           <p data-i18n="f2_desc">
-            Hỗ trợ quét nhanh thẻ CCCD gắn chip qua Camera hoặc máy quét mã vạch cầm tay để tự động điền đầy đủ Họ tên, Năm sinh, Số định danh và Địa chỉ mà không cần nhập tay.
+            Quét nhanh thẻ CCCD gắn chip để tự động điền Họ tên, Năm sinh, Số định danh và Địa chỉ mà không cần gõ phím thủ công.
           </p>
         </div>
 
@@ -2035,7 +2049,7 @@
           </div>
           <h3 data-i18n="f3_title">3. Bàn Điều Phối &amp; Loa Gọi Số Tự Động</h3>
           <p data-i18n="f3_desc">
-            Tìm kiếm bệnh nhân nhanh chóng. Tích hợp chuông báo <em>Ding-Dong</em> và giọng đọc tự nhiên đọc rõ Số thứ tự, Họ tên, Phòng khám/Máy lọc, kèm nút <strong>Gọi lại</strong> tiện lợi.
+            Tìm kiếm bệnh nhân nhanh chóng. Tích hợp chuông báo và giọng đọc tự nhiên đọc rõ Số thứ tự, Họ tên, Phòng khám/Máy lọc, kèm nút <strong>Gọi lại</strong> tiện lợi.
           </p>
         </div>
 
@@ -2045,7 +2059,7 @@
           </div>
           <h3 data-i18n="f4_title">4. Ưu Tiên Cấp Cứu &amp; Cấp Số Trực Tiếp</h3>
           <p data-i18n="f4_desc">
-            Bác sĩ và Quản trị viên có thể cấp số khám trực tiếp tại bàn mà không cần qua camera, đồng thời bật chế độ <strong>Ưu tiên Cấp cứu</strong> để tự động đưa bệnh nhân lên đầu danh sách chờ.
+            Bác sĩ và Quản trị viên có thể cấp số khám trực tiếp tại bàn và bật chế độ <strong>Ưu tiên Cấp cứu</strong> để tự động đưa bệnh nhân lên đầu danh sách chờ.
           </p>
         </div>
 
@@ -2055,7 +2069,7 @@
           </div>
           <h3 data-i18n="f5_title">5. Màn Hình TV Phòng Chờ Thương Hiệu Riêng</h3>
           <p data-i18n="f5_desc">
-            Hiển thị trực quan danh sách bệnh nhân đang vào khám và chuẩn bị tới lượt trên màn hình TV lớn tại sảnh chờ, đồng bộ Logo và màu sắc thương hiệu riêng của Phòng khám.
+            Hiển thị rõ ràng danh sách bệnh nhân đang vào khám và chuẩn bị tới lượt trên màn hình TV lớn tại sảnh chờ, đồng bộ Logo và màu sắc của Phòng khám.
           </p>
         </div>
 
@@ -2065,7 +2079,7 @@
           </div>
           <h3 data-i18n="f6_title">6. Quản Trị Nhân Sự, Ca Trực &amp; Thống Kê</h3>
           <p data-i18n="f6_desc">
-            Phân quyền chặt chẽ theo 3 nhóm vai trò (Admin, Bác sĩ, Điều dưỡng); thống kê lưu lượng bệnh nhân theo từng ca trực, tra cứu lịch sử khám và sao lưu dữ liệu dễ dàng.
+            Phân quyền chặt chẽ theo 3 vai trò (Quản trị viên, Bác sĩ, Điều dưỡng); thống kê lưu lượng bệnh nhân theo từng ca trực, tra cứu lịch sử khám và sao lưu dữ liệu.
           </p>
         </div>
       </div>
@@ -2078,11 +2092,11 @@
       <div class="section-header">
         <div class="pill-tag">
           <span class="pill-dot"></span>
-          <span data-i18n="rbac_tag">Phân Quyền 3 Role (RBAC)</span>
+          <span data-i18n="rbac_tag">Phân Quyền 3 Vai Trò Y Tế</span>
         </div>
-        <h2 data-i18n="rbac_title">Ma Trận Phân Quyền: Admin · Bác Sĩ · Điều Dưỡng</h2>
+        <h2 data-i18n="rbac_title">Bảng Phân Quyền: Quản Trị Viên · Bác Sĩ · Điều Dưỡng</h2>
         <p data-i18n="rbac_desc">
-          Gói <strong>Basic (499k/tháng)</strong> cung cấp <strong>01 tài khoản mỗi Role (tối đa 5.000 hồ sơ)</strong>; Gói <strong>Premium (999k/tháng)</strong> mở rộng tới <strong>10 tài khoản mỗi Role (tối đa 100.000 hồ sơ)</strong>.
+          Gói <strong>Cơ Bản (499k/tháng)</strong> cung cấp <strong>01 tài khoản mỗi vai trò (tối đa 5.000 hồ sơ)</strong>; Gói <strong>Nâng Cao (999k/tháng)</strong> mở rộng tới <strong>10 tài khoản mỗi vai trò (tối đa 100.000 hồ sơ)</strong>.
         </p>
       </div>
 
@@ -2091,9 +2105,9 @@
           <thead>
             <tr>
               <th data-i18n="th_func">Chức Năng Nghiệp Vụ</th>
-              <th data-i18n="th_nurse">Điều Dưỡng (Nurse)</th>
-              <th data-i18n="th_doc">Bác Sĩ (Doctor)</th>
-              <th data-i18n="th_admin">Quản Trị Viên (Admin)</th>
+              <th data-i18n="th_nurse">Điều Dưỡng</th>
+              <th data-i18n="th_doc">Bác Sĩ</th>
+              <th data-i18n="th_admin">Quản Trị Viên</th>
             </tr>
           </thead>
           <tbody>
@@ -2110,28 +2124,28 @@
               <td><span class="status-pill" data-i18n="r_full">&#10003; Toàn quyền</span></td>
             </tr>
             <tr>
-              <td data-i18n="r3_func"><strong>Cấp số khám thủ công trực tiếp tại bàn (không cần qua Camera)</strong></td>
-              <td><span style="color:var(--text-muted); font-size:0.82rem;" data-i18n="r_no">&#10005; Giới hạn</span></td>
+              <td data-i18n="r3_func"><strong>Cấp số khám trực tiếp tại bàn (không cần qua máy ảnh)</strong></td>
+              <td><span style="color:var(--text-muted); font-size:0.88rem;" data-i18n="r_no">&#10005; Giới hạn</span></td>
               <td><span class="status-pill" data-i18n="r_doc">&#10003; Đặc quyền Bác sĩ</span></td>
               <td><span class="status-pill" data-i18n="r_full">&#10003; Toàn quyền</span></td>
             </tr>
             <tr>
-              <td data-i18n="r4_func"><strong>Kích hoạt chế độ Ưu tiên Cấp cứu đẩy lên đầu danh sách chờ</strong></td>
-              <td><span style="color:var(--text-muted); font-size:0.82rem;" data-i18n="r_no">&#10005; Giới hạn</span></td>
+              <td data-i18n="r4_func"><strong>Bật chế độ Ưu tiên Cấp cứu đưa lên đầu danh sách chờ</strong></td>
+              <td><span style="color:var(--text-muted); font-size:0.88rem;" data-i18n="r_no">&#10005; Giới hạn</span></td>
               <td><span class="status-pill" data-i18n="r_doc">&#10003; Đặc quyền Bác sĩ</span></td>
               <td><span class="status-pill" data-i18n="r_full">&#10003; Toàn quyền</span></td>
             </tr>
             <tr>
               <td data-i18n="r5_func"><strong>Quản lý danh sách tài khoản Bác sĩ &amp; Điều dưỡng trong khoa</strong></td>
-              <td><span style="color:var(--text-muted); font-size:0.82rem;" data-i18n="r_no">&#10005; Giới hạn</span></td>
+              <td><span style="color:var(--text-muted); font-size:0.88rem;" data-i18n="r_no">&#10005; Giới hạn</span></td>
               <td><span class="status-pill" data-i18n="r_dept">&#10003; Quản lý nhân sự khoa</span></td>
               <td><span class="status-pill" data-i18n="r_full">&#10003; Toàn quyền</span></td>
             </tr>
             <tr>
               <td data-i18n="r6_func"><strong>Cài đặt Thương hiệu riêng (Logo, Tên đơn vị), Phòng ban &amp; Sao lưu</strong></td>
-              <td><span style="color:var(--text-muted); font-size:0.82rem;" data-i18n="r_no">&#10005; Giới hạn</span></td>
-              <td><span style="color:var(--text-muted); font-size:0.82rem;" data-i18n="r_no">&#10005; Giới hạn</span></td>
-              <td><span class="status-pill" data-i18n="r_admin">&#10003; Đặc quyền Admin</span></td>
+              <td><span style="color:var(--text-muted); font-size:0.88rem;" data-i18n="r_no">&#10005; Giới hạn</span></td>
+              <td><span style="color:var(--text-muted); font-size:0.88rem;" data-i18n="r_no">&#10005; Giới hạn</span></td>
+              <td><span class="status-pill" data-i18n="r_admin">&#10003; Đặc quyền Quản trị</span></td>
             </tr>
           </tbody>
         </table>
@@ -2146,42 +2160,42 @@
         <div>
           <div class="pill-tag" style="background: rgba(56, 189, 248, 0.16); color: #BAE6FD; border-color: rgba(125, 211, 252, 0.3);">
             <span class="pill-dot" style="background: #38BDF8;"></span>
-            <span data-i18n="cta_tag">HUDU CFMS / QMS · Triển Khai Nhanh Trong 24h</span>
+            <span data-i18n="cta_tag">HUDU CFMS · Triển Khai Nhanh Trong 24h</span>
           </div>
           <h2 data-i18n="cta_title">Sẵn Sàng Chuẩn Hóa Tiếp Nhận Tự Động Cho Phòng Khám?</h2>
           <p data-i18n="cta_desc">
-            Đăng ký ngay <strong>Gói Basic (499k/tháng · 5.000 hồ sơ)</strong> hoặc <strong>Gói Premium (999k/tháng · 100.000 hồ sơ · Miễn phí lắp đặt)</strong> để được đội ngũ HUDU cài đặt Custom thương hiệu riêng và bàn giao hệ thống tận nơi.
+            Đăng ký ngay <strong>Gói Cơ Bản (499k/tháng · 5.000 hồ sơ)</strong> hoặc <strong>Gói Nâng Cao (999k/tháng · 100.000 hồ sơ · Miễn phí lắp đặt)</strong> để được đội ngũ HUDU cài đặt thương hiệu riêng và bàn giao tận nơi.
           </p>
-          <div style="display: flex; flex-wrap: wrap; gap: 22px; font-size: 0.9rem; color: #E2E8F0;">
-            <span data-i18n="cta_b1">&#10003; Custom Logo &amp; Tên Phòng khám miễn phí</span>
-            <span data-i18n="cta_b2">&#10003; Miễn phí bảo trì trọn đời Subscribe</span>
+          <div style="display: flex; flex-wrap: wrap; gap: 22px; font-size: 0.96rem; color: #E2E8F0;">
+            <span data-i18n="cta_b1">&#10003; Thiết kế Logo &amp; Tên Phòng khám miễn phí</span>
+            <span data-i18n="cta_b2">&#10003; Miễn phí bảo trì trọn đời</span>
             <span data-i18n="cta_b3">&#10003; Hỗ trợ kỹ thuật 24/7</span>
           </div>
         </div>
 
         <form class="contact-form" onsubmit="submitConsultation(event)">
-          <h3 data-i18n="form_title">Đăng Ký Gói Dịch Vụ CFMS / QMS</h3>
+          <h3 data-i18n="form_title">Đăng Ký Gói Dịch Vụ Phòng Khám</h3>
           <div class="form-group">
             <label data-i18n="form_name_lbl">Họ tên &amp; Tên Phòng khám / Bệnh viện</label>
             <input type="text" required data-i18n-placeholder="form_name_ph" placeholder="VD: BS. Minh — Phòng Khám Đa Khoa An Tâm" />
           </div>
           <div class="form-group">
-            <label data-i18n="form_phone_lbl">Số điện thoại / Email liên hệ</label>
-            <input type="text" required data-i18n-placeholder="form_phone_ph" placeholder="090x xxx xxx / clinic@domain.vn" />
+            <label data-i18n="form_phone_lbl">Số điện thoại / Thư điện tử liên hệ</label>
+            <input type="text" required data-i18n-placeholder="form_phone_ph" placeholder="090x xxx xxx / lienhe@phongkham.vn" />
           </div>
           <div class="form-group">
             <label data-i18n="form_plan_lbl">Gói dịch vụ lựa chọn</label>
             <select id="formProdSelect">
-              <option value="CFMS_PREMIUM" data-i18n="form_opt_prem">CFMS Gói Premium (999k/tháng · Miễn phí lắp đặt · 100.000 hồ sơ · 10 Acc/Role)</option>
-              <option value="CFMS_BASIC" data-i18n="form_opt_basic">CFMS Gói Basic (499k/tháng + 1tr799 lắp đặt · 5.000 hồ sơ · 01 Acc/Role)</option>
-              <option value="CFMS_ENTERPRISE" data-i18n="form_opt_ent">CFMS Gói Enterprise (Bệnh viện / Chuỗi phòng khám)</option>
+              <option value="CFMS_PREMIUM" data-i18n="form_opt_prem">CFMS Gói Nâng Cao (999k/tháng · Miễn phí lắp đặt · 100.000 hồ sơ · 10 Tài khoản/Vai trò)</option>
+              <option value="CFMS_BASIC" data-i18n="form_opt_basic">CFMS Gói Cơ Bản (499k/tháng + 1tr799 lắp đặt · 5.000 hồ sơ · 01 Tài khoản/Vai trò)</option>
+              <option value="CFMS_ENTERPRISE" data-i18n="form_opt_ent">CFMS Gói Bệnh Viện &amp; Chuỗi (Báo giá theo quy mô)</option>
             </select>
           </div>
           <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 4px;" data-i18n="form_submit">
             Gửi Yêu Cầu Khởi Tạo Hệ Thống
           </button>
           <div id="formToast" class="form-toast" data-i18n="form_toast">
-            &#10003; Đã ghi nhận yêu cầu! Đội ngũ HUDU sẽ liên hệ bàn giao demo sớm nhất.
+            &#10003; Đã ghi nhận yêu cầu! Đội ngũ HUDU sẽ liên hệ bàn giao sớm nhất.
           </div>
         </form>
       </div>
@@ -2218,8 +2232,8 @@
               <path d="M 211 27.8 A 3.8 3.8 0 0 1 218.6 27.8 V 45 A 7.4 7.4 0 0 0 233.4 45 V 27.8 A 3.8 3.8 0 0 1 241 27.8 V 45 A 15 15 0 0 1 211 45 Z" />
             </g>
           </svg>
-          <p style="font-size: 0.86rem; max-width: 340px;" data-i18n="footer_desc">
-            HUDU (huduvn.com) — Công ty phát triển phần mềm phân tích dữ liệu đấu thầu thông minh và hệ thống tự động hóa tiếp nhận, quản trị phòng khám.
+          <p style="font-size: 0.92rem; max-width: 340px;" data-i18n="footer_desc">
+            HUDU (huduvn.com) — Đơn vị phát triển phần mềm săn thầu thông minh và giải pháp tiếp nhận tự động cho Phòng khám, Bệnh viện.
           </p>
         </div>
 
@@ -2228,7 +2242,7 @@
           <ul>
             <li><a href="../" data-i18n="f_link_home">Trang chủ HUDU</a></li>
             <li><a href="#pricing" data-i18n="f_link_cfms_price">Bảng Giá Phòng Khám (CFMS)</a></li>
-            <li><a href="../dauthau/">HUDU DauThau (/dauthau)</a></li>
+            <li><a href="../dauthau/">HUDU Đấu Thầu (/dauthau)</a></li>
             <li><a href="../dauthau/#pricing" data-i18n="f_link_dt_price">Bảng Giá Đấu Thầu Thông Minh</a></li>
           </ul>
         </div>
@@ -2238,7 +2252,7 @@
           <ul>
             <li><a href="#features" data-i18n="f_feat_1">Nhận diện khuôn mặt &amp; Người nhà</a></li>
             <li><a href="#features" data-i18n="f_feat_2">Quét nhanh CCCD gắn chip</a></li>
-            <li><a href="#roles" data-i18n="f_feat_3">Phân quyền 3 Role (RBAC)</a></li>
+            <li><a href="#roles" data-i18n="f_feat_3">Phân quyền 3 vai trò y tế</a></li>
             <li><a href="#features" data-i18n="f_feat_4">Loa gọi số &amp; TV Phòng chờ</a></li>
           </ul>
         </div>
@@ -2246,16 +2260,16 @@
         <div class="footer-col">
           <h4 data-i18n="footer_col3">Liên hệ</h4>
           <ul>
-            <li>Website: <a href="https://huduvn.com">huduvn.com</a></li>
-            <li>Email: <a href="mailto:tnhung1896@gmail.com">tnhung1896@gmail.com</a></li>
-            <li>Support: 24/7 Enterprise SLA</li>
+            <li>Trang chủ: <a href="https://huduvn.com">huduvn.com</a></li>
+            <li>Thư điện tử: <a href="mailto:tnhung1896@gmail.com">tnhung1896@gmail.com</a></li>
+            <li>Hỗ trợ kỹ thuật: 24/7</li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <span>&copy; 2026 HUDU Technology (huduvn.com). All rights reserved.</span>
-        <span>Enterprise Smart Algorithms &amp; Healthcare Solutions</span>
+        <span>&copy; 2026 HUDU Technology (huduvn.com). Bảo lưu mọi quyền.</span>
+        <span>Giải Pháp Phần Mềm Đấu Thầu, Y Tế &amp; Giáo Dục</span>
       </div>
     </div>
   </footer>
@@ -2351,20 +2365,20 @@
         nav_home: "Trang chủ",
         nav_pricing: "Bảng giá",
         nav_features: "Tính năng",
-        nav_roles: "Phân quyền 3 Role",
+        nav_roles: "Phân quyền 3 vai trò",
         nav_dauthau: "Đấu thầu Thông minh",
         nav_cta: "Đăng ký Dùng thử",
-        hero_badge: "SẢN PHẨM 02 · HUDU CFMS / QMS · huduvn.com/cfms",
-        hero_title: 'Hệ Thống <span class="highlight">Nhận Diện Khuôn Mặt</span>, Quét CCCD &amp; Điều Phối Phòng Khám',
-        hero_desc: "Giải pháp tiếp nhận bệnh nhân tự động bằng nhận diện khuôn mặt, hỗ trợ <strong>người nhà lấy số khám giùm</strong>, quét mã QR CCCD gắn chip và phát loa gọi số tự động cho Phòng khám, Khoa Thận Nhân Tạo &amp; Bệnh viện.",
-        hero_btn_pricing: "Xem Bảng Giá Gói Basic &amp; Premium ↓",
+        hero_badge: "SẢN PHẨM 02 · HUDU CFMS · huduvn.com/cfms",
+        hero_title: 'Phần Mềm <span class="highlight">Nhận Diện Khuôn Mặt</span>, Quét CCCD &amp; Điều Phối Phòng Khám',
+        hero_desc: "Tiếp nhận bệnh nhân tự động bằng khuôn mặt, hỗ trợ <strong>người nhà lấy số khám giùm</strong>, quét thẻ CCCD gắn chip và phát loa gọi số tự động cho Phòng khám, Khoa Thận Nhân Tạo &amp; Bệnh viện.",
+        hero_btn_pricing: "Xem Bảng Giá Gói Dịch Vụ ↓",
         hero_btn_features: "Khám Phá Tính Năng",
         m1_val: "Tức thì",
         m1_lbl: "Nhận diện khuôn mặt & cấp số thứ tự tự động",
         m2_lbl: "Hồ sơ bệnh nhân & người nhà lưu trữ theo gói",
         m3_val: "Hoạt động 24/7",
-        m3_lbl: "Vận hành ổn định ngay cả khi mất kết nối Internet",
-        sc_header: "HUDU CFMS · Tiếp Nhận & Điều Phối Thông Minh",
+        m3_lbl: "Vận hành ổn định ngay cả khi mất kết nối mạng",
+        sc_header: "HUDU CFMS · Tiếp Nhận & Điều Phối Phòng Khám",
         sc_card_title: "Quầy Nhận Diện Khuôn Mặt & Quét CCCD",
         sc_card_pill: "Tự động cấp số",
         sc_patient: "BN-1001 · Nguyễn Văn Hòa (1962)",
@@ -2372,88 +2386,88 @@
         sc_anti_dup: "✓ Đã chống lấy trùng số trong ca",
         sc_voice: "🔊 Loa gọi số: Mời số 008",
         sc_price_head: "Bảng giá công khai · Miễn phí bảo trì",
-        sc_price_badge: "Custom Thương Hiệu Riêng",
-        sc_b_title: "GÓI BASIC (5.000 Hồ sơ)",
-        sc_p_title: "GÓI PREMIUM (100.000 Hồ sơ)",
+        sc_price_badge: "Thương Hiệu Riêng",
+        sc_b_title: "GÓI CƠ BẢN (5.000 Hồ sơ)",
+        sc_p_title: "GÓI NÂNG CAO (100.000 Hồ sơ)",
         sc_per_mo: "/tháng",
-        sc_b_sub: "Lắp đặt: 1.799.000đ · 01 Acc/Role",
-        sc_p_sub: "Miễn phí lắp đặt · 10 Acc/Role",
-        price_tag: "Bảng Giá Quản Lý Phòng Khám & Bệnh Viện (CFMS / QMS)",
-        price_title: "Gói Dịch Vụ Minh Bạch · Miễn Phí Bảo Trì Trọn Đời Thuê Bao",
-        price_desc: "Thiết kế tối ưu chi phí cho Phòng khám chuyên khoa, Khoa Thận Nhân Tạo, Bệnh viện và Cơ sở đào tạo. Tặng kèm dịch vụ <strong>Custom thương hiệu riêng (Logo, Tên đơn vị)</strong> trên toàn bộ màn hình lấy số, Bàn điều phối &amp; TV Phòng chờ.",
-        plan_per_month: "/ tháng (Subscribe)",
-        plan1_tier: "GÓI CƠ BẢN · BASIC",
+        sc_b_sub: "Lắp đặt: 1.799.000đ · 01 Tài khoản/Vai trò",
+        sc_p_sub: "Miễn phí lắp đặt · 10 Tài khoản/Vai trò",
+        price_tag: "Bảng Giá Quản Lý Phòng Khám & Bệnh Viện (HUDU CFMS)",
+        price_title: "Gói Dịch Vụ Minh Bạch · Miễn Phí Bảo Trì Trọn Đời",
+        price_desc: "Tối ưu chi phí cho Phòng khám chuyên khoa, Khoa Thận Nhân Tạo và Bệnh viện. Tặng kèm dịch vụ <strong>thiết kế thương hiệu riêng (Logo, Tên đơn vị)</strong> trên Quầy lấy số, Bàn điều phối &amp; TV Phòng chờ.",
+        plan_per_month: "/ tháng",
+        plan1_tier: "GÓI CƠ BẢN",
         plan1_name: "Phòng Khám & Cơ Sở Tiêu Chuẩn",
         plan1_sub: "Phù hợp cho Phòng khám chuyên khoa, Phòng mạch tư nhân hoặc Cơ sở quy mô gọn (1 quầy tiếp nhận).",
         plan1_setup_lbl: "Phí lắp đặt & khởi tạo (1 lần):",
-        plan1_quota: "01 Tài khoản mỗi Role · Tối đa 5.000 Hồ sơ",
+        plan1_quota: "01 Tài khoản mỗi vai trò · Tối đa 5.000 Hồ sơ",
         plan1_f1: "<strong>Lưu trữ tối đa 5.000 hồ sơ:</strong> Quản lý tới <strong>5.000 hồ sơ bệnh nhân &amp; người nhà</strong> đăng ký khuôn mặt lấy số khám.",
-        plan1_f2: "<strong>Dịch vụ Custom thương hiệu riêng:</strong> Cài đặt Tên Phòng khám, Tên Khoa &amp; Logo riêng đồng bộ trên Quầy lấy số, Bàn điều phối và TV Phòng chờ.",
-        plan1_f3: "<strong>Miễn phí 100% bảo trì &amp; cập nhật:</strong> Bảo hành phần mềm, nâng cấp tính năng mới và hỗ trợ kỹ thuật trong suốt thời gian còn Subscribe.",
-        plan1_f4: "<strong>Nhận diện khuôn mặt &amp; Người nhà lấy số giùm:</strong> Nhận diện tự động bệnh nhân hoặc người thân đi kèm, chống bấm lấy trùng nhiều phiếu trong cùng ca.",
-        plan1_f5: "<strong>Quét mã QR CCCD gắn chip tiện lợi:</strong> Quét nhanh CCCD qua Camera hoặc máy quét mã vạch để tự động điền thông tin hành chính của bệnh nhân.",
+        plan1_f2: "<strong>Thiết kế thương hiệu riêng:</strong> Cài đặt Tên Phòng khám, Tên Khoa &amp; Logo riêng đồng bộ trên Quầy lấy số, Bàn điều phối và TV Phòng chờ.",
+        plan1_f3: "<strong>Miễn phí 100% bảo trì &amp; cập nhật:</strong> Bảo hành phần mềm, nâng cấp tính năng mới và hỗ trợ kỹ thuật trong suốt thời gian sử dụng.",
+        plan1_f4: "<strong>Nhận diện khuôn mặt &amp; Người nhà lấy số giùm:</strong> Nhận diện tự động bệnh nhân hoặc người thân đi kèm, chống bấm lấy trùng phiếu trong ca.",
+        plan1_f5: "<strong>Quét thẻ CCCD gắn chip tiện lợi:</strong> Quét nhanh CCCD qua máy ảnh hoặc máy quét mã vạch để tự động điền thông tin hành chính.",
         plan1_f6: "<strong>Chuông báo &amp; Loa gọi số / Gọi lại:</strong> Tự động đọc tên bệnh nhân, số thứ tự, phòng khám/máy lọc rõ ràng trên loa và màn hình TV phòng chờ.",
-        plan1_cta: "Đăng Ký Gói Basic →",
+        plan1_cta: "Đăng Ký Gói Cơ Bản →",
         plan2_ribbon: "PHỔ BIẾN NHẤT · MIỄN PHÍ LẮP ĐẶT 1.799K",
-        plan2_tier: "GÓI NÂNG CAO · PREMIUM",
+        plan2_tier: "GÓI NÂNG CAO",
         plan2_name: "Phòng Khám Đa Khoa & Khoa Bệnh Viện",
         plan2_sub: "Tối ưu cho Phòng khám Đa khoa, Khoa Thận Nhân Tạo / Khoa Khám bệnh nhiều ca trực và lưu lượng bệnh nhân lớn.",
         plan2_setup_lbl: "Phí lắp đặt & khởi tạo:",
         plan2_setup_val: "MIỄN PHÍ 0đ (Tiết kiệm 1.799k)",
-        plan2_quota: "Tối đa 10 Tài khoản mỗi Role · 100.000 Hồ sơ",
-        plan2_f1: "<strong>Mở rộng lưu trữ tới 100.000 hồ sơ:</strong> Quản lý lên đến <strong>100.000 hồ sơ bệnh nhân &amp; người nhà</strong>, đáp ứng thoải mái nhu cầu lưu trữ dài hạn của Khoa/Phòng khám lớn.",
-        plan2_f2: "<strong>Toàn bộ quyền lợi Gói Basic:</strong> Bao gồm dịch vụ Custom thương hiệu riêng &amp; <strong>Miễn phí bảo trì, cập nhật phần mềm trọn đời</strong> khi còn Subscribe.",
+        plan2_quota: "Tối đa 10 Tài khoản mỗi vai trò · 100.000 Hồ sơ",
+        plan2_f1: "<strong>Mở rộng lưu trữ tới 100.000 hồ sơ:</strong> Quản lý lên đến <strong>100.000 hồ sơ bệnh nhân &amp; người nhà</strong>, đáp ứng nhu cầu lưu trữ dài hạn của Khoa/Phòng khám lớn.",
+        plan2_f2: "<strong>Toàn bộ quyền lợi Gói Cơ Bản:</strong> Bao gồm dịch vụ thiết kế thương hiệu riêng &amp; <strong>Miễn phí bảo trì, cập nhật phần mềm trọn đời</strong>.",
         plan2_f3: "<strong>Miễn phí 100% chi phí lắp đặt ban đầu:</strong> Đội ngũ HUDU thiết lập trọn gói hệ thống, cấu hình phòng ban/ca trực và bàn giao tận nơi (Tiết kiệm 1.799.000đ).",
-        plan2_f4: "<strong>Đa tài khoản nhân sự (Tối đa 10 Account / Role):</strong> Lên tới <strong>30 tài khoản</strong> cho đội ngũ Admin, Bác sĩ, Điều dưỡng làm việc đồng thời trên nhiều máy tính.",
+        plan2_f4: "<strong>Đa tài khoản nhân sự (10 Tài khoản / Vai trò):</strong> Lên tới <strong>30 tài khoản</strong> cho Quản trị viên, Bác sĩ, Điều dưỡng làm việc đồng thời trên nhiều máy.",
         plan2_f5: "<strong>Đặc quyền Bác sĩ &amp; Ưu tiên Cấp cứu:</strong> Cấp phiếu khám trực tiếp tại bàn và bật chế độ <strong>Ưu tiên Cấp cứu</strong> để chuyển bệnh nhân lên đầu danh sách chờ.",
-        plan2_f6: "<strong>Báo cáo Thống kê &amp; Sao lưu Dữ liệu Định kỳ:</strong> Thống kê chi tiết lưu lượng bệnh nhân theo ca trực/ngày/tháng và hỗ trợ sao lưu hồ sơ an toàn.",
-        plan2_cta: "Đăng Ký Gói Premium (Miễn Phí Lắp Đặt) →",
-        plan3_tier: "GÓI BỆNH VIỆN & CHUỖI · ENTERPRISE",
+        plan2_f6: "<strong>Báo cáo Thống kê &amp; Sao lưu Định kỳ:</strong> Thống kê chi tiết lưu lượng bệnh nhân theo ca trực/ngày/tháng và hỗ trợ sao lưu hồ sơ an toàn.",
+        plan2_cta: "Đăng Ký Gói Nâng Cao (Miễn Phí Lắp Đặt) →",
+        plan3_tier: "GÓI BỆNH VIỆN & CHUỖI",
         plan3_name: "Bệnh Viện Đa Khoa & Chuỗi Cơ Sở",
-        plan3_sub: "Giải pháp may đo toàn diện cho Bệnh viện tuyến Tỉnh/Trung ương hoặc Chuỗi phòng khám đa chi nhánh cần tích hợp phần mềm bệnh viện.",
+        plan3_sub: "Giải pháp thiết kế riêng cho Bệnh viện tuyến Tỉnh/Trung ương hoặc Chuỗi phòng khám nhiều chi nhánh.",
         plan3_price: "Báo giá riêng",
         plan3_period: "/ theo quy mô khoa phòng",
         plan3_setup_lbl: "Triển khai & Tích hợp:",
         plan3_setup_val: "Khảo sát & Bàn giao tận nơi",
         plan3_quota: "Không giới hạn Tài khoản & Hồ sơ · Đa Khoa Phòng",
-        plan3_f1: "<strong>Không giới hạn Hồ sơ &amp; Tài khoản:</strong> Đáp ứng quy mô toàn Bệnh viện hoặc Chuỗi phòng khám kèm cam kết hỗ trợ kỹ thuật ưu tiên 24/7.",
-        plan3_f2: "<strong>Liên thông phần mềm Bệnh viện (HIS / LIS / BHYT):</strong> Tự động đồng bộ danh sách bệnh nhân, chỉ định cận lâm sàng và lịch chạy thận theo ca.",
+        plan3_f1: "<strong>Không giới hạn Hồ sơ &amp; Tài khoản:</strong> Đáp ứng quy mô toàn Bệnh viện hoặc Chuỗi phòng khám kèm hỗ trợ kỹ thuật ưu tiên 24/7.",
+        plan3_f2: "<strong>Kết nối phần mềm Bệnh viện &amp; Bảo hiểm y tế:</strong> Tự động đồng bộ danh sách bệnh nhân, chỉ định khám và lịch chạy thận theo ca.",
         plan3_f3: "<strong>Quản lý Tập trung Đa chi nhánh:</strong> Theo dõi hoạt động tiếp đón và báo cáo tổng hợp của toàn bộ chuỗi cơ sở trên một giao diện thống nhất.",
-        plan3_f4: "<strong>Tư vấn &amp; Trang bị Trọn gói Thiết bị Quầy Kiosk:</strong> Cung cấp đồng bộ màn hình cảm ứng lấy số, camera nhận diện, máy quét CCCD và hệ thống âm thanh.",
-        plan3_f5: "<strong>Bảo mật Hồ sơ Y tế Tuyệt đối:</strong> Dữ liệu bệnh nhân và người nhà được bảo vệ an toàn ngay tại cơ sở theo tiêu chuẩn bảo mật y tế.",
+        plan3_f4: "<strong>Tư vấn &amp; Trang bị Trọn gói Thiết bị Quầy Lấy Số:</strong> Cung cấp đồng bộ màn hình cảm ứng lấy số, máy ảnh nhận diện, máy quét CCCD và hệ thống loa.",
+        plan3_f5: "<strong>Bảo mật Hồ sơ Y tế Tuyệt đối:</strong> Dữ liệu bệnh nhân và người nhà được lưu trữ an toàn ngay tại cơ sở theo tiêu chuẩn y tế.",
         plan3_cta: "Liên Hệ Khảo Sát & Báo Giá →",
-        hw1_title: "Tương thích Máy tính Văn phòng Sẵn có",
-        hw1_desc: "Chạy mượt ngay trên máy tính bàn hoặc Laptop sẵn có tại quầy tiếp nhận của Phòng khám mà không đòi hỏi cấu hình cao.",
-        hw2_title: "Hoạt động Ổn định Kể cả Khi Mất Internet",
-        hw2_desc: "Mất mạng Internet vẫn nhận diện khuôn mặt, quét CCCD, cấp số và gọi loa phòng chờ bình thường trong mạng nội bộ.",
-        hw3_title: "Miễn phí Bảo trì & Hỗ trợ Từ xa Trọn đời Gói",
-        hw3_desc: "Cam kết không phát sinh chi phí ẩn. Hỗ trợ thiết kế giao diện Logo/Thương hiệu riêng miễn phí ngay khi khởi tạo.",
+        hw1_title: "Chạy Mượt Trên Máy Tính Văn Phòng Sẵn Có",
+        hw1_desc: "Sử dụng ngay trên máy tính bàn hoặc máy tính xách tay sẵn có tại quầy tiếp nhận mà không đòi hỏi cấu hình cao.",
+        hw2_title: "Hoạt Động Ổn Định Kể Cả Khi Mất Mạng",
+        hw2_desc: "Khi mất mạng vẫn nhận diện khuôn mặt, quét CCCD, cấp số và gọi loa phòng chờ bình thường trong mạng nội bộ.",
+        hw3_title: "Miễn Phí Bảo Trì & Hỗ Trợ Từ Xa Trọn Đời",
+        hw3_desc: "Cam kết không phát sinh chi phí ẩn. Hỗ trợ thiết kế giao diện Logo và Thương hiệu riêng miễn phí ngay khi khởi tạo.",
         feat_tag: "6 Tính Năng Nghiệp Vụ Trọng Tâm",
-        feat_title: "Thiết Kế Chuyên Sâu Cho Khoa Thận Nhân Tạo & Phòng Khám",
-        feat_desc: "Tối ưu hóa quy trình đón tiếp, giảm tải áp lực hành chính cho đội ngũ điều dưỡng và rút ngắn thời gian chờ đợi của bệnh nhân.",
+        feat_title: "Thiết Kế Chuyên Biệt Cho Khoa Thận Nhân Tạo & Phòng Khám",
+        feat_desc: "Đơn giản hóa quy trình đón tiếp, giảm áp lực ghi chép cho điều dưỡng và rút ngắn thời gian chờ đợi của bệnh nhân.",
         f1_title: "1. Nhận Diện Khuôn Mặt & Người Nhà Lấy Số Giùm",
-        f1_desc: "Nhận diện tự động bệnh nhân chỉ trong tích tắc. Hỗ trợ đăng ký khuôn mặt người thân đi kèm để lấy phiếu khám giùm cho bệnh nhân lớn tuổi hoặc chạy thận định kỳ, chống cấp trùng số tuyệt đối.",
-        f2_title: "2. Quét Mã QR CCCD Gắn Chip Tiện Lợi",
-        f2_desc: "Hỗ trợ quét nhanh thẻ CCCD gắn chip qua Camera hoặc máy quét mã vạch cầm tay để tự động điền đầy đủ Họ tên, Năm sinh, Số định danh và Địa chỉ mà không cần nhập tay.",
+        f1_desc: "Nhận diện tự động bệnh nhân chỉ trong tích tắc. Hỗ trợ đăng ký khuôn mặt người thân đi kèm để lấy phiếu khám giùm, chống cấp trùng số tuyệt đối.",
+        f2_title: "2. Quét Thẻ CCCD Gắn Chip Tiện Lợi",
+        f2_desc: "Quét nhanh thẻ CCCD gắn chip để tự động điền Họ tên, Năm sinh, Số định danh và Địa chỉ mà không cần gõ phím thủ công.",
         f3_title: "3. Bàn Điều Phối & Loa Gọi Số Tự Động",
-        f3_desc: "Tìm kiếm bệnh nhân nhanh chóng. Tích hợp chuông báo Ding-Dong và giọng đọc tự nhiên đọc rõ Số thứ tự, Họ tên, Phòng khám/Máy lọc, kèm nút Gọi lại tiện lợi.",
+        f3_desc: "Tìm kiếm bệnh nhân nhanh chóng. Tích hợp chuông báo và giọng đọc tự nhiên đọc rõ Số thứ tự, Họ tên, Phòng khám/Máy lọc, kèm nút Gọi lại tiện lợi.",
         f4_title: "4. Ưu Tiên Cấp Cứu & Cấp Số Trực Tiếp",
-        f4_desc: "Bác sĩ và Quản trị viên có thể cấp số khám trực tiếp tại bàn mà không cần qua camera, đồng thời bật chế độ Ưu tiên Cấp cứu để tự động đưa bệnh nhân lên đầu danh sách chờ.",
+        f4_desc: "Bác sĩ và Quản trị viên có thể cấp số khám trực tiếp tại bàn và bật chế độ Ưu tiên Cấp cứu để tự động đưa bệnh nhân lên đầu danh sách chờ.",
         f5_title: "5. Màn Hình TV Phòng Chờ Thương Hiệu Riêng",
-        f5_desc: "Hiển thị trực quan danh sách bệnh nhân đang vào khám và chuẩn bị tới lượt trên màn hình TV lớn tại sảnh chờ, đồng bộ Logo và màu sắc thương hiệu riêng của Phòng khám.",
+        f5_desc: "Hiển thị rõ ràng danh sách bệnh nhân đang vào khám và chuẩn bị tới lượt trên màn hình TV lớn tại sảnh chờ, đồng bộ Logo và màu sắc của Phòng khám.",
         f6_title: "6. Quản Trị Nhân Sự, Ca Trực & Thống Kê",
-        f6_desc: "Phân quyền chặt chẽ theo 3 nhóm vai trò (Admin, Bác sĩ, Điều dưỡng); thống kê lưu lượng bệnh nhân theo từng ca trực, tra cứu lịch sử khám và sao lưu dữ liệu dễ dàng.",
-        rbac_tag: "Phân Quyền 3 Role (RBAC)",
-        rbac_title: "Ma Trận Phân Quyền: Admin · Bác Sĩ · Điều Dưỡng",
-        rbac_desc: "Gói <strong>Basic (499k/tháng)</strong> cung cấp <strong>01 tài khoản mỗi Role (tối đa 5.000 hồ sơ)</strong>; Gói <strong>Premium (999k/tháng)</strong> mở rộng tới <strong>10 tài khoản mỗi Role (tối đa 100.000 hồ sơ)</strong>.",
+        f6_desc: "Phân quyền chặt chẽ theo 3 vai trò (Quản trị viên, Bác sĩ, Điều dưỡng); thống kê lưu lượng bệnh nhân theo từng ca trực, tra cứu lịch sử khám và sao lưu dữ liệu.",
+        rbac_tag: "Phân Quyền 3 Vai Trò Y Tế",
+        rbac_title: "Bảng Phân Quyền: Quản Trị Viên · Bác Sĩ · Điều Dưỡng",
+        rbac_desc: "Gói <strong>Cơ Bản (499k/tháng)</strong> cung cấp <strong>01 tài khoản mỗi vai trò (tối đa 5.000 hồ sơ)</strong>; Gói <strong>Nâng Cao (999k/tháng)</strong> mở rộng tới <strong>10 tài khoản mỗi vai trò (tối đa 100.000 hồ sơ)</strong>.",
         th_func: "Chức Năng Nghiệp Vụ",
-        th_nurse: "Điều Dưỡng (Nurse)",
-        th_doc: "Bác Sĩ (Doctor)",
-        th_admin: "Quản Trị Viên (Admin)",
+        th_nurse: "Điều Dưỡng",
+        th_doc: "Bác Sĩ",
+        th_admin: "Quản Trị Viên",
         r1_func: "<strong>Gọi số kế tiếp, Gọi lại trên loa &amp; Theo dõi danh sách chờ</strong>",
         r2_func: "<strong>Tiếp nhận bệnh nhân mới, Quét CCCD &amp; Đăng ký người nhà lấy số giùm</strong>",
-        r3_func: "<strong>Cấp số khám thủ công trực tiếp tại bàn (không cần qua Camera)</strong>",
-        r4_func: "<strong>Kích hoạt chế độ Ưu tiên Cấp cứu đẩy lên đầu danh sách chờ</strong>",
+        r3_func: "<strong>Cấp số khám trực tiếp tại bàn (không cần qua máy ảnh)</strong>",
+        r4_func: "<strong>Bật chế độ Ưu tiên Cấp cứu đưa lên đầu danh sách chờ</strong>",
         r5_func: "<strong>Quản lý danh sách tài khoản Bác sĩ &amp; Điều dưỡng trong khoa</strong>",
         r6_func: "<strong>Cài đặt Thương hiệu riêng (Logo, Tên đơn vị), Phòng ban &amp; Sao lưu</strong>",
         r_yes: "✓ Có quyền",
@@ -2461,25 +2475,25 @@
         r_no: "✕ Giới hạn",
         r_doc: "✓ Đặc quyền Bác sĩ",
         r_dept: "✓ Quản lý nhân sự khoa",
-        r_admin: "✓ Đặc quyền Admin",
-        cta_tag: "HUDU CFMS / QMS · Triển Khai Nhanh Trong 24h",
+        r_admin: "✓ Đặc quyền Quản trị",
+        cta_tag: "HUDU CFMS · Triển Khai Nhanh Trong 24h",
         cta_title: "Sẵn Sàng Chuẩn Hóa Tiếp Nhận Tự Động Cho Phòng Khám?",
-        cta_desc: "Đăng ký ngay <strong>Gói Basic (499k/tháng · 5.000 hồ sơ)</strong> hoặc <strong>Gói Premium (999k/tháng · 100.000 hồ sơ · Miễn phí lắp đặt)</strong> để được đội ngũ HUDU cài đặt Custom thương hiệu riêng và bàn giao hệ thống tận nơi.",
-        cta_b1: "✓ Custom Logo & Tên Phòng khám miễn phí",
-        cta_b2: "✓ Miễn phí bảo trì trọn đời Subscribe",
+        cta_desc: "Đăng ký ngay <strong>Gói Cơ Bản (499k/tháng · 5.000 hồ sơ)</strong> hoặc <strong>Gói Nâng Cao (999k/tháng · 100.000 hồ sơ · Miễn phí lắp đặt)</strong> để được đội ngũ HUDU cài đặt thương hiệu riêng và bàn giao tận nơi.",
+        cta_b1: "✓ Thiết kế Logo & Tên Phòng khám miễn phí",
+        cta_b2: "✓ Miễn phí bảo trì trọn đời",
         cta_b3: "✓ Hỗ trợ kỹ thuật 24/7",
-        form_title: "Đăng Ký Gói Dịch Vụ CFMS / QMS",
+        form_title: "Đăng Ký Gói Dịch Vụ Phòng Khám",
         form_name_lbl: "Họ tên & Tên Phòng khám / Bệnh viện",
         form_name_ph: "VD: BS. Minh — Phòng Khám Đa Khoa An Tâm",
-        form_phone_lbl: "Số điện thoại / Email liên hệ",
-        form_phone_ph: "090x xxx xxx / clinic@domain.vn",
+        form_phone_lbl: "Số điện thoại / Thư điện tử liên hệ",
+        form_phone_ph: "090x xxx xxx / lienhe@phongkham.vn",
         form_plan_lbl: "Gói dịch vụ lựa chọn",
-        form_opt_prem: "CFMS Gói Premium (999k/tháng · Miễn phí lắp đặt · 100.000 hồ sơ · 10 Acc/Role)",
-        form_opt_basic: "CFMS Gói Basic (499k/tháng + 1tr799 lắp đặt · 5.000 hồ sơ · 01 Acc/Role)",
-        form_opt_ent: "CFMS Gói Enterprise (Bệnh viện / Chuỗi phòng khám)",
+        form_opt_prem: "CFMS Gói Nâng Cao (999k/tháng · Miễn phí lắp đặt · 100.000 hồ sơ · 10 Tài khoản/Vai trò)",
+        form_opt_basic: "CFMS Gói Cơ Bản (499k/tháng + 1tr799 lắp đặt · 5.000 hồ sơ · 01 Tài khoản/Vai trò)",
+        form_opt_ent: "CFMS Gói Bệnh Viện & Chuỗi (Báo giá theo quy mô)",
         form_submit: "Gửi Yêu Cầu Khởi Tạo Hệ Thống",
-        form_toast: "✓ Đã ghi nhận yêu cầu! Đội ngũ HUDU sẽ liên hệ bàn giao demo sớm nhất.",
-        footer_desc: "HUDU (huduvn.com) — Công ty phát triển phần mềm phân tích dữ liệu đấu thầu thông minh và hệ thống tự động hóa tiếp nhận, quản trị phòng khám.",
+        form_toast: "✓ Đã ghi nhận yêu cầu! Đội ngũ HUDU sẽ liên hệ bàn giao sớm nhất.",
+        footer_desc: "HUDU (huduvn.com) — Đơn vị phát triển phần mềm săn thầu thông minh và giải pháp tiếp nhận tự động cho Phòng khám, Bệnh viện.",
         footer_col1: "Sản phẩm",
         footer_col2: "Tính năng CFMS",
         footer_col3: "Liên hệ",
@@ -2488,7 +2502,7 @@
         f_link_dt_price: "Bảng Giá Đấu Thầu Thông Minh",
         f_feat_1: "Nhận diện khuôn mặt & Người nhà",
         f_feat_2: "Quét nhanh CCCD gắn chip",
-        f_feat_3: "Phân quyền 3 Role (RBAC)",
+        f_feat_3: "Phân quyền 3 vai trò y tế",
         f_feat_4: "Loa gọi số & TV Phòng chờ"
       },
       en: {

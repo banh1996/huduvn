@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HUDU DauThau — Hệ Thống Săn &amp; So Khớp Đấu Thầu Thông Minh Bằng Thuật Toán · Bảng Giá</title>
-  <meta name="description" content="Hệ thống thuật toán thông minh đối chiếu tiêu chí năng lực dự thầu, bóc tách tiêu chuẩn Chương III & Chương V, chấm điểm độ khớp đa chiều (0–10 điểm), ưu tiên khu vực Vùng miền & Tỉnh/Thành trọng điểm, tự động loại trừ ngành không làm và lọc biên độ năng lực Sàn/Trần bảo mật nội bộ. Bảng giá Gói Basic 499k/tháng (4tr9/năm) · Gói Premium 899k/tháng (8tr9/năm)." />
+  <title>HUDU DauThau — Phần Mềm Tìm Kiếm &amp; Chọn Lọc Gói Thầu Thông Minh · Bảng Giá</title>
+  <meta name="description" content="Phần mềm tự động tìm kiếm, chấm điểm độ phù hợp (0–10 điểm) và chọn lọc gói thầu đúng năng lực, quy mô vốn và khu vực hoạt động của doanh nghiệp. Bảng giá Gói Cơ Bản 499k/tháng (4tr9/năm) · Gói Nâng Cao 899k/tháng (8tr9/năm)." />
   <link rel="canonical" href="https://huduvn.com/dauthau/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://huduvn.com/dauthau/" />
-  <meta property="og:title" content="HUDU DauThau — Săn &amp; So Khớp Đấu Thầu Thông Minh Bằng Thuật Toán · Bảng Giá" />
-  <meta property="og:description" content="Tự động đối chiếu tiêu chí năng lực bằng thuật toán thông minh, bóc tách Chương III & Chương V, chấm điểm độ khớp đa chiều 0–10 điểm, ưu tiên khu vực Vùng miền & Tỉnh/Thành và so khớp ngưỡng Sàn/Trần bảo mật nội bộ." />
+  <meta property="og:title" content="HUDU DauThau — Phần Mềm Tìm Kiếm &amp; Chọn Lọc Gói Thầu Thông Minh · Bảng Giá" />
+  <meta property="og:description" content="Tự động rà soát thông báo mời thầu, tóm tắt yêu cầu quan trọng, chấm điểm độ phù hợp 0–10 điểm theo khu vực và quy mô tài chính của doanh nghiệp." />
   <meta property="og:image" content="https://huduvn.com/images/hudu-logo-dark.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/svg+xml" href="../svg/hudu-favicon.svg" />
@@ -34,8 +34,8 @@
       --bg-navy-deep: #0B1829;
 
       --text-main: #0F233A;
-      --text-body: #334155;
-      --text-muted: #5A6B82;
+      --text-body: #1E293B;
+      --text-muted: #475569;
 
       --blue-primary: #0066CC;
       --blue-hover: #0052A3;
@@ -70,8 +70,8 @@
       --bg-ice-strong: #1E416B;
 
       --text-main: #F1F5F9;
-      --text-body: #CBD5E1;
-      --text-muted: #94A3B8;
+      --text-body: #E2E8F0;
+      --text-muted: #CBD5E1;
 
       --blue-primary: #38BDF8;
       --blue-hover: #7DD3FC;
@@ -98,6 +98,7 @@
       scroll-behavior: smooth;
       overflow-x: hidden;
       max-width: 100%;
+      font-size: 17px;
     }
 
     body {
@@ -105,7 +106,8 @@
       background: var(--bg-page-grad);
       background-color: var(--bg-page);
       color: var(--text-main);
-      line-height: 1.6;
+      font-size: 1rem;
+      line-height: 1.65;
       overflow-x: hidden;
       max-width: 100%;
       width: 100%;
@@ -202,8 +204,8 @@
     }
 
     .nav-links a {
-      font-size: 0.9rem;
-      font-weight: 600;
+      font-size: 0.96rem;
+      font-weight: 700;
       color: var(--text-body);
       white-space: nowrap;
       padding: 6px 2px;
@@ -255,9 +257,9 @@
       border: 1px solid var(--border-light);
       box-shadow: var(--inset-highlight);
       border-radius: 99px;
-      height: 38px;
+      height: 40px;
       padding: 0 30px 0 14px;
-      font-size: 0.84rem;
+      font-size: 0.9rem;
       font-weight: 600;
       font-family: inherit;
       cursor: pointer;
@@ -279,8 +281,8 @@
     }
 
     .icon-btn {
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       border: 1px solid var(--border-light);
       background: var(--bg-surface);
@@ -305,11 +307,11 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      height: 38px;
-      padding: 0 18px;
+      height: 40px;
+      padding: 0 20px;
       border-radius: 99px;
-      font-size: 0.88rem;
-      font-weight: 600;
+      font-size: 0.94rem;
+      font-weight: 700;
       white-space: nowrap;
       cursor: pointer;
       transition: all 0.2s ease;
@@ -344,9 +346,9 @@
     }
 
     .btn-lg {
-      height: 48px;
-      padding: 0 26px;
-      font-size: 0.95rem;
+      height: 50px;
+      padding: 0 28px;
+      font-size: 1.02rem;
     }
 
     /* ==========================================================================
@@ -502,11 +504,11 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 6px 14px;
+      padding: 7px 16px;
       border-radius: 99px;
       background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 100%);
       color: #0052A3;
-      font-size: 0.79rem;
+      font-size: 0.86rem;
       font-weight: 700;
       border: 1px solid var(--border-subtle);
       box-shadow: var(--shadow-sm);
@@ -533,10 +535,10 @@
     }
 
     .hero h1 {
-      font-size: 2.75rem;
-      line-height: 1.18;
+      font-size: 2.6rem;
+      line-height: 1.22;
       font-weight: 800;
-      letter-spacing: -0.028em;
+      letter-spacing: -0.025em;
       margin-bottom: 20px;
     }
 
@@ -553,10 +555,11 @@
     }
 
     .hero-desc {
-      font-size: 1.02rem;
+      font-size: 1.08rem;
+      line-height: 1.66;
       color: var(--text-body);
       margin-bottom: 30px;
-      max-width: 590px;
+      max-width: 610px;
     }
 
     .hero-cta-group {
@@ -579,7 +582,7 @@
       border: 1px solid var(--border-light);
       box-shadow: var(--shadow-sm);
       border-radius: var(--radius-md);
-      padding: 13px 15px;
+      padding: 15px 16px;
     }
 
     .metric-item strong {
@@ -599,11 +602,11 @@
     }
 
     .metric-item span {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      line-height: 1.35;
+      font-size: 0.9rem;
+      color: var(--text-body);
+      line-height: 1.45;
       display: block;
-      margin-top: 3px;
+      margin-top: 4px;
     }
 
     /* Hero Right Command Center */
@@ -621,6 +624,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 14px;
       padding-bottom: 14px;
       margin-bottom: 16px;
       border-bottom: 1px solid var(--border-light);
@@ -628,12 +632,13 @@
 
     .window-dots {
       display: flex;
-      gap: 6px;
+      gap: 7px;
+      flex-shrink: 0;
     }
 
     .window-dots span {
-      width: 10px;
-      height: 10px;
+      width: 11px;
+      height: 11px;
       border-radius: 50%;
       background: var(--border-subtle);
     }
@@ -649,22 +654,22 @@
     .showcase-url {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      background: var(--bg-subtle);
-      padding: 4px 12px;
+      gap: 8px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--blue-primary);
+      background: var(--bg-ice);
+      border: 1px solid var(--border-ice);
+      padding: 5px 14px;
       border-radius: 99px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: inherit;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .live-indicator {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #0066CC;
-      animation: pulseDot 2s infinite;
+      display: none;
     }
 
     .mini-card {
@@ -702,9 +707,9 @@
     }
 
     .status-pill {
-      font-size: 0.72rem;
+      font-size: 0.84rem;
       font-weight: 700;
-      padding: 4px 10px;
+      padding: 5px 12px;
       border-radius: 99px;
       background: var(--bg-ice);
       color: var(--blue-primary);
@@ -736,20 +741,21 @@
 
     .section-header {
       text-align: center;
-      max-width: 780px;
+      max-width: 820px;
       margin: 0 auto 54px;
     }
 
     .section-header h2 {
-      font-size: 2.2rem;
+      font-size: 2.25rem;
       font-weight: 800;
       letter-spacing: -0.022em;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .section-header p {
       color: var(--text-body);
-      font-size: 1.02rem;
+      font-size: 1.08rem;
+      line-height: 1.62;
     }
 
     .pricing-grid {
@@ -793,14 +799,14 @@
 
     .pricing-popular-ribbon {
       position: absolute;
-      top: -13px;
+      top: -14px;
       left: 50%;
       transform: translateX(-50%);
       background: linear-gradient(90deg, #0284C7 0%, #38BDF8 50%, #E2E8F0 100%);
       color: #071324;
-      font-size: 0.73rem;
+      font-size: 0.8rem;
       font-weight: 800;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       padding: 5px 16px;
       border-radius: 99px;
@@ -812,9 +818,9 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 0.76rem;
+      font-size: 0.84rem;
       font-weight: 800;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--blue-primary);
       margin-bottom: 8px;
@@ -825,7 +831,7 @@
     }
 
     .pricing-card h3 {
-      font-size: 1.38rem;
+      font-size: 1.42rem;
       font-weight: 800;
       margin-bottom: 8px;
       letter-spacing: -0.02em;
@@ -836,15 +842,15 @@
     }
 
     .pricing-subtitle {
-      font-size: 0.86rem;
-      color: var(--text-muted);
+      font-size: 0.96rem;
+      color: var(--text-body);
       margin-bottom: 20px;
-      min-height: 40px;
-      line-height: 1.45;
+      min-height: 44px;
+      line-height: 1.5;
     }
 
     .pricing-card.featured .pricing-subtitle {
-      color: #CBD5E1;
+      color: #E2E8F0;
     }
 
     .pricing-price-box {
@@ -868,7 +874,7 @@
     }
 
     .price-amount {
-      font-size: 2.05rem;
+      font-size: 2.1rem;
       font-weight: 800;
       letter-spacing: -0.03em;
       color: var(--text-main);
@@ -882,13 +888,13 @@
     }
 
     .price-period {
-      font-size: 0.86rem;
+      font-size: 0.94rem;
       font-weight: 600;
       color: var(--text-muted);
     }
 
     .pricing-card.featured .price-period {
-      color: #94A3B8;
+      color: #CBD5E1;
     }
 
     .setup-fee-row {
@@ -898,7 +904,7 @@
       gap: 8px;
       padding-top: 8px;
       border-top: 1px dashed var(--border-light);
-      font-size: 0.82rem;
+      font-size: 0.9rem;
       font-weight: 600;
     }
 
@@ -908,12 +914,12 @@
 
     .setup-free-badge {
       display: inline-block;
-      padding: 2px 9px;
+      padding: 3px 10px;
       border-radius: 99px;
       background: rgba(56, 189, 248, 0.18);
       color: #7DD3FC;
       border: 1px solid rgba(125, 211, 252, 0.45);
-      font-size: 0.75rem;
+      font-size: 0.84rem;
       font-weight: 700;
     }
 
@@ -921,12 +927,12 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      padding: 11px 14px;
+      padding: 12px 14px;
       border-radius: 10px;
       background: var(--bg-ice);
       border: 1px solid var(--border-ice);
       color: var(--blue-hover);
-      font-size: 0.83rem;
+      font-size: 0.92rem;
       font-weight: 700;
       margin-bottom: 18px;
     }
@@ -947,15 +953,15 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 11px;
+      gap: 12px;
       margin-bottom: 24px;
-      font-size: 0.87rem;
-      line-height: 1.48;
+      font-size: 0.96rem;
+      line-height: 1.56;
       color: var(--text-body);
     }
 
     .pricing-card.featured .pricing-feature-list {
-      color: #E2E8F0;
+      color: #F1F5F9;
     }
 
     .pricing-feature-list li {
@@ -965,18 +971,18 @@
     }
 
     .pricing-check {
-      width: 19px;
-      height: 19px;
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
       background: rgba(0, 102, 204, 0.12);
       color: var(--blue-primary);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.72rem;
+      font-size: 0.78rem;
       font-weight: 800;
       flex-shrink: 0;
-      margin-top: 2px;
+      margin-top: 3px;
     }
 
     .pricing-card.featured .pricing-check {
@@ -1006,8 +1012,8 @@
     }
 
     .benefit-icon {
-      width: 46px;
-      height: 46px;
+      width: 48px;
+      height: 48px;
       border-radius: 12px;
       background: linear-gradient(135deg, #FFFFFF, #DCE4EE);
       color: var(--blue-primary);
@@ -1024,13 +1030,15 @@
     }
 
     .benefit-card h3 {
-      font-size: 1.12rem;
+      font-size: 1.18rem;
       font-weight: 700;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      line-height: 1.35;
     }
 
     .benefit-card p {
-      font-size: 0.9rem;
+      font-size: 0.98rem;
+      line-height: 1.6;
       color: var(--text-body);
     }
 
@@ -2291,11 +2299,11 @@
 
       <ul class="nav-links">
         <li><a href="../" data-i18n="nav_home">Trang chủ</a></li>
-        <li><a href="#realtime-map" data-i18n="nav_realtime">Bản đồ &amp; Biểu đồ Realtime</a></li>
+        <li><a href="#realtime-map" data-i18n="nav_realtime">Bản đồ Đấu thầu</a></li>
         <li><a href="#pricing" class="active" data-i18n="nav_pricing">Bảng giá</a></li>
         <li><a href="#pipeline" data-i18n="nav_pipeline">Quy trình 3 Bước</a></li>
         <li><a href="#features" data-i18n="nav_features">Tính năng</a></li>
-        <li><a href="../cfms/" data-i18n="nav_cfms">Quản trị CFMS</a></li>
+        <li><a href="../cfms/" data-i18n="nav_cfms">Phòng khám (CFMS)</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -2332,36 +2340,36 @@
       <div>
         <div class="pill-tag">
           <span class="pill-dot"></span>
-          <span data-i18n="hero_badge">SẢN PHẨM 01 · HUDU DAUTHAU · huduvn.com/dauthau</span>
+          <span data-i18n="hero_badge">SẢN PHẨM 01 · PHẦN MỀM ĐẤU THẦU HUDU</span>
         </div>
         <h1 data-i18n="hero_title">
-          Hệ Thống <span class="highlight">Săn &amp; So Khớp Đấu Thầu</span> Thông Minh Bằng Thuật Toán Chuyên Sâu
+          Hệ Thống <span class="highlight">Tìm Kiếm &amp; Chọn Lọc Gói Thầu</span> Đúng Năng Lực Doanh Nghiệp
         </h1>
         <p class="hero-desc" data-i18n="hero_desc">
-          Thuật toán thông minh tự động chuẩn hóa tiêu chí năng lực dự thầu bảo mật nội bộ, bóc tách tiêu chuẩn Chương III &amp; thông số kỹ thuật Chương V, chấm điểm độ khớp đa chiều 0–10 điểm, <strong>ưu tiên khu vực Vùng miền &amp; Tỉnh/Thành trọng điểm</strong>, tự động loại trừ ngành không làm và <strong>so khớp biên độ năng lực Sàn/Trần (Floor/Ceiling)</strong>.
+          Tự động rà soát hàng ngàn thông báo mời thầu mỗi ngày, chấm điểm mức độ phù hợp từ 0–10 theo <strong>ngành nghề sở trường, tỉnh/thành ưu tiên và quy mô tài chính</strong> của doanh nghiệp. Cam kết bảo mật tuyệt đối thông tin nội bộ.
         </p>
 
         <div class="hero-cta-group">
           <a href="#pricing" class="btn btn-primary btn-lg" data-i18n="hero_btn_pricing">
-            Xem Bảng Giá Tháng &amp; Năm &darr;
+            Xem Bảng Giá Dịch Vụ &darr;
           </a>
           <a href="#realtime-map" class="btn btn-outline btn-lg" data-i18n="hero_btn_pipeline">
-            Bản Đồ &amp; Biểu Đồ Realtime &darr;
+            Xem Bản Đồ Đấu Thầu &darr;
           </a>
         </div>
 
         <div class="hero-metrics">
           <div class="metric-item">
             <strong data-i18n="m1_val">Chấm điểm 0–10</strong>
-            <span data-i18n="m1_lbl">Chấm điểm đa chiều: Chuyên ngành, Vùng miền/Tỉnh thành, Tài chính &amp; Kỹ thuật</span>
+            <span data-i18n="m1_lbl">Đánh giá độ phù hợp theo ngành nghề, khu vực và năng lực thực tế</span>
           </div>
           <div class="metric-item">
-            <strong data-i18n="m2_val">Sàn / Trần</strong>
-            <span data-i18n="m2_lbl">So khớp chính xác biên độ tài chính, Chương III &amp; Chương V</span>
+            <strong data-i18n="m2_val">Đúng Tầm Vốn</strong>
+            <span data-i18n="m2_lbl">Chỉ lọc gói thầu vừa sức, loại bỏ gói quá nhỏ hoặc vượt khả năng</span>
           </div>
           <div class="metric-item">
-            <strong data-i18n="m3_val">Chống trùng 100%</strong>
-            <span data-i18n="m3_lbl">Tự động gộp bản sửa đổi/gia hạn &amp; đẩy tin qua App, Zalo, SMS</span>
+            <strong data-i18n="m3_val">Không Bỏ Sót</strong>
+            <span data-i18n="m3_lbl">Tự động gộp tin điều chỉnh, gia hạn và báo ngay qua Zalo, Điện thoại</span>
           </div>
         </div>
       </div>
@@ -2373,44 +2381,43 @@
             <span></span><span></span><span></span>
           </div>
           <div class="showcase-url">
-            <span class="live-indicator"></span>
-            <span data-i18n="sc_header">HUDU DauThau · Thuật Toán Chấm Điểm &amp; So Khớp Thông Minh</span>
+            <span data-i18n="sc_header">HUDU DauThau · Chọn Lọc Gói Thầu Tự Động</span>
           </div>
         </div>
 
         <div class="mini-card">
-          <div style="display:flex; justify-content:space-between; align-items:center;">
-            <strong style="font-size:0.95rem;" data-i18n="sc_pkg_title">IB2600881920-01 · Cầu Sông Nhạn (Đồng Nai)</strong>
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <strong style="font-size:1.04rem;" data-i18n="sc_pkg_title">IB2600881920-01 · Cầu Sông Nhạn (Đồng Nai)</strong>
             <span class="status-pill" data-i18n="sc_pkg_pill">9.6 / 10 điểm</span>
           </div>
           <div class="stream-bar"></div>
-          <div style="font-size:0.8rem; color:var(--text-body); margin-bottom:8px;">
-            <div data-i18n="sc_pkg_line1"><strong>Chương V:</strong> Hạ tầng Cầu đường · Công trình Cấp II (Nhịp 3x30m)</div>
-            <div data-i18n="sc_pkg_line2"><strong>Biên độ Sàn/Trần:</strong> Sàn 10 tỷ &le; <strong>35,5 tỷ</strong> &le; Trần 80 tỷ</div>
+          <div style="font-size:0.95rem; color:var(--text-body); margin-bottom:10px; line-height:1.55;">
+            <div data-i18n="sc_pkg_line1"><strong>Lĩnh vực:</strong> Xây lắp hạ tầng cầu đường · Công trình Cấp II</div>
+            <div data-i18n="sc_pkg_line2"><strong>Giá gói thầu:</strong> <strong>35,5 tỷ đồng</strong> (Phù hợp tầm vốn 10 – 80 tỷ)</div>
           </div>
-          <div style="display:flex; justify-content:space-between; font-size:0.76rem; color:var(--text-muted);">
-            <span data-i18n="sc_pkg_rev">&#10003; Đã gộp bản sửa đổi (-00 &rarr; -01)</span>
-            <span style="color:var(--blue-primary); font-weight:700;" data-i18n="sc_pkg_push">&#10003; Đã báo qua App &amp; Zalo</span>
+          <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; font-size:0.88rem; color:var(--text-muted);">
+            <span data-i18n="sc_pkg_rev">&#10003; Đã cập nhật thông báo mới nhất</span>
+            <span style="color:var(--blue-primary); font-weight:700;" data-i18n="sc_pkg_push">&#10003; Đã báo qua Zalo &amp; Điện thoại</span>
           </div>
         </div>
 
         <div class="mini-card" style="background: linear-gradient(145deg, #0B192C, #132A46); color: #F8FAFC; border-color: #38BDF8;">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-            <span style="font-size:0.75rem; font-weight:800; color:#7DD3FC; text-transform:uppercase; letter-spacing:0.06em;" data-i18n="sc_price_head">Linh hoạt theo Tháng hoặc Ưu đãi Cả Năm</span>
-            <span style="font-size:0.72rem; background:rgba(56,189,248,0.2); color:#7DD3FC; padding:3px 9px; border-radius:99px; font-weight:700;" data-i18n="sc_price_badge">Full Tính Năng</span>
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:10px;">
+            <span style="font-size:0.86rem; font-weight:800; color:#7DD3FC; text-transform:uppercase; letter-spacing:0.04em;" data-i18n="sc_price_head">Đăng Ký Theo Tháng Hoặc Trọn Năm</span>
+            <span style="font-size:0.82rem; background:rgba(56,189,248,0.2); color:#7DD3FC; padding:4px 11px; border-radius:99px; font-weight:700;" data-i18n="sc_price_badge">Đầy Đủ Tính Năng</span>
           </div>
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:8px;">
-            <div style="background:rgba(15,23,42,0.7); padding:10px 12px; border-radius:10px; border:1px solid rgba(148,163,184,0.25);">
-              <div style="font-size:0.74rem; color:#94A3B8; font-weight:700;" data-i18n="sc_s_title">GÓI BASIC</div>
-              <div style="font-size:1.2rem; font-weight:800; color:#FFFFFF;">499.000đ<span style="font-size:0.75rem; font-weight:500; color:#CBD5E1;" data-i18n="sc_per_mo">/tháng</span></div>
-              <div style="font-size:0.73rem; color:#7DD3FC; font-weight:700; margin-top:2px;" data-i18n="sc_s_yr">Cả năm: 4.900.000đ/năm</div>
-              <div style="font-size:0.71rem; color:#CBD5E1; margin-top:2px;" data-i18n="sc_s_sub">01 Account · 01 Mảng Domain</div>
+            <div style="background:rgba(15,23,42,0.7); padding:12px 14px; border-radius:10px; border:1px solid rgba(148,163,184,0.25);">
+              <div style="font-size:0.86rem; color:#CBD5E1; font-weight:700;" data-i18n="sc_s_title">GÓI CƠ BẢN</div>
+              <div style="font-size:1.3rem; font-weight:800; color:#FFFFFF; margin-top:2px;">499.000đ<span style="font-size:0.85rem; font-weight:500; color:#CBD5E1;" data-i18n="sc_per_mo">/tháng</span></div>
+              <div style="font-size:0.85rem; color:#7DD3FC; font-weight:700; margin-top:4px;" data-i18n="sc_s_yr">Cả năm: 4.900.000đ/năm</div>
+              <div style="font-size:0.84rem; color:#E2E8F0; margin-top:3px;" data-i18n="sc_s_sub">01 Tài khoản · 01 Lĩnh vực</div>
             </div>
-            <div style="background:rgba(2,132,199,0.25); padding:10px 12px; border-radius:10px; border:1px solid #38BDF8;">
-              <div style="font-size:0.74rem; color:#7DD3FC; font-weight:700;" data-i18n="sc_p_title">GÓI PREMIUM</div>
-              <div style="font-size:1.2rem; font-weight:800; color:#7DD3FC;">899.000đ<span style="font-size:0.75rem; font-weight:500; color:#E2E8F0;" data-i18n="sc_per_mo">/tháng</span></div>
-              <div style="font-size:0.73rem; color:#FFFFFF; font-weight:700; margin-top:2px;" data-i18n="sc_p_yr">Cả năm: 8.900.000đ/năm</div>
-              <div style="font-size:0.71rem; color:#BAE6FD; font-weight:700; margin-top:2px;" data-i18n="sc_p_sub">05 Account · 02 Mảng Domain</div>
+            <div style="background:rgba(2,132,199,0.25); padding:12px 14px; border-radius:10px; border:1px solid #38BDF8;">
+              <div style="font-size:0.86rem; color:#7DD3FC; font-weight:700;" data-i18n="sc_p_title">GÓI NÂNG CAO</div>
+              <div style="font-size:1.3rem; font-weight:800; color:#7DD3FC; margin-top:2px;">899.000đ<span style="font-size:0.85rem; font-weight:500; color:#E2E8F0;" data-i18n="sc_per_mo">/tháng</span></div>
+              <div style="font-size:0.85rem; color:#FFFFFF; font-weight:700; margin-top:4px;" data-i18n="sc_p_yr">Cả năm: 8.900.000đ/năm</div>
+              <div style="font-size:0.84rem; color:#BAE6FD; font-weight:700; margin-top:3px;" data-i18n="sc_p_sub">05 Tài khoản · 02 Lĩnh vực</div>
             </div>
           </div>
         </div>
@@ -2424,11 +2431,11 @@
       <div class="section-header">
         <div class="pill-tag">
           <span class="pill-dot"></span>
-          <span data-i18n="rt_tag">DỮ LIỆU TRỰC TUYẾN 24/7 · DAUTHAU.HUDUVN.COM REALTIME</span>
+          <span data-i18n="rt_tag">DỮ LIỆU CẬP NHẬT LIÊN TỤC 24/7 · DAUTHAU.HUDUVN.COM</span>
         </div>
-        <h2 data-i18n="rt_title">Bản Đồ Đấu Thầu Việt Nam &amp; Hệ Thống Biểu Đồ Phân Tích Realtime</h2>
+        <h2 data-i18n="rt_title">Bản Đồ Đấu Thầu Toàn Quốc &amp; Thống Kê Trực Tuyến</h2>
         <p data-i18n="rt_desc">
-          Theo dõi trực tiếp lưu lượng gói thầu trên <strong>63 Tỉnh/Thành phố (kèm Quần đảo Hoàng Sa &amp; Trường Sa)</strong> và cơ cấu <strong>9 Hình thức lựa chọn nhà thầu</strong> chuẩn Luật Đấu thầu 2023.
+          Theo dõi trực tiếp số lượng gói thầu trên <strong>63 Tỉnh/Thành phố (kèm Quần đảo Hoàng Sa &amp; Trường Sa)</strong> và cơ cấu các hình thức lựa chọn nhà thầu trên cả nước.
         </p>
       </div>
 
@@ -2440,7 +2447,7 @@
           <div class="rt-kpi-sub" data-i18n="rt_kpi1_sub">Tổng hợp trên 63 tỉnh/thành phố</div>
         </div>
         <div class="rt-kpi-card kpi-hotspot">
-          <div class="rt-kpi-label" data-i18n="rt_kpi2_lbl">Tổng Gói Thầu Đang Mở Nhận HSDT</div>
+          <div class="rt-kpi-label" data-i18n="rt_kpi2_lbl">Tổng Gói Thầu Đang Mở Nhận Hồ Sơ</div>
           <div class="rt-kpi-val" id="rtKpiOpen">6.520</div>
           <div class="rt-kpi-sub" id="rtKpiOpenSub">Đang trong thời hạn nộp hồ sơ dự thầu</div>
         </div>
@@ -2466,7 +2473,7 @@
 
         <!-- Guide & Legend Card (Top-Left) -->
         <div class="rt-map-guide-card">
-          <div style="font-weight: 800; color: var(--text-heading); font-size: 0.88rem; margin-bottom: 8px;" data-i18n="rt_guide_title">
+          <div style="font-weight: 800; color: var(--text-heading); font-size: 0.94rem; margin-bottom: 8px;" data-i18n="rt_guide_title">
             Bản Đồ Nhiệt Đấu Thầu 63 Tỉnh/Thành
           </div>
           <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 10px;">
@@ -2476,11 +2483,11 @@
             </div>
             <div style="display: flex; align-items: center; gap: 8px;">
               <span style="width: 12px; height: 12px; border-radius: 3px; background: #0077CC; display: inline-block; flex-shrink: 0;"></span>
-              <span data-i18n="rt_leg_norm">Tỉnh / Thành phố đang phát hành TBMT</span>
+              <span data-i18n="rt_leg_norm">Tỉnh / Thành phố đang có gói thầu mở</span>
             </div>
           </div>
-          <div style="font-size: 0.74rem; color: var(--text-muted); border-top: 1px solid var(--border-light); padding-top: 8px;" data-i18n="rt_guide_tip">
-            💡 Rê chuột hoặc <strong>bấm vào bất kỳ tỉnh nào</strong> trên bản đồ để xem biểu đồ phân tích chuyên sâu của tỉnh đó.
+          <div style="font-size: 0.84rem; color: var(--text-body); border-top: 1px solid var(--border-light); padding-top: 8px;" data-i18n="rt_guide_tip">
+            💡 Rê chuột hoặc <strong>bấm vào bất kỳ tỉnh nào</strong> trên bản đồ để xem thống kê chi tiết của tỉnh đó.
           </div>
         </div>
 
@@ -2536,8 +2543,8 @@
           <div>
             <div class="rt-chart-head">
               <div>
-                <h3 data-i18n="rt_c1_title">1. Cơ Cấu 9 Hình Thức Lựa Chọn Nhà Thầu Toàn Quốc</h3>
-                <p data-i18n="rt_c1_sub">Tỷ trọng theo Luật Đấu thầu 2023 trong 30 ngày gần nhất</p>
+                <h3 data-i18n="rt_c1_title">1. Cơ Cấu Hình Thức Lựa Chọn Nhà Thầu Toàn Quốc</h3>
+                <p data-i18n="rt_c1_sub">Tỷ trọng theo Luật Đấu thầu trong 30 ngày gần nhất</p>
               </div>
               <span class="status-pill" id="rtNationalTotalPill">61.089 gói</span>
             </div>
@@ -2555,13 +2562,13 @@
           <div>
             <div class="rt-chart-head">
               <div>
-                <h3 data-i18n="rt_c2_title">2. Phân Tích Loại Hình &amp; Hình Thức Theo Tỉnh / Thành</h3>
-                <p data-i18n="rt_c2_sub">Bấm vào tỉnh trên bản đồ hoặc chọn bên cạnh để xem cơ cấu loại hình gói thầu</p>
+                <h3 data-i18n="rt_c2_title">2. Phân Tích Gói Thầu Theo Từng Tỉnh / Thành</h3>
+                <p data-i18n="rt_c2_sub">Bấm vào tỉnh trên bản đồ hoặc chọn bên cạnh để xem chi tiết</p>
               </div>
               <select id="rtProvinceSelect" class="rt-prov-select" onchange="window.selectMapProvince(this.value)" aria-label="Select Province"></select>
             </div>
 
-            <div id="rtProvKpiBanner" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; padding: 11px 14px; border-radius: 12px; background: var(--bg-subtle); border: 1px solid var(--border-light); font-size: 0.8rem;"></div>
+            <div id="rtProvKpiBanner" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; padding: 11px 14px; border-radius: 12px; background: var(--bg-subtle); border: 1px solid var(--border-light); font-size: 0.88rem;"></div>
 
             <div class="rt-donut-layout">
               <div style="width: 170px; height: 170px; margin: 0 auto; position: relative;">
@@ -2577,8 +2584,8 @@
           <div>
             <div class="rt-chart-head">
               <div>
-                <h3 data-i18n="rt_c3_title">3. Top 10 Tỉnh / Thành Phố Có Lượng Gói Thầu Cao Nhất</h3>
-                <p data-i18n="rt_c3_sub">So sánh tổng số gói thầu (30 ngày) và số gói đang mở nhận HSDT</p>
+                <h3 data-i18n="rt_c3_title">3. Top 10 Tỉnh / Thành Phố Có Nhiều Gói Thầu Nhất</h3>
+                <p data-i18n="rt_c3_sub">So sánh tổng số gói thầu (30 ngày) và số gói đang mở nhận hồ sơ</p>
               </div>
             </div>
             <div id="rtTopProvincesBars" style="display: flex; flex-direction: column; gap: 6px;"></div>
@@ -2590,8 +2597,8 @@
           <div>
             <div class="rt-chart-head">
               <div>
-                <h3 data-i18n="rt_c4_title">4. Phân Bổ Lưu Lượng Đấu Thầu Theo 3 Miền Bắc – Trung – Nam</h3>
-                <p data-i18n="rt_c4_sub">Tổng hợp quy mô gói thầu, gói đang mở và cơ cấu loại hình theo vùng kinh tế</p>
+                <h3 data-i18n="rt_c4_title">4. Phân Bổ Gói Thầu Theo 3 Miền Bắc – Trung – Nam</h3>
+                <p data-i18n="rt_c4_sub">Tổng hợp số lượng gói thầu và gói đang mở theo từng vùng kinh tế</p>
               </div>
             </div>
             <div id="rtRegionalComparisonChart"></div>
@@ -2604,7 +2611,7 @@
         <div class="rt-chart-head" style="margin-bottom: 8px;">
           <div>
             <h3 data-i18n="rt_feed_title">Danh Sách Gói Thầu Mới Nhất</h3>
-            <p data-i18n="rt_feed_sub">Cập nhật trực tiếp các thông báo mời thầu mới nhất kèm dự toán, thời điểm đóng thầu và liên kết gốc</p>
+            <p data-i18n="rt_feed_sub">Cập nhật trực tiếp các thông báo mời thầu mới nhất kèm dự toán, hạn đóng thầu và đường dẫn gốc</p>
           </div>
           <div style="display: flex; gap: 6px; flex-wrap: wrap;" id="rtFeedFilterPills">
             <button type="button" class="rt-refresh-btn" data-domain="ALL" onclick="window.setRtFeedFilter('ALL')" style="border-color: var(--blue-primary); color: var(--blue-primary);" data-i18n="rt_flt_all">Tất cả</button>
@@ -2619,11 +2626,11 @@
           <table class="rt-feed-table">
             <thead>
               <tr>
-                <th data-i18n="rt_th_code">Mã TBMT</th>
+                <th data-i18n="rt_th_code">Mã Gói Thầu</th>
                 <th data-i18n="rt_th_title">Tên Gói Thầu &amp; Dự Án</th>
                 <th data-i18n="rt_th_inv">Chủ Đầu Tư / Bên Mời Thầu</th>
                 <th data-i18n="rt_th_budget">Giá Gói Thầu</th>
-                <th data-i18n="rt_th_close">Đóng Thầu &amp; Link Gốc</th>
+                <th data-i18n="rt_th_close">Hạn Đóng Thầu &amp; Xem Gốc</th>
               </tr>
             </thead>
             <tbody id="rtLiveFeedTbody"></tbody>
@@ -2648,11 +2655,11 @@
       <div class="section-header">
         <div class="pill-tag">
           <span class="pill-dot"></span>
-          <span data-i18n="price_tag">Bảng Giá Hệ Thống Săn Thầu Thông Minh (HUDU DauThau)</span>
+          <span data-i18n="price_tag">Bảng Giá Phần Mềm Đấu Thầu HUDU</span>
         </div>
-        <h2 data-i18n="price_title">Đầu Tư Tối Ưu Cho Phòng Đấu Thầu &amp; Ban Kế Hoạch Kỹ Thuật</h2>
+        <h2 data-i18n="price_title">Chi Phí Hợp Lý Cho Doanh Nghiệp &amp; Phòng Đấu Thầu</h2>
         <p data-i18n="price_desc">
-          Mở khóa <strong>đầy đủ 100% tính năng thông minh hiện có</strong>, linh hoạt đăng ký theo tháng hoặc <strong>mua trọn gói cả năm để tiết kiệm lớn</strong>, miễn phí thiết lập bộ lọc tiêu chí năng lực bảo mật nội bộ.
+          Sử dụng <strong>đầy đủ 100% tính năng thông minh</strong>. Linh hoạt đăng ký theo tháng hoặc <strong>thanh toán cả năm để tiết kiệm lớn</strong>, hỗ trợ cài đặt tiêu chí năng lực hoàn toàn miễn phí.
         </p>
       </div>
 
@@ -2662,11 +2669,11 @@
           <div>
             <div class="pricing-tier-label">
               <span>●</span>
-              <span data-i18n="plan1_tier">GÓI TIÊU CHUẨN · BASIC</span>
+              <span data-i18n="plan1_tier">GÓI TIÊU CHUẨN</span>
             </div>
-            <h3 data-i18n="plan1_name">Gói Basic (01 Account · 01 Domain)</h3>
+            <h3 data-i18n="plan1_name">Gói Cơ Bản (01 Tài khoản)</h3>
             <p class="pricing-subtitle" data-i18n="plan1_sub">
-              Dành cho nhà thầu chuyên sâu 01 mảng lĩnh vực hoạt động, sử dụng đầy đủ toàn bộ tính năng phân tích &amp; so khớp thầu thông minh.
+              Phù hợp cho doanh nghiệp chuyên sâu 01 lĩnh vực ngành nghề, cần tự động tìm và chọn lọc gói thầu hàng ngày.
             </p>
 
             <div class="pricing-price-box">
@@ -2675,56 +2682,56 @@
                 <span class="price-period" data-i18n="plan_per_month">/ tháng</span>
               </div>
               <div class="setup-fee-row">
-                <span data-i18n="plan1_setup_lbl">Ưu đãi thanh toán cả năm:</span>
+                <span data-i18n="plan1_setup_lbl">Ưu đãi đăng ký cả năm:</span>
                 <strong style="color: var(--blue-primary);" data-i18n="plan1_setup_val">4.900.000đ / năm (Tiết kiệm 1tr088)</strong>
               </div>
             </div>
 
             <div class="role-quota-banner">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-              <span data-i18n="plan1_quota">01 Tài khoản (Account) · 01 Mảng ngành nghề (01 Domain)</span>
+              <span data-i18n="plan1_quota">01 Tài khoản sử dụng · 01 Lĩnh vực ngành nghề</span>
             </div>
 
             <ul class="pricing-feature-list">
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span data-i18n="plan1_f1"><strong>Đầy đủ 100% tính năng hiện có:</strong> Sử dụng trọn bộ công cụ thuật toán phân tích, chấm điểm và săn thầu thông minh mà không giới hạn tính năng.</span>
+                <span data-i18n="plan1_f1"><strong>Đầy đủ 100% tính năng:</strong> Sử dụng toàn bộ công cụ tìm kiếm, chấm điểm và chọn lọc gói thầu thông minh.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span data-i18n="plan1_f2"><strong>Chuẩn hóa tiêu chí năng lực thông minh &amp; bảo mật:</strong> Thiết lập biên độ doanh thu, hợp đồng tương tự, cấp công trình (I–IV) và thiết bị cho <strong>01 mảng domain năng lực</strong> bảo mật nội bộ.</span>
+                <span data-i18n="plan1_f2"><strong>Thiết lập tiêu chí riêng biệt, bảo mật:</strong> Cài đặt ngành nghề, tầm vốn, kinh nghiệm thi công cho 01 lĩnh vực hoạt động.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span data-i18n="plan1_f3"><strong>Bóc tách Chương III, Chương V &amp; Chấm điểm Đa chiều 0–10:</strong> Đánh giá độ khớp toàn diện (Chuyên ngành, Vùng miền &amp; Tỉnh/Thành trọng điểm, Sàn/Trần tài chính, Kỹ thuật, Nhân sự/Thiết bị &amp; Loại trừ ngành không làm).</span>
+                <span data-i18n="plan1_f3"><strong>Chấm điểm phù hợp (0–10 điểm):</strong> Tự động ưu tiên tỉnh/thành trọng điểm và loại bỏ các mảng công việc đơn vị không nhận làm.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span data-i18n="plan1_f4"><strong>Gộp bản sửa đổi &amp; Quét gói thầu đang mở:</strong> Tự động hợp nhất các thông báo điều chỉnh/gia hạn và quét toàn bộ gói thầu còn hạn ngay khi kích hoạt.</span>
+                <span data-i18n="plan1_f4"><strong>Tự động gộp tin sửa đổi, gia hạn:</strong> Không bị trùng lặp bản tin và rà soát ngay toàn bộ gói thầu đang còn hạn nộp.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span data-i18n="plan1_f5"><strong>Đa nền tảng &amp; Đa kênh thông báo:</strong> Truy cập trên Web, App iOS/Android; nhận thông báo tức thì qua App, Zalo, SMS, Email kèm giữ nguyên link gốc.</span>
+                <span data-i18n="plan1_f5"><strong>Nhận tin nhanh qua Zalo, Điện thoại, Email:</strong> Xem thuận tiện trên cả máy tính và điện thoại kèm đường dẫn gốc chính thống.</span>
               </li>
             </ul>
           </div>
 
           <a href="#contact" onclick="selectPricingPlan('DAUTHAU_BASIC')" class="btn btn-outline btn-lg" style="width: 100%; justify-content: center;" data-i18n="plan1_cta">
-            Đăng Ký Gói Basic &rarr;
+            Đăng Ký Gói Cơ Bản &rarr;
           </a>
         </div>
 
         <!-- PLAN 2: PREMIUM (FEATURED) -->
         <div class="pricing-card featured">
-          <div class="pricing-popular-ribbon" data-i18n="plan2_ribbon">PHỔ BIẾN NHẤT · 05 TÀI KHOẢN &amp; 02 MẢNG DOMAIN NĂNG LỰC</div>
+          <div class="pricing-popular-ribbon" data-i18n="plan2_ribbon">ĐƯỢC CHỌN NHIỀU NHẤT · 05 TÀI KHOẢN &amp; 02 LĨNH VỰC</div>
           <div>
             <div class="pricing-tier-label">
               <span>★</span>
-              <span data-i18n="plan2_tier">GÓI NÂNG CAO · PREMIUM</span>
+              <span data-i18n="plan2_tier">GÓI NÂNG CAO</span>
             </div>
-            <h3 data-i18n="plan2_name">Gói Premium (05 Accounts · 02 Domains)</h3>
+            <h3 data-i18n="plan2_name">Gói Nâng Cao (05 Tài khoản)</h3>
             <p class="pricing-subtitle" data-i18n="plan2_sub">
-              Tối ưu cho doanh nghiệp hoạt động trên 02 mảng ngành nghề và cần phối hợp nhóm giữa Ban Giám đốc với Phòng Đấu thầu.
+              Tối ưu cho doanh nghiệp hoạt động trên 02 lĩnh vực và cần phối hợp giữa Ban Giám đốc với Phòng Đấu thầu.
             </p>
 
             <div class="pricing-price-box">
@@ -2733,42 +2740,42 @@
                 <span class="price-period" data-i18n="plan_per_month">/ tháng</span>
               </div>
               <div class="setup-fee-row">
-                <span data-i18n="plan2_setup_lbl">Ưu đãi thanh toán cả năm:</span>
+                <span data-i18n="plan2_setup_lbl">Ưu đãi đăng ký cả năm:</span>
                 <span class="setup-free-badge" data-i18n="plan2_setup_val">8.900.000đ / năm (Tiết kiệm 1tr888)</span>
               </div>
             </div>
 
             <div class="role-quota-banner">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              <span data-i18n="plan2_quota">05 Tài khoản (Accounts) · 02 Mảng ngành nghề (02 Domains)</span>
+              <span data-i18n="plan2_quota">05 Tài khoản sử dụng · 02 Lĩnh vực ngành nghề</span>
             </div>
 
             <ul class="pricing-feature-list">
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span data-i18n="plan2_f1"><strong>Đầy đủ 100% tính năng hiện có của hệ thống:</strong> Trọn bộ thuật toán phân tích năng lực 2 tầng, bóc tách PDF Chương III &amp; Chương V, ưu tiên Vùng miền/Tỉnh thành, loại trừ ngành không làm và lọc Sàn/Trần.</span>
+                <span data-i18n="plan2_f1"><strong>Trọn bộ tính năng Gói Cơ Bản:</strong> Tự động đọc tóm tắt hồ sơ mời thầu, chấm điểm độ phù hợp và chọn lọc gói thầu đúng tầm vốn.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span data-i18n="plan2_f2"><strong>Mở rộng 02 Mảng ngành nghề (02 Domains):</strong> Thiết lập tiêu chí năng lực và săn thầu đồng thời cho 02 mảng lĩnh vực hoạt động của doanh nghiệp.</span>
+                <span data-i18n="plan2_f2"><strong>Mở rộng 02 Lĩnh vực ngành nghề:</strong> Theo dõi đồng thời 02 mảng hoạt động khác nhau của doanh nghiệp.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span data-i18n="plan2_f3"><strong>05 Tài khoản làm việc nhóm (05 Accounts):</strong> Cấp tài khoản riêng cho Ban Giám đốc, Trưởng phòng Đấu thầu và các Kỹ sư lập hồ sơ cùng theo dõi.</span>
+                <span data-i18n="plan2_f3"><strong>05 Tài khoản làm việc nhóm:</strong> Cấp tài khoản riêng cho Giám đốc, Trưởng phòng và Chuyên viên đấu thầu cùng theo dõi.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span data-i18n="plan2_f4"><strong>Quản trị Quy trình &amp; Trạng thái Xử lý Thầu:</strong> Theo dõi xuyên suốt trạng thái gói thầu từ Chưa xem &rarr; Đã xem &rarr; Quan tâm &rarr; Quyết định dự thầu.</span>
+                <span data-i18n="plan2_f4"><strong>Quản lý tiến độ chọn thầu:</strong> Đánh dấu rõ ràng các gói Đã xem, Quan tâm hoặc Quyết định tham gia dự thầu.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span data-i18n="plan2_f5"><strong>Kiểm soát Trạng thái Đọc tin của Nhân sự:</strong> Theo dõi minh bạch thành viên nào đã nhận thông báo, thời gian mở xem và lượt bấm vào link gốc.</span>
+                <span data-i18n="plan2_f5"><strong>Theo dõi việc tiếp nhận của nhân sự:</strong> Ban Giám đốc dễ dàng nắm bắt nhân viên nào đã mở xem thông báo gói thầu mới.</span>
               </li>
             </ul>
           </div>
 
           <a href="#contact" onclick="selectPricingPlan('DAUTHAU_PREMIUM')" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;" data-i18n="plan2_cta">
-            Đăng Ký Gói Premium &rarr;
+            Đăng Ký Gói Nâng Cao &rarr;
           </a>
         </div>
 
@@ -2777,11 +2784,11 @@
           <div>
             <div class="pricing-tier-label">
               <span>◆</span>
-              <span data-i18n="plan3_tier">GÓI TẬP ĐOÀN · ENTERPRISE</span>
+              <span data-i18n="plan3_tier">GÓI TẬP ĐOÀN &amp; TỔNG CÔNG TY</span>
             </div>
             <h3 data-i18n="plan3_name">Tổng Công Ty &amp; Liên Danh Đa Ngành</h3>
             <p class="pricing-subtitle" data-i18n="plan3_sub">
-              Dành cho Tổng công ty nhiều đơn vị thành viên cần trên 05 tài khoản, đa mảng domain và tích hợp ERP/CRM nội bộ.
+              Dành cho Tổng công ty nhiều đơn vị thành viên cần trên 05 tài khoản và theo dõi nhiều lĩnh vực cùng lúc.
             </p>
 
             <div class="pricing-price-box">
@@ -2790,38 +2797,38 @@
                 <span class="price-period" data-i18n="plan3_period">/ theo quy mô đơn vị</span>
               </div>
               <div class="setup-fee-row">
-                <span data-i18n="plan3_setup_lbl">Triển khai &amp; Tích hợp:</span>
-                <strong style="color: var(--blue-primary);" data-i18n="plan3_setup_val">May đo theo yêu cầu</strong>
+                <span data-i18n="plan3_setup_lbl">Triển khai &amp; Cài đặt:</span>
+                <strong style="color: var(--blue-primary);" data-i18n="plan3_setup_val">Thiết kế theo yêu cầu</strong>
               </div>
             </div>
 
             <div class="role-quota-banner">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              <span data-i18n="plan3_quota">Trên 05 Tài khoản · Đa mảng Domain không giới hạn</span>
+              <span data-i18n="plan3_quota">Trên 05 Tài khoản · Không giới hạn Lĩnh vực</span>
             </div>
 
             <ul class="pricing-feature-list">
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span data-i18n="plan3_f1"><strong>Không giới hạn Mảng Domain &amp; Đơn vị Thành viên:</strong> Quản lý tập trung nhiều pháp nhân thành viên và liên danh dự thầu trên một nền tảng.</span>
+                <span data-i18n="plan3_f1"><strong>Không giới hạn Lĩnh vực &amp; Đơn vị thành viên:</strong> Quản lý tập trung nhiều công ty con và liên danh dự thầu.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span data-i18n="plan3_f2"><strong>Triển khai Máy chủ Riêng (On-Premise):</strong> Hỗ trợ cài đặt độc lập trên hạ tầng riêng của Tập đoàn, bảo mật tuyệt đối dữ liệu và chiến lược dự thầu.</span>
+                <span data-i18n="plan3_f2"><strong>Cài đặt trên máy chủ riêng theo yêu cầu:</strong> Đảm bảo an toàn và bảo mật tuyệt đối dữ liệu chiến lược của Tập đoàn.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span data-i18n="plan3_f3"><strong>Kết nối tự động sang phần mềm Quản trị (ERP/CRM):</strong> Đồng bộ thông tin gói thầu và điểm đánh giá trực tiếp sang hệ thống làm việc nội bộ.</span>
+                <span data-i18n="plan3_f3"><strong>Kết nối với phần mềm quản lý nội bộ:</strong> Đồng bộ trực tiếp danh sách gói thầu tiềm năng về hệ thống của doanh nghiệp.</span>
               </li>
               <li>
                 <span class="pricing-check">&#10003;</span>
-                <span data-i18n="plan3_f4"><strong>Phân quyền Đa Chi nhánh &amp; Hỗ trợ 24/7:</strong> Phân quyền rõ ràng cho từng chi nhánh khu vực và phòng ban chuyên môn với cam kết SLA 24/7.</span>
+                <span data-i18n="plan3_f4"><strong>Phân quyền theo Chi nhánh &amp; Hỗ trợ 24/7:</strong> Đội ngũ kỹ thuật chuyên trách đồng hành và hỗ trợ xuyên suốt.</span>
               </li>
             </ul>
           </div>
 
           <a href="#contact" onclick="selectPricingPlan('DAUTHAU_ENTERPRISE')" class="btn btn-outline btn-lg" style="width: 100%; justify-content: center;" data-i18n="plan3_cta">
-            Liên Hệ Tư Vấn Enterprise &rarr;
+            Liên Hệ Tư Vấn Riêng &rarr;
           </a>
         </div>
       </div>
@@ -2834,42 +2841,42 @@
       <div class="section-header">
         <div class="pill-tag">
           <span class="pill-dot"></span>
-          <span data-i18n="pipe_tag">Quy Trình Sàng Lọc &amp; Chấm Điểm 3 Bước Tự Động</span>
+          <span data-i18n="pipe_tag">Quy Trình Tự Động 3 Bước Đơn Giản</span>
         </div>
-        <h2 data-i18n="pipe_title">Loại Bỏ 95% Nhiễu Thông Tin Trước Khi Đến Bàn Làm Việc</h2>
+        <h2 data-i18n="pipe_title">Tiết Kiệm 90% Thời Gian Tìm Kiếm &amp; Đọc Hồ Sơ Mời Thầu</h2>
         <p data-i18n="pipe_desc">
-          Giúp đội ngũ kỹ sư đấu thầu tập trung hoàn toàn vào việc lập hồ sơ chất lượng cao thay vì mất hàng giờ tìm kiếm và đọc lọc thủ công mỗi ngày.
+          Giúp Chủ doanh nghiệp và Phòng Đấu thầu nắm bắt ngay các dự án phù hợp nhất mà không tốn hàng giờ tìm kiếm thủ công mỗi ngày.
         </p>
       </div>
 
       <div class="grid-3">
         <div class="benefit-card">
           <div class="benefit-icon">
-            <strong style="font-size:1.1rem;">01</strong>
+            <strong style="font-size:1.15rem;">01</strong>
           </div>
-          <h3 data-i18n="s1_title">Bước 1: Chuẩn Hóa Tiêu Chí Năng Lực &amp; Gộp Bản Sửa Đổi</h3>
+          <h3 data-i18n="s1_title">Bước 1: Cài Đặt Năng Lực &amp; Khu Vực Ưu Tiên</h3>
           <p data-i18n="s1_desc">
-            Thiết lập bộ tiêu chí năng lực bảo mật nội bộ (doanh thu, hợp đồng tương tự, cấp công trình Đặc biệt, I–IV, khu vực hoạt động) và <strong>tự động loại trừ ngành không làm</strong>; đồng thời gộp các thông báo điều chỉnh/gia hạn vào một hồ sơ duy nhất.
+            Thiết lập ngành nghề sở trường, quy mô vốn, tỉnh/thành phố ưu tiên và các mảng không tham gia. Mọi thông tin được bảo mật nội bộ tuyệt đối.
           </p>
         </div>
 
         <div class="benefit-card">
           <div class="benefit-icon">
-            <strong style="font-size:1.1rem;">02</strong>
+            <strong style="font-size:1.15rem;">02</strong>
           </div>
-          <h3 data-i18n="s2_title">Bước 2: Bóc Tách Chương III, Chương V &amp; Lọc Sàn/Trần</h3>
+          <h3 data-i18n="s2_title">Bước 2: Tự Động Đọc Hồ Sơ &amp; Lọc Gói Thầu Vừa Sức</h3>
           <p data-i18n="s2_desc">
-            Hệ thống thuật toán tự động tải và bóc tách PDF E-HSMT, phân loại chuyên ngành sâu, trích xuất yêu cầu năng lực Chương III, thông số kỹ thuật Chương V (chiều dài cầu/đường, diện tích sàn, điện áp kV, nhân sự &amp; thiết bị chủ chốt); đối chiếu hai đầu Sàn – Trần.
+            Phần mềm tự động đọc tóm tắt yêu cầu kinh nghiệm, kỹ thuật trong hồ sơ mời thầu; loại bỏ các gói quá nhỏ hoặc vượt quá khả năng tài chính.
           </p>
         </div>
 
         <div class="benefit-card">
           <div class="benefit-icon">
-            <strong style="font-size:1.1rem;">03</strong>
+            <strong style="font-size:1.15rem;">03</strong>
           </div>
-          <h3 data-i18n="s3_title">Bước 3: Chấm Điểm Đa Chiều (0–10đ), Ưu Tiên Khu Vực &amp; Báo Tin</h3>
+          <h3 data-i18n="s3_title">Bước 3: Chấm Điểm (0–10) &amp; Báo Tin Qua Zalo, Điện Thoại</h3>
           <p data-i18n="s3_desc">
-            Định lượng độ khớp từ 0.0 đến 10.0 điểm kết hợp ưu tiên Vùng miền &amp; Tỉnh/Thành trọng điểm lên đầu bảng xếp hạng; gửi thông báo tức thì qua Mobile App (iOS/Android), Zalo, SMS, Email và theo dõi trạng thái xử lý của đội ngũ.
+            Xếp hạng các gói thầu phù hợp nhất lên đầu danh sách và gửi thông báo ngay lập tức cho Giám đốc cùng bộ phận phụ trách.
           </p>
         </div>
       </div>
@@ -2882,50 +2889,50 @@
       <div class="section-header">
         <div class="pill-tag">
           <span class="pill-dot"></span>
-          <span data-i18n="feat_tag">Tính Năng Chuyên Sâu</span>
+          <span data-i18n="feat_tag">Lợi Ích Thiết Thực Cho Doanh Nghiệp</span>
         </div>
-        <h2 data-i18n="feat_title">Vũ Khí Cạnh Tranh Cho Đội Ngũ Săn Thầu Doanh Nghiệp</h2>
+        <h2 data-i18n="feat_title">Công Cụ Đắc Lực Cho Chủ Doanh Nghiệp &amp; Phòng Đấu Thầu</h2>
         <p data-i18n="feat_desc">
-          Mọi thông tin gói thầu luôn đi kèm điểm số đánh giá đa chiều, ưu tiên khu vực địa lý, làm nổi bật yêu cầu bắt buộc từ E-HSMT, liên kết gốc chính thống và lịch sử theo dõi minh bạch.
+          Đơn giản, dễ nhìn, đi thẳng vào kết quả: gói thầu nào phù hợp, cần chuẩn bị những gì và ai đang phụ trách theo dõi.
         </p>
       </div>
 
       <div class="grid-3">
         <div class="benefit-card">
-          <h3 data-i18n="f1_title">Thuật Toán Chuẩn Hóa &amp; Đối Chiếu Năng Lực Bảo Mật</h3>
-          <p data-i18n="f1_desc">Chuẩn hóa ngành nghề sở trường, doanh thu bình quân, hợp đồng tương tự, cấp công trình tối đa (Đặc biệt, I–IV), nhân sự chủ chốt, thiết bị thi công và khu vực hoạt động ngay trong không gian riêng tư của đơn vị, bảo mật tuyệt đối thông tin nội bộ.</p>
+          <h3 data-i18n="f1_title">1. Bảo Mật Tuyệt Đối Thông Tin Doanh Nghiệp</h3>
+          <p data-i18n="f1_desc">Tiêu chí năng lực, doanh thu và kinh nghiệm của nhà thầu được thiết lập riêng tư, cam kết không lộ thông tin ra bên ngoài.</p>
         </div>
         <div class="benefit-card">
-          <h3 data-i18n="f2_title">Chấm Điểm Độ Khớp Đa Chiều 0.0 – 10.0 Điểm</h3>
-          <p data-i18n="f2_desc">Đánh giá toàn diện trên nhiều chiều tiêu chí: Chuyên ngành sâu &amp; Loại trừ ngành không làm, Ưu tiên Vùng miền &amp; Tỉnh/Thành trọng điểm, Biên độ tài chính Sàn/Trần, Dư địa Chương III, Quy mô kỹ thuật &amp; Cấp công trình Chương V, Nhân sự/Thiết bị chủ chốt, Nguồn vốn và Quỹ thời gian chuẩn bị E-HSDT.</p>
+          <h3 data-i18n="f2_title">2. Chấm Điểm Độ Phù Hợp Rõ Ràng (0 – 10 Điểm)</h3>
+          <p data-i18n="f2_desc">Đánh giá tổng hợp dựa trên ngành nghề, tỉnh thành, quy mô vốn và thời gian chuẩn bị hồ sơ để gợi ý gói thầu khả thi nhất.</p>
         </div>
         <div class="benefit-card">
-          <h3 data-i18n="f3_title">Kiểm Soát Biên Độ Sàn – Trần, Nguồn Vốn &amp; Loại Hình</h3>
-          <p data-i18n="f3_desc">Loại bỏ các gói thầu quá nhỏ dưới mức sàn chi phí hoặc vượt quá trần năng lực tài chính / cấp công trình; lọc theo nguồn vốn (Đầu tư công, Tư nhân, Doanh nghiệp Nhà nước, ODA) và phân biệt chính xác Xây lắp, Hàng hóa, Tư vấn, Dịch vụ phi tư vấn.</p>
+          <h3 data-i18n="f3_title">3. Chọn Lọc Gói Thầu Đúng Tầm Tài Chính</h3>
+          <p data-i18n="f3_desc">Chỉ gửi về các gói thầu nằm trong khoảng ngân sách mong muốn, lọc rõ nguồn vốn ngân sách hay tư nhân và phân loại Xây lắp, Hàng hóa, Tư vấn.</p>
         </div>
         <div class="benefit-card">
-          <h3 data-i18n="f7_title">Ưu Tiên Khu Vực Vùng Miền &amp; Tỉnh/Thành Trọng Điểm</h3>
-          <p data-i18n="f7_desc">Tùy chọn Vùng miền kinh tế (Miền Bắc, Miền Trung, Miền Nam, Tây Nguyên, ĐBSCL) và các Tỉnh/Thành phố trọng điểm để cộng điểm ưu tiên đẩy các gói thầu tại địa bàn sở trường lên đầu danh sách mà không bỏ sót cơ hội tốt ở khu vực lân cận.</p>
+          <h3 data-i18n="f7_title">4. Ưu Tiên Tỉnh/Thành Phố &amp; Vùng Miền Sở Trường</h3>
+          <p data-i18n="f7_desc">Đẩy các gói thầu tại địa bàn quen thuộc của doanh nghiệp lên đầu danh sách nhưng vẫn giữ lại các cơ hội tốt ở tỉnh lân cận.</p>
         </div>
         <div class="benefit-card">
-          <h3 data-i18n="f8_title">Thuật Toán Phân Tích 2 Tầng &amp; Tự Động Loại Trừ Ngành Không Làm</h3>
-          <p data-i18n="f8_desc">Sử dụng thuật toán phân tích ngữ nghĩa 2 tầng hiệu quả cao để nhận diện chính xác các tiêu chí loại trừ (như không làm cầu dây văng, không nhận thủy lợi), tự động tách nhóm ngành không tham gia và bảo toàn năng lực đa mảng ngành.</p>
+          <h3 data-i18n="f8_title">5. Tự Động Loại Trừ Mảng Công Việc Không Nhận</h3>
+          <p data-i18n="f8_desc">Nhận diện và loại bỏ chính xác các hạng mục đơn vị không thi công để danh sách gói thầu luôn gọn gàng, sát thực tế.</p>
         </div>
         <div class="benefit-card">
-          <h3 data-i18n="f9_title">Thuật Toán Bóc Tách PDF E-HSMT &amp; Nhấn Mạnh Yêu Cầu Bắt Buộc</h3>
-          <p data-i18n="f9_desc">Tự động đọc trực tiếp file PDF Hồ sơ mời thầu đính kèm để trích xuất tiêu chuẩn đánh giá Chương III, yêu cầu kỹ thuật Chương V, nhân sự chủ chốt, thiết bị thi công và làm nổi bật các điều kiện tiên quyết cần đặc biệt lưu ý.</p>
+          <h3 data-i18n="f9_title">6. Tóm Tắt Nhanh Yêu Cầu Quan Trọng Trong Hồ Sơ</h3>
+          <p data-i18n="f9_desc">Tự động đọc hồ sơ mời thầu đính kèm để tóm tắt yêu cầu về nhân sự, máy móc thiết bị và các điều kiện bắt buộc cần lưu ý.</p>
         </div>
         <div class="benefit-card">
-          <h3 data-i18n="f4_title">Chống Trùng Lặp &amp; Tự Động Gộp Bản Sửa Đổi</h3>
-          <p data-i18n="f4_desc">Tự động hợp nhất các bản thông báo đính chính, điều chỉnh hồ sơ mời thầu hoặc gia hạn thời điểm đóng thầu vào cùng một hồ sơ duy nhất kèm giữ nguyên đường dẫn gốc.</p>
+          <h3 data-i18n="f4_title">7. Tự Động Gộp Các Lần Sửa Đổi, Gia Hạn</h3>
+          <p data-i18n="f4_desc">Khi chủ đầu tư thay đổi hồ sơ hoặc gia hạn ngày đóng thầu, hệ thống tự động cập nhật vào một gói duy nhất, không gây rối thông tin.</p>
         </div>
         <div class="benefit-card">
-          <h3 data-i18n="f5_title">Rà Soát Ngay Toàn Bộ Gói Thầu Đang Mở</h3>
-          <p data-i18n="f5_desc">Ngay khi kích hoạt tài khoản hoặc cập nhật tiêu chí năng lực mới, hệ thống lập tức quét toàn bộ các gói thầu đang còn thời hạn nộp hồ sơ để có danh sách làm việc ngay.</p>
+          <h3 data-i18n="f5_title">8. Có Ngay Danh Sách Gói Thầu Đang Mở Khi Đăng Ký</h3>
+          <p data-i18n="f5_desc">Ngay khi kích hoạt, phần mềm lập tức rà soát toàn bộ gói thầu đang còn hạn nộp hồ sơ trên cả nước để doanh nghiệp làm việc ngay.</p>
         </div>
         <div class="benefit-card">
-          <h3 data-i18n="f6_title">Đa Nền Tảng, Đa Kênh Báo Tin &amp; Quản Trị Quy Trình</h3>
-          <p data-i18n="f6_desc">Sử dụng trên Web, App iOS/Android; nhận tin qua App, Zalo, SMS, Email; quản lý quy trình xử lý (Đã xem, Quan tâm, Dự thầu, Bỏ qua) và lịch sử nhân sự đã đọc tin.</p>
+          <h3 data-i18n="f6_title">9. Báo Tin Qua Zalo &amp; Quản Lý Làm Việc Nhóm</h3>
+          <p data-i18n="f6_desc">Nhận thông báo tức thì trên Điện thoại, Zalo, Email; dễ dàng phân công và theo dõi trạng thái xử lý của từng nhân viên.</p>
         </div>
       </div>
     </div>
@@ -2938,24 +2945,24 @@
         <div>
           <div class="pill-tag" style="background: rgba(56, 189, 248, 0.16); color: #BAE6FD; border-color: rgba(125, 211, 252, 0.3);">
             <span class="pill-dot" style="background: #38BDF8;"></span>
-            <span data-i18n="cta_tag">HUDU DauThau · Kích Hoạt Nhanh Trong 15 Phút</span>
+            <span data-i18n="cta_tag">HUDU DauThau · Hỗ Trợ Cài Đặt Trọn Gói Trong 15 Phút</span>
           </div>
-          <h2 data-i18n="cta_title">Sẵn Sàng Tự Động Hóa Quy Trình Săn Thầu Cho Doanh Nghiệp?</h2>
+          <h2 data-i18n="cta_title">Sẵn Sàng Tìm Kiếm Gói Thầu Nhanh &amp; Nhàn Hơn Cho Doanh Nghiệp?</h2>
           <p data-i18n="cta_desc">
-            Đăng ký ngay để thiết lập bộ lọc biên độ năng lực Sàn/Trần bảo mật nội bộ và nhận ngay danh sách các gói thầu đang mở phù hợp nhất.
+            Đăng ký ngay để đội ngũ HUDU hỗ trợ thiết lập tiêu chí ngành nghề, tầm vốn và nhận ngay danh sách các gói thầu đang mở phù hợp nhất.
           </p>
-          <div style="display: flex; flex-wrap: wrap; gap: 22px; font-size: 0.9rem; color: #E2E8F0;">
-            <span data-i18n="cta_b1">&#10003; Đầy đủ 100% tính năng thông minh hiện có</span>
-            <span data-i18n="cta_b2">&#10003; Tự động rà soát gói thầu đang mở</span>
-            <span data-i18n="cta_b3">&#10003; Bảo toàn link thầu gốc chính thống</span>
+          <div style="display: flex; flex-wrap: wrap; gap: 22px; font-size: 0.96rem; color: #E2E8F0;">
+            <span data-i18n="cta_b1">&#10003; Đầy đủ 100% tính năng thông minh</span>
+            <span data-i18n="cta_b2">&#10003; Có ngay danh sách gói thầu đang mở</span>
+            <span data-i18n="cta_b3">&#10003; Kèm đường dẫn gốc chính thống</span>
           </div>
 
           <a href="https://dauthau.huduvn.com" target="_blank" rel="noopener noreferrer" class="cta-portal-card">
             <div style="display: flex; align-items: center; gap: 12px;">
               <span class="rt-live-dot" style="width: 10px; height: 10px; flex-shrink: 0;"></span>
               <div>
-                <div style="font-size: 0.75rem; color: #7DD3FC; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;" data-i18n="cta_portal_lbl">Nền Tảng Web App Chính Thức</div>
-                <div style="font-size: 0.96rem; font-weight: 800; color: #FFFFFF; margin-top: 2px;">https://dauthau.huduvn.com</div>
+                <div style="font-size: 0.82rem; color: #7DD3FC; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;" data-i18n="cta_portal_lbl">Hệ Thống Trực Tuyến Chính Thức</div>
+                <div style="font-size: 1.02rem; font-weight: 800; color: #FFFFFF; margin-top: 2px;">https://dauthau.huduvn.com</div>
               </div>
             </div>
             <span class="cta-portal-badge">
@@ -2966,35 +2973,35 @@
         </div>
 
         <form class="contact-form" onsubmit="submitConsultation(event)">
-          <h3 data-i18n="form_title">Đăng Ký Gói Dịch Vụ HUDU DauThau</h3>
+          <h3 data-i18n="form_title">Đăng Ký Sử Dụng Phần Mềm HUDU DauThau</h3>
           <div class="form-group">
             <label data-i18n="form_name_lbl">Họ tên &amp; Tên Doanh nghiệp / Nhà thầu</label>
             <input type="text" required data-i18n-placeholder="form_name_ph" placeholder="VD: Nguyễn Văn A — Công ty CP Xây Dựng & Thiết Bị..." />
           </div>
           <div class="form-group">
-            <label data-i18n="form_phone_lbl">Số điện thoại / Email nhận thông báo thầu</label>
+            <label data-i18n="form_phone_lbl">Số điện thoại / Zalo nhận thông báo thầu</label>
             <input type="text" required data-i18n-placeholder="form_phone_ph" placeholder="090x xxx xxx / dauthau@company.vn" />
           </div>
           <div class="form-group">
             <label data-i18n="form_plan_lbl">Gói dịch vụ lựa chọn</label>
             <select id="formProdSelect">
-              <option value="DAUTHAU_PREMIUM" data-i18n="form_opt_pro">DauThau Gói Premium (899k/tháng hoặc 8tr9/năm — 05 Account · 02 Mảng Domain)</option>
-              <option value="DAUTHAU_BASIC" data-i18n="form_opt_starter">DauThau Gói Basic (499k/tháng hoặc 4tr9/năm — 01 Account · 01 Mảng Domain)</option>
-              <option value="DAUTHAU_ENTERPRISE" data-i18n="form_opt_ent">DauThau Gói Enterprise (Trên 05 Account · Đa mảng Domain · Tích hợp riêng)</option>
+              <option value="DAUTHAU_PREMIUM" data-i18n="form_opt_pro">Gói Nâng Cao (899k/tháng hoặc 8tr9/năm — 05 Tài khoản · 02 Lĩnh vực)</option>
+              <option value="DAUTHAU_BASIC" data-i18n="form_opt_starter">Gói Cơ Bản (499k/tháng hoặc 4tr9/năm — 01 Tài khoản · 01 Lĩnh vực)</option>
+              <option value="DAUTHAU_ENTERPRISE" data-i18n="form_opt_ent">Gói Tập Đoàn (Trên 05 Tài khoản · Đa lĩnh vực · Cài đặt riêng)</option>
             </select>
           </div>
           <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 4px;" data-i18n="form_submit">
-            Gửi Yêu Cầu Kích Hoạt Tài Khoản
+            Gửi Yêu Cầu Đăng Ký
           </button>
           <div class="form-portal-row">
-            <span data-i18n="form_portal_lbl">Đã có tài khoản hoặc muốn trải nghiệm ngay?</span>
+            <span data-i18n="form_portal_lbl">Đã có tài khoản hoặc muốn xem thử ngay?</span>
             <a href="https://dauthau.huduvn.com" target="_blank" rel="noopener noreferrer">
               dauthau.huduvn.com
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </a>
           </div>
           <div id="formToast" class="form-toast" data-i18n="form_toast">
-            &#10003; Đã ghi nhận yêu cầu! Đội ngũ HUDU sẽ liên hệ hướng dẫn kích hoạt hệ thống ngay.
+            &#10003; Đã ghi nhận yêu cầu! Đội ngũ HUDU sẽ liên hệ hỗ trợ cài đặt ngay.
           </div>
         </form>
       </div>
@@ -3031,8 +3038,8 @@
               <path d="M 211 27.8 A 3.8 3.8 0 0 1 218.6 27.8 V 45 A 7.4 7.4 0 0 0 233.4 45 V 27.8 A 3.8 3.8 0 0 1 241 27.8 V 45 A 15 15 0 0 1 211 45 Z" />
             </g>
           </svg>
-          <p style="font-size: 0.86rem; max-width: 340px;" data-i18n="footer_desc">
-            HUDU (huduvn.com) — Công ty phát triển phần mềm phân tích dữ liệu đấu thầu thông minh và hệ thống tự động hóa tiếp nhận, quản trị phòng khám.
+          <p style="font-size: 0.94rem; max-width: 360px; line-height: 1.58;" data-i18n="footer_desc">
+            HUDU (huduvn.com) — Đơn vị phát triển phần mềm chọn lọc gói thầu thông minh và hệ thống tự động tiếp nhận, gọi số phòng khám.
           </p>
         </div>
 
@@ -3040,19 +3047,19 @@
           <h4 data-i18n="footer_col1">Sản phẩm</h4>
           <ul>
             <li><a href="../" data-i18n="f_link_home">Trang chủ HUDU</a></li>
-            <li><a href="#pricing" data-i18n="f_link_dt_price">Bảng Giá Đấu Thầu Thông Minh</a></li>
-            <li><a href="../cfms/">HUDU CFMS / QMS (/cfms)</a></li>
+            <li><a href="#pricing" data-i18n="f_link_dt_price">Bảng Giá Phần Mềm Đấu Thầu</a></li>
+            <li><a href="../cfms/">Phần Mềm Phòng Khám (/cfms)</a></li>
             <li><a href="../cfms/#pricing" data-i18n="f_link_cfms_price">Bảng Giá Phòng Khám</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4 data-i18n="footer_col2">Tính năng DauThau</h4>
+          <h4 data-i18n="footer_col2">Tính năng nổi bật</h4>
           <ul>
-            <li><a href="#pipeline" data-i18n="f_feat_1">Chống trùng &amp; Gộp sửa đổi</a></li>
-            <li><a href="#pipeline" data-i18n="f_feat_2">Thuật toán bóc tách Chương V</a></li>
-            <li><a href="#features" data-i18n="f_feat_3">So khớp Sàn / Trần</a></li>
-            <li><a href="#features" data-i18n="f_feat_4">Theo dõi trạng thái đọc tin</a></li>
+            <li><a href="#pipeline" data-i18n="f_feat_1">Chấm điểm phù hợp (0–10 điểm)</a></li>
+            <li><a href="#pipeline" data-i18n="f_feat_2">Tóm tắt nhanh hồ sơ mời thầu</a></li>
+            <li><a href="#features" data-i18n="f_feat_3">Chọn lọc gói thầu đúng tầm vốn</a></li>
+            <li><a href="#features" data-i18n="f_feat_4">Báo tin qua Zalo &amp; Điện thoại</a></li>
           </ul>
         </div>
 
@@ -3061,14 +3068,14 @@
           <ul>
             <li>Website: <a href="https://huduvn.com">huduvn.com</a></li>
             <li>Email: <a href="mailto:tnhung1896@gmail.com">tnhung1896@gmail.com</a></li>
-            <li>Support: 24/7 Enterprise SLA</li>
+            <li>Hỗ trợ: 24/7 tận tâm</li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <span>&copy; 2026 HUDU Technology (huduvn.com). All rights reserved.</span>
-        <span>Enterprise Smart Algorithms &amp; Procurement Intelligence</span>
+        <span>&copy; 2026 Công nghệ HUDU (huduvn.com). Bảo lưu mọi quyền.</span>
+        <span>Giải Pháp Phần Mềm Thông Minh Cho Doanh Nghiệp &amp; Y Tế</span>
       </div>
     </div>
   </footer>
@@ -3164,141 +3171,142 @@
     const I18N = {
       vi: {
         nav_home: "Trang chủ",
+        nav_realtime: "Bản đồ Đấu thầu",
         nav_pricing: "Bảng giá",
         nav_pipeline: "Quy trình 3 Bước",
         nav_features: "Tính năng",
-        nav_cfms: "Quản trị CFMS",
+        nav_cfms: "Phòng khám (CFMS)",
         nav_cta: "Đăng ký Dùng thử",
-        hero_badge: "SẢN PHẨM 01 · HUDU DAUTHAU · huduvn.com/dauthau",
-        hero_title: 'Hệ Thống <span class="highlight">Săn &amp; So Khớp Đấu Thầu</span> Thông Minh Bằng Thuật Toán Chuyên Sâu',
-        hero_desc: "Thuật toán thông minh tự động chuẩn hóa tiêu chí năng lực dự thầu bảo mật nội bộ, bóc tách tiêu chuẩn Chương III &amp; thông số kỹ thuật Chương V, chấm điểm độ khớp đa chiều 0–10 điểm, <strong>ưu tiên khu vực Vùng miền &amp; Tỉnh/Thành trọng điểm</strong>, tự động loại trừ ngành không làm và <strong>so khớp biên độ năng lực Sàn/Trần (Floor/Ceiling)</strong>.",
-        hero_btn_pricing: "Xem Bảng Giá Tháng & Năm ↓",
-        hero_btn_pipeline: "Bản Đồ & Biểu Đồ Realtime ↓",
+        hero_badge: "SẢN PHẨM 01 · PHẦN MỀM ĐẤU THẦU HUDU",
+        hero_title: 'Hệ Thống <span class="highlight">Tìm Kiếm &amp; Chọn Lọc Gói Thầu</span> Đúng Năng Lực Doanh Nghiệp',
+        hero_desc: "Tự động rà soát hàng ngàn thông báo mời thầu mỗi ngày, chấm điểm mức độ phù hợp từ 0–10 theo <strong>ngành nghề sở trường, tỉnh/thành ưu tiên và quy mô tài chính</strong> của doanh nghiệp. Cam kết bảo mật tuyệt đối thông tin nội bộ.",
+        hero_btn_pricing: "Xem Bảng Giá Dịch Vụ ↓",
+        hero_btn_pipeline: "Xem Bản Đồ Đấu Thầu ↓",
         m1_val: "Chấm điểm 0–10",
-        m1_lbl: "Chấm điểm đa chiều: Chuyên ngành, Vùng miền/Tỉnh thành, Tài chính & Kỹ thuật",
-        m2_val: "Sàn / Trần",
-        m2_lbl: "So khớp chính xác biên độ tài chính, Chương III & Chương V",
-        m3_val: "Chống trùng 100%",
-        m3_lbl: "Tự động gộp bản sửa đổi/gia hạn & đẩy tin qua App, Zalo, SMS",
-        sc_header: "HUDU DauThau · Thuật Toán Chấm Điểm & So Khớp Thông Minh",
+        m1_lbl: "Đánh giá độ phù hợp theo ngành nghề, khu vực và năng lực thực tế",
+        m2_val: "Đúng Tầm Vốn",
+        m2_lbl: "Chỉ lọc gói thầu vừa sức, loại bỏ gói quá nhỏ hoặc vượt khả năng",
+        m3_val: "Không Bỏ Sót",
+        m3_lbl: "Tự động gộp tin điều chỉnh, gia hạn và báo ngay qua Zalo, Điện thoại",
+        sc_header: "HUDU DauThau · Chọn Lọc Gói Thầu Tự Động",
         sc_pkg_title: "IB2600881920-01 · Cầu Sông Nhạn (Đồng Nai)",
         sc_pkg_pill: "9.6 / 10 điểm",
-        sc_pkg_line1: "<strong>Chương V:</strong> Hạ tầng Cầu đường · Công trình Cấp II (Nhịp 3x30m)",
-        sc_pkg_line2: "<strong>Biên độ Sàn/Trần:</strong> Sàn 10 tỷ ≤ <strong>35,5 tỷ</strong> ≤ Trần 80 tỷ",
-        sc_pkg_rev: "✓ Đã gộp bản sửa đổi (-00 → -01)",
-        sc_pkg_push: "✓ Đã báo qua App & Zalo",
-        sc_price_head: "Linh hoạt theo Tháng hoặc Ưu đãi Cả Năm",
-        sc_price_badge: "Full Tính Năng",
-        sc_s_title: "GÓI BASIC",
-        sc_p_title: "GÓI PREMIUM",
+        sc_pkg_line1: "<strong>Lĩnh vực:</strong> Xây lắp hạ tầng cầu đường · Công trình Cấp II",
+        sc_pkg_line2: "<strong>Giá gói thầu:</strong> <strong>35,5 tỷ đồng</strong> (Phù hợp tầm vốn 10 – 80 tỷ)",
+        sc_pkg_rev: "✓ Đã cập nhật thông báo mới nhất",
+        sc_pkg_push: "✓ Đã báo qua Zalo & Điện thoại",
+        sc_price_head: "Đăng Ký Theo Tháng Hoặc Trọn Năm",
+        sc_price_badge: "Đầy Đủ Tính Năng",
+        sc_s_title: "GÓI CƠ BẢN",
+        sc_p_title: "GÓI NÂNG CAO",
         sc_per_mo: "/tháng",
         sc_s_yr: "Cả năm: 4.900.000đ/năm",
         sc_p_yr: "Cả năm: 8.900.000đ/năm",
-        sc_s_sub: "01 Account · 01 Mảng Domain",
-        sc_p_sub: "05 Account · 02 Mảng Domain",
-        price_tag: "Bảng Giá Hệ Thống Săn Thầu Thông Minh (HUDU DauThau)",
-        price_title: "Đầu Tư Tối Ưu Cho Phòng Đấu Thầu & Ban Kế Hoạch Kỹ Thuật",
-        price_desc: "Mở khóa <strong>đầy đủ 100% tính năng thông minh hiện có</strong>, linh hoạt đăng ký theo tháng hoặc <strong>mua trọn gói cả năm để tiết kiệm lớn</strong>, miễn phí thiết lập bộ lọc tiêu chí năng lực bảo mật nội bộ.",
+        sc_s_sub: "01 Tài khoản · 01 Lĩnh vực",
+        sc_p_sub: "05 Tài khoản · 02 Lĩnh vực",
+        price_tag: "Bảng Giá Phần Mềm Đấu Thầu HUDU",
+        price_title: "Chi Phí Hợp Lý Cho Doanh Nghiệp & Phòng Đấu Thầu",
+        price_desc: "Sử dụng <strong>đầy đủ 100% tính năng thông minh</strong>. Linh hoạt đăng ký theo tháng hoặc <strong>thanh toán cả năm để tiết kiệm lớn</strong>, hỗ trợ cài đặt tiêu chí năng lực hoàn toàn miễn phí.",
         plan_per_month: "/ tháng",
-        plan1_tier: "GÓI TIÊU CHUẨN · BASIC",
-        plan1_name: "Gói Basic (01 Account · 01 Domain)",
-        plan1_sub: "Dành cho nhà thầu chuyên sâu 01 mảng lĩnh vực hoạt động, sử dụng đầy đủ toàn bộ tính năng phân tích & so khớp thầu thông minh.",
-        plan1_setup_lbl: "Ưu đãi thanh toán cả năm:",
+        plan1_tier: "GÓI TIÊU CHUẨN",
+        plan1_name: "Gói Cơ Bản (01 Tài khoản)",
+        plan1_sub: "Phù hợp cho doanh nghiệp chuyên sâu 01 lĩnh vực ngành nghề, cần tự động tìm và chọn lọc gói thầu hàng ngày.",
+        plan1_setup_lbl: "Ưu đãi đăng ký cả năm:",
         plan1_setup_val: "4.900.000đ / năm (Tiết kiệm 1tr088)",
-        plan1_quota: "01 Tài khoản (Account) · 01 Mảng ngành nghề (01 Domain)",
-        plan1_f1: "<strong>Đầy đủ 100% tính năng hiện có:</strong> Sử dụng trọn bộ công cụ thuật toán phân tích, chấm điểm và săn thầu thông minh mà không giới hạn tính năng.",
-        plan1_f2: "<strong>Chuẩn hóa tiêu chí năng lực thông minh &amp; bảo mật:</strong> Thiết lập biên độ doanh thu, hợp đồng tương tự, cấp công trình (I–IV) và thiết bị cho <strong>01 mảng domain năng lực</strong> bảo mật nội bộ.",
-        plan1_f3: "<strong>Bóc tách Chương III, Chương V &amp; Chấm điểm Đa chiều 0–10:</strong> Đánh giá độ khớp toàn diện (Chuyên ngành, Vùng miền &amp; Tỉnh/Thành trọng điểm, Sàn/Trần tài chính, Kỹ thuật, Nhân sự/Thiết bị &amp; Loại trừ ngành không làm).",
-        plan1_f4: "<strong>Gộp bản sửa đổi &amp; Quét gói thầu đang mở:</strong> Tự động hợp nhất các thông báo điều chỉnh/gia hạn và quét toàn bộ gói thầu còn hạn ngay khi kích hoạt.",
-        plan1_f5: "<strong>Đa nền tảng &amp; Đa kênh thông báo:</strong> Truy cập trên Web, App iOS/Android; nhận thông báo tức thì qua App, Zalo, SMS, Email kèm giữ nguyên link gốc.",
-        plan1_cta: "Đăng Ký Gói Basic →",
-        plan2_ribbon: "PHỔ BIẾN NHẤT · 05 TÀI KHOẢN & 02 MẢNG DOMAIN NĂNG LỰC",
-        plan2_tier: "GÓI NÂNG CAO · PREMIUM",
-        plan2_name: "Gói Premium (05 Accounts · 02 Domains)",
-        plan2_sub: "Tối ưu cho doanh nghiệp hoạt động trên 02 mảng ngành nghề và cần phối hợp nhóm giữa Ban Giám đốc với Phòng Đấu thầu.",
-        plan2_setup_lbl: "Ưu đãi thanh toán cả năm:",
+        plan1_quota: "01 Tài khoản sử dụng · 01 Lĩnh vực ngành nghề",
+        plan1_f1: "<strong>Đầy đủ 100% tính năng:</strong> Sử dụng toàn bộ công cụ tìm kiếm, chấm điểm và chọn lọc gói thầu thông minh.",
+        plan1_f2: "<strong>Thiết lập tiêu chí riêng biệt, bảo mật:</strong> Cài đặt ngành nghề, tầm vốn, kinh nghiệm thi công cho 01 lĩnh vực hoạt động.",
+        plan1_f3: "<strong>Chấm điểm phù hợp (0–10 điểm):</strong> Tự động ưu tiên tỉnh/thành trọng điểm và loại bỏ các mảng công việc đơn vị không nhận làm.",
+        plan1_f4: "<strong>Tự động gộp tin sửa đổi, gia hạn:</strong> Không bị trùng lặp bản tin và rà soát ngay toàn bộ gói thầu đang còn hạn nộp.",
+        plan1_f5: "<strong>Nhận tin nhanh qua Zalo, Điện thoại, Email:</strong> Xem thuận tiện trên cả máy tính và điện thoại kèm đường dẫn gốc chính thống.",
+        plan1_cta: "Đăng Ký Gói Cơ Bản →",
+        plan2_ribbon: "ĐƯỢC CHỌN NHIỀU NHẤT · 05 TÀI KHOẢN & 02 LĨNH VỰC",
+        plan2_tier: "GÓI NÂNG CAO",
+        plan2_name: "Gói Nâng Cao (05 Tài khoản)",
+        plan2_sub: "Tối ưu cho doanh nghiệp hoạt động trên 02 lĩnh vực và cần phối hợp giữa Ban Giám đốc với Phòng Đấu thầu.",
+        plan2_setup_lbl: "Ưu đãi đăng ký cả năm:",
         plan2_setup_val: "8.900.000đ / năm (Tiết kiệm 1tr888)",
-        plan2_quota: "05 Tài khoản (Accounts) · 02 Mảng ngành nghề (02 Domains)",
-        plan2_f1: "<strong>Đầy đủ 100% tính năng hiện có của hệ thống:</strong> Trọn bộ thuật toán phân tích năng lực 2 tầng, bóc tách PDF Chương III &amp; Chương V, ưu tiên Vùng miền/Tỉnh thành, loại trừ ngành không làm và lọc Sàn/Trần.",
-        plan2_f2: "<strong>Mở rộng 02 Mảng ngành nghề (02 Domains):</strong> Thiết lập tiêu chí năng lực và săn thầu đồng thời cho 02 mảng lĩnh vực hoạt động của doanh nghiệp.",
-        plan2_f3: "<strong>05 Tài khoản làm việc nhóm (05 Accounts):</strong> Cấp tài khoản riêng cho Ban Giám đốc, Trưởng phòng Đấu thầu và các Kỹ sư lập hồ sơ cùng theo dõi.",
-        plan2_f4: "<strong>Quản trị Quy trình &amp; Trạng thái Xử lý Thầu:</strong> Theo dõi xuyên suốt trạng thái gói thầu từ Chưa xem → Đã xem → Quan tâm → Quyết định dự thầu.",
-        plan2_f5: "<strong>Kiểm soát Trạng thái Đọc tin của Nhân sự:</strong> Theo dõi minh bạch thành viên nào đã nhận thông báo, thời gian mở xem và lượt bấm vào link gốc.",
-        plan2_cta: "Đăng Ký Gói Premium →",
-        plan3_tier: "GÓI TẬP ĐOÀN · ENTERPRISE",
+        plan2_quota: "05 Tài khoản sử dụng · 02 Lĩnh vực ngành nghề",
+        plan2_f1: "<strong>Trọn bộ tính năng Gói Cơ Bản:</strong> Tự động đọc tóm tắt hồ sơ mời thầu, chấm điểm độ phù hợp và chọn lọc gói thầu đúng tầm vốn.",
+        plan2_f2: "<strong>Mở rộng 02 Lĩnh vực ngành nghề:</strong> Theo dõi đồng thời 02 mảng hoạt động khác nhau của doanh nghiệp.",
+        plan2_f3: "<strong>05 Tài khoản làm việc nhóm:</strong> Cấp tài khoản riêng cho Giám đốc, Trưởng phòng và Chuyên viên đấu thầu cùng theo dõi.",
+        plan2_f4: "<strong>Quản lý tiến độ chọn thầu:</strong> Đánh dấu rõ ràng các gói Đã xem, Quan tâm hoặc Quyết định tham gia dự thầu.",
+        plan2_f5: "<strong>Theo dõi việc tiếp nhận của nhân sự:</strong> Ban Giám đốc dễ dàng nắm bắt nhân viên nào đã mở xem thông báo gói thầu mới.",
+        plan2_cta: "Đăng Ký Gói Nâng Cao →",
+        plan3_tier: "GÓI TẬP ĐOÀN & TỔNG CÔNG TY",
         plan3_name: "Tổng Công Ty & Liên Danh Đa Ngành",
-        plan3_sub: "Dành cho Tổng công ty nhiều đơn vị thành viên cần trên 05 tài khoản, đa mảng domain và tích hợp ERP/CRM nội bộ.",
+        plan3_sub: "Dành cho Tổng công ty nhiều đơn vị thành viên cần trên 05 tài khoản và theo dõi nhiều lĩnh vực cùng lúc.",
         plan3_price: "Báo giá riêng",
         plan3_period: "/ theo quy mô đơn vị",
-        plan3_setup_lbl: "Triển khai & Tích hợp:",
-        plan3_setup_val: "May đo theo yêu cầu",
-        plan3_quota: "Trên 05 Tài khoản · Đa mảng Domain không giới hạn",
-        plan3_f1: "<strong>Không giới hạn Mảng Domain &amp; Đơn vị Thành viên:</strong> Quản lý tập trung nhiều pháp nhân thành viên và liên danh dự thầu trên một nền tảng.",
-        plan3_f2: "<strong>Triển khai Máy chủ Riêng (On-Premise):</strong> Hỗ trợ cài đặt độc lập trên hạ tầng riêng của Tập đoàn, bảo mật tuyệt đối dữ liệu và chiến lược dự thầu.",
-        plan3_f3: "<strong>Kết nối tự động sang phần mềm Quản trị (ERP/CRM):</strong> Đồng bộ thông tin gói thầu và điểm đánh giá trực tiếp sang hệ thống làm việc nội bộ.",
-        plan3_f4: "<strong>Phân quyền Đa Chi nhánh &amp; Hỗ trợ 24/7:</strong> Phân quyền rõ ràng cho từng chi nhánh khu vực và phòng ban chuyên môn với cam kết SLA 24/7.",
-        plan3_cta: "Liên Hệ Tư Vấn Enterprise →",
-        pipe_tag: "Quy Trình Sàng Lọc & Chấm Điểm 3 Bước Tự Động",
-        pipe_title: "Loại Bỏ 95% Nhiễu Thông Tin Trước Khi Đến Bàn Làm Việc",
-        pipe_desc: "Giúp đội ngũ kỹ sư đấu thầu tập trung hoàn toàn vào việc lập hồ sơ chất lượng cao thay vì mất hàng giờ tìm kiếm và đọc lọc thủ công mỗi ngày.",
-        s1_title: "Bước 1: Chuẩn Hóa Tiêu Chí Năng Lực & Gộp Bản Sửa Đổi",
-        s1_desc: "Thiết lập bộ tiêu chí năng lực bảo mật nội bộ (doanh thu, hợp đồng tương tự, cấp công trình Đặc biệt, I–IV, khu vực hoạt động) và <strong>tự động loại trừ ngành không làm</strong>; đồng thời gộp các thông báo điều chỉnh/gia hạn vào một hồ sơ duy nhất.",
-        s2_title: "Bước 2: Bóc Tách Chương III, Chương V & Lọc Sàn/Trần",
-        s2_desc: "Hệ thống thuật toán tự động tải và bóc tách PDF E-HSMT, phân loại chuyên ngành sâu, trích xuất yêu cầu năng lực Chương III, thông số kỹ thuật Chương V (chiều dài cầu/đường, diện tích sàn, điện áp kV, nhân sự &amp; thiết bị chủ chốt); đối chiếu hai đầu Sàn – Trần.",
-        s3_title: "Bước 3: Chấm Điểm Đa Chiều (0–10đ), Ưu Tiên Khu Vực & Báo Tin",
-        s3_desc: "Định lượng độ khớp từ 0.0 đến 10.0 điểm kết hợp ưu tiên Vùng miền &amp; Tỉnh/Thành trọng điểm lên đầu bảng xếp hạng; gửi thông báo tức thì qua Mobile App (iOS/Android), Zalo, SMS, Email và theo dõi trạng thái xử lý của đội ngũ.",
-        feat_tag: "Tính Năng Chuyên Sâu",
-        feat_title: "Vũ Khí Cạnh Tranh Cho Đội Ngũ Săn Thầu Doanh Nghiệp",
-        feat_desc: "Mọi thông tin gói thầu luôn đi kèm điểm số đánh giá đa chiều, ưu tiên khu vực địa lý, làm nổi bật yêu cầu bắt buộc từ E-HSMT, liên kết gốc chính thống và lịch sử theo dõi minh bạch.",
-        f1_title: "Thuật Toán Chuẩn Hóa & Đối Chiếu Năng Lực Bảo Mật",
-        f1_desc: "Chuẩn hóa ngành nghề sở trường, doanh thu bình quân, hợp đồng tương tự, cấp công trình tối đa (Đặc biệt, I–IV), nhân sự chủ chốt, thiết bị thi công và khu vực hoạt động ngay trong không gian riêng tư của đơn vị, bảo mật tuyệt đối thông tin nội bộ.",
-        f2_title: "Chấm Điểm Độ Khớp Đa Chiều 0.0 – 10.0 Điểm",
-        f2_desc: "Đánh giá toàn diện trên nhiều chiều tiêu chí: Chuyên ngành sâu &amp; Loại trừ ngành không làm, Ưu tiên Vùng miền &amp; Tỉnh/Thành trọng điểm, Biên độ tài chính Sàn/Trần, Dư địa Chương III, Quy mô kỹ thuật &amp; Cấp công trình Chương V, Nhân sự/Thiết bị chủ chốt, Nguồn vốn và Quỹ thời gian chuẩn bị E-HSDT.",
-        f3_title: "Kiểm Soát Biên Độ Sàn – Trần, Nguồn Vốn & Loại Hình",
-        f3_desc: "Loại bỏ các gói thầu quá nhỏ dưới mức sàn chi phí hoặc vượt quá trần năng lực tài chính / cấp công trình; lọc theo nguồn vốn (Đầu tư công, Tư nhân, Doanh nghiệp Nhà nước, ODA) và phân biệt chính xác Xây lắp, Hàng hóa, Tư vấn, Dịch vụ phi tư vấn.",
-        f7_title: "Ưu Tiên Khu Vực Vùng Miền & Tỉnh/Thành Trọng Điểm",
-        f7_desc: "Tùy chọn Vùng miền kinh tế (Miền Bắc, Miền Trung, Miền Nam, Tây Nguyên, ĐBSCL) và các Tỉnh/Thành phố trọng điểm để cộng điểm ưu tiên đẩy các gói thầu tại địa bàn sở trường lên đầu danh sách mà không bỏ sót cơ hội tốt ở khu vực lân cận.",
-        f8_title: "Thuật Toán Phân Tích 2 Tầng & Tự Động Loại Trừ Ngành Không Làm",
-        f8_desc: "Sử dụng thuật toán phân tích ngữ nghĩa 2 tầng hiệu quả cao để nhận diện chính xác các tiêu chí loại trừ (như không làm cầu dây văng, không nhận thủy lợi), tự động tách nhóm ngành không tham gia và bảo toàn năng lực đa mảng ngành.",
-        f9_title: "Thuật Toán Bóc Tách PDF E-HSMT & Nhấn Mạnh Yêu Cầu Bắt Buộc",
-        f9_desc: "Tự động đọc trực tiếp file PDF Hồ sơ mời thầu đính kèm để trích xuất tiêu chuẩn đánh giá Chương III, yêu cầu kỹ thuật Chương V, nhân sự chủ chốt, thiết bị thi công và làm nổi bật các điều kiện tiên quyết cần đặc biệt lưu ý.",
-        f4_title: "Chống Trùng Lặp & Tự Động Gộp Bản Sửa Đổi",
-        f4_desc: "Tự động hợp nhất các bản thông báo đính chính, điều chỉnh hồ sơ mời thầu hoặc gia hạn thời điểm đóng thầu vào cùng một hồ sơ duy nhất kèm giữ nguyên đường dẫn gốc.",
-        f5_title: "Rà Soát Ngay Toàn Bộ Gói Thầu Đang Mở",
-        f5_desc: "Ngay khi kích hoạt tài khoản hoặc cập nhật tiêu chí năng lực mới, hệ thống lập tức quét toàn bộ các gói thầu đang còn thời hạn nộp hồ sơ để có danh sách làm việc ngay.",
-        f6_title: "Đa Nền Tảng, Đa Kênh Báo Tin & Quản Trị Quy Trình",
-        f6_desc: "Sử dụng trên Web, App iOS/Android; nhận tin qua App, Zalo, SMS, Email; quản lý quy trình xử lý (Đã xem, Quan tâm, Dự thầu, Bỏ qua) và lịch sử nhân sự đã đọc tin.",
-        cta_tag: "HUDU DauThau · Kích Hoạt Nhanh Trong 15 Phút",
-        cta_title: "Sẵn Sàng Tự Động Hóa Quy Trình Săn Thầu Cho Doanh Nghiệp?",
-        cta_desc: "Đăng ký ngay để thiết lập bộ lọc biên độ năng lực Sàn/Trần bảo mật nội bộ và nhận ngay danh sách các gói thầu đang mở phù hợp nhất.",
-        cta_b1: "✓ Đầy đủ 100% tính năng thông minh hiện có",
-        cta_b2: "✓ Tự động rà soát gói thầu đang mở",
-        cta_b3: "✓ Bảo toàn link thầu gốc chính thống",
-        cta_portal_lbl: "Nền tảng Web App chính thức",
-        cta_portal_btn: "Mở Hệ Thống ↗",
-        form_title: "Đăng Ký Gói Dịch Vụ HUDU DauThau",
+        plan3_setup_lbl: "Triển khai & Cài đặt:",
+        plan3_setup_val: "Thiết kế theo yêu cầu",
+        plan3_quota: "Trên 05 Tài khoản · Không giới hạn Lĩnh vực",
+        plan3_f1: "<strong>Không giới hạn Lĩnh vực &amp; Đơn vị thành viên:</strong> Quản lý tập trung nhiều công ty con và liên danh dự thầu.",
+        plan3_f2: "<strong>Cài đặt trên máy chủ riêng theo yêu cầu:</strong> Đảm bảo an toàn và bảo mật tuyệt đối dữ liệu chiến lược của Tập đoàn.",
+        plan3_f3: "<strong>Kết nối với phần mềm quản lý nội bộ:</strong> Đồng bộ trực tiếp danh sách gói thầu tiềm năng về hệ thống của doanh nghiệp.",
+        plan3_f4: "<strong>Phân quyền theo Chi nhánh &amp; Hỗ trợ 24/7:</strong> Đội ngũ kỹ thuật chuyên trách đồng hành và hỗ trợ xuyên suốt.",
+        plan3_cta: "Liên Hệ Tư Vấn Riêng →",
+        pipe_tag: "Quy Trình Tự Động 3 Bước Đơn Giản",
+        pipe_title: "Tiết Kiệm 90% Thời Gian Tìm Kiếm & Đọc Hồ Sơ Mời Thầu",
+        pipe_desc: "Giúp Chủ doanh nghiệp và Phòng Đấu thầu nắm bắt ngay các dự án phù hợp nhất mà không tốn hàng giờ tìm kiếm thủ công mỗi ngày.",
+        s1_title: "Bước 1: Cài Đặt Năng Lực & Khu Vực Ưu Tiên",
+        s1_desc: "Thiết lập ngành nghề sở trường, quy mô vốn, tỉnh/thành phố ưu tiên và các mảng không tham gia. Mọi thông tin được bảo mật nội bộ tuyệt đối.",
+        s2_title: "Bước 2: Tự Động Đọc Hồ Sơ & Lọc Gói Thầu Vừa Sức",
+        s2_desc: "Phần mềm tự động đọc tóm tắt yêu cầu kinh nghiệm, kỹ thuật trong hồ sơ mời thầu; loại bỏ các gói quá nhỏ hoặc vượt quá khả năng tài chính.",
+        s3_title: "Bước 3: Chấm Điểm (0–10) & Báo Tin Qua Zalo, Điện Thoại",
+        s3_desc: "Xếp hạng các gói thầu phù hợp nhất lên đầu danh sách và gửi thông báo ngay lập tức cho Giám đốc cùng bộ phận phụ trách.",
+        feat_tag: "Lợi Ích Thiết Thực Cho Doanh Nghiệp",
+        feat_title: "Công Cụ Đắc Lực Cho Chủ Doanh Nghiệp & Phòng Đấu Thầu",
+        feat_desc: "Đơn giản, dễ nhìn, đi thẳng vào kết quả: gói thầu nào phù hợp, cần chuẩn bị những gì và ai đang phụ trách theo dõi.",
+        f1_title: "1. Bảo Mật Tuyệt Đối Thông Tin Doanh Nghiệp",
+        f1_desc: "Tiêu chí năng lực, doanh thu và kinh nghiệm của nhà thầu được thiết lập riêng tư, cam kết không lộ thông tin ra bên ngoài.",
+        f2_title: "2. Chấm Điểm Độ Phù Hợp Rõ Ràng (0 – 10 Điểm)",
+        f2_desc: "Đánh giá tổng hợp dựa trên ngành nghề, tỉnh thành, quy mô vốn và thời gian chuẩn bị hồ sơ để gợi ý gói thầu khả thi nhất.",
+        f3_title: "3. Chọn Lọc Gói Thầu Đúng Tầm Tài Chính",
+        f3_desc: "Chỉ gửi về các gói thầu nằm trong khoảng ngân sách mong muốn, lọc rõ nguồn vốn ngân sách hay tư nhân và phân loại Xây lắp, Hàng hóa, Tư vấn.",
+        f7_title: "4. Ưu Tiên Tỉnh/Thành Phố & Vùng Miền Sở Trường",
+        f7_desc: "Đẩy các gói thầu tại địa bàn quen thuộc của doanh nghiệp lên đầu danh sách nhưng vẫn giữ lại các cơ hội tốt ở tỉnh lân cận.",
+        f8_title: "5. Tự Động Loại Trừ Mảng Công Việc Không Nhận",
+        f8_desc: "Nhận diện và loại bỏ chính xác các hạng mục đơn vị không thi công để danh sách gói thầu luôn gọn gàng, sát thực tế.",
+        f9_title: "6. Tóm Tắt Nhanh Yêu Cầu Quan Trọng Trong Hồ Sơ",
+        f9_desc: "Tự động đọc hồ sơ mời thầu đính kèm để tóm tắt yêu cầu về nhân sự, máy móc thiết bị và các điều kiện bắt buộc cần lưu ý.",
+        f4_title: "7. Tự Động Gộp Các Lần Sửa Đổi, Gia Hạn",
+        f4_desc: "Khi chủ đầu tư thay đổi hồ sơ hoặc gia hạn ngày đóng thầu, hệ thống tự động cập nhật vào một gói duy nhất, không gây rối thông tin.",
+        f5_title: "8. Có Ngay Danh Sách Gói Thầu Đang Mở Khi Đăng Ký",
+        f5_desc: "Ngay khi kích hoạt, phần mềm lập tức rà soát toàn bộ gói thầu đang còn hạn nộp hồ sơ trên cả nước để doanh nghiệp làm việc ngay.",
+        f6_title: "9. Báo Tin Qua Zalo & Quản Lý Làm Việc Nhóm",
+        f6_desc: "Nhận thông báo tức thì trên Điện thoại, Zalo, Email; dễ dàng phân công và theo dõi trạng thái xử lý của từng nhân viên.",
+        cta_tag: "HUDU DauThau · Hỗ Trợ Cài Đặt Trọn Gói Trong 15 Phút",
+        cta_title: "Sẵn Sàng Tìm Kiếm Gói Thầu Nhanh & Nhàn Hơn Cho Doanh Nghiệp?",
+        cta_desc: "Đăng ký ngay để đội ngũ HUDU hỗ trợ thiết lập tiêu chí ngành nghề, tầm vốn và nhận ngay danh sách các gói thầu đang mở phù hợp nhất.",
+        cta_b1: "✓ Đầy đủ 100% tính năng thông minh",
+        cta_b2: "✓ Có ngay danh sách gói thầu đang mở",
+        cta_b3: "✓ Kèm đường dẫn gốc chính thống",
+        cta_portal_lbl: "Hệ Thống Trực Tuyến Chính Thức",
+        cta_portal_btn: "Truy Cập Hệ Thống",
+        form_title: "Đăng Ký Sử Dụng Phần Mềm HUDU DauThau",
         form_name_lbl: "Họ tên & Tên Doanh nghiệp / Nhà thầu",
         form_name_ph: "VD: Nguyễn Văn A — Công ty CP Xây Dựng & Thiết Bị...",
-        form_phone_lbl: "Số điện thoại / Email nhận thông báo thầu",
+        form_phone_lbl: "Số điện thoại / Zalo nhận thông báo thầu",
         form_phone_ph: "090x xxx xxx / dauthau@company.vn",
         form_plan_lbl: "Gói dịch vụ lựa chọn",
-        form_opt_pro: "DauThau Gói Premium (899k/tháng hoặc 8tr9/năm — 05 Account · 02 Mảng Domain)",
-        form_opt_starter: "DauThau Gói Basic (499k/tháng hoặc 4tr9/năm — 01 Account · 01 Mảng Domain)",
-        form_opt_ent: "DauThau Gói Enterprise (Trên 05 Account · Đa mảng Domain · Tích hợp riêng)",
-        form_submit: "Gửi Yêu Cầu Kích Hoạt Tài Khoản",
-        form_portal_lbl: "Truy cập trực tiếp hệ thống:",
-        form_toast: "✓ Đã ghi nhận yêu cầu! Đội ngũ HUDU sẽ liên hệ hướng dẫn kích hoạt hệ thống ngay.",
-        footer_desc: "HUDU (huduvn.com) — Công ty phát triển phần mềm phân tích dữ liệu đấu thầu thông minh và hệ thống tự động hóa tiếp nhận, quản trị phòng khám.",
+        form_opt_pro: "Gói Nâng Cao (899k/tháng hoặc 8tr9/năm — 05 Tài khoản · 02 Lĩnh vực)",
+        form_opt_starter: "Gói Cơ Bản (499k/tháng hoặc 4tr9/năm — 01 Tài khoản · 01 Lĩnh vực)",
+        form_opt_ent: "Gói Tập Đoàn (Trên 05 Tài khoản · Đa lĩnh vực · Cài đặt riêng)",
+        form_submit: "Gửi Yêu Cầu Đăng Ký",
+        form_portal_lbl: "Đã có tài khoản hoặc muốn xem thử ngay?",
+        form_toast: "✓ Đã ghi nhận yêu cầu! Đội ngũ HUDU sẽ liên hệ hỗ trợ cài đặt ngay.",
+        footer_desc: "HUDU (huduvn.com) — Đơn vị phát triển phần mềm chọn lọc gói thầu thông minh và hệ thống tự động tiếp nhận, gọi số phòng khám.",
         footer_col1: "Sản phẩm",
-        footer_col2: "Tính năng DauThau",
+        footer_col2: "Tính năng nổi bật",
         footer_col3: "Liên hệ",
         f_link_home: "Trang chủ HUDU",
-        f_link_dt_price: "Bảng Giá Đấu Thầu Thông Minh",
+        f_link_dt_price: "Bảng Giá Phần Mềm Đấu Thầu",
         f_link_cfms_price: "Bảng Giá Phòng Khám",
-        f_feat_1: "Thuật toán đối chiếu năng lực & Chấm điểm 0–10",
-        f_feat_2: "Thuật toán bóc tách Chương III & Chương V",
-        f_feat_3: "So khớp biên độ Sàn / Trần",
-        f_feat_4: "Theo dõi trạng thái làm thầu"
+        f_feat_1: "Chấm điểm phù hợp (0–10 điểm)",
+        f_feat_2: "Tóm tắt nhanh hồ sơ mời thầu",
+        f_feat_3: "Chọn lọc gói thầu đúng tầm vốn",
+        f_feat_4: "Báo tin qua Zalo & Điện thoại"
       },
       en: {
         nav_home: "Home",
@@ -3309,12 +3317,12 @@
         nav_cta: "Request Demo",
         hero_badge: "PRODUCT 01 · HUDU DAUTHAU · huduvn.com/dauthau",
         hero_title: 'Algorithm-Driven <span class="highlight">Smart Tender Discovery &amp; Capability Matching</span> System',
-        hero_desc: "Smart algorithms standardize your internal capability criteria with strict privacy, extract Chapter III criteria &amp; Chapter V technical specs, score multi-dimensional tender fit from 0–10, <strong>prioritize target regions &amp; hotspot provinces</strong>, auto-exclude non-target sectors, and <strong>match exact Floor/Ceiling capability bounds</strong>.",
+        hero_desc: "Smart algorithms standardize your internal capability criteria with strict privacy, extract Chapter III criteria &amp; Chapter V technical specs, score multi-dimensional tender fit from 0–10, <strong>prioritize target regions &amp; hotspot provinces</strong>, auto-exclude non-target sectors, and <strong>match exact Financial Scale capability bounds</strong>.",
         hero_btn_pricing: "View Monthly & Annual Pricing ↓",
         hero_btn_pipeline: "Realtime Map & Analytics ↓",
         m1_val: "0–10 Scoring",
         m1_lbl: "Multi-dimensional fit scoring across sector, region/province, finance & specs",
-        m2_val: "Floor / Ceiling",
+        m2_val: "Financial Scale",
         m2_lbl: "Precise matching of financial bounds, Chapter III & Chapter V",
         m3_val: "100% Dedup",
         m3_lbl: "Auto-merges revision/extension notices & alerts via App, Zalo, SMS",
@@ -3322,7 +3330,7 @@
         sc_pkg_title: "IB2600881920-01 · Song Nhan Bridge (Dong Nai)",
         sc_pkg_pill: "9.6 / 10 Score",
         sc_pkg_line1: "<strong>Chapter V:</strong> Bridge & Road Infrastructure · Grade II (3x30m span)",
-        sc_pkg_line2: "<strong>Floor/Ceiling Range:</strong> Floor 10B ≤ <strong>35.5B VND</strong> ≤ Ceiling 80B",
+        sc_pkg_line2: "<strong>Financial Scale Range:</strong> Floor 10B ≤ <strong>35.5B VND</strong> ≤ Ceiling 80B",
         sc_pkg_rev: "✓ Merged revision notice (-00 → -01)",
         sc_pkg_push: "✓ Alerted via App & Zalo",
         sc_price_head: "Flexible Monthly or Discounted Annual Plans",
@@ -3346,7 +3354,7 @@
         plan1_quota: "01 User Account · 01 Industry Domain",
         plan1_f1: "<strong>100% Full Platform Features Included:</strong> Complete access to all algorithmic analysis, scoring, and smart tender matching tools with zero feature restrictions.",
         plan1_f2: "<strong>Secure Internal Capability Criteria Setup:</strong> Configures annual revenue bounds, similar contract scale, construction grades (I–IV), and key equipment for <strong>01 capability domain</strong> with complete internal data privacy.",
-        plan1_f3: "<strong>Chapter III, Chapter V &amp; Multi-Dimensional 0–10 Scoring:</strong> Evaluates sector fit, target region &amp; province priority, Floor/Ceiling bounds, technical specs, key personnel/equipment &amp; negative sector exclusion.",
+        plan1_f3: "<strong>Chapter III, Chapter V &amp; Multi-Dimensional 0–10 Scoring:</strong> Evaluates sector fit, target region &amp; province priority, Financial Scale bounds, technical specs, key personnel/equipment &amp; negative sector exclusion.",
         plan1_f4: "<strong>Revision Merging &amp; Instant Open-Tender Scan:</strong> Automatically merges addenda/extensions and scans all active open tenders immediately upon activation.",
         plan1_f5: "<strong>Cross-Platform &amp; Multi-Channel Alerts:</strong> Access via Web &amp; iOS/Android App; receive instant alerts via App, Zalo, SMS, Email with official source links preserved.",
         plan1_cta: "Subscribe to Basic →",
@@ -3357,7 +3365,7 @@
         plan2_setup_lbl: "Discounted annual billing:",
         plan2_setup_val: "8,900,000đ / year (Save 1.88M)",
         plan2_quota: "05 User Accounts · 02 Industry Domains",
-        plan2_f1: "<strong>100% Full System Features Included:</strong> 2-tier algorithmic capability analysis, PDF E-HSMT Chapter III &amp; V extraction, region/province priority, negative sector exclusion, and Floor/Ceiling matching.",
+        plan2_f1: "<strong>100% Full System Features Included:</strong> 2-tier algorithmic capability analysis, PDF E-HSMT Chapter III &amp; V extraction, region/province priority, negative sector exclusion, and Financial Scale matching.",
         plan2_f2: "<strong>Expanded to 02 Industry Domains:</strong> Configure capability criteria and track tenders simultaneously across 02 distinct business domains.",
         plan2_f3: "<strong>05 Team Collaboration Accounts:</strong> Dedicated accounts for Executives, Bidding Managers, and Proposal Engineers to work together.",
         plan2_f4: "<strong>Bidding Workflow &amp; Status Management:</strong> Track tender pipeline stages from Unread → Viewed → Interested → Bid Decision.",
@@ -3381,8 +3389,8 @@
         pipe_desc: "Empower your bidding engineers to focus on winning proposals instead of spending hours searching and reading tender documents manually every day.",
         s1_title: "Step 1: Secure Capability Criteria & Revision Merging",
         s1_desc: "Configure your internal capability criteria (revenue, similar contracts, construction grades Special, I–IV, target regions) and <strong>auto-exclude unwanted sub-sectors</strong>; merges addenda into one record.",
-        s2_title: "Step 2: Chapter III, Chapter V & Floor/Ceiling Filtering",
-        s2_desc: "Smart algorithms parse attached E-HSMT PDFs, classify deep sub-sectors, extract Chapter III rules and Chapter V specs (bridge/road length, floor area, voltage kV, key personnel &amp; equipment), and check Floor–Ceiling bounds.",
+        s2_title: "Step 2: Chapter III, Chapter V & Financial Scale Filtering",
+        s2_desc: "Smart algorithms parse attached E-HSMT PDFs, classify deep sub-sectors, extract Chapter III rules and Chapter V specs (bridge/road length, floor area, voltage kV, key personnel &amp; equipment), and check Financial Scale bounds.",
         s3_title: "Step 3: Multi-Dimensional Scoring (0–10), Regional Priority & Alerts",
         s3_desc: "Quantifies fit from 0.0 to 10.0 while boosting preferred regions &amp; hotspot provinces to the top; sends instant alerts via Mobile App (iOS/Android), Zalo, SMS, Email with workflow tracking.",
         feat_tag: "Core Capabilities",
@@ -3391,8 +3399,8 @@
         f1_title: "Secure Algorithmic Capability Matching",
         f1_desc: "Standardize core specialties, average revenue bounds, similar contract scale, construction grades (Special, I–IV), key personnel, equipment, and active regions within your private workspace with strict internal data security.",
         f2_title: "Multi-Dimensional 0.0 – 10.0 Fit Scoring",
-        f2_desc: "Comprehensive scoring across Deep Specialty &amp; Negative Sector Exclusion, Preferred Regions &amp; Hotspot Provinces, Floor/Ceiling Financial Range, Chapter III Headroom, Chapter V Technical Scale &amp; Grade, Key Personnel/Equipment, Funding Source, and Lead Time.",
-        f3_title: "Floor–Ceiling Bounds, Funding Source & Modality Guard",
+        f2_desc: "Comprehensive scoring across Deep Specialty &amp; Negative Sector Exclusion, Preferred Regions &amp; Hotspot Provinces, Financial Scale Financial Range, Chapter III Headroom, Chapter V Technical Scale &amp; Grade, Key Personnel/Equipment, Funding Source, and Lead Time.",
+        f3_title: "Financial Scale Bounds, Funding Source & Modality Guard",
         f3_desc: "Eliminates tenders below your minimum floor or above your financial/grade ceiling; filters by funding source (Public Investment, Private, SOE, ODA) and strictly separates Civil Works, Goods, Consulting, and Non-Consulting Services.",
         f7_title: "Preferred Regions & Hotspot Province Prioritization",
         f7_desc: "Select preferred economic regions (North, Central, South, Central Highlands, Mekong Delta) and target provinces to boost local tenders to the top of your feed without missing great opportunities nearby.",
@@ -3408,7 +3416,7 @@
         f6_desc: "Available on Web, iOS & Android; instant alerts via App, Zalo, SMS, Email; manage bidding workflow (Viewed, Interested, Bid Decision, Skipped) and staff read receipts.",
         cta_tag: "HUDU DauThau · Fast 15-Minute Activation",
         cta_title: "Ready to Automate Tender Discovery for Your Business?",
-        cta_desc: "Register now to configure secure internal Floor/Ceiling capability filters and receive your matched open tenders today.",
+        cta_desc: "Register now to configure secure internal Financial Scale capability filters and receive your matched open tenders today.",
         cta_b1: "✓ 100% Full Smart Features Included",
         cta_b2: "✓ Instant Scan of Open Tenders",
         cta_b3: "✓ Official Source Links Preserved",
@@ -3435,7 +3443,7 @@
         f_link_cfms_price: "Clinic Pricing (CFMS)",
         f_feat_1: "Algorithmic Matching & 0–10 Scoring",
         f_feat_2: "Chapter III & V Spec Extraction",
-        f_feat_3: "Floor / Ceiling Bounds Matching",
+        f_feat_3: "Financial Scale Bounds Matching",
         f_feat_4: "Bidding Workflow & Read Tracking"
       },
       es: {
@@ -3447,7 +3455,7 @@
         nav_cta: "Solicitar Demo",
         hero_badge: "PRODUCTO 01 · HUDU DAUTHAU · huduvn.com/dauthau",
         hero_title: 'Sistema Inteligente de <span class="highlight">Búsqueda y Evaluación de Licitaciones</span> mediante Algoritmos',
-        hero_desc: "Algoritmos inteligentes estandarizan sus criterios de capacidad con privacidad interna, extraen requisitos del Capítulo III y especificaciones del Capítulo V, califican la compatibilidad multidimensional de 0 a 10, <strong>priorizan regiones y provincias clave</strong>, excluyen subsectores no deseados y <strong>filtran rangos Suelo/Techo (Floor/Ceiling)</strong>.",
+        hero_desc: "Algoritmos inteligentes estandarizan sus criterios de capacidad con privacidad interna, extraen requisitos del Capítulo III y especificaciones del Capítulo V, califican la compatibilidad multidimensional de 0 a 10, <strong>priorizan regiones y provincias clave</strong>, excluyen subsectores no deseados y <strong>filtran rangos Suelo/Techo</strong>.",
         hero_btn_pricing: "Ver Precios Mensuales y Anuales ↓",
         hero_btn_pipeline: "Mapa y Gráficos en Tiempo Real ↓",
         m1_val: "Puntaje 0–10",
@@ -3585,7 +3593,7 @@
         nav_cta: "申请试用",
         hero_badge: "产品 01 · HUDU DAUTHAU · huduvn.com/dauthau",
         hero_title: '智能算法驱动的<span class="highlight">企业能力精准搜标与匹配</span>系统',
-        hero_desc: "智能算法安全配置企业内部投标能力指标，提炼招标文件第三章资格标准与第五章技术参数，进行多维度 0–10 分匹配评分，<strong>优先推荐重点区域与目标省市</strong>，自动排除不做行业，并<strong>精准过滤能力上下限 (Floor/Ceiling)</strong>。",
+        hero_desc: "智能算法安全配置企业内部投标能力指标，提炼招标文件第三章资格标准与第五章技术参数，进行多维度 0–10 分匹配评分，<strong>优先推荐重点区域与目标省市</strong>，自动排除不做行业，并<strong>精准过滤能力上下限</strong>。",
         hero_btn_pricing: "查看月付及年付套餐价格 ↓",
         hero_btn_pipeline: "实时地图与分析图表 ↓",
         m1_val: "0–10 评分",
@@ -3723,7 +3731,7 @@
         nav_cta: "トライアル申込",
         hero_badge: "製品 01 · HUDU DAUTHAU · huduvn.com/dauthau",
         hero_title: 'スマートアルゴリズムによる<span class="highlight">企業能力ベースの入札案件発掘＆適合度マッチング</span>システム',
-        hero_desc: "高度なアルゴリズムが社内の受注能力基準を安全に標準化し、入札書類の第III章資格基準および第V章技術仕様を抽出。多角的な評価軸で0〜10点の適合度を算出し、<strong>重点地域・省市の優先表示</strong>、対象外業種の自動除外、および<strong>受注能力の下限・上限 (Floor/Ceiling)</strong> による精密フィルタリングを行います。",
+        hero_desc: "高度なアルゴリズムが社内の受注能力基準を安全に標準化し、入札書類の第III章資格基準および第V章技術仕様を抽出。多角的な評価軸で0〜10点の適合度を算出し、<strong>重点地域・省市の優先表示</strong>、対象外業種の自動除外、および<strong>受注能力の下限・上限</strong> による精密フィルタリングを行います。",
         hero_btn_pricing: "月額＆年額プラン料金を見る ↓",
         hero_btn_pipeline: "リアルタイム地図＆グラフ ↓",
         m1_val: "0–10点評価",
@@ -3861,7 +3869,7 @@
         nav_cta: "무료 체험 신청",
         hero_badge: "제품 01 · HUDU DAUTHAU · huduvn.com/dauthau",
         hero_title: '스마트 알고리즘 기반 <span class="highlight">시공사 역량 맞춤형 입찰 발굴 및 매칭</span> 시스템',
-        hero_desc: "정밀 알고리즘이 기업 내부 역량 기준을 안전하게 표준화하고 입찰 문서의 제3장 자격 기준 및 제5장 기술 규격을 추출하며, 다차원 지표로 0–10점 적합도를 산출하고 <strong>선호 권역 및 중점 시·도를 우선 추천</strong>하며 비수행 업종 자동 제외 및 <strong>하한/상한(Floor/Ceiling)</strong> 정밀 매칭을 수행합니다.",
+        hero_desc: "정밀 알고리즘이 기업 내부 역량 기준을 안전하게 표준화하고 입찰 문서의 제3장 자격 기준 및 제5장 기술 규격을 추출하며, 다차원 지표로 0–10점 적합도를 산출하고 <strong>선호 권역 및 중점 시·도를 우선 추천</strong>하며 비수행 업종 자동 제외 및 <strong>하한/상한</strong> 정밀 매칭을 수행합니다.",
         hero_btn_pricing: "월간 및 연간 요금제 보기 ↓",
         hero_btn_pipeline: "실시간 지도 및 분석 차트 ↓",
         m1_val: "0–10점 평가",
