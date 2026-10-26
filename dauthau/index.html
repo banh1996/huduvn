@@ -175,8 +175,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: clamp(10px, 1.4vw, 20px);
       flex-wrap: nowrap;
+      min-width: 0;
     }
 
     .brand-logo {
@@ -186,7 +187,7 @@
     }
 
     .brand-logo svg {
-      height: 40px;
+      height: 38px;
       width: auto;
       display: block;
     }
@@ -194,9 +195,10 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 26px;
+      gap: clamp(12px, 1.5vw, 20px);
       list-style: none;
       flex-wrap: nowrap;
+      min-width: 0;
     }
 
     .nav-links li {
@@ -204,7 +206,7 @@
     }
 
     .nav-links a {
-      font-size: 0.96rem;
+      font-size: 15px;
       font-weight: 700;
       color: var(--text-body);
       white-space: nowrap;
@@ -239,7 +241,7 @@
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       flex-shrink: 0;
     }
 
@@ -257,9 +259,9 @@
       border: 1px solid var(--border-light);
       box-shadow: var(--inset-highlight);
       border-radius: 99px;
-      height: 40px;
-      padding: 0 30px 0 14px;
-      font-size: 0.9rem;
+      height: 38px;
+      padding: 0 28px 0 12px;
+      font-size: 14px;
       font-weight: 600;
       font-family: inherit;
       cursor: pointer;
@@ -275,14 +277,14 @@
 
     .lang-chevron {
       position: absolute;
-      right: 11px;
+      right: 10px;
       pointer-events: none;
       color: var(--text-muted);
     }
 
     .icon-btn {
-      width: 40px;
-      height: 40px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
       border: 1px solid var(--border-light);
       background: var(--bg-surface);
@@ -318,6 +320,12 @@
       border: 1px solid transparent;
       font-family: inherit;
       flex-shrink: 0;
+    }
+
+    .nav-actions .btn {
+      height: 38px;
+      padding: 0 16px;
+      font-size: 14.5px;
     }
 
     .btn-outline {
@@ -1893,19 +1901,23 @@
       color: var(--text-heading);
     }
 
-    @media (max-width: 1120px) {
+    @media (max-width: 1180px) {
       .nav-links {
-        gap: 16px;
+        gap: 12px;
       }
       .nav-links a {
-        font-size: 0.84rem;
+        font-size: 14px;
       }
       .nav-inner {
-        gap: 14px;
+        gap: 10px;
+      }
+      .nav-actions .btn {
+        padding: 0 13px;
+        font-size: 13.5px;
       }
     }
 
-    @media (max-width: 980px) {
+    @media (max-width: 1040px) {
       .navbar {
         height: auto;
         min-height: 60px;
@@ -1938,9 +1950,12 @@
         display: none;
       }
       .nav-links a {
-        font-size: 0.82rem;
+        font-size: 14px;
         padding: 4px 0;
       }
+    }
+
+    @media (max-width: 980px) {
       .hero-grid,
       .cta-box,
       .grid-3,
@@ -2299,11 +2314,11 @@
 
       <ul class="nav-links">
         <li><a href="../" data-i18n="nav_home">Trang chủ</a></li>
-        <li><a href="#realtime-map" data-i18n="nav_realtime">Bản đồ Đấu thầu</a></li>
+        <li><a href="#realtime-map" data-i18n="nav_realtime">Bản đồ thầu</a></li>
         <li><a href="#pricing" class="active" data-i18n="nav_pricing">Bảng giá</a></li>
-        <li><a href="#pipeline" data-i18n="nav_pipeline">Quy trình 3 Bước</a></li>
+        <li><a href="#pipeline" data-i18n="nav_pipeline">Quy trình</a></li>
         <li><a href="#features" data-i18n="nav_features">Tính năng</a></li>
-        <li><a href="../cfms/" data-i18n="nav_cfms">Phòng khám (CFMS)</a></li>
+        <li><a href="../cfms/" data-i18n="nav_cfms">Phòng khám</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -2324,7 +2339,7 @@
           <svg id="themeIconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         </button>
 
-        <a href="#contact" class="btn btn-primary" data-i18n="nav_cta">Đăng ký Dùng thử</a>
+        <a href="#contact" class="btn btn-primary" data-i18n="nav_cta">Dùng thử</a>
       </div>
     </div>
   </header>
@@ -3171,12 +3186,12 @@
     const I18N = {
       vi: {
         nav_home: "Trang chủ",
-        nav_realtime: "Bản đồ Đấu thầu",
+        nav_realtime: "Bản đồ thầu",
         nav_pricing: "Bảng giá",
-        nav_pipeline: "Quy trình 3 Bước",
+        nav_pipeline: "Quy trình",
         nav_features: "Tính năng",
-        nav_cfms: "Phòng khám (CFMS)",
-        nav_cta: "Đăng ký Dùng thử",
+        nav_cfms: "Phòng khám",
+        nav_cta: "Dùng thử",
         hero_badge: "SẢN PHẨM 01 · PHẦN MỀM ĐẤU THẦU HUDU",
         hero_title: 'Hệ Thống <span class="highlight">Tìm Kiếm &amp; Chọn Lọc Gói Thầu</span> Đúng Năng Lực Doanh Nghiệp',
         hero_desc: "Tự động rà soát hàng ngàn thông báo mời thầu mỗi ngày, chấm điểm mức độ phù hợp từ 0–10 theo <strong>ngành nghề sở trường, tỉnh/thành ưu tiên và quy mô tài chính</strong> của doanh nghiệp. Cam kết bảo mật tuyệt đối thông tin nội bộ.",
@@ -3310,8 +3325,9 @@
       },
       en: {
         nav_home: "Home",
+        nav_realtime: "Live Map",
         nav_pricing: "Pricing",
-        nav_pipeline: "3-Step Process",
+        nav_pipeline: "Process",
         nav_features: "Features",
         nav_cfms: "CFMS Clinic",
         nav_cta: "Request Demo",
@@ -3448,10 +3464,11 @@
       },
       es: {
         nav_home: "Inicio",
+        nav_realtime: "Mapa en Vivo",
         nav_pricing: "Precios",
-        nav_pipeline: "Proceso 3 Pasos",
+        nav_pipeline: "Proceso",
         nav_features: "Funciones",
-        nav_cfms: "Gestión CFMS",
+        nav_cfms: "Clínicas",
         nav_cta: "Solicitar Demo",
         hero_badge: "PRODUCTO 01 · HUDU DAUTHAU · huduvn.com/dauthau",
         hero_title: 'Sistema Inteligente de <span class="highlight">Búsqueda y Evaluación de Licitaciones</span> mediante Algoritmos',
@@ -3586,10 +3603,11 @@
       },
       zh: {
         nav_home: "首页",
+        nav_realtime: "招标地图",
         nav_pricing: "价格方案",
-        nav_pipeline: "三步筛选流程",
+        nav_pipeline: "筛选流程",
         nav_features: "核心功能",
-        nav_cfms: "CFMS 诊所管理",
+        nav_cfms: "CFMS 诊所",
         nav_cta: "申请试用",
         hero_badge: "产品 01 · HUDU DAUTHAU · huduvn.com/dauthau",
         hero_title: '智能算法驱动的<span class="highlight">企业能力精准搜标与匹配</span>系统',
@@ -3724,11 +3742,12 @@
       },
       ja: {
         nav_home: "ホーム",
+        nav_realtime: "入札マップ",
         nav_pricing: "料金プラン",
-        nav_pipeline: "3ステップ選別",
+        nav_pipeline: "選別フロー",
         nav_features: "機能一覧",
         nav_cfms: "CFMS クリニック",
-        nav_cta: "トライアル申込",
+        nav_cta: "デモ申込",
         hero_badge: "製品 01 · HUDU DAUTHAU · huduvn.com/dauthau",
         hero_title: 'スマートアルゴリズムによる<span class="highlight">企業能力ベースの入札案件発掘＆適合度マッチング</span>システム',
         hero_desc: "高度なアルゴリズムが社内の受注能力基準を安全に標準化し、入札書類の第III章資格基準および第V章技術仕様を抽出。多角的な評価軸で0〜10点の適合度を算出し、<strong>重点地域・省市の優先表示</strong>、対象外業種の自動除外、および<strong>受注能力の下限・上限</strong> による精密フィルタリングを行います。",
@@ -3862,11 +3881,12 @@
       },
       ko: {
         nav_home: "홈",
+        nav_realtime: "입찰 지도",
         nav_pricing: "요금제",
-        nav_pipeline: "3단계 프로세스",
+        nav_pipeline: "선별 절차",
         nav_features: "주요 기능",
         nav_cfms: "CFMS 클리닉",
-        nav_cta: "무료 체험 신청",
+        nav_cta: "데모 신청",
         hero_badge: "제품 01 · HUDU DAUTHAU · huduvn.com/dauthau",
         hero_title: '스마트 알고리즘 기반 <span class="highlight">시공사 역량 맞춤형 입찰 발굴 및 매칭</span> 시스템',
         hero_desc: "정밀 알고리즘이 기업 내부 역량 기준을 안전하게 표준화하고 입찰 문서의 제3장 자격 기준 및 제5장 기술 규격을 추출하며, 다차원 지표로 0–10점 적합도를 산출하고 <strong>선호 권역 및 중점 시·도를 우선 추천</strong>하며 비수행 업종 자동 제외 및 <strong>하한/상한</strong> 정밀 매칭을 수행합니다.",

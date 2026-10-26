@@ -188,8 +188,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: clamp(10px, 1.4vw, 20px);
       flex-wrap: nowrap;
+      min-width: 0;
     }
 
     .brand-logo {
@@ -199,7 +200,7 @@
     }
 
     .brand-logo svg {
-      height: 40px;
+      height: 38px;
       width: auto;
       display: block;
     }
@@ -207,9 +208,10 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: clamp(12px, 1.5vw, 20px);
       list-style: none;
       flex-wrap: nowrap;
+      min-width: 0;
     }
 
     .nav-links li {
@@ -217,7 +219,7 @@
     }
 
     .nav-links a {
-      font-size: 0.96rem;
+      font-size: 15px;
       font-weight: 600;
       color: var(--text-body);
       white-space: nowrap;
@@ -250,7 +252,7 @@
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       flex-shrink: 0;
     }
 
@@ -268,9 +270,9 @@
       border: 1px solid var(--border-light);
       box-shadow: var(--inset-highlight);
       border-radius: 99px;
-      height: 40px;
-      padding: 0 32px 0 14px;
-      font-size: 0.9rem;
+      height: 38px;
+      padding: 0 28px 0 12px;
+      font-size: 14px;
       font-weight: 600;
       font-family: inherit;
       cursor: pointer;
@@ -286,14 +288,14 @@
 
     .lang-chevron {
       position: absolute;
-      right: 11px;
+      right: 10px;
       pointer-events: none;
       color: var(--text-muted);
     }
 
     .icon-btn {
-      width: 40px;
-      height: 40px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
       border: 1px solid var(--border-light);
       background: var(--bg-surface);
@@ -329,6 +331,12 @@
       border: 1px solid transparent;
       font-family: inherit;
       flex-shrink: 0;
+    }
+
+    .nav-actions .btn {
+      height: 38px;
+      padding: 0 16px;
+      font-size: 14.5px;
     }
 
     .btn-outline {
@@ -1868,19 +1876,23 @@
       max-width: 100%;
     }
 
-    @media (max-width: 1120px) {
+    @media (max-width: 1180px) {
       .nav-links {
-        gap: 16px;
+        gap: 12px;
       }
       .nav-links a {
-        font-size: 0.84rem;
+        font-size: 14px;
       }
       .nav-inner {
-        gap: 14px;
+        gap: 10px;
+      }
+      .nav-actions .btn {
+        padding: 0 13px;
+        font-size: 13.5px;
       }
     }
 
-    @media (max-width: 980px) {
+    @media (max-width: 1040px) {
       .navbar {
         height: auto;
         min-height: 60px;
@@ -1913,9 +1925,12 @@
         display: none;
       }
       .nav-links a {
-        font-size: 0.82rem;
+        font-size: 14px;
         padding: 4px 0;
       }
+    }
+
+    @media (max-width: 980px) {
       .hero-grid,
       .product-split,
       .cta-box,
@@ -2332,9 +2347,9 @@
 
       <ul class="nav-links">
         <li><a href="#solutions" data-i18n="nav_solutions">Giải pháp</a></li>
-        <li><a href="dauthau/" data-i18n="nav_tender">Phần Mềm Đấu Thầu (/dauthau)</a></li>
-        <li><a href="cfms/" data-i18n="nav_cfms">Phần Mềm Phòng Khám (/cfms)</a></li>
-        <li><a href="#live-demo" data-i18n="nav_demo">Xem Dùng Thử</a></li>
+        <li><a href="dauthau/" data-i18n="nav_tender">Phần mềm Đấu thầu</a></li>
+        <li><a href="cfms/" data-i18n="nav_cfms">Phần mềm Phòng khám</a></li>
+        <li><a href="#live-demo" data-i18n="nav_demo">Dùng thử</a></li>
         <li><a href="#architecture" data-i18n="nav_arch">Ưu điểm</a></li>
       </ul>
 
@@ -3203,9 +3218,9 @@
     const I18N = {
       vi: {
         nav_solutions: "Giải pháp",
-        nav_tender: "Phần Mềm Đấu Thầu (/dauthau)",
-        nav_cfms: "Phần Mềm Phòng Khám (/cfms)",
-        nav_demo: "Xem Dùng Thử",
+        nav_tender: "Phần mềm Đấu thầu",
+        nav_cfms: "Phần mềm Phòng khám",
+        nav_demo: "Dùng thử",
         nav_arch: "Ưu điểm",
         nav_cta: "Đăng Ký Tư Vấn",
         hero_badge: "Giải Pháp Phần Mềm HUDU · huduvn.com",
@@ -3367,10 +3382,10 @@
       },
       en: {
         nav_solutions: "Solutions",
-        nav_tender: "Smart Tender (/dauthau)",
-        nav_cfms: "Clinic CFMS (/cfms)",
+        nav_tender: "Smart Tender",
+        nav_cfms: "Clinic CFMS",
         nav_demo: "Live Demo",
-        nav_arch: "Technology",
+        nav_arch: "Benefits",
         nav_cta: "Request Demo",
         hero_badge: "HUDU Enterprise Technology · huduvn.com",
         hero_title: 'Algorithm-Driven <span class="highlight">Smart Tender Matching</span> &amp; Clinic Queue Management',
@@ -3531,10 +3546,10 @@
       },
       es: {
         nav_solutions: "Soluciones",
-        nav_tender: "Licitaciones Inteligentes (/dauthau)",
-        nav_cfms: "Clínicas CFMS (/cfms)",
-        nav_demo: "Demo en Vivo",
-        nav_arch: "Tecnología",
+        nav_tender: "Licitaciones",
+        nav_cfms: "Clínicas CFMS",
+        nav_demo: "Demo",
+        nav_arch: "Ventajas",
         nav_cta: "Solicitar Demo",
         hero_badge: "HUDU Enterprise Technology · huduvn.com",
         hero_title: 'Plataforma de <span class="highlight">Licitaciones Inteligentes</span> y Gestión Automatizada de Clínicas',
@@ -3695,10 +3710,10 @@
       },
       zh: {
         nav_solutions: "解决方案",
-        nav_tender: "智能招投标 (/dauthau)",
-        nav_cfms: "诊所系统 (/cfms)",
+        nav_tender: "智能招投标",
+        nav_cfms: "诊所系统",
         nav_demo: "在线演示",
-        nav_arch: "核心技术",
+        nav_arch: "核心优势",
         nav_cta: "申请试用",
         hero_badge: "HUDU Enterprise Technology · huduvn.com",
         hero_title: '智能算法驱动的<span class="highlight">高效招投标检索</span>与诊所接单管理平台',
@@ -3859,10 +3874,10 @@
       },
       ja: {
         nav_solutions: "ソリューション",
-        nav_tender: "スマート入札 (/dauthau)",
-        nav_cfms: "クリニック管理 (/cfms)",
+        nav_tender: "スマート入札",
+        nav_cfms: "クリニック管理",
         nav_demo: "ライブデモ",
-        nav_arch: "テクノロジー",
+        nav_arch: "強み",
         nav_cta: "デモ申込",
         hero_badge: "HUDU Enterprise Technology · huduvn.com",
         hero_title: 'スマートアルゴリズムによる<span class="highlight">入札案件マッチング</span>＆クリニック受付・順番管理基盤',
@@ -4023,10 +4038,10 @@
       },
       ko: {
         nav_solutions: "솔루션",
-        nav_tender: "스마트 입찰 (/dauthau)",
-        nav_cfms: "클리닉 CFMS (/cfms)",
+        nav_tender: "스마트 입찰",
+        nav_cfms: "클리닉 CFMS",
         nav_demo: "실시간 데모",
-        nav_arch: "핵심 기술",
+        nav_arch: "핵심 강점",
         nav_cta: "데모 신청",
         hero_badge: "HUDU Enterprise Technology · huduvn.com",
         hero_title: '스마트 알고리즘 기반 <span class="highlight">입찰 매칭</span> 및 클리닉 접수·대기열 플랫폼',

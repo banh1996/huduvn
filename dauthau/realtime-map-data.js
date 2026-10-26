@@ -103,7 +103,7 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal": "https://muasamcong.mof.gov.vn
 
   const RT_UI_I18N = {
     vi: {
-      nav_realtime: "Bản đồ & Thống kê",
+      nav_realtime: "Bản đồ thầu",
       rt_tag: "DỮ LIỆU CẬP NHẬT LIÊN TỤC 24/7 · DAUTHAU.HUDUVN.COM",
       rt_title: "Bản Đồ Đấu Thầu Toàn Quốc & Thống Kê Trực Tuyến",
       rt_desc: "Theo dõi trực tiếp số lượng gói thầu trên <strong>63 Tỉnh/Thành phố (kèm Quần đảo Hoàng Sa &amp; Trường Sa)</strong> và cơ cấu các hình thức lựa chọn nhà thầu trên cả nước.",
@@ -153,7 +153,7 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal": "https://muasamcong.mof.gov.vn
       window_fmt: "Thống kê 30 ngày gần nhất · Tự động cập nhật 5 phút/lần"
     },
     en: {
-      nav_realtime: "Realtime Map & Charts",
+      nav_realtime: "Live Map",
       rt_tag: "24/7 LIVE INTELLIGENCE · DAUTHAU.HUDUVN.COM REALTIME",
       rt_title: "Vietnam Realtime Tender Map & Multi-Chart Analytics",
       rt_desc: "Live tracking of procurement volume across <strong>63 Provinces/Cities (including Hoang Sa &amp; Truong Sa Archipelagos)</strong> and breakdown of <strong>9 Contractor Selection Methods</strong> under the 2023 Bidding Law.",
@@ -203,7 +203,7 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal": "https://muasamcong.mof.gov.vn
       window_fmt: "Rolling 30-day window · Auto-refreshes every 5 minutes"
     },
     es: {
-      nav_realtime: "Mapa y Gráficos en Vivo",
+      nav_realtime: "Mapa en Vivo",
       rt_tag: "DATOS EN VIVO 24/7 · DAUTHAU.HUDUVN.COM REALTIME",
       rt_title: "Mapa de Licitaciones de Vietnam y Gráficos Analíticos en Tiempo Real",
       rt_desc: "Seguimiento en vivo del volumen de licitaciones en <strong>63 Provincias/Ciudades (incluidos los Archipiélagos Hoang Sa y Truong Sa)</strong> y las <strong>9 Modalidades de Contratación</strong> de la Ley de Licitaciones 2023.",
@@ -253,7 +253,7 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal": "https://muasamcong.mof.gov.vn
       window_fmt: "Ventana de 30 días · Actualización automática cada 5 min"
     },
     zh: {
-      nav_realtime: "实时招标地图与图表",
+      nav_realtime: "招标地图",
       rt_tag: "7×24 实时数据中心 · DAUTHAU.HUDUVN.COM REALTIME",
       rt_title: "越南全国招投标实时热力图与多维数据分析看板",
       rt_desc: "实时追踪越南 <strong>63 个省/直辖市（含黄沙群岛与长沙群岛）</strong>的招标总量及 2023《招标法》规定的 <strong>9 大选标方式占比</strong>。",
@@ -303,7 +303,7 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal": "https://muasamcong.mof.gov.vn
       window_fmt: "近 30 天滚动统计 · 每 5 分钟自动同步刷新"
     },
     ja: {
-      nav_realtime: "リアルタイム地図＆統計",
+      nav_realtime: "入札マップ",
       rt_tag: "24時間リアルタイム統計 · DAUTHAU.HUDUVN.COM REALTIME",
       rt_title: "ベトナム全国リアルタイム入札マップ＆多次元分析チャート",
       rt_desc: "<strong>全63省・中央直轄市（ホアンサ諸島・チュオンサ諸島を含む）</strong>の入札件数および2023年入札法に基づく<strong>9つの契約方式比率</strong>をリアルタイムに可視化します。",
@@ -353,7 +353,7 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal": "https://muasamcong.mof.gov.vn
       window_fmt: "直近30日間統計 · 5分ごとに自動更新"
     },
     ko: {
-      nav_realtime: "실시간 지도 & 차트",
+      nav_realtime: "입찰 지도",
       rt_tag: "24/7 실시간 입찰 데이터 · DAUTHAU.HUDUVN.COM REALTIME",
       rt_title: "베트남 전국 실시간 입찰 지도 및 다차원 분석 차트",
       rt_desc: "베트남 <strong>63개 성·직할시(호앙사 군도 및 쯔엉사 군도 포함)</strong>의 실시간 입찰 물량과 2023 입찰법 기준 <strong>9대 낙찰자 선정 방식</strong>을 실시간으로 분석합니다.",

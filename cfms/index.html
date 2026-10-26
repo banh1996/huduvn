@@ -175,8 +175,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: clamp(10px, 1.4vw, 20px);
       flex-wrap: nowrap;
+      min-width: 0;
     }
 
     .brand-logo {
@@ -186,7 +187,7 @@
     }
 
     .brand-logo svg {
-      height: 40px;
+      height: 38px;
       width: auto;
       display: block;
     }
@@ -194,9 +195,10 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 26px;
+      gap: clamp(12px, 1.5vw, 20px);
       list-style: none;
       flex-wrap: nowrap;
+      min-width: 0;
     }
 
     .nav-links li {
@@ -204,7 +206,7 @@
     }
 
     .nav-links a {
-      font-size: 0.96rem;
+      font-size: 15px;
       font-weight: 600;
       color: var(--text-body);
       white-space: nowrap;
@@ -239,7 +241,7 @@
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       flex-shrink: 0;
     }
 
@@ -258,8 +260,8 @@
       box-shadow: var(--inset-highlight);
       border-radius: 99px;
       height: 38px;
-      padding: 0 30px 0 14px;
-      font-size: 0.9rem;
+      padding: 0 28px 0 12px;
+      font-size: 14px;
       font-weight: 600;
       font-family: inherit;
       cursor: pointer;
@@ -275,7 +277,7 @@
 
     .lang-chevron {
       position: absolute;
-      right: 11px;
+      right: 10px;
       pointer-events: none;
       color: var(--text-muted);
     }
@@ -318,6 +320,12 @@
       border: 1px solid transparent;
       font-family: inherit;
       flex-shrink: 0;
+    }
+
+    .nav-actions .btn {
+      height: 38px;
+      padding: 0 16px;
+      font-size: 14.5px;
     }
 
     .btn-outline {
@@ -1291,19 +1299,23 @@
       max-width: 100%;
     }
 
-    @media (max-width: 1120px) {
+    @media (max-width: 1180px) {
       .nav-links {
-        gap: 16px;
+        gap: 13px;
       }
       .nav-links a {
-        font-size: 0.84rem;
+        font-size: 14px;
       }
       .nav-inner {
-        gap: 14px;
+        gap: 10px;
+      }
+      .nav-actions .btn {
+        padding: 0 13px;
+        font-size: 13.5px;
       }
     }
 
-    @media (max-width: 980px) {
+    @media (max-width: 1040px) {
       .navbar {
         height: auto;
         min-height: 60px;
@@ -1336,7 +1348,7 @@
         display: none;
       }
       .nav-links a {
-        font-size: 0.82rem;
+        font-size: 14px;
         padding: 4px 0;
       }
       .hero-grid,
@@ -1653,8 +1665,8 @@
         <li><a href="../" data-i18n="nav_home">Trang chủ</a></li>
         <li><a href="#pricing" class="active" data-i18n="nav_pricing">Bảng giá</a></li>
         <li><a href="#features" data-i18n="nav_features">Tính năng</a></li>
-        <li><a href="#roles" data-i18n="nav_roles">Phân quyền 3 vai trò</a></li>
-        <li><a href="../dauthau/" data-i18n="nav_dauthau">Đấu thầu Thông minh</a></li>
+        <li><a href="#roles" data-i18n="nav_roles">Phân quyền</a></li>
+        <li><a href="../dauthau/" data-i18n="nav_dauthau">Phần mềm Đấu thầu</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -1675,7 +1687,7 @@
           <svg id="themeIconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         </button>
 
-        <a href="#contact" class="btn btn-primary" data-i18n="nav_cta">Đăng ký Dùng thử</a>
+        <a href="#contact" class="btn btn-primary" data-i18n="nav_cta">Dùng thử</a>
       </div>
     </div>
   </header>
@@ -2365,9 +2377,9 @@
         nav_home: "Trang chủ",
         nav_pricing: "Bảng giá",
         nav_features: "Tính năng",
-        nav_roles: "Phân quyền 3 vai trò",
-        nav_dauthau: "Đấu thầu Thông minh",
-        nav_cta: "Đăng ký Dùng thử",
+        nav_roles: "Phân quyền",
+        nav_dauthau: "Phần mềm Đấu thầu",
+        nav_cta: "Dùng thử",
         hero_badge: "SẢN PHẨM 02 · HUDU CFMS · huduvn.com/cfms",
         hero_title: 'Phần Mềm <span class="highlight">Nhận Diện Khuôn Mặt</span>, Quét CCCD &amp; Điều Phối Phòng Khám',
         hero_desc: "Tiếp nhận bệnh nhân tự động bằng khuôn mặt, hỗ trợ <strong>người nhà lấy số khám giùm</strong>, quét thẻ CCCD gắn chip và phát loa gọi số tự động cho Phòng khám, Khoa Thận Nhân Tạo &amp; Bệnh viện.",
@@ -2654,7 +2666,7 @@
         nav_pricing: "Precios",
         nav_features: "Funciones",
         nav_roles: "3 Roles",
-        nav_dauthau: "Licitaciones Inteligentes",
+        nav_dauthau: "Licitaciones",
         nav_cta: "Solicitar Demo",
         hero_badge: "PRODUCTO 02 · HUDU CFMS / QMS · huduvn.com/cfms",
         hero_title: 'Sistema de <span class="highlight">Reconocimiento Facial</span>, Escaneo QR y Turnos para Clínicas',
@@ -2943,7 +2955,7 @@
         nav_features: "機能一覧",
         nav_roles: "3ロール権限",
         nav_dauthau: "スマート入札",
-        nav_cta: "トライアル申込",
+        nav_cta: "デモ申込",
         hero_badge: "製品 02 · HUDU CFMS / QMS · huduvn.com/cfms",
         hero_title: '<span class="highlight">顔認証</span>・ICカードQR読取＆クリニック順番管理システム',
         hero_desc: "顔認証による自動受付、<strong>ご家族による代理発券</strong>、ICチップ付き身分証のQR読取、自動音声呼出を備えた、クリニック・人工透析科・病院向けスマート受付ソリューション。",
@@ -3087,7 +3099,7 @@
         nav_features: "주요 기능",
         nav_roles: "3단계 권한",
         nav_dauthau: "스마트 입찰",
-        nav_cta: "무료 체험 신청",
+        nav_cta: "데모 신청",
         hero_badge: "제품 02 · HUDU CFMS / QMS · huduvn.com/cfms",
         hero_title: '<span class="highlight">안면인식</span>, 신분증 QR 스캔 및 스마트 의원·병원 접수 시스템',
         hero_desc: "안면인식을 통한 환자 자동 접수, <strong>보호자 대리 번호표 발권</strong>, 칩 내장 신분증 QR 스캔 및 자동 음성 호출을 지원하는 의원·인공신장실·병원 전용 솔루션입니다.",
