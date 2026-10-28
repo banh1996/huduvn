@@ -1731,6 +1731,46 @@
       cursor: pointer;
     }
 
+    .rt-mode-tabs {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 6px;
+      padding: 4px;
+      border-radius: 12px;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-light);
+      margin-bottom: 14px;
+    }
+
+    .rt-mode-tab {
+      appearance: none;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 7px 10px;
+      border-radius: 9px;
+      cursor: pointer;
+      transition: all 0.16s ease;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .rt-mode-tab:hover {
+      color: var(--text-heading);
+    }
+
+    .rt-mode-tab.active {
+      background: var(--bg-surface);
+      color: var(--blue-primary);
+      border-color: rgba(0, 102, 204, 0.25);
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
+    }
+
     .rt-donut-layout {
       display: grid;
       grid-template-columns: 180px 1fr;
@@ -2583,7 +2623,12 @@
               <select id="rtProvinceSelect" class="rt-prov-select" onchange="window.selectMapProvince(this.value)" aria-label="Select Province"></select>
             </div>
 
-            <div id="rtProvKpiBanner" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; padding: 11px 14px; border-radius: 12px; background: var(--bg-subtle); border: 1px solid var(--border-light); font-size: 0.88rem;"></div>
+            <div id="rtProvKpiBanner" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 12px; padding: 11px 14px; border-radius: 12px; background: var(--bg-subtle); border: 1px solid var(--border-light); font-size: 0.88rem;"></div>
+
+            <div class="rt-mode-tabs" id="rtChart2ModeTabs" role="tablist">
+              <button type="button" class="rt-mode-tab" data-mode="DOMAIN" onclick="window.setRtChart2Mode('DOMAIN')" data-i18n="rt_c2_tab_dom">Theo Luật Đấu thầu (5 lĩnh vực)</button>
+              <button type="button" class="rt-mode-tab active" data-mode="INDUSTRY" onclick="window.setRtChart2Mode('INDUSTRY')" data-i18n="rt_c2_tab_ind">Theo Ngành nghề (Y tế, CNTT...)</button>
+            </div>
 
             <div class="rt-donut-layout">
               <div style="width: 170px; height: 170px; margin: 0 auto; position: relative;">

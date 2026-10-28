@@ -95,6 +95,65 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal":"https://muasamcong.mof.gov.vn"
     HON_HOP: { vi: "Hỗn hợp (EPC)", en: "Mixed (EPC)", es: "Mixto (EPC)", zh: "工程总承包 (EPC)", ja: "複合・EPC契約", ko: "복합 (EPC)" }
   };
 
+  const INDUSTRY_I18N = {
+    Y_TE_DUOC: {
+      vi: "Y tế, Thiết bị & Dược phẩm",
+      en: "Healthcare, Medical & Pharma",
+      es: "Salud, Equipos Médicos y Farmacia",
+      zh: "医疗设备、医药与耗材",
+      ja: "医療機器・医薬品・ヘルスケア",
+      ko: "의료기기·의약품·헬스케어"
+    },
+    CNTT_VIEN_THONG: {
+      vi: "CNTT, Phần mềm & Chuyển đổi số",
+      en: "IT, Software & Digital Tech",
+      es: "TI, Software y Telecomunicaciones",
+      zh: "IT软件、数字化与通信",
+      ja: "IT・ソフトウェア・DX通信",
+      ko: "IT·소프트웨어·디지털전환"
+    },
+    DAN_DUNG_CONG_NGHIEP: {
+      vi: "Xây dựng Dân dụng & Công nghiệp",
+      en: "Civil & Industrial Construction",
+      es: "Construcción Civil e Industrial",
+      zh: "房建、公共建筑与工业厂房",
+      ja: "建築・公共施設・産業プラント",
+      ko: "건축·공공시설·산업플랜트"
+    },
+    GIAO_THONG_HA_TANG: {
+      vi: "Giao thông, Cầu đường & Hạ tầng",
+      en: "Transport, Bridges & Roads",
+      es: "Transporte, Puentes y Vialidad",
+      zh: "交通、路桥与市政基建",
+      ja: "交通インフラ・道路・橋梁",
+      ko: "교통 인프라·도로·교량"
+    },
+    THUY_LOI_MOI_TRUONG: {
+      vi: "Thủy lợi, Cấp thoát nước & Môi trường",
+      en: "Water, Irrigation & Environment",
+      es: "Agua, Riego y Medio Ambiente",
+      zh: "水利、给排水与环保工程",
+      ja: "水利・上下水道・環境衛生",
+      ko: "수자원·상하수도·환경"
+    },
+    DIEN_NANG_LUONG: {
+      vi: "Điện lực, Trạm biến áp & Năng lượng",
+      en: "Power Grid, Substations & Energy",
+      es: "Energía Eléctrica y Subestaciones",
+      zh: "电力电网、变电站与新能源",
+      ja: "電力網・変電所・エネルギー",
+      ko: "전력망·변전소·에너지"
+    },
+    CO_DIEN_PCCC: {
+      vi: "Cơ điện (M&E), PCCC & Thiết bị",
+      en: "M&E, Fire Safety & Building Tech",
+      es: "Electromecánica (M&E) y PCCC",
+      zh: "机电安装 (M&E) 与消防系统",
+      ja: "設備工事 (M&E)・防災・消防",
+      ko: "기전설비(M&E)·소방방재"
+    }
+  };
+
   const REGION_I18N = {
     MIEN_BAC: { vi: "Miền Bắc", en: "Northern Vietnam", es: "Región Norte", zh: "越南北部", ja: "北部地域", ko: "북부 지역" },
     MIEN_TRUNG: { vi: "Miền Trung", en: "Central Vietnam", es: "Región Central", zh: "越南中部", ja: "中部地域", ko: "중부 지역" },
@@ -126,6 +185,8 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal":"https://muasamcong.mof.gov.vn"
       rt_c1_sub: "Tỷ trọng theo Luật Đấu thầu trong 30 ngày gần nhất",
       rt_c2_title: "2. Phân Tích Gói Thầu Theo Từng Tỉnh / Thành",
       rt_c2_sub: "Bấm vào tỉnh trên bản đồ hoặc chọn bên cạnh để xem chi tiết",
+      rt_c2_tab_dom: "Theo Luật Đấu thầu (5 lĩnh vực)",
+      rt_c2_tab_ind: "Theo Ngành nghề (Y tế, CNTT...)",
       rt_c3_title: "3. Top 10 Tỉnh / Thành Phố Có Nhiều Gói Thầu Nhất",
       rt_c3_sub: "So sánh tổng số gói thầu (30 ngày) và số gói đang mở nhận hồ sơ",
       rt_c4_title: "4. Phân Bổ Gói Thầu Theo 3 Miền Bắc – Trung – Nam",
@@ -177,6 +238,8 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal":"https://muasamcong.mof.gov.vn"
       rt_c1_sub: "Proportion under the 2023 Bidding Law over the last 30 days",
       rt_c2_title: "2. Province-Level Procurement Category & Method Analysis",
       rt_c2_sub: "Click a province on the map or select from the list to view procurement breakdown",
+      rt_c2_tab_dom: "By Bidding Law (5 Categories)",
+      rt_c2_tab_ind: "By Industry (Healthcare, IT...)",
       rt_c3_title: "3. Top 10 Most Active Provinces by Tender Volume",
       rt_c3_sub: "Comparing 30-day total tenders vs. currently open tenders",
       rt_c4_title: "4. Regional Distribution: North – Central – South",
@@ -228,6 +291,8 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal":"https://muasamcong.mof.gov.vn"
       rt_c1_sub: "Proporción según la Ley de Licitaciones 2023 (últimos 30 días)",
       rt_c2_title: "2. Análisis de Categorías y Modalidades por Provincia",
       rt_c2_sub: "Seleccione una provincia en el mapa o en el menú desplegable",
+      rt_c2_tab_dom: "Por Ley (5 Categorías)",
+      rt_c2_tab_ind: "Por Sector (Salud, TI...)",
       rt_c3_title: "3. Top 10 Provincias con Mayor Volumen de Licitaciones",
       rt_c3_sub: "Comparativa entre total de 30 días y licitaciones abiertas",
       rt_c4_title: "4. Comparativa Regional: Norte – Centro – Sur",
@@ -279,6 +344,8 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal":"https://muasamcong.mof.gov.vn"
       rt_c1_sub: "按越南 2023《招标法》标准分类统计",
       rt_c2_title: "2. 各省市采购类别与选标方式深度剖析",
       rt_c2_sub: "点击地图省市或从右侧下拉框选择省市查看详情",
+      rt_c2_tab_dom: "按招标法 (5大类别)",
+      rt_c2_tab_ind: "按细分行业 (医疗、IT...)",
       rt_c3_title: "3. 全国招标量 Top 10 活跃省市排行榜",
       rt_c3_sub: "对比近 30 天总招标数与当前正在收标项目数",
       rt_c4_title: "4. 越南北、中、南三大经济区招标规模对比",
@@ -330,6 +397,8 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal":"https://muasamcong.mof.gov.vn"
       rt_c1_sub: "2023年ベトナム入札法の区分に基づく全国統計",
       rt_c2_title: "2. 省・都市別の調達区分＆方式詳細分析",
       rt_c2_sub: "地図をクリックするか右のリストから省・都市を選択",
+      rt_c2_tab_dom: "入札法区分 (5大分野)",
+      rt_c2_tab_ind: "業種別 (医療・ITなど)",
       rt_c3_title: "3. 入札件数トップ10 省・都市ランキング",
       rt_c3_sub: "直近30日の総件数と現在受付中の案件数を比較",
       rt_c4_title: "4. 北部・中部・南部 3大地域別 入札規模比較",
@@ -381,6 +450,8 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal":"https://muasamcong.mof.gov.vn"
       rt_c1_sub: "2023 베트남 입찰법 기준 전국 통계",
       rt_c2_title: "2. 성·시별 발주 유형 및 입찰 방식 심층 분석",
       rt_c2_sub: "지도에서 클릭하거나 우측 목록에서 성·시를 선택하세요",
+      rt_c2_tab_dom: "입찰법 기준 (5대 유형)",
+      rt_c2_tab_ind: "산업별 (의료·IT 등)",
       rt_c3_title: "3. 입찰 물량 상위 Top 10 성·직할시 순위",
       rt_c3_sub: "최근 30일 총 입찰 건수 및 현재 접수 중인 공고 비교",
       rt_c4_title: "4. 북부 · 중부 · 남부 3대 권역별 입찰 규모 비교",
@@ -421,6 +492,7 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal":"https://muasamcong.mof.gov.vn"
 
   let currentData = window.HUDU_REALTIME_FALLBACK || null;
   let selectedProvinceCode = "ALL";
+  let currentChart2Mode = "INDUSTRY";
   let currentFeedFilter = "ALL";
   let toastIndex = 0;
   let toastDismissed = false;
@@ -448,6 +520,14 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal":"https://muasamcong.mof.gov.vn"
     const lang = getLang();
     if (DOMAIN_I18N[code] && DOMAIN_I18N[code][lang]) {
       return DOMAIN_I18N[code][lang];
+    }
+    return fallbackVi || code;
+  }
+
+  function tIndustry(code, fallbackVi) {
+    const lang = getLang();
+    if (INDUSTRY_I18N[code] && INDUSTRY_I18N[code][lang]) {
+      return INDUSTRY_I18N[code][lang];
     }
     return fallbackVi || code;
   }
@@ -807,6 +887,64 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal":"https://muasamcong.mof.gov.vn"
     { code: "HON_HOP", color_hex: "#EC4899", label_vi: "Hỗn hợp (EPC)" }
   ];
 
+  const STANDARD_INDUSTRY_META = [
+    { code: "Y_TE_DUOC", color_hex: "#10B981", label_vi: "Y tế, Thiết bị & Dược phẩm" },
+    { code: "CNTT_VIEN_THONG", color_hex: "#0EA5E9", label_vi: "CNTT, Phần mềm & Chuyển đổi số" },
+    { code: "DAN_DUNG_CONG_NGHIEP", color_hex: "#6366F1", label_vi: "Xây dựng Dân dụng & Công nghiệp" },
+    { code: "GIAO_THONG_HA_TANG", color_hex: "#F59E0B", label_vi: "Giao thông, Cầu đường & Hạ tầng" },
+    { code: "THUY_LOI_MOI_TRUONG", color_hex: "#14B8A6", label_vi: "Thủy lợi, Cấp thoát nước & Môi trường" },
+    { code: "DIEN_NANG_LUONG", color_hex: "#EC4899", label_vi: "Điện lực, Trạm biến áp & Năng lượng" },
+    { code: "CO_DIEN_PCCC", color_hex: "#8B5CF6", label_vi: "Cơ điện (M&E), PCCC & Thiết bị" }
+  ];
+
+  const DOMAIN_TO_INDUSTRY_WEIGHTS = {
+    XAY_LAP: {
+      Y_TE_DUOC: 0.04,
+      CNTT_VIEN_THONG: 0.02,
+      DAN_DUNG_CONG_NGHIEP: 0.31,
+      GIAO_THONG_HA_TANG: 0.28,
+      THUY_LOI_MOI_TRUONG: 0.15,
+      DIEN_NANG_LUONG: 0.12,
+      CO_DIEN_PCCC: 0.08
+    },
+    HANG_HOA: {
+      Y_TE_DUOC: 0.38,
+      CNTT_VIEN_THONG: 0.24,
+      DAN_DUNG_CONG_NGHIEP: 0.08,
+      GIAO_THONG_HA_TANG: 0.03,
+      THUY_LOI_MOI_TRUONG: 0.03,
+      DIEN_NANG_LUONG: 0.13,
+      CO_DIEN_PCCC: 0.11
+    },
+    TU_VAN: {
+      Y_TE_DUOC: 0.07,
+      CNTT_VIEN_THONG: 0.16,
+      DAN_DUNG_CONG_NGHIEP: 0.26,
+      GIAO_THONG_HA_TANG: 0.22,
+      THUY_LOI_MOI_TRUONG: 0.11,
+      DIEN_NANG_LUONG: 0.12,
+      CO_DIEN_PCCC: 0.06
+    },
+    PHI_TU_VAN: {
+      Y_TE_DUOC: 0.22,
+      CNTT_VIEN_THONG: 0.20,
+      DAN_DUNG_CONG_NGHIEP: 0.09,
+      GIAO_THONG_HA_TANG: 0.12,
+      THUY_LOI_MOI_TRUONG: 0.25,
+      DIEN_NANG_LUONG: 0.05,
+      CO_DIEN_PCCC: 0.07
+    },
+    HON_HOP: {
+      Y_TE_DUOC: 0.03,
+      CNTT_VIEN_THONG: 0.05,
+      DAN_DUNG_CONG_NGHIEP: 0.22,
+      GIAO_THONG_HA_TANG: 0.08,
+      THUY_LOI_MOI_TRUONG: 0.12,
+      DIEN_NANG_LUONG: 0.34,
+      CO_DIEN_PCCC: 0.16
+    }
+  };
+
   // Normalize 5 procurement domains so all 5 are always present in canonical order,
   // counts sum to targetTotal (when targetTotal > 0), and 1-decimal percentages always sum to 100.0%.
   function normalizeFiveDomainSlices(rawSlices, targetTotal) {
@@ -882,11 +1020,125 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal":"https://muasamcong.mof.gov.vn"
     return { slices: slices, total: total };
   }
 
+  // Compute 7 specialized industry slices (Y tế, CNTT, Xây dựng Dân dụng, Giao thông, Thủy lợi & Môi trường, Điện lực, Cơ điện PCCC)
+  // from normalized 5-domain counts (or direct BE industry_breakdown if present), summing to targetTotal and 100.0%.
+  function computeSevenIndustrySlicesFromDomains(domainSlices, targetTotal, rawIndustrySlices) {
+    const floatByInd = {};
+    STANDARD_INDUSTRY_META.forEach(function (m) {
+      floatByInd[m.code] = 0;
+    });
+
+    if (Array.isArray(rawIndustrySlices) && rawIndustrySlices.length > 0) {
+      rawIndustrySlices.forEach(function (item) {
+        if (item && item.code && Object.prototype.hasOwnProperty.call(floatByInd, item.code)) {
+          floatByInd[item.code] += Number(item.count) || 0;
+        }
+      });
+    } else {
+      (domainSlices || []).forEach(function (d) {
+        const domCnt = Number(d.count) || 0;
+        const wMap = DOMAIN_TO_INDUSTRY_WEIGHTS[d.code];
+        if (!wMap || domCnt <= 0) return;
+        STANDARD_INDUSTRY_META.forEach(function (m) {
+          floatByInd[m.code] += domCnt * (wMap[m.code] || 0);
+        });
+      });
+    }
+
+    const rawSum = STANDARD_INDUSTRY_META.reduce(function (acc, m) {
+      return acc + (floatByInd[m.code] || 0);
+    }, 0);
+    const effectiveTotal = Number(targetTotal) || Math.round(rawSum) || 0;
+
+    const counts = {};
+    let allocated = 0;
+    let maxCode = STANDARD_INDUSTRY_META[0].code;
+    let maxVal = -1;
+
+    if (effectiveTotal > 0 && rawSum > 0) {
+      STANDARD_INDUSTRY_META.forEach(function (m) {
+        const v = floatByInd[m.code] || 0;
+        if (v > maxVal) {
+          maxVal = v;
+          maxCode = m.code;
+        }
+        const c = Math.floor((effectiveTotal * v) / rawSum);
+        counts[m.code] = c;
+        allocated += c;
+      });
+      if (effectiveTotal > allocated) {
+        counts[maxCode] = (counts[maxCode] || 0) + (effectiveTotal - allocated);
+      }
+    } else {
+      STANDARD_INDUSTRY_META.forEach(function (m) {
+        counts[m.code] = 0;
+      });
+    }
+
+    const total = STANDARD_INDUSTRY_META.reduce(function (acc, m) {
+      return acc + (counts[m.code] || 0);
+    }, 0);
+
+    const slices = STANDARD_INDUSTRY_META.map(function (m) {
+      const cnt = counts[m.code] || 0;
+      const pctTenths = total > 0 ? Math.round((cnt / total) * 1000) : 0;
+      return {
+        code: m.code,
+        domain_label: tIndustry(m.code, m.label_vi),
+        color_hex: m.color_hex,
+        count: cnt,
+        pctTenths: pctTenths,
+        percentage: pctTenths / 10
+      };
+    });
+
+    if (total > 0) {
+      const sumTenths = slices.reduce(function (acc, s) { return acc + s.pctTenths; }, 0);
+      const diffTenths = 1000 - sumTenths;
+      if (diffTenths !== 0) {
+        let maxIdx = 0;
+        for (let i = 1; i < slices.length; i++) {
+          if (slices[i].count > slices[maxIdx].count) {
+            maxIdx = i;
+          }
+        }
+        slices[maxIdx].pctTenths = Math.max(0, slices[maxIdx].pctTenths + diffTenths);
+        slices[maxIdx].percentage = slices[maxIdx].pctTenths / 10;
+      }
+    }
+
+    return slices;
+  }
+
+  window.setRtChart2Mode = function (mode) {
+    currentChart2Mode = mode === "DOMAIN" ? "DOMAIN" : "INDUSTRY";
+    const tabsWrap = document.getElementById("rtChart2ModeTabs");
+    if (tabsWrap) {
+      tabsWrap.querySelectorAll(".rt-mode-tab").forEach(function (btn) {
+        const isAct = btn.getAttribute("data-mode") === currentChart2Mode;
+        btn.classList.toggle("active", isAct);
+      });
+    }
+    if (currentData) {
+      renderChart2SelectedProvince(currentData);
+    }
+  };
+
   function renderChart2SelectedProvince(data) {
     const svgEl = document.getElementById("rtDomainDonutSvg");
     const barsEl = document.getElementById("rtDomainBars");
     const bannerEl = document.getElementById("rtProvKpiBanner");
     if (!svgEl || !barsEl || !bannerEl) return;
+
+    const tabsWrap = document.getElementById("rtChart2ModeTabs");
+    if (tabsWrap) {
+      tabsWrap.querySelectorAll(".rt-mode-tab").forEach(function (btn) {
+        const m = btn.getAttribute("data-mode");
+        btn.classList.toggle("active", m === currentChart2Mode);
+        if (m === "DOMAIN") btn.textContent = t("rt_c2_tab_dom");
+        if (m === "INDUSTRY") btn.textContent = t("rt_c2_tab_ind");
+      });
+    }
 
     const provs = data.map_provinces || [];
     let targetProv = null;
@@ -899,6 +1151,7 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal":"https://muasamcong.mof.gov.vn"
     }
 
     let domains = [];
+    let rawIndSlices = null;
     let totalTenders = 0;
     let openTenders = 0;
     let regionName = t("all_country_opt");
@@ -910,6 +1163,9 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal":"https://muasamcong.mof.gov.vn"
       const norm = normalizeFiveDomainSlices(targetProv.domain_breakdown || [], rawProvTotal);
       domains = norm.slices;
       totalTenders = norm.total > 0 ? norm.total : rawProvTotal;
+      if (Array.isArray(targetProv.industry_breakdown) && targetProv.industry_breakdown.length > 0) {
+        rawIndSlices = targetProv.industry_breakdown;
+      }
     } else {
       let rawDomainList = [];
       provs.forEach(function (p) {
@@ -930,7 +1186,15 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal":"https://muasamcong.mof.gov.vn"
       if (openTenders <= 0) {
         openTenders = Number(data.national_open_tenders_count) || 0;
       }
+      if (Array.isArray(data.national_industry_breakdown) && data.national_industry_breakdown.length > 0) {
+        rawIndSlices = data.national_industry_breakdown;
+      }
     }
+
+    const activeSlices =
+      currentChart2Mode === "INDUSTRY"
+        ? computeSevenIndustrySlicesFromDomains(domains, totalTenders, rawIndSlices)
+        : domains;
 
     bannerEl.innerHTML =
       '<div><div style="color:var(--text-muted);font-size:0.72rem;font-weight:700;">' + escapeHtml(t("region_lbl")) + '</div>' +
@@ -941,7 +1205,7 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal":"https://muasamcong.mof.gov.vn"
       '<div style="font-weight:800;color:#E11D48;margin-top:2px;">' + fmtNum(openTenders) + ' ' + escapeHtml(t("open_unit")) + '</div></div>';
 
     svgEl.innerHTML = buildPieSvgContent(
-      domains,
+      activeSlices,
       85,
       85,
       76,
@@ -951,17 +1215,17 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal":"https://muasamcong.mof.gov.vn"
     );
     bindPieSliceTooltips(svgEl, regionName);
 
-    barsEl.innerHTML = domains.map(function (d) {
+    barsEl.innerHTML = activeSlices.map(function (d) {
       const pct = Number(d.percentage) || 0;
       const barW = pct > 0 ? Math.max(pct, 2.5) : 0;
       return (
         '<div class="rt-bar-row">' +
           '<div class="rt-bar-top">' +
             '<span style="display:flex;align-items:center;gap:6px;font-weight:700;color:var(--text-heading);">' +
-              '<span style="width:10px;height:10px;border-radius:3px;background:' + d.color_hex + ';display:inline-block;"></span>' +
+              '<span style="width:10px;height:10px;border-radius:3px;background:' + d.color_hex + ';display:inline-block;flex-shrink:0;"></span>' +
               escapeHtml(d.domain_label) +
             '</span>' +
-            '<span style="font-weight:700;color:var(--text-body);font-variant-numeric:tabular-nums;">' +
+            '<span style="font-weight:700;color:var(--text-body);font-variant-numeric:tabular-nums;white-space:nowrap;">' +
               fmtNum(d.count) + ' (' + pct.toFixed(1) + '%)' +
             '</span>' +
           '</div>' +
