@@ -1818,8 +1818,8 @@ window.HUDU_REALTIME_FALLBACK = {"source_portal":"https://muasamcong.mof.gov.vn"
   // Hook into language switcher so all charts and map labels re-render in the chosen language
   const origSetLang = window.setLanguage;
   if (typeof origSetLang === "function") {
-    window.setLanguage = function (lang) {
-      origSetLang(lang);
+    window.setLanguage = function (lang, isManual) {
+      origSetLang(lang, isManual);
       if (currentData) {
         renderAllRealtimeWidgets(currentData);
       }

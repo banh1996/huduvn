@@ -2355,7 +2355,7 @@
 
       <div class="nav-actions">
         <div class="lang-select-wrap">
-          <select id="langSelect" class="lang-select" onchange="setLanguage(this.value)" aria-label="Language">
+          <select id="langSelect" class="lang-select" onchange="setLanguage(this.value, true)" aria-label="Language">
             <option value="vi">🇻🇳 Tiếng Việt</option>
             <option value="en">🇺🇸 English</option>
             <option value="es">🇪🇸 Español</option>
@@ -3114,13 +3114,13 @@
           <ul>
             <li>Website: <a href="https://huduvn.com">huduvn.com</a></li>
             <li>Email: <a href="mailto:contact@huduvn.com">contact@huduvn.com</a></li>
-            <li>Hỗ trợ: 24/7 tận tâm</li>
+            <li data-i18n="footer_support">Hỗ trợ: 24/7 tận tâm</li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <span>&copy; 2026 Công nghệ HUDU. Bảo lưu mọi quyền.</span>
+        <span data-i18n="footer_copy">&copy; 2026 Công nghệ HUDU. Bảo lưu mọi quyền.</span>
         <span data-i18n="footer_tagline">Giải Pháp Phần Mềm &amp; Tự Động Hóa Vận Hành Doanh Nghiệp</span>
       </div>
     </div>
@@ -3378,7 +3378,10 @@
         f_link_tech2: "Chấm Điểm Phù Hợp (0–10 Điểm)",
         f_link_tech3: "Nhận Diện Khuôn Mặt & CCCD",
         f_link_tech4: "Loa Gọi Số & TV Phòng Chờ",
-        footer_tagline: "Giải Pháp Phần Mềm & Tự Động Hóa Vận Hành Doanh Nghiệp"
+        footer_support: "Hỗ trợ: 24/7 tận tâm",
+        footer_copy: "&copy; 2026 Công nghệ HUDU. Bảo lưu mọi quyền.",
+        footer_tagline: "Giải Pháp Phần Mềm & Tự Động Hóa Vận Hành Doanh Nghiệp",
+        doc_title: "HUDU — Giải Pháp Phần Mềm & Tự Động Hóa Doanh Nghiệp"
       },
       en: {
         nav_solutions: "Solutions",
@@ -3542,7 +3545,10 @@
         f_link_tech2: "Algorithmic Bid Scoring",
         f_link_tech3: "Face Recognition & ID Scan",
         f_link_tech4: "Voice Calling & Waiting TV",
-        footer_tagline: "Enterprise Software Solutions & Workflow Automation"
+        footer_support: "Support: 24/7 Dedicated Assistance",
+        footer_copy: "&copy; 2026 HUDU Technology. All rights reserved.",
+        footer_tagline: "Enterprise Software Solutions & Workflow Automation",
+        doc_title: "HUDU — Smart Software Solutions & Enterprise Workflow Automation"
       },
       es: {
         nav_solutions: "Soluciones",
@@ -3706,7 +3712,10 @@
         f_link_tech2: "Puntaje Algorítmico de Capacidad",
         f_link_tech3: "Reconocimiento Facial y QR",
         f_link_tech4: "Llamado por Voz y TV",
-        footer_tagline: "Soluciones de Software y Automatización Empresarial"
+        footer_support: "Soporte: Atención 24/7",
+        footer_copy: "&copy; 2026 HUDU Technology. Todos los derechos reservados.",
+        footer_tagline: "Soluciones de Software y Automatización Empresarial",
+        doc_title: "HUDU — Soluciones de Software y Automatización Empresarial"
       },
       zh: {
         nav_solutions: "解决方案",
@@ -3870,7 +3879,10 @@
         f_link_tech2: "智能算法投标评分",
         f_link_tech3: "人脸识别与身份证扫码",
         f_link_tech4: "语音叫号与候诊电视",
-        footer_tagline: "企业级软件解决方案与业务流程自动化"
+        footer_support: "技术支持：7×24全天候服务",
+        footer_copy: "&copy; 2026 HUDU 科技。保留所有权利。",
+        footer_tagline: "企业级软件解决方案与业务流程自动化",
+        doc_title: "HUDU — 智能软件解决方案与企业业务流程自动化"
       },
       ja: {
         nav_solutions: "ソリューション",
@@ -4034,7 +4046,10 @@
         f_link_tech2: "アルゴリズム入札適性評価",
         f_link_tech3: "顔認証＆身分証 QR 受付",
         f_link_tech4: "音声呼出＆待合室 TV",
-        footer_tagline: "エンタープライズソフトウェア＆業務自動化ソリューション"
+        footer_support: "サポート：24時間365日対応",
+        footer_copy: "&copy; 2026 HUDU Technology. All rights reserved.",
+        footer_tagline: "エンタープライズソフトウェア＆業務自動化ソリューション",
+        doc_title: "HUDU — スマートソフトウェア開発＆業務プロセス自動化ソリューション"
       },
       ko: {
         nav_solutions: "솔루션",
@@ -4198,7 +4213,10 @@
         f_link_tech2: "알고리즘 입찰 역량 채점",
         f_link_tech3: "안면인식 및 신분증 스캔",
         f_link_tech4: "음성 호출 및 대기실 TV",
-        footer_tagline: "엔터프라이즈 소프트웨어 및 비즈니스 자동화 솔루션"
+        footer_support: "기술 지원: 24/7 상시 지원",
+        footer_copy: "&copy; 2026 HUDU Technology. All rights reserved.",
+        footer_tagline: "엔터프라이즈 소프트웨어 및 비즈니스 자동화 솔루션",
+        doc_title: "HUDU — 스마트 소프트웨어 솔루션 및 비즈니스 운영 자동화"
       }
     };
 
@@ -4390,14 +4408,18 @@
       try { localStorage.setItem('hudu_theme', isDark ? 'dark' : 'light'); } catch (e) {}
     }
 
-    function setLanguage(lang) {
-      currentLang = I18N[lang] ? lang : 'vi';
+    function setLanguage(lang, isManual) {
+      currentLang = I18N[lang] ? lang : 'en';
       document.documentElement.lang = currentLang;
       const sel = document.getElementById('langSelect');
       if (sel && sel.value !== currentLang) sel.value = currentLang;
-      try { localStorage.setItem('hudu_lang', currentLang); } catch (e) {}
+      try {
+        localStorage.setItem('hudu_lang', currentLang);
+        if (isManual) localStorage.setItem('hudu_lang_manual', '1');
+      } catch (e) {}
 
       const dict = I18N[currentLang];
+      if (dict.doc_title) document.title = dict.doc_title;
 
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
@@ -4601,22 +4623,79 @@
       e.target.reset();
     }
 
-    // Initialize saved theme & language across pages
+    function mapCountryToLang(countryCode) {
+      const cc = String(countryCode || '').trim().toUpperCase();
+      if (cc === 'VN') return 'vi';
+      if (cc === 'CN' || cc === 'TW' || cc === 'HK' || cc === 'MO') return 'zh';
+      if (cc === 'JP') return 'ja';
+      return 'en';
+    }
+
+    function detectFallbackLangByTimezone() {
+      try {
+        const tz = (Intl.DateTimeFormat().resolvedOptions().timeZone || '').toLowerCase();
+        if (tz.includes('ho_chi_minh') || tz.includes('saigon') || tz.includes('hanoi')) return 'vi';
+        if (tz.includes('shanghai') || tz.includes('chongqing') || tz.includes('harbin') || tz.includes('urumqi') || tz.includes('hong_kong') || tz.includes('taipei') || tz.includes('macau')) return 'zh';
+        if (tz.includes('tokyo')) return 'ja';
+      } catch (e) {}
+      return 'en';
+    }
+
+    async function detectLanguageByIp() {
+      const endpoints = [
+        { url: 'https://api.country.is/', extract: d => d && d.country },
+        { url: 'https://get.geojs.io/v1/ip/country.json', extract: d => d && d.country },
+        { url: 'https://ipwho.is/', extract: d => d && d.success !== false ? d.country_code : null }
+      ];
+      for (const ep of endpoints) {
+        try {
+          const ctrl = typeof AbortController !== 'undefined' ? new AbortController() : null;
+          const timer = ctrl ? setTimeout(() => ctrl.abort(), 2500) : null;
+          const res = await fetch(ep.url, { signal: ctrl ? ctrl.signal : undefined, cache: 'no-store' });
+          if (timer) clearTimeout(timer);
+          if (res.ok) {
+            const data = await res.json();
+            const cc = ep.extract(data);
+            if (cc && typeof cc === 'string' && cc.length === 2) {
+              return mapCountryToLang(cc);
+            }
+          }
+        } catch (e) {}
+      }
+      return null;
+    }
+
+    // Initialize saved theme & IP-based language across pages
     (function initPreferences() {
       try {
         const savedTheme = localStorage.getItem('hudu_theme');
         if (savedTheme === 'light' || savedTheme === 'dark') {
           applyThemeState(savedTheme === 'dark');
         }
+        const manualChoice = localStorage.getItem('hudu_lang_manual') === '1';
         const savedLang = localStorage.getItem('hudu_lang');
-        if (savedLang && I18N[savedLang]) {
-          setLanguage(savedLang);
+        if (manualChoice && savedLang && I18N[savedLang]) {
+          setLanguage(savedLang, false);
+          return;
+        }
+        const cachedIpLang = sessionStorage.getItem('hudu_ip_lang');
+        if (cachedIpLang && I18N[cachedIpLang]) {
+          setLanguage(cachedIpLang, false);
           return;
         }
       } catch (e) {}
-      populateCsmsSelect();
-      renderTenders();
-      renderCsms();
+
+      // Apply instant timezone fallback while live GeoIP resolves
+      setLanguage(detectFallbackLangByTimezone(), false);
+
+      detectLanguageByIp().then(ipLang => {
+        if (!ipLang || !I18N[ipLang]) return;
+        try {
+          sessionStorage.setItem('hudu_ip_lang', ipLang);
+          if (localStorage.getItem('hudu_lang_manual') === '1') return;
+        } catch (e) {}
+        setLanguage(ipLang, false);
+      });
     })();
   </script>
 </body>
