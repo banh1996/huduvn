@@ -354,9 +354,29 @@
     }
 
     .btn-lg {
-      height: 50px;
-      padding: 0 28px;
+      min-height: 50px;
+      height: auto;
+      padding: 10px 24px;
       font-size: 1rem;
+      white-space: normal;
+      text-align: center;
+      line-height: 1.35;
+      max-width: 100%;
+    }
+
+    .pricing-card .btn {
+      flex-direction: column;
+      gap: 2px;
+      min-height: 52px;
+      padding: 10px 20px;
+    }
+
+    .pricing-card .btn .btn-cta-sub {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 500;
+      opacity: 0.92;
+      line-height: 1.25;
     }
 
     /* ==========================================================================
@@ -1925,7 +1945,7 @@
           </div>
 
           <a href="#contact" onclick="selectPricingPlan('CFMS_PREMIUM')" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;" data-i18n="plan2_cta">
-            Đăng Ký Gói Nâng Cao (Miễn Phí Lắp Đặt) &rarr;
+            <span>Đăng Ký Gói Nâng Cao &rarr;</span><span class="btn-cta-sub">(Miễn Phí Lắp Đặt)</span>
           </a>
         </div>
 
@@ -2433,7 +2453,7 @@
         plan2_f4: "<strong>Đa tài khoản nhân sự (10 Tài khoản / Vai trò):</strong> Lên tới <strong>30 tài khoản</strong> cho Quản trị viên, Bác sĩ, Điều dưỡng làm việc đồng thời trên nhiều máy.",
         plan2_f5: "<strong>Đặc quyền Bác sĩ &amp; Ưu tiên Cấp cứu:</strong> Cấp phiếu khám trực tiếp tại bàn và bật chế độ <strong>Ưu tiên Cấp cứu</strong> để chuyển bệnh nhân lên đầu danh sách chờ.",
         plan2_f6: "<strong>Báo cáo Thống kê &amp; Sao lưu Định kỳ:</strong> Thống kê chi tiết lưu lượng bệnh nhân theo ca trực/ngày/tháng và hỗ trợ sao lưu hồ sơ an toàn.",
-        plan2_cta: "Đăng Ký Gói Nâng Cao (Miễn Phí Lắp Đặt) →",
+        plan2_cta: '<span>Đăng Ký Gói Nâng Cao &rarr;</span><span class="btn-cta-sub">(Miễn Phí Lắp Đặt)</span>',
         plan3_tier: "GÓI BỆNH VIỆN & CHUỖI",
         plan3_name: "Bệnh Viện Đa Khoa & Chuỗi Cơ Sở",
         plan3_sub: "Giải pháp thiết kế riêng cho Bệnh viện tuyến Tỉnh/Trung ương hoặc Chuỗi phòng khám nhiều chi nhánh.",
@@ -2582,7 +2602,7 @@
         plan2_f4: "<strong>Multi-Staff Accounts (Up to 10 Accounts / Role):</strong> Up to <strong>30 staff accounts</strong> for Admins, Doctors, and Nurses working concurrently.",
         plan2_f5: "<strong>Doctor Privileges &amp; Emergency Priority:</strong> Issue tickets directly at the desk and enable <strong>Emergency Priority</strong> to place urgent patients at the top of the queue.",
         plan2_f6: "<strong>Statistical Reports &amp; Scheduled Backups:</strong> Detailed patient volume reports by shift/day/month and safe data backups.",
-        plan2_cta: "Get Premium (Free Setup) →",
+        plan2_cta: '<span>Get Premium &rarr;</span><span class="btn-cta-sub">(Free Setup)</span>',
         plan3_tier: "ENTERPRISE · HOSPITAL & CHAINS",
         plan3_name: "General Hospital & Clinic Chains",
         plan3_sub: "Tailored solution for Provincial/Central Hospitals or multi-branch clinic chains requiring hospital software integration.",
@@ -2731,7 +2751,7 @@
         plan2_f4: "<strong>Múltiples cuentas de personal (Hasta 10 Cuentas / Rol):</strong> Hasta <strong>30 cuentas</strong> para Administradores, Médicos y Enfermeras trabajando en simultáneo.",
         plan2_f5: "<strong>Privilegios Médicos y Prioridad de Emergencia:</strong> Emisión directa de turnos en mesa y modo <strong>Prioridad de Emergencia</strong> al inicio de la fila.",
         plan2_f6: "<strong>Informes Estadísticos y Respaldo Periódico:</strong> Estadísticas detalladas de pacientes por turno/día/mes y copias de seguridad seguras.",
-        plan2_cta: "Elegir Plan Premium (Instalación Gratis) →",
+        plan2_cta: '<span>Elegir Plan Premium &rarr;</span><span class="btn-cta-sub">(Instalación Gratis)</span>',
         plan3_tier: "PLAN HOSPITALARIO Y CADENAS · ENTERPRISE",
         plan3_name: "Hospital General y Red de Clínicas",
         plan3_sub: "Solución a medida para Hospitales Provinciales/Centrales o cadenas de clínicas que requieren integración con sistemas hospitalarios.",
@@ -2880,7 +2900,7 @@
         plan2_f4: "<strong>多医护人员账号 (每角色多达 10 个账号)：</strong>最高支持 <strong>30 个账号</strong>供管理员、医生、护士在多台电脑上同时协同办公。",
         plan2_f5: "<strong>医生专属派号与急诊优先插队：</strong>支持在工作台直接派发就诊号，并可开启<strong>急诊优先模式</strong>将危急患者置顶优先呼叫。",
         plan2_f6: "<strong>统计报表与定期数据备份：</strong>按班次/日/月统计接诊流量，支持安全便捷的档案数据备份。",
-        plan2_cta: "订购高级版 Premium (免安装费) →",
+        plan2_cta: '<span>订购高级版 Premium &rarr;</span><span class="btn-cta-sub">(免安装费)</span>',
         plan3_tier: "医院与连锁机构 · ENTERPRISE",
         plan3_name: "综合医院与多院区连锁",
         plan3_sub: "面向省/中央级综合医院或需要对接医院信息系统的多分支连锁诊所的全面定制方案。",
@@ -3029,7 +3049,7 @@
         plan2_f4: "<strong>複数スタッフアカウント (各ロール最大10名)：</strong>管理者・医師・看護師向けに<strong>最大30アカウント</strong>を発行し複数PCで同時利用可能。",
         plan2_f5: "<strong>医師専用権限＆緊急優先呼出：</strong>デスクでの直接番号発券や、<strong>緊急優先モード</strong>による待機リスト最上位への即時割込に対応。",
         plan2_f6: "<strong>統計レポート＆定期データバックアップ：</strong>シフト・日・月別の来院数集計レポートと安全なデータバックアップ機能を提供。",
-        plan2_cta: "Premium を申し込む (初期費用無料) →",
+        plan2_cta: '<span>Premium を申し込む &rarr;</span><span class="btn-cta-sub">(初期費用無料)</span>',
         plan3_tier: "病院・医療法人 · ENTERPRISE",
         plan3_name: "総合病院＆複数分院チェーン",
         plan3_sub: "病院システムとの連携が必要な総合病院や複数拠点を持つクリニックグループ向けオーダーメイドプラン。",
@@ -3178,7 +3198,7 @@
         plan2_f4: "<strong>다중 의료진 계정 (역할당 최대 10개):</strong> 관리자, 의사, 간호사가 여러 PC에서 동시에 근무할 수 있도록 <strong>최대 30개 계정</strong> 지원.",
         plan2_f5: "<strong>의사 전용 권한 및 응급 우선 호출:</strong> 데스크에서 직접 번호표를 발급하고 <strong>응급 우선 모드</strong>로 위급 환자를 대기열 최상단에 배치.",
         plan2_f6: "<strong>통계 리포트 및 정기 데이터 백업:</strong> 교대/일/월별 환자 방문 통계 보고서 및 안전한 프로필 데이터 백업 지원.",
-        plan2_cta: "프리미엄 신청하기 (설치비 무료) →",
+        plan2_cta: '<span>프리미엄 신청하기 &rarr;</span><span class="btn-cta-sub">(설치비 무료)</span>',
         plan3_tier: "병원 및 네트워크 · ENTERPRISE",
         plan3_name: "종합병원 및 멀티 지점 네트워크",
         plan3_sub: "병원 전산 연동이 필요한 종합병원이나 다수 지점을 운영하는 네트워크 의원을 위한 맞춤형 플랜입니다.",
